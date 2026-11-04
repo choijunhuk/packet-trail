@@ -101,7 +101,11 @@ func _run() -> void:
 	await _frames(2)
 	_check(not desktop.br_archive.visible, "external browser URL cannot expose archive action")
 	var completed_disk := GameCore.new(desktop.save_slot_path)
+	desktop._open_app("mail")
+	_check(desktop.selected_mail == desktop.game.get_view().messages.back().id, "completed reply is selected before resetting")
 	desktop._reset()
+	var first_mail: Dictionary = desktop.game.get_view().messages[0]
+	_check(desktop.selected_mail == first_mail.id and desktop.mail_subject.text == first_mail.subject and desktop.mail_body.get_parsed_text() == first_mail.body, "new work replaces a removed completion reply with the current mission mail")
 	await _submit("cd ~/archive")
 	var existing: Dictionary = completed_disk.load_game()
 	_check(desktop.autosave_paused and desktop.autosave_label.text.contains("일시중지") and existing.ok and completed_disk.get_view().completed,

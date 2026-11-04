@@ -1148,6 +1148,9 @@ func _refresh_mail(v: Dictionary) -> void:
 		mail_sender.text = ""
 		shown_mail_key = ""
 		mail_body.clear()
+	else:
+		mail_list.select(0)
+		_on_mail_selected(0)
 
 
 func _select_unread_mail() -> void:

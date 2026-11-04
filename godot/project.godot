@@ -2,7 +2,7 @@ config_version=5
 
 [application]
 config/name="MidnightAccess"
-config/version="0.1.0-dev"
+config/version="0.1.1-dev"
 run/main_scene="res://scenes/desktop.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/use_custom_user_dir=true
