@@ -1,0 +1,11 @@
+.DS_Store
+.godot/
+.env
+.env.*
+!.env.example
+*.log
+builds/
+exports/
+.omx/
+.claude/
+*.local.md
