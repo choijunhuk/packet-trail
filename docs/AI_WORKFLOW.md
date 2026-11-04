@@ -106,6 +106,21 @@ claude --print --model claude-opus-5-5 --effort high --tools "" \
 
 C06~C08은 기존 Claude 세션이 남긴 이력이다. 이번 Codex 재검토에서는 새 Claude 호출·게임 구현·원작 추가 분석을 하지 않았다. R2 평가와 기존 반영 초안을 구분해 검사하며 사용자 `.serena/`는 보존한다.
 
+### 2026-11-05 첫 플레이 구현 묶음
+
+| ID | 실제/요청 모델 | 수준 | 역할·증거 |
+|---|---|---|---|
+| A16 | gpt-6.1-sol | max | 리더 코어·데이터·통합·실행/렌더/검증, 현재 세션 메타데이터 확인 |
+| A17 | gpt-6.1-sol | xhigh | 별도 저장기/실제 I/O 회귀 작성 |
+| A18 | gpt-6.1-sol | high | headless runner·콘텐츠/gate/경계 검사 작성 |
+| A19 | gpt-6.1-sol | xhigh | 독립 코어·저장·게이트 읽기 검토. 3개 높은효과 보완 반영 |
+| A20 | gpt-6.1-sol | high | 후속3캠페인 문서·native export/3OS CI 준비 |
+| C09 | claude-opus-5-5 | high 요청 | UI/scenes 소유2파일 실제작성, response modelUsage/is_error=false 확인 |
+| C10 | claude-opus-5-5 | xhigh 요청 | 별도 fresh context의 코어/통합 읽기 검토, 4개 UI 발견 |
+| C11 | claude-opus-5-5 | high 요청 | 4개 수정/회귀 정적 재검토 READY. 모델 응답 확인, 직접실행이아닌코드검토로구분 |
+
+사용자가 Claude 실제 활용과 양쪽 결과 검증을 요청해 기존 중단 범위를 변경했다. 새 구현은 서로 다른 파일 소유로 진행하고 완성된 묶음에서 검증했다. 실제 UI·헤드리스 실행은 리더가 확인했으며 Claude의 동의를 실행 증거로 대체하지 않았다. raw prompt/response는 로컬 `.omx/artifacts/claude-first-playable-*.md`로 보관한다.
+
 ## 5. 구현 때 남길 작업 기록 형식
 
 ```text

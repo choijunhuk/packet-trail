@@ -1,0 +1,10 @@
+{
+  "family": "Noto Sans KR",
+  "source": "https://github.com/google/fonts/tree/main/ofl/notosanskr",
+  "download": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanskr/NotoSansKR%5Bwght%5D.ttf",
+  "retrieved_date": "2026-10-29",
+  "sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252",
+  "license": "SIL Open Font License 1.1",
+  "license_file": "OFL.txt",
+  "modified": false
+}

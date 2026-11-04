@@ -1,0 +1,105 @@
+name: Game checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  headless-gate:
+    name: Headless gate (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2025]
+    defaults:
+      run:
+        shell: bash
+    env:
+      GODOT_VERSION: 4.7-stable
+      PYTHONUTF8: "1"
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+
+      - name: Ensure python3 is available to Bash and fake Godot fixtures
+        run: |
+          if ! command -v python3 >/dev/null 2>&1; then
+            shim_dir="$RUNNER_TEMP/packet-trail-bin"
+            mkdir -p "$shim_dir"
+            python_path="$(command -v python)"
+            printf '#!/usr/bin/env bash\nexec %q "$@"\n' "$python_path" > "$shim_dir/python3"
+            chmod +x "$shim_dir/python3"
+            printf '%s\n' "$shim_dir" >> "$GITHUB_PATH"
+            export PATH="$shim_dir:$PATH"
+          fi
+          python3 --version
+
+      - name: Download official Godot and verify the SHA512 manifest
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path
+          import platform
+          import urllib.request
+          import zipfile
+
+          version = os.environ["GODOT_VERSION"]
+          platform_asset = {
+              "Linux": "linux.x86_64",
+              "Darwin": "macos.universal",
+              "Windows": "win64.exe",
+          }[platform.system()]
+          asset = f"Godot_v{version}_{platform_asset}.zip"
+          base = f"https://github.com/godotengine/godot-builds/releases/download/{version}/"
+          destination = Path(os.environ["RUNNER_TEMP"]) / "packet-trail-godot"
+          destination.mkdir(parents=True, exist_ok=True)
+
+          with urllib.request.urlopen(base + "SHA512-SUMS.txt", timeout=60) as response:
+              manifest = response.read()
+          # Pin the official 4.7-stable manifest as retrieved on 2026-11-05.
+          manifest_sha256 = "82cc4e8563f0e6edcbe1b79d1352afc441ce98e8b322b443c0e0d2717096c425"
+          if hashlib.sha256(manifest).hexdigest() != manifest_sha256:
+              raise SystemExit("Godot checksum manifest changed")
+          entries = [line.split() for line in manifest.decode("utf-8").splitlines()]
+          expected = [parts[0] for parts in entries
+                      if len(parts) == 2 and parts[1].lstrip("*") == asset]
+          if len(expected) != 1 or len(expected[0]) != 128:
+              raise SystemExit("Missing or ambiguous Godot SHA512 entry")
+
+          archive = destination / asset
+          urllib.request.urlretrieve(base + asset, archive)
+          with archive.open("rb") as stream:
+              actual = hashlib.file_digest(stream, "sha512").hexdigest()
+          if actual != expected[0]:
+              raise SystemExit("Godot archive SHA512 mismatch")
+          with zipfile.ZipFile(archive) as package:
+              package.extractall(destination)
+          executable = {
+              "Linux": destination / f"Godot_v{version}_linux.x86_64",
+              "Darwin": destination / "Godot.app/Contents/MacOS/Godot",
+              "Windows": destination / f"Godot_v{version}_win64_console.exe",
+          }[platform.system()]
+          if not executable.is_file():
+              raise SystemExit(f"Godot executable missing: {executable}")
+          executable.chmod(executable.stat().st_mode | 0o111)
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8", newline="\n") as stream:
+              stream.write(f"GODOT_BIN={executable.as_posix()}\n")
+          print(f"Verified official archive: {asset}")
+          PY
+
+      - name: Run headless game, content, document, and boundary checks
+        run: |
+          "$GODOT_BIN" --version
+          bash tools/gate.sh

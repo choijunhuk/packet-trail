@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "mission_id": "M01",
+  "title": "첫 번째 야간 의뢰",
+  "alert_max": 2,
+  "initial_web_url": "https://archive.packet.test",
+  "goal": {
+    "record_id": "handoff-47",
+    "destination": "/home/player/archive"
+  },
+  "goals": [
+    {
+      "kind": "record_acquired",
+      "record_id": "handoff-47"
+    },
+    {
+      "kind": "sources_preserved"
+    }
+  ],
+  "records": {
+    "handoff-47": {
+      "content": "[N47 / HANDOFF]\n야간 인계 기록 · 00:47\n이관 지시: relay-02 → archive-17\n승인 표식: SY / 교차 확인 대기\n원본은 보존하고 사본만 전달할 것.\n후속 단서: 릴레이 02의 누락된 송신 기록.\n",
+      "allowed_sources": [
+        "archive:/vault/handoff.log",
+        "mirror:cache-47"
+      ]
+    }
+  },
+  "hosts": {
+    "archive": {
+      "name": "야간 보관소",
+      "domain": "archive.packet.test",
+      "address": "10.42.0.17",
+      "accounts": {
+        "guest": {
+          "password": "guest",
+          "groups": [
+            "visitors"
+          ],
+          "home": "/public"
+        },
+        "maint": {
+          "password": "lumen-47",
+          "groups": [
+            "staff"
+          ],
+          "home": "/public"
+        }
+      },
+      "files": {
+        "/": {
+          "kind": "dir",
+          "owner": "maint",
+          "group": "staff",
+          "mode": "755",
+          "content": "",
+          "record_id": ""
+        },
+        "/public": {
+          "kind": "dir",
+          "owner": "maint",
+          "group": "staff",
+          "mode": "755",
+          "content": "",
+          "record_id": ""
+        },
+        "/public/readme.txt": {
+          "kind": "file",
+          "owner": "maint",
+          "group": "staff",
+          "mode": "644",
+          "content": "야간 점검 안내\n보호 자료는 /vault 에 있습니다.\n인계 메모는 /public/shift-note.txt 를 확인하세요.\n",
+          "record_id": ""
+        },
+        "/public/shift-note.txt": {
+          "kind": "file",
+          "owner": "maint",
+          "group": "staff",
+          "mode": "644",
+          "content": "[인수인계 메모]\n정비 계정: maint\n임시 확인어: lumen-47\n인계 기록: /vault/handoff.log\n보관 사본: https://mirror.packet.test/cache/47\n원본을 변경하거나 지우지 마세요.\n",
+          "record_id": ""
+        },
+        "/public/handoff.log": {
+          "kind": "file",
+          "owner": "maint",
+          "group": "staff",
+          "mode": "644",
+          "content": "[보관 기간 종료]\n이것은 예전 점검 양식입니다. 인계 대상 기록이 아닙니다.\n",
+          "record_id": "old-form"
+        },
+        "/vault": {
+          "kind": "dir",
+          "owner": "maint",
+          "group": "staff",
+          "mode": "750",
+          "content": "",
+          "record_id": ""
+        },
+        "/vault/handoff.log": {
+          "kind": "file",
+          "owner": "maint",
+          "group": "staff",
+          "mode": "640",
+          "content": "[N47 / HANDOFF]\n야간 인계 기록 · 00:47\n이관 지시: relay-02 → archive-17\n승인 표식: SY / 교차 확인 대기\n원본은 보존하고 사본만 전달할 것.\n후속 단서: 릴레이 02의 누락된 송신 기록.\n",
+          "record_id": "handoff-47"
+        }
+      }
+    }
+  },
+  "pages": {
+    "https://archive.packet.test": {
+      "title": "NIGHT ARCHIVE / 야간 보관소",
+      "body": "야간 이관 작업 중입니다.\n공개 안내는 열람할 수 있습니다.\n보호된 인계 자료는 정비 세션에서 확인하세요.",
+      "links": [
+        {
+          "label": "배포 공지 보기",
+          "url": "https://archive.packet.test/notice"
+        }
+      ]
+    },
+    "https://archive.packet.test/notice": {
+      "title": "야간 배포 공지",
+      "body": "인계 기록의 가용성 점검이 진행 중입니다.\n단기 보관 사본은 별도 릴레이에 유지됩니다.\n구체적인 위치는 서버의 인수인계 메모를 확인하세요.",
+      "links": [
+        {
+          "label": "보관소 홈",
+          "url": "https://archive.packet.test"
+        }
+      ]
+    },
+    "https://mirror.packet.test/cache/47": {
+      "title": "RELAY CACHE / 인계 사본 47",
+      "body": "[N47 / HANDOFF]\n야간 인계 기록 · 00:47\n이관 지시: relay-02 → archive-17\n승인 표식: SY / 교차 확인 대기\n원본은 보존하고 사본만 전달할 것.\n후속 단서: 릴레이 02의 누락된 송신 기록.\n",
+      "links": [],
+      "record_id": "handoff-47",
+      "source": "mirror:cache-47",
+      "filename": "handoff.log"
+    }
+  },
+  "mail": {
+    "intro": {
+      "id": "intro",
+      "sender": "서윤 · 암호화된 연락처",
+      "subject": "[00:47] 삭제되기 전에, 사본 하나만",
+      "body": "이 메일은 한 번만 보낼게요.\n\n야간 보관소의 인계 기록을 회수해 주세요.\n서버: archive.packet.test\n공개 접속: guest / guest\n\n보호 폴더 /vault 에 자료가 있습니다. 공개 계정만으로는 열리지 않을 거예요.\n서버에 남은 인수인계 메모에서 다른 길을 찾아보세요.\n\n원본은 그대로 두고, 사본을 로컬 ~/archive 에 보관해 주세요.\n방법은 당신이 골라도 됩니다.\n\n— 서윤"
+    },
+    "complete": {
+      "id": "complete",
+      "sender": "서윤 · 암호화된 연락처",
+      "subject": "받았어요. 이제, 두 번째 흔적",
+      "body": "사본 확인했어요. 원본도 남아 있군요.\n\n이 기록에는 없는 송신 한 건이 있어요.\n릴레이 02가 목적지를 바꾼 시각을 기억해 주세요.\n\n첫 번째 야간 의뢰는 끝났습니다.\n후속 사건은 다음 제작 묶음에서 이어집니다.\n\n— 서윤"
+    }
+  }
+}
