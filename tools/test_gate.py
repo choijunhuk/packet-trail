@@ -59,7 +59,8 @@ class GateFailureTests(unittest.TestCase):
             PACKET_TRAIL_FAKE_OUTPUT=output, PACKET_TRAIL_FAKE_EXIT=str(exit_code),
         )
         result = subprocess.run(
-            ["bash", str(self.root / "tools/gate.sh")], cwd=self.temp.name,
+            [os.environ.get("PACKET_TRAIL_BASH", "bash"), str(self.root / "tools/gate.sh")],
+            cwd=self.temp.name,
             env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
             text=True, encoding="utf-8", timeout=15,
         )

@@ -35,7 +35,7 @@ const APPS := {
 }
 const APP_ORDER := ["terminal", "mail", "browser", "files", "archive", "status", "help"]
 
-const HELP_TEXT := "이 컴퓨터는 게임 속 가상 단말입니다. 서버·사이트·파일은 모두 허구이며 실제 네트워크나 셸로 나가지 않습니다.\n\n터미널\n  Enter 실행 · ↑/↓ 이전 명령 · Tab 자동완성 · Esc 입력 지우기/암호 대기 취소 · clear 화면 지우기\n  암호 입력 중에는 입력이 가려지고 기록에 남지 않습니다.\n\n창\n  제목줄을 끌어 이동 · 제목줄 두 번 클릭으로 최대화/복원 · 오른쪽 아래 모서리로 크기 조절\n  ─ 최소화, × 닫기(앱 상태·입력·로그는 유지) · 작업 표시줄 버튼으로 다시 열기\n  창이 화면 밖으로 사라지면 '창 정렬'로 기본 배치를 복원합니다.\n  글씨가 작으면 상단 A- / A+ 로 조절합니다.\n\n저장\n  저장: 고정 슬롯에 기록 · 불러오기: 마지막 저장으로 되돌림\n  새 작업: 세계 초기화 후 자동저장 일시중지. [저장]을 누르면 이전 슬롯을 대체하고 자동저장을 재개\n\n경보\n  서버가 관찰한 거절 행동에만 오릅니다. 로컬 오타·읽기·창 전환은 경보와 무관합니다."
+const HELP_TEXT := "이 컴퓨터는 게임 속 가상 단말입니다. 서버·사이트·파일은 모두 허구이며 실제 네트워크나 셸로 나가지 않습니다.\n\n터미널\n  Enter 실행 · ↑/↓ 이전 명령 · Tab 자동완성 · Esc 입력 지우기/암호 대기 취소 · clear 화면 지우기\n  암호 입력 중에는 입력이 가려지고 기록에 남지 않습니다.\n\n창\n  제목줄을 끌어 이동 · 제목줄 두 번 클릭으로 최대화/복원 · 오른쪽 아래 모서리로 크기 조절\n  ─ 최소화, × 닫기(앱 상태·입력·로그는 유지) · 작업 표시줄 버튼으로 다시 열기\n  Ctrl/Cmd+1~7 앱 열기 · F1 도움말 · F6 작업 표시줄 · Shift+F6 글자 크기, 이후 Tab/Enter로 선택\n  창이 화면 밖으로 사라지면 '창 정렬'로 기본 배치를 복원합니다.\n  글씨가 작으면 상단 A- / A+ 로 조절합니다.\n\n저장\n  저장: 고정 슬롯에 기록 · 불러오기: 마지막 저장으로 되돌림\n  새 작업: 세계 초기화 후 자동저장 일시중지. [저장]을 누르면 이전 슬롯을 대체하고 자동저장을 재개\n\n경보\n  서버가 관찰한 거절 행동에만 오릅니다. 로컬 오타·읽기·창 전환은 경보와 무관합니다."
 
 @export var save_slot_path: String = "user://saves/slot_01.json"
 var autosave_paused := false
@@ -57,6 +57,7 @@ var mission_label: Label
 var alert_label: Label
 var host_label: Label
 var task_buttons := {}
+var font_controls_focus: Button
 var status_label: Label
 var recover_btn: Button
 var toast_panel: PanelContainer
@@ -370,10 +371,12 @@ func _build_shell() -> void:
 	autosave_label = _label("자동저장 ON", C_CYAN_DIM, -4)
 	row.add_child(autosave_label)
 	for d in [-1, 1]:
-		var fb := _btn("A-" if d < 0 else "A+", "글자 크기", _font_step.bind(d), false)
+		var fb := _btn("A-" if d < 0 else "A+", "글자 크기", _font_step.bind(d))
 		fb.add_theme_stylebox_override("normal", _sb(Color(0, 0, 0, 0), C_LINE, 1, 3, 2))
 		_size(fb, -5, false)
 		row.add_child(fb)
+		if d < 0:
+			font_controls_focus = fb
 
 	var task := PanelContainer.new()
 	var task_sb := _sb(Color(0.035, 0.05, 0.06, 0.96), C_LINE, 0, 0, 5)
@@ -388,12 +391,12 @@ func _build_shell() -> void:
 	var trow := HBoxContainer.new()
 	task.add_child(trow)
 	for id in APP_ORDER:
-		var b := _btn(APPS[id][0], "열기 / 앞으로 가져오기", _open_app.bind(id, true), false)
+		var b := _btn(APPS[id][0], "열기 / 앞으로 가져오기", _open_app.bind(id, true))
 		_size(b, -2, false)
 		task_buttons[id] = b
 		trow.add_child(b)
 	trow.add_child(VSeparator.new())
-	var arrange := _btn("창 정렬", "모든 창을 기본 배치로 복원", _arrange, false)
+	var arrange := _btn("창 정렬", "모든 창을 기본 배치로 복원", _arrange)
 	_size(arrange, -2, false)
 	trow.add_child(arrange)
 	status_label = _label("", C_DIM, -3)
@@ -404,15 +407,15 @@ func _build_shell() -> void:
 	for spec in [["저장", "고정 슬롯에 현재 진행 저장", _save],
 			["불러오기", "마지막 저장으로 되돌리기", _ask_load],
 			["새 작업", "진행 중인 세계만 초기화 (디스크 저장은 유지)", _ask_reset]]:
-		var sbtn := _btn(spec[0], spec[1], spec[2], false)
+		var sbtn := _btn(spec[0], spec[1], spec[2])
 		_size(sbtn, -2, false)
 		trow.add_child(sbtn)
-	recover_btn = _btn("백업 복구", "손상된 저장본은 보존하고 정상 백업으로 복구", _ask_recover, false)
+	recover_btn = _btn("백업 복구", "손상된 저장본은 보존하고 정상 백업으로 복구", _ask_recover)
 	recover_btn.add_theme_color_override("font_color", C_AMBER)
 	recover_btn.visible = false
 	_size(recover_btn, -2, false)
 	trow.add_child(recover_btn)
-	fresh_save_btn = _btn("손상본 보존·새 저장", "기존 손상본과 백업은 별도 보존하고 현재 진행을 새 저장", _ask_fresh_save, false)
+	fresh_save_btn = _btn("손상본 보존·새 저장", "기존 손상본과 백업은 별도 보존하고 현재 진행을 새 저장", _ask_fresh_save)
 	fresh_save_btn.add_theme_color_override("font_color", C_AMBER)
 	fresh_save_btn.visible = false
 	_size(fresh_save_btn, -2, false)
@@ -738,10 +741,35 @@ func _on_grip_input(event: InputEvent, id: String) -> void:
 # GUI 피킹보다 먼저 클릭된 창을 맨 앞으로 올린다. 다른 창에 있던 키보드 포커스는
 # 놓아서 뒤 창 클릭 후의 타이핑이 앞 창 입력에 새지 않게 한다.
 func _input(event: InputEvent) -> void:
+	if error_overlay.visible or confirm.visible:
+		return
+	var key := event as InputEventKey
+	if key != null and key.pressed and not key.echo:
+		var focused := get_viewport().gui_get_focus_owner()
+		if focused is LineEdit and focused.has_ime_text():
+			return
+		if key.is_command_or_control_pressed() and not key.alt_pressed and not key.shift_pressed and key.keycode >= KEY_1 and key.keycode <= KEY_7:
+			_open_app(APP_ORDER[key.keycode - KEY_1])
+		elif key.keycode == KEY_F1 and not key.is_command_or_control_pressed() and not key.alt_pressed:
+			_open_app("help")
+		elif key.keycode == KEY_F6 and not key.is_command_or_control_pressed() and not key.alt_pressed:
+			if key.shift_pressed:
+				font_controls_focus.grab_focus()
+			else:
+				task_buttons["terminal"].grab_focus()
+		else:
+			return
+		get_viewport().set_input_as_handled()
+		return
 	var mb := event as InputEventMouseButton
-	if mb == null or not mb.pressed or error_overlay.visible or confirm.visible:
+	if mb == null:
 		return
 	if not (mb.button_index in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT, MOUSE_BUTTON_MIDDLE]):
+		return
+	if not mb.pressed:
+		# 버튼을 놓은 뒤 복귀해야 마우스 클릭 동작이 취소되지 않는다.
+		if not active_id.is_empty():
+			call_deferred("_focus_after_click", active_id)
 		return
 	for i in range(layer.get_child_count() - 1, -1, -1):
 		var c := layer.get_child(i) as Control
@@ -758,6 +786,8 @@ func _input(event: InputEvent) -> void:
 
 
 func _focus_after_click(id: String) -> void:
+	if id != active_id or confirm.visible or error_overlay.visible:
+		return
 	var fo := get_viewport().gui_get_focus_owner()
 	var win: Control = wins[id]["win"]
 	if win.visible and (fo == null or not win.is_ancestor_of(fo)):

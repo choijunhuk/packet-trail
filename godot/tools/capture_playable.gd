@@ -19,6 +19,52 @@ func _run() -> void:
 	output_dir = ProjectSettings.globalize_path("res://../.omx/artifacts/first-playable/").simplify_path()
 	await _frames(8)
 	_check(desktop.game.get_view().ready, "desktop loads the real game")
+	var keyboard_before: Dictionary = desktop.game.export_snapshot()
+	desktop.term_in.text = "draft command"
+	for index in range(desktop.APP_ORDER.size()):
+		var app_key := InputEventKey.new()
+		app_key.keycode = KEY_1 + index
+		app_key.ctrl_pressed = true
+		app_key.meta_pressed = true
+		app_key.pressed = true
+		Input.parse_input_event(app_key)
+		await _frames(1)
+		_check(desktop.active_id == desktop.APP_ORDER[index], "keyboard opens " + desktop.APP_ORDER[index])
+	var toolbar_key := InputEventKey.new()
+	toolbar_key.keycode = KEY_F6
+	toolbar_key.pressed = true
+	Input.parse_input_event(toolbar_key)
+	await _frames(1)
+	_check(root.gui_get_focus_owner() == desktop.task_buttons["terminal"], "F6 reaches taskbar without typing into terminal")
+	toolbar_key.shift_pressed = true
+	Input.parse_input_event(toolbar_key)
+	await _frames(1)
+	_check(root.gui_get_focus_owner() == desktop.font_controls_focus, "Shift F6 reaches font settings")
+	_check(desktop.game.export_snapshot() == keyboard_before and desktop.term_in.text == "draft command", "app shortcuts preserve world and command draft")
+	desktop._open_app("terminal")
+	var font_before: int = desktop.ui_size
+	var toolbar_click := InputEventMouseButton.new()
+	toolbar_click.button_index = MOUSE_BUTTON_LEFT
+	toolbar_click.position = desktop.font_controls_focus.get_global_rect().get_center()
+	toolbar_click.global_position = toolbar_click.position
+	toolbar_click.pressed = true
+	root.push_input(toolbar_click, true)
+	await _frames(2)
+	toolbar_click.pressed = false
+	root.push_input(toolbar_click, true)
+	await _frames(2)
+	_check(desktop.ui_size == font_before - 1, "mouse toolbar button really receives and performs its action")
+	_check(root.gui_get_focus_owner() == desktop.term_in and desktop.term_in.text == "draft command", "mouse toolbar click returns focus without losing terminal draft")
+	desktop._font_step(1)
+	desktop.term_in.clear()
+	desktop._close("help")
+	desktop._close("archive")
+	desktop._close("files")
+	desktop._close("browser")
+	desktop._open_app("status", false)
+	desktop._open_app("mail", false)
+	desktop._open_app("terminal")
+	await _frames(3)
 	_capture("desktop-initial.png")
 	desktop._load()
 	_check(not desktop.autosave_paused, "missing save does not disable autosave")

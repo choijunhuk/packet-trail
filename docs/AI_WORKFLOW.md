@@ -118,6 +118,7 @@ C06~C08은 기존 Claude 세션이 남긴 이력이다. 이번 Codex 재검토�
 | C09 | claude-opus-5-5 | high 요청 | UI/scenes 소유2파일 실제작성, response modelUsage/is_error=false 확인 |
 | C10 | claude-opus-5-5 | xhigh 요청 | 별도 fresh context의 코어/통합 읽기 검토, 4개 UI 발견 |
 | C11 | claude-opus-5-5 | high 요청 | 4개 수정/회귀 정적 재검토 READY. 모델 응답 확인, 직접실행이아닌코드검토로구분 |
+| C12 | claude-opus-5-5 | high 요청 | 최종 키보드/CI 변경분 정적 검토 REVISE: 마우스 버튼 후 입력 포커스 복귀 누락. 공통 처리와 실제 이벤트 회귀로 보완, modelUsage/is_error=false 확인 |
 
 사용자가 Claude 실제 활용과 양쪽 결과 검증을 요청해 기존 중단 범위를 변경했다. 새 구현은 서로 다른 파일 소유로 진행하고 완성된 묶음에서 검증했다. 실제 UI·헤드리스 실행은 리더가 확인했으며 Claude의 동의를 실행 증거로 대체하지 않았다. raw prompt/response는 로컬 `.omx/artifacts/claude-first-playable-*.md`로 보관한다.
 

@@ -49,14 +49,17 @@ for path in files:
             continue
         decoded = urllib.parse.unquote(target.strip("<>"))
         rel, _, fragment = decoded.partition("#")
-        dest = (path.parent / rel).resolve() if rel else path
-        local_links += 1
-        if not dest.is_file():
-            errors.append(f"{path.relative_to(root)} -> missing {target}")
-        elif fragment and dest.suffix == ".md":
-            anchors += 1
-            if fragment not in heading_ids(read_document(dest)):
-                errors.append(f"{path.relative_to(root)} -> missing anchor {target}")
+        try:
+            dest = (path.parent / rel).resolve() if rel else path
+            local_links += 1
+            if not dest.is_file():
+                errors.append(f"{path.relative_to(root)} -> missing {target}")
+            elif fragment and dest.suffix == ".md":
+                anchors += 1
+                if fragment not in heading_ids(read_document(dest)):
+                    errors.append(f"{path.relative_to(root)} -> missing anchor {target}")
+        except (OSError, ValueError) as exc:
+            errors.append(f"{path.relative_to(root)} -> cannot inspect {target} ({type(exc).__name__})")
     for block in re.findall(r"```json\s*\n(.*?)\n```", text, re.S):
         json_count += 1
         try:

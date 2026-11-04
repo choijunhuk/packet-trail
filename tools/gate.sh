@@ -4,6 +4,13 @@ set -euo pipefail
 ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
+# Python must reuse this Bash instead of finding Windows' WSL launcher.
+PACKET_TRAIL_BASH="$BASH"
+if command -v cygpath >/dev/null 2>&1; then
+    PACKET_TRAIL_BASH="$(cygpath -w "$PACKET_TRAIL_BASH")"
+fi
+export PACKET_TRAIL_BASH
+
 fail() { printf '%s\n' "gate: $*" >&2; exit 1; }
 
 if [[ -n "${GODOT_BIN:-}" ]]; then
