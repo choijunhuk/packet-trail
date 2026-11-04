@@ -49,3 +49,24 @@ README·PROJECT_PLAN·DESIGN·CURRICULUM의 첫 경험과 기본 위험/피드�
 제품·화면·미션·기술·로드맵·인수인계·협업 문서를 같은 방향으로 맞췄다. 원문 피드백은 수정하지 않았다. 중복 현재 상태 설명은 README로 모으고 과거 검토와 실제 실행 경계는 각 기록에 남겼다.
 
 독립 검토의 잔여 3개 지적을 보완한 뒤 문서 READY, 추가 캐릭터 문서는 텍스트 기획 READY를 받았다. 최신 정적 검사와 검증 한계는 `docs/PLANNING_VALIDATION.md`에 기록한다. 새 게임 코드·이미지·음악 생성이나 Claude 호출로 작업 범위를 늘리지 않았다.
+
+## 2차 피드백 반영
+
+입력은 [2차 피드백 원문](CLAUDE_FEEDBACK_20261104_R2.md)이다. 원문은 보존한다. 사용자 지시("시작은 하지말고 수정만")에 따라 문서만 고쳤고 P0 코드·`tools/gate.sh`는 만들지 않았다.
+
+| 2차 항목 | 판단 | 변경 |
+|---|---|---|
+| 3.1 M01에 거부→돌파 장면 없음 | 수용 | `guest` 접속→보호 폴더 거부→메모의 정비 계정으로 재접속→`scp` 회수로 바꿨다. M01 `alert_max=2`로 경보는 보이되 차단하지 않는다. CURRICULUM·PROJECT_PLAN §3·DESIGN §7·ARCHITECTURE §1·§6·ROADMAP P1·HANDOFF |
+| 3.2 빈 goals·미등록 goal kind | 수용 | 로더 거절 규칙(ARCHITECTURE §4)과 gate 콘텐츠 검사·실패 fixture(ROADMAP P1) |
+| 3.3 저장 왕복 기준 | 취지 수용·비교 경계 보완 | 정규화한 권위 지속 snapshot을 독립 기대 fixture와 깊은 값 비교(ARCHITECTURE §10, ROADMAP P1). 런타임 객체/새 세대 제외, 필드 누락을 기본값으로 숨기지 않음 |
+| 3.4 단계표 9곳 중복·세션 기록 | 부분 수용 | 단계표를 ROADMAP 한 곳으로 모으고 PROJECT_PLAN·ARCHITECTURE·CURRICULUM·DESIGN·README는 링크로 바꿨다. 세션 기록 문장은 AI_WORKFLOW로 옮겼다. 부정문 전체 정리는 범위가 커서 보류한다 |
+| 3.5 검사기 미추적 | 수용 | `tools/check_docs.py`로 옮겨 추적. 보존 피드백 2개의 해시도 검사 |
+| 3.6 회수 명령·`record_id`·대소문자/별칭·콘텐츠 값 | 수용 | `scp` v0 등록, `cp`는 v0 미지원, `ssh` 가상 암호 인증 v0, FileDef `record_id`, 파서·별칭 규칙, 콘텐츠 값 무변환(ARCHITECTURE §4·§6) |
+| 4.2 도구를 회수 자료로 얻기 | 수용 | DESIGN §6 |
+| 4.2 완료 처리 순서 | 수용 | 완료 효과를 같은 커밋에 넣고 저장은 그 뒤(ARCHITECTURE §3) |
+| 4.4 Hacknet 보고서 원문 | 수용 | 원문은 저장소에 넣지 않고 결론만 [Hacknet 노트](../references/HACKNET_PACKAGE_NOTES_20261104.md) §4에 요약 |
+| 5 추천 순서의 P0 시작 | 보류 | 사용자 지시로 이번에는 시작하지 않는다 |
+
+## 2026-11-05 Codex의 추가 재검토
+
+기존 R2 반영 초안을 보존해 대조한 뒤 완료 효과1회·기록 원본 무결성·저장 snapshot 경계를 보완했다. 추적 가능한 문서 검사기의 UTF-8/누락 파일 오류도 격리된 사본에서 재현한 뒤 회귀 테스트와 함께 고쳤다. 상세 수용 판단·증거는 [독립 재검토](CODEX_R2_REVIEW_20261105.md)에 있다. 게임 구현·새 Claude 호출·원작 추가 분석은 하지 않았다.

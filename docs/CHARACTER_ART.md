@@ -184,6 +184,6 @@ Using the supplied canonical portrait as the sole identity reference, create a c
 텍스트·외형·프롬프트 설계 권고 및 이번 작성 모델은 `gpt-6.1-sol / high`다. 독립 시각 판단은 `gpt-6.1-sol / xhigh`를 권고하되 아직 실행하지 않았다.
 실제 이미지 생성 도구의 모델 ID·추론 effort 선택이 노출되지 않으면 `actual_tool_model=not_exposed`, `effort=not_exposed`로 기록한다.
 `xhigh`는 텍스트/시각 검토 모델의 추론 수준이지 이미지 해상도·생성 품질 옵션이 아니다. 실제 이미지 도구 옵션은 그때 노출된 값만 기록한다.
-상업 API 가격·계약·지원 해상도는 이 문서에서 보증하지 않는다. 이번 작업에는 새 Claude·이미지·음악 생성 호출이 없다.
+상업 API 가격·계약·지원 해상도는 이 문서에서 보증하지 않는다. 이 문서 작성(A12)에는 이미지·음악 생성 호출이 없었다.
 
 설계초안완료, 실제 생성/일관성/가독성 검수는 후속.

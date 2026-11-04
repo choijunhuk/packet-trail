@@ -10,3 +10,4 @@ exports/
 .omc/
 .claude/
 *.local.md
+__pycache__/

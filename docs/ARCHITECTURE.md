@@ -8,16 +8,9 @@ Godot 권고는 Hacknet의 XNA/FNA 계열 기술(이번 조사에서 MonoGame �
 
 ## 1. 만들 것과 단계별 경계
 
-| 단계 | 구현 대상 | 다음 단계로 넘어갈 근거 |
-|---|---|---|
-| P0 기술 스파이크 | 개발 OS의 2D desktop+terminal, 한글 IME·포커스 | 한 창에서 입력·출력·포커스·닫기/복원이 안정적 |
-| P1 첫 사건 | M01 의뢰→가상 연결/파일 탐색→지정 허구자료 회수→의뢰인 반응/다음 단서→저장 왕복 | 한 사건의 손맛·이야기·현재 상태 판정·안전 저장 |
-| P2 수직 시제품 | M01·M05·M09, 3D graybox, ko/en 문자열·폰트 시험, 세 OS 초기 export smoke | 세 사건의 유효 경로·창 공유·초기 이식 위험 확인 |
-| P3 MVP | M01~M10, 캠페인·설정·ko/en·오디오 3큐 | 사건 제작량·각 플랫폼 실제 완주·대안 풀이 확인 |
-| P4 1.0 | 메인24+선택4, 8~12시간 목표·6언어·OST 7큐 | 콘텐츠·접근성·번역·실제 플레이 품질 충족 |
-| P5 배포·유지 | 세 OS 패키징·업데이트·저장 호환·권리/서명 | 플랫폼별 배포 증거와 알려진 한계 공개 |
+단계별 구현 범위와 다음 단계 판단은 [ROADMAP](ROADMAP_AND_QA.md#단계별-필수-범위) 한 곳에서 정한다. 아래 각 절의 단계 표기는 그 표를 따른다.
 
-P1의 M01은 ‘첫 번째 야간 의뢰’다. 익명 연락처 서윤이 삭제될 인계 기록의 사본 회수를 요청한다. 제한된 가상 야간보관소 세션 등 지원 경로에서 지정 자료를 확보하고 후일담·다음 단서를 받는다. 패치·보고서 시험은 완료 조건이 아니다. 세부 명세는 [CURRICULUM.md](CURRICULUM.md)를 따른다.
+P1의 M01은 ‘첫 번째 야간 의뢰’다. 익명 연락처 서윤이 삭제될 인계 기록의 사본 회수를 요청한다. 플레이어는 `guest`로 접속해 거부당하고, 남은 메모의 정비 계정으로 다시 접속해 지정 자료를 회수한 뒤 후일담·다음 단서를 받는다. 패치·보고서 시험은 완료 조건이 아니다. 세부 명세는 [CURRICULUM.md](CURRICULUM.md)를 따른다.
 v0는 P2의 세 미션 프리셋을 뜻한다. M05·M09의 필요한 상태와 맥락 안내를 제공하되 정식 캠페인 완료 기록은 만들지 않는다.
 v1 표기는 명령의 1.0 목표 범위를 뜻한다. 모든 v1 기능을 MVP에 먼저 만드는 계획은 아니다.
 실제 VM, 컨테이너, 실제 셸, 범용 브라우저, 런타임 LLM, 사용자 코드 실행, 확장 편집기는 범위에 넣지 않는다.
@@ -50,7 +43,7 @@ P0/P1은 `Desktop: Control`과 터미널 한 개로 시작한다. P2에 `Room: N
 창 닫기는 표시만 종료하고 앱 상태·터미널 연결·브라우저 쿠키/이력을 유지한다. 다시 열면 같은 앱 상태에 연결한다. `exit`는 해당 터미널의 연결 스택 한 단계를 종료하고, 명시적 로그아웃/세션 폐기는 해당 가상 인증만 만료시킨다. 최소화·포커스 변경도 가상 권한·미션 시간에 영향을 주지 않는다.
 임베드 창의 배율·한글 IME·키보드 전환·제목줄 경계가 스파이크에서 해결되지 않으면 `PanelContainer` 기반 Control 창틀로 전환한다.
 전환 시 앱 내용 장면과 WorldState는 유지한다. 두 종류의 창 관리자를 완제품으로 병행 개발하지 않는다.
-P0는 개발 OS의 터미널 한 개에서 IME·포커스를 확인한다. P2는 터미널 2개+브라우저 1개(탭2개)의 입력 격리와 배율 복원으로 넓힌다. 완성 브라우저·3D·두 터미널·다국어 실물·OST·세 OS 완주는 P0/P1 필수 조건이 아니다.
+P0는 개발 OS의 터미널 한 개에서 IME·포커스를 확인한다. P2는 터미널 2개+브라우저 1개(탭2개)의 입력 격리와 배율 복원으로 넓힌다.
 
 ## 3. 공유 상태와 처리 경로
 
@@ -60,9 +53,12 @@ P0는 개발 OS의 터미널 한 개에서 IME·포커스를 확인한다. P2는
 
 ```text
 입력/클릭 → Action 생성 → 형식·참조·권한·전제 검증
-        → 변경안 계산 → 관련 상태 일괄 적용 → events 반환
-        → 미션 목표 평가 → UI 갱신 / 자동저장 예약
+        → 변경안 계산 → 변경안 위에서 미션 목표 평가
+        → 미완료→완료 전이일 때만 완료 표시·답장·다음 단서를 같은 변경안에 추가
+        → 일괄 적용 → events 반환 → UI 갱신 → 자동저장
 ```
+
+미션 완료와 그 효과는 목표를 충족시킨 Action과 같은 커밋에 들어간다. 기존 완료 표시가 false이고 목표/제약이 충족된 전이에서만 완료 표시를 true로 바꾸고 답장·다음 단서·보상을 한 번 적용한다. 이후 조회·재회수·이미 완료된 저장의 복원은 효과를 다시 적용하지 않는다. 완료 표시도 지속 상태에 포함한다. 저장은 커밋 뒤에만 한다. 완료와 저장 사이에 종료되면 마지막 저장본에서 다시 시작하고, 목표는 현재 상태에서 다시 평가되므로 같은 결과에 도달한다.
 
 P1의 `Action`은 `kind`, `session_id`, `args`로 시작하고 kind는 등록된 이름만 허용한다. 동시 창/실행 세대 구분이 필요한 P2부터 `run_id`, 낙관적 충돌 검사가 필요하면 `expected_revision`을 추가한다.
 반환값은 `ok`, `error_code`, `message_key`, `output`, `events`, `revision`이다. UI 문구를 성공 판정에 사용하지 않는다.
@@ -82,7 +78,7 @@ P1은 완료·회수 자료·실제 경로와 후일담만 보존한다. P2부�
 ### 기본 스토리 모드의 Action 기반 경보와 결과 연출
 
 P1은 동기 처리다. UI progress·타이핑·지연처럼 보이는 효과는 커밋된 결과의 연출이며 별도 작업 큐나 실제 대기를 요구하지 않는다.
-기본 스토리 모드는 로컬 오타·허용된 파일 읽기·IME·창 조작에 risk를 부여하지 않는다. 반복 `AUTH_DENIED`/접근 거부 등 서비스 경계의 위험 행동만 해당 경보를 높인다.
+기본 스토리 모드는 로컬 오타·허용된 파일 읽기·IME·창 조작에 risk를 부여하지 않는다. 반복 `AUTH_DENIED`/접근 거부 등 서비스 경계의 위험 행동만 해당 경보를 높인다. 경보는 미션 데이터 `alert_max`(기본 3)를 넘지 않는다.
 임계 뒤에는 해당 비인증 경로를 제한하되 유효 세션·다른 허용 경로·체크포인트 재시도를 유지한다. wall-clock 사망 타이머는 없다. 구체적 수치와 회복 정책은 [DESIGN](../DESIGN.md)의 단일 정의를 따른다.
 동일 초기 상태와 Action 순서는 같은 결과를 만든다. P2 이후 복습 변형에 랜덤이 필요할 때만 seed를 저장한다.
 `pending_jobs`는 P2/MVP 이후 실제 비동기 서비스 효과가 필요한 미션이 생겼을 때 도입한다. 그때 due tick·대상·전제·실행 세대를 저장하고 완료 때 재검증하며, 취소/재시작/불러오기 후 이전 콜백을 무효화한다. UI 연출만으로는 도입하지 않는다.
@@ -91,7 +87,7 @@ P1은 동기 처리다. UI progress·타이핑·지연처럼 보이는 효과는
 
 ### P1에서 구현할 부분집합
 
-P1은 M01 한 건에 필요한 host/account/session·가상 파일·회수 자료·현재 목표/대상 제약·의뢰/후일담 텍스트·관찰 목록만 가진다. 명령 등록표와 최소 파서가 지원 기능을 제한한다. 웹 사본 경로를 택해도 완제품 브라우저가 아니라 내부 route/요청 부분만 추가한다.
+P1은 M01 한 건에 필요한 host/account/session(가상 암호 포함)·가상 파일과 `record_id`·회수 자료·현재 목표/대상 제약·`alert_max`·의뢰/후일담 텍스트·관찰 목록만 가진다. 명령 등록표와 최소 파서가 지원 기능을 제한한다. 웹 사본 경로를 택해도 완제품 브라우저가 아니라 내부 route/요청 부분만 추가한다.
 현재 WorldState에서 목표와 제약을 매 Action 뒤 재평가한다. 관찰 두 개를 차례로 얻었다는 이유로 앞 관찰을 지우거나 revision 불일치로 무효화하지 않는다. 현재 권한/서비스 조건은 현재 상태로 확인한다.
 저장은 `save_version`, `mission_id`, `world`, 완료/회수 자료/후일담 상태로 시작한다. 전체 schema·content hash·학습 분석·자동 migration을 선구현하지 않는다.
 학습 안내/스킵 여부를 보관하더라도 통과 판정은 이를 읽지 않는다. 학습 진도와 캠페인 완료의 의미를 처음부터 분리하며 상세 루브릭은 구현하지 않는다.
@@ -101,12 +97,12 @@ P1은 M01 한 건에 필요한 host/account/session·가상 파일·회수 자�
 아래 표와 JSON은 MVP 규모의 계약 참조다. P1 로더는 위 부분집합의 필수 필드·자료형·ID·경로·참조만 검증한다. 필요 없는 사이트·도구·번역·학습 필드를 빈 구조로 모두 채우게 하지 않는다.
 
 ID는 안정적인 ASCII 문자열, 화면 이름은 별도 지역화 키다. ID는 저장 호환성과 참조용이며 번역하거나 표시 이름에서 생성하지 않는다.
-JSON의 객체/배열/문자열/불리언을 사용하고, 정수 필드는 소수·범위 초과를 거절한다. JSON 파싱 성공 뒤 자료형을 별도 검사해야 한다. [Godot JSON](https://docs.godotengine.org/en/stable/classes/class_json.html)
+JSON의 객체/배열/문자열/불리언과 문자열 키를 사용한다. Godot JSON 파싱은 숫자를 float로 읽으므로 정수 필드는 숫자 타입·유한성·소수부0·스키마 범위를 검사한 뒤 의미를 보존하는 int 정규화를 한다. 문자열/불리언/분수·범위 초과를 묵시 변환하지 않는다. 큰 식별자는 처음부터 문자열 ID로 둔다. 파싱된 TYPE_INT만 허용하는 검사나 저장 전후 원시 타입만 비교하는 방식은 사용하지 않는다. [Godot JSON](https://docs.godotengine.org/en/stable/classes/class_json.html)
 
 | 계약 | MVP에서 해당 기능을 도입할 때의 필드와 의미 |
 |---|---|
 | HostDef | `id:string`, `address:string`(가상 주소), `account_ids:string[]`, `files:FileDef[]`, `services:ServiceDef[]` |
-| FileDef | `path:string`(가상 절대 경로), `kind:file/dir`, `owner_id:string`, `group:string`, `mode:string`(세 자리 8진수), `content:string` 또는 서사 문서의 `content_key:string` |
+| FileDef | `path:string`(가상 절대 경로), `kind:file/dir`, `owner_id:string`, `group:string`, `mode:string`(세 자리 8진수), `content:string` 또는 서사 문서의 `content_key:string`, `record_id:string?`(목표 판정용 자료 ID, 복사·저장 경로가 바뀌어도 유지) |
 | ServiceDef | `id:string`, `port:int`(1~65535), `protocol:ssh/http/https/ftp/db`, `enabled:bool`, `site_id:string?`, `policy:object`, `banner_key:string?` |
 | DNSDef | `name:string`(`*.test`), `host_id:string`; 이름 해석과 호스트 도달 가능성을 별도 상태로 관리 |
 | NetworkLink/FirewallRule | 출발/도착 host ID·활성 상태 / 우선순위·출발 범위·대상 port·allow/drop/reject; 실제 방화벽 API와 무관 |
@@ -118,7 +114,7 @@ JSON의 객체/배열/문자열/불리언을 사용하고, 정수 필드는 소�
 | VirtualResponse | `request_id`, `status:int`, `headers:object`, `body_model:object`, `trace:array`, `evidence_tags:string[]` |
 | SiteDef | `id`, `origin`, `host_id`, `routes:RouteDef[]`, `objects:object[]`, `policies:object`, `search_terms:string[]` |
 | RouteDef/PageModel | method·경로 패턴·handler ID / 제목·본문 블록·링크·폼의 번역 키; HTML 문자열 실행/렌더 없음 |
-| MissionDef | `id`, `initial_bundle_id`, `prerequisites`, `tool_unlocks`, `goals`, `allowed_repairs`, `hint_ids`, `learning_checks`, `report_choices`; 학습 항목은 캠페인 통과 조건과 분리 |
+| MissionDef | `id`, `initial_bundle_id`, `prerequisites`, `tool_unlocks`, `goals`, `alert_max:int`(1~3, 기본 3), `allowed_repairs`, `hint_ids`, `learning_checks`, `report_choices`; 학습 항목은 캠페인 통과 조건과 분리 |
 | GoalDef | `id`, `kind`, `target`, `expected`, `evidence_policy:any_valid_evidence`; 최종 목표·정상 서비스·대상 제약을 평가하고 유효 근거 출처를 강제하지 않음 |
 | CampaignState | 완료 미션·서사 분기·실제 풀이 경로 요약·발견 사실·보존한 player_artifacts·명시적 world_effects; 기술 사용 여부와 별도로 기록 |
 | LearningState | 기술별 도입/연습/독립 확인/미평가·힌트 사용 단계·도구 소개·회고 응답; CampaignState와 별도 |
@@ -138,6 +134,7 @@ JSON의 객체/배열/문자열/불리언을 사용하고, 정수 필드는 소�
 터미널 ssh는 가상 연결 스택을 쌓는다. 종료하면 이전 host/account/cwd로 복귀하며 다른 터미널의 계정은 바꾸지 않는다.
 캠페인 Goal kind는 `state_assertion`, `request_assertion`, `service_available`, `target_constraint`처럼 유한하게 등록한다. 도구 사용·특정 입력·페이지 방문·설명 답안은 선택적 learning check이며 필수 완료 조건이 아니다.
 미션 JSON에서 임의 식·스크립트·동적 클래스 경로를 받지 않는다. 두 미션 이상이 필요로 할 때만 새 kind를 추가한다.
+콘텐츠 로더는 `goals`가 비어 있는 미션과 등록되지 않은 goal kind를 거절한다. 빈 목표 목록을 ‘완료’로 평가하거나 모르는 kind를 건너뛰면 미션이 즉시 완료될 수 있다. 콘텐츠에 적은 수치·문자열의 의미·단위·범위를 유지하며 `-1` 보정 같은 숨은 의미 변경을 두지 않는다. 앞서 정의한 JSON 숫자의 검증·의미 보존 타입 정규화는 허용한다.
 
 ### MVP 참조 JSON 예시: M05의 작은 콘텐츠 번들
 
@@ -200,6 +197,11 @@ JSON의 객체/배열/문자열/불리언을 사용하고, 정수 필드는 소�
 순환 선수 미션, 동일 method+route 충돌, 다른 host 소유 계정, 불가능한 초기 경로, 지원되지 않는 기능만으로 풀어야 하는 목표도 검출한다.
 validator 통과는 퍼즐 해결 가능성의 증명이 아니다. 정상 해결 재생과 실패/회귀 사례는 별도로 실행한다.
 
+### 회수 자료의 정체성과 무결성
+
+`record_id`는 신뢰된 콘텐츠가 선언한 불변 기록의 식별자다. 파일명·경로·UI 이름이나 플레이어가 편집한 본문에서 새 ID를 추측하지 않는다. 회수된 사본은 **목표 ID+해당 기록의 원본 데이터+허용 출처**를 유지해야 유효하다. ID만 같고 본문이 바뀐 사본, 다른 기록에 ID만 붙인 사본, 허용하지 않은 출처는 완료를 만들지 않는다.
+P1의 작은 기록은 콘텐츠에 선언한 원본 데이터와 직접 값 비교해 충분하다. 별도 해시 엔진을 먼저 만들지 않는다. 웹 보관 사본은 같은 불변 기록과 허용 출처를 선언해 다른 유효 경로로 인정한다. 번역된 화면 문구와 기록 원본 데이터를 분리하며, 복사·파일명 충돌 처리도 ID와 원본 데이터·출처를 바꾸지 않는다.
+
 ## 5. 가상 브라우저와 내부 인터넷
 
 주소는 URL 파서가 scheme·host·port·path·query·fragment로 나눈 뒤 내부 DNS와 SiteDef로만 전달한다.
@@ -218,9 +220,9 @@ HTTPS 표시는 가상 보안 정책의 설명용이다. 실제 TLS·인증서·
 ## 6. 리눅스 명령 부분 구현
 
 아래는 전체 셸 호환이 아닌 **게임 안의 지원 계약**이다. 도움말에 지원 인자·예시·가상 범위를 표시한다.
-P1은 M01 경로가 쓰는 도움말·가상 연결·파일 탐색/읽기·가상 사본 회수의 명령/인자만 등록한다. 아래 v0 표 전체는 P2 목표이며 P1 완료 목록이 아니다.
-M01의 첫 연결 명령은 `ssh <계정>@<가상 host>`이며 의뢰에 제공된 프리셋 계정도 동일한 가상 서비스·접근 검사를 거친다. 별도 `connect` 명령이나 자동 root 별칭은 등록하지 않는다.
-v0 파서는 공백·단/쌍따옴표·제한된 이스케이프를 처리한다. 알 수 없는 옵션은 무시하지 않고 오류와 지원 도움말을 준다.
+P1은 M01 경로가 쓰는 `help`·`ssh`·`exit`·`ls`·`cd`·`pwd`·`cat`·`scp`만 등록한다. 아래 v0 표 전체는 P2 목표이며 P1 완료 목록이 아니다.
+M01은 메일의 `guest` 계정으로 접속하고, 메모에서 찾은 정비 계정과 가상 암호로 다시 `ssh`한다. 두 계정 모두 같은 가상 서비스·인증·접근 검사를 거친다. 별도 `connect` 명령이나 자동 root 별칭은 등록하지 않는다.
+v0 파서는 공백·단/쌍따옴표·제한된 이스케이프를 모든 명령에 같은 규칙으로 처리한다. 명령 이름은 대소문자를 구별하고, 별칭은 `command_registry.gd` 한 곳에서만 정의한다. 알 수 없는 옵션은 오류와 지원 도움말을 준다.
 
 | 명령 | v0: 세 미션에 필요한 부분 | v1: 콘텐츠가 요구할 때 추가 | 비지원 경계 |
 |---|---|---|---|
@@ -229,10 +231,11 @@ v0 파서는 공백·단/쌍따옴표·제한된 이스케이프를 처리한다
 | cat | 가상 텍스트 파일 하나 | 여러 파일 순서 출력 | 바이너리·디바이스·stdin 무한 읽기 |
 | grep | 고정 문자열+파일, `-n` | `-i`, `-v`, `-F`, 파이프 입력 | 정규식·PCRE·셸 확장 |
 | find | 미지원임을 명시 | 시작 경로와 `-name`의 제한된 `*` 패턴 | `-exec`·실제 디스크 탐색 |
-| cp / mv | M01 회수용 가상 파일 복사, mv 미지원 | 단일 파일 복사/이동, 권한 검사 | 재귀·장치간 이동·덮어쓰기 묵인 |
+| scp | 연결 중인 원격 host의 파일 하나를 로컬 `~/archive`(기본) 또는 지정 로컬 경로로 복사. 읽기 권한 검사, `record_id`·출처 유지, 같은 이름이 있으면 `이름(1)` 식으로 저장하고 알림 | 한 폴더의 `*` | 실제 SCP/SFTP·`-r`·원격→원격. 도움말에 실제 `scp user@host:경로 로컬경로` 형식과의 차이를 표시 |
+| cp / mv | 미지원임을 명시 | 단일 파일 복사/이동, 권한 검사 | 재귀·장치간 이동·덮어쓰기 묵인 |
 | mkdir / touch / rm | 미지원임을 명시 | 단일 디렉터리/빈 파일/파일 삭제 | `rm -rf`, 실제 파일 삭제 |
 | chmod | 미지원임을 명시 | 세 자리 숫자 모드+가상 경로 | 기호 모드·재귀·ACL·setuid |
-| ssh | 프리셋 계정의 `user@host`, `exit` | 가상 암호/키 참조 인증·실패 로그 | 실제 SSH·포트포워딩·호스트 키 시스템 |
+| ssh | `user@host`, 가상 암호 인증(입력 가림), 실패 시 `AUTH_DENIED`, `exit` | 가상 키 참조 인증·실패 로그 조회 | 실제 SSH·포트포워딩·호스트 키 시스템 |
 | nmap | 단일 가상 host의 포트 상태, `-sV`의 작성된 서비스 배너 | `-p` 단일/쉼표 포트 목록 | CIDR·NSE·실제 패킷·OS 지문 |
 | dig / ping / traceroute | `dig host` 내부 DNS 조회 | 제한 횟수 ping, 그래프 경로 traceroute | 외부 DNS·ICMP·실측 지연 |
 | curl | URL, `-i`, `-X GET/POST`, `-H`, `-d` | 명시적 가상 cookie jar, 제한 redirect | 셸 치환·실제 TLS·임의 URL |
@@ -318,6 +321,8 @@ P1부터 UI 장면/Node를 직렬화하지 않고 검증 가능한 값만 기록
 저장 순서는 스냅샷 검증→tmp 쓰기·flush·닫기→다시 읽기/검증→현재 정상본의 backup 갱신→tmp를 본 파일로 교체다.
 각 I/O 오류를 확인하고 기존 정상본을 먼저 삭제하지 않는다. rename 지원과 오류 반환은 Godot API에서 제공하지만 전원 차단 내구성은 플랫폼별 실험이 필요하다. [Godot 저장 안내](https://docs.godotengine.org/en/stable/tutorials/io/saving_games.html), [DirAccess rename](https://docs.godotengine.org/en/stable/classes/class_diraccess.html#class-diraccess-method-rename-absolute)
 불러오기는 크기 상한·JSON·형식·범위·참조·미션/세션 불변식을 검증한 새 상태를 만든 뒤 한 번에 교체한다.
+저장 왕복에서 S는 **스키마가 정의한 권위 있는 지속 상태의 값 스냅샷**이다. 계정/권한·가상 파일 원본 데이터와 ID/출처·현재 세션의 게임 ID/cwd·경보·완료 표시·회수 자료·답장/후일담·다음 단서를 포함한다. Node·UI 객체·콜백·실행 핸들·복원 때 새로 만드는 실행 세대는 재구성 대상이며 이 비교에서 제외한다.
+`normalize(snapshot(load(save(S))))`를 저장 전에 독립적으로 준비한 기대 스냅샷과 깊은 값 비교한다. normalize는 위 스키마 검증과 의미 보존 숫자 정규화만 하며 필드 누락을 기본값으로 덮지 않는다. 테스트의 기대값을 저장기와 같은 필드 추출 함수로 만들면 양쪽에서 빠진 필드를 놓칠 수 있으므로, 비기본 중첩 값을 가진 독립 fixture로 누락·키 오타·중첩 변경을 검출한다. 새 지속 필드는 스키마와 기대 fixture에도 함께 반영한다. [Godot 저장 안내](https://docs.godotengine.org/en/stable/tutorials/io/saving_games.html), [Dictionary 값 비교](https://docs.godotengine.org/en/stable/classes/class_dictionary.html)
 P1은 동기 처리이므로 pending job 복원이나 비동기 콜백 세대 관리가 없다. 실제 지연 효과를 도입하는 단계부터 저장된 작업만 새 실행 세대에 연결하고 이전 콜백을 무효화한다.
 MVP 이후 호환 지원이 필요할 때 `schema_version`(콘텐츠 계약), `content_hash`(정렬된 콘텐츠 경로+바이트), 순차 migration/호환표를 추가한다. 빌드 버전과 저장 형식 번호를 혼용하지 않고 해시는 변경 감지용으로 사용한다.
 호환 기능 도입 후에도 매핑 없는 저장의 원본·캠페인·학습 기록은 보존한다. 필요하면 사본 슬롯에서 사건을 새 번들+이월 효과로 재시작할 선택을 제공하고 미지원 자료/효과를 조용히 삭제하지 않는다.
@@ -359,7 +364,7 @@ P1 재시작은 사건 초기 상태/체크포인트에서 WorldState·해당 �
 역할 파일 수는 분리 필요가 생길 때 늘린다. 첫 시제품부터 범용 플러그인 시스템·추상 저장소·미션 DSL을 만들지 않는다.
 P1 첫 제품 소스를 추가할 때 `tools/gate.sh`와 실제 검사 코드를 함께 만든다. 빈 성공 스크립트·누락 시 skip·grep만으로 경계가 증명됐다는 판정은 허용하지 않는다. 현재 문서 작업에서 gate 파일을 대신 만들지 않는다.
 예정 headless 진입점은 `godot --headless --path godot --script res://tests/headless/run_all.gd`다. gate는 콘텐츠 검증과 이 runner의 비영 종료를 전달하고, 가상 URL/FS 경계 거절의 동적 사례와 외부 API 사용의 정적 검사를 함께 실행한다. [Godot CLI](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html)
-P1은 M01 초기 미달→지정 자료 회수→후일담·재개, 실패 상태 불변·가상 host 경계·현재 목표 재평가·학습/pin 비강제·세션 재열기·관찰 상호 보존·저장 왕복/손상/쓰기 실패를 검사한다.
+P1은 M01 초기 미달→`guest` 거부→재접속→지정 자료 회수→후일담·재개, 실패 상태 불변·가상 host 경계·현재 목표 재평가·기록 ID+원본 데이터/출처 판정·완료 효과1회·학습/pin 비강제·세션 재열기·관찰 상호 보존·저장 왕복(deep-equal)/손상/쓰기 실패, 빈 goals·미등록 goal kind 거절을 검사한다.
 P2부터 브라우저/curl/RequestLab 일치·다중 세션 격리·M05/M09 대안 풀이를 추가한다. M05 선택 복구의 타인403/소유자200과 M09 정상 검색 보존은 해당 선택 연습을 구현할 때 추가한다.
 작업 큐·이월·상세 학습·호환표 회귀는 해당 기능의 도입 단계에서 추가한다. export 뒤 콘텐츠 포함 여부는 빌드 단계에서 별도로 확인한다.
 headless 통과로 한글 IME·렌더·드래그·키보드 접근성·배포 실행을 입증하지 않는다. 실제 창과 설치형 산출물에서 확인한다.
