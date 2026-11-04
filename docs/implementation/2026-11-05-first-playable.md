@@ -101,3 +101,31 @@ Mac 초기 한글 내부 실행파일명 패키지에서는 서명 리소스 검
 Claude가 제안한 누름 시점 복귀는 실제 엔진 이벤트에서 버튼 클릭을 취소했다. 손을 뗀 뒤로 복귀 시점을 옮기고 앱 변경/모달을 보호하자 UI30 검사가 통과했다. 정적 제안 자체를 무조건 수용하지 않았다.
 
 최종 실제 Mac 새 작업에서 목록에서 사라진 완료 메일을 화면이 계속 보여주는 문제를 발견했다. 선택 ID가 현재 목록에 없으면 첫 유효 메일을 선택하도록 수정하고, 완료답장을 선택한 상태에서 초기화하는 재현 회귀를 추가했다. UI32 통과. 기존 태그를 강제로 바꾸지 않고 v0.1.1-dev 패치판으로 전달한다.
+
+## 최종 전달 — 0.1.1-dev
+
+배포 소스: `db6735e226cc040037a8e783bd0e1c8977814ce2`. 저장소는 비공개를 유지한다. [개발판 다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v0.1.1-dev)에서 세 OS ZIP·SHA256SUMS·build-info를 받을 수 있다. 기존 0.1.0 초판은 태그를 강제로 바꾸지 않고 초안으로 보관했다.
+
+| 대상 | 설치형 파일 | GUI 확인 |
+|---|---|---|
+| macOS arm64+x86_64 | [Mac ZIP](https://github.com/choijunhuk/packet-trail/releases/download/v0.1.1-dev/MidnightAccess-macOS-universal-0.1.1-dev.zip) | Apple Silicon 실제 조작·M01 완료·저장 재개·입력 전환·새 작업 메일 갱신 확인 |
+| Windows x86_64 | [Windows ZIP](https://github.com/choijunhuk/packet-trail/releases/download/v0.1.1-dev/MidnightAccess-Windows-x86_64-0.1.1-dev.zip) | NOT_RUN |
+| Linux x86_64 | [Linux ZIP](https://github.com/choijunhuk/packet-trail/releases/download/v0.1.1-dev/MidnightAccess-Linux-x86_64-0.1.1-dev.zip) | NOT_RUN |
+
+ZIP 전체를 압축 해제한다. Windows/Linux는 실행파일과 `.pck`를 같은 폴더에 둔다. Mac ZIP에서 앱을 꺼내 실행한다. Mac은 native ad-hoc 서명·Universal2 구조와 최종 ZIP 추출 뒤 strict/deep 서명 검사를 통과했다. Apple 공증과 Windows Authenticode는 적용하지 않았다. OS의 개발자 확인 경고가 나타날 수 있다.
+
+[최종 소스 3OS CI](https://github.com/choijunhuk/packet-trail/actions/runs/41928688757)는 Ubuntu24.04·macOS15·Windows2025에서 각각 콘텐츠3/코어·저장336/Python15/경계4 및 전체 gate PASS다. Mac native 렌더/UI32와 실제 설치 앱의 키보드·마우스 검증은 별도 수행했다. Windows/Linux GUI, 사람의 물리 한글 IME 연속 조합, 스크린리더, 사람의 재미·분량은 통과로 표시하지 않는다.
+
+세 PCK를 빈 독립 프로젝트에서 로드해 실제 M01·장면·폰트/엔진 라이선스가 포함되고 테스트/캡처 도구는 제외됨을 확인했다. ZIP에는 README·소스 커밋·폰트/엔진 저작권 자료도 함께 넣었다. 세 ZIP CRC·중복 항목·소스 ID·SHA-256 검사를 수행했다.
+
+단순화: 기존 메일 선택 핸들러를 재사용하고, 마우스 포커스는 공통 해제 처리에서 복구한다. 중첩 테스트가 사용할 Bash는 gate 한 곳에서 전달한다. 새 런타임 의존성·실제 VM/셸/네트워크는 추가하지 않았다.
+
+| ZIP | 바이트 | SHA-256 |
+|---|---:|---|
+| `MidnightAccess-Linux-x86_64-0.1.1-dev.zip` | 35,264,340 | `b91af67aff49e2c5da05f6f0e51606710430b6ef537d3be45c6becc32dc75648` |
+| `MidnightAccess-Windows-x86_64-0.1.1-dev.zip` | 44,845,582 | `3dc7b7699dd32b49539de8236cbdca85076fdb12767f45ddc5f5e0d298a35ff6` |
+| `MidnightAccess-macOS-universal-0.1.1-dev.zip` | 65,945,373 | `6c56fd4f27a4a3e5c522efef1f859b4d3629bb3fac840c94f731db213f35e674` |
+
+배포 파일의 소스/해시 기준은 위 기록과 [체크섬](https://github.com/choijunhuk/packet-trail/releases/download/v0.1.1-dev/SHA256SUMS.txt)이다. 이후 문서 커밋은 실행파일 소스를 바꾸지 않는다. 8~12시간 완성판·P2 3미션·3D·아트 정본·언어/OST·방어자/추적자편은 구현 완료 범위가 아니다.
+
+최종 GitHub release의 ZIP3개는 서버가 보고한 크기와 SHA-256이 로컬 산출물과 모두 일치했다. 자산5개(ZIP3+checksum+build-info)와 비공개/prerelease 상태를 확인했다. 최종 Mac 0.1.1 패키지에서 완료답장→새 작업→초기 의뢰 메일/목표 일치→저장 후 자동저장 ON까지 실제 조작했다. 전달 화면은 초기 의뢰로 준비했다.

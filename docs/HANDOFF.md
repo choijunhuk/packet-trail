@@ -4,7 +4,7 @@
 
 ## 현재 구현과 다음 작업
 
-P0/P1의 실제 M01 묶음·두 회수 경로·저장/복구·UI를 구현했다. 실행은 `godot --path godot`, 전체 자동 검증은 `bash tools/gate.sh`다. 코드 작성자/교차검토·실행 증거·현재 패키지 범위는 [첫 실행 기록](implementation/2026-11-05-first-playable.md)을 따른다.
+P0/P1의 실제 M01 묶음·두 회수 경로·저장/복구·UI를 구현하고 0.1.1-dev로 패키징했다. 최종 소스 db6735e의 3OS headless CI와 개발 Mac 실제 조작을 확인했다. 실행은 `godot --path godot`, 전체 자동 검증은 `bash tools/gate.sh`다. 코드 작성자/교차검토·실행 증거·현재 패키지 범위는 [첫 실행 기록](implementation/2026-11-05-first-playable.md)을 따른다.
 
 다음은 실제 키보드/IME·사람의 첫 플레이로 막힘과 재미를 확인한 뒤 단계표의 P2로 넓히는 것이다. M05/M09·3D 회색상자·ko/en·각 OS 범위를 검증하면서 추가한다. 존재하는 M01을 다시 스텁으로 만들거나 문서 계획을 구현 완료로 간주하지 않는다.
 

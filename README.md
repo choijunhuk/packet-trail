@@ -47,6 +47,8 @@
 
 ## 실행
 
+설치형 첫 실행판 **0.1.1-dev**: [Windows·Mac·Linux 다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v0.1.1-dev). 현재는 M01 한 사건이며, 각 OS 검증 범위는 [전달 기록](docs/implementation/2026-11-05-first-playable.md)을 따른다.
+
 Godot 4.7 standard가 설치된 환경에서 저장소 루트에서 실행한다.
 
 ```sh
