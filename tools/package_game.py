@@ -212,7 +212,7 @@ class PackageTests(unittest.TestCase):
         (self.input / "MidnightAccess.exe").write_bytes(b"fixture executable, never executed")
         (self.input / "MidnightAccess.pck").write_bytes(b"fixture pack")
         self.license = self.root / "LICENSE.txt"
-        self.license.write_text("fixture license\n", encoding="utf-8")
+        self.license.write_bytes(b"fixture license\n")
         self.output = self.root / "release.zip"
 
     def build(self):
