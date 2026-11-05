@@ -175,3 +175,19 @@ C14는 직접 Godot를 실행하지 않았다. 부모의 전체 headless/import�
 A26은 마지막 실제 재실행에서 일반 입력 대기와 캡처 draw를 분리했다. static/occluded 창에서 `frame_post_draw`를 무조건 기다리던 검증기 가정을 제거했으며, 실제 포인터를 옮기거나 버튼 신호를 직접 호출하지 않았다. 결과는 M3 full 3,761/0·28사건498행동, smoke451/0이며 root가 로그와 소스 `32f31bc` 일치를 확인했다. A24의 CI 부분 프로필은 실제 Linux450/0·M01 1/28로 통과했고 세OS 전체 headless 범위는 유지했다.
 
 부모는 같은 소스의 세OS export와 PCK47×3·ZIP검증·Mac strict/deep ad-hoc 서명을 확인하고, 최종 ZIP에서 꺼낸 앱의 실제 OS 마우스 A+/A−·입력 포커스·수동저장·저장복원·작업실 왕복·새게임 확인창을 CUA로 검증했다. 배포와 최종 문서의 검증 근거는 [전체판 기록](implementation/2026-11-05-full-production.md)에 있다.
+
+### 2026-11-05 사용자 피드백 뒤 읽기 전용 전체 재검사
+
+사용자는 OST가 너무 잔잔하다고 평가하고 Claude의 전체 검사와 코드 수정 금지를 요청했다. [최신 결과](reviews/CLAUDE_FULL_AUDIT_20261105.md)의 기준은 a70e3bc다. 실행 소스/설정55개와 실제 캠페인·fixture·KOEN원고·관련 도구/계약을 세 입력으로 나눴다. 모든 원본260파일의 전후 SHA가 같음을 확인한 뒤 부모가 보고 문서만 작성했다.
+
+| ID | 요청 모델·수준 | 실제 사용 이력과 작업 |
+|---|---|---|
+| C18 | claude-opus-5-5 / xhigh | modelUsage5.5, 코어/저장/모델/목표,950.289초, exit0/is_error=false, Important2 원문 |
+| C19 | claude-opus-5-5 / xhigh | **modelUsage5.5+4.8**, 화면/입력/3D/현지화/오디오,907.064초, exit0/is_error=false. 최종 화자 귀속 미노출, 단독5.5로 표시하지 않음 |
+| C20 | claude-opus-5-5 / xhigh | modelUsage5.5, 제작/콘텐츠/검사/패키징/CI,565.846초, exit0/is_error=false, Important4 원문 |
+| A30 | gpt-6.1-sol / xhigh | Claude의6개 중요 주장에 대한 독립 읽기 전용 source triage. Important3·Medium3으로 재판정, 변경 제안 미실행 |
+| A31 | gpt-6.1-sol / high | 원본을 보존한 검토용 OST7곡+엔딩 edit·음량 일치 A/B·decode/hash/loop/clipping 검증. 게임 적용0·실청미실시 |
+
+세 Claude 호출은 로컬 CLI2.1.311의 safe-mode/restricted, tools빈목록·empty strict MCP·dontAsk/permission-promptsnone·no-session-persistence로 수행했다. Write/Edit/Bash/Read를 포함한 파일/실행 도구를 주지 않고 동결 본문만 전달했으며 permission_denials는 모두빈배열이다. 전역 Claude 설정·인증은 바꾸지 않았다. 실제 사용 모델과 요청 수준을 별도로 기록했으며 숨은 thinking 원문은 보고서에 옮기지 않았다.
+
+부모는 새 임시 진단 파일과 고유 테스트 슬롯으로 최종경로 초과 저장 거절, 완료 여부에 따른 reset복구 차이,128항목 보관 제한, M06/M23 HTTP보상 비대칭, 역방향 창 순환, UI등록 배열 누적을 재현했다. 기본 저장/설정 SHA는 같았다. 기존 전체 gate도 다시 PASS였지만 새 결함을 덮는 근거로 사용하지 않았다. 사람 청취·재미·원어민·실제8~12시간과 독립 퍼즐 다양성은 자동 검사와 구분했다. 게임/테스트/제작 도구 원본은 수정하지 않았다.
