@@ -1,7 +1,7 @@
 # 전체판 1.0.0-rc1 · 네이티브 패키지와 CI 준비
 
 작성일: 2026-11-05 · 작업 트리: `packet-trail-full`, 브랜치: `feat/full-campaign`.
-이 문서는 **프리셋·패키저·CI 설정 준비와 자체 검사** 기록이다. 전체 gate·export·배포·새 3OS GUI 검증을 실행했다는 뜻이 아니다.
+1~7절은 담당자의 **프리셋·패키저·CI 설정 준비와 자체 검사** 당시 기록이다. 이후 root의 실제 export·CI·배포 결과는 8절과 [최종 전체판 기록](2026-11-05-full-production.md)에 있다.
 게임 본편과 사용자 진행을 바꾸지 않으며, 자동 publish·새 런타임 의존성·서명 자격 증명을 추가하지 않는다.
 
 ## 1. 버전과 export 대상
@@ -28,7 +28,7 @@ macOS는 기존에 선택한 native ad-hoc 설정을 유지한다. Developer ID�
 | `locales/{ko,en,ja,zh_Hans,es,de}.po`와 Godot import 리소스 | `localization.gd`의 실제 로드 경로. 작성용 JSON을 직접 읽지 않음 |
 | `assets/audio/**`의 음악·효과음·환경음 리소스 | AudioDirector가 선택하는 런타임 자산. LICENSE/manifest도 명시 포함 |
 | `assets/portraits/C01~C04-*.png` 16개와 SOURCE | 인물별 4표정. 얼굴 공개는 UI/서사 정책이 담당하며 파일 존재가 공개 조건은 아님 |
-| KR/JP/SC 폰트·OFL·SOURCE·JP/SC METADATA | 실제 fallback 글리프와 제작자·출처·라이선스 확인 자료 |
+| KR/JP/SC/Mono 폰트·OFL·SOURCE·METADATA | 실제 fallback·Latin 고정폭 글리프와 제작자·출처·라이선스 확인 자료 |
 | room 셰이더·UI 마크·장면·코드 | 실제 룸/가상 OS 표시 |
 | `LICENSE-Godot.txt`, `THIRD-PARTY-LICENSES.json` | 엔진과 포함 라이브러리 고지 |
 
@@ -36,13 +36,13 @@ macOS는 기존에 선택한 native ad-hoc 설정을 유지한다. Developer ID�
 PO 생성용 `campaign.source.json`, narrative/results/common/guidance 원본과 pseudo-layout 계약은 작성·검사용이며 현재 런타임 로드 대상이 아니다.
 `tests/fixtures/campaign_solutions.json`은 플레이 검증용 해법 자료이므로 제품에 넣지 않는다. 게임 판정에 필요한 본편 목표·상태 데이터와 구분한다.
 이 구분은 파일 기밀성을 보장하는 암호화 장치가 아니다. 런타임 참조가 바뀌면 필터와 실제 PCK 검사도 함께 고쳐야 한다.
-필터와 16개 초상·13개 외부 고지/출처 파일의 존재를 정적으로 확인했다. **실제 exported PCK의 포함·제외 확인은 root export 후 남는다.**
+초기 필터·자산 정적 확인 뒤 Mono 고지/출처도 추가했다. 현재 외부 고지/출처는15개다. 실제 PCK의 포함·제외 확인 결과는 8절에 있다.
 
 ## 3. 표준 라이브러리 ZIP 패키저
 
 [package_game.py](../../tools/package_game.py)는 완성된 로컬 export 디렉터리를 읽는다. Godot·실행 파일·외부 명령을 실행하거나 인터넷에서 자료를 가져오지 않는다.
 출력 ZIP에는 `MidnightAccess/` 아래 게임 파일과 읽기 가능한 `licenses/`, `PACKAGE.json`, `SHA256SUMS.txt`가 있다.
-고지 13개는 저장소의 현재 엔진·폰트·음향·초상 출처 파일에서 복사한다. 원작 게임의 파일이나 자산을 별도로 추가하는 경로는 없다.
+고지 15개는 저장소의 현재 엔진·폰트·음향·초상 출처 파일에서 복사한다. 원작 게임의 파일이나 자산을 별도로 추가하는 경로는 없다.
 
 - `PACKAGE.json`: 제품 ID, 버전, 대상 OS/아키텍처, source commit/tree SHA, payload 파일 수와 출처 한계.
 - `SHA256SUMS.txt`: payload·고지·PACKAGE.json 전체의 SHA256. 자기 자신은 순환을 피하려고 제외한다.
@@ -91,7 +91,7 @@ checkout/setup-python의 기존 commit pin, `contents: read`, Python 3.12, Windo
 있으면 임시 빈 프로젝트를 virtual X11에서 시작해 소프트웨어 OpenGL 초기화를 확인한다. 이 단계만 성공했다고 제품 GUI PASS를 주지 않는다.
 [Mesa의 `LIBGL_ALWAYS_SOFTWARE=true`](https://docs.mesa3d.org/envvars.html)는 소프트웨어 렌더를 요청한다. 실제 로그의 llvmpipe/softpipe도 확인한다.
 환경 preflight가 실패하거나 소프트웨어 renderer가 식별되지 않으면 이유·로그와 함께 `NOT_RUN`이다.
-환경이 확인되면 **headless 옵션 없이** 실제 source `capture_full_game.gd`를 Compatibility/OpenGL로 실행한다.
+환경이 확인되면 **headless 옵션 없이** 실제 source `capture_full_game.gd -- --ci-render-smoke`를 Compatibility/OpenGL로 실행한다. 이 프로필은 M01 1/28사건과 6언어의 부분 GUI 검사다. 나머지27사건·결말 GUI는 NOT_RUN이며, 전체28사건×2해법 headless와 로컬 Mac 전편 GUI를 별도로 보고한다.
 이후 제품 스크립트 오류·타임아웃·실패 suite·누락된 capture/metrics는 CI 실패다. 환경 문제라는 이유로 제품 실패를 무조건 건너뛰지 않는다.
 성공 조건은 양의 검사 수·빈 failures·실제 OpenGL software 로그·PNG 서명/크기·샘플 명암 차이·파일 SHA256과 helper 기록의 일치다.
 job summary에 suite 실행 로그와 renderer, PNG별 크기·샘플 명암 min/max·SHA256을 남긴다. 원본 PNG는 업로드하지 않아 CI 종료 후 다운로드할 수 없다.
@@ -107,10 +107,20 @@ job summary에 suite 실행 로그와 renderer, PNG별 크기·샘플 명암 min
 이 workflow의 Windows native Compatibility/D3D12-WARP와 macOS hosted-runner GUI는 명시적으로 `NOT_RUN`이다. 3OS headless 통과와 별개다.
 새 driver·SDK·소프트웨어 renderer를 설치하지 않는다. root의 실제 OS별 export/GUI 검증과 로컬 macOS 캡처가 후속 증거다.
 
-## 7. 현재 검증 기록과 남은 확인
+## 7. 초기 담당 검증과 당시 남은 확인
 
 - 패키저 자체 검사 **10개 PASS**: 세 대상 구조, 실행 권한, 메타/고지/SHA/CRC, 같은 입력 재현, 부정 경로·중복·symlink ZIP 거절, 실패 시 기존 ZIP 보존.
-- 프리셋 필터·버전 경로·현재 고지/출처 13개·초상 16개 존재 확인 PASS. 실제 게임 export의 내부 파일 목록 검증은 미실행.
+- 초기 프리셋 필터·버전 경로·당시 고지/출처13개·초상16개 존재 확인 PASS. 당시 실제 게임 export의 내부 파일 목록 검증은 미실행.
 - workflow YAML/내장 Bash/Python 문법과 공식 Action 2개·읽기 권한 유지 확인 PASS.
 - 이번 작업의 전체 gate·3OS 실제 export·CI renderer·패키지 앱 실행·공증·push는 **NOT_RUN**이다.
 - `capture_full_game.gd`는 UI API 완성 후 root가 실행한다. helper가 미완성 FAIL을 내는 동안 가짜 성공 보고로 바꾸지 않는다.
+
+## 8. root 최종 실행·배포 결과
+
+소스 `32f31bc9178f494713df28ce61230fb4b5ea6ddd`에서 세 release export를 만들었다. 실제 PCK는 각47항목 PASS, SHA256 `d86471b43a38edc5bf01aa1380e88116920665f1eb132ad44f9e527a606b80d0`으로 동일하다. Mono·6PO·28사건·16초상·7음악을 로드하고 해법 fixture·검사 도구 제외를 확인했다.
+
+[CI41970688330](https://github.com/choijunhuk/packet-trail/actions/runs/41970688330)은 세OS 전체 gate와 패키저10회귀 PASS다. Linux의 Xvfb/Mesa llvmpipe 부분 GUI도 **450항목·M01 1/28·13PNG·100.752초 PASS**이며 NOT_RUN으로 건너뛴 실행이 아니다. 로컬 M3의 기본 full 프로필은 **3,761항목·28사건·498행동·18PNG·84.195초 PASS**다. native 엔진 입력과 실제 OS 조작/물리 장치의 의미를 구분한다.
+
+Mac 최종 ZIP을 별도 폴더에 압축 해제한 뒤 모든 파일 바이트·실행 비트·Universal2·strict/deep ad-hoc 서명을 재검증했다. 그 앱을 CUA로 실행해 저장한 M02 복원, 실제 OS 마우스 A+/A−와 단말 포커스, pwd 입력, 수동 저장, F10/W/E 왕복, 새 게임 확인창을 확인하고 M01로 전달했다. Apple 공증·Windows GUI·Linux 전편 GUI·물리IME·청취는 검증 완료로 표시하지 않는다.
+
+[RC 릴리스](https://github.com/choijunhuk/packet-trail/releases/tag/v1.0.0-rc1)의 세 ZIP은 읽기 가능한 README·15개 고지/출처·PACKAGE.json·내부 전체 파일 해시를 포함한다. 외부 BUILD-INFO.json·SHA256SUMS.txt와 서버 파일 크기·digest도 대조한다. ZIP별 전체 해시와 검증 한계는 [최종 전체판 기록](2026-11-05-full-production.md#아카이브와-체크섬)에 있다.

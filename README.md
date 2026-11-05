@@ -10,7 +10,9 @@
 
 | 문서 | 내용 |
 |---|---|
-| [첫 실행 묶음·실행 방법](docs/implementation/2026-11-05-first-playable.md) | M01 구현·검증·실행·현재 범위 |
+| [전체판 구현·검증](docs/implementation/2026-11-05-full-production.md) | 현재 전체 캠페인·실제 검증·배포 기록 |
+| [실행·조작·저장 안내](docs/PLAYING.md) | 배포 ZIP 실행, 단축키, 저장 백업과 업데이트 |
+| [첫 실행 묶음 기록](docs/implementation/2026-11-05-first-playable.md) | 이전 M01 개발판의 당시 구현·검증 범위 |
 | [후속 3관점 캠페인](docs/FUTURE_CAMPAIGNS.md) | 침투자·방어자·추적자의 독립 이야기 |
 | [전체 기획](PROJECT_PLAN.md) | 침투의 손맛·이야기·자유도·최종 범위 |
 | [2차 피드백 독립 재검토](docs/reviews/CODEX_R2_REVIEW_20261105.md) | 남은 계약 보완·검사기 회귀 검증 |
@@ -38,24 +40,37 @@
 
 ## 현재 상태
 
-- **P0/P1 첫 실행 묶음이 구현됐다.** 터미널·메일·가상 브라우저·파일·보관소·경보·저장/복구와 M01의 두 완주 경로를 플레이할 수 있다.
-- 첫 의뢰는 guest 접근 거부→공개 메모→maint 재접속→scp 회수이며, 가상 웹 보관 사본으로도 완료할 수 있다. 실제 shell·인터넷·사용자 파일을 게임 명령으로 조작하지 않는다.
-- 새 작업은 메모리의 세계를 초기화하고 자동저장을 일시중지한다. 이전 디스크 진행은 [저장]을 명시적으로 누르기 전까지 유지한다. 암호 대기는 Esc로 취소한다.
-- 현재 콘텐츠는 **M01 한 사건**이다. 8~12시간 캠페인·3D 작업실·캐릭터 정본·다국어·OST는 후속 제작 목표다. 캐릭터 디자인/프롬프트와 3관점 캠페인 계획은 문서로 정리돼 있다.
-- 실제 검사 결과·OS별 범위·설치 패키지는 [구현 기록](docs/implementation/2026-11-05-first-playable.md)을 따른다. 헤드리스·렌더/자동UI·실제키보드·사람플레이를 구분한다.
-- 가칭 심야접속의 상표·스토어 중복은 확인하지 않았다. 내부 실행파일·저장소 ID는 `MidnightAccess`/`packet-trail`이다.
+**전체 캠페인 1.0.0-rc1 구현·검증·3OS 패키지 배포 완료.** [배포본 다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.0.0-rc1)에서 설치형 게임을 받을 수 있다.
+
+- 6장 메인24 + 선택 S01·S02·R01·P01, 서로 다른 해법56개, 근거에 따른 결말3개.
+- 113개 사건별 가상 호스트, 89개 필수 자료와 연쇄 근거. 소개된 도구·힌트·읽기 순서 자체는 완료 조건이 아니다.
+- 독립된 터미널4개와 Linux식 명령, 가상 브라우저·RequestLab·분석 도구·파일/보관 자료·사건 보드·연락처·일시정지.
+- 작은3D 야간 작업실, WASD/RMB/E/F10 전환, 접근성·글자 크기·개별 음량·화면 설정.
+- 한국어·영어·일본어·간체 중국어·스페인어·독일어: 1,443키/언어. 번역은 원어민 검수 전 초안이다.
+- 원곡 OST7큐 19분51.64초·효과음·환경음, 성인 허구 인물4명의 정본/표정16장.
+- 안전한 campaign v2 고정 슬롯, 명시적인 구버전 M01 가져오기. 구버전 슬롯은 자동 덮어쓰지 않는다.
+
+세OS 전체 headless CI, 개발 Mac의 실제 렌더·입력 3,761항목/28사건 완주, Linux 소프트웨어 렌더 부분 GUI 450항목/첫 사건, 세 패키지의 실제 PCK 각47항목이 통과했다. 최종 Mac ZIP은 압축 해제 뒤 실제 OS 마우스·키보드·저장 복원·3D 왕복도 확인했다. 소스·체크섬·독립 검토·한계는 [전체판 기록](docs/implementation/2026-11-05-full-production.md)을 따른다. 8~12시간은 분량 예산이며 실제 사람의 플레이타임·재미로 측정한 수치가 아니다.
+
+후속 방어자·추적자 캠페인은 같은 세계관의 독립 이야기로 기획돼 있으며 이번 침투자편을 세 편으로 나누지 않는다. [캐릭터 실제 제작](docs/implementation/character-production.md), [모델·추론 수준](docs/AI_WORKFLOW.md)을 함께 기록했다. 가칭 상표·스토어 등록·Apple 공증은 완료했다고 주장하지 않는다.
 
 ## 실행
 
-설치형 첫 실행판 **0.1.1-dev**: [Windows·Mac·Linux 다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v0.1.1-dev). 현재는 M01 한 사건이며, 각 OS 검증 범위는 [전달 기록](docs/implementation/2026-11-05-first-playable.md)을 따른다.
+ZIP 전체를 압축 해제한 뒤 내부 `MidnightAccess/README.md`를 읽는다. 별도 Godot 설치는 필요 없다.
 
-Godot 4.7 standard가 설치된 환경에서 저장소 루트에서 실행한다.
+- [Mac · Apple Silicon/Intel](https://github.com/choijunhuk/packet-trail/releases/download/v1.0.0-rc1/MidnightAccess-1.0.0-rc1-macos-universal.zip)
+- [Windows · x86_64](https://github.com/choijunhuk/packet-trail/releases/download/v1.0.0-rc1/MidnightAccess-1.0.0-rc1-windows-x86_64.zip)
+- [Linux · x86_64](https://github.com/choijunhuk/packet-trail/releases/download/v1.0.0-rc1/MidnightAccess-1.0.0-rc1-linux-x86_64.zip)
+
+같은 [릴리스](https://github.com/choijunhuk/packet-trail/releases/tag/v1.0.0-rc1)의 `BUILD-INFO.json`과 `SHA256SUMS.txt`에서 소스와 파일 해시를 확인할 수 있다. 저장소와 배포는 비공개다. 이전 M01 개발판은 [0.1.1 기록](docs/implementation/2026-11-05-first-playable.md)으로 보존한다.
+
+소스 개발 실행은 Godot 4.7 standard가 설치된 환경에서 저장소 루트에서 한다.
 
 ```sh
 godot --path godot
 ```
 
-게임 전체 자동 검증은 `bash tools/gate.sh`다. GUI/IME·실제 각 OS 플레이·사람의 재미 판단은 별도다. 기본 저장은 Godot 사용자 데이터의 `MidnightAccess/saves/slot_01.json`에 기록한다.
+게임 전체 자동 검증은 `bash tools/gate.sh`다. GUI/IME·실제 각 OS 플레이·사람의 재미 판단은 별도다. 기본 캠페인 저장은 Godot 사용자 데이터의 `MidnightAccess/saves/campaign_01.json`, 설정은 `MidnightAccess/settings.json`이다. 구버전 `saves/slot_01.json`은 명시적 가져오기용으로 보존한다. 파일 이름·캐노니컬 자료와 번역 표시를 분리한다.
 
 ## 문서 검증 재실행
 

@@ -48,7 +48,7 @@
 
 ## 검증 기록
 
-현재 이 문서는 실행 중인 제작 계약이다. 실제 결과·파일·검토 결정·배포 링크를 완료한 묶음별로 이어 기록한다. 계획에 존재한다는 이유로 구현/검증 완료로 표시하지 않는다.
+아래 전반부는 제작 과정과 실패→수정 판단 기록이며 마지막 절이 최종 RC 배포 상태다. 계획에 존재한다는 이유로 구현/검증 완료로 표시하지 않는다.
 
 ## 첫 전체 통합 결과와 수정 판정
 
@@ -81,3 +81,51 @@ M3 Max OpenGL 실제 렌더에서 메뉴·3D·설정·전 캠페인·결말·6�
 암호 입력에서 Tab은 정상 포커스 이동이며 자동완성으로 비밀을 노출하지 않는다. 테스트가 포커스를 되돌리지 않고 Esc를 보내 pause를 열던 기대값을 고쳤다. failed test의 즉시 quit 때 생긴 Ogg 잔류 경고는 stop·stream 해제·scene free 뒤 frame 정리로 사라졌다. 이를 제품 메모리 누수 없음으로 확대하지 않는다.
 
 fresh UI 검토의 Important3는 기존 소스에서 실제 752항목/10실패로 재현했다. 암호→일반 모드 전환 전에 비밀 입력/초안을 지우고, 터미널 선택 때 Tools 주체를 갱신하며, 공개 관찰 data가 바뀌면 관찰 부분만 다시 그리도록 보완했다. 초안·결과·기존 단일 코어 권위를 유지한다. 최종 native 재생 수치와 fresh Opus 검토/패키지 결과는 완료 후 이어 기록한다.
+
+최종 인라인 Claude 검토는 요청 Opus5.5/xhigh, 응답READY·확인된중요결함0이었다. 실제 modelUsage에는5.5와4.8이함께기록되어최종화자귀속은미확인이다. 요청값/실제서비스사용모델을분리해 [AI기록](../AI_WORKFLOW.md)에남겼고단독5.5동의로실행검증을대신하지않았다. fresh Codex6.1/xhigh독립검토도READY이며최신GUI실행한계와소스판정을구분했다.
+
+## 최종 RC 배포와 소스
+
+[1.0.0-rc1 다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.0.0-rc1) · [실행·조작·저장 안내](../PLAYING.md) · [검증한 소스 CI](https://github.com/choijunhuk/packet-trail/actions/runs/41970688330)
+
+- 배포 소스 commit: `32f31bc9178f494713df28ce61230fb4b5ea6ddd`.
+- 배포 source tree: `0f319f5c665901836a60d73995b00f4acaa71ff6`.
+- 게임 `godot/` tree: `0dfafb1b3620f27e081d67eea215556035aaf705`.
+- 엔진: `4.7.stable.official.5b4e0cb0f`, 세OS 모두 실제 release export 성공.
+
+최종 문서 커밋은 위 배포 소스와 다를 수 있다. 게임 하위 트리와 최종 패키지 소스 라벨을 별도로 대조한다. 패키저에 commit 값을 입력했다는 사실만으로 출처를 증명하지 않으며, clean Godot subtree·실제 export 로그·PCK·CI·아카이브 해시를 함께 확인했다. 작업 중 원본 `packet-trail`의 `.serena/`와 기존 개발판/구버전 저장을 보존했다.
+
+## 최종 검증표
+
+| 범위 | 실제 결과 | 의미·한계 |
+|---|---|---|
+| 세OS 전체 source CI | Windows 2025/macOS15/Ubuntu24.04 모두 PASS | 각각 전체 gate·패키저10회귀. GUI와 구분 |
+| Mac 전편 실제 렌더/엔진 입력 | PASS 3,761검사항목·28사건·498행동·84.195초·18PNG | 실제 M3/OpenGL, 대안56개 중 GUI는 A경로28개. 두 경로는 headless에서 모두 실행 |
+| Mac 부분 프로필 | PASS 451항목·M01·6.483초·13PNG | CI smoke 프로필의 로컬 동작 확인 |
+| Linux Xvfb/Mesa 부분 GUI | PASS 450항목·M01 1/28·100.752초·6언어·13PNG | 실제 llvmpipe LLVM20.1.2/OpenGL4.5. 나머지27사건·결말 GUI는 NOT_RUN |
+| 실제 세 PCK | 각47항목 PASS | 28사건·번역·초상·7음악·폰트·라이선스 로드, 해법 fixture/검사 코드 제외 |
+| Mac 최종 ZIP | 모든 추출 파일 바이트 일치·실행 비트·strict/deep 코드서명 PASS | Universal2 `x86_64 arm64`, ad-hoc이며 공증 아님 |
+| 최종 ZIP 앱 실제 OS 조작 | PASS | CUA 실제 마우스 A+/A−와 터미널 포커스/pwd, M02저장복원·수동저장, F10/W/E왕복, 새게임 확인창, M01 첫 의뢰로 전달 |
+| 독립 소스 검토 | fresh Codex READY, Claude C17 READY | 새 확인 Important/Critical0. 실행 증거는 위 검증이 담당 |
+
+마지막 native helper는 static/occluded 창에서도 모든 입력 뒤 draw가 발생한다고 가정하던 무조건 `frame_post_draw` 대기를 제거했다. 일반 입력은 process frame으로 처리하고 캡처에서만 `RenderingServer.force_draw(false)`로 실제 화면을 만든다. 포인터 stream은 held frame 뒤 같은 위치의 motion과 release로 완결하며 OS 포인터 워프·버튼 신호 직접 emit으로 통과시키지 않는다. 변경 후 smoke/full 모두 새로 종료코드0, 엔진 Script ERROR/ERROR/WARNING/잔류 경고0, 기본 캠페인·구버전 저장·설정 바이트 보존을 확인했다.
+
+원본 M01 Game/FS/Parser/Store를 재사용했고, 제품에 테스트 전용 입력 API나 검토용 임의 코드 실행 경로를 추가하지 않았다. opaque 가상 OS 뒤의 보이지 않는 3D만 숨겨 소프트웨어 렌더 부하를 줄인다. 새로운 런타임 의존성은 없다.
+
+최종 로컬 증거는 `.omx/artifacts/full-production/`의 `native-coherent-forceframe-{full,smoke}.log`, `native-coherent-forceframe-summary.json`, `ci-final-32f31bc.log`, `export-final-source.json`, `export-final-{macos,windows,linux}.log`, `pck-final-{macos,windows,linux}.log`, `package-final-{macos,windows,linux}.json`, `extracted-final-macos.json`이다. CI 로그는 위 실행 링크에서도 확인한다. Linux PNG는 CI 종료 뒤 별도 업로드되지 않으며 로그의 치수·명암·SHA만 남는다.
+
+## 아카이브와 체크섬
+
+| ZIP | 바이트 | SHA256 |
+|---|---:|---|
+| `MidnightAccess-1.0.0-rc1-macos-universal.zip` | 111,228,754 | `378343752c89f2c47f894334e9f37376a908e00b4d3e32939a3cdf122749d137` |
+| `MidnightAccess-1.0.0-rc1-windows-x86_64.zip` | 89,940,589 | `1fa21a0a0fc6a4829cf4cc9db93d73740c5fc444fa17c216d80da4a767e39d1e` |
+| `MidnightAccess-1.0.0-rc1-linux-x86_64.zip` | 80,334,509 | `1a420165c6a60da4b117c99316b48701892015def72a9a4dde861a56582b3b22` |
+
+세 PCK의 SHA256은 모두 `d86471b43a38edc5bf01aa1380e88116920665f1eb132ad44f9e527a606b80d0`으로 동일하다. 배포 ZIP은 로컬 `builds/releases/v1.0.0-rc1/`에도 있다. 각각 외부 `licenses/` 15개 고지/출처 파일, README, `PACKAGE.json`, 파일별 `SHA256SUMS.txt`를 포함한다. GitHub 릴리스의 `BUILD-INFO.json`은 commit/tree/엔진/검증 종류·한계·크기를 함께 기록한다. 릴리스 서버의 크기·SHA256도 로컬 다섯 자산과 대조한다.
+
+## 이후 사람이 평가할 범위
+
+기능·자료·패키지를 모두 연결한 RC다. 실제8~12시간·재미/난이도·장시간 음악 피로도·원어민 문장·물리 IME와 기기별 오디오·Windows 실제 GUI·Linux 전편 GUI는 완료 증거가 없다. 확인되지 않은 플레이타임을 강제 대기나 자동 해법 소요시간으로 대체하지 않는다. macOS Apple 공증과 Windows 인증서 서명도 미실시다.
+
+Linux식 명령은 구현한 부분집합이며 진짜 Linux 전체가 아니다. 메모·핀은 현재 세션용이다. 한 저장 슬롯에 동시 여러 인스턴스 쓰기는 지원하지 않는다. 방어자·추적자 캠페인은 별도 후속 기획이며 이번 침투자편의 누락 콘텐츠로 취급하지 않는다. 사용자의 후속 피드백은 재현 조건과 영향으로 검토해 다음 변경에 반영한다.

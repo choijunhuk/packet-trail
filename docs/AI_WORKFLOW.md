@@ -160,4 +160,18 @@ Claude는 CLI의 safe-mode/restricted에서 Read/Glob/Grep/Write/Edit만 주고,
 
 C14는 직접 Godot를 실행하지 않았다. 부모의 전체 headless/import·runtime·실제 renderer 검증이 별도 실행 증거이며, 모델의 READY/완료 응답을 통과로 대신하지 않는다. 모델이 본 소스와 후속 수정 범위의 SHA·재현 로그를 구분한다. 숨은 모델 thinking/signature는 사용자용 보고서에 옮기지 않는다.
 
-최종 fresh Opus 5.5/xhigh 검토와 배포 검증은 아직 수행 전이면 실제 이력으로 추가하지 않는다. 실제 완료 시 전체 구현 기록과 여기에 실행 ID·결과를 붙인다.
+완료한 검토·배포 검증만 아래 실제 이력으로 남긴다. 요청 모델과 서비스가 보고한 실제 사용 모델을 구분한다.
+
+
+### 전체판 최종 독립 검토 실제 이력
+
+- C15: Opus5.5/xhigh 다중파일 읽기 검토는 서비스 세션 한도 메시지로 끝나 성공 판단으로 쓰지 않았다.
+- C16: 한도 초기화 뒤 같은 모델/수준으로 재시도했으나 88회 읽기 도중 API ENOTFOUND로 종료했다. 모델을 낮추거나 검토 성공으로 표시하지 않았다.
+- C17: 읽기 스냅샷을 한 API 입력으로 묶어 Opus5.5/xhigh에 제공했다. is_error=false와 READY·확인된 Important/Critical0를 확인했다. 요청은5.5/xhigh였지만 실제modelUsage에는 claude-opus-5-5와 claude-opus-4-8 두모델이 함께 기록됐다. 최종화자별 귀속은 응답에 노출되지 않아 단독5.5검토라고 표시하지 않는다. 추가4.8을 호출자가 선택한 것은 아니며, 서비스가 보고한 실제 사용 이력을 그대로 기록한다. 파일 접근/실행 없는 정적 판단이다. 소스 SHA별 범위와 원문 결과를 로컬 `.omx/artifacts/claude-full-release-review-20261105.md`에 남겼다.
+- A29: fresh gpt-6.1-sol/xhigh 독립 release_verification은 소스 등38개 해시 전후 동일을 확인하고 READY·신규 Important/Critical0를 기록했다. 최신 synthetic pointer stream의 별도 실행 한계는 소스 판정과 분리했다.
+
+부모는 서비스 검토 대기 중에도 native 패키지의 실제 마우스 확인창·암호 가림/취소·M01→M02·3D 복귀·앱 재시작 복원을 CUA로 검증했다. 원본 가상 자료나 모델의 긍정 응답을 실제 사람 플레이타임/원어민 품질/실제 Windows GUI 증거로 바꾸지 않는다.
+
+A26은 마지막 실제 재실행에서 일반 입력 대기와 캡처 draw를 분리했다. static/occluded 창에서 `frame_post_draw`를 무조건 기다리던 검증기 가정을 제거했으며, 실제 포인터를 옮기거나 버튼 신호를 직접 호출하지 않았다. 결과는 M3 full 3,761/0·28사건498행동, smoke451/0이며 root가 로그와 소스 `32f31bc` 일치를 확인했다. A24의 CI 부분 프로필은 실제 Linux450/0·M01 1/28로 통과했고 세OS 전체 headless 범위는 유지했다.
+
+부모는 같은 소스의 세OS export와 PCK47×3·ZIP검증·Mac strict/deep ad-hoc 서명을 확인하고, 최종 ZIP에서 꺼낸 앱의 실제 OS 마우스 A+/A−·입력 포커스·수동저장·저장복원·작업실 왕복·새게임 확인창을 CUA로 검증했다. 배포와 최종 문서의 검증 근거는 [전체판 기록](implementation/2026-11-05-full-production.md)에 있다.
