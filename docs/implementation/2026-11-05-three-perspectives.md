@@ -1,6 +1,6 @@
 # 심야접속 1.1 · 결함 수정과 세 관점 확장
 
-상태: **통합 검증 중**. 이 문서는 구현 결정과 실제 실행 증거를 순서대로 보존한다. 최종 배포·수락은 마지막 완료 절에만 기록하며, 아래의 중간 GREEN을 전체 제품 완료로 해석하지 않는다.
+상태: **1.1.0-rc1 구현·검증·세OS 패키지 완료**. 이 문서는 구현 결정과 실제 실행 증거를 보존한다. 최종 배포·수락은 마지막 완료 절이 기준이며, 중간 GREEN과 실패 기록을 최종 상태로 해석하지 않는다.
 
 ## 실행 요청과 기준
 
@@ -144,6 +144,46 @@ CUA는 문서 재로드 뒤 inventory 두 시도에서 native pipe startup faile
 
 ## 최종 완료 기록
 
-진행 중: 전체gate·44native·읽기 전용 검토 후 수리는 통과했다. 실제 세OS export/PCK/서명/ZIP·서버SHA, main 반영·비공개릴리스는 후속 통합 단계다.
+[1.1.0-rc1 세OS 다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.1.0-rc1) · [검증한 세OS CI](https://github.com/choijunhuk/packet-trail/actions/runs/42025016354) · [플레이·저장 안내](../PLAYING.md) · [모델·추론 기록](../AI_WORKFLOW.md).
 
-실측8~12시간·재미/난이도·원어민·물리IME/장치·장시간청취·Apple공증·Windows실물GUI는 실행 증거가 없으면 NOT_RUN으로 남긴다. 예정 기능과 실제 완료를 혼합하지 않는다.
+- 배포 게임 소스: `508b7e020a3dd852166aa6836fd61a4f47d59fc4`.
+- 소스 tree: `9f572754cdf06e965bbf47c0e21eab134130e738`.
+- Godot tree: `1a864f3ae93fbbeebecd1bcfee70cb6d1b406dfc`.
+- 엔진: `4.7.stable.official.5b4e0cb0f`.
+
+태그·main의 문서 마감 커밋은 위 게임 소스보다 뒤일 수 있다. 패키지의 source label만 믿지 않고 실제 export 전후251파일 SHA·Godot tree·CI head·실제PCK·아카이브와 서버 digest를 함께 대조한다. 이전1.0배포·원본 진행·기존 `.serena/` 자료는 보존한다.
+
+| 범위 | 최종 실제 결과·한계 |
+|---|---|
+| Windows2025/macOS15/Ubuntu24.04 source CI | 세 job 모두 success. 전체gate·패키저10·실제PCK export/inspection을 각각 실행 |
+| 공개3편 / 보존 캠페인 | 14,110검사·88해법 / 31,717검사, 실패0. 88은 서로 다른 실행 경로 수 |
+| Mac 실제 렌더·엔진 입력 | 5,390/0·44사건/세 결말·347행동·195구조화 Run·84.961초·41PNG. 보호28/제품33SHA 불변·엔진오류/경고/잔류0 |
+| Linux Xvfb/Mesa 부분 GUI | 458/0·M01 1/44·세 캠페인 선택·D01/T01 명시적 폼·6언어·15PNG·128.097초. 나머지43/결말 GUI는 NOT_RUN |
+| 최종 세OS release export와 PCK | 실제 export 종료0·각398/0, 공개28/8/8+legacy28·번역/자산/라이선스 로드와 작성자료 제외 |
+| ZIP3개 | CRC·모든 내부SHA·15고지·README·source metadata 검증. Mac추출25파일 bytes/실행비트·strict/deep 서명·Universal2 PASS |
+| 최종 추출 Mac release 바이너리 | 실제버전·GPU 메뉴/3D8PNG·종료0·기존 설정/진행 불변. OS 포인터/IME 조작 성공이라는 뜻은 아님 |
+| 최종 compiled PCK의 정상 종료 | 빈 작업위치·실제PCK만 생산 리소스로 사용하고 외부 신뢰 테스트 클래스/공식editor runner로 메뉴8·WM6, 실제exit0·전체마지막로그 오류/경고0 |
+
+프레임 캡처의 `--quit-after`는 앱의 정상 종료 경로를 우회하므로 Ogg8ObjectDB/2resources 정리 로그를 남겼다. 이 강제 종료의 로그는 보존하며 startup 실패나 정상 Quit 회귀의 성공 로그로 바꾸지 않는다. 정상 메뉴/WM 종료는 source·compiled PCK에서 별도 clean exit를 확인했다. CUA host/native pipe는 재초기화 뒤에도 이용 불가여서 **이번 실제 OS 마우스·물리IME 수락은 NOT_RUN**이다.
+
+### 배포 파일
+
+| ZIP | 바이트 | SHA256 |
+|---|---:|---|
+| `MidnightAccess-1.1.0-rc1-macos-universal.zip` | 122,617,369 | `1b912a04e4e0ee2b7127371014c4ae23879e1f1e402d180b783b512a68da7f16` |
+| `MidnightAccess-1.1.0-rc1-windows-x86_64.zip` | 101,329,203 | `b70d594a8488a0e0eade44b9ef882cc09e3db1521e42756c666b70689b79348c` |
+| `MidnightAccess-1.1.0-rc1-linux-x86_64.zip` | 91,723,119 | `0ab8402c07f15754cf34fb3e673899217217f66d9e76c88a4bd2da3bd003d1cb` |
+
+세PCK는 각각68,580,796바이트, 동일 SHA256 `5dfc9f32a062d87051174ce949787d06dfc69e4975708683d951c5879cafccb1`이다. ZIP은 로컬 `builds/releases/v1.1.0-rc1/`에도 있다. 릴리스의 BUILD-INFO.json과 SHA256SUMS.txt를 함께 제공하고 서버 다섯 자산의 크기·digest를 대조한다.
+
+### 변경한 곳과 단순화
+
+`core/campaign_*`, `response_lab/observation_case/branch_vm`, 공통FS/Store는 고정된 실제 가상 상태·모형·저장 경계를 맡는다. `full_game`·`room`·`campaign_desktop`은 세 캠페인·UI 문맥·공유 정상 종료를 연결한다. 데이터3팩/해법/생성기,6PO와 원문 검토SHA,오디오/생성기,gate/CI/패키저·PCK/렌더/종료 회귀와 문서를 함께 갱신했다.
+
+기존VFS·parser·store·창·폼을 재사용하고66개 필수 반복 체인을 없앴다. 모든 역할용 범용 프레임워크나 새 런타임 의존성을 만들지 않았다. 메뉴·창 종료는 하나의 수명 경로로 모았다. 코어 판정과 도구/UI wrapper를 중복 구현하지 않았다.
+
+최종 로컬 근거는 `.omx/artifacts/release-1.1-final/`의 `gate-final*`, `ci-final*`, `export-final-source.json`, `pck-final-*`, `package-final-*`, `extracted-final-macos.json`, `packed-shutdown-*.log`와 `expansion-native/native-full-release-final*`이다. Claude 원문/요청/SHA/실제모델은 `final-advisor/`에, 독립 source review와 실제 RED/GREEN은 각각 보존했다.
+
+### 남은 사람 수락 범위
+
+침투편8~12시간·재미/난이도·장시간 청취·원어민·물리IME/기기별오디오·실제WindowsGUI/전체LinuxGUI는 미실행이다. Mac은 ad-hoc 서명이며 Apple 공증 전, Windows는 인증서 서명 전이다. 일부 대안의 공통 승인경로 전략과 상황 문서가 적은 방어/추적 온보딩은 사람 피드백으로 평가할 제품 한계다. 자동검사 수나 fixture 재생 시간을 사람의 플레이 시간·독립 퍼즐 수로 바꾸지 않는다.

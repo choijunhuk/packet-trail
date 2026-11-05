@@ -1,7 +1,7 @@
 # 공간·가상 OS·도구·이야기 상호작용 설계
 
 ## Source of truth
-- Status: Active · 2026-11-05 · 1.1 확장 구현 중.
+- Status: Active · 2026-11-05 · 1.1 RC 구현·검증 완료. 실제 수락 범위와 한계는 README/실행 기록을 따른다.
 - 기준: 최신 사용자 수정/게임성/확장 실행 요청, PROJECT_PLAN, FUTURE_CAMPAIGNS, 최신 CLAUDE_FULL_AUDIT, .omx/plans/prd-three-perspectives-20261105.md와testspec.
 - 화면: 작은3D 작업실, 캠페인 선택, 4터미널 가상OS, 도구/관측, 사건/결말, 저장/복구, 설정.
 - 아래 번호부 설계의 P0/P1/P2 언급은 제작 이력이다. 이번 활성 계약과 충돌하면 이 절을 따른다. 구현/검증 완료는 README/검증 기록의 실제 증거로 판단한다.

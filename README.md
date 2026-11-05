@@ -42,7 +42,7 @@
 
 ## 현재 상태
 
-**1.1.0-rc1 세 관점 확장의 구현을 마치고 최종 통합·배포 검증 중이다.** 마지막 완료 상태·검증한 소스와 패키지는 [1.1 실행 기록](docs/implementation/2026-11-05-three-perspectives.md)을 따른다. 이전 [1.0 배포본](https://github.com/choijunhuk/packet-trail/releases/tag/v1.0.0-rc1)은 보존한다.
+**1.1.0-rc1 세 관점 확장의 구현·검증을 마쳤다.** [3OS 배포본 다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.1.0-rc1) · [소스·검증·패키지 기록](docs/implementation/2026-11-05-three-perspectives.md). 이전 [1.0 배포본](https://github.com/choijunhuk/packet-trail/releases/tag/v1.0.0-rc1)은 보존한다.
 
 - 침투 메인24+선택4, 방어8, 추적8의 공개44사건. 각 편의 온보딩·이야기·결말·저장이 독립돼 있다.
 - 필수 공통 자료66개와 반복 회수 체인을 제거하고, 다섯 복구 사건에 실제 다른 서비스·정책·승인 경로를 통한 대안을 추가했다. 88개 해법 fixture는 실행 경로 수이며 서로 다른88개 퍼즐이라는 뜻은 아니다.
@@ -54,17 +54,19 @@
 
 Claude의 수정 전 감사와 C21/C22 읽기 전용 후속 검토는 실제 회귀 실행과 대조해 수용했다. 요청 모델·실제 응답 모델·추론 수준은 [AI 기록](docs/AI_WORKFLOW.md)에 있다. [캐릭터 실제 제작](docs/implementation/character-production.md)도 별도로 보존한다.
 
+최종 소스의 Windows/macOS/Linux 전체 CI, 공개88해법과 보존 캠페인, Mac 실제 렌더·엔진 입력44사건/세 결말, Linux 첫 사건 부분 GUI, 세PCK·ZIP/해시·Mac 서명을 검증했다. [CI 실행](https://github.com/choijunhuk/packet-trail/actions/runs/42025016354)과 상세 기록에서 headless·렌더·실제 OS·사람 수락을 구분한다.
+
 침투편8~12시간은 분량 설계 목표이며 실제 사람의 시간·재미·난이도 측정값이 아니다. 자동/headless·렌더·실제 OS·사람 평가는 실행 기록에서 구분한다. 가칭 상표·스토어 등록·Apple 공증은 완료했다고 주장하지 않는다.
 
 ## 실행
 
 ZIP 전체를 압축 해제한 뒤 내부 `MidnightAccess/README.md`를 읽는다. 별도 Godot 설치는 필요 없다.
 
-- [Mac · Apple Silicon/Intel](https://github.com/choijunhuk/packet-trail/releases/download/v1.0.0-rc1/MidnightAccess-1.0.0-rc1-macos-universal.zip)
-- [Windows · x86_64](https://github.com/choijunhuk/packet-trail/releases/download/v1.0.0-rc1/MidnightAccess-1.0.0-rc1-windows-x86_64.zip)
-- [Linux · x86_64](https://github.com/choijunhuk/packet-trail/releases/download/v1.0.0-rc1/MidnightAccess-1.0.0-rc1-linux-x86_64.zip)
+- [Mac · Apple Silicon/Intel](https://github.com/choijunhuk/packet-trail/releases/download/v1.1.0-rc1/MidnightAccess-1.1.0-rc1-macos-universal.zip)
+- [Windows · x86_64](https://github.com/choijunhuk/packet-trail/releases/download/v1.1.0-rc1/MidnightAccess-1.1.0-rc1-windows-x86_64.zip)
+- [Linux · x86_64](https://github.com/choijunhuk/packet-trail/releases/download/v1.1.0-rc1/MidnightAccess-1.1.0-rc1-linux-x86_64.zip)
 
-같은 [릴리스](https://github.com/choijunhuk/packet-trail/releases/tag/v1.0.0-rc1)의 `BUILD-INFO.json`과 `SHA256SUMS.txt`에서 소스와 파일 해시를 확인할 수 있다. 저장소와 배포는 비공개다. 이전 M01 개발판은 [0.1.1 기록](docs/implementation/2026-11-05-first-playable.md)으로 보존한다.
+같은 [릴리스](https://github.com/choijunhuk/packet-trail/releases/tag/v1.1.0-rc1)의 `BUILD-INFO.json`과 `SHA256SUMS.txt`에서 소스와 파일 해시를 확인할 수 있다. 저장소와 배포는 비공개다. 이전 M01 개발판은 [0.1.1 기록](docs/implementation/2026-11-05-first-playable.md)으로 보존한다.
 
 소스 개발 실행은 Godot 4.7 standard가 설치된 환경에서 저장소 루트에서 한다.
 

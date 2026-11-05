@@ -71,7 +71,7 @@ GitHub run `42020733790`에서 Linux Xvfb/Mesa smoke의 실제 엔진 report는 
 
 교정 뒤 로컬 실제 smoke 한 번은 **459/0, exit 0, 6.951초**다. D01 preview는 `action=set_control/control_id:OptionButton/value:OptionButton`, T01은 `action=collect/sensor_id:OptionButton`으로 CI와 같은 predicate를 별도 대조해 통과했다. 실제 범위는 M01 1/44·세 pack 선택·6locale·15 PNG이며, 새 모형 Run과 나머지 43건·3결말은 이 smoke에서 NOT_RUN이다. PNG 15개 실파일의 header·치수·SHA·밝기 범위, 보호 28경로 불변, 제품 33SHA 전후 불변, 엔진 오류·경고·누수 0을 확인했다.
 
-로그/JSON은 `.omx/artifacts/expansion-native/native-ci-preview-fixed-smoke.log/.json`, 별도 확인은 `ci-preview-fixed-summary.json`, 소스 불변은 `ci-preview-source-before.json/after.json`이다. 교정 helper SHA256은 `14768855f8e3613582349bdc73e61c7a2e10d4b96abf704c1d2a8301e5b23a51`이다. 변경은 `_view_first_forms`의 preview 선택에 한정하며 제품·CI 검사·full의 사건 재생/판정 코드는 수정하지 않았다. 이전 full5390 기록은 해당 당시 helper SHA와 함께 보존하고 새 full을 실행했다고 표시하지 않는다. 새로운 3OS CI 및 패키지 provenance 검증은 root의 후속 범위다.
+로그/JSON은 `.omx/artifacts/expansion-native/native-ci-preview-fixed-smoke.log/.json`, 별도 확인은 `ci-preview-fixed-summary.json`, 소스 불변은 `ci-preview-source-before.json/after.json`이다. 교정 helper SHA256은 `14768855f8e3613582349bdc73e61c7a2e10d4b96abf704c1d2a8301e5b23a51`이다. 변경은 `_view_first_forms`의 preview 선택에 한정하며 제품·CI 검사·full의 사건 재생/판정 코드는 수정하지 않았다. 이 preview 교정 단계에서는 full을 재실행하지 않았으며, 이후 별도 승인된 종료 수리 후 full 결과는 다음 절에 구분한다. 새로운 3OS CI 및 패키지 provenance 검증은 root의 후속 범위다.
 
 ### 정상 종료 수리 후 release 최종 full
 
@@ -116,4 +116,4 @@ FullGame/Room의 정상 Quit 중앙화 수리와 root의 최종 Gate PASS(121.64
 
 `native-full-first.json`, `full-first-summary.json`, `full-source-before.json/after.json`을 보존했다. 이 첫 실행의 기본 28경로와 제품 33SHA는 전후 불변, 엔진 ERROR/WARNING/leak는 0이다. 당시 남은 18사건과 전체 3결말은 NOT_RUN으로 보존하며, 이후 최종 full에서 별도로 완료했다. 실제 legacy GUI·다른 유효 해법 GUI와 backend 전체 경로 검증은 각각 별도 증거다.
 
-물리 IME composition, 실제 OS focus·오디오 장치, 사람 청취/피로도/재미, legacy GUI와 다른 유효 해법의 GUI 재생은 NOT_RUN이다. Menu Load unsaved/stale-modal의 심층 회귀는 별도 functional UIcontext suite이고, 이 native suite의 desktop Load와 혼동하지 않는다. 이번 실제 OS 입력 CUA는 host unavailable/native pipe startup 실패로 NOT_RUN이며, 85.728초의 엔진 입력·실제 렌더 완료와 분리한다.
+물리 IME composition, 실제 OS focus·오디오 장치, 사람 청취/피로도/재미, legacy GUI와 다른 유효 해법의 GUI 재생은 NOT_RUN이다. Menu Load unsaved/stale-modal의 심층 회귀는 별도 functional UIcontext suite이고, 이 native suite의 desktop Load와 혼동하지 않는다. 이번 실제 OS 입력 CUA는 host unavailable/native pipe startup 실패로 NOT_RUN이며, 최종 84.961초의 엔진 입력·실제 렌더 완료와 분리한다.
