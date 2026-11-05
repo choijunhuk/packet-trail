@@ -15,9 +15,11 @@ var audio: Node
 var _last_view: Dictionary = {}
 var _connected_desktops: Dictionary = {}
 var _ending_presenting := false
+var _shutting_down := false
 
 
 func _ready() -> void:
+	get_tree().auto_accept_quit = false
 	audio = AudioDirector.new()
 	audio.name = "Score"
 	add_child(audio)
@@ -37,11 +39,45 @@ func _ready() -> void:
 	room.desktop_requested.connect(_on_desktop_requested)
 	room.room_entered.connect(_on_room_entered)
 	room.campaign_selected.connect(_on_campaign_selected)
+	room.quit_requested.connect(request_shutdown)
 	add_child(room)
 	audio.configure(room.settings_store.get_values())
 	audio.set_mood("home")
 	_refresh_save_status()
 	_update_title()
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		request_shutdown()
+
+
+func request_shutdown() -> void:
+	if _shutting_down:
+		return
+	_shutting_down = true
+	set_process_input(false)
+	if is_instance_valid(room):
+		room.process_mode = Node.PROCESS_MODE_DISABLED
+	var players: Array[Node] = []
+	if is_instance_valid(audio):
+		audio.process_mode = Node.PROCESS_MODE_DISABLED
+		players = audio.find_children("*", "AudioStreamPlayer", true, false)
+	for player in players:
+		player.stop()
+	var tree := get_tree()
+	for index in range(3):
+		await tree.process_frame
+	for player in players:
+		if is_instance_valid(player):
+			player.stream = null
+	if is_instance_valid(audio):
+		audio.queue_free()
+		audio = null
+	for index in range(4):
+		await tree.process_frame
+	await tree.create_timer(0.2).timeout
+	tree.quit()
 
 
 func _refresh_save_status() -> void:

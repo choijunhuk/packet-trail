@@ -105,7 +105,7 @@ C22의 활성 legacy 재입장과 과거 결말의 음악 고정, 추가로 실�
 
 ## 최종 전체 headless gate
 
-`.omx/artifacts/integration-final.log`의 실제 종료코드는0,120.196초이며 Godot 소스247파일 SHA가 전후 같았다. 이 실행은 source import/export/native를 병행하지 않았다.
+첫 통합 `.omx/artifacts/integration-final.log`는 종료0,120.196초·Godot247SHA 불변이었다. 이후 정상 종료 수리와 CI preview 교정을 포함한 마지막 `.omx/artifacts/release-1.1-final/gate-final.log`는 **종료0,121.648초**였다. 기존249파일 SHA는 같고 editor가 새 종료 테스트의 UID2개를 생성해251파일이 됐다. 각 실행에서 source import/export/native를 병행하지 않았다.
 
 | 범위 | 실제 결과 |
 |---|---|
@@ -114,7 +114,8 @@ C22의 활성 legacy 재입장과 과거 결말의 음악 고정, 추가로 실�
 | presentation / 강화audio / UI문맥 / 초상 | 275 / 147 / 37 / 36, 실패0 |
 | 저장·인증·창 회귀 | mutation1,217, 실패0 |
 | 공개3편 | 14,110검사,44사건×2=88해법, 실패0 |
-| 문서·번역·Python | 48문서/211로컬링크/17앵커/6JSON·6언어·Python47테스트 PASS |
+| 문서·번역·Python | 48문서/213로컬링크/17앵커/6JSON·6언어·Python48테스트 PASS |
+| 정상 메뉴·창 종료 | 각각8 / 6검사·실제 종료0·마지막 로그까지 경고/오류0 |
 | 실행 경계 | 검사기 자체5테스트와 runtime24스크립트, 오류0 |
 
 검사항목 수에는 선수 사건 재생·반복 assert가 포함된다. 별개의 사용자 수·독립 퍼즐 수·실제 플레이 시간으로 바꾸지 않는다. 실제 렌더·OS·패키지·CI는 아래 최종 배포 절에서 별도로 기록한다.
@@ -123,11 +124,23 @@ C22의 활성 legacy 재입장과 과거 결말의 음악 고정, 추가로 실�
 
 R01의 기본 폼 누락을 고치고 마지막 번역/UI 문맥과 helper 기대값을 정합시킨 뒤, `native-full-final.log/.json`은 **5,390검사/0실패, 실제44사건·세 결말,85.728초**였다. 실제347fixture행동·47암호 입력 경로, 새 모형의 기본 폼 Run(response134/VM6/observation55),41PNG를 기록했다. 기본28경로 bytes/존재 상태와 제품33파일 SHA가 전후 같고 엔진 오류·경고·ObjectDB 잔류는0이다.
 
+배포 직전 정상 종료 수리와 preview 교정까지 반영한 마지막 `native-full-release-final.log/.json`도 **5,390/0·44/44·세 결말,84.961초**였다.347행동·47암호·세 모형195회 Run·41PNG가 같고, 새 제품33SHA/보호28경로 불변·엔진 오류/경고/잔류0을 확인했다. 수리 전 PNG는 `full-before-shutdown/` 사본으로 보존하고 최신 `full/` 및 별도 실행 JSON/SHA를 남겼다.
+
 이는 실제 M3 Max/OpenGL 렌더와 Godot InputEvent의 실행 근거다. 폼의 값·metadata 선택은 setup API, Run·새 진행·저장·확인은 엔진 입력으로 구분한다. 완료 flag를 주입하거나 BaseButton 신호를 직접 emit하지 않았다. GUI는 각 사건의 A경로를 완주했고 B경로는 headless에서 검증했다. [렌더 상세](perspectives-render-qa-20261105.md)가 보존·입력·음악의 정확한 범위를 설명한다.
 
 부모는 실제 report의44/3·실패0·보호true·소스 SHA 동등을 다시 확인하고 대표8PNG를 육안 검토했다. 기존 smoke의 메뉴·도구 레이아웃을 기준으로 한 qualitative visual verdict는92/PASS였다. 외부 reference에 대한 pixel 일치나 사람의 재미 평가가 아니다. 큰 일본어/독일어의 조밀한 title/taskbar 축약, 언어 전환 전 출력된 console/toast 이력의 기존 언어 유지는 보이는 제한이다.
 
 CUA는 문서 재로드 뒤 inventory 두 시도에서 native pipe startup failed/browser host unavailable을 반환했다. 따라서 이번 버전의 실제 OS 포인터·물리IME·오디오 장치 수락은 아직 NOT_RUN이다. 이 도구의 실패를 게임 실행 실패로 보거나, 엔진 입력 검증을 OS 조작 성공으로 대체하지 않는다.
+
+## 배포 직전 추가 검증과 교정
+
+첫 소스 `658ecf2`의 hosted CI에서 Windows/macOS는 전체 gate와 실제 PCK 검사까지 성공했다. Linux의 실제 renderer도458검사/0실패·M01 1/44·세 편 선택·15PNG·90.836초·기본 자료 불변이었다. 다만 D01에 새 quarantine 행동이 앞에 들어가면서 “첫 매개변수 행동”을 고르던 helper가 CI에서 요구한 `set_control` 대신 그것을 표시했다. CI는 이를 정상 거절했다. 제품이나 CI 조건을 바꾸지 않고 대표 공개 행동을 `set_control`/`collect`로 명시했고, 로컬 smoke는459/0·6.951초·동일 metadata 판정과 제품33SHA/보호28경로 불변으로 통과했다.
+
+최종 Mac ZIP의 첫 외부 QA 명령은 release template에서 지원하지 않는 `--script`를 사용해 검사 스크립트가 실행되지 않았다. 실제 `--help`와 프로세스 stack/verbose로 정상 게임이 계속 실행됐음을 확인했다. 지원하는 `--write-movie`와 `--quit-after`로 실제 배포 바이너리의 메뉴·3D8PNG와 종료0을 확인했지만, 그 강제 종료에서 Ogg 자원 정리 경고도 관찰했다. 이 잘못된 검사 명령이나 종료0을 전체 성공으로 표시하지 않는다.
+
+별도 source-engine 프로세스의 **실제 메뉴 버튼 Enter 활성화**에서도 같은8ObjectDB/2resources 경고가 재현됐다. 따라서 강제 CLI만의 문제로 기각하지 않고 메뉴 Quit·표준 WM close를 `FullGame.request_shutdown` 하나로 연결했다. 중복 요청을 막고 재생 중지→프레임 대기→stream 해제·Score 정리→짧은 drain→종료 순서로 처리한다. 특정 검사 CLI를 감지하는 제품 분기는 넣지 않았다.
+
+수정 후 native 메뉴8/0·창 알림6/0, headless 두 경로도 같은 수치로 실제 종료0·마지막 로그까지 경고/오류0이었다. 창 테스트는 표준 WM notification을 두 번 전달한 기능 검사이며 물리 OS 창 닫기가 아니다. 실제 프로세스 종료 뒤에도 기본28경로 SHA가 같았다. Python 외부30초 deadline·실제 종료코드·마지막 stderr·단일 JSON·mode/stage·양수 checks를 확인하는 [종료 회귀](../../tools/test_shutdown.py)를 whole gate에 연결했다. source와 테스트 UID까지 동결한 뒤 재export하며 첫 미공개 ZIP은 `builds/provisional/658ecf2-1.1.0-rc1/`에 보존했다.
 
 ## 최종 완료 기록
 

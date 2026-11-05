@@ -464,16 +464,19 @@ func _view_first_forms() -> void:
 		_check(actions != null and actions.item_count > 0, "real first-case model exposes public basic-form actions: " + kind)
 		if actions == null:
 			continue
-		# Inspect is a real action with no fields; view a public parameterized action for widget evidence.
-		var action_id := ""
-		for action in row.get("actions", []):
-			if not action.get("fields", []).is_empty():
-				action_id = str(action.id)
-				break
-		_check(not action_id.is_empty() and _select_option(actions, action_id), "first-case model has a real parameterized basic form: " + kind)
-		if not action_id.is_empty():
-			actions.item_selected.emit(actions.selected)
-			await _frames(2)
+		# Representative public forms are stable even when another action is inserted before them.
+		var action_id := str({"response_lab": "set_control", "observation_case": "collect"}.get(kind, ""))
+		if action_id.is_empty():
+			for action in row.get("actions", []):
+				if not action.get("fields", []).is_empty():
+					action_id = str(action.id)
+					break
+		var selected := not action_id.is_empty() and _select_option(actions, action_id)
+		_check(selected, "first-case model has its representative public basic form: " + kind + "/" + action_id)
+		if not selected:
+			continue
+		actions.item_selected.emit(actions.selected)
+		await _frames(2)
 		var fields := {}
 		for key in desktop.tool_inputs:
 			fields[key] = desktop.tool_inputs[key].get_class()

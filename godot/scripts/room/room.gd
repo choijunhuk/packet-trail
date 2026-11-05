@@ -5,6 +5,7 @@ signal room_entered
 signal settings_changed(values: Dictionary)
 signal application_focus_changed(active: bool)
 signal campaign_selected(pack_id: String)
+signal quit_requested
 
 const Store = preload("res://scripts/presentation/settings_store.gd")
 const SettingsPanel = preload("res://scripts/presentation/settings_panel.gd")
@@ -338,7 +339,7 @@ func _rebuild_menu() -> void:
 	_button("ENTER_ROOM", return_to_room)
 	_button("SETTINGS", show_settings)
 	_button("CREDITS", _show_credits)
-	_button("QUIT", func(): get_tree().quit())
+	_button("QUIT", func(): quit_requested.emit())
 	note = Label.new()
 	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	note.add_theme_font_size_override("font_size", 15)

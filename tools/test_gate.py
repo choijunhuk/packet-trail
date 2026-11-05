@@ -63,6 +63,7 @@ class GateFailureTests(unittest.TestCase):
             "godot/tools/inspect_package.gd", "tools/test_mutation_limits.py", "tools/test_perspectives.py",
             "tools/build_expansion_content.py",
             "godot/tests/headless/test_ui_context.gd", "godot/tools/run_ui_context.gd",
+            "godot/tests/headless/test_shutdown.gd", "godot/tools/run_shutdown.gd", "tools/test_shutdown.py",
         )
         for relative in required:
             target = self.root / relative

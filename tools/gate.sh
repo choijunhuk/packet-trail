@@ -43,7 +43,8 @@ for required in godot/project.godot godot/scripts/core/game.gd \
     godot/tests/headless/test_audio_revision.gd godot/tools/run_audio_revision.gd \
     godot/tools/inspect_package.gd tools/test_mutation_limits.py tools/test_perspectives.py \
     tools/build_expansion_content.py godot/tests/headless/test_ui_context.gd \
-    godot/tools/run_ui_context.gd; do
+    godot/tools/run_ui_context.gd godot/tools/run_shutdown.gd \
+    godot/tests/headless/test_shutdown.gd tools/test_shutdown.py; do
     [[ -f "$required" ]] || fail "missing required file: $required"
 done
 

@@ -8,7 +8,7 @@
 - `tools/test_mutation_limits.py`: 실제 Godot 실행의 외부120초 deadline, 종료코드·엔진 오류·고유 suite report를 검사한다.
 - `godot/tests/headless/test_perspectives.gd`: 공개3팩/44사건·각2경로, 독립 부정/정상업무/관측·저장·결말 검증. mutation의 실제 API/IO 도우미를 상속해 재사용한다.
 - `tools/test_perspectives.py`: 외부240초 deadline으로 실제 실행을 감싸며 정수 checks·엔진 오류/종료코드·44사건×2의 실제 완료88행·고유 경로ID·팩별 결말 기록을 fail-closed 검사한다.
-- `godot/tools/inspect_package.gd`: 빈 별도 프로젝트에서 실제 PCK 로드·포함/제외 검증. 추가 리뷰 전 실제 확장 PCK398검사 PASS이며, 최종 source의 PCK는 root 직렬 통합 실행 대기다.
+- `godot/tools/inspect_package.gd`: 빈 별도 프로젝트에서 실제 PCK 로드·포함/제외 검증. 최종 source658ecf2의 macOS/Windows/Linux 실제 PCK 각각398검사 PASS다.
 
 원본 `user://saves/{campaign_01,slot_01}.json`과 bak, `settings.json`/bak/tmp는 검사 전후 SHA256 또는 부재를 비교한다. 쓰기는 시간/인스턴스로 유일한 `user://tests/mutation_limits_*` 아래로 제한하고 자기 테스트 폴더만 정리한다. UI 검사는 private UI 메서드의 headless 기능 호출이며 native 렌더·물리 입력·장치 IME 증거가 아니다. 공개 도메인 상태는 실제 코어 API와 원본 fixture로만 바꾸며 완료/fact/session을 주입하지 않는다.
 
@@ -102,7 +102,7 @@ R2 Data 재생성 뒤 recovery-alternatives-integration.log는 **14,004검사/0�
 
 M06/M07/M08/M12/M23의 각 A는 원제공자의 직접 보호를 실제 적용한다. 각 B는 그 A-only 정책이 실제 false인 채 원제공자에서 normal0·승인된 다른 제공자에서 실제 정상업무를 수행한다. 단순 다른 tool/HTTP 표면을 두 해법으로 세지 않았다. 각 A의 핵심 보호를 해제하거나 각 B의 격리한 원진입을 다시 열면 실제 direct_break_case가 허용되어서는 안 되는 status를 받고 current goal이 실패한다. 동시에 원래 선택한 정상 업무 route는 유지되고, 깨진 현재 상태와 이전의 유효 완료 영수증도 실제 저장 재개된다.
 
-이 값은 새로운 독립 진입/대응·출처와 반례의 기계적 검증 범위이며, 사람의 재미·분량·학습 효과 측정으로 읽지 않는다. 현재 소유 QA 코드는 root의 직렬 통합 검증용으로 고정했고, 최종 새 PCK는 추가 리뷰 수리 후 범위로 따로 검사한다.
+이 값은 새로운 독립 진입/대응·출처와 반례의 기계적 검증 범위이며, 사람의 재미·분량·학습 효과 측정으로 읽지 않는다. 소유 QA 코드는 root의 직렬 통합 검증용으로 고정했고, 추가 리뷰 수리 후 최종 새 PCK도 아래 범위로 따로 검사했다.
 
 ### 추가 리뷰 전 실제 데이터 PCK
 
@@ -110,7 +110,7 @@ M06/M07/M08/M12/M23의 각 A는 원제공자의 직접 보호를 실제 적용�
 
 각 팩 정의/결말·6PO·7음악+ending edit·16초상·4폰트·15고지와 작성/테스트/해법 제외를 실제로 확인했다. 로그 export-data-pack.log/inspect-data-pack.log를 보존했다. 이 패킷은 추가 리뷰 수리 전 source 범위이며 최종 새 패킷 검증으로 전용하지 않는다. 이후 export/import/native는 root의 프로젝트별 직렬 통합 신호에 맞춘다.
 
-추적 검사기 `godot/tools/inspect_package.gd`는 작성 및 Godot4.7 check-only 컴파일 PASS다. catalog/loader 계약에 따라 공개 intruder28·defender8·tracker8과 hidden legacy28을 구별하고 전체 packed 파일 경로의 테스트/해법/작성 자료 제외, 실제 리소스·각 팩 결말 번역을 검사한다. 첫 실제 PCK는 위 범위로 통과했으며, 추가 리뷰 수리 후 최종 패킷 검사는 root의 직렬 통합 신호에 맞춰 별도로 확인한다.
+추적 검사기 `godot/tools/inspect_package.gd`는 작성 및 Godot4.7 check-only 컴파일 PASS다. catalog/loader 계약에 따라 공개 intruder28·defender8·tracker8과 hidden legacy28을 구별하고 전체 packed 파일 경로의 테스트/해법/작성 자료 제외, 실제 리소스·각 팩 결말 번역을 검사한다. 첫 실제 PCK와 추가 리뷰 수리 후 최종3OS 패킷의 근거는 구분해 보존했다.
 
 Godot4.7의 `--export-pack Linux <absolute.pck>`는 이 프로젝트의 표준 리소스 팩을 만들 때 바이너리 export template 없이 사용할 수 있다. CLI의 pack-only 분기는 `export_pack`으로 직접 가고 일반 executable export의 `can_export`/template 검사를 거치지 않는다. 기본 `export_pack`은 `save_pack`을 호출하며 Linux/PC exporter는 이를 override하지 않는다. 공식 버전 소스의 실행 경로와 위 실제 데이터 PCK 생성을 함께 확인했다. [공식 CLI 문서](https://docs.godotengine.org/en/4.7/tutorials/editor/command_line_tutorial.html#exporting), [pack-only 분기](https://github.com/godotengine/godot/blob/4.7-stable/editor/editor_node.cpp#L1268), [기본 export_pack](https://github.com/godotengine/godot/blob/4.7-stable/editor/export/editor_export_platform.cpp#L2280).
 
@@ -123,4 +123,18 @@ root/CI 호출 형태는 다음과 같다. 출력 부모 폴더와 빈 검사 �
 
 빈 `EMPTY/project.godot`는 최소 `config_version=5`면 된다. inspector는 source-game 장면/코어가 처음부터 보이면 실패시켜 source fallback에 의한 가짜 packed PASS를 막는다. inspector 스크립트는 export에 넣지 않고 source 파일의 절대 경로로 실행한다. 성공은 종료0·엔진 오류0·고유 `suite:packed_perspectives`의 양의 checks·빈 failures로 판정한다. 새 SDK/Action/template 설치는 이 데이터팩 경로의 요구사항이 아니다. 실제 실행 binary의 세OS export/서명/실행 검증은 별도다.
 
-사람 플레이타임·재미·원어민 의미 검수·가청 품질·실물 OS/IME는 이 headless 회귀의 PASS 범위가 아니다.
+### 최종 source의 실제3OS PCK 독립검사
+
+root의 최종 wholeGate/native44 통과 및3OS export 종료 뒤, commit `658ecf296f9151ad543703ee0fcaec70b082cffc`의 최종 PCK를 각각 별도의 빈 임시 프로젝트에서 검사했다. committed inspector는 변경하지 않았고 source import/export, 전체 gate, native GUI 또는 commit을 수행하지 않았다. 각 검사에는 외부90초 deadline을 적용했다.
+
+| 실제 패킷 | 결과 | 시간 | 엔진 오류/경고 |
+|---|---|---|---|
+| macOS 앱 Resources/MidnightAccess.pck | 398검사/0실패, 종료0 | 0.901초 | 0/0 |
+| Windows MidnightAccess.pck | 398검사/0실패, 종료0 | 0.888초 | 0/0 |
+| Linux MidnightAccess.pck | 398검사/0실패, 종료0 | 0.881초 | 0/0 |
+
+세 패킷 모두68,579,900바이트, SHA256 `fe8f781851feb9441d86c09662ebee5aab852abfa6f1719691bb4a499b4a4689`이며 검사 전후 동일하다. 고유 JSON report의 `actual_public_counts={intruder:28,defender:8,tracker:8}`·`legacy_case_count=28` 및 각 팩의 실제 ending을 확인했다. 실제 packed loader/catalog·6언어/ending 번역·7곡+ending edit·4폰트·16초상·15고지 로드와 packed inventory177의 테스트/도구/해법/작성 자료 제외가 모두 통과했다.
+
+Godot 추적파일247개의 시작/종료 SHA, 기본 보호28경로와 전체 기존 saves 트리의 파일 목록/bytes도 모두 불변이다. 실행별 log/JSON, source/protected 전후 지문, 종합 pck-final-summary.json은 `.omx/artifacts/release-1.1/pck-final-*`에 보존했다. 추가 리뷰 전 qa-data.pck의398 PASS와 최종 패킷의398×3 PASS를 다른 source 범위로 기록한다.
+
+독립 QA 소유 구현·회귀·최종 패킷 검증은 완료했다. 사람 플레이타임·재미·원어민 의미 검수·가청 품질·실물 OS/IME는 이 headless/PCK 회귀의 PASS 범위가 아니다. root의 native 전체44/3ending 검증과 서명·ZIP·CI·릴리스 판정도 각 별도 근거를 따른다.

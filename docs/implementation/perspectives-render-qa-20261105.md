@@ -2,7 +2,7 @@
 
 작성 모델: Codex `gpt-6.1-sol / high`. 작업 트리 `packet-trail-expansion`, 브랜치 `feat/three-perspectives`.
 
-현재 상태: **최종 실제 native full 5390/0 GREEN — 44건·3결말 완료**. 최종 fixture의 28/8/8 사건과 각 첫 A 경로 347행동(침투 190, 방어 86, 추적 71)을 실제 UI로 실행했다. 초기 smoke 459/0과 첫 full 26/44 partial failure는 별도 원문 로그로 보존한다. 데이터가 없거나 계약이 맞지 않으면 실패하며, 준비 플래그나 완료 상태를 주입하지 않는다.
+현재 상태: **정상 종료 수리 후 최종 실제 native full 5390/0 GREEN — 84.961초, 44건·3결말 완료**. 최종 fixture의 28/8/8 사건과 각 첫 A 경로 347행동(침투 190, 방어 86, 추적 71)을 실제 UI로 실행했다. 초기 smoke 459/0과 첫 full 26/44 partial failure는 별도 원문 로그로 보존한다. 데이터가 없거나 계약이 맞지 않으면 실패하며, 준비 플래그나 완료 상태를 주입하지 않는다.
 
 ## 소유와 재사용
 
@@ -63,9 +63,27 @@ godot --path godot --audio-driver Dummy --script res://tools/capture_perspective
 
 JSON suite는 `rendered_perspectives`다. `status/profile/expected_scope/actual_case_count/actual_ending_count/campaign_cases/pack_endings/typed_basic_runs/first_case_form_views/native_fixture_actions/password_actions`와 `capture_metrics`를 기록한다. PNG별 path·width/height·밝기 표본 min/max·SHA256, test slot base/pack별 slot, source legacy probe, 보호 파일 수와 불변 여부를 남긴다. 실패/timeout은 실제 수행한 부분만 기록하고 `partial_failure`와 남은 GUI NOT_RUN 범위를 명시한다.
 
-### 최종 full 근거
+### CI preview 순서 의존 RED — source 658ecf2
 
-최종 whole Gate 통과와 제품 동결 신호 뒤 fresh parser exit 0을 확인하고 같은 macOS M3 Max/Godot 4.7/OpenGL 4.1 Metal compatibility/Dummy audio에서 실행했다. `native-full-final.log`는 **exit 0, status pass, 5390 checks / 0 failures / 85.728초**다.
+GitHub run `42020733790`에서 Linux Xvfb/Mesa smoke의 실제 엔진 report는 458/0, M01 1건 완료, 세 pack 선택, 15 PNG, 90.836초, 보호 경로 불변이었다. 그러나 CI는 `Missing actual structured form preview for defender`로 실패했다. 새 public action 삽입 뒤 helper의 첫 parameterized action 선택이 D01 `quarantine`으로 바뀌어 `artifact_id:OptionButton/quarantined:CheckBox`를 캡처했고, CI가 의도한 `set_control`의 `control_id/value` enum 미리보기를 제공하지 못했다.
+
+이 RED는 게임 실행 실패와 분리한다. `.omx/artifacts/release-1.1/ci-first-failed.log` 원문과 `.omx/artifacts/expansion-native/ci-preview-before-red.json`에 변경 전 근거를 보존했다. 제품 action 순서나 CI 조건을 바꾸지 않고 preview만 response_lab `set_control`, observation_case `collect`라는 명시적 public action metadata로 선택한다. 이후 로컬 smoke 한 번으로 같은 계약을 확인하며 full44/whole Gate를 재실행했다고 주장하지 않는다.
+
+교정 뒤 로컬 실제 smoke 한 번은 **459/0, exit 0, 6.951초**다. D01 preview는 `action=set_control/control_id:OptionButton/value:OptionButton`, T01은 `action=collect/sensor_id:OptionButton`으로 CI와 같은 predicate를 별도 대조해 통과했다. 실제 범위는 M01 1/44·세 pack 선택·6locale·15 PNG이며, 새 모형 Run과 나머지 43건·3결말은 이 smoke에서 NOT_RUN이다. PNG 15개 실파일의 header·치수·SHA·밝기 범위, 보호 28경로 불변, 제품 33SHA 전후 불변, 엔진 오류·경고·누수 0을 확인했다.
+
+로그/JSON은 `.omx/artifacts/expansion-native/native-ci-preview-fixed-smoke.log/.json`, 별도 확인은 `ci-preview-fixed-summary.json`, 소스 불변은 `ci-preview-source-before.json/after.json`이다. 교정 helper SHA256은 `14768855f8e3613582349bdc73e61c7a2e10d4b96abf704c1d2a8301e5b23a51`이다. 변경은 `_view_first_forms`의 preview 선택에 한정하며 제품·CI 검사·full의 사건 재생/판정 코드는 수정하지 않았다. 이전 full5390 기록은 해당 당시 helper SHA와 함께 보존하고 새 full을 실행했다고 표시하지 않는다. 새로운 3OS CI 및 패키지 provenance 검증은 root의 후속 범위다.
+
+### 정상 종료 수리 후 release 최종 full
+
+FullGame/Room의 정상 Quit 중앙화 수리와 root의 최종 Gate PASS(121.648초) 뒤 동일 제품 소스로 native full을 **한 번** 재실행했다. frozen helper SHA256은 preview 교정이 포함된 `14768855f8e3613582349bdc73e61c7a2e10d4b96abf704c1d2a8301e5b23a51`로 전후 같고 추가 수정하지 않았다.
+
+`native-full-release-final.log/.json`은 **5390 checks / 0 failures, status pass, exit 0, 84.961초**다. 실제 침투 28·방어 8·추적 8 사건과 3결말, 347 fixture 행동·47 password, response_lab 134·branch_vm 6·observation_case 55의 기본 폼 Run을 완료했다. PNG 41개는 실제 파일 header·치수·SHA·밝기 범위를 다시 검사해 통과했다. 보호 저장/설정 28경로와 제품 scripts·3pack·6PO 33SHA는 전후 불변이며 엔진 ERROR/WARNING/ObjectDB/Resource 잔류는 0이다. 세션 프로세스는 exit 0으로 정상 종료했다.
+
+`.omx/artifacts/expansion-native/full-release-final-summary.json`과 `full-release-final-source-before.json/after.json`에 최종 결과·불변 근거를 보존했다. 기존 `native-full-final.*` 기록은 덮어쓰지 않았고 이전 PNG는 root가 `full-before-shutdown`에 복사 보존했다. 최신 PNG는 `full/`에 있다. 이 suite는 기존 cleanup→quit 경로를 사용한다. 제품 메뉴 Quit/WM 종료의 별도 8/6 회귀나 실제 OS 입력을 이 full 실행으로 대신 통과했다고 주장하지 않는다. 원본 project/staging/사용자 앱 쓰기, 제품/helper 변경, 추가 Gate/export 실행은 없다.
+
+### 종료 수리 전 full 기록
+
+당시 whole Gate 통과와 제품 동결 신호 뒤 fresh parser exit 0을 확인하고 같은 macOS M3 Max/Godot 4.7/OpenGL 4.1 Metal compatibility/Dummy audio에서 실행했다. `native-full-final.log`는 **exit 0, status pass, 5390 checks / 0 failures / 85.728초**다.
 
 | 실제 결과 | 수량 |
 |---|---:|
