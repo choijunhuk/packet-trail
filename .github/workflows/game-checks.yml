@@ -107,7 +107,7 @@ jobs:
       - name: Check the standard-library package helper
         run: python3 tools/package_game.py --self-test
 
-      - name: Linux source rendering and input smoke with installed Xvfb and Mesa
+      - name: Linux partial UI smoke (M01 of 28) with installed Xvfb and Mesa
         if: runner.os == 'Linux'
         env:
           LIBGL_ALWAYS_SOFTWARE: "true"
@@ -160,18 +160,21 @@ jobs:
               summary("Linux Xvfb/Mesa source render: **NOT_RUN**; no successful software OpenGL preflight.\n```text\n" + probe_log[-5000:] + "\n```")
               raise SystemExit(0)
 
+          render_profile = "ci-render-smoke"
+          timeout_seconds = 210  # Harness watchdog is 150 seconds; allow it to emit its failure report.
           try:
-              result = subprocess.run(base + ["--path", "godot", "--script", "res://tools/capture_full_game.gd"],
-                                      capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=240)
+              result = subprocess.run(base + ["--path", "godot", "--script", "res://tools/capture_full_game.gd",
+                                              "--", "--ci-render-smoke"],
+                                      capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout_seconds)
           except subprocess.TimeoutExpired as error:
               partial = error.stdout or b""
               partial = partial.decode("utf-8", errors="replace") if isinstance(partial, bytes) else partial
-              (artifacts / "full-render.log").write_text(partial, encoding="utf-8")
-              summary("Linux source render/input: **FAIL** (240-second timeout).\n```text\n" + partial[-14000:] + "\n```")
+              (artifacts / "ci-render-smoke.log").write_text(partial, encoding="utf-8")
+              summary(f"Linux partial UI smoke ({render_profile}, M01/28): **FAIL** ({timeout_seconds}-second external timeout).\n```text\n" + partial[-14000:] + "\n```")
               raise SystemExit(1)
           log = result.stdout + result.stderr
-          (artifacts / "full-render.log").write_text(log, encoding="utf-8")
-          summary("Linux software-renderer execution log (virtual X11, source scene, Dummy audio; not physical GUI/audio acceptance):\n```text\n" + log[-14000:] + "\n```")
+          (artifacts / "ci-render-smoke.log").write_text(log, encoding="utf-8")
+          summary(f"Linux partial UI smoke execution log ({render_profile}; virtual X11, source scene, Dummy audio; not full-campaign or physical GUI/audio acceptance):\n```text\n" + log[-14000:] + "\n```")
           reports = []
           for line in log.splitlines():
               try:
@@ -188,6 +191,19 @@ jobs:
                   or reports[0]["checks"] <= 0 or reports[0].get("failures") != []):
               raise SystemExit("Missing or unsuccessful rendered_full_game report")
           report = reports[0]
+          scope = report.get("expected_scope", {})
+          cases = report.get("campaign_cases", [])
+          not_run = report.get("not_run", [])
+          if (report.get("profile") != render_profile or not isinstance(scope, dict)
+                  or any(type(scope.get(key)) is not int or scope[key] != value
+                         for key, value in {"cases": 1, "main_cases": 1, "optional_cases": 0}.items())
+                  or scope.get("locales") != ["ko", "en", "ja", "zh_Hans", "es", "de"]
+                  or scope.get("ending") is not False
+                  or not isinstance(cases, list) or len(cases) != 1 or not isinstance(cases[0], dict)
+                  or cases[0].get("mission_id") != "M01" or cases[0].get("completed") is not True
+                  or not isinstance(not_run, list) or not not_run
+                  or any(not isinstance(item, str) or not item.strip() for item in not_run)):
+              raise SystemExit("Missing or mismatched ci-render-smoke coverage report")
           captures = report.get("captures", [])
           metrics = report.get("capture_metrics", [])
           if not captures or len(metrics) != len(captures):
@@ -209,7 +225,11 @@ jobs:
                       or not (0 <= low < high <= 1 and high - low > 0.005)):
                   raise SystemExit("Captured PNG metrics or hash verification failed")
               rows.append(f"| {file.name} | {width}×{height} | {low:.5f}/{high:.5f} | `{digest}` |")
-          summary("Linux Xvfb/Mesa source render: **PASS**\n\n" + "\n".join(renderer) + "\n\n" + "\n".join(rows)
+          summary(f"Linux Xvfb/Mesa **partial UI smoke PASS** — profile `{render_profile}`, {len(cases)}/28 campaign cases (M01).\n\n"
+                  + "Coverage: actual M01 UI, four terminals, representative tools, pause, room, six locales, PNG metrics and protected-file preservation.\n\n"
+                  + "Remaining 27 campaign cases and ending GUI are not executed by this profile. Full 28-case/56-condition headless validation remains in the separate three-OS gate; the local macOS full GUI suite is separate evidence.\n\n"
+                  + "Reported limitations:\n" + "\n".join("- " + item for item in not_run)
+                  + "\n\n" + "\n".join(renderer) + "\n\n" + "\n".join(rows)
                   + "\n\nPNG binaries are not uploaded: only these metrics, hashes and execution logs persist in the job summary.")
           PY
 

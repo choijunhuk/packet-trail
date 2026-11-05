@@ -295,6 +295,8 @@ func open_desktop(action := "continue") -> void:
 			window.show()
 	_desktop_windows.clear()
 	_in_desktop = true
+	# The desktop is opaque; avoid rendering the studio behind its interface.
+	studio.hide()
 	menu.hide()
 	_looking = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -304,6 +306,7 @@ func open_desktop(action := "continue") -> void:
 
 
 func return_to_room() -> void:
+	studio.show()
 	_hide_desktop()
 	_in_desktop = false
 	menu.hide()
@@ -315,6 +318,7 @@ func return_to_room() -> void:
 
 
 func show_main_menu() -> void:
+	studio.show()
 	_hide_desktop()
 	_in_desktop = false
 	_looking = false

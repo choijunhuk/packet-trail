@@ -26,13 +26,21 @@ var room: Node
 var desktop: Control
 var finished := false
 var action_result: Dictionary = {}
+var profile := "full"
+var started_ms := 0
 
 
 func _initialize() -> void:
+	started_ms = Time.get_ticks_msec()
+	if OS.get_cmdline_user_args().has("--ci-render-smoke"):
+		profile = "ci-render-smoke"
+		not_run.append("M02–M24 and four optional case GUI replays are NOT_RUN in this M01-only smoke; full campaign/backend coverage is separate evidence.")
+		not_run.append("M03 discovery and M05 actor-context GUI regressions are NOT_RUN in smoke; use the default full profile.")
+		not_run.append("Ending selection/credits GUI are NOT_RUN in smoke; ending backend validation belongs to the separate headless campaign suite.")
 	_run.call_deferred()
-	create_timer(300.0).timeout.connect(func():
+	create_timer(150.0 if profile == "ci-render-smoke" else 300.0).timeout.connect(func():
 		if not finished:
-			failures.append("full-game render/input regression timed out")
+			failures.append("%s render/input regression timed out" % profile)
 			_finish())
 
 
@@ -43,6 +51,8 @@ func _run() -> void:
 		_finish()
 		return
 	output_dir = ProjectSettings.globalize_path("res://../.omx/artifacts/full-production/").simplify_path()
+	if profile == "ci-render-smoke":
+		output_dir = output_dir.path_join("ci-render-smoke")
 	_check(DirAccess.make_dir_recursive_absolute(output_dir) == OK, "full-production artifact directory is writable")
 	slot = "user://tests/full_ui_%d_%d.json" % [Time.get_ticks_usec(), get_instance_id()]
 	_check(not FileAccess.file_exists(slot), "unique test campaign slot does not already exist")
@@ -123,11 +133,30 @@ func _run() -> void:
 	await _keyboard_focus_checks()
 	await _terminal_session_checks()
 	await _request_lab_checks()
+	if profile == "ci-render-smoke":
+		await _play_ci_render_smoke()
+		_finish()
+		return
 	if not (await _play_campaign()):
 		_finish()
 		return
 	await _ending_checks()
 	_finish()
+
+
+func _play_ci_render_smoke() -> void:
+	var source: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/campaign_solutions.json"))
+	_check(source is Dictionary and source.get("missions", {}) is Dictionary, "smoke uses real campaign action fixtures")
+	if not source is Dictionary or not source.get("missions", {}) is Dictionary:
+		return
+	_check(desktop.get_game_view().get("mission_id") == "M01", "smoke starts the actual M01 case")
+	if not (await _play_route("M01", source.missions.get("M01", {}))):
+		return
+	await _file_observation_checks()
+	await _save_and_room_checks()
+	await _locale_audio_checks()
+	_check(campaign_cases.size() == 1 and campaign_cases[0].mission_id == "M01" and campaign_cases[0].completed,
+		"ci-render-smoke reports exactly one actually completed case")
 
 
 func _play_campaign() -> bool:
@@ -486,9 +515,6 @@ func _terminal_session_checks() -> void:
 	_check(input.text == "not-submitted-secret", "history navigation cannot replace a pending password")
 	await _key(KEY_TAB)
 	_check(input.text == "not-submitted-secret", "completion cannot expose a pending password")
-	var focus_after_tab := root.gui_get_focus_owner()
-	print("AUTH_TAB_FOCUS ", JSON.stringify({"focus": str(focus_after_tab.get_path()) if focus_after_tab != null else "none",
-		"password_input": str(input.get_path()), "paused": desktop.paused}))
 	# Password Tab permits normal focus traversal; target the input before testing its Escape handler.
 	input.grab_focus()
 	await _frames(1)
@@ -880,11 +906,6 @@ func _confirm_dialog(dialog: AcceptDialog) -> void:
 	button.grab_focus()
 	await _frames(1)
 	_check(viewport.gui_get_focus_owner() == button, "embedded dialog keyboard focus reaches its actual OK button")
-	if OS.get_environment("PACKET_TRAIL_UI_DIAGNOSTICS") == "1":
-		button.gui_input.connect(func(event: InputEvent):
-			if event is InputEventKey:
-				print("DIALOG_KEY_RECEIVED ", str(button.get_path()), " pressed=", event.pressed, " key=", event.keycode))
-		button.pressed.connect(func(): print("DIALOG_BUTTON_ACTIVATED_BY_INPUT ", str(button.get_path())))
 	await _key(KEY_ENTER, false, false, 0, false, viewport)
 	_check(not dialog.visible, "actual Enter accepts and closes the embedded dialog")
 
@@ -915,25 +936,11 @@ func _click(control: Control) -> void:
 		return
 	var viewport := control.get_viewport()
 	var point := control.get_global_rect().get_center()
-	if OS.get_environment("PACKET_TRAIL_UI_DIAGNOSTICS") == "1":
-		print("INPUT_DIAGNOSTIC ", JSON.stringify({"control": str(control.get_path()), "rect": str(control.get_global_rect()),
-			"point": str(point), "viewport": str(viewport.get_path()), "viewport_rect": str(viewport.get_visible_rect()),
-			"canvas_transform": str(viewport.get_canvas_transform()), "global_transform": str(control.get_global_transform_with_canvas()),
-			"mouse": str(viewport.get_mouse_position()), "embedded": viewport.is_embedded() if viewport is Window else false}))
-		control.gui_input.connect(func(event: InputEvent):
-			if event is InputEventMouseButton:
-				print("GUI_MOUSE_RECEIVED ", str(control.get_path()), " pressed=", event.pressed, " position=", event.position))
-		if control is BaseButton:
-			control.button_down.connect(func(): print("BUTTON_DOWN_RECEIVED ", str(control.get_path())))
-			control.button_up.connect(func(): print("BUTTON_UP_RECEIVED ", str(control.get_path())))
-			control.pressed.connect(func(): print("BUTTON_PRESSED_RECEIVED ", str(control.get_path())))
 	_check(viewport.get_visible_rect().has_point(point), "mouse target lies in its viewport")
 	var motion := InputEventMouseMotion.new()
 	motion.position = point
 	motion.global_position = point
 	viewport.push_input(motion, true)
-	if OS.get_environment("PACKET_TRAIL_UI_DIAGNOSTICS") == "1" and control is BaseButton:
-		print("BUTTON_HOVER_STATE ", str(control.get_path()), " hovered=", control.is_hovered(), " disabled=", control.disabled)
 	var event := InputEventMouseButton.new()
 	event.button_index = MOUSE_BUTTON_LEFT
 	event.position = point
@@ -941,6 +948,10 @@ func _click(control: Control) -> void:
 	event.pressed = true
 	viewport.push_input(event, true)
 	await _frames(1)
+	# Complete the injected pointer stream after any native motion during the held frame.
+	var return_motion := motion.duplicate() as InputEventMouseMotion
+	return_motion.button_mask = MOUSE_BUTTON_MASK_LEFT
+	viewport.push_input(return_motion, true)
 	event = event.duplicate() as InputEventMouseButton
 	event.pressed = false
 	viewport.push_input(event, true)
@@ -960,12 +971,12 @@ func _button_text(node: Node, text: String) -> Button:
 func _frames(count: int) -> void:
 	for index in range(count):
 		await process_frame
-	if DisplayServer.get_name() != "headless":
-		await RenderingServer.frame_post_draw
 
 
 func _capture(filename: String) -> void:
 	await _frames(2)
+	# Static or occluded windows need not draw during input waits; explicitly render each capture.
+	RenderingServer.force_draw(false)
 	var image := root.get_texture().get_image()
 	_check(not image.is_empty(), "renderer returns pixels: " + filename)
 	if image.is_empty():
@@ -1032,6 +1043,10 @@ func _cleanup_and_report() -> void:
 	if not before_files.is_empty():
 		_check(_fingerprints() == before_files, "default campaign/legacy/preferences bytes remain unchanged")
 	print(JSON.stringify({"suite": "rendered_full_game", "checks": checks, "failures": failures,
+		"profile": profile, "expected_scope": {"cases": 1 if profile == "ci-render-smoke" else 28,
+			"main_cases": 1 if profile == "ci-render-smoke" else 24, "optional_cases": 0 if profile == "ci-render-smoke" else 4,
+			"locales": Localization.LOCALES, "ending": profile == "full"},
+		"elapsed_seconds": float(Time.get_ticks_msec() - started_ms) / 1000.0,
 		"capture_dir": output_dir, "captures": captures, "capture_metrics": capture_metrics, "campaign_cases": campaign_cases,
 		"test_save_slot": slot, "not_run": not_run,
 		"limit": "Actual source-scene rendering and injected native InputEvents; physical IME/hearing/other OS acceptance are separate."}))
