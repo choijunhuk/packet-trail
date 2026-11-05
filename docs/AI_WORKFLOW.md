@@ -137,3 +137,27 @@ C06~C08은 기존 Claude 세션이 남긴 이력이다. 이번 Codex 재검토�
 ```
 
 요청값만 알면 ‘요청’, 런타임에서 확인하면 ‘실제’, 앞으로의 계획이면 ‘권장’이라고 쓴다. 전역 Codex·Claude 설정은 이 저장소를 위해 변경하지 않았다.
+
+### 2026-11-05 전체 게임 제작 재개
+
+사용자가 첫 실행판에서 끊지 말고 끝까지 완성하고, 피드백은 나중에 주겠다고 명시했다. 범위는 P0/P1에서 전체 침투자편으로 확장됐다. 작업은 `feat/full-campaign`의 별도 작업트리에서 진행하고, 구버전 M01과 사용자 저장을 보존한다.
+
+| ID | 모델 | 추론 수준 | 실제 작업·확인 범위 |
+|---|---|---|---|
+| A21 | gpt-6.1-sol | max | 부모의 전체 통합·파서/경계/gate·native 실행·배포. 기존 세션 모델 이력 유지 |
+| A22 | gpt-6.1-sol | xhigh | Campaign façade/runtime/loader/tool models·savev2·복수터미널·실제 회귀 수정 |
+| A23 | gpt-6.1-sol | high | 24메인+4선택·113host·89자료 목표·56해법·서사/KOEN 원고. 부모의 반복 템플릿 비판을 받고 다중 근거 체인으로 재집필 |
+| A24 | gpt-6.1-sol | high | 3D 작업실·메뉴/설정·세 OS 프리셋/CI·검증된 ZIP 패키저 |
+| A25 | gpt-6.1-sol | xhigh | 전체 QA 계약·해법/부정/저장 검증·독립 코어 리뷰 5건. 추가 테스트 turn의 서비스 분류 오류 후 부모가 남은 테스트 보완을 수행 |
+| A26 | gpt-6.1-sol | high | 오리지널 OST7큐·효과음·AudioDirector·실제 입력/렌더 검사. 독립 audio39, native 회귀 증거는 전체 구현 기록에서 확인 |
+| A27 | gpt-6.1-sol | high | 6PO 1,443키/언어·KR/JP/SC/Mono·공식 출처/OFL·문자열/토큰/폰트 검사 |
+| A28 | gpt-6.1-sol | xhigh | fresh UI 통합 독립 읽기 검토. Important3·Critical0, 수정은 부모가 담당 |
+| C13 | claude-opus-5-5 | high 요청 | 전체 UI 첫 호출. Read/Write 절대 경로 rule 오류를 발견해 중단했으며 성공 기여로 계산하지 않음 |
+| C14 | claude-opus-5-5 | high 요청 | 올바른 Read(//절대경로)/Edit(//소유파일)로 재실행. UI/scene/KOEN UI475키 작성. `is_error=false`, 실제 modelUsage, 권한 거절0 확인 |
+| IG01 | 내장 image_gen | 모델/수준 미노출 | 성인 허구 캐릭터 중립4·정본 참조 표정 편집12. 선택한16PNG를 프로젝트에 저장·SHA/alpha 검사 |
+
+Claude는 CLI의 safe-mode/restricted에서 Read/Glob/Grep/Write/Edit만 주고, 소유한 UI 네 파일 외에는 수정 권한을 주지 않았다. 내장 Write 도구 허용은 `Edit(//absolute/file)` 규칙이 담당한다는 공식 권한 문서를 확인해 교정했다. 전역 Claude/Codex 설정·인증은 변경하지 않았다. [공식 경로 규칙](https://code.claude.com/docs/en/permissions#how-path-patterns-match), [Write 규칙 설명](https://code.claude.com/docs/en/permissions#writepath-notebookeditpath-and-globpath-rules-never-match).
+
+C14는 직접 Godot를 실행하지 않았다. 부모의 전체 headless/import·runtime·실제 renderer 검증이 별도 실행 증거이며, 모델의 READY/완료 응답을 통과로 대신하지 않는다. 모델이 본 소스와 후속 수정 범위의 SHA·재현 로그를 구분한다. 숨은 모델 thinking/signature는 사용자용 보고서에 옮기지 않는다.
+
+최종 fresh Opus 5.5/xhigh 검토와 배포 검증은 아직 수행 전이면 실제 이력으로 추가하지 않는다. 실제 완료 시 전체 구현 기록과 여기에 실행 ID·결과를 붙인다.

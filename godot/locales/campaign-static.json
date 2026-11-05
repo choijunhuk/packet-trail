@@ -1,0 +1,428 @@
+{
+  "C01_NAME": [
+    "ソユン",
+    "瑞允",
+    "Seoyun",
+    "Seoyun"
+  ],
+  "C02_NAME": [
+    "ドユン",
+    "度允",
+    "Doyun",
+    "Doyun"
+  ],
+  "C03_NAME": [
+    "ミンソ",
+    "敏瑞",
+    "Minseo",
+    "Minseo"
+  ],
+  "C04_NAME": [
+    "テギョン",
+    "泰景",
+    "Taegyeong",
+    "Taegyeong"
+  ],
+  "COMMON_INDEX_TITLE": [
+    "夜間依頼の索引",
+    "夜间任务索引",
+    "Índice de encargos nocturnos",
+    "Verzeichnis der Nachtaufträge"
+  ],
+  "COMMON_CONTEXT_TITLE": [
+    "この事件の観察資料",
+    "本次事件的观察资料",
+    "Observaciones del caso",
+    "Beobachtungen zu diesem Fall"
+  ],
+  "COMMON_WORKBENCH_TITLE": [
+    "隔離された仮想検証窓",
+    "隔离虚拟工作台",
+    "Banco virtual aislado",
+    "Isolierter virtueller Prüfstand"
+  ],
+  "COMMON_LOGIN_TITLE": [
+    "架空の業務アカウントにログイン",
+    "虚构业务账号登录",
+    "Acceso a cuenta de trabajo ficticia",
+    "Anmeldung am fiktiven Arbeitskonto"
+  ],
+  "COMMON_AUDIT_TITLE": [
+    "独立して保管された証拠",
+    "独立保存的证据",
+    "Pruebas conservadas de forma independiente",
+    "Unabhängig aufbewahrte Belege"
+  ],
+  "COMMON_PRESERVE": [
+    "原本、無関係な資料、正規サービスを守ってください。他の有効な経路でも同じ目標に届きます。",
+    "请保留原件、无关记录与正常服务。其他有效通路也能达成同一目标。",
+    "Preserva originales, registros ajenos y servicios normales. Otra ruta válida puede alcanzar el mismo objetivo.",
+    "Erhalte Originale, unbeteiligte Aufzeichnungen und reguläre Dienste. Auch ein anderer gültiger Weg erreicht dasselbe Ziel."
+  ],
+  "COMMON_HINT_ONE": [
+    "依頼の目標と、まだ得られていない事実を比べてください。特定ツールの使用は必須ではありません。",
+    "比较委托目标与尚未取得的事实。没有必须使用的特定工具。",
+    "Compara el objetivo con el hecho que aún falta. No es obligatorio usar una herramienta concreta.",
+    "Vergleiche das Auftragsziel mit der noch fehlenden Tatsache. Kein bestimmtes Werkzeug ist vorgeschrieben."
+  ],
+  "COMMON_ABSTRACTION": [
+    "ゲーム内の小さな状態・証拠モデルです。入力は登録された架空世界にだけ作用します。",
+    "这是游戏内部的小型状态与证据模型。输入仅影响已注册的虚构世界。",
+    "Es un modelo interno reducido de estado y pruebas. La entrada solo afecta al mundo ficticio registrado.",
+    "Dies ist ein kleines internes Zustands- und Belegmodell. Eingaben wirken nur auf die registrierte fiktive Welt."
+  ],
+  "COMMON_LIMIT": [
+    "プロトコル、OS、実務ツール全体の習熟を保証しません。実システムでは許可と環境ごとの検証が別途必要です。",
+    "这不代表掌握完整协议、操作系统或专业工具。真实系统仍需授权与针对环境的验证。",
+    "Esto no acredita dominio completo de protocolos, sistemas operativos ni herramientas profesionales. Los sistemas reales exigen autorización y validación específica del entorno.",
+    "Dies belegt keine umfassende Beherrschung von Protokollen, Betriebssystemen oder Fachwerkzeugen. Reale Systeme erfordern eine Genehmigung und umgebungsspezifische Prüfungen."
+  ],
+  "STAGE_BRIEF": [
+    "依頼",
+    "委托",
+    "El encargo",
+    "Der Auftrag"
+  ],
+  "STAGE_ENTRY": [
+    "入口を探す",
+    "进入通路",
+    "Una vía de entrada",
+    "Ein Weg hinein"
+  ],
+  "STAGE_CONTEXT": [
+    "残された手掛かり",
+    "留下的线索",
+    "La pista que queda",
+    "Der verbliebene Hinweis"
+  ],
+  "STAGE_TEST": [
+    "比較と実験",
+    "比较与实验",
+    "Comparación y experimento",
+    "Vergleich und Versuch"
+  ],
+  "STAGE_SCOPE": [
+    "現在の権限と制約",
+    "当前权限与约束",
+    "Autoridad y límites",
+    "Rechte und Grenzen"
+  ],
+  "STAGE_RESULT": [
+    "回収と次の痕跡",
+    "资料与下一条痕迹",
+    "Pruebas y siguiente rastro",
+    "Beleg und nächste Spur"
+  ],
+  "M01_GOAL": [
+    "原本を残し、引き継ぎ記録 N47 を ~/archive に回収する。",
+    "保留原件，将交接记录 N47 复制到 ~/archive。",
+    "Conserva el original y recupera el relevo N47 en ~/archive.",
+    "Erhalte das Original und sichere Übergabe N47 in ~/archive."
+  ],
+  "M01_RECORD_TEXT": [
+    "[N47 / HANDOFF]\n夜間引き継ぎ · 00:47\n転送: relay-02 -> archive-17\n承認標識: SY / 照合待ち\n原本を保存し、コピーだけを渡すこと。\n次の手掛かり: relay 02 の消えた送信。\n",
+    "[N47 / HANDOFF]\n夜间交接 · 00:47\n传输: relay-02 -> archive-17\n批准标记: SY / 待交叉核验\n保留原件，仅交付副本。\n下一条线索：relay 02 缺失的传输。\n",
+    "[N47 / HANDOFF]\nRelevo nocturno · 00:47\nTraslado: relay-02 -> archive-17\nMarca de aprobación: SY / contraste pendiente\nConservar el original y entregar solo una copia.\nSiguiente pista: la transmisión perdida de relay 02.\n",
+    "[N47 / HANDOFF]\nNachtübergabe · 00:47\nÜbertragung: relay-02 -> archive-17\nFreigabemarkierung: SY / Gegenprüfung ausstehend\nOriginal erhalten und nur eine Kopie übergeben.\nNächste Spur: die fehlende Übertragung von relay 02.\n"
+  ],
+  "M01_HOST_NAME": [
+    "夜間保管庫",
+    "夜间档案库",
+    "Archivo nocturno",
+    "Nachtarchiv"
+  ],
+  "M01_FILE_README_TXT": [
+    "夜間点検\n保護記録は /vault にあります。\n/public/shift-note.txt の引き継ぎメモを読んでください。\n",
+    "夜间检查\n受保护记录位于 /vault。\n请阅读 /public/shift-note.txt 的交接便条。\n",
+    "Inspección nocturna\nLos registros protegidos están en /vault.\nLee la nota en /public/shift-note.txt.\n",
+    "Nachtprüfung\nGeschützte Aufzeichnungen liegen in /vault.\nLies die Übergabenotiz unter /public/shift-note.txt.\n"
+  ],
+  "M01_FILE_SHIFT_NOTE_TXT": [
+    "[引き継ぎメモ]\n保守アカウント: maint\n仮の合言葉: lumen-47\n引き継ぎ記録: /vault/handoff.log\n保存コピー: https://mirror.packet.test/cache/47\n原本を変更・削除しないこと。\n",
+    "[交接便条]\n维护账号：maint\n临时口令：lumen-47\n交接记录：/vault/handoff.log\n缓存副本：https://mirror.packet.test/cache/47\n不得修改或删除原件。\n",
+    "[Nota de relevo]\nCuenta de mantenimiento: maint\nFrase temporal: lumen-47\nRegistro de relevo: /vault/handoff.log\nCopia en caché: https://mirror.packet.test/cache/47\nNo modificar ni eliminar originales.\n",
+    "[Übergabenotiz]\nWartungskonto: maint\nVorläufige Phrase: lumen-47\nÜbergabeaufzeichnung: /vault/handoff.log\nZwischengespeicherte Kopie: https://mirror.packet.test/cache/47\nOriginale weder ändern noch löschen.\n"
+  ],
+  "M01_FILE_HANDOFF_LOG": [
+    "[保管終了]\n古い点検用紙です。目標の引き継ぎ記録ではありません。\n",
+    "[保留结束]\n这是一份过时的检查表，并非目标交接记录。\n",
+    "[Conservación finalizada]\nFormulario de inspección obsoleto; no es el relevo objetivo.\n",
+    "[Aufbewahrung beendet]\nEin veraltetes Prüfformular, nicht die gesuchte Übergabe.\n"
+  ],
+  "M01_PAGE_1_TITLE": [
+    "夜間保管庫",
+    "夜间档案库",
+    "Archivo nocturno",
+    "Nachtarchiv"
+  ],
+  "M01_PAGE_1_BODY": [
+    "夜間移管中です。\n公開のお知らせは閲覧できます。保護された引き継ぎ記録には保守セッションが必要です。",
+    "夜间移交进行中。\n可查看公开公告。受保护的交接记录需要维护会话。",
+    "Traslado nocturno en curso.\nLos avisos públicos están disponibles. Los relevos protegidos requieren una sesión de mantenimiento.",
+    "Nachtübertragung läuft.\nÖffentliche Mitteilungen sind verfügbar. Geschützte Übergaben benötigen eine Wartungssitzung."
+  ],
+  "M01_PAGE_1_LINK_1": [
+    "配備のお知らせを見る",
+    "查看部署公告",
+    "Ver aviso de despliegue",
+    "Bereitstellungsmitteilung öffnen"
+  ],
+  "M01_PAGE_2_TITLE": [
+    "夜間配備のお知らせ",
+    "夜间部署公告",
+    "Aviso de despliegue nocturno",
+    "Mitteilung zur Nachtbereitstellung"
+  ],
+  "M01_PAGE_2_BODY": [
+    "引き継ぎ資料の提供状況を点検しています。別の中継に仮のコピーが残っています。場所はサーバーの引き継ぎメモで確認してください。",
+    "交接资料的可用性正在检查。另一个中继留有临时副本，位置请查看服务器交接便条。",
+    "Se está revisando la disponibilidad del relevo. Queda una copia temporal en otro repetidor. Consulta su ubicación en la nota del servidor.",
+    "Die Verfügbarkeit der Übergabe wird geprüft. Auf einem anderen Relais liegt eine vorläufige Kopie. Ihren Ort nennt die Übergabenotiz des Servers."
+  ],
+  "M01_PAGE_2_LINK_1": [
+    "保管庫ホーム",
+    "档案库主页",
+    "Inicio del archivo",
+    "Archivstartseite"
+  ],
+  "M01_PAGE_3_TITLE": [
+    "中継キャッシュ / 引き継ぎ 47",
+    "中继缓存 / 交接 47",
+    "Caché del repetidor / Relevo 47",
+    "Relaiscache / Übergabe 47"
+  ],
+  "M01_HINT_1": [
+    "公開アカウントで接続し、保護フォルダーと公開メモを比べてください。拒否される体験は必須ではありません。",
+    "以公开账号连接，对比受保护目录与公开便条。无需刻意触发拒绝。",
+    "Conecta con la cuenta pública y compara la carpeta protegida con la nota. No es obligatorio sufrir una denegación.",
+    "Verbinde dich mit dem öffentlichen Konto und vergleiche geschützten Ordner und öffentliche Notiz. Eine Ablehnung ist nicht erforderlich."
+  ],
+  "M01_HINT_2": [
+    "/public/shift-note.txt には maint アカウントと、別のウェブ保存コピーが書かれています。",
+    "/public/shift-note.txt 写有 maint 账号和单独的网页缓存副本。",
+    "/public/shift-note.txt nombra la cuenta maint y una copia web en caché separada.",
+    "/public/shift-note.txt nennt das Konto maint und eine separate Webcachekopie."
+  ],
+  "M01_HINT_3": [
+    "保守経路で /vault/handoff.log を回収するか、mirror.packet.test/cache/47 のコピーを保存してください。public/handoff.log は同名の別記録です。",
+    "通过维护会话取得 /vault/handoff.log，或保留 mirror.packet.test/cache/47 的副本。public/handoff.log 名称相同，却是另一份记录。",
+    "Recupera /vault/handoff.log por mantenimiento o conserva la copia de mirror.packet.test/cache/47. public/handoff.log tiene el mismo nombre, pero es otro registro.",
+    "Sichere /vault/handoff.log über die Wartung oder die Kopie unter mirror.packet.test/cache/47. public/handoff.log trägt denselben Namen, ist aber eine andere Aufzeichnung."
+  ],
+  "M01_STAGE_1": [
+    "ソユンの匿名依頼と保存条件を読む。",
+    "阅读瑞允的匿名委托及保留条件。",
+    "Lee el encargo anónimo de Seoyun y su condición de conservación.",
+    "Lies Seoyuns anonymen Auftrag und seine Erhaltungsbedingung."
+  ],
+  "M01_STAGE_2": [
+    "guest / guest で制限付きサーバーに入り、現在のアカウントを確かめる。",
+    "以 guest / guest 进入受限服务器，确认当前账号。",
+    "Entra al servidor limitado con guest / guest y comprueba la cuenta actual.",
+    "Betritt den beschränkten Server mit guest / guest und prüfe das aktuelle Konto."
+  ],
+  "M01_STAGE_3": [
+    "公開メモで保守アカウント、保存コピー、目標ファイルを確認する。",
+    "阅读公开便条，确认维护账号、缓存副本与目标文件。",
+    "Lee la nota pública para encontrar cuenta de mantenimiento, copia y archivo objetivo.",
+    "Lies die öffentliche Notiz zu Wartungskonto, Cachekopie und Zieldatei."
+  ],
+  "M01_STAGE_4": [
+    "maint で再接続するか、仮想キャッシュ経路に切り替える。",
+    "以 maint 重连，或切换至虚拟缓存通路。",
+    "Reconecta como maint o cambia a la ruta de caché virtual.",
+    "Verbinde dich erneut als maint oder wechsle zum virtuellen Cacheweg."
+  ],
+  "M01_STAGE_5": [
+    "本文、記録 ID、出所が目標と一致するコピーだけを ~/archive に回収する。",
+    "仅将正文、记录 ID 与来源都符合目标的副本保存到 ~/archive。",
+    "Recupera en ~/archive solo una copia cuyo contenido, ID y origen coincidan con el objetivo.",
+    "Sichere nur eine Kopie mit passendem Inhalt, Aufzeichnungs-ID und Herkunft in ~/archive."
+  ],
+  "M01_STAGE_6": [
+    "回収の反応、ソユンの返事、relay 02 の次の手掛かりを見る。",
+    "查看取回反馈、瑞允回复与 relay 02 的下一条线索。",
+    "Consulta la confirmación, la respuesta de Seoyun y la siguiente pista en relay 02.",
+    "Lies Sicherungsrückmeldung, Seoyuns Antwort und die nächste Spur bei relay 02."
+  ],
+  "M01_EXPLAIN": [
+    "接続、認証、ファイル権限、回収は別々の状態です。有効なコピーは、おとりのファイル名ではなく本文、記録 ID、出所が一致していました。別の有効経路でも同じ目標を満たせます。",
+    "连接、认证、文件权限与资料取得是不同状态。有效副本必须匹配正文、记录 ID 和来源，而非只与诱饵文件同名。其他有效通路也能满足同一目标。",
+    "Conexión, autenticación, permisos y recuperación son estados distintos. La copia válida coincidía en contenido, ID y origen, no solo en el nombre del señuelo. Otra ruta válida satisface el mismo objetivo.",
+    "Verbindung, Anmeldung, Dateirechte und Sicherung sind verschiedene Zustände. Die gültige Kopie stimmte in Inhalt, Aufzeichnungs-ID und Herkunft überein, nicht nur im Ködernamen. Ein anderer gültiger Weg erfüllt dasselbe Ziel."
+  ],
+  "ENDING_SEALED_TITLE": [
+    "封印された監査への引き継ぎ",
+    "密封审计移交",
+    "La entrega sellada a auditoría",
+    "Die versiegelte Auditübergabe"
+  ],
+  "ENDING_SEALED_TEXT": [
+    "ソユンは移管を、ドユンは守ったサービスを記録します。テギョンは緊急承認と監督の不備を別々に署名し、ミンソは空白を不明と記します。資料は封印監査へ引き継がれます。すべての市民が今夜を知るわけではありませんが、原本と記録を問い直す道は残ります。",
+    "瑞允记录移交，度允记录保住的服务。泰景分别签认紧急批准与监督失误，敏瑞将缺口标为未知。证据进入密封审计保管。并非每位市民都会得知今夜的故事，但原件与质疑记录的通路仍在。",
+    "Seoyun registra la entrega y Doyun los servicios que preservó. Taegyeong firma por separado la autorización de emergencia y el fallo de supervisión. Minseo señala los vacíos como desconocidos. Las pruebas quedan bajo custodia sellada. No todos conocerán esta noche, pero permanecen los originales y una vía para cuestionar el registro.",
+    "Seoyun dokumentiert die Übergabe, Doyun die erhaltenen Dienste. Taegyeong zeichnet Notfreigabe und Aufsichtsversagen getrennt ab. Minseo kennzeichnet Lücken als unbekannt. Die Belege kommen in versiegelte Auditverwahrung. Nicht jeder Bürger erfährt von dieser Nacht, doch Originale und ein Weg zum Anfechten der Akten bleiben erhalten."
+  ],
+  "ENDING_PUBLIC_TITLE": [
+    "市民を守る公開記録",
+    "保护市民的公开记录",
+    "Un registro público que protege",
+    "Eine öffentliche Akte schützt Bürger"
+  ],
+  "ENDING_PUBLIC_TEXT": [
+    "元のお知らせと再配布を区別したうえで、匿名化した事件記録を公開します。ソユンの署名もドユンの臨時中継も残ります。単なる障害ではなかったことを、未解決の問いと証拠とともに伝えます。公開は原本の破壊でも、全資料の投下でもありません。",
+    "区分原始公告与再次发布后，隐去个人信息的事件记录得以公开。瑞允的签名与度允的临时中继都被保留。人们知道这不只是故障，也看到了证据旁尚未解决的问题。公开既不销毁原件，也不倾倒全部资料。",
+    "Tras distinguir el aviso original de su republicación, se publica una versión anonimizada del caso. Se conservan tanto la firma de Seoyun como el repetidor temporal de Doyun. La gente descubre que fue más que una avería, con las preguntas pendientes junto a las pruebas. Publicar no destruye originales ni vuelca todos los registros.",
+    "Nach der Trennung von Originalmitteilung und Wiederveröffentlichung wird eine geschwärzte Fallakte öffentlich. Seoyuns Unterschrift und Doyuns vorläufiges Relais bleiben dokumentiert. Die Menschen erfahren von mehr als einer Störung, samt offenen Fragen und Belegen. Veröffentlichung zerstört keine Originale und schüttet nicht sämtliche Daten aus."
+  ],
+  "ENDING_REVIEW_TITLE": [
+    "互いに確かめられるコピー",
+    "能够相互核验的副本",
+    "Copias que pueden contrastarse",
+    "Kopien zur gegenseitigen Prüfung"
+  ],
+  "ENDING_REVIEW_TEXT": [
+    "独立した転送証拠と、小さな検証器・メモリーモデルの限界を一緒に保管します。ミンソは一つの道具の成功をシステム全体の証明にはしません。最小限のコピーを別々の保管者に渡し、同じ事実を照合できるようにします。最後の画面に残るのは万能の鍵ではなく、出所と未解決の問いです。",
+    "独立传输证据与小型验证器、内存模型的局限一并保存。敏瑞不会把某个工具的成功扩大为对整个系统的判断。最少量副本交给不同保管人，以便核对相同事实。最后画面留下的是来源与未解问题，而非万能钥匙。",
+    "Se conservan pruebas de transporte independientes y los límites de los pequeños modelos de verificador y memoria. Minseo no convierte el éxito de una herramienta en una afirmación sobre todo el sistema. Se entregan copias mínimas a custodios separados para contrastar los mismos hechos. La última pantalla deja procedencia y preguntas abiertas, no una llave universal.",
+    "Unabhängige Transportbelege bleiben zusammen mit den Grenzen der kleinen Prüf- und Speichermodelle erhalten. Minseo macht aus einem Werkzeugerfolg keine Aussage über das Gesamtsystem. Minimale Kopien gehen an getrennte Verwahrer, die dieselben Fakten gegenprüfen können. Der letzte Bildschirm enthält Herkunft und offene Fragen, keinen Universalschlüssel."
+  ],
+  "M14_INTERNAL_NAME": [
+    "内部状態標識",
+    "内部状态标记",
+    "Marcador de estado interno",
+    "Interne Statusmarkierung"
+  ],
+  "M15_TARGET_NAME": [
+    "M15 制限付き証拠サービス",
+    "M15 受限证据服务",
+    "Servicio limitado de pruebas M15",
+    "Beschränkter Belegdienst M15"
+  ],
+  "M17_TARGET_NAME": [
+    "M17 制限付き証拠サービス",
+    "M17 受限证据服务",
+    "Servicio limitado de pruebas M17",
+    "Beschränkter Belegdienst M17"
+  ],
+  "M22_TARGET_NAME": [
+    "M22 制限付き証拠サービス",
+    "M22 受限证据服务",
+    "Servicio limitado de pruebas M22",
+    "Beschränkter Belegdienst M22"
+  ],
+  "TOOL_QUERY_NAME": [
+    "QueryProbe",
+    "QueryProbe",
+    "QueryProbe",
+    "QueryProbe"
+  ],
+  "TOOL_RENDER_NAME": [
+    "ブラウザー追跡",
+    "浏览器追踪",
+    "Rastro del navegador",
+    "Browserverfolgung"
+  ],
+  "TOOL_PATH_NAME": [
+    "FileLens",
+    "FileLens",
+    "FileLens",
+    "FileLens"
+  ],
+  "TOOL_EXEC_NAME": [
+    "JobLens",
+    "JobLens",
+    "JobLens",
+    "JobLens"
+  ],
+  "TOOL_FETCH_NAME": [
+    "RequestLab",
+    "RequestLab",
+    "RequestLab",
+    "RequestLab"
+  ],
+  "TOOL_PERMISSION_NAME": [
+    "AccessView",
+    "AccessView",
+    "AccessView",
+    "AccessView"
+  ],
+  "TOOL_AUDIT_NAME": [
+    "CredAudit",
+    "CredAudit",
+    "CredAudit",
+    "CredAudit"
+  ],
+  "TOOL_REVERSE_NAME": [
+    "VerifierLab",
+    "VerifierLab",
+    "VerifierLab",
+    "VerifierLab"
+  ],
+  "TOOL_MEMORY_NAME": [
+    "MemoryLab",
+    "MemoryLab",
+    "MemoryLab",
+    "MemoryLab"
+  ],
+  "TOOL_PACKET_NAME": [
+    "PacketLens",
+    "PacketLens",
+    "PacketLens",
+    "PacketLens"
+  ],
+  "TOOL_TRACE_NAME": [
+    "LogLens",
+    "LogLens",
+    "LogLens",
+    "LogLens"
+  ],
+  "TOOL_COMPARE_NAME": [
+    "証拠の比較",
+    "证据对比",
+    "Comparación de pruebas",
+    "Belegvergleich"
+  ],
+  "TOOL_TOKEN_NAME": [
+    "資格情報の範囲",
+    "凭据范围",
+    "Alcance de credenciales",
+    "Anmeldedatenumfang"
+  ],
+  "TOOL_POLICY_NAME": [
+    "AccessView",
+    "AccessView",
+    "AccessView",
+    "AccessView"
+  ],
+  "TOOL_AUTH_NAME": [
+    "ログイン監視",
+    "登录观察",
+    "Vigilancia de acceso",
+    "Anmeldebeobachtung"
+  ],
+  "TOOL_SESSION_NAME": [
+    "セッション監視",
+    "会话观察",
+    "Vigilancia de sesiones",
+    "Sitzungsbeobachtung"
+  ],
+  "TOOL_CSRF_NAME": [
+    "RequestLab",
+    "RequestLab",
+    "RequestLab",
+    "RequestLab"
+  ],
+  "TOOL_UPLOAD_NAME": [
+    "メディア受付",
+    "媒体接收",
+    "Recepción de medios",
+    "Medienannahme"
+  ],
+  "TOOL_IDOR_NAME": [
+    "RequestLab",
+    "RequestLab",
+    "RequestLab",
+    "RequestLab"
+  ]
+}

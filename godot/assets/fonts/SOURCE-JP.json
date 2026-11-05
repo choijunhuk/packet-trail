@@ -1,0 +1,13 @@
+{
+  "family": "Noto Sans JP",
+  "source": "https://github.com/google/fonts/tree/bbda7253fc363238b05d97515ca71f8ae49c4fa9/ofl/notosansjp",
+  "download": "https://raw.githubusercontent.com/google/fonts/bbda7253fc363238b05d97515ca71f8ae49c4fa9/ofl/notosansjp/NotoSansJP%5Bwght%5D.ttf",
+  "upstream_commit": "bbda7253fc363238b05d97515ca71f8ae49c4fa9",
+  "retrieved_date": "2026-11-05",
+  "sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+  "license": "SIL Open Font License 1.1",
+  "license_file": "OFL-JP.txt",
+  "license_sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+  "metadata_file": "METADATA-JP.pb",
+  "modified": false
+}

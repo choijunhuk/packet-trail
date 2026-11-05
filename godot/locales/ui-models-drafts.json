@@ -1,0 +1,416 @@
+{
+  "UI_TOOLKIND_QUERY": [
+    "照会の検証",
+    "查询探针",
+    "Sonda de consultas",
+    "Abfragesonde"
+  ],
+  "UI_TOOLKIND_QUERY_MODEL": [
+    "小さな条件式の構文を模します。入力が値のままか、OR などの照会構造を変えるかを観察します。バインド方針を有効にすると値としてだけ扱います。",
+    "模拟小型条件表达式语法，观察输入仅作为值，还是改变查询结构（如 OR）。启用绑定策略后仅将其作为值。",
+    "Imita una sintaxis reducida. Observa si la entrada queda como valor o altera condiciones como OR. Con vinculación activada se trata solo como valor.",
+    "Bildet eine kleine Bedingungssyntax nach. Beobachte, ob Eingaben Werte bleiben oder Strukturen wie OR verändern. Aktive Bindung behandelt sie nur als Werte."
+  ],
+  "UI_TOOLKIND_QUERY_LIMIT": [
+    "実際の SQL エンジンや全構文は再現しません。仮想行だけを扱い、実データベースには接続しません。",
+    "不复现真实 SQL 引擎或全部语法。仅处理虚拟行，不连接真实数据库。",
+    "No reproduce un motor SQL ni su sintaxis completa. Solo trata filas virtuales, sin conectar bases reales.",
+    "Bildet weder eine echte SQL-Engine noch die gesamte Syntax ab. Verarbeitet nur virtuelle Zeilen ohne reale Datenbankverbindung."
+  ],
+  "UI_TOOLKIND_RENDER": [
+    "表示の文脈",
+    "显示上下文",
+    "Contexto de presentación",
+    "Darstellungskontext"
+  ],
+  "UI_TOOLKIND_RENDER_MODEL": [
+    "入力が文字として表示されるか、仮想の表示信号になるかを比較します。エスケープ方針を有効にすると文字としてだけ表示します。",
+    "比较输入仅显示为文字，还是被解释为虚拟显示信号。启用转义策略后只显示文字。",
+    "Compara si la entrada se muestra como texto o como señal virtual. Con escape activado solo aparece como texto.",
+    "Vergleicht Textanzeige mit virtuellen Darstellungssignalen. Bei aktiver Maskierung bleibt die Eingabe reiner Text."
+  ],
+  "UI_TOOLKIND_RENDER_LIMIT": [
+    "実際の JavaScript は実行しません。他の利用者への影響は定められた仮想結果でのみ計算します。",
+    "不执行真实 JavaScript，对其他用户的影响仅按预定虚拟结果计算。",
+    "No ejecuta JavaScript real. Los efectos sobre otros usuarios solo son resultados virtuales definidos.",
+    "Führt kein echtes JavaScript aus. Auswirkungen auf andere Nutzer sind nur festgelegte virtuelle Ergebnisse."
+  ],
+  "UI_TOOLKIND_PATH": [
+    "パスの境界",
+    "路径边界",
+    "Límite de ruta",
+    "Pfadgrenze"
+  ],
+  "UI_TOOLKIND_PATH_MODEL": [
+    "基準パスと入力を連結・正規化し、公開範囲を越えるか見ます。境界方針を有効にすると範囲外を拒否します。",
+    "连接基准路径与输入并规范化，检查是否越出公开范围。启用边界策略后拒绝范围外路径。",
+    "Concatena y normaliza la entrada con la ruta base para ver si sale del área pública. La política de límite rechaza rutas externas.",
+    "Verknüpft und normalisiert Eingabe und Basispfad und prüft die öffentliche Grenze. Aktive Grenzprüfung weist äußere Pfade ab."
+  ],
+  "UI_TOOLKIND_PATH_LIMIT": [
+    "仮想ファイルシステム内でだけ正規化し、実際の OS のパスやファイルには触れません。",
+    "仅在虚拟文件系统中规范化，不访问真实 OS 路径或文件。",
+    "Solo normaliza dentro del sistema virtual; no accede a rutas ni archivos reales.",
+    "Normalisiert nur im virtuellen Dateisystem und greift auf keine echten Betriebssystempfade oder Dateien zu."
+  ],
+  "UI_TOOLKIND_EXEC": [
+    "ジョブ引数の境界",
+    "任务参数边界",
+    "Límite de argumentos",
+    "Auftragsargumentgrenze"
+  ],
+  "UI_TOOLKIND_EXEC_MODEL": [
+    "入力が仮想ジョブの一つの引数に留まるか、区切りで別ジョブを追加するか見ます。引数配列方針を有効にすると追加ジョブを無視します。",
+    "观察输入是单一虚拟任务参数，还是利用分隔符追加任务。启用参数数组策略后忽略追加任务。",
+    "Observa si la entrada es un solo argumento o añade tareas mediante separadores. La política de argumentos en lista ignora las tareas añadidas.",
+    "Prüft, ob die Eingabe ein Argument bleibt oder über Trenner einen Auftrag ergänzt. Aktive Argumentlisten ignorieren Zusatzaufträge."
+  ],
+  "UI_TOOLKIND_EXEC_LIMIT": [
+    "実際のプロセスやシェルは起動しません。定義済みの仮想ジョブだけが存在します。",
+    "不启动真实进程或 shell，仅存在已定义虚拟任务。",
+    "No inicia procesos ni shells reales. Solo existen tareas virtuales definidas.",
+    "Startet keine echten Prozesse oder Shells. Es existieren nur festgelegte virtuelle Aufträge."
+  ],
+  "UI_TOOLKIND_FETCH": [
+    "サーバー経由の要求",
+    "服务器代请求",
+    "Petición a través del servidor",
+    "Anfrage über den Server"
+  ],
+  "UI_TOOLKIND_FETCH_MODEL": [
+    "サーバーが要求するアドレスにより、主体と到達範囲がどう変わるか見ます。送信方針を有効にすると内部アドレスを遮断します。",
+    "观察服务器代请求的地址如何改变请求身份与可达范围。启用出站策略后阻止内部地址请求。",
+    "Observa cómo la dirección pedida por el servidor cambia identidad y alcance. La política de salida bloquea destinos internos.",
+    "Prüft, wie die serverseitige Zieladresse Identität und Reichweite verändert. Aktive Ausgangsrichtlinien sperren interne Ziele."
+  ],
+  "UI_TOOLKIND_FETCH_LIMIT": [
+    "ゲーム内の .test アドレスだけを扱い、実際のインターネット要求はありません。内部への到達は管理権限ではありません。",
+    "仅处理游戏内 .test 地址，不发出真实互联网请求。到达内部不等于管理员权限。",
+    "Solo usa direcciones .test del juego, sin Internet real. Alcanzar el interior no concede autoridad de administración.",
+    "Verarbeitet nur interne .test-Spieladressen ohne echte Internetanfragen. Interne Erreichbarkeit verleiht keine Administratorrechte."
+  ],
+  "UI_TOOLKIND_PERMISSION": [
+    "権限の確認",
+    "查看权限",
+    "Ver autoridad",
+    "Rechte prüfen"
+  ],
+  "UI_TOOLKIND_PERMISSION_MODEL": [
+    "現在のセッションと公開されたグループ名の関係を確かめます。グループ権限はそのアカウントのセッションでだけ意味を持ちます。",
+    "确认当前会话账号与已公开组名的关系。组权限只在相应账号会话中生效。",
+    "Relaciona la cuenta actual con el grupo mostrado. Los derechos del grupo solo valen en la sesión de esa cuenta.",
+    "Prüft die Beziehung zwischen Sitzungskonto und offengelegter Gruppe. Gruppenrechte gelten nur in der Sitzung dieses Kontos."
+  ],
+  "UI_TOOLKIND_PERMISSION_LIMIT": [
+    "実際のアカウント、sudo、OS 権限は変更しません。仮想世界のグループだけを扱います。",
+    "不改变真实账号、sudo 或 OS 权限，仅处理游戏虚拟组。",
+    "No cambia cuentas, sudo ni permisos reales. Solo trata grupos virtuales del juego.",
+    "Ändert keine echten Konten, sudo- oder Betriebssystemrechte. Verarbeitet nur virtuelle Spielgruppen."
+  ],
+  "UI_TOOLKIND_AUDIT": [
+    "資格情報の監査",
+    "凭据审计",
+    "Auditoría de credenciales",
+    "Prüfung von Anmeldedaten"
+  ],
+  "UI_TOOLKIND_AUDIT_MODEL": [
+    "提供された仮想バイトを XOR 鍵で復号し、保存値と比較します。得られた文字列は自分で入力します。",
+    "以 XOR 密钥解码提供的虚拟字节并与保存值比较，手动输入解出的字符串。",
+    "Descodifica bytes virtuales con la clave XOR y compáralos con el valor guardado. Introduce tú el texto obtenido.",
+    "Dekodiert vorgegebene virtuelle Bytes mit einem XOR-Schlüssel zum Vergleich mit dem gespeicherten Wert. Die Ergebniszeichenfolge gibst du selbst ein."
+  ],
+  "UI_TOOLKIND_AUDIT_LIMIT": [
+    "実際のハッシュ解読や外部辞書は使いません。XOR は保護策ではなく、単純な変換例です。",
+    "不使用真实哈希破解或外部词典。XOR 并非保护手段，只是简单变换示例。",
+    "No usa descifrado de hashes reales ni diccionarios externos. XOR es un ejemplo de transformación, no una protección.",
+    "Nutzt weder echtes Hashknacken noch externe Wörterbücher. XOR ist ein einfaches Umwandlungsbeispiel, kein Schutzverfahren."
+  ],
+  "UI_TOOLKIND_REVERSE": [
+    "処理の解析",
+    "流程分析",
+    "Análisis de flujo",
+    "Ablaufanalyse"
+  ],
+  "UI_TOOLKIND_REVERSE_MODEL": [
+    "バイトに適用するプログラムの変換（ここでは XOR）を追い、結果を計算します。",
+    "跟随程序对字节执行的变换（此处为 XOR），计算结果。",
+    "Sigue la transformación del programa sobre los bytes (aquí XOR) y calcula el resultado.",
+    "Verfolge die Byteumwandlung des Programms (hier XOR) und berechne das Ergebnis."
+  ],
+  "UI_TOOLKIND_REVERSE_LIMIT": [
+    "実際の実行ファイルは解析・実行せず、小さな変換モデルだけを扱います。",
+    "不分析或运行真实可执行文件，仅处理小型变换模型。",
+    "No analiza ni ejecuta binarios reales; solo un pequeño modelo de transformación.",
+    "Analysiert oder startet keine echten ausführbaren Dateien, nur ein kleines Umwandlungsmodell."
+  ],
+  "UI_TOOLKIND_MEMORY": [
+    "メモリーモデル",
+    "内存模型",
+    "Modelo de memoria",
+    "Speichermodell"
+  ],
+  "UI_TOOLKIND_MEMORY_MODEL": [
+    "固定長バッファーと後続セルを表示します。16 進バイトを書き込むと、あふれたバイトが届く場所を確認できます。",
+    "显示固定大小缓冲区及后续单元，写入十六进制字节可观察溢出字节到达的位置。",
+    "Muestra un búfer fijo y celdas posteriores. Al escribir bytes hexadecimales ves qué celdas alcanza el exceso.",
+    "Zeigt einen festen Puffer und Folgezellen. Hexbytes machen sichtbar, welche Zellen überlaufende Bytes erreichen."
+  ],
+  "UI_TOOLKIND_MEMORY_LIMIT": [
+    "実プロセスのメモリー、アドレス、保護策は再現せず、限定された仮想セルだけを扱います。",
+    "不复现真实进程内存、地址或保护机制，仅使用有限虚拟单元。",
+    "No reproduce memoria, direcciones ni protecciones reales. Solo usa celdas virtuales limitadas.",
+    "Bildet weder echten Prozessspeicher noch reale Adressen oder Schutzverfahren ab. Nur begrenzte virtuelle Zellen werden verarbeitet."
+  ],
+  "UI_TOOLKIND_PACKET": [
+    "パケット観察",
+    "查看数据包",
+    "Ver paquetes",
+    "Pakete betrachten"
+  ],
+  "UI_TOOLKIND_PACKET_MODEL": [
+    "観測地点の仮想パケット行をフィールド=値で絞り、関連する通信を探します。",
+    "以字段=值筛选观察点可见的虚拟数据包，查找相关流量。",
+    "Filtra filas virtuales con campo=valor para encontrar el flujo pertinente.",
+    "Filtere beobachtete virtuelle Paketzeilen mit Feld=Wert nach dem relevanten Ablauf."
+  ],
+  "UI_TOOLKIND_PACKET_LIMIT": [
+    "実ネットワークを取得しません。暗号化区間の本文は途中の観測者には見えない、という原理だけをモデル化します。",
+    "不捕获真实网络，仅模拟中间观察者无法看到加密段正文这一原则。",
+    "No captura redes reales. Solo modela que un observador intermedio no ve el cuerpo de un tramo cifrado.",
+    "Erfasst kein echtes Netz. Modelliert nur, dass ein Zwischenbeobachter den Inhalt verschlüsselter Strecken nicht sieht."
+  ],
+  "UI_TOOLKIND_TRACE": [
+    "記録の関連付け",
+    "记录关联",
+    "Relacionar registros",
+    "Aufzeichnungen verbinden"
+  ],
+  "UI_TOOLKIND_TRACE_MODEL": [
+    "ログと経路の記録をフィールド=値で絞り、同じ事件の痕跡を結びます。",
+    "用字段=值筛选日志与通路记录，关联同一事件的痕迹。",
+    "Filtra registros y rutas con campo=valor para enlazar rastros del mismo incidente.",
+    "Filtere Protokolle und Wege mit Feld=Wert und verbinde Spuren desselben Vorfalls."
+  ],
+  "UI_TOOLKIND_TRACE_LIMIT": [
+    "実ログは読みません。時計のずれや欠落は、事件資料にある範囲の不確実性だけを扱います。",
+    "不读取真实日志。时钟偏差、遗漏等不确定性仅按事件资料所示处理。",
+    "No lee registros reales. Desajustes de reloj y ausencias solo se tratan según las pruebas del caso.",
+    "Liest keine echten Systemprotokolle. Uhrabweichungen und Lücken werden nur im dokumentierten Umfang modelliert."
+  ],
+  "UI_TOOLKIND_COMPARE": [
+    "観察の比較",
+    "观察对比",
+    "Comparar observaciones",
+    "Beobachtungen vergleichen"
+  ],
+  "UI_TOOLKIND_COMPARE_MODEL": [
+    "二つの観察値を並べ、指定された違いを確認します。",
+    "并排比较两项观察值，确认指定差异。",
+    "Coloca dos observaciones juntas e identifica la diferencia indicada.",
+    "Stelle zwei Beobachtungswerte gegenüber und prüfe den festgelegten Unterschied."
+  ],
+  "UI_TOOLKIND_COMPARE_LIMIT": [
+    "違いだけを確かめ、原因を自動判定するものではありません。",
+    "仅确认差异，不自动判断原因。",
+    "Comprueba diferencias, no determina automáticamente sus causas.",
+    "Prüft nur Unterschiede und entscheidet Ursachen nicht automatisch."
+  ],
+  "UI_TOOLKIND_TOKEN": [
+    "トークンの確認",
+    "令牌核验",
+    "Comprobar token",
+    "Token prüfen"
+  ],
+  "UI_TOOLKIND_TOKEN_MODEL": [
+    "調査で得た架空トークンが、現在承認された値かを確認します。",
+    "确认调查中取得的虚构令牌是否为当前获准值。",
+    "Comprueba si el token ficticio hallado coincide con el actualmente autorizado.",
+    "Prüft, ob das gefundene fiktive Token dem aktuell genehmigten Wert entspricht."
+  ],
+  "UI_TOOLKIND_TOKEN_LIMIT": [
+    "実際の資格情報やサービストークンは使いません。設定から消えても、過去の値の効力は別に確認する必要があります。",
+    "不使用真实凭据或服务令牌。即使配置已删除，旧值效力仍须另行核实。",
+    "No usa credenciales ni tokens reales. Borrar una configuración no evita comprobar la vigencia anterior.",
+    "Nutzt keine echten Anmeldedaten oder Diensttokens. Auch bei gelöschter Konfiguration muss die alte Gültigkeit gesondert geprüft werden."
+  ],
+  "UI_TOOLKIND_POLICY": [
+    "方針の設定",
+    "策略设置",
+    "Ajustar políticas",
+    "Richtlinien setzen"
+  ],
+  "UI_TOOLKIND_POLICY_MODEL": [
+    "許可された方針値を適用し、目標と現在のサービス状態で再評価します。基本的に false は脆弱な動作、true は遮断動作です。",
+    "应用允许的策略值，再依据目标与服务状态重评。通常 false 表示有缺陷行为，true 表示阻止行为。",
+    "Aplica un valor permitido y reevalúa objetivos y servicio. En general false permite el comportamiento vulnerable y true lo bloquea.",
+    "Wendet einen erlaubten Richtlinienwert an und bewertet Ziele und Dienste erneut. Üblicherweise bedeutet false verwundbares, true blockiertes Verhalten."
+  ],
+  "UI_TOOLKIND_POLICY_LIMIT": [
+    "変更後も正規機能が動くかは、目標が別に確認します。すべてを止めることが正解ではありません。",
+    "目标会另行核验正常功能是否保留。阻止一切并非正确答案。",
+    "Los objetivos comprueban aparte que lo legítimo siga funcionando. Bloquearlo todo no es la solución.",
+    "Die Ziele prüfen gesondert, ob reguläre Funktionen erhalten bleiben. Alles zu sperren ist keine Lösung."
+  ],
+  "UI_TOOLKIND_IDOR": [
+    "オブジェクトへのアクセス",
+    "对象访问",
+    "Acceso a objetos",
+    "Objektzugriff"
+  ],
+  "UI_TOOLKIND_IDOR_MODEL": [
+    "認証されたアカウントでオブジェクト番号を要求し、所有者確認方針による応答の差を見ます。",
+    "以当前认证账号请求对象编号，观察所有者检查策略如何改变响应。",
+    "Pide un objeto con la cuenta autenticada y observa cómo cambia la respuesta según la comprobación del propietario.",
+    "Frage ein Objekt mit dem angemeldeten Konto ab und beobachte die Antwort unter der Eigentümerprüfung."
+  ],
+  "UI_TOOLKIND_IDOR_LIMIT": [
+    "仮想オブジェクト一覧だけを扱います。実サービスの認可構造は、はるかに多様です。",
+    "仅处理虚拟对象列表，真实服务授权结构更加多样。",
+    "Solo usa una lista de objetos virtuales. Las estructuras reales de autorización son mucho más diversas.",
+    "Verarbeitet nur eine virtuelle Objektliste. Echte Berechtigungsstrukturen sind wesentlich vielfältiger."
+  ],
+  "UI_TOOLKIND_AUTH": [
+    "ログインの制限",
+    "登录限制",
+    "Límites de acceso",
+    "Anmeldebegrenzung"
+  ],
+  "UI_TOOLKIND_AUTH_MODEL": [
+    "アカウントごとの失敗回数と仮想待機を計算します。方針を有効にし、連続失敗の拒否と待機後の正規ログインを両方観察します。",
+    "计算各账号失败次数及虚拟等待。启用限制后，同时观察重复失败被阻与等待后的正常登录。",
+    "Cuenta fallos y espera virtual por cuenta. Con el límite activo, observa bloqueo de repeticiones y acceso legítimo tras esperar.",
+    "Berechnet Fehlschläge und virtuelle Wartezeit je Konto. Beobachte bei aktiver Begrenzung Wiederholungssperre und reguläre Anmeldung nach dem Warten."
+  ],
+  "UI_TOOLKIND_AUTH_LIMIT": [
+    "実時間は待ちません。ticks 単位の論理時計であり、実際の総当たりツールではありません。",
+    "不等待真实时间。等待使用 ticks 逻辑时钟，这不是真实暴力破解工具。",
+    "No espera tiempo real. Usa un reloj lógico en ticks y no es una herramienta real de fuerza bruta.",
+    "Wartet keine Echtzeit ab. Verwendet eine logische Uhr in ticks und ist kein echtes Brute-Force-Werkzeug."
+  ],
+  "UI_TOOLKIND_SESSION": [
+    "セッションの寿命",
+    "会话生命周期",
+    "Vida de la sesión",
+    "Sitzungslebensdauer"
+  ],
+  "UI_TOOLKIND_SESSION_MODEL": [
+    "トークンの発行・再利用・失効・待機を試し、古いトークンが拒否され新しいものが許可されるか確かめます。",
+    "依次尝试令牌签发、复用、撤销与等待，确认旧令牌被拒绝、新令牌可用。",
+    "Prueba emisión, reutilización, revocación y espera para comprobar que se rechazan tokens viejos y se aceptan nuevos.",
+    "Prüfe Ausgabe, Wiederverwendung, Widerruf und Warten: Alte Tokens sollen abgewiesen, neue zugelassen werden."
+  ],
+  "UI_TOOLKIND_SESSION_LIMIT": [
+    "画面の Cookie 削除とサーバーでの失効は違います。このモデルはサーバー側の状態だけを計算します。",
+    "删除画面上的 Cookie 与服务器撤销不同，此模型仅计算服务器端状态。",
+    "Borrar cookies en pantalla no equivale a revocar en el servidor. Solo se modela el estado del servidor.",
+    "Ein Cookie auf dem Bildschirm zu löschen ist kein serverseitiger Widerruf. Das Modell berechnet nur den Serverzustand."
+  ],
+  "UI_TOOLKIND_CSRF": [
+    "要求の文脈",
+    "请求上下文",
+    "Contexto de petición",
+    "Anfragekontext"
+  ],
+  "UI_TOOLKIND_CSRF_MODEL": [
+    "変更要求の出所とトークンを検査するかを調べ、偽造要求の拒否と正規変更の両立を確認します。",
+    "检查变更请求的来源与令牌，确认伪造请求被拒且正常变更保留。",
+    "Comprueba origen y token de cambios y verifica que se bloquea la falsificación sin impedir cambios legítimos.",
+    "Prüft Herkunft und Token einer Änderung sowie die gemeinsame Abwehr gefälschter und Zulassung regulärer Änderungen."
+  ],
+  "UI_TOOLKIND_CSRF_LIMIT": [
+    "実ブラウザーの Cookie 方針は再現しません。認証済みの仮想セッションが必要です。",
+    "不复现真实浏览器 Cookie 策略，需要已认证的虚拟会话。",
+    "No reproduce políticas de cookies de navegadores reales. Requiere una sesión virtual autenticada.",
+    "Bildet keine Cookie-Richtlinien echter Browser ab. Eine angemeldete virtuelle Sitzung wird benötigt."
+  ],
+  "UI_TOOLKIND_UPLOAD": [
+    "アップロード処理",
+    "上传处理",
+    "Procesamiento de subidas",
+    "Upload-Verarbeitung"
+  ],
+  "UI_TOOLKIND_UPLOAD_MODEL": [
+    "拡張子・MIME・シグネチャの一致と、保存ファイルが実行可能になるかを見ます。不正ファイルの拒否と正規写真の受付を両方確かめます。",
+    "观察扩展名、MIME 与签名是否一致，以及保存文件是否变为可执行。同时确认错误文件被拒与正常照片可接收。",
+    "Comprueba extensión, MIME, firma y si lo guardado se vuelve ejecutable. Verifica rechazo de archivos incorrectos y aceptación de fotos legítimas.",
+    "Prüft Dateiendung, MIME und Signatur sowie Ausführbarkeit gespeicherter Dateien. Beobachte Ablehnung falscher Dateien und Annahme regulärer Fotos."
+  ],
+  "UI_TOOLKIND_UPLOAD_LIMIT": [
+    "実際のファイルは受信・実行しません。名前・形式・シグネチャの三値だけをモデル化します。",
+    "不接收或执行真实文件，仅模拟名称、格式与特征三个值。",
+    "No recibe ni ejecuta archivos reales. Solo modela nombre, tipo y firma.",
+    "Empfängt oder startet keine echten Dateien. Modelliert nur Name, Format und Signatur."
+  ],
+  "UI_TOOLKIND_SCAN": [
+    "ネットワーク探査",
+    "网络探针",
+    "Sonda de red",
+    "Netzwerksonde"
+  ],
+  "UI_TOOLKIND_SCAN_MODEL": [
+    "選んだターミナルの現在地から、対象ポートが開放・閉鎖・フィルターのどれに見えるか確かめます。nmap と同じ処理です。",
+    "从所选终端当前位置确认目标端口显示为开放、关闭还是被过滤，与 nmap 使用相同处理。",
+    "Desde el terminal elegido observa puertos abiertos, cerrados o filtrados. Usa el mismo procesamiento que nmap.",
+    "Prüft vom gewählten Terminal aus offene, geschlossene oder gefilterte Ports. Nutzt dieselbe Verarbeitung wie nmap."
+  ],
+  "UI_TOOLKIND_SCAN_LIMIT": [
+    "開いたポートはアクセス権限ではありません。出発点が変われば結果も変わります。実ネットワークは調べません。",
+    "端口开放不等于访问权限。起点变化会改变结果，不扫描真实网络。",
+    "Un puerto abierto no concede acceso. Otro origen puede cambiar el resultado. No escanea redes reales.",
+    "Ein offener Port verleiht keine Rechte. Ein anderer Ausgangspunkt kann andere Ergebnisse liefern. Keine echten Netzscans."
+  ],
+  "UI_TOOLKIND_ROUTE": [
+    "経路追跡",
+    "通路追踪",
+    "Trazar ruta",
+    "Weg verfolgen"
+  ],
+  "UI_TOOLKIND_ROUTE_MODEL": [
+    "選んだターミナルから対象までの中継を確認します。traceroute と同じ処理です。",
+    "确认所选终端到目标经过的中继，与 traceroute 使用相同处理。",
+    "Comprueba los relés entre el terminal y el destino. Es el mismo procesamiento que traceroute.",
+    "Prüft die Zwischenstationen vom Terminal zum Ziel. Nutzt dieselbe Verarbeitung wie traceroute."
+  ],
+  "UI_TOOLKIND_ROUTE_LIMIT": [
+    "ゲームの仮想網グラフだけを扱います。到達できることと権限があることは別です。",
+    "仅处理游戏虚拟网络图。可达与有权限不同。",
+    "Solo trata el grafo virtual del juego. Alcanzar un destino no equivale a estar autorizado.",
+    "Verarbeitet nur den virtuellen Spielgraphen. Erreichbarkeit und Berechtigung sind verschieden."
+  ],
+  "UI_TOOLKIND_FILE": [
+    "ファイル観察",
+    "查看文件",
+    "Ver archivos",
+    "Dateien betrachten"
+  ],
+  "UI_TOOLKIND_FILE_MODEL": [
+    "選んだターミナルのアカウント権限で読みます。cat と同じ権限検査を使います。",
+    "以所选终端账号权限读取文件，经过与 cat 相同的权限检查。",
+    "Lee con los permisos de la cuenta del terminal y las mismas comprobaciones que cat.",
+    "Liest mit den Kontorechten des gewählten Terminals und derselben Rechteprüfung wie cat."
+  ],
+  "UI_TOOLKIND_FILE_LIMIT": [
+    "仮想ファイルシステムだけを扱います。権限がなければツールからも読めません。",
+    "仅处理虚拟文件系统。无权限时通过工具读取也会被拒绝。",
+    "Solo usa el sistema virtual. Sin permiso también se rechaza la lectura desde la herramienta.",
+    "Verarbeitet nur das virtuelle Dateisystem. Ohne Rechte wird auch die Werkzeugabfrage abgewiesen."
+  ],
+  "UI_TOOLKIND_LOG": [
+    "ログ観察",
+    "查看日志",
+    "Ver registros",
+    "Protokolle betrachten"
+  ],
+  "UI_TOOLKIND_LOG_MODEL": [
+    "選んだターミナルの権限でログを読み、時刻・主体・対象を自分で比べます。",
+    "以所选终端权限读取日志，手动对比时间、身份与目标。",
+    "Lee el registro con los permisos del terminal y compara tú hora, actor y destino.",
+    "Lies Protokolle mit den Terminalrechten und vergleiche selbst Zeit, Handelnden und Ziel."
+  ],
+  "UI_TOOLKIND_LOG_LIMIT": [
+    "ログが語るのは記録された範囲だけです。空の記録や同じ時刻だけで結論を決めないでください。",
+    "日志仅能说明已记录的内容，不要仅凭空记录或相同时刻下结论。",
+    "Un registro solo cuenta lo registrado. No concluyas solo por ausencias o por horas iguales.",
+    "Protokolle sagen nur, was erfasst wurde. Ziehe keine Schlussfolgerung allein aus Lücken oder gleichen Uhrzeiten."
+  ]
+}

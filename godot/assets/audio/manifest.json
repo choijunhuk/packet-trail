@@ -1,0 +1,989 @@
+{
+  "version": 1,
+  "author": "Codex gpt-6.1-sol / high; original offline synthesis, 2026-11-05",
+  "sample_rate": 44100,
+  "channels": 2,
+  "provenance": "Original note scores and offline additive synthesis; no third-party audio or samples.",
+  "license": "Project license; see LICENSE.txt",
+  "music": [
+    {
+      "id": "A01",
+      "title": "Signal Home",
+      "file": "a01_signal_home",
+      "mood": "home",
+      "bpm": 80,
+      "bars": 48,
+      "chords": [
+        [
+          50,
+          57,
+          60,
+          64,
+          69
+        ],
+        [
+          46,
+          53,
+          57,
+          60,
+          65
+        ],
+        [
+          53,
+          60,
+          64,
+          67,
+          72
+        ],
+        [
+          48,
+          55,
+          60,
+          62,
+          67
+        ]
+      ],
+      "motif": [
+        74,
+        null,
+        69,
+        72,
+        null,
+        76,
+        72,
+        67
+      ],
+      "rhythm": 0.2,
+      "color": "warm suspended D minor; breathing pad / glass answer",
+      "path": "assets/audio/music/a01_signal_home.ogg",
+      "loop": true,
+      "master": "builds/audio-masters/a01_signal_home.wav",
+      "master_stats": {
+        "seconds": 144.0,
+        "peak": 0.375585,
+        "peak_dbfs": -8.506,
+        "rms": 0.077994,
+        "rms_dbfs": -22.159,
+        "dc": 3e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 144.0,
+        "peak": 0.374938,
+        "peak_dbfs": -8.521,
+        "rms": 0.078011,
+        "rms_dbfs": -22.157,
+        "dc": 4.58e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0009637,
+        "clipped_samples": 0
+      },
+      "bytes": 872307,
+      "sha256": "87c8babcece4effb9c44306f999b620b4f0de33bff1c928ca57d9d715c119201"
+    },
+    {
+      "id": "A02",
+      "title": "First Connection",
+      "file": "a02_first_connection",
+      "mood": "intro",
+      "bpm": 84,
+      "bars": 48,
+      "chords": [
+        [
+          48,
+          55,
+          59,
+          62,
+          67
+        ],
+        [
+          45,
+          52,
+          55,
+          59,
+          64
+        ],
+        [
+          53,
+          60,
+          64,
+          67,
+          72
+        ],
+        [
+          50,
+          57,
+          60,
+          65,
+          69
+        ]
+      ],
+      "motif": [
+        67,
+        71,
+        null,
+        74,
+        72,
+        null,
+        67,
+        64
+      ],
+      "rhythm": 0.12,
+      "color": "C major / A minor; patient descending connection motif",
+      "path": "assets/audio/music/a02_first_connection.ogg",
+      "loop": true,
+      "master": "builds/audio-masters/a02_first_connection.wav",
+      "master_stats": {
+        "seconds": 137.142857,
+        "peak": 0.361303,
+        "peak_dbfs": -8.843,
+        "rms": 0.077993,
+        "rms_dbfs": -22.159,
+        "dc": 7e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 137.142857,
+        "peak": 0.36211,
+        "peak_dbfs": -8.823,
+        "rms": 0.078012,
+        "rms_dbfs": -22.157,
+        "dc": 3.76e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0012044,
+        "clipped_samples": 0
+      },
+      "bytes": 792016,
+      "sha256": "ff1b873c1b4da601d38fa0bdc63ee2a0512dfc3346a409142724c6e4f073e23e"
+    },
+    {
+      "id": "A03",
+      "title": "Hidden Route",
+      "file": "a03_hidden_route",
+      "mood": "investigate",
+      "bpm": 76,
+      "bars": 64,
+      "chords": [
+        [
+          45,
+          52,
+          55,
+          59,
+          64
+        ],
+        [
+          48,
+          55,
+          59,
+          62,
+          66
+        ],
+        [
+          43,
+          50,
+          55,
+          57,
+          62
+        ],
+        [
+          47,
+          54,
+          57,
+          60,
+          64
+        ]
+      ],
+      "motif": [
+        76,
+        null,
+        71,
+        null,
+        74,
+        69,
+        null,
+        67
+      ],
+      "rhythm": 0.24,
+      "color": "A dorian shadows; sparse delayed keys / wide filtered pad",
+      "path": "assets/audio/music/a03_hidden_route.ogg",
+      "loop": true,
+      "master": "builds/audio-masters/a03_hidden_route.wav",
+      "master_stats": {
+        "seconds": 202.105261,
+        "peak": 0.357232,
+        "peak_dbfs": -8.941,
+        "rms": 0.077998,
+        "rms_dbfs": -22.158,
+        "dc": 0.0,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 202.106485,
+        "peak": 0.362588,
+        "peak_dbfs": -8.812,
+        "rms": 0.078007,
+        "rms_dbfs": -22.157,
+        "dc": 3.73e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0001488,
+        "clipped_samples": 0
+      },
+      "bytes": 1102680,
+      "sha256": "b40bbaf17b1e31fc5e13f50e702935d4fc6409aa0f99aaad8e62b92e1eba9ee0"
+    },
+    {
+      "id": "A04",
+      "title": "Packet Flow",
+      "file": "a04_packet_flow",
+      "mood": "flow",
+      "bpm": 92,
+      "bars": 80,
+      "chords": [
+        [
+          52,
+          59,
+          62,
+          66,
+          69
+        ],
+        [
+          48,
+          55,
+          59,
+          64,
+          67
+        ],
+        [
+          55,
+          62,
+          66,
+          69,
+          74
+        ],
+        [
+          50,
+          57,
+          62,
+          64,
+          69
+        ]
+      ],
+      "motif": [
+        71,
+        74,
+        78,
+        null,
+        76,
+        74,
+        69,
+        null
+      ],
+      "rhythm": 0.5,
+      "color": "E minor ninths; interlocking soft pulse / rising three-note motif",
+      "path": "assets/audio/music/a04_packet_flow.ogg",
+      "loop": true,
+      "master": "builds/audio-masters/a04_packet_flow.wav",
+      "master_stats": {
+        "seconds": 208.695646,
+        "peak": 0.395871,
+        "peak_dbfs": -8.049,
+        "rms": 0.077998,
+        "rms_dbfs": -22.158,
+        "dc": 0.0,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 208.696599,
+        "peak": 0.397003,
+        "peak_dbfs": -8.024,
+        "rms": 0.07802,
+        "rms_dbfs": -22.156,
+        "dc": 4.87e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0003349,
+        "clipped_samples": 0
+      },
+      "bytes": 1309423,
+      "sha256": "08fee48ac45516d27bf8bdc5a934e5a93efea6e19e8121026b1db004407a1877"
+    },
+    {
+      "id": "A05",
+      "title": "Raised Alert",
+      "file": "a05_raised_alert",
+      "mood": "alert",
+      "bpm": 104,
+      "bars": 64,
+      "chords": [
+        [
+          42,
+          49,
+          52,
+          56,
+          61
+        ],
+        [
+          45,
+          52,
+          55,
+          59,
+          64
+        ],
+        [
+          40,
+          47,
+          52,
+          54,
+          59
+        ],
+        [
+          44,
+          51,
+          54,
+          57,
+          61
+        ]
+      ],
+      "motif": [
+        73,
+        null,
+        72,
+        68,
+        73,
+        75,
+        null,
+        68
+      ],
+      "rhythm": 0.78,
+      "color": "F sharp minor tension; muted kick / unsettled semitone answer",
+      "path": "assets/audio/music/a05_raised_alert.ogg",
+      "loop": true,
+      "master": "builds/audio-masters/a05_raised_alert.wav",
+      "master_stats": {
+        "seconds": 147.692313,
+        "peak": 0.430406,
+        "peak_dbfs": -7.322,
+        "rms": 0.084996,
+        "rms_dbfs": -21.412,
+        "dc": 8e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 147.693424,
+        "peak": 0.428486,
+        "peak_dbfs": -7.361,
+        "rms": 0.085014,
+        "rms_dbfs": -21.41,
+        "dc": 2.23e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0001997,
+        "clipped_samples": 0
+      },
+      "bytes": 838873,
+      "sha256": "e93d503a02d5c308888e4cc6186bec7802d16323120dbf7b1d8d7702c490c4b2"
+    },
+    {
+      "id": "A06",
+      "title": "Broken Pattern",
+      "file": "a06_broken_pattern",
+      "mood": "reveal",
+      "bpm": 72,
+      "bars": 48,
+      "chords": [
+        [
+          47,
+          54,
+          57,
+          61,
+          66
+        ],
+        [
+          43,
+          50,
+          54,
+          59,
+          62
+        ],
+        [
+          50,
+          57,
+          61,
+          64,
+          69
+        ],
+        [
+          45,
+          52,
+          57,
+          59,
+          64
+        ]
+      ],
+      "motif": [
+        78,
+        null,
+        73,
+        74,
+        null,
+        69,
+        66,
+        null
+      ],
+      "rhythm": 0.1,
+      "color": "B minor / G major ambiguity; reverse-like pad / fragile bell",
+      "path": "assets/audio/music/a06_broken_pattern.ogg",
+      "loop": true,
+      "master": "builds/audio-masters/a06_broken_pattern.wav",
+      "master_stats": {
+        "seconds": 160.0,
+        "peak": 0.382888,
+        "peak_dbfs": -8.339,
+        "rms": 0.077994,
+        "rms_dbfs": -22.159,
+        "dc": 2e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 160.0,
+        "peak": 0.384899,
+        "peak_dbfs": -8.293,
+        "rms": 0.078,
+        "rms_dbfs": -22.158,
+        "dc": 3.28e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0007379,
+        "clipped_samples": 0
+      },
+      "bytes": 910995,
+      "sha256": "4420d85342d206271f5db8c88983e7e3ca78f73b466e2691b89772efb0f40c0e"
+    },
+    {
+      "id": "A07",
+      "title": "Clear Channel",
+      "file": "a07_clear_channel",
+      "mood": "ending",
+      "bpm": 80,
+      "bars": 64,
+      "chords": [
+        [
+          55,
+          62,
+          66,
+          69,
+          74
+        ],
+        [
+          50,
+          57,
+          62,
+          66,
+          69
+        ],
+        [
+          52,
+          59,
+          62,
+          67,
+          71
+        ],
+        [
+          48,
+          55,
+          60,
+          64,
+          67
+        ]
+      ],
+      "motif": [
+        74,
+        78,
+        null,
+        81,
+        79,
+        78,
+        74,
+        null
+      ],
+      "rhythm": 0.28,
+      "color": "G major ninths; open register / gentle resolution, no victory fanfare",
+      "path": "assets/audio/music/a07_clear_channel.ogg",
+      "loop": true,
+      "master": "builds/audio-masters/a07_clear_channel.wav",
+      "master_stats": {
+        "seconds": 192.0,
+        "peak": 0.389306,
+        "peak_dbfs": -8.194,
+        "rms": 0.077998,
+        "rms_dbfs": -22.158,
+        "dc": 6e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 192.0,
+        "peak": 0.3894,
+        "peak_dbfs": -8.192,
+        "rms": 0.078008,
+        "rms_dbfs": -22.157,
+        "dc": 2.45e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0004806,
+        "clipped_samples": 0
+      },
+      "bytes": 1239012,
+      "sha256": "a72c2d9a85f6ad69f07ace33dc6097b31ca1b75bf578487076b911feb3ebb3e0"
+    }
+  ],
+  "edits": [
+    {
+      "id": "A07-edit",
+      "title": "Clear Channel - Ending Edit",
+      "source_cue": "A07",
+      "path": "assets/audio/music/a07_clear_channel_ending.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/a07_clear_channel_ending.wav",
+      "master_stats": {
+        "seconds": 192.0,
+        "peak": 0.389306,
+        "peak_dbfs": -8.194,
+        "rms": 0.076452,
+        "rms_dbfs": -22.332,
+        "dc": 2e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 192.0,
+        "peak": 0.3894,
+        "peak_dbfs": -8.192,
+        "rms": 0.076463,
+        "rms_dbfs": -22.331,
+        "dc": 2.27e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "bytes": 1266267,
+      "sha256": "7c597dce4625de5d36dbff3c17800ee7fcb5d7a16fbba65e6008a45e6cacec92"
+    }
+  ],
+  "effects": [
+    {
+      "title": "click",
+      "event": "click",
+      "path": "assets/audio/sfx/click.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/click.wav",
+      "master_stats": {
+        "seconds": 0.18,
+        "peak": 0.102433,
+        "peak_dbfs": -19.791,
+        "rms": 0.038041,
+        "rms_dbfs": -28.395,
+        "dc": 9e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.18576,
+        "peak": 0.102706,
+        "peak_dbfs": -19.768,
+        "rms": 0.037455,
+        "rms_dbfs": -28.53,
+        "dc": 4.5e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.0001777,
+        "clipped_samples": 0
+      },
+      "bytes": 4857,
+      "sha256": "68c3a0a8dfacc8754b63bd2e76bd5efca9e26fe918b5461047d9bbe307489a23"
+    },
+    {
+      "title": "key",
+      "event": "key",
+      "path": "assets/audio/sfx/key.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/key.wav",
+      "master_stats": {
+        "seconds": 0.075011,
+        "peak": 0.061487,
+        "peak_dbfs": -24.224,
+        "rms": 0.022832,
+        "rms_dbfs": -32.829,
+        "dc": 2.62e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.09288,
+        "peak": 0.061676,
+        "peak_dbfs": -24.198,
+        "rms": 0.020558,
+        "rms_dbfs": -33.74,
+        "dc": 1.76e-06,
+        "silent_seconds": 0,
+        "loop_jump": 5.68e-05,
+        "clipped_samples": 0
+      },
+      "bytes": 4169,
+      "sha256": "e3c8638d726386293bc30372315b78cb649ac76ba742356ee87bc43f5c17614b"
+    },
+    {
+      "title": "hover",
+      "event": "hover",
+      "path": "assets/audio/sfx/hover.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/hover.wav",
+      "master_stats": {
+        "seconds": 0.12,
+        "peak": 0.06525,
+        "peak_dbfs": -23.708,
+        "rms": 0.024295,
+        "rms_dbfs": -32.29,
+        "dc": 4e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.13932,
+        "peak": 0.065293,
+        "peak_dbfs": -23.703,
+        "rms": 0.022518,
+        "rms_dbfs": -32.949,
+        "dc": 1e-07,
+        "silent_seconds": 0,
+        "loop_jump": 3.14e-05,
+        "clipped_samples": 0
+      },
+      "bytes": 4716,
+      "sha256": "2748d29493253ae8f01360bb0112161b47b3554e54a6f07a87208eacfca79cf5"
+    },
+    {
+      "title": "notification",
+      "event": "notification",
+      "path": "assets/audio/sfx/notification.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/notification.wav",
+      "master_stats": {
+        "seconds": 0.8,
+        "peak": 0.1867,
+        "peak_dbfs": -14.577,
+        "rms": 0.050957,
+        "rms_dbfs": -25.856,
+        "dc": 8e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.812698,
+        "peak": 0.187144,
+        "peak_dbfs": -14.556,
+        "rms": 0.050531,
+        "rms_dbfs": -25.929,
+        "dc": 3.6e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.000276,
+        "clipped_samples": 0
+      },
+      "bytes": 9440,
+      "sha256": "632fefbd722ad9a0984ae8cf315ce2c1df17fcf09aa7c17c3164b2690e8ab2dd"
+    },
+    {
+      "title": "success",
+      "event": "success",
+      "path": "assets/audio/sfx/success.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/success.wav",
+      "master_stats": {
+        "seconds": 1.2,
+        "peak": 0.235311,
+        "peak_dbfs": -12.567,
+        "rms": 0.051066,
+        "rms_dbfs": -25.837,
+        "dc": 9e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 1.200181,
+        "peak": 0.236508,
+        "peak_dbfs": -12.523,
+        "rms": 0.051033,
+        "rms_dbfs": -25.843,
+        "dc": 3e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0001042,
+        "clipped_samples": 0
+      },
+      "bytes": 10419,
+      "sha256": "704e9daaa1c9c36c46d8bb9ddfb8dc3ea77ab7339ca6f90de9b17955ae7781c0"
+    },
+    {
+      "title": "error",
+      "event": "error",
+      "path": "assets/audio/sfx/error.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/error.wav",
+      "master_stats": {
+        "seconds": 0.55,
+        "peak": 0.176999,
+        "peak_dbfs": -15.041,
+        "rms": 0.051034,
+        "rms_dbfs": -25.843,
+        "dc": 4.44e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.557279,
+        "peak": 0.17632,
+        "peak_dbfs": -15.074,
+        "rms": 0.050632,
+        "rms_dbfs": -25.911,
+        "dc": 4.71e-06,
+        "silent_seconds": 0,
+        "loop_jump": 4.22e-05,
+        "clipped_samples": 0
+      },
+      "bytes": 6697,
+      "sha256": "5fa8678061d566dd5cf74dcd1012eff9b7c3d1d92f91c19b12009cf7f4e33401"
+    },
+    {
+      "title": "connect",
+      "event": "connect",
+      "path": "assets/audio/sfx/connect.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/connect.wav",
+      "master_stats": {
+        "seconds": 0.8,
+        "peak": 0.24582,
+        "peak_dbfs": -12.188,
+        "rms": 0.060561,
+        "rms_dbfs": -24.356,
+        "dc": 1.3e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.812698,
+        "peak": 0.246514,
+        "peak_dbfs": -12.163,
+        "rms": 0.060073,
+        "rms_dbfs": -24.426,
+        "dc": 1.2e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.00012,
+        "clipped_samples": 0
+      },
+      "bytes": 8586,
+      "sha256": "ea6b643db4c053d39a52dd4bf6bcbdbde10e6468f470893463f20d21f4dd7e3d"
+    },
+    {
+      "title": "disconnect",
+      "event": "disconnect",
+      "path": "assets/audio/sfx/disconnect.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/disconnect.wav",
+      "master_stats": {
+        "seconds": 0.8,
+        "peak": 0.209498,
+        "peak_dbfs": -13.576,
+        "rms": 0.060676,
+        "rms_dbfs": -24.34,
+        "dc": 4e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.812698,
+        "peak": 0.20921,
+        "peak_dbfs": -13.588,
+        "rms": 0.060165,
+        "rms_dbfs": -24.413,
+        "dc": 1.6e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.000276,
+        "clipped_samples": 0
+      },
+      "bytes": 8407,
+      "sha256": "7d44668ef471d54de28400477e747692fb48d3c55ab5999200c3064a885027c2"
+    },
+    {
+      "title": "alert",
+      "event": "alert",
+      "path": "assets/audio/sfx/alert.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/alert.wav",
+      "master_stats": {
+        "seconds": 1.0,
+        "peak": 0.244963,
+        "peak_dbfs": -12.218,
+        "rms": 0.064101,
+        "rms_dbfs": -23.863,
+        "dc": 8.2e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 1.001361,
+        "peak": 0.245832,
+        "peak_dbfs": -12.187,
+        "rms": 0.064003,
+        "rms_dbfs": -23.876,
+        "dc": 2.9e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.0001216,
+        "clipped_samples": 0
+      },
+      "bytes": 9180,
+      "sha256": "4d203d4339c5b415814fdd9ab1ea6889fa48c4724263e0e10a4059427a84da08"
+    },
+    {
+      "title": "tool",
+      "event": "tool",
+      "path": "assets/audio/sfx/tool.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/tool.wav",
+      "master_stats": {
+        "seconds": 0.45,
+        "peak": 0.164037,
+        "peak_dbfs": -15.701,
+        "rms": 0.048492,
+        "rms_dbfs": -26.287,
+        "dc": 3.4e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.464399,
+        "peak": 0.164771,
+        "peak_dbfs": -15.662,
+        "rms": 0.047761,
+        "rms_dbfs": -26.419,
+        "dc": 6.6e-07,
+        "silent_seconds": 0,
+        "loop_jump": 4.3e-05,
+        "clipped_samples": 0
+      },
+      "bytes": 6797,
+      "sha256": "1aa64c13a6940c5bc0833a9f69aebbfad2f3e8608bb09e6681cf456d78bae7eb"
+    },
+    {
+      "title": "save",
+      "event": "save",
+      "path": "assets/audio/sfx/save.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/save.wav",
+      "master_stats": {
+        "seconds": 0.6,
+        "peak": 0.18433,
+        "peak_dbfs": -14.688,
+        "rms": 0.050013,
+        "rms_dbfs": -26.018,
+        "dc": 1.1e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.603719,
+        "peak": 0.184447,
+        "peak_dbfs": -14.683,
+        "rms": 0.049846,
+        "rms_dbfs": -26.047,
+        "dc": 1.9e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.000276,
+        "clipped_samples": 0
+      },
+      "bytes": 7788,
+      "sha256": "957f6b75b4dca08c94a7dcdd632c795c820818d250a4420129258532a1414a9c"
+    },
+    {
+      "title": "window",
+      "event": "window",
+      "path": "assets/audio/sfx/window.ogg",
+      "loop": false,
+      "master": "builds/audio-masters/window.wav",
+      "master_stats": {
+        "seconds": 0.25,
+        "peak": 0.103295,
+        "peak_dbfs": -19.718,
+        "rms": 0.037866,
+        "rms_dbfs": -28.435,
+        "dc": 3.8e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 0.25542,
+        "peak": 0.103273,
+        "peak_dbfs": -19.72,
+        "rms": 0.037453,
+        "rms_dbfs": -28.53,
+        "dc": 1.6e-07,
+        "silent_seconds": 0,
+        "loop_jump": 0.000197,
+        "clipped_samples": 0
+      },
+      "bytes": 5354,
+      "sha256": "43e79bb3b82b6c1b12147cd63570bb8ac9df70c112285300960b245b15f84ad2"
+    }
+  ],
+  "ambience": [
+    {
+      "title": "Night Rain and Workstation Air",
+      "path": "assets/audio/ambience/night_rain_air.ogg",
+      "loop": true,
+      "master": "builds/audio-masters/night_rain_air.wav",
+      "master_stats": {
+        "seconds": 48.0,
+        "peak": 0.191905,
+        "peak_dbfs": -14.338,
+        "rms": 0.034984,
+        "rms_dbfs": -29.123,
+        "dc": 3e-08,
+        "silent_seconds": 0,
+        "loop_jump": 0.0,
+        "clipped_samples": 0
+      },
+      "encoded_stats": {
+        "seconds": 48.0,
+        "peak": 0.193633,
+        "peak_dbfs": -14.26,
+        "rms": 0.034871,
+        "rms_dbfs": -29.151,
+        "dc": 3.76e-06,
+        "silent_seconds": 0,
+        "loop_jump": 0.0007161,
+        "clipped_samples": 0
+      },
+      "bytes": 837548,
+      "sha256": "eb2c07d37d0eca03eb65e3008a200dbe2674494612838c4d9af77bc2e76c506b"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+MidnightAccess original soundtrack and sound effects
+Production version: 2026-11-05
+
+These audio assets and their note scores were produced specifically for the
+Packet Trail / MidnightAccess project using original offline synthesis authored
+by Codex (gpt-6.1-sol, high). No third-party music, samples, recordings or
+generative music services were used. No external sample attribution or music
+service subscription is required by this production pipeline.
+
+The assets are supplied to the project owner for use, modification and
+distribution with this project, including commercial game distribution.
+No separate public/open-source asset license is granted here. Project ownership
+and release policy govern redistribution outside this project. This provenance
+notice does not assert that AI-generated material receives copyright protection
+in every jurisdiction.
+
+Reproducible musical arrangement and synthesis: tools/generate_audio.py.
+Per-asset score metadata, PCM/encoded measurements and hashes: manifest.json.
+Uncompressed stereo PCM masters: builds/audio-masters/ (ignored build output).

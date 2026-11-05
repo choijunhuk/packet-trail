@@ -1,0 +1,14 @@
+{
+  "family": "Noto Sans Mono",
+  "version": "2.014",
+  "source": "https://github.com/google/fonts/tree/bbda7253fc363238b05d97515ca71f8ae49c4fa9/ofl/notosansmono",
+  "download": "https://raw.githubusercontent.com/google/fonts/bbda7253fc363238b05d97515ca71f8ae49c4fa9/ofl/notosansmono/NotoSansMono%5Bwdth,wght%5D.ttf",
+  "upstream_commit": "bbda7253fc363238b05d97515ca71f8ae49c4fa9",
+  "retrieved_date": "2026-11-05",
+  "sha256": "2cb2adb378a8f574213e23df697050b83c54c27df465a2015552740b2769a081",
+  "license": "SIL Open Font License 1.1",
+  "license_file": "OFL-Mono.txt",
+  "license_sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+  "metadata_file": "METADATA-Mono.pb",
+  "modified": false
+}

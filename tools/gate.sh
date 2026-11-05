@@ -27,7 +27,15 @@ command -v python3 >/dev/null 2>&1 || fail "python3 is required"
 for required in godot/project.godot godot/scripts/core/game.gd \
     godot/scripts/core/content_loader.gd godot/tests/headless/run_all.gd \
     godot/tests/headless/test_save_store.gd godot/tools/validate_content.gd \
-    tools/check_docs.py tools/test_check_docs.py tools/test_gate.py tools/check_boundaries.py; do
+    tools/check_docs.py tools/test_check_docs.py tools/test_gate.py tools/check_boundaries.py \
+    tools/check_campaign.py tools/check_locales.py tools/test_check_locales.py \
+    godot/scripts/core/campaign_game.gd godot/scripts/core/campaign_loader.gd \
+    godot/data/campaign/campaign.json godot/tests/headless/test_campaign.gd \
+    godot/tools/validate_campaign.gd godot/tools/run_presentation.gd \
+    godot/tests/headless/test_presentation.gd godot/scenes/full_game.tscn \
+    godot/scenes/campaign_desktop.tscn godot/scripts/apps/campaign_desktop.gd \
+    godot/tools/validate_portraits.gd godot/tools/probe_grep_flags.gd \
+    tools/test_shell_commands.py tools/test_check_campaign.py; do
     [[ -f "$required" ]] || fail "missing required file: $required"
 done
 
@@ -75,7 +83,13 @@ PY
 run_godot import "" --editor --import
 run_godot content content_validation --script res://tools/validate_content.gd
 run_godot runner first_playable --script res://tests/headless/run_all.gd
+run_godot campaign_content campaign_content --script res://tools/validate_campaign.gd
+run_godot campaign campaign --script res://tests/headless/test_campaign.gd
+run_godot presentation presentation --script res://tools/run_presentation.gd
+run_godot portraits portraits --script res://tools/validate_portraits.gd
 python3 tools/check_docs.py
+python3 tools/check_campaign.py
+python3 tools/check_locales.py
 python3 -m unittest discover -s tools -p 'test_*.py'
 python3 tools/check_boundaries.py --self-test
 python3 tools/check_boundaries.py

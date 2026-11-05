@@ -1,0 +1,14 @@
+{
+"TOOL_NETPROBE_NAME":["NetProbe","NetProbe","NetProbe","NetProbe","NetProbe","NetProbe"],
+"TOOL_NETPROBE_DESCRIPTION":["발견한 가상 대상의 서비스와 포트 상태를 관찰합니다.","Observe services and port states on discovered virtual targets.","発見した仮想対象のサービスとポート状態を観察します。","观察已发现虚拟目标的服务与端口状态。","Observa servicios y puertos de los destinos virtuales descubiertos.","Beobachte Dienste und Portzustände entdeckter virtueller Ziele."],
+"TOOL_NETPROBE_USAGE":["target: registered-host","target: registered-host","target: registered-host","target: registered-host","target: registered-host","target: registered-host"],
+"TOOL_TRACEROUTE_NAME":["TraceRoute","TraceRoute","TraceRoute","TraceRoute","TraceRoute","TraceRoute"],
+"TOOL_TRACEROUTE_DESCRIPTION":["현재 가상 세션에서 대상까지의 경로를 관찰합니다.","Observe the route from the current virtual session to the target.","現在の仮想セッションから対象への経路を観察します。","观察当前虚拟会话到目标的通路。","Observa la ruta desde la sesión virtual actual hasta el destino.","Beobachte den Weg von der aktuellen virtuellen Sitzung zum Ziel."],
+"TOOL_TRACEROUTE_USAGE":["target: registered-host","target: registered-host","target: registered-host","target: registered-host","target: registered-host","target: registered-host"],
+"TOOL_FILELENS_NAME":["FileLens","FileLens","FileLens","FileLens","FileLens","FileLens"],
+"TOOL_FILELENS_DESCRIPTION":["현재 가상 계정으로 접근할 수 있는 파일을 읽습니다.","Read files accessible to the current virtual account.","現在の仮想アカウントがアクセスできるファイルを読みます。","读取当前虚拟账号有权访问的文件。","Lee archivos accesibles para la cuenta virtual actual.","Lies Dateien, auf die das aktuelle virtuelle Konto zugreifen darf."],
+"TOOL_FILELENS_USAGE":["path: virtual-path","path: virtual-path","path: virtual-path","path: virtual-path","path: virtual-path","path: virtual-path"],
+"TOOL_LOGLENS_NAME":["LogLens","LogLens","LogLens","LogLens","LogLens","LogLens"],
+"TOOL_LOGLENS_DESCRIPTION":["현재 계정에 허용된 가상 로그의 본문을 관찰합니다.","Inspect virtual log contents permitted to the current account.","現在のアカウントに許可された仮想ログ本文を観察します。","查看当前账号获准读取的虚拟日志正文。","Examina el contenido de registros virtuales permitido a la cuenta actual.","Untersuche virtuelle Protokolle, die dem aktuellen Konto erlaubt sind."],
+"TOOL_LOGLENS_USAGE":["path: virtual-log","path: virtual-log","path: virtual-log","path: virtual-log","path: virtual-log","path: virtual-log"]
+}

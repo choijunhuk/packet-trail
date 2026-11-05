@@ -1,0 +1,146 @@
+{
+  "missions": 28,
+  "main": 24,
+  "optional": 4,
+  "routes": 56,
+  "locale_keys": 826,
+  "hosts": 113,
+  "required_records": 89,
+  "independent_exhibits": 66,
+  "action_counts": {
+    "M01": [
+      9,
+      6
+    ],
+    "M02": [
+      9,
+      11
+    ],
+    "M03": [
+      10,
+      12
+    ],
+    "M04": [
+      9,
+      11
+    ],
+    "M05": [
+      14,
+      16
+    ],
+    "M06": [
+      19,
+      22
+    ],
+    "M07": [
+      17,
+      20
+    ],
+    "M08": [
+      16,
+      19
+    ],
+    "M09": [
+      14,
+      16
+    ],
+    "M10": [
+      14,
+      16
+    ],
+    "M11": [
+      14,
+      16
+    ],
+    "M12": [
+      16,
+      19
+    ],
+    "M13": [
+      19,
+      21
+    ],
+    "M14": [
+      20,
+      21
+    ],
+    "M15": [
+      26,
+      27
+    ],
+    "M16": [
+      19,
+      21
+    ],
+    "M17": [
+      26,
+      27
+    ],
+    "M18": [
+      19,
+      21
+    ],
+    "M19": [
+      19,
+      21
+    ],
+    "M20": [
+      19,
+      21
+    ],
+    "M21": [
+      25,
+      26
+    ],
+    "M22": [
+      33,
+      32
+    ],
+    "M23": [
+      30,
+      33
+    ],
+    "M24": [
+      24,
+      26
+    ],
+    "S01": [
+      14,
+      16
+    ],
+    "S02": [
+      14,
+      16
+    ],
+    "R01": [
+      15,
+      16
+    ],
+    "P01": [
+      15,
+      16
+    ]
+  },
+  "model_kinds": [
+    "audit",
+    "auth",
+    "compare",
+    "csrf",
+    "exec",
+    "fetch",
+    "idor",
+    "memory",
+    "packet",
+    "path",
+    "permission",
+    "policy",
+    "query",
+    "render",
+    "reverse",
+    "session",
+    "token",
+    "trace",
+    "upload"
+  ],
+  "note": "Authored structure only; runtime solutions and playtime require integration checks."
+}

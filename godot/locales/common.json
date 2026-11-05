@@ -1,0 +1,530 @@
+{
+  "ROOM_TITLE": [
+    "심야접속",
+    "Midnight Access",
+    "ミッドナイト・アクセス",
+    "午夜接入",
+    "Acceso de medianoche",
+    "Mitternachtszugang"
+  ],
+  "ROOM_SUBTITLE": [
+    "비가 그치기 전, 다음 기록을 찾는다.",
+    "Find the next record before the rain stops.",
+    "雨がやむ前に、次の記録を見つけよう。",
+    "在雨停之前，找到下一份记录。",
+    "Encuentra el siguiente registro antes de que pare la lluvia.",
+    "Finde die nächste Aufzeichnung, bevor der Regen aufhört."
+  ],
+  "CONTINUE": [
+    "계속하기",
+    "Continue",
+    "続ける",
+    "继续",
+    "Continuar",
+    "Fortsetzen"
+  ],
+  "NEW_GAME": [
+    "새 게임",
+    "New game",
+    "ニューゲーム",
+    "新游戏",
+    "Nueva partida",
+    "Neues Spiel"
+  ],
+  "LOAD_GAME": [
+    "불러오기",
+    "Load game",
+    "ロード",
+    "读取存档",
+    "Cargar partida",
+    "Spiel laden"
+  ],
+  "SETTINGS": [
+    "설정",
+    "Settings",
+    "設定",
+    "设置",
+    "Ajustes",
+    "Einstellungen"
+  ],
+  "CREDITS": [
+    "제작 정보",
+    "Credits",
+    "クレジット",
+    "制作名单",
+    "Créditos",
+    "Mitwirkende"
+  ],
+  "QUIT": [
+    "종료",
+    "Quit",
+    "終了",
+    "退出",
+    "Salir",
+    "Beenden"
+  ],
+  "ENTER_ROOM": [
+    "작업실 둘러보기",
+    "Enter the studio",
+    "作業部屋に入る",
+    "进入工作室",
+    "Entrar al estudio",
+    "Arbeitszimmer betreten"
+  ],
+  "BACK": [
+    "돌아가기",
+    "Back",
+    "戻る",
+    "返回",
+    "Volver",
+    "Zurück"
+  ],
+  "COMPUTER_USE": [
+    "E · 컴퓨터 사용",
+    "E · Use computer",
+    "E · コンピューターを使う",
+    "E · 使用电脑",
+    "E · Usar ordenador",
+    "E · Computer benutzen"
+  ],
+  "ROOM_CONTROLS": [
+    "WASD 이동 · 마우스 오른쪽 버튼 시선 · E 컴퓨터 · Esc 메뉴",
+    "WASD move · Hold right mouse to look · E computer · Esc menu",
+    "WASD 移動 · マウス右ボタン長押しで視点操作 · E コンピューター · Esc メニュー",
+    "WASD 移动 · 按住鼠标右键转动视角 · E 电脑 · Esc 菜单",
+    "WASD mover · Mantén clic derecho para mirar · E ordenador · Esc menú",
+    "WASD bewegen · Rechte Maustaste halten zum Umsehen · E Computer · Esc Menü"
+  ],
+  "RETURN_TO_ROOM": [
+    "F10 · 작업실로",
+    "F10 · Return to studio",
+    "F10 · 作業部屋に戻る",
+    "F10 · 返回工作室",
+    "F10 · Volver al estudio",
+    "F10 · Zurück ins Arbeitszimmer"
+  ],
+  "NEW_GAME_CONFIRM": [
+    "기존 캠페인을 백업하고 새 진행으로 저장 슬롯을 대체합니다. M01 구버전 저장은 유지됩니다.",
+    "Back up the existing campaign and replace its save slot with a new session. Legacy M01 saves are preserved.",
+    "既存のキャンペーンをバックアップし、新しい進行でセーブスロットを置き換えます。旧版 M01 のセーブは保持されます。",
+    "将备份现有战役，并以新游戏替换其存档槽。旧版 M01 存档会保留。",
+    "Se hará una copia de seguridad de la campaña existente y se reemplazará su partida por una nueva. Se conservarán las partidas de la versión anterior de M01.",
+    "Die bestehende Kampagne wird gesichert und ihr Speicherplatz durch eine neue Sitzung ersetzt. Alte M01-Spielstände bleiben erhalten."
+  ],
+  "START_NEW": [
+    "새 진행 시작",
+    "Start session",
+    "新しく開始",
+    "开始新游戏",
+    "Empezar partida",
+    "Neue Partie starten"
+  ],
+  "CANCEL": [
+    "취소",
+    "Cancel",
+    "キャンセル",
+    "取消",
+    "Cancelar",
+    "Abbrechen"
+  ],
+  "DESKTOP_NOT_READY": [
+    "데스크톱 연결을 준비하지 못했습니다.",
+    "The desktop connection is not ready.",
+    "デスクトップへの接続を準備できませんでした。",
+    "桌面连接尚未就绪。",
+    "La conexión con el escritorio no está lista.",
+    "Die Verbindung zum Desktop ist noch nicht bereit."
+  ],
+  "SETTINGS_TITLE": [
+    "환경 설정",
+    "Preferences",
+    "環境設定",
+    "偏好设置",
+    "Preferencias",
+    "Einstellungen"
+  ],
+  "SETTINGS_AUDIO": [
+    "음향",
+    "Audio",
+    "サウンド",
+    "音频",
+    "Sonido",
+    "Audio"
+  ],
+  "SETTINGS_DISPLAY": [
+    "화면과 편안함",
+    "Display and comfort",
+    "画面と快適さ",
+    "显示与舒适度",
+    "Pantalla y comodidad",
+    "Anzeige und Komfort"
+  ],
+  "MASTER_VOLUME": [
+    "전체 음량",
+    "Master volume",
+    "全体音量",
+    "总音量",
+    "Volumen general",
+    "Gesamtlautstärke"
+  ],
+  "MUSIC_VOLUME": [
+    "음악",
+    "Music",
+    "音楽",
+    "音乐",
+    "Música",
+    "Musik"
+  ],
+  "SFX_VOLUME": [
+    "효과음",
+    "Sound effects",
+    "効果音",
+    "音效",
+    "Efectos de sonido",
+    "Soundeffekte"
+  ],
+  "UI_VOLUME": [
+    "인터페이스",
+    "Interface sounds",
+    "操作音",
+    "界面音效",
+    "Sonidos de interfaz",
+    "Oberflächentöne"
+  ],
+  "AMBIENCE_VOLUME": [
+    "빗소리·환경음",
+    "Rain and ambience",
+    "雨音・環境音",
+    "雨声与环境音",
+    "Lluvia y ambiente",
+    "Regen und Umgebung"
+  ],
+  "FONT_SCALE": [
+    "글자 크기",
+    "Text scale",
+    "文字の大きさ",
+    "文字大小",
+    "Tamaño del texto",
+    "Textgröße"
+  ],
+  "MOUSE_SENSITIVITY": [
+    "마우스 감도",
+    "Mouse sensitivity",
+    "マウス感度",
+    "鼠标灵敏度",
+    "Sensibilidad del ratón",
+    "Mausempfindlichkeit"
+  ],
+  "REDUCED_MOTION": [
+    "움직임 줄이기",
+    "Reduce motion",
+    "動きを抑える",
+    "减少动态效果",
+    "Reducir movimiento",
+    "Bewegung reduzieren"
+  ],
+  "COMFORT_MODE": [
+    "편안한 이동 · 좁은 시야각",
+    "Comfort movement · narrow field of view",
+    "快適な移動・狭い視野角",
+    "舒适移动 · 较窄视野",
+    "Movimiento cómodo · campo de visión estrecho",
+    "Komfortbewegung · enges Sichtfeld"
+  ],
+  "FULLSCREEN": [
+    "전체 화면",
+    "Fullscreen",
+    "フルスクリーン",
+    "全屏",
+    "Pantalla completa",
+    "Vollbild"
+  ],
+  "BACKGROUND_AUDIO": [
+    "다른 창을 사용할 때도 소리 재생",
+    "Play audio in background",
+    "別のウィンドウを使用中も音を再生",
+    "切换到其他窗口时继续播放声音",
+    "Reproducir sonido en segundo plano",
+    "Audio im Hintergrund abspielen"
+  ],
+  "LANGUAGE": [
+    "언어",
+    "Language",
+    "言語",
+    "语言",
+    "Idioma",
+    "Sprache"
+  ],
+  "APPLY_SETTINGS": [
+    "적용하고 저장",
+    "Apply and save",
+    "適用して保存",
+    "应用并保存",
+    "Aplicar y guardar",
+    "Anwenden und speichern"
+  ],
+  "RESET_CONTROLS": [
+    "조작 기본값",
+    "Reset controls",
+    "操作設定を初期化",
+    "重置操作设置",
+    "Restablecer controles",
+    "Steuerung zurücksetzen"
+  ],
+  "SETTINGS_SAVED": [
+    "설정을 저장했습니다.",
+    "Settings saved.",
+    "設定を保存しました。",
+    "设置已保存。",
+    "Ajustes guardados.",
+    "Einstellungen gespeichert."
+  ],
+  "SETTINGS_NOT_SAVED": [
+    "설정을 저장하지 못했습니다.",
+    "Could not save settings.",
+    "設定を保存できませんでした。",
+    "无法保存设置。",
+    "No se han podido guardar los ajustes.",
+    "Einstellungen konnten nicht gespeichert werden."
+  ],
+  "CREDITS_BODY": [
+    "독립 제작 해킹 시뮬레이터\n가상 서버·명령만 사용합니다.\nNoto Sans KR / JP / SC / Mono · SIL Open Font License 1.1",
+    "An independently made hacking simulator\nUses simulated servers and commands only.\nNoto Sans KR / JP / SC / Mono · SIL Open Font License 1.1",
+    "自主制作のハッキングシミュレーター\n仮想サーバーと仮想コマンドのみを使用します。\nNoto Sans KR / JP / SC / Mono · SIL Open Font License 1.1",
+    "独立制作的黑客模拟游戏\n仅使用虚拟服务器和虚拟命令。\nNoto Sans KR / JP / SC / Mono · SIL Open Font License 1.1",
+    "Un simulador de hacking independiente\nSolo utiliza servidores y comandos simulados.\nNoto Sans KR / JP / SC / Mono · SIL Open Font License 1.1",
+    "Ein unabhängig entwickelter Hacking-Simulator\nVerwendet ausschließlich simulierte Server und Befehle.\nNoto Sans KR / JP / SC / Mono · SIL Open Font License 1.1"
+  ],
+  "SAVE": [
+    "저장",
+    "Save",
+    "保存",
+    "保存",
+    "Guardar",
+    "Speichern"
+  ],
+  "CLOSE": [
+    "닫기",
+    "Close",
+    "閉じる",
+    "关闭",
+    "Cerrar",
+    "Schließen"
+  ],
+  "HELP": [
+    "도움말",
+    "Help",
+    "ヘルプ",
+    "帮助",
+    "Ayuda",
+    "Hilfe"
+  ],
+  "MISSION_PROGRESS": [
+    "사건 {current} / {total}",
+    "Case {current} / {total}",
+    "事件 {current} / {total}",
+    "事件 {current} / {total}",
+    "Caso {current} / {total}",
+    "Fall {current} / {total}"
+  ],
+  "MISSION_COMPLETE": [
+    "사건 해결",
+    "Case resolved",
+    "事件解決",
+    "事件已解决",
+    "Caso resuelto",
+    "Fall gelöst"
+  ],
+  "CAMPAIGN_COMPLETE": [
+    "심야의 기록이 이어졌습니다.",
+    "The midnight records are connected.",
+    "深夜の記録がつながりました。",
+    "午夜的记录已串联起来。",
+    "Los registros de medianoche están conectados.",
+    "Die Aufzeichnungen der Nacht sind verbunden."
+  ],
+  "NEXT_MISSION": [
+    "다음 사건",
+    "Next case",
+    "次の事件",
+    "下一个事件",
+    "Siguiente caso",
+    "Nächster Fall"
+  ],
+  "HINT": [
+    "단서 안내",
+    "Hint",
+    "ヒント",
+    "提示",
+    "Pista",
+    "Hinweis"
+  ],
+  "NO_HINT": [
+    "안내 접기",
+    "Hide guidance",
+    "案内を閉じる",
+    "收起提示",
+    "Ocultar ayuda",
+    "Hilfestellung ausblenden"
+  ],
+  "TOOLS": [
+    "도구",
+    "Tools",
+    "ツール",
+    "工具",
+    "Herramientas",
+    "Werkzeuge"
+  ],
+  "MAIL": [
+    "메일",
+    "Mail",
+    "メール",
+    "邮件",
+    "Correo",
+    "Postfach"
+  ],
+  "BROWSER": [
+    "브라우저",
+    "Browser",
+    "ブラウザー",
+    "浏览器",
+    "Navegador",
+    "Browser"
+  ],
+  "TERMINAL": [
+    "터미널",
+    "Terminal",
+    "ターミナル",
+    "终端",
+    "Terminal",
+    "Terminal"
+  ],
+  "FILES": [
+    "파일",
+    "Files",
+    "ファイル",
+    "文件",
+    "Archivos",
+    "Dateien"
+  ],
+  "NETWORK": [
+    "네트워크",
+    "Network",
+    "ネットワーク",
+    "网络",
+    "Red",
+    "Netzwerk"
+  ],
+  "CASE_BOARD": [
+    "사건 노트",
+    "Case board",
+    "事件ノート",
+    "事件笔记",
+    "Tablero del caso",
+    "Fallübersicht"
+  ],
+  "EVIDENCE": [
+    "회수한 자료",
+    "Recovered records",
+    "回収した資料",
+    "已取得的资料",
+    "Registros recuperados",
+    "Gesicherte Aufzeichnungen"
+  ],
+  "RETRY": [
+    "다시 시도",
+    "Retry",
+    "やり直す",
+    "重试",
+    "Reintentar",
+    "Erneut versuchen"
+  ],
+  "SUCCESS": [
+    "성공",
+    "Success",
+    "成功",
+    "成功",
+    "Éxito",
+    "Erfolg"
+  ],
+  "FAILURE": [
+    "실패",
+    "Failed",
+    "失敗",
+    "失败",
+    "Error",
+    "Fehlgeschlagen"
+  ],
+  "STATUS_READY": [
+    "준비됨",
+    "Ready",
+    "準備完了",
+    "就绪",
+    "Listo",
+    "Bereit"
+  ],
+  "STATUS_DISCONNECTED": [
+    "연결 끊김",
+    "Disconnected",
+    "未接続",
+    "未连接",
+    "Desconectado",
+    "Getrennt"
+  ],
+  "AUDIO_MUSIC_DESCRIPTION": [
+    "조사를 방해하지 않는 전자음악",
+    "Electronic music for focused investigation",
+    "調査に集中できる電子音楽",
+    "适合专注调查的电子音乐",
+    "Música electrónica para investigar con calma",
+    "Elektronische Musik für konzentrierte Ermittlungen"
+  ],
+  "AUDIO_ALERT_DESCRIPTION": [
+    "화면에도 표시되는 경보 상태",
+    "Alert state is also shown on screen",
+    "警戒状態は画面にも表示されます",
+    "警报状态也会在画面上显示",
+    "La alerta también se muestra en pantalla",
+    "Der Alarmzustand wird auch auf dem Bildschirm angezeigt"
+  ],
+  "KEYBOARD_VOLUME": [
+    "키보드 소리",
+    "Keyboard sounds",
+    "キーボード音",
+    "键盘声音",
+    "Sonidos del teclado",
+    "Tastaturgeräusche"
+  ],
+  "TOOL_VOLUME": [
+    "도구 소리",
+    "Tool sounds",
+    "ツール音",
+    "工具声音",
+    "Sonidos de herramientas",
+    "Werkzeugtöne"
+  ],
+  "NOTIFICATION_VOLUME": [
+    "알림 소리",
+    "Notifications",
+    "通知音",
+    "通知声音",
+    "Notificaciones",
+    "Benachrichtigungen"
+  ],
+  "IMPORT_LEGACY": [
+    "구버전 M01 가져오기",
+    "Import legacy M01",
+    "旧版 M01 を取り込む",
+    "导入旧版 M01",
+    "Importar M01 anterior",
+    "Altes M01 importieren"
+  ],
+  "IMPORT_CONFIRM": [
+    "M01 구버전 저장은 유지됩니다. 가져온 진행으로 현재 캠페인 슬롯을 교체하며, 기존 캠페인이 있으면 백업합니다.",
+    "The legacy M01 save is preserved. Imported progress replaces the current campaign slot; an existing campaign is backed up.",
+    "旧版 M01 のセーブは保持されます。取り込んだ進行で現在のキャンペーンスロットを置き換え、既存のキャンペーンはバックアップします。",
+    "旧版 M01 存档会保留。导入的进度将替换当前战役槽；现有战役会先备份。",
+    "Se conserva la partida anterior de M01. El progreso importado sustituye la campaña actual; si ya existe una campaña, se hará una copia de seguridad.",
+    "Der alte M01-Spielstand bleibt erhalten. Importierter Fortschritt ersetzt den aktuellen Kampagnenplatz; eine bestehende Kampagne wird zuvor gesichert."
+  ]
+}

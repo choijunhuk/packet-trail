@@ -1,0 +1,3802 @@
+{
+  "UI_BRAND": [
+    "심야접속 · MIDNIGHT ACCESS",
+    "MIDNIGHT ACCESS",
+    "ミッドナイト・アクセス · MIDNIGHT ACCESS",
+    "午夜接入 · MIDNIGHT ACCESS",
+    "Acceso de medianoche · MIDNIGHT ACCESS",
+    "Mitternachtszugang · MIDNIGHT ACCESS"
+  ],
+  "UI_APP_TERMINAL": [
+    "터미널",
+    "Terminal",
+    "ターミナル",
+    "终端",
+    "Terminal",
+    "Terminal"
+  ],
+  "UI_APP_MAIL": [
+    "메일",
+    "Mail",
+    "メール",
+    "邮件",
+    "Correo",
+    "Postfach"
+  ],
+  "UI_APP_BROWSER": [
+    "브라우저",
+    "Browser",
+    "ブラウザー",
+    "浏览器",
+    "Navegador",
+    "Browser"
+  ],
+  "UI_APP_REQUESTLAB": [
+    "RequestLab",
+    "RequestLab",
+    "RequestLab",
+    "RequestLab",
+    "RequestLab",
+    "RequestLab"
+  ],
+  "UI_APP_TOOLS": [
+    "도구",
+    "Tools",
+    "ツール",
+    "工具",
+    "Herramientas",
+    "Werkzeuge"
+  ],
+  "UI_APP_FILES": [
+    "파일",
+    "Files",
+    "ファイル",
+    "文件",
+    "Archivo",
+    "Datei"
+  ],
+  "UI_APP_ARCHIVE": [
+    "보관 자료",
+    "Evidence",
+    "保管資料",
+    "归档资料",
+    "Archivo de pruebas",
+    "Belegarchiv"
+  ],
+  "UI_APP_BOARD": [
+    "사건 보드",
+    "Case board",
+    "事件ボード",
+    "事件板",
+    "Tablero del caso",
+    "Fallübersicht"
+  ],
+  "UI_APP_STATUS": [
+    "상태·네트워크",
+    "Status · Network",
+    "状態・ネットワーク",
+    "状态与网络",
+    "Estado y red",
+    "Status und Netzwerk"
+  ],
+  "UI_APP_HELP": [
+    "도움말",
+    "Help",
+    "ヘルプ",
+    "帮助",
+    "Ayuda",
+    "Hilfe"
+  ],
+  "UI_APP_ENDING": [
+    "결말",
+    "Ending",
+    "結末",
+    "结局",
+    "Desenlace",
+    "Abschluss"
+  ],
+  "UI_WIN_TERMINAL_N": [
+    "터미널 {n}",
+    "Terminal {n}",
+    "ターミナル {n}",
+    "终端 {n}",
+    "Terminal {n}",
+    "Terminal {n}"
+  ],
+  "UI_WIN_MINIMIZE": [
+    "최소화",
+    "Minimize",
+    "最小化",
+    "最小化",
+    "Minimizar",
+    "Minimieren"
+  ],
+  "UI_WIN_MAXIMIZE": [
+    "최대화 / 복원",
+    "Maximize / restore",
+    "最大化 / 元に戻す",
+    "最大化 / 还原",
+    "Maximizar / Restaurar",
+    "Maximieren / Wiederherstellen"
+  ],
+  "UI_WIN_CLOSE": [
+    "닫기 (세션·입력·기록은 유지)",
+    "Close (session, input and history are kept)",
+    "閉じる（セッション・入力・履歴は保持）",
+    "关闭（保留会话、输入与记录）",
+    "Cerrar (conserva sesión, entrada e historial)",
+    "Schließen (Sitzung, Eingabe und Verlauf bleiben)"
+  ],
+  "UI_TASK_TERMINAL_TIP": [
+    "마지막으로 쓴 터미널 열기 / 앞으로 가져오기",
+    "Open / focus the last terminal you used",
+    "最後に使ったターミナルを開く / 手前に表示",
+    "打开上次使用的终端 / 置于前台",
+    "Abrir / traer al frente el último terminal",
+    "Letztes Terminal öffnen / nach vorn holen"
+  ],
+  "UI_TASK_TERMINAL_N_TIP": [
+    "터미널 {n} · 독립 세션 (Ctrl/Cmd+Shift+{n})",
+    "Terminal {n} · separate session (Ctrl/Cmd+Shift+{n})",
+    "ターミナル {n} · 独立セッション (Ctrl/Cmd+Shift+{n})",
+    "终端 {n} · 独立会话 (Ctrl/Cmd+Shift+{n})",
+    "Terminal {n} · sesión independiente (Ctrl/Cmd+Shift+{n})",
+    "Terminal {n} · eigene Sitzung (Ctrl/Cmd+Shift+{n})"
+  ],
+  "UI_TASK_OPEN_TIP": [
+    "열기 / 앞으로 가져오기",
+    "Open / bring to front",
+    "開く / 手前に表示",
+    "打开 / 置于前台",
+    "Abrir / traer al frente",
+    "Öffnen / nach vorn holen"
+  ],
+  "UI_TASK_MAIL_UNREAD": [
+    "{name} ({n})",
+    "{name} ({n})",
+    "{name} ({n})",
+    "{name} ({n})",
+    "{name} ({n})",
+    "{name} ({n})"
+  ],
+  "UI_FONT_SMALLER": [
+    "글자 작게",
+    "Smaller text",
+    "文字を小さく",
+    "缩小文字",
+    "Texto más pequeño",
+    "Text verkleinern"
+  ],
+  "UI_FONT_LARGER": [
+    "글자 크게",
+    "Larger text",
+    "文字を大きく",
+    "放大文字",
+    "Texto más grande",
+    "Text vergrößern"
+  ],
+  "UI_PAUSE": [
+    "일시정지",
+    "Pause",
+    "一時停止",
+    "暂停",
+    "Pausa",
+    "Pause"
+  ],
+  "UI_PAUSE_TIP": [
+    "게임 입력과 애니메이션 멈춤 (입력칸 밖에서 Esc)",
+    "Pause game input and animation (Esc outside a text field)",
+    "入力とアニメーションを停止（入力欄の外で Esc）",
+    "暂停游戏输入与动画（输入框外按 Esc）",
+    "Pausar entrada y animación (Esc fuera de los campos)",
+    "Eingabe und Animation anhalten (Esc außerhalb der Felder)"
+  ],
+  "UI_PAUSE_TITLE": [
+    "일시정지",
+    "Paused",
+    "一時停止",
+    "暂停",
+    "Pausa",
+    "Pause"
+  ],
+  "UI_PAUSE_BODY": [
+    "게임 입력과 화면 효과를 멈췄습니다. 경보는 시간으로 오르지 않으며 세션과 입력 내용은 그대로입니다.",
+    "Game input and screen effects are paused. Alerts never rise with time, and your sessions and typed input are kept.",
+    "ゲーム入力と画面効果を止めました。警戒度は時間では上がらず、セッションと入力はそのままです。",
+    "已暂停游戏输入与画面效果。警报不会随时间上升，会话与输入保持原样。",
+    "Se han pausado la entrada y los efectos. El tiempo no aumenta la alerta y se conservan sesiones y texto.",
+    "Spieleingaben und Effekte sind angehalten. Zeit erhöht den Alarm nicht; Sitzungen und Eingaben bleiben erhalten."
+  ],
+  "UI_PAUSE_RESUME": [
+    "계속하기 (Esc)",
+    "Resume (Esc)",
+    "続ける (Esc)",
+    "继续 (Esc)",
+    "Continuar (Esc)",
+    "Fortsetzen (Esc)"
+  ],
+  "UI_PAUSE_HELP": [
+    "도움말 보기",
+    "Open help",
+    "ヘルプを見る",
+    "查看帮助",
+    "Ver ayuda",
+    "Hilfe öffnen"
+  ],
+  "UI_OPEN_SETTINGS": [
+    "설정",
+    "Settings",
+    "設定",
+    "设置",
+    "Ajustes",
+    "Einstellungen"
+  ],
+  "UI_OPEN_SETTINGS_TIP": [
+    "글자 크기·언어·음향·움직임 줄이기",
+    "Text size, language, audio and reduced motion",
+    "文字サイズ・言語・音・動きを抑える",
+    "文字大小、语言、声音与减少动态效果",
+    "Texto, idioma, sonido y movimiento reducido",
+    "Textgröße, Sprache, Audio und reduzierte Bewegung"
+  ],
+  "UI_SETTINGS_UNAVAILABLE": [
+    "이 화면에서는 설정을 열 수 없습니다. 작업실 메뉴의 설정을 사용하세요.",
+    "Settings cannot be opened from here. Use Settings in the studio menu.",
+    "この画面では設定を開けません。作業部屋のメニューを使ってください。",
+    "此画面无法打开设置，请使用工作室菜单。",
+    "Aquí no se pueden abrir los ajustes. Usa el menú del estudio.",
+    "Hier lassen sich die Einstellungen nicht öffnen. Nutze das Arbeitszimmermenü."
+  ],
+  "UI_ROOM": [
+    "작업실로 (F10)",
+    "Back to studio (F10)",
+    "作業部屋へ (F10)",
+    "返回工作室 (F10)",
+    "Al estudio (F10)",
+    "Ins Arbeitszimmer (F10)"
+  ],
+  "UI_ROOM_TIP": [
+    "컴퓨터에서 일어나 작업실로 돌아갑니다. 진행과 창 배치는 유지됩니다.",
+    "Step away from the computer. Progress and window layout are kept.",
+    "コンピューターを離れて作業部屋に戻ります。進行と窓の配置は保持します。",
+    "离开电脑回到工作室，保留进度与窗口布局。",
+    "Vuelve al estudio. Se conservan el progreso y la disposición de ventanas.",
+    "Kehre ins Arbeitszimmer zurück. Fortschritt und Fensteranordnung bleiben erhalten."
+  ],
+  "UI_ARRANGE": [
+    "창 정렬",
+    "Arrange windows",
+    "窓を整列",
+    "排列窗口",
+    "Ordenar ventanas",
+    "Fenster anordnen"
+  ],
+  "UI_ARRANGE_TIP": [
+    "모든 창을 기본 배치로 되돌립니다",
+    "Return every window to its default position",
+    "すべての窓を初期配置に戻す",
+    "将所有窗口恢复默认布局",
+    "Restablecer la disposición de todas las ventanas",
+    "Alle Fenster auf die Standardanordnung zurücksetzen"
+  ],
+  "UI_SAVE": [
+    "저장",
+    "Save",
+    "保存",
+    "保存",
+    "Guardar",
+    "Speichern"
+  ],
+  "UI_SAVE_TIP": [
+    "현재 캠페인 진행을 저장 슬롯에 기록",
+    "Write current campaign progress to the save slot",
+    "現在のキャンペーン進行をスロットに保存",
+    "将当前战役进度写入存档槽",
+    "Guardar el progreso de la campaña en su ranura",
+    "Aktuellen Kampagnenfortschritt speichern"
+  ],
+  "UI_LOAD": [
+    "불러오기",
+    "Load",
+    "ロード",
+    "读取存档",
+    "Cargar partida",
+    "Spiel laden"
+  ],
+  "UI_LOAD_TIP": [
+    "디스크의 마지막 저장으로 되돌리기",
+    "Return to the last save on disk",
+    "ディスクの最後のセーブに戻る",
+    "返回磁盘上的最后存档",
+    "Volver al último guardado del disco",
+    "Zum letzten Speicherstand auf dem Datenträger zurückkehren"
+  ],
+  "UI_RECOVER": [
+    "백업 복구",
+    "Restore backup",
+    "バックアップ復旧",
+    "备份恢复",
+    "Recuperar copia",
+    "Sicherung wiederherstellen"
+  ],
+  "UI_RECOVER_TIP": [
+    "손상된 저장은 별도 이름으로 보존하고 정상 백업으로 복구",
+    "Keep the damaged save under a separate name and restore the valid backup",
+    "破損セーブを別名で保持し、正常なバックアップから復旧",
+    "另名保留损坏存档，并从有效备份恢复",
+    "Conservar el archivo dañado aparte y recuperar una copia válida",
+    "Beschädigten Stand separat erhalten und gültige Sicherung wiederherstellen"
+  ],
+  "UI_FRESH_SAVE": [
+    "손상본 보존·새 저장",
+    "Keep damaged files · new save",
+    "破損版を残して新規保存",
+    "保留损坏副本并新建存档",
+    "Conservar daños y guardar de nuevo",
+    "Beschädigung erhalten, neu speichern"
+  ],
+  "UI_FRESH_SAVE_TIP": [
+    "기존 저장과 백업을 별도 이름으로 보존하고 현재 진행을 새로 저장",
+    "Keep the existing save and backup under separate names and save the current progress as new",
+    "既存セーブとバックアップを別名で残し、今の進行を保存",
+    "另名保留现有存档与备份，重新保存当前进度",
+    "Conservar guardado y copia con otros nombres y guardar el progreso actual",
+    "Vorhandenen Stand und Sicherung separat erhalten und aktuellen Fortschritt speichern"
+  ],
+  "UI_CONFIRM_TITLE": [
+    "확인",
+    "Confirm",
+    "確認",
+    "确认",
+    "Confirmar",
+    "Bestätigen"
+  ],
+  "UI_OK": [
+    "확인",
+    "OK",
+    "確認",
+    "确认",
+    "Confirmar",
+    "Bestätigen"
+  ],
+  "UI_CANCEL": [
+    "취소",
+    "Cancel",
+    "キャンセル",
+    "取消",
+    "Cancelar",
+    "Abbrechen"
+  ],
+  "UI_CONFIRM_LOAD": [
+    "디스크의 마지막 저장으로 되돌립니다.\n저장하지 않은 현재 진행은 사라집니다.",
+    "Return to the last save on disk.\nUnsaved progress on screen will be lost.",
+    "ディスクの最後のセーブに戻ります。\n未保存の進行は失われます。",
+    "将返回磁盘上的最后存档。\n当前未保存进度将丢失。",
+    "Volverás al último guardado del disco.\nSe perderá el progreso actual no guardado.",
+    "Der letzte gespeicherte Stand wird geladen.\nUngespeicherter Fortschritt geht verloren."
+  ],
+  "UI_CONFIRM_RECOVER": [
+    "손상된 저장 파일은 별도 이름으로 보존하고, 정상 백업을 읽어 진행을 복원합니다.",
+    "The damaged save file is kept under a separate name, and progress is restored from the valid backup.",
+    "破損セーブを別名で残し、正常なバックアップを読んで進行を復旧します。",
+    "将另名保留损坏存档，并读取有效备份恢复进度。",
+    "Se conserva el archivo dañado con otro nombre y se restaura una copia válida.",
+    "Der beschädigte Stand bleibt unter anderem Namen erhalten; eine gültige Sicherung stellt den Fortschritt wieder her."
+  ],
+  "UI_CONFIRM_FRESH": [
+    "기존 저장과 백업은 별도 이름으로 보존하고, 지금 화면의 진행을 새 저장으로 기록합니다.\n현재 진행은 초기화하지 않습니다.",
+    "The existing save and backup are kept under separate names, and the progress on screen is written as a new save.\nCurrent progress is not reset.",
+    "既存セーブとバックアップを別名で残し、今の画面の進行を新しく保存します。\n現在の進行は初期化しません。",
+    "现有存档与备份将另名保留，并将当前画面的进度写入新存档。\n不会重置当前进度。",
+    "Se conservan el guardado y la copia con otros nombres y se guarda el progreso de esta pantalla.\nEl progreso actual no se reinicia.",
+    "Vorhandener Stand und Sicherung bleiben separat erhalten. Der Fortschritt dieses Bildschirms wird neu gespeichert.\nDer aktuelle Fortschritt wird nicht zurückgesetzt."
+  ],
+  "UI_RECOVERY_TITLE": [
+    "저장을 읽지 못했습니다",
+    "The save could not be read",
+    "セーブを読めませんでした",
+    "无法读取存档",
+    "No se pudo leer el guardado",
+    "Speicherstand nicht lesbar"
+  ],
+  "UI_RECOVERY_DETAIL": [
+    "{code}\n{detail}",
+    "{code}\n{detail}",
+    "{code}\n{detail}",
+    "{code}\n{detail}",
+    "{code}\n{detail}",
+    "{code}\n{detail}"
+  ],
+  "UI_RECOVERY_EXPLAIN": [
+    "기존 파일은 덮어쓰지 않았고 자동저장을 멈췄습니다. 정상 백업이 있으면 복구할 수 있습니다. 손상본 보존·새 저장은 기존 파일을 지우지 않고 별도 이름으로 남깁니다.",
+    "No file was overwritten and autosave is paused. If a valid backup exists, you can restore it. Keeping damaged files and saving new leaves the old files under separate names instead of deleting them.",
+    "既存ファイルを上書きせず、自動保存を止めました。正常なバックアップがあれば復旧できます。「破損版を残して新規保存」は元ファイルを消さず、別名で残します。",
+    "未覆盖现有文件，已暂停自动保存。如有有效备份即可恢复。“保留损坏副本并新建存档”会另名保留原文件，不会删除。",
+    "No se sobrescribieron archivos y se detuvo el guardado automático. Una copia válida permite recuperar. La opción de guardar de nuevo conserva los archivos antiguos con otros nombres.",
+    "Bestehende Dateien wurden nicht überschrieben, automatisches Speichern ist angehalten. Eine gültige Sicherung ermöglicht die Wiederherstellung. Neues Speichern erhält alte Dateien unter anderen Namen."
+  ],
+  "UI_RECOVERY_CONTINUE": [
+    "저장 없이 계속",
+    "Continue without saving",
+    "保存せず続ける",
+    "不保存并继续",
+    "Continuar sin guardar",
+    "Ohne Speichern fortfahren"
+  ],
+  "UI_RECOVERY_CONTINUE_TIP": [
+    "자동저장을 멈춘 상태로 화면을 엽니다. 작업 표시줄에서 언제든 복구할 수 있습니다.",
+    "Open the desktop with autosave paused. You can choose a recovery option from the taskbar at any time.",
+    "自動保存を止めて画面を開きます。タスクバーからいつでも復旧できます。",
+    "在自动保存暂停状态下进入画面。可随时通过任务栏恢复。",
+    "Abrir con el guardado automático detenido. Puedes recuperar desde la barra de tareas.",
+    "Mit angehaltenem automatischem Speichern öffnen. Wiederherstellung ist über die Taskleiste möglich."
+  ],
+  "UI_FATAL_TITLE": [
+    "게임 데이터를 준비하지 못했습니다",
+    "Game data could not be prepared",
+    "ゲームデータを準備できませんでした",
+    "无法准备游戏数据",
+    "No se pudieron preparar los datos",
+    "Spieldaten konnten nicht geladen werden"
+  ],
+  "UI_FATAL_BODY": [
+    "{detail}\n\n다른 내용으로 대체하지 않았습니다. 캠페인 데이터와 코어 오류를 확인해야 합니다.",
+    "{detail}\n\nNothing was substituted. The campaign data and core error need to be checked.",
+    "{detail}\n\n別の内容には置き換えていません。キャンペーンデータとコアのエラーを確認する必要があります。",
+    "{detail}\n\n未用其他内容替代。需要检查战役数据与核心错误。",
+    "{detail}\n\nNo se ha sustituido por otro contenido. Hay que revisar los datos de campaña y el error del núcleo.",
+    "{detail}\n\nEs wurde kein Ersatzinhalt eingesetzt. Kampagnendaten und Kernfehler müssen geprüft werden."
+  ],
+  "UI_FATAL_RETRY": [
+    "다시 시도",
+    "Try again",
+    "やり直す",
+    "重试",
+    "Reintentar",
+    "Erneut versuchen"
+  ],
+  "UI_ERR_NO_VIEW": [
+    "코어가 화면 정보를 반환하지 않았습니다.",
+    "The core did not return screen data.",
+    "コアが画面情報を返しませんでした。",
+    "核心未返回画面信息。",
+    "El núcleo no devolvió información de pantalla.",
+    "Der Kern lieferte keine Ansichtsdaten."
+  ],
+  "UI_ERR_BLOCKED": [
+    "지금은 이 동작을 실행할 수 없습니다 (일시정지·복구 선택 대기·데이터 오류).",
+    "This action is not available right now (paused, waiting for a recovery choice, or data error).",
+    "今は操作できません（一時停止、復旧選択待ち、データエラー）。",
+    "当前无法执行（暂停、等待恢复选择或数据错误）。",
+    "Ahora no puede ejecutarse (pausa, recuperación pendiente o error de datos).",
+    "Derzeit nicht möglich (Pause, ausstehende Wiederherstellung oder Datenfehler)."
+  ],
+  "UI_ERR_BAD_RESULT": [
+    "코어가 올바른 결과를 반환하지 않았습니다.",
+    "The core did not return a valid result.",
+    "コアが正しい結果を返しませんでした。",
+    "核心未返回有效结果。",
+    "El núcleo devolvió un resultado inválido.",
+    "Der Kern lieferte kein gültiges Ergebnis."
+  ],
+  "UI_ERR_UNKNOWN_SESSION_ACTION": [
+    "알 수 없는 시작 동작입니다: {action}",
+    "Unknown start action: {action}",
+    "不明な開始操作: {action}",
+    "未知启动操作：{action}",
+    "Acción inicial desconocida: {action}",
+    "Unbekannte Startaktion: {action}"
+  ],
+  "UI_ERR_NO_SAVE": [
+    "이어갈 캠페인 저장이 없습니다. 새 게임을 시작하세요.",
+    "There is no campaign save to continue. Start a new game.",
+    "続けるキャンペーンセーブがありません。新しく始めてください。",
+    "没有可继续的战役存档，请开始新游戏。",
+    "No hay campaña guardada para continuar. Empieza una nueva.",
+    "Kein Kampagnenstand zum Fortsetzen vorhanden. Starte ein neues Spiel."
+  ],
+  "UI_LOAD_NOT_FOUND_ACTIVE": [
+    "디스크에 캠페인 저장이 없습니다. 현재 진행은 그대로입니다.",
+    "There is no campaign save on disk. Current progress is unchanged.",
+    "ディスクにキャンペーンセーブがありません。今の進行は保持します。",
+    "磁盘上没有战役存档，当前进度保持不变。",
+    "No hay campaña guardada en disco. El progreso actual se conserva.",
+    "Kein Kampagnenstand auf dem Datenträger. Der aktuelle Fortschritt bleibt erhalten."
+  ],
+  "UI_IMPORT_UNAVAILABLE": [
+    "이 버전의 코어는 구버전 저장 가져오기를 제공하지 않습니다.",
+    "This core version does not offer legacy save import.",
+    "このコア版は旧版セーブの取り込みに対応していません。",
+    "此核心版本不支持导入旧存档。",
+    "Esta versión del núcleo no permite importar guardados anteriores.",
+    "Diese Kernversion unterstützt keinen Import alter Speicherstände."
+  ],
+  "UI_IMPORT_FAILED": [
+    "구버전 M01 저장을 가져오지 못했습니다 ({code}). 원본은 바뀌지 않았습니다.\n{detail}",
+    "The legacy M01 save could not be imported ({code}). The original is unchanged.\n{detail}",
+    "旧版 M01 を取り込めませんでした ({code})。原本は変更していません。\n{detail}",
+    "无法导入旧版 M01 存档 ({code})，原件未改变。\n{detail}",
+    "No se pudo importar M01 anterior ({code}). El original no cambió.\n{detail}",
+    "Altes M01 konnte nicht importiert werden ({code}). Das Original blieb unverändert.\n{detail}"
+  ],
+  "UI_AUTOSAVE_ON": [
+    "자동저장 켜짐",
+    "Autosave on",
+    "自動保存オン",
+    "自动保存开启",
+    "Guardado automático activo",
+    "Automatisches Speichern aktiv"
+  ],
+  "UI_AUTOSAVE_OFF": [
+    "자동저장 멈춤",
+    "Autosave paused",
+    "自動保存停止",
+    "自动保存暂停",
+    "Guardado automático detenido",
+    "Automatisches Speichern angehalten"
+  ],
+  "UI_AUTOSAVE_ON_TIP": [
+    "상태가 바뀌면 캠페인 슬롯에 자동으로 저장합니다.",
+    "Progress is saved to the campaign slot whenever the state changes.",
+    "状態変更時にキャンペーンスロットへ自動保存します。",
+    "状态变化时自动保存到战役槽。",
+    "Guarda automáticamente la campaña cuando cambia el estado.",
+    "Speichert die Kampagne bei Zustandsänderungen automatisch."
+  ],
+  "UI_AUTOSAVE_OFF_TIP": [
+    "디스크의 기존 파일을 보호하려고 자동저장을 멈췄습니다. 저장·백업 복구·손상본 보존 중 하나를 선택하세요.",
+    "Autosave is paused to protect existing files on disk. Choose Save, Restore backup, or Keep damaged files.",
+    "ディスクの既存ファイルを守るため自動保存を止めました。保存、バックアップ復旧、破損版保持から選んでください。",
+    "为保护磁盘上的现有文件已暂停自动保存。请选择保存、备份恢复或保留损坏副本。",
+    "Se detuvo para proteger los archivos. Elige guardar, recuperar copia o conservar los dañados.",
+    "Zum Schutz bestehender Dateien angehalten. Wähle Speichern, Sicherungswiederherstellung oder Erhalt beschädigter Dateien."
+  ],
+  "UI_AUTOSAVE_FAILED": [
+    "자동저장 실패 · 자동저장을 멈췄습니다 ({code})\n{detail}",
+    "Autosave failed · autosave paused ({code})\n{detail}",
+    "自動保存失敗 · 自動保存を停止しました ({code})\n{detail}",
+    "自动保存失败，已暂停自动保存 ({code})\n{detail}",
+    "Error de guardado automático; se ha detenido ({code})\n{detail}",
+    "Automatisches Speichern fehlgeschlagen und angehalten ({code})\n{detail}"
+  ],
+  "UI_SAVE_FAILED": [
+    "저장 실패 ({code})\n{detail}",
+    "Save failed ({code})\n{detail}",
+    "保存失敗 ({code})\n{detail}",
+    "保存失败 ({code})\n{detail}",
+    "Error al guardar ({code})\n{detail}",
+    "Speichern fehlgeschlagen ({code})\n{detail}"
+  ],
+  "UI_RECOVER_FAILED": [
+    "백업 복구 실패 ({code})\n{detail}",
+    "Backup restore failed ({code})\n{detail}",
+    "バックアップ復旧失敗 ({code})\n{detail}",
+    "备份恢复失败 ({code})\n{detail}",
+    "Error al recuperar copia ({code})\n{detail}",
+    "Sicherungswiederherstellung fehlgeschlagen ({code})\n{detail}"
+  ],
+  "UI_FRESH_FAILED": [
+    "새 저장 실패 ({code})\n{detail}",
+    "New save failed ({code})\n{detail}",
+    "新規保存失敗 ({code})\n{detail}",
+    "新建存档失败 ({code})\n{detail}",
+    "Error en el nuevo guardado ({code})\n{detail}",
+    "Neues Speichern fehlgeschlagen ({code})\n{detail}"
+  ],
+  "UI_NOTE_SAVED": [
+    "저장했습니다.",
+    "Saved.",
+    "保存しました。",
+    "已保存。",
+    "Guardado.",
+    "Gespeichert."
+  ],
+  "UI_NOTE_LOADED": [
+    "저장한 진행을 불러왔습니다.",
+    "Saved progress loaded.",
+    "保存した進行を読み込みました。",
+    "已读取保存的进度。",
+    "Progreso guardado cargado.",
+    "Gespeicherten Fortschritt geladen."
+  ],
+  "UI_NOTE_RECOVERED": [
+    "정상 백업으로 복구했습니다. 손상된 파일은 별도 이름으로 남겼습니다.",
+    "Restored from the valid backup. The damaged file was kept under a separate name.",
+    "正常なバックアップから復旧しました。破損ファイルは別名で残しています。",
+    "已从有效备份恢复，损坏文件另名保留。",
+    "Se recuperó una copia válida. El archivo dañado se conserva aparte.",
+    "Gültige Sicherung wiederhergestellt. Die beschädigte Datei bleibt separat erhalten."
+  ],
+  "UI_NOTE_FRESH_SAVED": [
+    "이전 파일을 별도 이름으로 보존하고 현재 진행을 새로 저장했습니다. 자동저장을 다시 켭니다.",
+    "Previous files were kept under separate names and the current progress was saved as new. Autosave is back on.",
+    "旧ファイルを別名で残して今の進行を保存しました。自動保存を再開します。",
+    "已另名保留旧文件并保存当前进度，将重新开启自动保存。",
+    "Se conservaron los archivos anteriores y se guardó el progreso actual. Se reactiva el guardado automático.",
+    "Alte Dateien wurden separat erhalten und der aktuelle Fortschritt gespeichert. Automatisches Speichern wird fortgesetzt."
+  ],
+  "UI_NOTE_NEW_SAVED": [
+    "새 캠페인을 저장했습니다. 이전 캠페인 저장이 있었다면 백업으로 보관되었습니다.",
+    "New campaign saved. Any previous campaign save was kept as a backup.",
+    "新しいキャンペーンを保存しました。以前のセーブは、存在すればバックアップされています。",
+    "已保存新战役。如有先前战役存档，已保留为备份。",
+    "Campaña nueva guardada. Si había una anterior, se conservó como copia.",
+    "Neue Kampagne gespeichert. Ein vorheriger Stand wurde gegebenenfalls gesichert."
+  ],
+  "UI_NOTE_IMPORTED_SAVED": [
+    "구버전 M01 진행을 가져와 캠페인 슬롯에 저장했습니다. 구버전 원본은 그대로입니다.",
+    "Legacy M01 progress was imported and saved to the campaign slot. The legacy original is unchanged.",
+    "旧版 M01 を取り込み、キャンペーンスロットに保存しました。旧版の原本はそのままです。",
+    "已导入旧版 M01 并保存到战役槽，旧版原件保持不变。",
+    "M01 anterior importado y guardado en la campaña. El original se conserva.",
+    "Altes M01 importiert und im Kampagnenplatz gespeichert. Das alte Original bleibt erhalten."
+  ],
+  "UI_NOTE_UNSAVED_PLAY": [
+    "자동저장이 멈춘 상태입니다. 진행을 지키려면 작업 표시줄에서 복구 방법을 선택하세요.",
+    "Autosave is paused. Choose a recovery option from the taskbar to protect your progress.",
+    "自動保存は停止中です。進行を守るには、タスクバーから復旧方法を選んでください。",
+    "自动保存已暂停。请在任务栏选择恢复方式以保留进度。",
+    "El guardado automático está detenido. Elige una recuperación en la barra para conservar el progreso.",
+    "Automatisches Speichern ist angehalten. Wähle einen Wiederherstellungsweg in der Taskleiste, um Fortschritt zu bewahren."
+  ],
+  "UI_BANNER_NEW": [
+    "── 새 캠페인 · 'help'로 사용할 수 있는 명령을 확인하세요 ──",
+    "── New campaign · type 'help' to list available commands ──",
+    "── 新しいキャンペーン · help で使えるコマンドを確認 ──",
+    "── 新战役 · 通过 help 查看可用命令 ──",
+    "── Campaña nueva · consulta help para ver los comandos ──",
+    "── Neue Kampagne · verfügbare Befehle mit help ansehen ──"
+  ],
+  "UI_BANNER_LOADED": [
+    "── 저장에서 이어서 엽니다 ──",
+    "── Resuming from save ──",
+    "── セーブから続行 ──",
+    "── 从存档继续 ──",
+    "── Continuando desde el guardado ──",
+    "── Gespeicherten Stand fortsetzen ──"
+  ],
+  "UI_BANNER_RECOVERED": [
+    "── 백업에서 복원했습니다 ──",
+    "── Restored from backup ──",
+    "── バックアップから復旧 ──",
+    "── 已从备份恢复 ──",
+    "── Restaurado desde una copia ──",
+    "── Aus Sicherung wiederhergestellt ──"
+  ],
+  "UI_BANNER_IMPORTED": [
+    "── 구버전 M01 진행을 가져왔습니다 ──",
+    "── Legacy M01 progress imported ──",
+    "── 旧版 M01 の進行を取り込み ──",
+    "── 已导入旧版 M01 进度 ──",
+    "── Progreso de M01 anterior importado ──",
+    "── Alter M01-Fortschritt importiert ──"
+  ],
+  "UI_BANNER_UNSAVED": [
+    "── 저장을 읽지 못해 저장되지 않은 새 상태로 열었습니다 · 자동저장 멈춤 ──",
+    "── The save could not be read; opened an unsaved new state · autosave paused ──",
+    "── セーブを読めず未保存の新規状態で開始 · 自動保存停止 ──",
+    "── 无法读取存档，已进入未保存的新状态 · 自动保存暂停 ──",
+    "── Sin poder leer el guardado: estado nuevo sin guardar · guardado automático detenido ──",
+    "── Speicherstand nicht lesbar: neuer ungespeicherter Zustand · automatisches Speichern angehalten ──"
+  ],
+  "UI_TERM_WELCOME": [
+    "터미널 {n} · 독립 세션입니다. 'help'로 사용할 수 있는 명령을 확인하세요.",
+    "Terminal {n} · separate session. Type 'help' to list available commands.",
+    "ターミナル {n} · 独立セッションです。help で対応コマンドを確認してください。",
+    "终端 {n} · 独立会话。通过 help 查看可用命令。",
+    "Terminal {n} · sesión independiente. Consulta help para ver los comandos.",
+    "Terminal {n} · eigene Sitzung. Verfügbare Befehle stehen unter help."
+  ],
+  "UI_TERM_CLEAR": [
+    "화면 지우기",
+    "Clear",
+    "画面を消去",
+    "清空画面",
+    "Limpiar pantalla",
+    "Bildschirm leeren"
+  ],
+  "UI_TERM_CLEAR_TIP": [
+    "이 터미널의 출력만 지웁니다 (Ctrl+L)",
+    "Clear this terminal's output only (Ctrl+L)",
+    "このターミナルの出力だけを消去 (Ctrl+L)",
+    "仅清空此终端输出 (Ctrl+L)",
+    "Limpiar solo la salida de este terminal (Ctrl+L)",
+    "Nur die Ausgabe dieses Terminals leeren (Ctrl+L)"
+  ],
+  "UI_TERM_EXIT": [
+    "연결 종료",
+    "Disconnect",
+    "接続終了",
+    "断开连接",
+    "Cerrar conexión",
+    "Verbindung beenden"
+  ],
+  "UI_TERM_EXIT_TIP": [
+    "이 터미널의 현재 원격 연결만 끊습니다 (exit). 인증 대기 중이면 취소합니다.",
+    "Close only this terminal's current remote connection (exit). Cancels a pending password prompt.",
+    "このターミナルの現在の遠隔接続だけを切断 (exit)。認証待ちは取り消します。",
+    "仅结束此终端当前远程连接 (exit)，若正在认证则取消。",
+    "Cerrar solo la conexión remota actual de este terminal (exit). Cancela una autenticación pendiente.",
+    "Nur die aktuelle Fernverbindung dieses Terminals beenden (exit). Ausstehende Anmeldung wird abgebrochen."
+  ],
+  "UI_TERM_HEADER": [
+    "터미널 {n} · {user}@{host} · {cwd}",
+    "Terminal {n} · {user}@{host} · {cwd}",
+    "ターミナル {n} · {user}@{host} · {cwd}",
+    "终端 {n} · {user}@{host} · {cwd}",
+    "Terminal {n} · {user}@{host} · {cwd}",
+    "Terminal {n} · {user}@{host} · {cwd}"
+  ],
+  "UI_TERM_PLACEHOLDER": [
+    "명령 입력 · help · Tab 완성 · ↑↓ 기록 · Esc 지우기",
+    "Type a command · help · Tab completes · ↑↓ history · Esc clears",
+    "コマンド入力 · help · Tab 補完 · ↑↓ 履歴 · Esc 消去",
+    "输入命令 · help · Tab 补全 · ↑↓ 历史 · Esc 清空",
+    "Comando · help · Tab completar · ↑↓ historial · Esc borrar",
+    "Befehl · help · Tab ergänzen · ↑↓ Verlauf · Esc leeren"
+  ],
+  "UI_TERM_PASSWORD_PROMPT": [
+    "암호 (가림)",
+    "Password (hidden)",
+    "パスワード（非表示）",
+    "密码（隐藏）",
+    "Contraseña (oculta)",
+    "Passwort (verdeckt)"
+  ],
+  "UI_TERM_PASSWORD_PLACEHOLDER": [
+    "암호 입력 · 화면과 기록에 남지 않음 · Esc 취소",
+    "Password · not shown or recorded · Esc cancels",
+    "パスワード · 画面・履歴に残りません · Esc 取消",
+    "输入密码 · 不保留在画面或历史中 · Esc 取消",
+    "Contraseña · no queda en pantalla ni historial · Esc cancelar",
+    "Passwort · bleibt weder auf dem Bildschirm noch im Verlauf · Esc abbrechen"
+  ],
+  "UI_TERM_EMPTY_PASSWORD": [
+    "(빈 암호는 보내지 않았습니다)",
+    "(An empty password was not sent)",
+    "（空のパスワードは送りませんでした）",
+    "（未发送空密码）",
+    "(No se envió la contraseña vacía)",
+    "(Leeres Passwort wurde nicht gesendet)"
+  ],
+  "UI_TERM_PASSWORD_SENT": [
+    "암호 입력됨 (가림)",
+    "Password entered (hidden)",
+    "パスワード入力済み（非表示）",
+    "已输入密码（隐藏）",
+    "Contraseña introducida (oculta)",
+    "Passwort eingegeben (verdeckt)"
+  ],
+  "UI_TERM_TAGGED": [
+    "[{tag}] {line}",
+    "[{tag}] {line}",
+    "[{tag}] {line}",
+    "[{tag}] {line}",
+    "[{tag}] {line}",
+    "[{tag}] {line}"
+  ],
+  "UI_TERM_CASE_BANNER": [
+    "── 사건 전환 · {id} {title} ──",
+    "── Case switched · {id} {title} ──",
+    "── 事件切り替え · {id} {title} ──",
+    "── 切换事件 · {id} {title} ──",
+    "── Cambio de caso · {id} {title} ──",
+    "── Fallwechsel · {id} {title} ──"
+  ],
+  "UI_MAIL_EMPTY": [
+    "받은 메일 없음",
+    "No mail",
+    "受信メールなし",
+    "暂无邮件",
+    "No hay correo",
+    "Keine Nachrichten"
+  ],
+  "UI_MAIL_NO_SUBJECT": [
+    "(제목 없음)",
+    "(No subject)",
+    "（件名なし）",
+    "（无主题）",
+    "(Sin asunto)",
+    "(Kein Betreff)"
+  ],
+  "UI_MAIL_KIND_INTRO": [
+    "{mission} · 의뢰",
+    "{mission} · Request",
+    "{mission} · 依頼",
+    "{mission} · 委托",
+    "{mission} · encargo",
+    "{mission} · Auftrag"
+  ],
+  "UI_MAIL_KIND_REPLY": [
+    "{mission} · 답신",
+    "{mission} · Reply",
+    "{mission} · 返事",
+    "{mission} · 回复",
+    "{mission} · respuesta",
+    "{mission} · Antwort"
+  ],
+  "UI_MAIL_KIND_OTHER": [
+    "{mission} · 메시지",
+    "{mission} · Message",
+    "{mission} · メッセージ",
+    "{mission} · 消息",
+    "{mission} · mensaje",
+    "{mission} · Nachricht"
+  ],
+  "UI_MAIL_REVEAL_FACE": [
+    "{name}의 얼굴 보기",
+    "Show {name}'s face",
+    "{name}の顔を見る",
+    "查看 {name} 的肖像",
+    "Ver el retrato de {name}",
+    "Porträt von {name} ansehen"
+  ],
+  "UI_MAIL_REVEAL_TIP": [
+    "이야기 속에서 상대가 얼굴 공개를 제안했습니다. 선택은 캠페인에 기록되며 목표나 권한과는 무관합니다.",
+    "In the story, this contact has offered to show their face. The choice is recorded in the campaign and has no effect on goals or access.",
+    "物語で公開済みの人物写真を表示します。望まなければ抽象の印を保持できます。",
+    "显示剧情中已公开的人物肖像。不愿查看时可保留抽象标记。",
+    "Muestra el retrato ya revelado en la historia. Puedes conservar el símbolo abstracto.",
+    "Zeigt ein in der Geschichte freigegebenes Porträt. Auf Wunsch bleibt das abstrakte Zeichen."
+  ],
+  "UI_MAIL_CONTACTS": [
+    "연락처",
+    "Contacts",
+    "連絡先",
+    "联系人",
+    "Contactos",
+    "Kontakte"
+  ],
+  "UI_MAIL_CONTACTS_NONE": [
+    "아직 만난 인물이 없습니다.",
+    "You have not met anyone yet.",
+    "まだ誰にも会っていません。",
+    "尚未遇到任何人物。",
+    "Aún no has conocido a nadie.",
+    "Noch keine Personen kennengelernt."
+  ],
+  "UI_MAIL_CONTACT_FACE": [
+    "● {name}",
+    "● {name}",
+    "● {name}",
+    "● {name}",
+    "● {name}",
+    "● {name}"
+  ],
+  "UI_MAIL_CONTACT_ABSTRACT": [
+    "◆ {name}",
+    "◆ {name}",
+    "◆ {name}",
+    "◆ {name}",
+    "◆ {name}",
+    "◆ {name}"
+  ],
+  "UI_BR_BACK": [
+    "뒤로",
+    "Back",
+    "戻る",
+    "后退",
+    "Atrás",
+    "Zurück"
+  ],
+  "UI_BR_FORWARD": [
+    "앞으로",
+    "Forward",
+    "進む",
+    "前进",
+    "Adelante",
+    "Vorwärts"
+  ],
+  "UI_BR_RELOAD": [
+    "새로고침 (다시 요청)",
+    "Reload (request again)",
+    "更新（再要求）",
+    "刷新（重新请求）",
+    "Actualizar (repetir petición)",
+    "Aktualisieren (neu anfragen)"
+  ],
+  "UI_BR_HOME": [
+    "사건 홈",
+    "Case home",
+    "事件ホーム",
+    "事件主页",
+    "Inicio del caso",
+    "Fallstartseite"
+  ],
+  "UI_BR_ADDR_PLACEHOLDER": [
+    "주소 입력 · 게임 속 가상 사이트만 열립니다",
+    "Address · only in-game virtual sites open",
+    "アドレス入力 · ゲーム内の仮想サイトのみ",
+    "输入地址 · 仅打开游戏内虚拟网站",
+    "Dirección · solo sitios virtuales del juego",
+    "Adresse · nur virtuelle Spielseiten"
+  ],
+  "UI_BR_GO": [
+    "이동",
+    "Go",
+    "移動",
+    "前往",
+    "Ir",
+    "Öffnen"
+  ],
+  "UI_BR_GO_TIP": [
+    "주소로 이동",
+    "Open this address",
+    "アドレスへ移動",
+    "前往此地址",
+    "Ir a la dirección",
+    "Adresse öffnen"
+  ],
+  "UI_BR_TO_LAB": [
+    "RequestLab으로",
+    "To RequestLab",
+    "RequestLab へ",
+    "转到 RequestLab",
+    "A RequestLab",
+    "Zu RequestLab"
+  ],
+  "UI_BR_TO_LAB_TIP": [
+    "현재 주소를 RequestLab에 가져가 메서드·헤더·본문을 바꿔 봅니다",
+    "Take this address to RequestLab to vary method, headers and body",
+    "現在のアドレスを RequestLab に送り、メソッド・ヘッダー・本文を変えて調べる",
+    "将当前地址导入 RequestLab，比较方法、标头与正文",
+    "Llevar la dirección a RequestLab para cambiar método, cabeceras y cuerpo",
+    "Aktuelle Adresse in RequestLab übernehmen und Methode, Header und Inhalt variieren"
+  ],
+  "UI_BR_LINKS": [
+    "링크",
+    "Links",
+    "リンク",
+    "链接",
+    "Enlaces",
+    "Links"
+  ],
+  "UI_BR_LINK": [
+    "→ {label}  ·  {url}",
+    "→ {label}  ·  {url}",
+    "→ {label}  ·  {url}",
+    "→ {label}  ·  {url}",
+    "→ {label}  ·  {url}",
+    "→ {label}  ·  {url}"
+  ],
+  "UI_BR_NO_LINKS": [
+    "이 페이지에 링크가 없습니다.",
+    "This page has no links.",
+    "このページにリンクはありません。",
+    "此页面没有链接。",
+    "Esta página no contiene enlaces.",
+    "Diese Seite enthält keine Links."
+  ],
+  "UI_BR_FORM_TOGGLE": [
+    "양식 · 로그인",
+    "Form · Sign in",
+    "フォーム・ログイン",
+    "表单与登录",
+    "Formulario / Acceso",
+    "Formular / Anmeldung"
+  ],
+  "UI_BR_FORM_TIP": [
+    "현재 페이지에 값을 보내거나 이 사이트에 가상 로그인합니다",
+    "Send a value to the current page or sign in to this virtual site",
+    "現在のページへ値を送るか、このサイトに仮想ログインする",
+    "向当前页面发送值，或登录此虚拟网站",
+    "Enviar valores a la página o iniciar sesión virtual en el sitio",
+    "Werte an die Seite senden oder virtuell bei der Website anmelden"
+  ],
+  "UI_BR_FORM_LABEL": [
+    "양식",
+    "Form",
+    "フォーム",
+    "表单",
+    "Formulario",
+    "Formular"
+  ],
+  "UI_BR_FIELD_PLACEHOLDER": [
+    "필드 이름",
+    "Field name",
+    "フィールド名",
+    "字段名",
+    "Nombre de campo",
+    "Feldname"
+  ],
+  "UI_BR_VALUE_PLACEHOLDER": [
+    "보낼 값",
+    "Value to send",
+    "送信する値",
+    "要发送的值",
+    "Valor que enviar",
+    "Zu sendender Wert"
+  ],
+  "UI_BR_SEND": [
+    "보내기",
+    "Send",
+    "送信",
+    "发送",
+    "Enviar",
+    "Senden"
+  ],
+  "UI_BR_SEND_TIP": [
+    "GET은 주소의 쿼리로, POST는 본문으로 현재 페이지에 보냅니다",
+    "GET sends it in the query string, POST in the body of the current page",
+    "GET はアドレスのクエリ、POST は本文として現在のページへ送信",
+    "GET 以地址查询参数发送，POST 以正文发送到当前页面",
+    "GET envía por la consulta de la dirección; POST por el cuerpo",
+    "GET sendet über die Adressabfrage, POST über den Inhalt an die aktuelle Seite"
+  ],
+  "UI_BR_LOGIN_LABEL": [
+    "로그인",
+    "Sign in",
+    "ログイン",
+    "登录",
+    "Acceso",
+    "Anmeldung"
+  ],
+  "UI_BR_USER_PLACEHOLDER": [
+    "계정",
+    "Account",
+    "アカウント",
+    "账号",
+    "Cuenta",
+    "Konto"
+  ],
+  "UI_BR_PASS_PLACEHOLDER": [
+    "암호 (가려짐·저장 안 함)",
+    "Password (hidden, never stored)",
+    "パスワード（非表示・保存しません）",
+    "密码（隐藏且不保存）",
+    "Contraseña (oculta, no se guarda)",
+    "Passwort (verdeckt, nicht gespeichert)"
+  ],
+  "UI_BR_LOGIN": [
+    "로그인",
+    "Sign in",
+    "ログイン",
+    "登录",
+    "Acceso",
+    "Anmeldung"
+  ],
+  "UI_BR_LOGIN_TIP": [
+    "이 사이트의 /login에 가상 로그인 요청을 보냅니다",
+    "Send a virtual sign-in request to this site's /login",
+    "このサイトの /login へ仮想ログイン要求を送信",
+    "向此网站的 /login 发送虚拟登录请求",
+    "Enviar acceso virtual a /login de este sitio",
+    "Virtuelle Anmeldeanfrage an /login dieser Website senden"
+  ],
+  "UI_BR_LOGOUT": [
+    "로그아웃",
+    "Sign out",
+    "ログアウト",
+    "退出登录",
+    "Cerrar sesión",
+    "Abmelden"
+  ],
+  "UI_BR_LOGOUT_TIP": [
+    "이 사이트의 가상 웹 세션을 서버에서 폐기합니다",
+    "Revoke this site's virtual web session on the server",
+    "このサイトの仮想ウェブセッションをサーバーで失効",
+    "在服务器端撤销此网站的虚拟网页会话",
+    "Revocar la sesión web virtual del sitio en el servidor",
+    "Virtuelle Websitzung dieser Website serverseitig widerrufen"
+  ],
+  "UI_BR_FORM_NOTE": [
+    "모든 요청은 게임 속 가상 서버로만 갑니다. 암호 칸은 보낸 직후 비워집니다.",
+    "Every request goes only to in-game virtual servers. The password field is cleared right after sending.",
+    "要求はすべてゲーム内の仮想サーバーにだけ届きます。パスワード欄は送信直後に空になります。",
+    "所有请求仅发往游戏内虚拟服务器，密码框在发送后立即清空。",
+    "Las peticiones solo van al servidor virtual del juego. La contraseña se borra al enviarla.",
+    "Alle Anfragen gehen nur an virtuelle Spielserver. Das Passwortfeld wird direkt nach dem Senden geleert."
+  ],
+  "UI_BR_FORM_EMPTY": [
+    "필드 이름과 값을 모두 입력하세요. 빈 양식은 보내지 않습니다.",
+    "Enter both a field name and a value. Empty forms are not sent.",
+    "フィールド名と値を入力してください。空のフォームは送りません。",
+    "请输入字段名与值，不会发送空表单。",
+    "Introduce nombre y valor. No se envían formularios vacíos.",
+    "Gib Feldname und Wert ein. Leere Formulare werden nicht gesendet."
+  ],
+  "UI_BR_NO_PAGE": [
+    "먼저 페이지를 여세요.",
+    "Open a page first.",
+    "先にページを開いてください。",
+    "请先打开页面。",
+    "Abre primero una página.",
+    "Öffne zuerst eine Seite."
+  ],
+  "UI_BR_LOGIN_EMPTY": [
+    "계정과 암호를 입력하고, 로그인할 사이트의 페이지를 먼저 여세요.",
+    "Enter an account and password, and open a page on the site you want to sign in to.",
+    "アカウントとパスワードを入力し、ログイン先のページを先に開いてください。",
+    "请输入账号与密码，并先打开要登录的网站页面。",
+    "Introduce cuenta y contraseña y abre antes la página del sitio.",
+    "Gib Konto und Passwort ein und öffne zuerst die Zielwebsite."
+  ],
+  "UI_BR_AUTH_RESULT": [
+    "HTTP {status} · {detail}",
+    "HTTP {status} · {detail}",
+    "HTTP {status} · {detail}",
+    "HTTP {status} · {detail}",
+    "HTTP {status} · {detail}",
+    "HTTP {status} · {detail}"
+  ],
+  "UI_BR_STALE": [
+    "상태 변경됨 · 새로고침하면 다시 요청",
+    "State changed · reload to request again",
+    "状態変更あり · 更新すると再要求",
+    "状态已变化 · 刷新后重新请求",
+    "Estado modificado · actualiza para repetir",
+    "Zustand geändert · zum Neuanfragen aktualisieren"
+  ],
+  "UI_BR_ARCHIVE": [
+    "사본 보관",
+    "Archive copy",
+    "コピーを保管",
+    "保存副本",
+    "Archivar copia",
+    "Kopie archivieren"
+  ],
+  "UI_BR_ARCHIVE_TIP": [
+    "이 페이지의 기록 사본을 로컬 보관소로 회수합니다",
+    "Recover this page's record copy to the local archive",
+    "このページの記録コピーをローカル保管庫に回収",
+    "将本页记录副本取得至本地档案库",
+    "Recuperar una copia del registro al archivo local",
+    "Aufzeichnungskopie dieser Seite ins lokale Archiv sichern"
+  ],
+  "UI_BR_STATUS_OK": [
+    "HTTP {status} · 가상 페이지 · 실제 인터넷에 연결하지 않습니다",
+    "HTTP {status} · virtual page · no real internet connection",
+    "HTTP {status} · 仮想ページ · 実際のインターネット接続なし",
+    "HTTP {status} · 虚拟页面 · 不连接真实互联网",
+    "HTTP {status} · página virtual · sin conexión real a Internet",
+    "HTTP {status} · virtuelle Seite · keine echte Internetverbindung"
+  ],
+  "UI_BR_STATUS_ERR": [
+    "{code} · HTTP {status} · {url}",
+    "{code} · HTTP {status} · {url}",
+    "{code} · HTTP {status} · {url}",
+    "{code} · HTTP {status} · {url}",
+    "{code} · HTTP {status} · {url}",
+    "{code} · HTTP {status} · {url}"
+  ],
+  "UI_BR_META": [
+    "HTTP {status} · 요청 주체 {actor} ({context}) · 경로 {route}",
+    "HTTP {status} · acting as {actor} ({context}) · route {route}",
+    "HTTP {status} · 要求主体 {actor} ({context}) · 経路 {route}",
+    "HTTP {status} · 请求身份 {actor} ({context}) · 通路 {route}",
+    "HTTP {status} · solicitante {actor} ({context}) · ruta {route}",
+    "HTTP {status} · Anfragender {actor} ({context}) · Weg {route}"
+  ],
+  "UI_BR_ERR_400": [
+    "주소 형식이 올바르지 않음",
+    "Invalid address",
+    "アドレス形式が不正",
+    "地址格式无效",
+    "Dirección inválida",
+    "Ungültiges Adressformat"
+  ],
+  "UI_BR_ERR_401": [
+    "인증 필요",
+    "Authentication required",
+    "認証が必要",
+    "需要认证",
+    "Autenticación necesaria",
+    "Anmeldung erforderlich"
+  ],
+  "UI_BR_ERR_403": [
+    "접근 거절",
+    "Access denied",
+    "アクセス拒否",
+    "拒绝访问",
+    "Acceso denegado",
+    "Zugriff verweigert"
+  ],
+  "UI_BR_ERR_404": [
+    "이 주소의 페이지가 없음",
+    "No page at this address",
+    "このアドレスにページなし",
+    "此地址没有页面",
+    "Página no encontrada",
+    "Keine Seite unter dieser Adresse"
+  ],
+  "UI_BR_ERR_405": [
+    "지원하지 않는 메서드",
+    "Method not supported",
+    "未対応のメソッド",
+    "不支持的方法",
+    "Método no compatible",
+    "Nicht unterstützte Methode"
+  ],
+  "UI_BR_ERR_415": [
+    "형식 거절",
+    "Format rejected",
+    "形式を拒否",
+    "格式被拒绝",
+    "Formato rechazado",
+    "Format abgewiesen"
+  ],
+  "UI_BR_ERR_429": [
+    "요청 제한",
+    "Rate limited",
+    "要求制限",
+    "请求受限",
+    "Peticiones limitadas",
+    "Anfragen begrenzt"
+  ],
+  "UI_BR_ERR_503": [
+    "도달할 수 없음 (경로·서비스 차단)",
+    "Unreachable (route or service blocked)",
+    "到達不可（経路・サービスの遮断）",
+    "不可达（通路或服务被阻止）",
+    "Inaccesible (ruta o servicio bloqueado)",
+    "Nicht erreichbar (Weg oder Dienst gesperrt)"
+  ],
+  "UI_BR_ERR_OTHER": [
+    "요청 실패 (HTTP {status})",
+    "Request failed (HTTP {status})",
+    "要求失敗 (HTTP {status})",
+    "请求失败 (HTTP {status})",
+    "Petición fallida (HTTP {status})",
+    "Anfrage fehlgeschlagen (HTTP {status})"
+  ],
+  "UI_BR_ERR_EMPTY": [
+    "이 주소는 게임 속 가상 네트워크에서 응답하지 않았습니다.",
+    "This address did not answer on the in-game virtual network.",
+    "このアドレスはゲーム内の仮想網から応答しませんでした。",
+    "此地址未在游戏虚拟网络中响应。",
+    "Esta dirección no respondió en la red virtual del juego.",
+    "Diese Adresse antwortete im virtuellen Spielnetz nicht."
+  ],
+  "UI_RL_URL_PLACEHOLDER": [
+    "가상 URL (예: https://….test/…)",
+    "Virtual URL (e.g. https://….test/…)",
+    "仮想 URL（例: https://….test/…）",
+    "虚拟 URL（例如 https://….test/…）",
+    "URL virtual (ej.: https://….test/…)",
+    "Virtuelle URL (z. B. https://….test/…)"
+  ],
+  "UI_RL_SEND": [
+    "보내기",
+    "Send",
+    "送信",
+    "发送",
+    "Enviar",
+    "Senden"
+  ],
+  "UI_RL_SEND_TIP": [
+    "브라우저·curl과 같은 가상 요청 처리기로 보냅니다",
+    "Send through the same virtual request handler as the browser and curl",
+    "ブラウザー・curl と同じ仮想要求処理へ送信",
+    "发送给与浏览器、curl 相同的虚拟请求处理器",
+    "Enviar al mismo procesador virtual que navegador y curl",
+    "An dieselbe virtuelle Verarbeitung wie Browser und curl senden"
+  ],
+  "UI_RL_FROM_BROWSER": [
+    "브라우저 주소",
+    "Browser address",
+    "ブラウザーのアドレス",
+    "浏览器地址",
+    "Dirección del navegador",
+    "Browseradresse"
+  ],
+  "UI_RL_FROM_BROWSER_TIP": [
+    "브라우저의 현재 주소를 가져옵니다",
+    "Copy the browser's current address",
+    "ブラウザーの現在のアドレスを取り込む",
+    "导入浏览器当前地址",
+    "Tomar la dirección actual del navegador",
+    "Aktuelle Browseradresse übernehmen"
+  ],
+  "UI_RL_HEADERS": [
+    "헤더 (JSON 객체)",
+    "Headers (JSON object)",
+    "ヘッダー（JSON オブジェクト）",
+    "标头（JSON 对象）",
+    "Cabeceras (objeto JSON)",
+    "Header (JSON-Objekt)"
+  ],
+  "UI_RL_HEADERS_PLACEHOLDER": [
+    "{\"Origin\": \"https://….test\"}",
+    "{\"Origin\": \"https://….test\"}",
+    "{\"Origin\": \"https://….test\"}",
+    "{\"Origin\": \"https://….test\"}",
+    "{\"Origin\": \"https://….test\"}",
+    "{\"Origin\": \"https://….test\"}"
+  ],
+  "UI_RL_BODY": [
+    "본문 (JSON 객체)",
+    "Body (JSON object)",
+    "本文（JSON オブジェクト）",
+    "正文（JSON 对象）",
+    "Cuerpo (objeto JSON)",
+    "Inhalt (JSON-Objekt)"
+  ],
+  "UI_RL_BODY_PLACEHOLDER": [
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}"
+  ],
+  "UI_RL_RECENT": [
+    "최근 요청",
+    "Recent",
+    "最近の要求",
+    "最近请求",
+    "Peticiones recientes",
+    "Letzte Anfragen"
+  ],
+  "UI_RL_RECENT_NONE": [
+    "(아직 없음)",
+    "(none yet)",
+    "（まだありません）",
+    "（暂无）",
+    "(Todavía no hay)",
+    "(Noch keine)"
+  ],
+  "UI_RL_RECENT_PICK": [
+    "불러올 요청 선택…",
+    "Pick a request to load…",
+    "取り込む要求を選ぶ…",
+    "选择要载入的请求…",
+    "Elige una petición…",
+    "Anfrage auswählen…"
+  ],
+  "UI_RL_NOTE": [
+    "실제 네트워크 요청은 없습니다. 헤더와 본문은 JSON 객체여야 하며, 형식이 틀리면 보내지 않고 이 화면에서 알려 줍니다.",
+    "No real network requests are made. Headers and body must be JSON objects; malformed input is reported here and not sent.",
+    "実際のネットワーク要求はありません。ヘッダーと本文は JSON オブジェクトが必要です。形式が違えば送信せず、この画面で通知します。",
+    "不发送真实网络请求。标头与正文必须为 JSON 对象；格式无效时不会发送，并在本画面提示。",
+    "No hay peticiones reales de red. Cabeceras y cuerpo deben ser objetos JSON; un formato inválido se avisa aquí sin enviar.",
+    "Es gibt keine echten Netzwerkanfragen. Header und Inhalt müssen JSON-Objekte sein. Ungültige Formate werden hier gemeldet und nicht gesendet."
+  ],
+  "UI_RL_RESPONSE": [
+    "응답",
+    "Response",
+    "応答",
+    "响应",
+    "Respuesta",
+    "Antwort"
+  ],
+  "UI_RL_NO_RESPONSE": [
+    "아직 보낸 요청이 없습니다.",
+    "No request sent yet.",
+    "まだ要求を送っていません。",
+    "尚未发送请求。",
+    "Todavía no has enviado peticiones.",
+    "Noch keine Anfrage gesendet."
+  ],
+  "UI_RL_STATUS": [
+    "HTTP {status} · {code}",
+    "HTTP {status} · {code}",
+    "HTTP {status} · {code}",
+    "HTTP {status} · {code}",
+    "HTTP {status} · {code}",
+    "HTTP {status} · {code}"
+  ],
+  "UI_RL_META": [
+    "요청 주체 {actor} ({context}) · 출처 {origin}\n관찰 경로 {route} · 세션 {cookie}",
+    "Acting as {actor} ({context}) · origin {origin}\nObserved route {route} · session {cookie}",
+    "要求主体 {actor} ({context}) · 要求元 {origin}\n観察経路 {route} · セッション {cookie}",
+    "请求身份 {actor} ({context}) · 来源 {origin}\n观察通路 {route} · 会话 {cookie}",
+    "Solicitante {actor} ({context}) · origen {origin}\nRuta observada {route} · sesión {cookie}",
+    "Anfragender {actor} ({context}) · Herkunft {origin}\nBeobachteter Weg {route} · Sitzung {cookie}"
+  ],
+  "UI_RL_RESPONSE_HEADERS": [
+    "응답 헤더 {list}",
+    "Response headers {list}",
+    "応答ヘッダー {list}",
+    "响应标头 {list}",
+    "Cabeceras de respuesta {list}",
+    "Antwortheader {list}"
+  ],
+  "UI_RL_CHANGED": [
+    "이 요청으로 서버 상태가 바뀌었습니다.",
+    "This request changed server state.",
+    "この要求でサーバー状態が変わりました。",
+    "此请求改变了服务器状态。",
+    "Esta petición cambió el estado del servidor.",
+    "Diese Anfrage änderte den Serverzustand."
+  ],
+  "UI_RL_TRACE": [
+    "처리 기록\n{lines}",
+    "Processing trace\n{lines}",
+    "処理履歴\n{lines}",
+    "处理记录\n{lines}",
+    "Rastro de procesamiento\n{lines}",
+    "Verarbeitungsverlauf\n{lines}"
+  ],
+  "UI_RL_ERR_URL": [
+    "URL을 입력하세요.",
+    "Enter a URL.",
+    "URL を入力してください。",
+    "请输入 URL。",
+    "Introduce una URL.",
+    "Gib eine URL ein."
+  ],
+  "UI_RL_ERR_HEADER_VALUE": [
+    "헤더 {name}의 값은 문자열·숫자·참거짓이어야 합니다. 요청을 보내지 않았습니다.",
+    "The value of header {name} must be a string, number or boolean. The request was not sent.",
+    "ヘッダー {name} の値は文字列・数値・真偽値が必要です。要求は送りませんでした。",
+    "标头 {name} 的值须为字符串、数字或布尔值。未发送请求。",
+    "La cabecera {name} debe ser texto, número o booleano. No se envió la petición.",
+    "Header {name} benötigt Text, Zahl oder Wahrheitswert. Die Anfrage wurde nicht gesendet."
+  ],
+  "UI_JSON_TOO_LONG": [
+    "{field}이(가) 너무 깁니다 (최대 {max}자). 보내지 않았습니다.",
+    "{field} is too long (max {max} characters). Not sent.",
+    "{field} が長すぎます（最大 {max} 文字）。送信しませんでした。",
+    "{field} 太长（最多 {max} 字符），未发送。",
+    "{field} es demasiado largo (máximo {max} caracteres). No se envió.",
+    "{field} ist zu lang (höchstens {max} Zeichen). Nicht gesendet."
+  ],
+  "UI_JSON_INVALID": [
+    "{field}의 JSON 형식이 올바르지 않습니다 ({line}행: {detail}). 보내지 않았습니다.",
+    "{field} is not valid JSON (line {line}: {detail}). Not sent.",
+    "{field} の JSON 形式が不正です（{line} 行: {detail}）。送信しませんでした。",
+    "{field} 的 JSON 格式无效（第 {line} 行：{detail}），未发送。",
+    "JSON inválido en {field} (línea {line}: {detail}). No se envió.",
+    "Ungültiges JSON in {field} (Zeile {line}: {detail}). Nicht gesendet."
+  ],
+  "UI_JSON_NOT_OBJECT": [
+    "{field}은(는) {…} 형태의 JSON 객체여야 합니다. 보내지 않았습니다.",
+    "{field} must be a JSON object like {…}. Not sent.",
+    "{field} は {…} 形式の JSON オブジェクトが必要です。送信しませんでした。",
+    "{field} 必须是 {…} 形式的 JSON 对象，未发送。",
+    "{field} debe ser un objeto JSON de forma {…}. No se envió.",
+    "{field} muss ein JSON-Objekt der Form {…} sein. Nicht gesendet."
+  ],
+  "UI_TOOL_LIST": [
+    "현재 사건의 도구",
+    "Tools for this case",
+    "この事件のツール",
+    "当前事件的工具",
+    "Herramientas del caso",
+    "Werkzeuge des Falls"
+  ],
+  "UI_TOOL_LIST_NOTE": [
+    "도구는 정답 버튼이 아닙니다. 관찰을 읽고 가설을 입력해 결과를 비교하세요. 어떤 도구를 썼는지는 사건 판정에 쓰이지 않습니다.",
+    "Tools are not answer buttons. Read the observations, enter a hypothesis and compare results. Which tool you use never decides a case.",
+    "ツールは正解ボタンではありません。観察を読み、仮説を入力して比べてください。使ったツール自体は事件判定に関係しません。",
+    "工具不是答案按钮。阅读观察、输入假设并比较结果。使用哪种工具不作为事件判定条件。",
+    "Las herramientas no son botones de solución. Lee observaciones, introduce hipótesis y compara. La elección de herramienta no puntúa el caso.",
+    "Werkzeuge sind keine Lösungstasten. Lies Beobachtungen, gib Hypothesen ein und vergleiche. Die Werkzeugwahl entscheidet den Fall nicht."
+  ],
+  "UI_TOOL_EMPTY": [
+    "이 사건에서 쓸 수 있는 도구 실험이 없습니다. 터미널·브라우저·RequestLab으로 조사할 수 있습니다.",
+    "This case has no tool experiments. You can investigate with the terminal, browser and RequestLab.",
+    "この事件に使えるツール実験はありません。ターミナル、ブラウザー、RequestLab で調べられます。",
+    "此事件暂无可用工具实验，可通过终端、浏览器与 RequestLab 调查。",
+    "No hay experimentos de herramientas en este caso. Puedes investigar con terminal, navegador y RequestLab.",
+    "Dieser Fall bietet keine Werkzeugexperimente. Nutze Terminal, Browser oder RequestLab."
+  ],
+  "UI_TOOL_LIST_ITEM": [
+    "{name} · {kind}",
+    "{name} · {kind}",
+    "{name} · {kind}",
+    "{name} · {kind}",
+    "{name} · {kind}",
+    "{name} · {kind}"
+  ],
+  "UI_TOOL_KIND_LINE": [
+    "{kind} · {id}",
+    "{kind} · {id}",
+    "{kind} · {id}",
+    "{kind} · {id}",
+    "{kind} · {id}",
+    "{kind} · {id}"
+  ],
+  "UI_TOOL_NO_DESC": [
+    "설명이 없습니다. 관찰 자료와 메일·단서를 함께 읽으세요.",
+    "No description. Read the observations together with mail and hints.",
+    "説明がありません。観察資料、メール、ヒントを併せて読んでください。",
+    "暂无说明，请结合观察资料、邮件与提示阅读。",
+    "Sin descripción. Lee conjuntamente observaciones, correo y pistas.",
+    "Keine Beschreibung. Lies Beobachtungen, Post und Hinweise gemeinsam."
+  ],
+  "UI_TOOL_USAGE": [
+    "사용법 · {text}",
+    "Usage · {text}",
+    "使い方 · {text}",
+    "用法 · {text}",
+    "Uso · {text}",
+    "Verwendung · {text}"
+  ],
+  "UI_TOOL_REQ_MISSING": [
+    "먼저 확보해야 할 근거 {n}건이 남아 있습니다. 지금 실행하면 거절될 수 있습니다.",
+    "{n} piece(s) of prerequisite evidence still missing. Running now may be refused.",
+    "先に必要な証拠が {n} 件あります。今実行すると拒否される場合があります。",
+    "还有 {n} 项前置证据未取得，当前执行可能被拒绝。",
+    "Faltan {n} pruebas previas. Ejecutar ahora puede ser rechazado.",
+    "Es fehlen {n} Vorbelege. Die Ausführung kann derzeit abgewiesen werden."
+  ],
+  "UI_TOOL_OBSERVATIONS": [
+    "공개된 관찰",
+    "Public observations",
+    "公開された観察",
+    "已公开的观察",
+    "Observaciones disponibles",
+    "Offengelegte Beobachtungen"
+  ],
+  "UI_TOOL_INPUT": [
+    "입력",
+    "Input",
+    "入力",
+    "输入",
+    "Entrada",
+    "Eingabe"
+  ],
+  "UI_TOOL_INPUT_NOTE": [
+    "빈 입력은 보내지 않습니다. Enter로도 실행할 수 있습니다.",
+    "Empty input is never sent. Enter also runs the tool.",
+    "空の入力は送りません。Enter でも実行できます。",
+    "不发送空输入，也可按 Enter 执行。",
+    "No se envían entradas vacías. También puedes ejecutar con Enter.",
+    "Leere Eingaben werden nicht gesendet. Enter führt ebenfalls aus."
+  ],
+  "UI_TOOL_RUN": [
+    "실행",
+    "Run",
+    "実行",
+    "执行",
+    "Ejecutar",
+    "Ausführen"
+  ],
+  "UI_TOOL_RUN_TIP": [
+    "입력한 가설을 이 모형에 적용해 관찰합니다",
+    "Apply your hypothesis to this model and observe",
+    "入力した仮説をこのモデルに適用し観察",
+    "将输入假设应用于此模型并观察",
+    "Aplicar la hipótesis al modelo y observar",
+    "Eingegebene Hypothese im Modell anwenden und beobachten"
+  ],
+  "UI_TOOL_ADVANCED": [
+    "고급: JSON 입력",
+    "Advanced: JSON input",
+    "上級: JSON 入力",
+    "高级：JSON 输入",
+    "Avanzado: entrada JSON",
+    "Erweitert: JSON-Eingabe"
+  ],
+  "UI_TOOL_ADVANCED_TIP": [
+    "입력 칸 대신 매개변수 객체를 직접 씁니다 (선택 사항)",
+    "Write the parameter object directly instead of using the fields (optional)",
+    "入力欄の代わりにパラメーターオブジェクトを直接指定（任意）",
+    "直接编写参数对象替代输入框（可选）",
+    "Escribir directamente el objeto de parámetros (opcional)",
+    "Parameterobjekt direkt statt der Felder eingeben (optional)"
+  ],
+  "UI_TOOL_ADVANCED_NOTE": [
+    "숙련자용 선택 기능입니다. 위의 입력 칸과 같은 코어 처리로 갑니다.",
+    "Optional for experienced players. It goes through the same core handling as the fields above.",
+    "熟練者向けの任意機能です。上の入力欄と同じコア処理を使います。",
+    "面向熟练玩家的可选功能，与上方输入框使用相同核心处理。",
+    "Es opcional para expertos. Usa el mismo procesamiento que los campos superiores.",
+    "Optional für Erfahrene. Verwendet dieselbe Kernverarbeitung wie die oberen Felder."
+  ],
+  "UI_TOOL_ADVANCED_PLACEHOLDER": [
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}",
+    "{\"input\": \"…\"}"
+  ],
+  "UI_TOOL_RUN_JSON": [
+    "JSON으로 실행",
+    "Run as JSON",
+    "JSON で実行",
+    "以 JSON 执行",
+    "Ejecutar JSON",
+    "JSON ausführen"
+  ],
+  "UI_TOOL_RUN_JSON_TIP": [
+    "JSON 객체를 확인한 뒤 실행합니다",
+    "Validate the JSON object, then run",
+    "JSON オブジェクトを確認して実行",
+    "检查 JSON 对象后执行",
+    "Validar el objeto JSON y ejecutar",
+    "JSON-Objekt prüfen und ausführen"
+  ],
+  "UI_TOOL_RESULT": [
+    "결과",
+    "Result",
+    "結果",
+    "结果",
+    "Resultado",
+    "Ergebnis"
+  ],
+  "UI_TOOL_NOT_RUN": [
+    "아직 실행하지 않았습니다.",
+    "Not run yet.",
+    "まだ実行していません。",
+    "尚未执行。",
+    "Todavía no se ha ejecutado.",
+    "Noch nicht ausgeführt."
+  ],
+  "UI_TOOL_NEED_INPUT": [
+    "먼저 입력하세요. 빈 실행은 보내지 않습니다.",
+    "Enter something first. Empty runs are not sent.",
+    "先に入力してください。空の実行は送りません。",
+    "请先输入，不发送空执行。",
+    "Introduce datos primero. No se envían ejecuciones vacías.",
+    "Gib zuerst Daten ein. Leere Ausführungen werden nicht gesendet."
+  ],
+  "UI_TOOL_RESULT_OK": [
+    "관찰됨 · {code} · 상태 {status}",
+    "Observed · {code} · status {status}",
+    "観察済み · {code} · 状態 {status}",
+    "已观察 · {code} · 状态 {status}",
+    "Observado · {code} · estado {status}",
+    "Beobachtet · {code} · Status {status}"
+  ],
+  "UI_TOOL_RESULT_ERR": [
+    "거절됨 · {code}",
+    "Refused · {code}",
+    "拒否 · {code}",
+    "被拒绝 · {code}",
+    "Rechazado · {code}",
+    "Abgewiesen · {code}"
+  ],
+  "UI_TOOL_RESULT_RECOVERED": [
+    "이 관찰이 기록 회수로 이어졌습니다 → 보관 자료",
+    "This observation recovered a record → Evidence",
+    "この観察から記録を回収しました → 保管資料",
+    "此观察取得了记录 → 归档资料",
+    "La observación permitió recuperar un registro → Archivo",
+    "Diese Beobachtung führte zur Sicherung → Belegarchiv"
+  ],
+  "UI_TOOL_LEARN": [
+    "모형과 한계",
+    "Model and limits",
+    "モデルと限界",
+    "模型与局限",
+    "Modelo y límites",
+    "Modell und Grenzen"
+  ],
+  "UI_TOOL_MODEL": [
+    "게임 모형 · {text}",
+    "Game model · {text}",
+    "ゲームのモデル · {text}",
+    "游戏模型 · {text}",
+    "Modelo del juego · {text}",
+    "Spielmodell · {text}"
+  ],
+  "UI_TOOL_LIMIT": [
+    "한계 · {text}",
+    "Limits · {text}",
+    "限界 · {text}",
+    "局限 · {text}",
+    "Límite · {text}",
+    "Grenze · {text}"
+  ],
+  "UI_TOOL_MODEL_GENERIC": [
+    "입력이 이 사건의 가상 서비스 상태를 어떻게 바꾸는지 관찰합니다.",
+    "Observe how your input changes the virtual service state of this case.",
+    "入力がこの事件の仮想サービス状態をどう変えるか観察します。",
+    "观察输入如何改变此事件的虚拟服务状态。",
+    "Observa cómo la entrada cambia el servicio virtual del caso.",
+    "Beobachte, wie die Eingabe den virtuellen Dienstzustand des Falls ändert."
+  ],
+  "UI_TOOL_LIMIT_GENERIC": [
+    "게임 속 가상 상태만 다루며 실제 시스템·네트워크에 접근하지 않습니다.",
+    "Only in-game virtual state is involved; no real system or network is touched.",
+    "ゲーム内の仮想状態だけを扱い、実際のシステムやネットワークには接続しません。",
+    "仅处理游戏虚拟状态，不访问真实系统或网络。",
+    "Solo trata estados virtuales del juego, sin acceder a sistemas ni redes reales.",
+    "Verarbeitet nur virtuelle Spielzustände, ohne reale Systeme oder Netze zu berühren."
+  ],
+  "UI_TOOL_NO_DATA": [
+    "미리 공개된 관찰 자료가 없습니다. 브라우저·터미널·메일에서 관찰한 값을 입력하세요.",
+    "No observations are published in advance. Enter values you observed in the browser, terminal or mail.",
+    "事前に公開された観察はありません。ブラウザー、ターミナル、メールで見つけた値を入力してください。",
+    "暂无预先公开的观察资料。请输入在浏览器、终端或邮件中观察的值。",
+    "No hay observaciones previas. Introduce valores vistos en navegador, terminal o correo.",
+    "Keine vorab veröffentlichten Beobachtungen. Gib Werte aus Browser, Terminal oder Post ein."
+  ],
+  "UI_TOOL_ROWS_EMPTY": [
+    "표시할 관찰 행이 없습니다.",
+    "No observation rows to show.",
+    "表示する観察行がありません。",
+    "没有可显示的观察行。",
+    "No hay filas que mostrar.",
+    "Keine Beobachtungszeilen vorhanden."
+  ],
+  "UI_TOOL_ROWS_NOTE": [
+    "관찰 행 {n}개 · 칸을 누르면 필터 칸에 그 필드와 값이 들어갑니다.",
+    "{n} observation rows · click a cell to put that field and value into the filter.",
+    "観察 {n} 行 · セルを押すとフィールドと値をフィルターに入力",
+    "观察 {n} 行 · 点击单元格可填入对应过滤字段和值",
+    "{n} filas · pulsa una celda para usar su campo y valor como filtro",
+    "{n} Zeilen · Zelle anklicken, um Feld und Wert als Filter zu übernehmen"
+  ],
+  "UI_TOOL_OBS_BASE_PATH": [
+    "기준 경로 · {path}",
+    "Base path · {path}",
+    "基準パス · {path}",
+    "基准路径 · {path}",
+    "Ruta base · {path}",
+    "Basispfad · {path}"
+  ],
+  "UI_TOOL_OBS_ORIGIN": [
+    "관찰된 정상 출처 · {origin}",
+    "Observed legitimate origin · {origin}",
+    "観察された正規の要求元 · {origin}",
+    "观察到的正常来源 · {origin}",
+    "Origen legítimo observado · {origin}",
+    "Beobachtete reguläre Herkunft · {origin}"
+  ],
+  "UI_TOOL_OBS_POLICIES": [
+    "현재 정책 · {list}",
+    "Current policies · {list}",
+    "現在の方針 · {list}",
+    "当前策略 · {list}",
+    "Políticas actuales · {list}",
+    "Aktuelle Richtlinien · {list}"
+  ],
+  "UI_TOOL_OBS_ACTOR": [
+    "요청 주체 기본값 · 터미널 {n}의 {user}@{host}",
+    "Default actor · {user}@{host} on terminal {n}",
+    "要求主体の既定値 · ターミナル {n} の {user}@{host}",
+    "默认请求身份 · 终端 {n} 的 {user}@{host}",
+    "Solicitante por defecto · {user}@{host} del terminal {n}",
+    "Standardanfragender · {user}@{host} aus Terminal {n}"
+  ],
+  "UI_TOOL_OBS_ACTOR_NOTE": [
+    "웹 로그인 세션이 있으면 그 계정이 요청 주체가 됩니다. 계정이 다르면 결과도 달라집니다.",
+    "If a web sign-in session exists, that account acts instead. A different account gives different results.",
+    "ウェブログインのセッションがあれば、そのアカウントが要求主体です。違うアカウントでは結果も変わります。",
+    "如有网页登录会话，该账号将作为请求身份。账号不同，结果也会不同。",
+    "Si hay sesión web, su cuenta actúa como solicitante. Otra cuenta puede dar otro resultado.",
+    "Bei einer Websitzung handelt deren Konto. Ein anderes Konto kann andere Ergebnisse liefern."
+  ],
+  "UI_TOOL_OBS_BYTES": [
+    "가상 바이트 {n}개 (16진) · {hex}",
+    "{n} virtual bytes (hex) · {hex}",
+    "仮想バイト {n} 個（16 進）· {hex}",
+    "虚拟字节 {n} 个（十六进制）· {hex}",
+    "{n} bytes virtuales (hexadecimal) · {hex}",
+    "{n} virtuelle Bytes (hexadezimal) · {hex}"
+  ],
+  "UI_TOOL_OBS_BYTES_DEC": [
+    "10진 · {dec}",
+    "Decimal · {dec}",
+    "10 進 · {dec}",
+    "十进制 · {dec}",
+    "Decimal · {dec}",
+    "Dezimal · {dec}"
+  ],
+  "UI_TOOL_OBS_XOR": [
+    "XOR 키 · {dec} (0x{hex})",
+    "XOR key · {dec} (0x{hex})",
+    "XOR 鍵 · {dec} (0x{hex})",
+    "XOR 密钥 · {dec} (0x{hex})",
+    "Clave XOR · {dec} (0x{hex})",
+    "XOR-Schlüssel · {dec} (0x{hex})"
+  ],
+  "UI_TOOL_XOR_CALC": [
+    "XOR 계산기 · 키",
+    "XOR calculator · key",
+    "XOR 計算機 · 鍵",
+    "XOR 计算器 · 密钥",
+    "Calculadora XOR · clave",
+    "XOR-Rechner · Schlüssel"
+  ],
+  "UI_TOOL_XOR_KEY_PLACEHOLDER": [
+    "0–255 또는 0x..",
+    "0–255 or 0x..",
+    "0–255 または 0x..",
+    "0–255 或 0x..",
+    "0–255 o 0x..",
+    "0–255 oder 0x.."
+  ],
+  "UI_TOOL_XOR_BAD_KEY": [
+    "키는 0–255 사이의 정수 또는 0x00–0xFF여야 합니다.",
+    "The key must be an integer 0–255 or 0x00–0xFF.",
+    "鍵は 0–255 の整数か 0x00–0xFF にしてください。",
+    "密钥须为 0–255 整数或 0x00–0xFF。",
+    "La clave debe ser un entero 0–255 o 0x00–0xFF.",
+    "Der Schlüssel muss eine Ganzzahl 0–255 oder 0x00–0xFF sein."
+  ],
+  "UI_TOOL_XOR_RESULT": [
+    "키 {key} 적용 결과 · {text}",
+    "With key {key} · {text}",
+    "鍵 {key} の結果 · {text}",
+    "应用密钥 {key} 的结果 · {text}",
+    "Resultado con clave {key} · {text}",
+    "Ergebnis mit Schlüssel {key} · {text}"
+  ],
+  "UI_TOOL_XOR_NOTE": [
+    "직접 넣은 키로만 계산하며, 결과를 입력 칸에 자동으로 넣지 않습니다. 인쇄할 수 없는 바이트는 ·로 표시합니다.",
+    "Uses only the key you type and never fills the input field for you. Non-printable bytes are shown as ·.",
+    "入力した鍵だけで計算し、結果は入力欄に自動挿入しません。表示できないバイトは · になります。",
+    "仅用手动输入的密钥计算，不会自动填入结果。不可打印字节显示为 ·。",
+    "Solo calcula con tu clave y no rellena la entrada automáticamente. Los bytes no imprimibles aparecen como ·.",
+    "Rechnet nur mit deinem Schlüssel und füllt die Eingabe nicht automatisch. Nicht druckbare Bytes erscheinen als ·."
+  ],
+  "UI_TOOL_MEM_LEGEND": [
+    "청록 칸 = 버퍼 {buffer}바이트 · 주황 칸 = 버퍼 뒤 · 전체 {size}바이트. 입력한 16진 바이트가 어느 칸에 닿는지 미리 보여 줍니다.",
+    "Teal cells = {buffer}-byte buffer · amber cells = beyond the buffer · {size} bytes total. Previews where the hex bytes you type will land.",
+    "青緑 = バッファー {buffer} バイト · 橙 = バッファー後 · 全 {size} バイト。入力した 16 進値が届くセルを表示します。",
+    "青色格 = {buffer} 字节缓冲区 · 橙色格 = 缓冲区之后 · 共 {size} 字节。预览十六进制输入将写入哪些格子。",
+    "Turquesa = búfer de {buffer} bytes · naranja = después · total {size}. Se muestra dónde llegan los bytes hexadecimales.",
+    "Türkis = Puffer mit {buffer} Bytes · orange = danach · insgesamt {size}. Zeigt, welche Zellen die Hexeingabe erreicht."
+  ],
+  "UI_TOOL_FILTER": [
+    "필터",
+    "Filter",
+    "フィルター",
+    "过滤",
+    "Filtro",
+    "Filter"
+  ],
+  "UI_TOOL_PICK_FIELD": [
+    "— 필드 선택 —",
+    "— choose field —",
+    "— フィールドを選ぶ —",
+    "— 选择字段 —",
+    "— Elegir campo —",
+    "— Feld wählen —"
+  ],
+  "UI_TOOL_PICK_ACTION": [
+    "— 동작 선택 —",
+    "— choose action —",
+    "— 動作を選ぶ —",
+    "— 选择操作 —",
+    "— Elegir acción —",
+    "— Aktion wählen —"
+  ],
+  "UI_TOOL_ERR_TICKS": [
+    "대기(ticks)는 정수여야 합니다.",
+    "Ticks must be an integer.",
+    "待機 (ticks) は整数が必要です。",
+    "等待值 (ticks) 必须为整数。",
+    "La espera (ticks) debe ser un entero.",
+    "Die Wartezeit (ticks) muss ganzzahlig sein."
+  ],
+  "UI_TOOL_ERR_AUTH_REQUIRED": [
+    "이 실험에는 맞는 계정의 인증 세션이 필요합니다. 터미널이나 브라우저의 로그인 상태를 확인하세요.",
+    "This experiment needs an authenticated session for the right account. Check your terminal or browser sign-in.",
+    "この実験には適切なアカウントの認証セッションが必要です。ターミナルかブラウザーのログインを確認してください。",
+    "此实验需要正确账号的认证会话。请检查终端或浏览器登录状态。",
+    "El experimento exige una sesión de la cuenta adecuada. Revisa el acceso del terminal o navegador.",
+    "Dieses Experiment benötigt eine Sitzung des passenden Kontos. Prüfe die Anmeldung im Terminal oder Browser."
+  ],
+  "UI_TOOL_ERR_MISSING_EVIDENCE": [
+    "먼저 확보해야 할 근거가 있습니다. 사건 보드의 목표와 메일을 다시 확인하세요.",
+    "Some evidence must be secured first. Check the case board goals and your mail again.",
+    "先に必要な証拠があります。事件ボードの目標とメールを再確認してください。",
+    "需要先取得前置证据。请重新查看事件板目标与邮件。",
+    "Faltan pruebas previas. Revisa objetivos y correo en el tablero.",
+    "Vorbelege fehlen. Prüfe Fallziele und Nachrichten erneut."
+  ],
+  "UI_TOOL_ERR_INVALID_ARGUMENTS": [
+    "입력 형식이 이 모형과 맞지 않습니다. 사용법과 입력 칸을 확인하세요.",
+    "The input format does not fit this model. Check the usage and the input fields.",
+    "入力形式がモデルに合いません。使い方と入力欄を確認してください。",
+    "输入格式与模型不符，请检查用法及输入框。",
+    "El formato no corresponde al modelo. Revisa uso y campos.",
+    "Das Eingabeformat passt nicht zum Modell. Prüfe Verwendung und Felder."
+  ],
+  "UI_TOOL_ERR_OBSERVATION_LIMIT": [
+    "이 사건의 실험 기록이 가득 찼습니다. 사건을 다시 시작하면 기록이 비워집니다.",
+    "This case's experiment log is full. Restarting the case clears it.",
+    "実験履歴がいっぱいです。事件を再開すると履歴を消せます。",
+    "实验记录已满，重新开始事件可清空记录。",
+    "El historial está lleno. Reiniciar el caso lo vacía.",
+    "Der Versuchsverlauf ist voll. Ein Fallneustart leert ihn."
+  ],
+  "UI_TOOL_ERR_UNKNOWN_TOOL": [
+    "현재 사건에 없는 도구입니다.",
+    "This tool is not part of the current case.",
+    "現在の事件にはないツールです。",
+    "当前事件没有此工具。",
+    "La herramienta no pertenece a este caso.",
+    "Dieses Werkzeug gehört nicht zum aktuellen Fall."
+  ],
+  "UI_TOOL_ERR_NOT_FOUND": [
+    "요청한 대상이 없습니다.",
+    "The requested target does not exist.",
+    "要求した対象がありません。",
+    "请求的目标不存在。",
+    "No existe el destino solicitado.",
+    "Das angefragte Ziel existiert nicht."
+  ],
+  "UI_TOOL_ERR_INVALID_TERMINAL": [
+    "터미널 번호가 올바르지 않습니다.",
+    "Invalid terminal number.",
+    "ターミナル番号が不正です。",
+    "终端编号无效。",
+    "Número de terminal inválido.",
+    "Ungültige Terminalnummer."
+  ],
+  "UI_TOOL_FIELD_INPUT": [
+    "입력",
+    "Input",
+    "入力",
+    "输入",
+    "Entrada",
+    "Eingabe"
+  ],
+  "UI_TOOL_FIELD_ACTION": [
+    "동작",
+    "Action",
+    "動作",
+    "操作",
+    "Acción",
+    "Aktion"
+  ],
+  "UI_TOOL_FIELD_TOKEN": [
+    "토큰",
+    "Token",
+    "トークン",
+    "令牌",
+    "Token",
+    "Token"
+  ],
+  "UI_TOOL_FIELD_ORIGIN": [
+    "출처 (origin)",
+    "Origin",
+    "要求元 (origin)",
+    "来源 (origin)",
+    "Origen (origin)",
+    "Herkunft (origin)"
+  ],
+  "UI_TOOL_FIELD_VALUE": [
+    "변경 값",
+    "New value",
+    "変更する値",
+    "修改值",
+    "Valor que cambiar",
+    "Änderungswert"
+  ],
+  "UI_TOOL_FIELD_FILENAME": [
+    "파일 이름",
+    "File name",
+    "ファイル名",
+    "文件名",
+    "Nombre de archivo",
+    "Dateiname"
+  ],
+  "UI_TOOL_FIELD_MIME": [
+    "MIME 형식",
+    "MIME type",
+    "MIME 型",
+    "MIME 类型",
+    "Tipo MIME",
+    "MIME-Typ"
+  ],
+  "UI_TOOL_FIELD_SIGNATURE": [
+    "파일 서명",
+    "File signature",
+    "ファイルシグネチャ",
+    "文件特征",
+    "Firma del archivo",
+    "Dateisignatur"
+  ],
+  "UI_TOOL_FIELD_USERNAME": [
+    "계정",
+    "Account",
+    "アカウント",
+    "账号",
+    "Cuenta",
+    "Konto"
+  ],
+  "UI_TOOL_FIELD_PASSWORD": [
+    "암호",
+    "Password",
+    "パスワード",
+    "密码",
+    "Contraseña",
+    "Passwort"
+  ],
+  "UI_TOOL_FIELD_TICKS": [
+    "대기 (ticks)",
+    "Wait (ticks)",
+    "待機 (ticks)",
+    "等待 (ticks)",
+    "Espera (ticks)",
+    "Wartezeit (ticks)"
+  ],
+  "UI_TOOL_FIELD_OBJECT_ID": [
+    "객체 ID",
+    "Object ID",
+    "オブジェクト ID",
+    "对象 ID",
+    "ID de objeto",
+    "Objekt-ID"
+  ],
+  "UI_TOOL_FIELD_LEFT": [
+    "첫째 관찰",
+    "First observation",
+    "一つ目の観察",
+    "第一项观察",
+    "Primera observación",
+    "Erste Beobachtung"
+  ],
+  "UI_TOOL_FIELD_RIGHT": [
+    "둘째 관찰",
+    "Second observation",
+    "二つ目の観察",
+    "第二项观察",
+    "Segunda observación",
+    "Zweite Beobachtung"
+  ],
+  "UI_TOOL_PH_GENERIC": [
+    "관찰한 값을 입력",
+    "Enter an observed value",
+    "観察した値を入力",
+    "输入观察到的值",
+    "Introduce el valor observado",
+    "Beobachteten Wert eingeben"
+  ],
+  "UI_TOOL_PH_FILTER_VALUE": [
+    "값",
+    "Value",
+    "値",
+    "值",
+    "Valor",
+    "Wert"
+  ],
+  "UI_TOOL_PH_QUERY": [
+    "검색어 또는 작은 조건식",
+    "Search text or a small condition",
+    "検索語か小さな条件式",
+    "搜索词或小型条件表达式",
+    "Búsqueda o condición pequeña",
+    "Suchbegriff oder kleine Bedingung"
+  ],
+  "UI_TOOL_PH_RENDER": [
+    "화면에 표시될 입력",
+    "Input to be displayed",
+    "画面に表示する入力",
+    "要显示的输入",
+    "Entrada que se mostrará",
+    "Darzustellende Eingabe"
+  ],
+  "UI_TOOL_PH_PATH": [
+    "기준 경로에 이어 붙일 상대 경로",
+    "Relative path appended to the base path",
+    "基準パスに連結する相対パス",
+    "接在基准路径后的相对路径",
+    "Ruta relativa que añadir a la base",
+    "An den Basispfad anzuhängender relativer Pfad"
+  ],
+  "UI_TOOL_PH_EXEC": [
+    "가상 작업에 넘길 인자",
+    "Argument for the virtual job",
+    "仮想ジョブに渡す引数",
+    "传给虚拟任务的参数",
+    "Argumentos para la tarea virtual",
+    "Argumente für den virtuellen Auftrag"
+  ],
+  "UI_TOOL_PH_FETCH": [
+    "서버가 대신 요청할 내부 URL",
+    "Internal URL for the server to request",
+    "サーバーが要求する内部 URL",
+    "服务器代为请求的内部 URL",
+    "URL interna que pedirá el servidor",
+    "Vom Server anzufragende interne URL"
+  ],
+  "UI_TOOL_PH_PERMISSION": [
+    "그룹 이름",
+    "Group name",
+    "グループ名",
+    "组名",
+    "Nombre del grupo",
+    "Gruppenname"
+  ],
+  "UI_TOOL_PH_AUDIT": [
+    "해독한 문자열",
+    "Decoded string",
+    "復号した文字列",
+    "解码后的字符串",
+    "Texto descodificado",
+    "Dekodierte Zeichenfolge"
+  ],
+  "UI_TOOL_PH_REVERSE": [
+    "계산한 결과 문자열",
+    "Computed result string",
+    "計算した結果の文字列",
+    "计算所得结果字符串",
+    "Texto del resultado calculado",
+    "Berechnete Ergebniszeichenfolge"
+  ],
+  "UI_TOOL_PH_MEMORY": [
+    "16진 바이트 (공백 허용)",
+    "Hex bytes (spaces allowed)",
+    "16 進バイト（空白可）",
+    "十六进制字节（可带空格）",
+    "Bytes hexadecimales (admite espacios)",
+    "Hexbytes (Leerzeichen erlaubt)"
+  ],
+  "UI_TOOL_PH_TOKEN": [
+    "토큰 값",
+    "Token value",
+    "トークン値",
+    "令牌值",
+    "Valor del token",
+    "Tokenwert"
+  ],
+  "UI_TOOL_PH_POLICY": [
+    "적용할 정책 값 (예: true)",
+    "Policy value to apply (e.g. true)",
+    "適用する方針値（例: true）",
+    "要应用的策略值（如 true）",
+    "Valor de política (ej.: true)",
+    "Richtlinienwert (z. B. true)"
+  ],
+  "UI_TOOL_PH_FIELD_TOKEN": [
+    "토큰",
+    "Token",
+    "トークン",
+    "令牌",
+    "Token",
+    "Token"
+  ],
+  "UI_TOOL_PH_FIELD_ORIGIN": [
+    "요청 출처 URL",
+    "Request origin URL",
+    "要求元の URL",
+    "请求来源 URL",
+    "URL de origen",
+    "Herkunfts-URL"
+  ],
+  "UI_TOOL_PH_FIELD_VALUE": [
+    "바꿀 값",
+    "Value to change",
+    "新しい値",
+    "要修改的值",
+    "Valor nuevo",
+    "Neuer Wert"
+  ],
+  "UI_TOOL_PH_FIELD_FILENAME": [
+    "파일 이름",
+    "File name",
+    "ファイル名",
+    "文件名",
+    "Nombre de archivo",
+    "Dateiname"
+  ],
+  "UI_TOOL_PH_FIELD_MIME": [
+    "MIME 형식",
+    "MIME type",
+    "MIME 型",
+    "MIME 类型",
+    "Tipo MIME",
+    "MIME-Typ"
+  ],
+  "UI_TOOL_PH_FIELD_SIGNATURE": [
+    "파일 첫 바이트 서명",
+    "Leading-byte file signature",
+    "ファイル先頭バイトのシグネチャ",
+    "文件起始字节特征",
+    "Firma de los primeros bytes",
+    "Signatur der ersten Dateibytes"
+  ],
+  "UI_TOOL_PH_FIELD_USERNAME": [
+    "계정 이름",
+    "Account name",
+    "アカウント名",
+    "账号名",
+    "Nombre de cuenta",
+    "Kontoname"
+  ],
+  "UI_TOOL_PH_FIELD_PASSWORD": [
+    "암호 (가려짐·저장 안 함)",
+    "Password (hidden, never stored)",
+    "パスワード（非表示・保存しません）",
+    "密码（隐藏且不保存）",
+    "Contraseña (oculta, no se guarda)",
+    "Passwort (verdeckt, nicht gespeichert)"
+  ],
+  "UI_TOOL_PH_FIELD_TICKS": [
+    "1–32",
+    "1–32",
+    "1–32",
+    "1–32",
+    "1–32",
+    "1–32"
+  ],
+  "UI_TOOL_PH_FIELD_OBJECT_ID": [
+    "객체 번호",
+    "Object number",
+    "オブジェクト番号",
+    "对象编号",
+    "Número de objeto",
+    "Objektnummer"
+  ],
+  "UI_TOOL_PH_FIELD_LEFT": [
+    "첫째 관찰 값",
+    "First observed value",
+    "一つ目の観察値",
+    "第一项观察值",
+    "Primer valor observado",
+    "Erster Beobachtungswert"
+  ],
+  "UI_TOOL_PH_FIELD_RIGHT": [
+    "둘째 관찰 값",
+    "Second observed value",
+    "二つ目の観察値",
+    "第二项观察值",
+    "Segundo valor observado",
+    "Zweiter Beobachtungswert"
+  ],
+  "UI_TOOLKIND_QUERY": [
+    "질의 탐침",
+    "Query probe",
+    "照会の検証",
+    "查询探针",
+    "Sonda de consultas",
+    "Abfragesonde"
+  ],
+  "UI_TOOLKIND_QUERY_MODEL": [
+    "작은 조건식 문법을 흉내 냅니다. 입력이 값으로만 쓰이는지, 질의의 구조(OR 같은 조건)를 바꾸는지 관찰합니다. 바인딩 정책이 켜지면 입력은 값으로만 처리됩니다.",
+    "Simulates a small condition grammar. Observe whether your input is used only as a value or changes the query's structure (for example an OR condition). With parameter binding on, input is treated only as a value.",
+    "小さな条件式の構文を模します。入力が値のままか、OR などの照会構造を変えるかを観察します。バインド方針を有効にすると値としてだけ扱います。",
+    "模拟小型条件表达式语法，观察输入仅作为值，还是改变查询结构（如 OR）。启用绑定策略后仅将其作为值。",
+    "Imita una sintaxis reducida. Observa si la entrada queda como valor o altera condiciones como OR. Con vinculación activada se trata solo como valor.",
+    "Bildet eine kleine Bedingungssyntax nach. Beobachte, ob Eingaben Werte bleiben oder Strukturen wie OR verändern. Aktive Bindung behandelt sie nur als Werte."
+  ],
+  "UI_TOOLKIND_QUERY_LIMIT": [
+    "실제 SQL 엔진과 문법 전체를 재현하지 않습니다. 게임 속 가상 행만 다루며 실제 데이터베이스에 연결하지 않습니다.",
+    "Does not reproduce a real SQL engine or its full grammar. Only in-game virtual rows are involved; no real database is contacted.",
+    "実際の SQL エンジンや全構文は再現しません。仮想行だけを扱い、実データベースには接続しません。",
+    "不复现真实 SQL 引擎或全部语法。仅处理虚拟行，不连接真实数据库。",
+    "No reproduce un motor SQL ni su sintaxis completa. Solo trata filas virtuales, sin conectar bases reales.",
+    "Bildet weder eine echte SQL-Engine noch die gesamte Syntax ab. Verarbeitet nur virtuelle Zeilen ohne reale Datenbankverbindung."
+  ],
+  "UI_TOOLKIND_RENDER": [
+    "표시 맥락",
+    "Render context",
+    "表示の文脈",
+    "显示上下文",
+    "Contexto de presentación",
+    "Darstellungskontext"
+  ],
+  "UI_TOOLKIND_RENDER_MODEL": [
+    "입력이 화면에 글자로만 표시되는지, 가상 표시 신호로 해석되는지 비교합니다. 이스케이프 정책이 켜지면 글자로만 표시됩니다.",
+    "Compare whether input is shown only as text or interpreted as a virtual display signal. With escaping on, it is shown only as text.",
+    "入力が文字として表示されるか、仮想の表示信号になるかを比較します。エスケープ方針を有効にすると文字としてだけ表示します。",
+    "比较输入仅显示为文字，还是被解释为虚拟显示信号。启用转义策略后只显示文字。",
+    "Compara si la entrada se muestra como texto o como señal virtual. Con escape activado solo aparece como texto.",
+    "Vergleicht Textanzeige mit virtuellen Darstellungssignalen. Bei aktiver Maskierung bleibt die Eingabe reiner Text."
+  ],
+  "UI_TOOLKIND_RENDER_LIMIT": [
+    "실제 JavaScript를 실행하지 않습니다. 다른 사용자에게 미치는 효과는 정해진 가상 결과로만 계산합니다.",
+    "No real JavaScript runs. Effects on other users are computed only as fixed virtual outcomes.",
+    "実際の JavaScript は実行しません。他の利用者への影響は定められた仮想結果でのみ計算します。",
+    "不执行真实 JavaScript，对其他用户的影响仅按预定虚拟结果计算。",
+    "No ejecuta JavaScript real. Los efectos sobre otros usuarios solo son resultados virtuales definidos.",
+    "Führt kein echtes JavaScript aus. Auswirkungen auf andere Nutzer sind nur festgelegte virtuelle Ergebnisse."
+  ],
+  "UI_TOOLKIND_PATH": [
+    "경로 경계",
+    "Path boundary",
+    "パスの境界",
+    "路径边界",
+    "Límite de ruta",
+    "Pfadgrenze"
+  ],
+  "UI_TOOLKIND_PATH_MODEL": [
+    "기준 경로에 입력을 이어 붙여 정규화한 결과가 공개 범위를 벗어나는지 봅니다. 경계 정책이 켜지면 범위 밖 경로는 거절됩니다.",
+    "Appends your input to the base path, normalizes it, and shows whether the result leaves the public area. With the boundary policy on, paths outside are refused.",
+    "基準パスと入力を連結・正規化し、公開範囲を越えるか見ます。境界方針を有効にすると範囲外を拒否します。",
+    "连接基准路径与输入并规范化，检查是否越出公开范围。启用边界策略后拒绝范围外路径。",
+    "Concatena y normaliza la entrada con la ruta base para ver si sale del área pública. La política de límite rechaza rutas externas.",
+    "Verknüpft und normalisiert Eingabe und Basispfad und prüft die öffentliche Grenze. Aktive Grenzprüfung weist äußere Pfade ab."
+  ],
+  "UI_TOOLKIND_PATH_LIMIT": [
+    "가상 파일 시스템 안에서만 정규화합니다. 실제 OS 경로나 파일에 접근하지 않습니다.",
+    "Normalization happens only inside the virtual file system. No real OS path or file is accessed.",
+    "仮想ファイルシステム内でだけ正規化し、実際の OS のパスやファイルには触れません。",
+    "仅在虚拟文件系统中规范化，不访问真实 OS 路径或文件。",
+    "Solo normaliza dentro del sistema virtual; no accede a rutas ni archivos reales.",
+    "Normalisiert nur im virtuellen Dateisystem und greift auf keine echten Betriebssystempfade oder Dateien zu."
+  ],
+  "UI_TOOLKIND_EXEC": [
+    "작업 인자 경계",
+    "Job argument boundary",
+    "ジョブ引数の境界",
+    "任务参数边界",
+    "Límite de argumentos",
+    "Auftragsargumentgrenze"
+  ],
+  "UI_TOOLKIND_EXEC_MODEL": [
+    "입력이 등록된 가상 작업의 인자 하나로만 쓰이는지, 구분자로 다른 작업을 덧붙이는지 관찰합니다. 인자 배열 정책이 켜지면 덧붙인 작업은 무시됩니다.",
+    "Observe whether input stays a single argument of a registered virtual job or appends another job through a separator. With argument arrays on, appended jobs are ignored.",
+    "入力が仮想ジョブの一つの引数に留まるか、区切りで別ジョブを追加するか見ます。引数配列方針を有効にすると追加ジョブを無視します。",
+    "观察输入是单一虚拟任务参数，还是利用分隔符追加任务。启用参数数组策略后忽略追加任务。",
+    "Observa si la entrada es un solo argumento o añade tareas mediante separadores. La política de argumentos en lista ignora las tareas añadidas.",
+    "Prüft, ob die Eingabe ein Argument bleibt oder über Trenner einen Auftrag ergänzt. Aktive Argumentlisten ignorieren Zusatzaufträge."
+  ],
+  "UI_TOOLKIND_EXEC_LIMIT": [
+    "실제 프로세스나 셸을 실행하지 않습니다. 정해진 가상 작업 목록만 존재합니다.",
+    "No real process or shell runs. Only a fixed list of virtual jobs exists.",
+    "実際のプロセスやシェルは起動しません。定義済みの仮想ジョブだけが存在します。",
+    "不启动真实进程或 shell，仅存在已定义虚拟任务。",
+    "No inicia procesos ni shells reales. Solo existen tareas virtuales definidas.",
+    "Startet keine echten Prozesse oder Shells. Es existieren nur festgelegte virtuelle Aufträge."
+  ],
+  "UI_TOOLKIND_FETCH": [
+    "서버 경유 요청",
+    "Server-side fetch",
+    "サーバー経由の要求",
+    "服务器代请求",
+    "Petición a través del servidor",
+    "Anfrage über den Server"
+  ],
+  "UI_TOOLKIND_FETCH_MODEL": [
+    "서버가 대신 요청하는 주소에 따라 요청 주체와 도달 범위가 어떻게 달라지는지 봅니다. 송신 정책이 켜지면 내부 주소 요청을 막습니다.",
+    "See how the acting party and reachable range change when the server requests an address on your behalf. With the egress policy on, internal addresses are blocked.",
+    "サーバーが要求するアドレスにより、主体と到達範囲がどう変わるか見ます。送信方針を有効にすると内部アドレスを遮断します。",
+    "观察服务器代请求的地址如何改变请求身份与可达范围。启用出站策略后阻止内部地址请求。",
+    "Observa cómo la dirección pedida por el servidor cambia identidad y alcance. La política de salida bloquea destinos internos.",
+    "Prüft, wie die serverseitige Zieladresse Identität und Reichweite verändert. Aktive Ausgangsrichtlinien sperren interne Ziele."
+  ],
+  "UI_TOOLKIND_FETCH_LIMIT": [
+    "게임 속 .test 내부 주소만 다룹니다. 실제 인터넷 요청은 없습니다. 내부 도달이 곧 관리자 권한을 뜻하지는 않습니다.",
+    "Only in-game .test addresses are involved; there is no real internet request. Reaching an internal host does not mean admin rights.",
+    "ゲーム内の .test アドレスだけを扱い、実際のインターネット要求はありません。内部への到達は管理権限ではありません。",
+    "仅处理游戏内 .test 地址，不发出真实互联网请求。到达内部不等于管理员权限。",
+    "Solo usa direcciones .test del juego, sin Internet real. Alcanzar el interior no concede autoridad de administración.",
+    "Verarbeitet nur interne .test-Spieladressen ohne echte Internetanfragen. Interne Erreichbarkeit verleiht keine Administratorrechte."
+  ],
+  "UI_TOOLKIND_PERMISSION": [
+    "권한 보기",
+    "Access view",
+    "権限の確認",
+    "查看权限",
+    "Ver autoridad",
+    "Rechte prüfen"
+  ],
+  "UI_TOOLKIND_PERMISSION_MODEL": [
+    "현재 세션 계정과 노출된 그룹 이름의 관계를 확인합니다. 그룹 권한은 해당 계정의 세션에서만 의미가 있습니다.",
+    "Check how the current session account relates to an exposed group name. Group rights only matter in that account's session.",
+    "現在のセッションと公開されたグループ名の関係を確かめます。グループ権限はそのアカウントのセッションでだけ意味を持ちます。",
+    "确认当前会话账号与已公开组名的关系。组权限只在相应账号会话中生效。",
+    "Relaciona la cuenta actual con el grupo mostrado. Los derechos del grupo solo valen en la sesión de esa cuenta.",
+    "Prüft die Beziehung zwischen Sitzungskonto und offengelegter Gruppe. Gruppenrechte gelten nur in der Sitzung dieses Kontos."
+  ],
+  "UI_TOOLKIND_PERMISSION_LIMIT": [
+    "실제 계정·sudo·OS 권한을 바꾸지 않습니다. 게임 세계의 가상 그룹만 다룹니다.",
+    "No real account, sudo or OS permission is changed. Only virtual groups in the game world are involved.",
+    "実際のアカウント、sudo、OS 権限は変更しません。仮想世界のグループだけを扱います。",
+    "不改变真实账号、sudo 或 OS 权限，仅处理游戏虚拟组。",
+    "No cambia cuentas, sudo ni permisos reales. Solo trata grupos virtuales del juego.",
+    "Ändert keine echten Konten, sudo- oder Betriebssystemrechte. Verarbeitet nur virtuelle Spielgruppen."
+  ],
+  "UI_TOOLKIND_AUDIT": [
+    "자격 감사",
+    "Credential audit",
+    "資格情報の監査",
+    "凭据审计",
+    "Auditoría de credenciales",
+    "Prüfung von Anmeldedaten"
+  ],
+  "UI_TOOLKIND_AUDIT_MODEL": [
+    "제공된 가상 바이트를 XOR 키로 풀어 저장된 값과 비교합니다. 풀어낸 문자열을 직접 입력합니다.",
+    "Decode the provided virtual bytes with the XOR key and compare them with the stored value. You type the decoded string yourself.",
+    "提供された仮想バイトを XOR 鍵で復号し、保存値と比較します。得られた文字列は自分で入力します。",
+    "以 XOR 密钥解码提供的虚拟字节并与保存值比较，手动输入解出的字符串。",
+    "Descodifica bytes virtuales con la clave XOR y compáralos con el valor guardado. Introduce tú el texto obtenido.",
+    "Dekodiert vorgegebene virtuelle Bytes mit einem XOR-Schlüssel zum Vergleich mit dem gespeicherten Wert. Die Ergebniszeichenfolge gibst du selbst ein."
+  ],
+  "UI_TOOLKIND_AUDIT_LIMIT": [
+    "실제 해시 크래킹이나 외부 사전 파일을 쓰지 않습니다. XOR은 보호 수단이 아니라 단순 변환의 예입니다.",
+    "No real hash cracking or external wordlists. XOR here is an example of a simple transform, not protection.",
+    "実際のハッシュ解読や外部辞書は使いません。XOR は保護策ではなく、単純な変換例です。",
+    "不使用真实哈希破解或外部词典。XOR 并非保护手段，只是简单变换示例。",
+    "No usa descifrado de hashes reales ni diccionarios externos. XOR es un ejemplo de transformación, no una protección.",
+    "Nutzt weder echtes Hashknacken noch externe Wörterbücher. XOR ist ein einfaches Umwandlungsbeispiel, kein Schutzverfahren."
+  ],
+  "UI_TOOLKIND_REVERSE": [
+    "흐름 분석",
+    "Flow analysis",
+    "処理の解析",
+    "流程分析",
+    "Análisis de flujo",
+    "Ablaufanalyse"
+  ],
+  "UI_TOOLKIND_REVERSE_MODEL": [
+    "주어진 바이트에 프로그램이 적용하는 변환(여기서는 XOR)을 따라가 결과를 계산합니다.",
+    "Follow the transform a program applies to the given bytes (here XOR) and compute the result.",
+    "バイトに適用するプログラムの変換（ここでは XOR）を追い、結果を計算します。",
+    "跟随程序对字节执行的变换（此处为 XOR），计算结果。",
+    "Sigue la transformación del programa sobre los bytes (aquí XOR) y calcula el resultado.",
+    "Verfolge die Byteumwandlung des Programms (hier XOR) und berechne das Ergebnis."
+  ],
+  "UI_TOOLKIND_REVERSE_LIMIT": [
+    "실제 실행 파일을 분석하거나 실행하지 않습니다. 작은 변환 모형만 다룹니다.",
+    "No real executable is analyzed or run. Only a small transform model is involved.",
+    "実際の実行ファイルは解析・実行せず、小さな変換モデルだけを扱います。",
+    "不分析或运行真实可执行文件，仅处理小型变换模型。",
+    "No analiza ni ejecuta binarios reales; solo un pequeño modelo de transformación.",
+    "Analysiert oder startet keine echten ausführbaren Dateien, nur ein kleines Umwandlungsmodell."
+  ],
+  "UI_TOOLKIND_MEMORY": [
+    "메모리 모형",
+    "Memory model",
+    "メモリーモデル",
+    "内存模型",
+    "Modelo de memoria",
+    "Speichermodell"
+  ],
+  "UI_TOOLKIND_MEMORY_MODEL": [
+    "정해진 크기의 버퍼와 그 뒤의 칸을 보여 줍니다. 16진 바이트를 써 넣으면 버퍼를 넘친 바이트가 어느 칸에 닿는지 확인할 수 있습니다.",
+    "Shows a fixed-size buffer and the cells after it. Write hex bytes to see which cell any overflowing byte reaches.",
+    "固定長バッファーと後続セルを表示します。16 進バイトを書き込むと、あふれたバイトが届く場所を確認できます。",
+    "显示固定大小缓冲区及后续单元，写入十六进制字节可观察溢出字节到达的位置。",
+    "Muestra un búfer fijo y celdas posteriores. Al escribir bytes hexadecimales ves qué celdas alcanza el exceso.",
+    "Zeigt einen festen Puffer und Folgezellen. Hexbytes machen sichtbar, welche Zellen überlaufende Bytes erreichen."
+  ],
+  "UI_TOOLKIND_MEMORY_LIMIT": [
+    "실제 프로세스 메모리·주소·보호 기법을 재현하지 않습니다. 제한된 가상 칸만 다룹니다.",
+    "Does not reproduce real process memory, addresses or mitigations. Only a bounded set of virtual cells is involved.",
+    "実プロセスのメモリー、アドレス、保護策は再現せず、限定された仮想セルだけを扱います。",
+    "不复现真实进程内存、地址或保护机制，仅使用有限虚拟单元。",
+    "No reproduce memoria, direcciones ni protecciones reales. Solo usa celdas virtuales limitadas.",
+    "Bildet weder echten Prozessspeicher noch reale Adressen oder Schutzverfahren ab. Nur begrenzte virtuelle Zellen werden verarbeitet."
+  ],
+  "UI_TOOLKIND_PACKET": [
+    "패킷 보기",
+    "Packet view",
+    "パケット観察",
+    "查看数据包",
+    "Ver paquetes",
+    "Pakete betrachten"
+  ],
+  "UI_TOOLKIND_PACKET_MODEL": [
+    "관찰 지점에서 보인 가상 패킷 행을 필드=값 필터로 골라 관련 흐름을 찾습니다.",
+    "Pick virtual packet rows seen at an observation point with a field=value filter to find the related flow.",
+    "観測地点の仮想パケット行をフィールド=値で絞り、関連する通信を探します。",
+    "以字段=值筛选观察点可见的虚拟数据包，查找相关流量。",
+    "Filtra filas virtuales con campo=valor para encontrar el flujo pertinente.",
+    "Filtere beobachtete virtuelle Paketzeilen mit Feld=Wert nach dem relevanten Ablauf."
+  ],
+  "UI_TOOLKIND_PACKET_LIMIT": [
+    "실제 네트워크를 캡처하지 않습니다. 암호화된 구간의 본문은 중간 관찰자에게 보이지 않는다는 원칙만 모형화합니다.",
+    "No real network is captured. It only models the principle that encrypted segments do not reveal their body to an on-path observer.",
+    "実ネットワークを取得しません。暗号化区間の本文は途中の観測者には見えない、という原理だけをモデル化します。",
+    "不捕获真实网络，仅模拟中间观察者无法看到加密段正文这一原则。",
+    "No captura redes reales. Solo modela que un observador intermedio no ve el cuerpo de un tramo cifrado.",
+    "Erfasst kein echtes Netz. Modelliert nur, dass ein Zwischenbeobachter den Inhalt verschlüsselter Strecken nicht sieht."
+  ],
+  "UI_TOOLKIND_TRACE": [
+    "기록 연결",
+    "Log correlation",
+    "記録の関連付け",
+    "记录关联",
+    "Relacionar registros",
+    "Aufzeichnungen verbinden"
+  ],
+  "UI_TOOLKIND_TRACE_MODEL": [
+    "로그와 경로 기록을 필드=값으로 골라 같은 사건의 흔적을 연결합니다.",
+    "Pick log and route records with field=value to link traces of the same incident.",
+    "ログと経路の記録をフィールド=値で絞り、同じ事件の痕跡を結びます。",
+    "用字段=值筛选日志与通路记录，关联同一事件的痕迹。",
+    "Filtra registros y rutas con campo=valor para enlazar rastros del mismo incidente.",
+    "Filtere Protokolle und Wege mit Feld=Wert und verbinde Spuren desselben Vorfalls."
+  ],
+  "UI_TOOLKIND_TRACE_LIMIT": [
+    "실제 시스템 로그를 읽지 않습니다. 시계 오차나 누락 같은 불확실성은 사건 자료에 기록된 만큼만 다룹니다.",
+    "No real system log is read. Uncertainty such as clock skew or gaps is only as complete as the case records.",
+    "実ログは読みません。時計のずれや欠落は、事件資料にある範囲の不確実性だけを扱います。",
+    "不读取真实日志。时钟偏差、遗漏等不确定性仅按事件资料所示处理。",
+    "No lee registros reales. Desajustes de reloj y ausencias solo se tratan según las pruebas del caso.",
+    "Liest keine echten Systemprotokolle. Uhrabweichungen und Lücken werden nur im dokumentierten Umfang modelliert."
+  ],
+  "UI_TOOLKIND_COMPARE": [
+    "관찰 비교",
+    "Compare observations",
+    "観察の比較",
+    "观察对比",
+    "Comparar observaciones",
+    "Beobachtungen vergleichen"
+  ],
+  "UI_TOOLKIND_COMPARE_MODEL": [
+    "두 관찰 값을 나란히 놓고 지정한 차이가 무엇인지 확인합니다.",
+    "Put two observed values side by side and confirm what the specific difference is.",
+    "二つの観察値を並べ、指定された違いを確認します。",
+    "并排比较两项观察值，确认指定差异。",
+    "Coloca dos observaciones juntas e identifica la diferencia indicada.",
+    "Stelle zwei Beobachtungswerte gegenüber und prüfe den festgelegten Unterschied."
+  ],
+  "UI_TOOLKIND_COMPARE_LIMIT": [
+    "차이를 확인할 뿐 원인을 자동으로 판단하지는 않습니다.",
+    "It confirms a difference; it does not decide the cause for you.",
+    "違いだけを確かめ、原因を自動判定するものではありません。",
+    "仅确认差异，不自动判断原因。",
+    "Comprueba diferencias, no determina automáticamente sus causas.",
+    "Prüft nur Unterschiede und entscheidet Ursachen nicht automatisch."
+  ],
+  "UI_TOOLKIND_TOKEN": [
+    "토큰 확인",
+    "Token check",
+    "トークンの確認",
+    "令牌核验",
+    "Comprobar token",
+    "Token prüfen"
+  ],
+  "UI_TOOLKIND_TOKEN_MODEL": [
+    "조사에서 찾은 허구 토큰 값이 현재 승인된 값인지 확인합니다.",
+    "Check whether a fictional token found during the investigation is a currently approved value.",
+    "調査で得た架空トークンが、現在承認された値かを確認します。",
+    "确认调查中取得的虚构令牌是否为当前获准值。",
+    "Comprueba si el token ficticio hallado coincide con el actualmente autorizado.",
+    "Prüft, ob das gefundene fiktive Token dem aktuell genehmigten Wert entspricht."
+  ],
+  "UI_TOOLKIND_TOKEN_LIMIT": [
+    "실제 자격 정보나 서비스 토큰을 사용하지 않습니다. 삭제된 설정이라도 과거 값의 효력은 따로 확인해야 합니다.",
+    "No real credential or service token is used. A deleted setting may still need its past value's effect checked separately.",
+    "実際の資格情報やサービストークンは使いません。設定から消えても、過去の値の効力は別に確認する必要があります。",
+    "不使用真实凭据或服务令牌。即使配置已删除，旧值效力仍须另行核实。",
+    "No usa credenciales ni tokens reales. Borrar una configuración no evita comprobar la vigencia anterior.",
+    "Nutzt keine echten Anmeldedaten oder Diensttokens. Auch bei gelöschter Konfiguration muss die alte Gültigkeit gesondert geprüft werden."
+  ],
+  "UI_TOOLKIND_POLICY": [
+    "정책 설정",
+    "Policy desk",
+    "方針の設定",
+    "策略设置",
+    "Ajustar políticas",
+    "Richtlinien setzen"
+  ],
+  "UI_TOOLKIND_POLICY_MODEL": [
+    "허용된 정책 값 하나를 적용한 뒤, 사건 목표와 현재 서비스 상태로 다시 평가합니다. 기본적으로 false는 취약한 동작, true는 차단하는 동작입니다.",
+    "Apply one allowed policy value, then the case goals and current service state are evaluated again. By default false is the vulnerable behavior and true is the blocking behavior.",
+    "許可された方針値を適用し、目標と現在のサービス状態で再評価します。基本的に false は脆弱な動作、true は遮断動作です。",
+    "应用允许的策略值，再依据目标与服务状态重评。通常 false 表示有缺陷行为，true 表示阻止行为。",
+    "Aplica un valor permitido y reevalúa objetivos y servicio. En general false permite el comportamiento vulnerable y true lo bloquea.",
+    "Wendet einen erlaubten Richtlinienwert an und bewertet Ziele und Dienste erneut. Üblicherweise bedeutet false verwundbares, true blockiertes Verhalten."
+  ],
+  "UI_TOOLKIND_POLICY_LIMIT": [
+    "정책을 바꿔도 정상 기능이 유지되는지는 목표가 따로 확인합니다. 모든 것을 막는 설정이 정답은 아닙니다.",
+    "Goals separately check that normal features still work after a change. Blocking everything is not the answer.",
+    "変更後も正規機能が動くかは、目標が別に確認します。すべてを止めることが正解ではありません。",
+    "目标会另行核验正常功能是否保留。阻止一切并非正确答案。",
+    "Los objetivos comprueban aparte que lo legítimo siga funcionando. Bloquearlo todo no es la solución.",
+    "Die Ziele prüfen gesondert, ob reguläre Funktionen erhalten bleiben. Alles zu sperren ist keine Lösung."
+  ],
+  "UI_TOOLKIND_IDOR": [
+    "객체 접근",
+    "Object access",
+    "オブジェクトへのアクセス",
+    "对象访问",
+    "Acceso a objetos",
+    "Objektzugriff"
+  ],
+  "UI_TOOLKIND_IDOR_MODEL": [
+    "현재 인증된 계정으로 객체 번호를 요청해, 소유자 검사 정책에 따라 응답이 어떻게 달라지는지 봅니다.",
+    "Request an object number as the currently authenticated account and see how the owner-check policy changes the response.",
+    "認証されたアカウントでオブジェクト番号を要求し、所有者確認方針による応答の差を見ます。",
+    "以当前认证账号请求对象编号，观察所有者检查策略如何改变响应。",
+    "Pide un objeto con la cuenta autenticada y observa cómo cambia la respuesta según la comprobación del propietario.",
+    "Frage ein Objekt mit dem angemeldeten Konto ab und beobachte die Antwort unter der Eigentümerprüfung."
+  ],
+  "UI_TOOLKIND_IDOR_LIMIT": [
+    "가상 객체 목록만 다룹니다. 실제 서비스의 인가 구조는 훨씬 다양합니다.",
+    "Only a virtual object list is involved. Real authorization designs vary far more.",
+    "仮想オブジェクト一覧だけを扱います。実サービスの認可構造は、はるかに多様です。",
+    "仅处理虚拟对象列表，真实服务授权结构更加多样。",
+    "Solo usa una lista de objetos virtuales. Las estructuras reales de autorización son mucho más diversas.",
+    "Verarbeitet nur eine virtuelle Objektliste. Echte Berechtigungsstrukturen sind wesentlich vielfältiger."
+  ],
+  "UI_TOOLKIND_AUTH": [
+    "로그인 제한",
+    "Sign-in limits",
+    "ログインの制限",
+    "登录限制",
+    "Límites de acceso",
+    "Anmeldebegrenzung"
+  ],
+  "UI_TOOLKIND_AUTH_MODEL": [
+    "계정별 실패 횟수와 가상 대기 시간을 계산합니다. 제한 정책이 켜진 상태에서 반복 실패 차단과 대기 뒤 정상 로그인을 함께 관찰합니다.",
+    "Counts failures per account and a virtual wait. With the limit policy on, observe both the block after repeated failures and a normal sign-in after waiting.",
+    "アカウントごとの失敗回数と仮想待機を計算します。方針を有効にし、連続失敗の拒否と待機後の正規ログインを両方観察します。",
+    "计算各账号失败次数及虚拟等待。启用限制后，同时观察重复失败被阻与等待后的正常登录。",
+    "Cuenta fallos y espera virtual por cuenta. Con el límite activo, observa bloqueo de repeticiones y acceso legítimo tras esperar.",
+    "Berechnet Fehlschläge und virtuelle Wartezeit je Konto. Beobachte bei aktiver Begrenzung Wiederholungssperre und reguläre Anmeldung nach dem Warten."
+  ],
+  "UI_TOOLKIND_AUTH_LIMIT": [
+    "실제 시간을 기다리지 않습니다. 대기는 ticks 단위의 논리 시계입니다. 실제 무차별 대입 도구가 아닙니다.",
+    "No real time passes; waiting uses a logical clock in ticks. This is not a real brute-force tool.",
+    "実時間は待ちません。ticks 単位の論理時計であり、実際の総当たりツールではありません。",
+    "不等待真实时间。等待使用 ticks 逻辑时钟，这不是真实暴力破解工具。",
+    "No espera tiempo real. Usa un reloj lógico en ticks y no es una herramienta real de fuerza bruta.",
+    "Wartet keine Echtzeit ab. Verwendet eine logische Uhr in ticks und ist kein echtes Brute-Force-Werkzeug."
+  ],
+  "UI_TOOLKIND_SESSION": [
+    "세션 수명",
+    "Session lifetime",
+    "セッションの寿命",
+    "会话生命周期",
+    "Vida de la sesión",
+    "Sitzungslebensdauer"
+  ],
+  "UI_TOOLKIND_SESSION_MODEL": [
+    "세션 토큰의 발급·재사용·폐기·대기를 차례로 해 보고, 폐기되거나 오래된 토큰이 거절되고 새 토큰이 허용되는지 확인합니다.",
+    "Issue, reuse, revoke and wait with session tokens, and check that revoked or stale tokens are refused while a fresh one is accepted.",
+    "トークンの発行・再利用・失効・待機を試し、古いトークンが拒否され新しいものが許可されるか確かめます。",
+    "依次尝试令牌签发、复用、撤销与等待，确认旧令牌被拒绝、新令牌可用。",
+    "Prueba emisión, reutilización, revocación y espera para comprobar que se rechazan tokens viejos y se aceptan nuevos.",
+    "Prüfe Ausgabe, Wiederverwendung, Widerruf und Warten: Alte Tokens sollen abgewiesen, neue zugelassen werden."
+  ],
+  "UI_TOOLKIND_SESSION_LIMIT": [
+    "화면의 쿠키를 지우는 것과 서버의 폐기는 다릅니다. 이 모형은 서버 쪽 상태만 계산합니다.",
+    "Clearing a cookie on screen is not the same as server-side revocation. This model computes server-side state only.",
+    "画面の Cookie 削除とサーバーでの失効は違います。このモデルはサーバー側の状態だけを計算します。",
+    "删除画面上的 Cookie 与服务器撤销不同，此模型仅计算服务器端状态。",
+    "Borrar cookies en pantalla no equivale a revocar en el servidor. Solo se modela el estado del servidor.",
+    "Ein Cookie auf dem Bildschirm zu löschen ist kein serverseitiger Widerruf. Das Modell berechnet nur den Serverzustand."
+  ],
+  "UI_TOOLKIND_CSRF": [
+    "요청 맥락",
+    "Request context",
+    "要求の文脈",
+    "请求上下文",
+    "Contexto de petición",
+    "Anfragekontext"
+  ],
+  "UI_TOOLKIND_CSRF_MODEL": [
+    "상태를 바꾸는 요청의 출처와 토큰을 검사하는지, 위조 요청 차단과 정상 변경이 함께 성립하는지 봅니다.",
+    "See whether state-changing requests check origin and token, so forged requests are blocked while legitimate changes still succeed.",
+    "変更要求の出所とトークンを検査するかを調べ、偽造要求の拒否と正規変更の両立を確認します。",
+    "检查变更请求的来源与令牌，确认伪造请求被拒且正常变更保留。",
+    "Comprueba origen y token de cambios y verifica que se bloquea la falsificación sin impedir cambios legítimos.",
+    "Prüft Herkunft und Token einer Änderung sowie die gemeinsame Abwehr gefälschter und Zulassung regulärer Änderungen."
+  ],
+  "UI_TOOLKIND_CSRF_LIMIT": [
+    "실제 브라우저의 쿠키 정책을 재현하지 않습니다. 인증된 가상 세션이 필요합니다.",
+    "Real browser cookie policies are not reproduced. An authenticated virtual session is required.",
+    "実ブラウザーの Cookie 方針は再現しません。認証済みの仮想セッションが必要です。",
+    "不复现真实浏览器 Cookie 策略，需要已认证的虚拟会话。",
+    "No reproduce políticas de cookies de navegadores reales. Requiere una sesión virtual autenticada.",
+    "Bildet keine Cookie-Richtlinien echter Browser ab. Eine angemeldete virtuelle Sitzung wird benötigt."
+  ],
+  "UI_TOOLKIND_UPLOAD": [
+    "업로드 처리",
+    "Upload handling",
+    "アップロード処理",
+    "上传处理",
+    "Procesamiento de subidas",
+    "Upload-Verarbeitung"
+  ],
+  "UI_TOOLKIND_UPLOAD_MODEL": [
+    "파일 이름의 확장자·MIME·서명이 함께 맞는지, 저장된 파일이 실행 가능해지는지 관찰합니다. 잘못된 파일 차단과 정상 사진 허용을 함께 확인합니다.",
+    "Observe whether file extension, MIME type and signature agree, and whether a stored file becomes executable. Check both that bad files are refused and normal photos are accepted.",
+    "拡張子・MIME・シグネチャの一致と、保存ファイルが実行可能になるかを見ます。不正ファイルの拒否と正規写真の受付を両方確かめます。",
+    "观察扩展名、MIME 与签名是否一致，以及保存文件是否变为可执行。同时确认错误文件被拒与正常照片可接收。",
+    "Comprueba extensión, MIME, firma y si lo guardado se vuelve ejecutable. Verifica rechazo de archivos incorrectos y aceptación de fotos legítimas.",
+    "Prüft Dateiendung, MIME und Signatur sowie Ausführbarkeit gespeicherter Dateien. Beobachte Ablehnung falscher Dateien und Annahme regulärer Fotos."
+  ],
+  "UI_TOOLKIND_UPLOAD_LIMIT": [
+    "실제 파일을 받거나 실행하지 않습니다. 이름·형식·서명 세 값만 모형화합니다.",
+    "No real file is received or executed. Only name, type and signature are modeled.",
+    "実際のファイルは受信・実行しません。名前・形式・シグネチャの三値だけをモデル化します。",
+    "不接收或执行真实文件，仅模拟名称、格式与特征三个值。",
+    "No recibe ni ejecuta archivos reales. Solo modela nombre, tipo y firma.",
+    "Empfängt oder startet keine echten Dateien. Modelliert nur Name, Format und Signatur."
+  ],
+  "UI_TOOLKIND_SCAN": [
+    "네트워크 탐침",
+    "Network probe",
+    "ネットワーク探査",
+    "网络探针",
+    "Sonda de red",
+    "Netzwerksonde"
+  ],
+  "UI_TOOLKIND_SCAN_MODEL": [
+    "선택한 터미널의 현재 위치에서 대상의 포트가 열림·닫힘·필터됨 중 무엇으로 보이는지 확인합니다. nmap 명령과 같은 처리입니다.",
+    "From the selected terminal's current position, check whether the target's ports look open, closed or filtered. Same handling as the nmap command.",
+    "選んだターミナルの現在地から、対象ポートが開放・閉鎖・フィルターのどれに見えるか確かめます。nmap と同じ処理です。",
+    "从所选终端当前位置确认目标端口显示为开放、关闭还是被过滤，与 nmap 使用相同处理。",
+    "Desde el terminal elegido observa puertos abiertos, cerrados o filtrados. Usa el mismo procesamiento que nmap.",
+    "Prüft vom gewählten Terminal aus offene, geschlossene oder gefilterte Ports. Nutzt dieselbe Verarbeitung wie nmap."
+  ],
+  "UI_TOOLKIND_SCAN_LIMIT": [
+    "열린 포트가 곧 접속 권한은 아닙니다. 출발 지점이 바뀌면 결과도 달라집니다. 실제 네트워크를 스캔하지 않습니다.",
+    "An open port is not access. Results change when the starting point changes. No real network is scanned.",
+    "開いたポートはアクセス権限ではありません。出発点が変われば結果も変わります。実ネットワークは調べません。",
+    "端口开放不等于访问权限。起点变化会改变结果，不扫描真实网络。",
+    "Un puerto abierto no concede acceso. Otro origen puede cambiar el resultado. No escanea redes reales.",
+    "Ein offener Port verleiht keine Rechte. Ein anderer Ausgangspunkt kann andere Ergebnisse liefern. Keine echten Netzscans."
+  ],
+  "UI_TOOLKIND_ROUTE": [
+    "경로 추적",
+    "Route trace",
+    "経路追跡",
+    "通路追踪",
+    "Trazar ruta",
+    "Weg verfolgen"
+  ],
+  "UI_TOOLKIND_ROUTE_MODEL": [
+    "선택한 터미널의 현재 위치에서 대상까지 어떤 중계를 거치는지 확인합니다. traceroute 명령과 같은 처리입니다.",
+    "From the selected terminal's current position, see which hops lead to the target. Same handling as the traceroute command.",
+    "選んだターミナルから対象までの中継を確認します。traceroute と同じ処理です。",
+    "确认所选终端到目标经过的中继，与 traceroute 使用相同处理。",
+    "Comprueba los relés entre el terminal y el destino. Es el mismo procesamiento que traceroute.",
+    "Prüft die Zwischenstationen vom Terminal zum Ziel. Nutzt dieselbe Verarbeitung wie traceroute."
+  ],
+  "UI_TOOLKIND_ROUTE_LIMIT": [
+    "게임 속 가상 네트워크 그래프만 다룹니다. 도달할 수 있다는 것과 권한이 있다는 것은 다릅니다.",
+    "Only the in-game virtual network graph is involved. Being able to reach a host is not the same as having rights on it.",
+    "ゲームの仮想網グラフだけを扱います。到達できることと権限があることは別です。",
+    "仅处理游戏虚拟网络图。可达与有权限不同。",
+    "Solo trata el grafo virtual del juego. Alcanzar un destino no equivale a estar autorizado.",
+    "Verarbeitet nur den virtuellen Spielgraphen. Erreichbarkeit und Berechtigung sind verschieden."
+  ],
+  "UI_TOOLKIND_FILE": [
+    "파일 보기",
+    "File lens",
+    "ファイル観察",
+    "查看文件",
+    "Ver archivos",
+    "Dateien betrachten"
+  ],
+  "UI_TOOLKIND_FILE_MODEL": [
+    "선택한 터미널 세션의 계정 권한으로 파일을 읽습니다. cat 명령과 같은 권한 검사를 거칩니다.",
+    "Reads a file with the selected terminal session's account rights. It passes the same permission checks as cat.",
+    "選んだターミナルのアカウント権限で読みます。cat と同じ権限検査を使います。",
+    "以所选终端账号权限读取文件，经过与 cat 相同的权限检查。",
+    "Lee con los permisos de la cuenta del terminal y las mismas comprobaciones que cat.",
+    "Liest mit den Kontorechten des gewählten Terminals und derselben Rechteprüfung wie cat."
+  ],
+  "UI_TOOLKIND_FILE_LIMIT": [
+    "가상 파일 시스템만 다룹니다. 권한이 없으면 도구로 읽어도 거절됩니다.",
+    "Only the virtual file system is involved. Without permission, reading through a tool is refused too.",
+    "仮想ファイルシステムだけを扱います。権限がなければツールからも読めません。",
+    "仅处理虚拟文件系统。无权限时通过工具读取也会被拒绝。",
+    "Solo usa el sistema virtual. Sin permiso también se rechaza la lectura desde la herramienta.",
+    "Verarbeitet nur das virtuelle Dateisystem. Ohne Rechte wird auch die Werkzeugabfrage abgewiesen."
+  ],
+  "UI_TOOLKIND_LOG": [
+    "로그 보기",
+    "Log lens",
+    "ログ観察",
+    "查看日志",
+    "Ver registros",
+    "Protokolle betrachten"
+  ],
+  "UI_TOOLKIND_LOG_MODEL": [
+    "선택한 터미널 세션의 권한으로 로그 파일을 읽고, 시각·주체·대상을 직접 비교합니다.",
+    "Reads a log file with the selected terminal session's rights so you can compare times, actors and targets yourself.",
+    "選んだターミナルの権限でログを読み、時刻・主体・対象を自分で比べます。",
+    "以所选终端权限读取日志，手动对比时间、身份与目标。",
+    "Lee el registro con los permisos del terminal y compara tú hora, actor y destino.",
+    "Lies Protokolle mit den Terminalrechten und vergleiche selbst Zeit, Handelnden und Ziel."
+  ],
+  "UI_TOOLKIND_LOG_LIMIT": [
+    "로그는 기록된 만큼만 말해 줍니다. 빈 기록이나 같은 시각만으로 결론을 확정하지 마세요.",
+    "Logs only say what was recorded. Do not settle a conclusion on an empty record or matching timestamps alone.",
+    "ログが語るのは記録された範囲だけです。空の記録や同じ時刻だけで結論を決めないでください。",
+    "日志仅能说明已记录的内容，不要仅凭空记录或相同时刻下结论。",
+    "Un registro solo cuenta lo registrado. No concluyas solo por ausencias o por horas iguales.",
+    "Protokolle sagen nur, was erfasst wurde. Ziehe keine Schlussfolgerung allein aus Lücken oder gleichen Uhrzeiten."
+  ],
+  "UI_TOOL_FIELD_TARGET": [
+    "대상 호스트",
+    "Target host",
+    "対象ホスト",
+    "目标主机",
+    "Host de destino",
+    "Zielhost"
+  ],
+  "UI_TOOL_FIELD_PATH": [
+    "파일 경로",
+    "File path",
+    "ファイルパス",
+    "文件路径",
+    "Ruta del archivo",
+    "Dateipfad"
+  ],
+  "UI_TOOL_PH_FIELD_TARGET": [
+    "호스트 이름 또는 주소",
+    "Host name or address",
+    "ホスト名かアドレス",
+    "主机名或地址",
+    "Nombre o dirección del host",
+    "Hostname oder Adresse"
+  ],
+  "UI_TOOL_PH_FIELD_PATH": [
+    "읽을 파일 경로",
+    "Path of the file to read",
+    "読むファイルのパス",
+    "要读取的文件路径",
+    "Ruta del archivo que leer",
+    "Pfad der zu lesenden Datei"
+  ],
+  "UI_TOOL_OBS_TARGETS": [
+    "알려진 호스트 · 누르면 대상 칸에 넣습니다",
+    "Known hosts · click to fill the target field",
+    "既知のホスト · 押すと対象欄に入力",
+    "已知主机 · 点击填入目标框",
+    "Hosts conocidos · pulsa para elegir destino",
+    "Bekannte Hosts · anklicken, um das Ziel zu übernehmen"
+  ],
+  "UI_TOOL_OBS_FILES": [
+    "현재 위치에서 보이는 항목 · 누르면 경로 칸에 넣습니다",
+    "Entries visible here · click to fill the path field",
+    "現在地の項目 · 押すとパス欄に入力",
+    "当前位置可见项目 · 点击填入路径框",
+    "Elementos visibles aquí · pulsa para tomar la ruta",
+    "Sichtbare Einträge am aktuellen Ort · anklicken, um den Pfad zu übernehmen"
+  ],
+  "UI_TOOL_OBS_NONE_KNOWN": [
+    "아직 알려진 후보가 없습니다. 직접 입력하거나 먼저 조사하세요.",
+    "No known candidates yet. Type one yourself or investigate first.",
+    "まだ既知の候補はありません。直接入力するか、先に調べてください。",
+    "暂无已知候选，请手动输入或先调查。",
+    "Aún no hay candidatos conocidos. Introduce uno o investiga primero.",
+    "Noch keine Kandidaten bekannt. Gib selbst einen ein oder ermittle zuerst."
+  ],
+  "UI_TOOL_TARGET_ITEM": [
+    "{name} · {address}",
+    "{name} · {address}",
+    "{name} · {address}",
+    "{name} · {address}",
+    "{name} · {address}",
+    "{name} · {address}"
+  ],
+  "UI_FS_SESSION": [
+    "세션",
+    "Session",
+    "セッション",
+    "会话",
+    "Sesión",
+    "Sitzung"
+  ],
+  "UI_FS_PATH": [
+    "{user}@{host} : {cwd}",
+    "{user}@{host} : {cwd}",
+    "{user}@{host} : {cwd}",
+    "{user}@{host} : {cwd}",
+    "{user}@{host} : {cwd}",
+    "{user}@{host} : {cwd}"
+  ],
+  "UI_FS_UP": [
+    "상위 폴더",
+    "Parent folder",
+    "親フォルダー",
+    "上级目录",
+    "Carpeta superior",
+    "Übergeordneter Ordner"
+  ],
+  "UI_FS_UP_TIP": [
+    "선택한 터미널에서 cd .. 실행",
+    "Run cd .. in the selected terminal",
+    "選んだターミナルで cd .. を実行",
+    "在所选终端执行 cd ..",
+    "Ejecutar cd .. en el terminal elegido",
+    "cd .. im gewählten Terminal ausführen"
+  ],
+  "UI_FS_OPEN": [
+    "열기",
+    "Open",
+    "開く",
+    "打开",
+    "Abrir",
+    "Öffnen"
+  ],
+  "UI_FS_OPEN_TIP": [
+    "폴더는 cd, 파일은 cat으로 선택한 터미널에서 실행",
+    "Folders run cd, files run cat in the selected terminal",
+    "選んだターミナルで、フォルダーは cd、ファイルは cat を実行",
+    "在所选终端中，文件夹执行 cd，文件执行 cat",
+    "Usar cd para carpetas y cat para archivos en el terminal elegido",
+    "Im gewählten Terminal cd für Ordner und cat für Dateien ausführen"
+  ],
+  "UI_FS_ENTRY_TIP": [
+    "{path}\n소유자 {owner} · 권한 {mode}",
+    "{path}\nowner {owner} · mode {mode}",
+    "{path}\n所有者 {owner} · 権限 {mode}",
+    "{path}\n所有者 {owner} · 权限 {mode}",
+    "{path}\nPropietario {owner} · permisos {mode}",
+    "{path}\nEigentümer {owner} · Rechte {mode}"
+  ],
+  "UI_FS_EMPTY": [
+    "(이 위치에서 보이는 항목 없음)",
+    "(Nothing visible here)",
+    "（ここで見える項目はありません）",
+    "（此处没有可见项目）",
+    "(No hay elementos visibles aquí)",
+    "(Hier keine sichtbaren Einträge)"
+  ],
+  "UI_FS_TAG": [
+    "파일",
+    "Files",
+    "ファイル",
+    "文件",
+    "Archivo",
+    "Datei"
+  ],
+  "UI_FS_NOTE": [
+    "두 번 클릭 또는 Enter: 폴더는 cd, 파일은 cat으로 선택한 터미널 세션에서 실행되어 그 터미널 기록에도 남습니다.",
+    "Double-click or Enter: folders run cd and files run cat in the selected terminal session, which also records them.",
+    "ダブルクリックか Enter：フォルダーは cd、ファイルは cat で選択したターミナルに実行され、そちらの履歴にも残ります。",
+    "双击或 Enter：文件夹以 cd、文件以 cat 在所选终端执行，并记入该终端历史。",
+    "Doble clic o Enter: cd para carpetas y cat para archivos en el terminal elegido, donde también queda el historial.",
+    "Doppelklick oder Enter: Ordner werden mit cd, Dateien mit cat im gewählten Terminal geöffnet und dort protokolliert."
+  ],
+  "UI_AR_LIST": [
+    "회수한 자료",
+    "Recovered records",
+    "回収した資料",
+    "取得的资料",
+    "Pruebas recuperadas",
+    "Gesicherte Belege"
+  ],
+  "UI_AR_PIN": [
+    "핀 고정 / 해제",
+    "Pin / unpin",
+    "固定 / 解除",
+    "固定 / 取消固定",
+    "Fijar / soltar",
+    "Anheften / lösen"
+  ],
+  "UI_AR_PIN_TIP": [
+    "비교할 자료로 고정합니다 (화면 보조 기능)",
+    "Pin this record for comparison (screen aid only)",
+    "比較する資料として固定（画面上の補助）",
+    "固定为对比资料（仅画面辅助）",
+    "Fijar para comparar (ayuda de pantalla)",
+    "Zum Vergleichen anheften (Ansichtshilfe)"
+  ],
+  "UI_AR_COMPARE": [
+    "고정한 자료와 나란히 보기",
+    "Compare with pinned",
+    "固定した資料と並べる",
+    "与固定资料并排查看",
+    "Ver junto a la prueba fijada",
+    "Neben angeheftetem Beleg anzeigen"
+  ],
+  "UI_AR_COMPARE_TIP": [
+    "선택한 자료와 핀 고정한 자료를 나란히 봅니다",
+    "Show the selected record next to the pinned one",
+    "選択資料と固定資料を並べて表示",
+    "并排显示所选与固定资料",
+    "Mostrar la selección junto a la prueba fijada",
+    "Auswahl und angehefteten Beleg nebeneinander zeigen"
+  ],
+  "UI_AR_COMPARE_NONE": [
+    "핀 고정한 자료가 없습니다. 비교할 자료를 고른 뒤 핀을 고정하세요.",
+    "Nothing pinned. Select a record to compare and pin it.",
+    "固定した資料がありません。比較したい資料を選んで固定してください。",
+    "尚未固定资料，请先选择并固定要对比的资料。",
+    "No hay pruebas fijadas. Selecciona una y fíjala para comparar.",
+    "Kein Beleg angeheftet. Wähle zuerst einen Beleg zum Vergleich aus und hefte ihn an."
+  ],
+  "UI_AR_COMPARE_PINNED": [
+    "핀 · {meta}",
+    "Pinned · {meta}",
+    "固定 · {meta}",
+    "已固定 · {meta}",
+    "Fijado · {meta}",
+    "Angeheftet · {meta}"
+  ],
+  "UI_AR_ITEM_TIP": [
+    "기록 {record}\n출처 {source}",
+    "Record {record}\nSource {source}",
+    "記録 {record}\n出所 {source}",
+    "记录 {record}\n来源 {source}",
+    "Registro {record}\nOrigen {source}",
+    "Aufzeichnung {record}\nQuelle {source}"
+  ],
+  "UI_AR_META": [
+    "경로  {path}\n출처  {source}\n기록  {record}",
+    "Path    {path}\nSource  {source}\nRecord  {record}",
+    "パス  {path}\n出所  {source}\n記録  {record}",
+    "路径  {path}\n来源  {source}\n记录  {record}",
+    "Ruta  {path}\nOrigen  {source}\nRegistro  {record}",
+    "Pfad  {path}\nQuelle  {source}\nAufzeichnung  {record}"
+  ],
+  "UI_AR_EMPTY_META": [
+    "보관된 자료 0건",
+    "0 records archived",
+    "保管資料 0 件",
+    "归档资料 0 份",
+    "0 registros archivados",
+    "0 archivierte Belege"
+  ],
+  "UI_AR_EMPTY_BODY": [
+    "아직 회수한 자료가 없습니다.\n의뢰 대상 자료의 사본을 회수하면 내용과 출처가 이곳에 표시됩니다.",
+    "Nothing recovered yet.\nWhen you recover a copy of a requested record, its content and origin appear here.",
+    "回収した資料はまだありません。\n依頼の対象資料をコピーすると、本文と出所がここに表示されます。",
+    "尚未取得资料。\n取得委托目标的副本后，将在此显示内容与来源。",
+    "Aún no hay pruebas recuperadas.\nAl recuperar una copia del objetivo aparecerán aquí su contenido y origen.",
+    "Noch keine Belege gesichert.\nNach der Sicherung einer Zielkopie erscheinen hier Inhalt und Quelle."
+  ],
+  "UI_AR_NOTES": [
+    "메모",
+    "Notes",
+    "メモ",
+    "笔记",
+    "Notas",
+    "Notizen"
+  ],
+  "UI_AR_NOTES_PLACEHOLDER": [
+    "가설·관찰을 적어 두세요",
+    "Jot down hypotheses and observations",
+    "仮説や観察を書き留める",
+    "记录假设与观察",
+    "Anota hipótesis y observaciones",
+    "Hypothesen und Beobachtungen notieren"
+  ],
+  "UI_AR_NOTES_NOTE": [
+    "메모·핀·비교는 이 화면 안에서만 유지되며 저장되거나 사건 판정에 쓰이지 않습니다.",
+    "Notes, pins and comparisons stay on this screen only; they are never saved or used to decide a case.",
+    "メモ・固定・比較はこの画面だけに保持し、保存や事件判定には使いません。",
+    "笔记、固定与对比仅在此画面保留，不保存，也不参与事件判定。",
+    "Notas, fijación y comparación solo duran en esta pantalla; no se guardan ni deciden el caso.",
+    "Notizen, Anheften und Vergleich bestehen nur in dieser Ansicht; sie werden nicht gespeichert oder zur Fallwertung genutzt."
+  ],
+  "UI_BD_CHAPTER": [
+    "{n}장",
+    "Chapter {n}",
+    "第 {n} 章",
+    "第 {n} 章",
+    "Capítulo {n}",
+    "Kapitel {n}"
+  ],
+  "UI_BD_CHAPTER_PROGRESS": [
+    "{n}장 · {done}/{total}",
+    "Chapter {n} · {done}/{total}",
+    "第 {n} 章 · {done}/{total}",
+    "第 {n} 章 · {done}/{total}",
+    "Capítulo {n} · {done}/{total}",
+    "Kapitel {n} · {done}/{total}"
+  ],
+  "UI_BD_OPTIONAL_GROUP": [
+    "선택 사건 · {done}/{total}",
+    "Optional cases · {done}/{total}",
+    "任意事件 · {done}/{total}",
+    "可选事件 · {done}/{total}",
+    "Casos opcionales · {done}/{total}",
+    "Freiwillige Fälle · {done}/{total}"
+  ],
+  "UI_BD_ITEM": [
+    "{id} · {title}",
+    "{id} · {title}",
+    "{id} · {title}",
+    "{id} · {title}",
+    "{id} · {title}",
+    "{id} · {title}"
+  ],
+  "UI_BD_ITEM_LOCKED": [
+    "{id} · 잠긴 사건",
+    "{id} · Locked case",
+    "{id} · 未解放の事件",
+    "{id} · 未解锁事件",
+    "{id} · caso bloqueado",
+    "{id} · gesperrter Fall"
+  ],
+  "UI_BD_TAG_OPTIONAL": [
+    "선택 사건",
+    "Optional case",
+    "任意事件",
+    "可选事件",
+    "Caso opcional",
+    "Freiwilliger Fall"
+  ],
+  "UI_BD_STATE_CURRENT": [
+    "진행 중",
+    "In progress",
+    "進行中",
+    "进行中",
+    "En curso",
+    "In Arbeit"
+  ],
+  "UI_BD_STATE_DONE": [
+    "해결",
+    "Resolved",
+    "解決済み",
+    "已解决",
+    "Resuelto",
+    "Gelöst"
+  ],
+  "UI_BD_STATE_AVAILABLE": [
+    "시작 가능",
+    "Available",
+    "開始可能",
+    "可开始",
+    "Disponible",
+    "Verfügbar"
+  ],
+  "UI_BD_STATE_LOCKED": [
+    "앞선 사건 해결 필요",
+    "Resolve earlier cases first",
+    "前の事件の解決が必要",
+    "需先解决前置事件",
+    "Requiere resolver casos anteriores",
+    "Vorherige Fälle müssen gelöst sein"
+  ],
+  "UI_BD_STATE_RECHECK": [
+    "현재 상태는 목표를 다시 충족하지 않음 (완료 기록은 유지)",
+    "current state no longer meets the goals (completion record kept)",
+    "現在の状態は再び未達成（完了記録は保持）",
+    "当前状态不再满足目标（保留完成记录）",
+    "El estado actual ya no cumple el objetivo (se conserva la finalización)",
+    "Aktueller Zustand erfüllt Ziele nicht erneut (Abschluss bleibt vermerkt)"
+  ],
+  "UI_BD_GOAL": [
+    "의뢰 · {text}",
+    "Request · {text}",
+    "依頼 · {text}",
+    "委托 · {text}",
+    "Encargo · {text}",
+    "Auftrag · {text}"
+  ],
+  "UI_BD_OBJECTIVES": [
+    "목표 충족 상태",
+    "Goal status",
+    "目標の達成状況",
+    "目标满足状态",
+    "Estado de objetivos",
+    "Zielerfüllung"
+  ],
+  "UI_BD_NO_OBJECTIVES": [
+    "코어가 이 사건의 세부 목표를 제공하지 않았습니다.",
+    "The core did not provide detailed goals for this case.",
+    "コアからこの事件の詳細目標が提供されていません。",
+    "核心未提供此事件的详细目标。",
+    "El núcleo no proporcionó objetivos detallados para este caso.",
+    "Der Kern lieferte keine Einzelziele für diesen Fall."
+  ],
+  "UI_BD_STAGES": [
+    "조사 흐름 (안내)",
+    "Investigation flow (guide)",
+    "調査の流れ（案内）",
+    "调查流程（指引）",
+    "Flujo de investigación (guía)",
+    "Ermittlungsablauf (Hinweise)"
+  ],
+  "UI_BD_OTHER_DONE": [
+    "해결한 사건입니다. 다시 들어가면 이 사건의 저장된 상태에서 이어집니다.",
+    "A resolved case. Entering it again continues from its saved state.",
+    "解決済みの事件です。再度入ると、この事件の保存状態から続けます。",
+    "此事件已解决，重新进入会从其保存状态继续。",
+    "Caso resuelto. Al volver continúas desde su estado conservado.",
+    "Gelöster Fall. Beim Öffnen setzt du seinen erhaltenen Zustand fort."
+  ],
+  "UI_BD_OTHER_AVAILABLE": [
+    "시작할 수 있는 사건입니다. 전환해도 지금 사건의 상태는 보존됩니다.",
+    "This case is available. Switching keeps the current case's state.",
+    "開始できる事件です。切り替えても今の事件の状態は保持します。",
+    "此事件可开始，切换时会保留当前事件状态。",
+    "Puedes empezar este caso. Cambiar conserva el estado del actual.",
+    "Dieser Fall ist verfügbar. Ein Wechsel erhält den aktuellen Fallzustand."
+  ],
+  "UI_BD_OTHER_LOCKED": [
+    "앞선 사건을 해결하면 열립니다.",
+    "Opens once earlier cases are resolved.",
+    "前の事件を解決すると開きます。",
+    "解决前置事件后开放。",
+    "Se abre al resolver los casos previos.",
+    "Wird nach den vorausgesetzten Fällen verfügbar."
+  ],
+  "UI_BD_SWITCH": [
+    "이 사건으로 전환",
+    "Switch to this case",
+    "この事件へ切り替え",
+    "切换至此事件",
+    "Cambiar a este caso",
+    "Zu diesem Fall wechseln"
+  ],
+  "UI_BD_SWITCH_TIP": [
+    "현재 사건 상태는 코어가 보존합니다",
+    "The core keeps the current case's state",
+    "今の事件の状態はコアが保持します",
+    "核心会保留当前事件状态",
+    "El núcleo conserva el estado del caso actual",
+    "Der Kern erhält den aktuellen Fallzustand"
+  ],
+  "UI_BD_NEXT": [
+    "다음 사건",
+    "Next case",
+    "次の事件",
+    "下个事件",
+    "Siguiente caso",
+    "Nächster Fall"
+  ],
+  "UI_BD_NEXT_TIP": [
+    "현재 사건의 목표를 모두 충족하면 열립니다",
+    "Opens once every goal of the current case is met",
+    "現在の事件の目標をすべて満たすと開きます",
+    "满足当前事件全部目标后开放",
+    "Disponible al cumplir todos los objetivos actuales",
+    "Nach Erfüllung aller aktuellen Ziele verfügbar"
+  ],
+  "UI_BD_ENDING": [
+    "결말 선택",
+    "Choose ending",
+    "結末を選ぶ",
+    "选择结局",
+    "Elegir desenlace",
+    "Abschluss wählen"
+  ],
+  "UI_BD_ENDING_TIP": [
+    "메인 사건을 모두 해결하면 확인한 근거에 맞는 결말을 고를 수 있습니다",
+    "After every main case is resolved, choose an ending that fits the evidence you confirmed",
+    "本編の全事件を解決すると、証拠に合う結末を選べます",
+    "解决全部主线事件后，可按已确认的证据选择结局",
+    "Tras resolver la trama, elige el desenlace que permitan las pruebas",
+    "Nach allen Hauptfällen wählst du einen durch Belege gestützten Abschluss"
+  ],
+  "UI_BD_HINTS": [
+    "단서 (선택)",
+    "Hints (optional)",
+    "ヒント（任意）",
+    "提示（可选）",
+    "Pistas (opcionales)",
+    "Hinweise (optional)"
+  ],
+  "UI_BD_HINTS_NOTE": [
+    "원할 때만 1 → 2 → 3 순서로 엽니다. 단서를 열어도 통과 조건이나 경보는 바뀌지 않습니다.",
+    "Open them only if you want, in order 1 → 2 → 3. Opening hints never changes pass conditions or alerts.",
+    "必要なときだけ 1 → 2 → 3 と開けます。ヒントを見ても通過条件や警戒度は変わりません。",
+    "按需以 1 → 2 → 3 顺序展开，查看提示不会改变通关条件或警报。",
+    "Ábrelas solo si quieres, en orden 1 → 2 → 3. No cambian los requisitos ni la alerta.",
+    "Nur auf Wunsch in der Reihenfolge 1 → 2 → 3 öffnen. Ziele und Alarm ändern sich dadurch nicht."
+  ],
+  "UI_BD_HINT_N": [
+    "단서 {n}",
+    "Hint {n}",
+    "ヒント {n}",
+    "提示 {n}",
+    "Pista {n}",
+    "Hinweis {n}"
+  ],
+  "UI_BD_HINT_TIP": [
+    "다음 단계의 안내를 엽니다",
+    "Open the next level of guidance",
+    "次の段階の案内を開く",
+    "展开下一层指引",
+    "Abrir la siguiente ayuda",
+    "Nächste Hilfestufe öffnen"
+  ],
+  "UI_BD_HINT_HIDE": [
+    "단서 숨기기",
+    "Hide hints",
+    "ヒントを隠す",
+    "隐藏提示",
+    "Ocultar pistas",
+    "Hinweise ausblenden"
+  ],
+  "UI_BD_HINT_SHOW": [
+    "단서 다시 보기",
+    "Show hints again",
+    "ヒントを再表示",
+    "重新显示提示",
+    "Volver a ver pistas",
+    "Hinweise erneut zeigen"
+  ],
+  "UI_BD_HINT_LINE": [
+    "{n}. {text}",
+    "{n}. {text}",
+    "{n}. {text}",
+    "{n}. {text}",
+    "{n}. {text}",
+    "{n}. {text}"
+  ],
+  "UI_BD_NO_HINTS": [
+    "이 사건에는 준비된 단서가 없습니다.",
+    "This case has no prepared hints.",
+    "この事件には用意されたヒントがありません。",
+    "此事件暂无预设提示。",
+    "Este caso no tiene pistas preparadas.",
+    "Für diesen Fall gibt es keine vorbereiteten Hinweise."
+  ],
+  "UI_BD_CHAPTERS": [
+    "장 개요",
+    "Chapter overview",
+    "章の概要",
+    "章节概览",
+    "Resumen de capítulos",
+    "Kapitelübersicht"
+  ],
+  "UI_OBJ_ROW": [
+    "{mark} {text} — {state}",
+    "{mark} {text} — {state}",
+    "{mark} {text} — {state}",
+    "{mark} {text} — {state}",
+    "{mark} {text} — {state}",
+    "{mark} {text} — {state}"
+  ],
+  "UI_OBJ_DONE": [
+    "충족",
+    "met",
+    "達成",
+    "已满足",
+    "Cumplido",
+    "Erfüllt"
+  ],
+  "UI_OBJ_PENDING": [
+    "미충족",
+    "not met",
+    "未達成",
+    "未满足",
+    "Pendiente",
+    "Offen"
+  ],
+  "UI_OBJ_RECORD_ACQUIRED": [
+    "목표 기록 {id}의 정상 사본을 보관소에 회수",
+    "Recover a valid copy of record {id} into the archive",
+    "目標記録 {id} の正規コピーを保管庫に回収",
+    "将目标记录 {id} 的有效副本取得至档案库",
+    "Recuperar una copia válida de {id} en el archivo",
+    "Gültige Kopie der Zielaufzeichnung {id} ins Archiv sichern"
+  ],
+  "UI_OBJ_SOURCES_PRESERVED": [
+    "원격 원본을 바꾸거나 지우지 않고 보존",
+    "Keep the remote originals unmodified and undeleted",
+    "遠隔の原本を変更・削除せず保存",
+    "不修改或删除远程原件",
+    "Conservar originales remotos sin cambiar ni borrar",
+    "Entfernte Originale ohne Änderung oder Löschung erhalten"
+  ],
+  "UI_OBJ_FACT": [
+    "핵심 근거 확인",
+    "Confirm the key evidence",
+    "中心となる証拠を確認",
+    "确认核心证据",
+    "Establecer la prueba clave",
+    "Kernbeleg feststellen"
+  ],
+  "UI_OBJ_POLICY": [
+    "정책 {id}를 목표 상태로 설정",
+    "Set policy {id} to its goal state",
+    "方針 {id} を目標状態に設定",
+    "将策略 {id} 设为目标状态",
+    "Ajustar la política {id} al estado objetivo",
+    "Richtlinie {id} auf den Zielzustand setzen"
+  ],
+  "UI_OBJ_SESSION": [
+    "{id}에서 필요한 계정 세션 확보",
+    "Hold the required account session on {id}",
+    "{id} で必要なアカウントのセッションを取得",
+    "在 {id} 建立所需账号会话",
+    "Obtener la sesión necesaria en {id}",
+    "Benötigte Kontositzung auf {id} herstellen"
+  ],
+  "UI_OBJ_SERVICE": [
+    "{id}의 서비스 상태를 목표대로 유지",
+    "Keep {id}'s service in its goal state",
+    "{id} のサービスを目標状態に保持",
+    "维持 {id} 的目标服务状态",
+    "Mantener el servicio de {id} en el estado objetivo",
+    "Dienstzustand von {id} wie gefordert erhalten"
+  ],
+  "UI_OBJ_OTHER": [
+    "{kind} 목표 ({id})",
+    "{kind} goal ({id})",
+    "{kind} の目標 ({id})",
+    "{kind} 目标 ({id})",
+    "Objetivo {kind} ({id})",
+    "Ziel {kind} ({id})"
+  ],
+  "UI_ST_MISSION": [
+    "{id} · {title} · {state}",
+    "{id} · {title} · {state}",
+    "{id} · {title} · {state}",
+    "{id} · {title} · {state}",
+    "{id} · {title} · {state}",
+    "{id} · {title} · {state}"
+  ],
+  "UI_ST_DONE": [
+    "해결",
+    "Resolved",
+    "解決済み",
+    "已解决",
+    "Resuelto",
+    "Gelöst"
+  ],
+  "UI_ST_ACTIVE": [
+    "진행 중",
+    "In progress",
+    "進行中",
+    "进行中",
+    "En curso",
+    "In Arbeit"
+  ],
+  "UI_ST_SESSIONS": [
+    "터미널 세션",
+    "Terminal sessions",
+    "ターミナルのセッション",
+    "终端会话",
+    "Sesiones de terminal",
+    "Terminalsitzungen"
+  ],
+  "UI_ST_SESSION_LINE": [
+    "터미널 {n}  {user}@{host}  {cwd}",
+    "Terminal {n}  {user}@{host}  {cwd}",
+    "ターミナル {n}  {user}@{host}  {cwd}",
+    "终端 {n}  {user}@{host}  {cwd}",
+    "Terminal {n}  {user}@{host}  {cwd}",
+    "Terminal {n}  {user}@{host}  {cwd}"
+  ],
+  "UI_ST_SESSION_LINE_AUTH": [
+    "터미널 {n}  {user}@{host}  {cwd}  · 암호 입력 대기",
+    "Terminal {n}  {user}@{host}  {cwd}  · waiting for password",
+    "ターミナル {n}  {user}@{host}  {cwd}  · パスワード待ち",
+    "终端 {n}  {user}@{host}  {cwd}  · 等待密码",
+    "Terminal {n}  {user}@{host}  {cwd}  · esperando contraseña",
+    "Terminal {n}  {user}@{host}  {cwd}  · wartet auf Passwort"
+  ],
+  "UI_ST_POLICIES": [
+    "현재 정책",
+    "Current policies",
+    "現在の方針",
+    "当前策略",
+    "Políticas actuales",
+    "Aktuelle Richtlinien"
+  ],
+  "UI_ST_FACTS": [
+    "확인한 근거 {n}건",
+    "{n} piece(s) of evidence confirmed",
+    "確認した証拠 {n} 件",
+    "已确认证据 {n} 项",
+    "{n} pruebas establecidas",
+    "{n} festgestellte Belege"
+  ],
+  "UI_ST_NETWORK": [
+    "네트워크",
+    "Network",
+    "ネットワーク",
+    "网络",
+    "Red",
+    "Netzwerk"
+  ],
+  "UI_ST_NETWORK_NOTE": [
+    "청록 실선은 지금 연결된 터미널, 점선은 알려진 호스트입니다. 지도는 코어가 알려 준 호스트만 그립니다.",
+    "Solid teal lines are hosts a terminal is connected to; dashed lines are known hosts. The map only draws hosts reported by the core.",
+    "青緑の実線は現在接続中のターミナル、点線は既知のホストです。地図にはコアが知らせたホストだけを表示します。",
+    "青色实线表示当前连接的终端，虚线表示已知主机。地图仅绘制核心已公开的主机。",
+    "Las líneas turquesas continuas son conexiones actuales; las discontinuas, hosts conocidos. Solo se dibujan hosts revelados por el núcleo.",
+    "Türkise durchgezogene Linien zeigen verbundene Terminals, gestrichelte bekannte Hosts. Die Karte zeigt nur vom Kern bekannte Hosts."
+  ],
+  "UI_NET_LOCAL": [
+    "LOCAL",
+    "LOCAL",
+    "LOCAL",
+    "LOCAL",
+    "LOCAL",
+    "LOCAL"
+  ],
+  "UI_NET_EMPTY": [
+    "알려진 원격 노드 없음",
+    "No known remote nodes",
+    "既知の遠隔ノードなし",
+    "暂无已知远程节点",
+    "Sin nodos remotos conocidos",
+    "Keine bekannten entfernten Knoten"
+  ],
+  "UI_NET_KNOWN": [
+    "알려짐",
+    "known",
+    "既知",
+    "已知",
+    "Conocido",
+    "Bekannt"
+  ],
+  "UI_NET_CONNECTED": [
+    "연결 · 터미널 {list}",
+    "connected · terminal {list}",
+    "接続 · ターミナル {list}",
+    "连接 · 终端 {list}",
+    "Conectado · terminales {list}",
+    "Verbunden · Terminals {list}"
+  ],
+  "UI_ALERT_METER": [
+    "경보 {bar} {level}/{max}",
+    "Alert {bar} {level}/{max}",
+    "警戒 {bar} {level}/{max}",
+    "警报 {bar} {level}/{max}",
+    "Alerta {bar} {level}/{max}",
+    "Alarm {bar} {level}/{max}"
+  ],
+  "UI_ALERT_EXPLAIN_0": [
+    "관찰된 위험 없음. 로컬 오타·읽기·창 전환은 경보와 무관합니다.",
+    "No observed risk. Local typos, reading and switching windows never raise alerts.",
+    "観察された危険なし。ローカルの誤入力・読むこと・窓の切り替えは警戒度に無関係です。",
+    "未观察到风险。本地拼写错误、阅读与切换窗口不影响警报。",
+    "Sin riesgo observado. Errores locales, lectura y cambio de ventanas no afectan a la alerta.",
+    "Kein Risiko beobachtet. Lokale Tippfehler, Lesen und Fensterwechsel beeinflussen den Alarm nicht."
+  ],
+  "UI_ALERT_EXPLAIN_1": [
+    "서버가 거절된 시도를 기록했습니다. 같은 방식의 반복은 위험을 키웁니다.",
+    "The server logged a refused attempt. Repeating the same approach increases risk.",
+    "サーバーが拒否した試行を記録しました。同じ方法の繰り返しは危険を高めます。",
+    "服务器记录了被拒尝试，重复同样方式会增加风险。",
+    "El servidor registró un intento rechazado. Repetir el mismo método aumenta el riesgo.",
+    "Der Server protokollierte einen abgewiesenen Versuch. Wiederholungen derselben Methode erhöhen das Risiko."
+  ],
+  "UI_ALERT_EXPLAIN_2": [
+    "경보가 높습니다. 이미 유효한 세션과 다른 경로는 유지됩니다. 메일과 회수 자료에서 다른 길을 찾아보세요.",
+    "Alert is high. Sessions that are already valid and other routes remain. Look for another way in your mail and recovered records.",
+    "警戒度が高まっています。有効なセッションと他の経路は保持されます。メールや回収資料から別の道を探してください。",
+    "警报较高。有效会话与其他通路仍保留，请从邮件与资料中寻找其他路。",
+    "Alerta alta. Se mantienen sesiones válidas y otras rutas. Busca alternativas en correo y pruebas.",
+    "Hoher Alarm. Gültige Sitzungen und andere Wege bleiben erhalten. Suche Alternativen in Nachrichten und Belegen."
+  ],
+  "UI_ALERT_EXPLAIN_MAX": [
+    "경보 상한입니다. 이 출발점의 새 비인증 시도와 반복 인증은 차단될 수 있지만, 유효한 세션과 다른 경로는 그대로입니다.",
+    "Alert limit reached. New unauthenticated attempts and repeated sign-ins from this origin may be blocked, but valid sessions and other routes remain.",
+    "警戒度の上限です。この出発点の新たな未認証要求や認証の繰り返しは遮断される場合があります。有効セッションと別経路は残ります。",
+    "警报已达上限。此起点的新未认证尝试与重复认证可能被阻止，有效会话及其他通路仍保留。",
+    "Alerta máxima. Pueden bloquearse nuevos intentos sin autenticar y accesos repetidos desde este origen. Sesiones válidas y otras rutas permanecen.",
+    "Alarmgrenze erreicht. Neue unbestätigte und wiederholte Anmeldeversuche dieses Ausgangspunkts können gesperrt sein. Gültige Sitzungen und andere Wege bleiben erhalten."
+  ],
+  "UI_TOP_MISSION": [
+    "{id} · {title}",
+    "{id} · {title}",
+    "{id} · {title}",
+    "{id} · {title}",
+    "{id} · {title}",
+    "{id} · {title}"
+  ],
+  "UI_TOP_OBJECTIVES": [
+    "목표 {done}/{total}",
+    "Goals {done}/{total}",
+    "目標 {done}/{total}",
+    "目标 {done}/{total}",
+    "Objetivos {done}/{total}",
+    "Ziele {done}/{total}"
+  ],
+  "UI_TOP_CASE_DONE": [
+    "사건 해결",
+    "Case resolved",
+    "事件解決",
+    "事件已解决",
+    "Caso resuelto",
+    "Fall gelöst"
+  ],
+  "UI_TOP_RECORDED": [
+    "완료 기록 있음 · 현재 목표 {done}/{total}",
+    "Completion recorded · current goals {done}/{total}",
+    "完了記録あり · 現在の目標 {done}/{total}",
+    "已有完成记录 · 当前目标 {done}/{total}",
+    "Finalización registrada · objetivos actuales {done}/{total}",
+    "Abschluss vermerkt · aktuelle Ziele {done}/{total}"
+  ],
+  "UI_TOP_SESSION": [
+    "터미널 {n} · {user}@{host}",
+    "Terminal {n} · {user}@{host}",
+    "ターミナル {n} · {user}@{host}",
+    "终端 {n} · {user}@{host}",
+    "Terminal {n} · {user}@{host}",
+    "Terminal {n} · {user}@{host}"
+  ],
+  "UI_NOTE_CASE_COMPLETE": [
+    "사건 해결 · {title}",
+    "Case resolved · {title}",
+    "事件解決 · {title}",
+    "事件已解决 · {title}",
+    "Caso resuelto · {title}",
+    "Fall gelöst · {title}"
+  ],
+  "UI_NOTE_NEW_MAIL": [
+    "새 메일이 도착했습니다.",
+    "New mail has arrived.",
+    "新しいメールが届きました。",
+    "收到新邮件。",
+    "Ha llegado correo nuevo.",
+    "Neue Nachricht eingetroffen."
+  ],
+  "UI_NOTE_ARCHIVED": [
+    "회수 · {name} → 보관 자료",
+    "Recovered · {name} → Evidence",
+    "回収 · {name} → 保管資料",
+    "已取得 · {name} → 归档资料",
+    "Recuperado · {name} → Archivo",
+    "Gesichert · {name} → Belegarchiv"
+  ],
+  "UI_NOTE_OBJECTIVE": [
+    "목표 진행 · {done}/{total}",
+    "Goal progress · {done}/{total}",
+    "目標進行 · {done}/{total}",
+    "目标进度 · {done}/{total}",
+    "Progreso · {done}/{total}",
+    "Zielfortschritt · {done}/{total}"
+  ],
+  "UI_NOTE_ALERT": [
+    "경보 {level}/{max} · 서버가 거절된 시도를 기록했습니다.",
+    "Alert {level}/{max} · the server logged a refused attempt.",
+    "警戒 {level}/{max} · サーバーが拒否試行を記録しました。",
+    "警报 {level}/{max} · 服务器记录了被拒尝试。",
+    "Alerta {level}/{max} · el servidor registró un intento rechazado.",
+    "Alarm {level}/{max} · der Server protokollierte einen abgewiesenen Versuch."
+  ],
+  "UI_NOTE_ALERT_MAX": [
+    "경보 상한 · 상태 창에서 남은 경로 안내를 확인하세요.",
+    "Alert limit · check the Status window for remaining routes.",
+    "警戒度上限 · 状態窓で残る経路の案内を確認",
+    "警报上限 · 请在状态窗口查看剩余通路提示",
+    "Alerta máxima · consulta rutas restantes en Estado",
+    "Alarmgrenze · verbleibende Wege im Statusfenster prüfen"
+  ],
+  "UI_NOTE_NEXT_READY": [
+    "다음 사건으로 넘어갈 수 있습니다 · 사건 보드",
+    "You can move on to the next case · Case board",
+    "次の事件に進めます · 事件ボード",
+    "可进入下个事件 · 事件板",
+    "Puedes avanzar · Tablero del caso",
+    "Nächster Fall verfügbar · Fallübersicht"
+  ],
+  "UI_NOTE_ACCESS": [
+    "ACCESS · 터미널 {n} · {user}@{host}",
+    "ACCESS · terminal {n} · {user}@{host}",
+    "ACCESS · ターミナル {n} · {user}@{host}",
+    "ACCESS · 终端 {n} · {user}@{host}",
+    "ACCESS · terminal {n} · {user}@{host}",
+    "ACCESS · Terminal {n} · {user}@{host}"
+  ],
+  "UI_NOTE_LOCAL": [
+    "로컬로 복귀 · 터미널 {n} · {user}",
+    "Back to local · terminal {n} · {user}",
+    "ローカルへ復帰 · ターミナル {n} · {user}",
+    "已返回本地 · 终端 {n} · {user}",
+    "Vuelta a local · terminal {n} · {user}",
+    "Zurück zu lokal · Terminal {n} · {user}"
+  ],
+  "UI_NOTE_MISSION": [
+    "사건 {id} · {title}",
+    "Case {id} · {title}",
+    "事件 {id} · {title}",
+    "事件 {id} · {title}",
+    "Caso {id} · {title}",
+    "Fall {id} · {title}"
+  ],
+  "UI_NOTE_MAIN_COMPLETE": [
+    "메인 사건을 모두 해결했습니다. 결말을 고르거나 선택 사건을 이어갈 수 있습니다.",
+    "Every main case is resolved. Choose an ending or continue with optional cases.",
+    "本編の全事件を解決しました。結末を選ぶか、任意事件を続けられます。",
+    "全部主线事件已解决，可选择结局或继续可选事件。",
+    "Has resuelto todos los casos principales. Elige desenlace o continúa con los opcionales.",
+    "Alle Hauptfälle sind gelöst. Wähle einen Abschluss oder spiele freiwillige Fälle weiter."
+  ],
+  "UI_NOTE_ACTION_FAILED": [
+    "{code}\n{detail}",
+    "{code}\n{detail}",
+    "{code}\n{detail}",
+    "{code}\n{detail}",
+    "{code}\n{detail}",
+    "{code}\n{detail}"
+  ],
+  "UI_HELP_TAG": [
+    "도움말",
+    "Help",
+    "ヘルプ",
+    "帮助",
+    "Ayuda",
+    "Hilfe"
+  ],
+  "UI_HELP_GOAL": [
+    "현재 의뢰 · {text}",
+    "Current request · {text}",
+    "現在の依頼 · {text}",
+    "当前委托 · {text}",
+    "Encargo actual · {text}",
+    "Aktueller Auftrag · {text}"
+  ],
+  "UI_HELP_RUN_HELP": [
+    "터미널에서 help 실행",
+    "Run help in terminal",
+    "ターミナルで help 実行",
+    "在终端运行 help",
+    "Ejecutar help en el terminal",
+    "help im Terminal ausführen"
+  ],
+  "UI_HELP_RUN_HELP_TIP": [
+    "게임의 명령 도움말을 활성 터미널에 출력합니다",
+    "Print the game's command help in the active terminal",
+    "有効なターミナルにコマンドのヘルプを表示",
+    "在活动终端显示游戏命令帮助",
+    "Mostrar la ayuda de comandos en el terminal activo",
+    "Befehlshilfe im aktiven Terminal anzeigen"
+  ],
+  "UI_HELP_OPEN_HINTS": [
+    "사건 보드 · 단서",
+    "Case board · hints",
+    "事件ボード・ヒント",
+    "事件板与提示",
+    "Tablero y pistas",
+    "Fallübersicht und Hinweise"
+  ],
+  "UI_HELP_OPEN_HINTS_TIP": [
+    "현재 목표 충족 상태와 선택 단서를 봅니다",
+    "See current goal status and optional hints",
+    "現在の目標達成状況と任意ヒントを見る",
+    "查看当前目标状态与可选提示",
+    "Ver objetivos actuales y pistas opcionales",
+    "Aktuelle Zielerfüllung und freiwillige Hinweise ansehen"
+  ],
+  "UI_HELP_BODY": [
+    "이 컴퓨터는 게임 속 가상 단말입니다. 서버·사이트·파일·도구는 모두 허구이며 실제 네트워크나 셸, 웹 브라우저로 나가지 않습니다.\n\n창\n  제목줄을 끌어 이동 · 두 번 클릭 또는 □로 최대화/복원 · 오른쪽 아래 모서리로 크기 조절\n  ─ 최소화 · × 닫기: 창만 숨기며 세션·입력·기록은 유지됩니다\n  Ctrl/Cmd+1~9: 터미널 · 메일 · 브라우저 · RequestLab · 도구 · 파일 · 보관 자료 · 사건 보드 · 상태\n  Ctrl/Cmd+Shift+1~4: 터미널 1~4 · Ctrl/Cmd+Tab: 다른 창으로\n  F1 도움말 · F6 작업 표시줄 · Shift+F6 상단 글자 크기·일시정지 · F10 작업실로\n  입력칸 밖에서 Esc: 일시정지\n\n터미널\n  터미널 1~4는 같은 세계를 공유하지만 각자 접속·작업 경로·명령 기록·암호 대기를 따로 가집니다.\n  Enter 실행 · ↑/↓ 이전 명령 · Tab 자동완성 · Esc 입력 지우기/암호 대기 취소 · Ctrl+L 또는 clear 화면 지우기\n  암호 입력은 가려지고 기록에 남지 않습니다. exit와 연결 종료는 그 터미널의 원격 연결만 끊습니다.\n\n브라우저와 RequestLab\n  게임 속 가상 주소만 열립니다. 브라우저·curl·RequestLab은 같은 가상 요청 처리기를 씁니다.\n  RequestLab의 헤더와 본문은 JSON 객체여야 하며, 형식이 틀리면 보내지 않습니다.\n\n도구 작업대\n  도구는 정답 버튼이 아닙니다. 공개된 관찰 자료를 읽고 가설을 입력해 결과를 비교합니다.\n  빈 입력은 보내지 않습니다. 고급 JSON 입력은 선택 사항입니다. 어떤 도구를 썼는지는 판정에 쓰이지 않습니다.\n\n사건 보드와 단서\n  현재 목표의 실제 충족 상태를 보여 줍니다. 단서는 원할 때만 1 → 2 → 3 순서로 엽니다.\n  목표를 모두 채우면 다음 사건으로 넘어갈 수 있습니다. 다른 사건으로 전환해도 각 사건의 상태는 보존됩니다.\n\n저장\n  상태가 바뀌면 자동 저장합니다. 저장에 실패하면 자동저장을 멈추고, 백업 복구 또는 손상본 보존·새 저장을 고르게 합니다.\n  보관 자료의 핀·비교·메모는 이 화면의 보조 기능이며 저장되거나 판정에 쓰이지 않습니다.\n\n경보\n  서버가 관찰한 거절 행동에만 오릅니다. 로컬 오타·읽기·창 전환·시간 경과는 경보와 무관합니다.",
+    "This computer is a virtual terminal inside the game. Servers, sites, files and tools are all fictional; nothing reaches a real network, shell or web browser.\n\nWindows\n  Drag the title bar to move · double-click or □ to maximize/restore · drag the bottom-right corner to resize\n  ─ minimize · × close: hides the window only; sessions, input and history are kept\n  Ctrl/Cmd+1–9: Terminal · Mail · Browser · RequestLab · Tools · Files · Evidence · Case board · Status\n  Ctrl/Cmd+Shift+1–4: Terminals 1–4 · Ctrl/Cmd+Tab: switch window\n  F1 help · F6 taskbar · Shift+F6 top bar text size and pause · F10 back to studio\n  Esc outside a text field: pause\n\nTerminals\n  Terminals 1–4 share one world but each keeps its own connection, working directory, command history and password prompt.\n  Enter runs · ↑/↓ history · Tab completes · Esc clears input or cancels a password prompt · Ctrl+L or clear wipes the screen\n  Passwords are hidden and never recorded. exit and Disconnect close only that terminal's remote connection.\n\nBrowser and RequestLab\n  Only in-game virtual addresses open. The browser, curl and RequestLab share one virtual request handler.\n  RequestLab headers and body must be JSON objects; malformed input is not sent.\n\nTools\n  Tools are not answer buttons. Read the published observations, enter a hypothesis and compare results.\n  Empty input is never sent. Advanced JSON input is optional. Which tool you used never decides a case.\n\nCase board and hints\n  Shows the real status of the current goals. Hints open only when you ask, in order 1 → 2 → 3.\n  When every goal is met you can move to the next case. Switching cases keeps each case's state.\n\nSaving\n  Progress is saved automatically when the state changes. If saving fails, autosave pauses and you choose between restoring the backup or keeping damaged files and saving new.\n  Evidence pins, comparisons and notes are screen aids only; they are not saved or used to decide a case.\n\nAlerts\n  Alerts rise only for refused actions the server observed. Local typos, reading, switching windows and time passing never raise them.",
+    "このコンピューターはゲーム内の仮想端末です。サーバー、サイト、ファイル、ツールは架空であり、実際のネットワーク、シェル、ウェブブラウザーには移りません。\n\nウィンドウ\n  タイトルバーをドラッグして移動 · ダブルクリックか □ で最大化/復元 · 右下でサイズ変更\n  ─ 最小化 · × 閉じる：窓だけを隠し、セッション、入力、履歴は保持します\n  Ctrl/Cmd+1~9：ターミナル · メール · ブラウザー · RequestLab · ツール · ファイル · 保管資料 · 事件ボード · 状態\n  Ctrl/Cmd+Shift+1~4：ターミナル 1~4 · Ctrl/Cmd+Tab：別の窓へ\n  F1 ヘルプ · F6 タスクバー · Shift+F6 上部の文字サイズ・一時停止 · F10 作業部屋へ\n  入力欄の外で Esc：一時停止\n\nターミナル\n  ターミナル 1~4 は同じ世界を共有し、接続、作業パス、履歴、認証待機は別々です。\n  Enter 実行 · ↑/↓ 履歴 · Tab 補完 · Esc 入力消去/認証取消 · Ctrl+L または clear で画面消去\n  パスワードは非表示で履歴に残りません。exit と接続終了は、その端末の遠隔接続だけを切ります。\n\nブラウザーと RequestLab\n  ゲームの仮想アドレスだけを開きます。ブラウザー、curl、RequestLab は同じ要求処理を使います。\n  RequestLab のヘッダーと本文は JSON オブジェクトが必要です。形式が違えば送りません。\n\nツール作業台\n  ツールは正解ボタンではありません。公開の観察を読み、仮説を入力して結果を比べます。\n  空の入力は送りません。上級 JSON 入力は任意です。使ったツール自体は判定に関係しません。\n\n事件ボードとヒント\n  目標の実際の達成状況を表示します。ヒントは必要なときだけ 1 → 2 → 3 と開けます。\n  全目標を満たすと次の事件へ進めます。切り替えても各事件の状態は保持します。\n\n保存\n  状態変更時に自動保存します。失敗すると自動保存を止め、バックアップ復旧か、破損版を残して新規保存を選びます。\n  保管資料の固定、比較、メモは画面上の補助であり、保存や判定には使いません。\n\n警戒度\n  サーバーが観察した拒否動作だけで上がります。ローカルの誤入力、読むこと、窓の切り替え、時間経過は無関係です。",
+    "这台电脑是游戏中的虚拟终端。服务器、网站、文件与工具均为虚构，不会进入真实网络、shell 或网页浏览器。\n\n窗口\n  拖动标题栏移动 · 双击或 □ 最大化/还原 · 拖动右下角调整大小\n  ─ 最小化 · × 关闭：仅隐藏窗口，保留会话、输入与记录\n  Ctrl/Cmd+1~9：终端 · 邮件 · 浏览器 · RequestLab · 工具 · 文件 · 归档资料 · 事件板 · 状态\n  Ctrl/Cmd+Shift+1~4：终端 1~4 · Ctrl/Cmd+Tab：切换窗口\n  F1 帮助 · F6 任务栏 · Shift+F6 顶部文字大小与暂停 · F10 返回工作室\n  输入框外按 Esc：暂停\n\n终端\n  终端 1~4 共享同一世界，但连接、工作路径、命令历史与等待密码均独立。\n  Enter 执行 · ↑/↓ 历史命令 · Tab 补全 · Esc 清空输入/取消认证 · Ctrl+L 或 clear 清屏\n  密码隐藏且不留历史。exit 与断开连接仅结束当前终端的远程连接。\n\n浏览器与 RequestLab\n  仅打开游戏内虚拟地址。浏览器、curl 与 RequestLab 使用相同的虚拟请求处理器。\n  RequestLab 标头与正文须为 JSON 对象，格式错误时不会发送。\n\n工具工作台\n  工具不是答案按钮。阅读公开观察、输入假设并比较结果。\n  不发送空输入，高级 JSON 输入可选。工具选择本身不参与判定。\n\n事件板与提示\n  显示目标的实际满足状态。按需以 1 → 2 → 3 顺序打开提示。\n  满足全部目标即可进入下个事件。切换时各事件状态均保留。\n\n保存\n  状态变化时自动保存。失败后暂停自动保存，可选择备份恢复，或保留损坏文件并新建存档。\n  归档资料的固定、对比与笔记仅为画面辅助，不保存，也不参与判定。\n\n警报\n  仅因服务器观察到的拒绝行为上升。本地输入错误、阅读、窗口切换与时间经过均不影响警报。",
+    "Este ordenador es una terminal virtual del juego. Servidores, sitios, archivos y herramientas son ficticios y no salen a redes, shells ni navegadores reales.\n\nVentanas\n  Arrastra la barra de título para mover · doble clic o □ para maximizar/restaurar · esquina inferior derecha para redimensionar\n  ─ minimizar · × cerrar: solo ocultan la ventana; conservan sesión, entrada e historial\n  Ctrl/Cmd+1~9: terminal · correo · navegador · RequestLab · herramientas · archivos · pruebas · tablero · estado\n  Ctrl/Cmd+Shift+1~4: terminales 1~4 · Ctrl/Cmd+Tab: cambiar de ventana\n  F1 ayuda · F6 barra de tareas · Shift+F6 texto y pausa superiores · F10 estudio\n  Esc fuera de un campo: pausa\n\nTerminales\n  Las terminales 1~4 comparten el mundo, pero tienen conexión, ruta, historial y autenticación independientes.\n  Enter ejecutar · ↑/↓ historial · Tab completar · Esc borrar/cancelar autenticación · Ctrl+L o clear limpiar\n  Las contraseñas se ocultan y no se guardan en el historial. exit y cerrar conexión solo cortan la conexión remota de esa terminal.\n\nNavegador y RequestLab\n  Solo abren direcciones virtuales. Navegador, curl y RequestLab usan el mismo procesador de peticiones.\n  Cabeceras y cuerpo de RequestLab deben ser objetos JSON; un formato inválido no se envía.\n\nBanco de herramientas\n  Las herramientas no son botones de solución. Lee las observaciones, plantea hipótesis y compara resultados.\n  No se envían entradas vacías. El JSON avanzado es opcional. La herramienta elegida no determina el resultado del caso.\n\nTablero y pistas\n  Muestran el cumplimiento real de objetivos. Abre pistas solo si quieres, en orden 1 → 2 → 3.\n  Cumplir todos los objetivos permite avanzar. Cambiar de caso conserva cada estado.\n\nGuardado\n  Los cambios se guardan automáticamente. Si falla, se detiene el guardado automático y puedes recuperar copia o conservar los daños y guardar de nuevo.\n  Fijación, comparación y notas son ayudas de esta pantalla; no se guardan ni cuentan para la evaluación.\n\nAlerta\n  Solo sube por rechazos observados por el servidor. Errores locales, lectura, ventanas y paso del tiempo no la cambian.",
+    "Dieser Computer ist ein virtuelles Spielterminal. Server, Seiten, Dateien und Werkzeuge sind fiktiv. Sie verlassen weder das Spielnetz noch öffnen sie echte Shells oder Browser.\n\nFenster\n  Titelleiste ziehen zum Verschieben · Doppelklick oder □ maximiert/stellt wieder her · unten rechts Größe ändern\n  ─ minimieren · × schließen: blendet nur das Fenster aus; Sitzung, Eingabe und Verlauf bleiben\n  Ctrl/Cmd+1~9: Terminal · Post · Browser · RequestLab · Werkzeuge · Dateien · Belege · Fallübersicht · Status\n  Ctrl/Cmd+Shift+1~4: Terminals 1~4 · Ctrl/Cmd+Tab: Fenster wechseln\n  F1 Hilfe · F6 Taskleiste · Shift+F6 obere Textgröße und Pause · F10 Arbeitszimmer\n  Esc außerhalb eines Eingabefelds: Pause\n\nTerminals\n  Terminals 1~4 teilen dieselbe Welt, behalten aber eigene Verbindungen, Pfade, Verläufe und Anmeldezustände.\n  Enter ausführen · ↑/↓ Verlauf · Tab ergänzen · Esc leeren/Anmeldung abbrechen · Ctrl+L oder clear leeren\n  Passwörter sind verdeckt und landen nicht im Verlauf. exit und Verbindungsende schließen nur die Fernverbindung dieses Terminals.\n\nBrowser und RequestLab\n  Öffnen nur virtuelle Spieladressen. Browser, curl und RequestLab verwenden dieselbe Anfrageverarbeitung.\n  Header und Inhalt in RequestLab müssen JSON-Objekte sein. Ungültige Formate werden nicht gesendet.\n\nWerkzeugbank\n  Werkzeuge sind keine Lösungstasten. Lies Beobachtungen, stelle Hypothesen auf und vergleiche Ergebnisse.\n  Leere Eingaben werden nicht gesendet. Erweitertes JSON ist optional. Die Werkzeugwahl entscheidet den Fall nicht.\n\nFallübersicht und Hinweise\n  Zeigen die tatsächliche Zielerfüllung. Hinweise öffnest du auf Wunsch in der Folge 1 → 2 → 3.\n  Nach allen Zielen kannst du weitergehen. Beim Fallwechsel bleibt jeder Zustand erhalten.\n\nSpeichern\n  Zustandsänderungen werden automatisch gespeichert. Bei Fehlern stoppt dies; du wählst Sicherungswiederherstellung oder Erhalt beschädigter Dateien und neues Speichern.\n  Anheften, Vergleiche und Notizen sind Ansichtshilfen. Sie werden weder gespeichert noch gewertet.\n\nAlarm\n  Steigt nur durch vom Server beobachtete abgewiesene Aktionen. Lokale Tippfehler, Lesen, Fensterwechsel und Zeitablauf beeinflussen ihn nicht."
+  ],
+  "UI_ENDING_HEADER": [
+    "마지막 기록의 전달",
+    "Delivering the last record",
+    "最後の記録の引き渡し",
+    "最后记录的交付",
+    "La entrega del último registro",
+    "Die Übergabe der letzten Aufzeichnung"
+  ],
+  "UI_ENDING_INTRO": [
+    "메인 사건을 모두 해결했습니다. 지금까지 확인한 근거로 고를 수 있는 전달 방식만 표시됩니다.",
+    "Every main case is resolved. Only the delivery choices supported by the evidence you confirmed are shown.",
+    "本編の全事件を解決しました。確かめた証拠で選べる引き渡し方だけを表示します。",
+    "全部主线事件已解决，仅显示当前证据允许的交付方式。",
+    "Todos los casos principales están resueltos. Solo aparecen entregas permitidas por las pruebas.",
+    "Alle Hauptfälle sind gelöst. Angezeigt werden nur durch die Belege gestützte Übergaben."
+  ],
+  "UI_ENDING_NOT_YET": [
+    "메인 사건을 모두 해결하면 결말을 고를 수 있습니다. 현재 {done}/{total}.",
+    "Resolve every main case to choose an ending. Currently {done}/{total}.",
+    "本編の全事件を解決すると結末を選べます。現在 {done}/{total}。",
+    "解决全部主线事件后可选择结局。当前 {done}/{total}。",
+    "El desenlace estará disponible tras los casos principales. Ahora {done}/{total}.",
+    "Nach allen Hauptfällen kannst du den Abschluss wählen. Derzeit {done}/{total}."
+  ],
+  "UI_ENDING_CHOICE": [
+    "{title}",
+    "{title}",
+    "{title}",
+    "{title}",
+    "{title}",
+    "{title}"
+  ],
+  "UI_ENDING_CHOICE_TIP": [
+    "이 방식으로 기록을 전달합니다. 선택은 저장됩니다.",
+    "Deliver the record this way. The choice is saved.",
+    "この方法で記録を渡します。選択は保存します。",
+    "以此方式交付记录，选择会被保存。",
+    "Entregar así el registro. La elección se guarda.",
+    "Aufzeichnung auf diesem Weg übergeben. Die Wahl wird gespeichert."
+  ],
+  "UI_ENDING_LOCKED": [
+    "잠긴 결말 · 아직 확인하지 못한 근거가 필요합니다.",
+    "Locked ending · needs evidence you have not confirmed yet.",
+    "未解放の結末 · まだ確かめていない証拠が必要",
+    "未解锁结局 · 需要尚未确认的证据",
+    "Desenlace bloqueado · faltan pruebas",
+    "Gesperrter Abschluss · weitere Belege nötig"
+  ],
+  "UI_ENDING_CONFIRM": [
+    "‘{title}’ 방식으로 기록을 전달합니다.\n이 선택은 캠페인 저장에 기록됩니다.",
+    "Deliver the record as ‘{title}’.\nThis choice is written to the campaign save.",
+    "「{title}」の方法で記録を渡します。\nこの選択はキャンペーンに保存されます。",
+    "以“{title}”方式交付记录。\n此选择会写入战役存档。",
+    "Entregarás el registro mediante «{title}».\nLa elección quedará guardada en la campaña.",
+    "Die Aufzeichnung wird über „{title}“ übergeben.\nDiese Wahl wird im Kampagnenstand gespeichert."
+  ],
+  "UI_ENDING_CREDITS": [
+    "{credits}",
+    "{credits}",
+    "{credits}",
+    "{credits}",
+    "{credits}",
+    "{credits}"
+  ],
+  "UI_ENDING_THANKS": [
+    "플레이해 주셔서 고맙습니다.",
+    "Thank you for playing.",
+    "プレイしてくださり、ありがとうございます。",
+    "感谢游玩。",
+    "Gracias por jugar.",
+    "Danke fürs Spielen."
+  ],
+  "UI_ENDING_TO_BOARD": [
+    "사건 보드로",
+    "Back to case board",
+    "事件ボードへ",
+    "返回事件板",
+    "Al tablero del caso",
+    "Zur Fallübersicht"
+  ]
+}

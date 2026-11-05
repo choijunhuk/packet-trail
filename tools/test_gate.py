@@ -16,9 +16,15 @@ import json
 import os
 import sys
 
-stage = "import" if "--import" in sys.argv else (
-    "content" if "res://tools/validate_content.gd" in sys.argv else "runner")
-suite = {"content": "content_validation", "runner": "first_playable"}.get(stage)
+stages = {
+    "res://tools/validate_content.gd": ("content", "content_validation"),
+    "res://tests/headless/run_all.gd": ("runner", "first_playable"),
+    "res://tools/validate_campaign.gd": ("campaign_content", "campaign_content"),
+    "res://tests/headless/test_campaign.gd": ("campaign", "campaign"),
+    "res://tools/run_presentation.gd": ("presentation", "presentation"),
+    "res://tools/validate_portraits.gd": ("portraits", "portraits"),
+}
+stage, suite = next((value for key, value in stages.items() if key in sys.argv), ("import", None))
 if stage == os.environ["PACKET_TRAIL_FAKE_STAGE"]:
     print(os.environ["PACKET_TRAIL_FAKE_OUTPUT"])
     raise SystemExit(int(os.environ.get("PACKET_TRAIL_FAKE_EXIT", "0")))
@@ -39,6 +45,14 @@ class GateFailureTests(unittest.TestCase):
             "godot/scripts/core/content_loader.gd", "godot/tests/headless/run_all.gd",
             "godot/tests/headless/test_save_store.gd", "godot/tools/validate_content.gd",
             "tools/test_check_docs.py", "tools/test_gate.py", "tools/check_boundaries.py",
+            "tools/check_campaign.py", "tools/check_locales.py", "tools/test_check_locales.py",
+            "godot/scripts/core/campaign_game.gd", "godot/scripts/core/campaign_loader.gd",
+            "godot/data/campaign/campaign.json", "godot/tests/headless/test_campaign.gd",
+            "godot/tools/validate_campaign.gd", "godot/tools/run_presentation.gd",
+            "godot/tests/headless/test_presentation.gd", "godot/scenes/full_game.tscn",
+            "godot/scenes/campaign_desktop.tscn", "godot/scripts/apps/campaign_desktop.gd",
+            "godot/tools/validate_portraits.gd", "godot/tools/probe_grep_flags.gd",
+            "tools/test_shell_commands.py", "tools/test_check_campaign.py",
         )
         for relative in required:
             target = self.root / relative
@@ -71,20 +85,20 @@ class GateFailureTests(unittest.TestCase):
         return result
 
     def test_exit_zero_godot_errors_stop_every_headless_stage(self):
-        for stage in ("import", "content", "runner"):
+        for stage in ("import", "content", "runner", "campaign_content", "campaign", "presentation", "portraits"):
             for error in ("SCRIPT ERROR: fixture", "Parse Error: fixture", "ERROR: fixture"):
                 with self.subTest(stage=stage, error=error):
                     self.assert_blocked(stage, error, expected=f"{stage} reported a Godot error")
 
     def test_nonzero_godot_exit_is_propagated_from_every_stage(self):
-        for stage in ("import", "content", "runner"):
+        for stage in ("import", "content", "runner", "campaign_content", "campaign", "presentation", "portraits"):
             with self.subTest(stage=stage):
                 result = self.assert_blocked(stage, "injected failure", exit_code=7,
                                              expected="injected failure")
                 self.assertEqual(result.returncode, 7)
 
     def test_missing_wrong_failed_and_malformed_suite_reports_are_rejected(self):
-        for stage, suite in (("content", "content_validation"), ("runner", "first_playable")):
+        for stage, suite in (("content", "content_validation"), ("runner", "first_playable"), ("campaign_content", "campaign_content"), ("campaign", "campaign"), ("presentation", "presentation"), ("portraits", "portraits")):
             reports = [
                 "no suite report", "{not json}",
                 json.dumps({"suite": "wrong_suite", "checks": 3, "failures": []}),
@@ -97,7 +111,7 @@ class GateFailureTests(unittest.TestCase):
                                         expected=f"invalid or missing successful {suite} report")
 
     def test_suite_requires_positive_integer_checks_and_one_report(self):
-        for stage, suite in (("content", "content_validation"), ("runner", "first_playable")):
+        for stage, suite in (("content", "content_validation"), ("runner", "first_playable"), ("campaign_content", "campaign_content"), ("campaign", "campaign"), ("presentation", "presentation"), ("portraits", "portraits")):
             reports = [json.dumps({"suite": suite, "checks": count, "failures": []})
                        for count in (0, -1, True, 1.5, "3", None)]
             valid = json.dumps({"suite": suite, "checks": 3, "failures": []})

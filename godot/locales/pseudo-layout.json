@@ -1,0 +1,27 @@
+{
+  "expansion_ratio": 0.4,
+  "viewports": [
+    [
+      1280,
+      720
+    ],
+    [
+      1600,
+      900
+    ]
+  ],
+  "font_scales": [
+    1.0,
+    1.6
+  ],
+  "strings": {
+    "ROOM_SUBTITLE": "⟦Find the next record before the rain stops. ·················⟧",
+    "ROOM_CONTROLS": "⟦WASD move · Hold right mouse to look · E computer · Esc menu ························⟧",
+    "NEW_GAME_CONFIRM": "⟦Back up the existing campaign and replace its save slot with a new session. Legacy M01 saves are preserved. ···········································⟧",
+    "BACKGROUND_AUDIO": "⟦Play audio in background ··········⟧",
+    "APPLY_SETTINGS": "⟦Apply and save ······⟧",
+    "CREDITS_BODY": "⟦An independently made hacking simulator\nUses simulated servers and commands only.\nNoto Sans KR / JP / SC / Mono · SIL Open Font License 1.1 ························································⟧",
+    "MISSION_PROGRESS": "⟦Case {current} / {total} ··········⟧"
+  },
+  "acceptance": "Render these samples with wrapping at both sizes and scales; data validation alone is not layout acceptance."
+}

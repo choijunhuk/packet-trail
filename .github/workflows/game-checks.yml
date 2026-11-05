@@ -99,7 +99,132 @@ jobs:
           print(f"Verified official archive: {asset}")
           PY
 
-      - name: Run headless game, content, document, and boundary checks
+      - name: Run complete headless game, campaign, presentation, locale, and boundary gate
         run: |
           "$GODOT_BIN" --version
           bash tools/gate.sh
+
+      - name: Check the standard-library package helper
+        run: python3 tools/package_game.py --self-test
+
+      - name: Linux source rendering and input smoke with installed Xvfb and Mesa
+        if: runner.os == 'Linux'
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "true"
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import shutil
+          import struct
+          import subprocess
+          import tempfile
+
+          artifacts = Path(".omx/artifacts/ci-render")
+          artifacts.mkdir(parents=True, exist_ok=True)
+
+          def summary(message):
+              print(message)
+              with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as stream:
+                  stream.write(message + "\n\n")
+
+          prerequisites = [tool for tool in ("xvfb-run", "Xvfb", "xauth") if not shutil.which(tool)]
+          if prerequisites:
+              summary("Linux Xvfb/Mesa source render: **NOT_RUN**; installed tools missing: " + ", ".join(prerequisites))
+              raise SystemExit(0)
+
+          base = ["xvfb-run", "--auto-servernum", "--server-args=-screen 0 1600x900x24",
+                  os.environ["GODOT_BIN"], "--display-driver", "x11", "--audio-driver", "Dummy",
+                  "--rendering-method", "gl_compatibility", "--rendering-driver", "opengl3"]
+          with tempfile.TemporaryDirectory(prefix="packet-trail-render-probe-") as directory:
+              probe = Path(directory)
+              (probe / "project.godot").write_text(
+                  'config_version=5\n[application]\nconfig/name="PacketTrailRendererProbe"\nrun/main_scene="res://probe.tscn"\n',
+                  encoding="utf-8")
+              (probe / "probe.tscn").write_text(
+                  '[gd_scene format=3]\n[node name="Probe" type="Node3D"]\n[node name="Camera" type="Camera3D" parent="."]\ncurrent=true\n',
+                  encoding="utf-8")
+              try:
+                  result = subprocess.run(base + ["--path", str(probe), "--quit-after", "3"],
+                                          capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=45)
+              except subprocess.TimeoutExpired:
+                  summary("Linux Xvfb/Mesa source render: **NOT_RUN**; empty renderer preflight timed out.")
+                  raise SystemExit(0)
+          probe_log = result.stdout + result.stderr
+          (artifacts / "renderer-probe.log").write_text(probe_log, encoding="utf-8")
+          renderer = [line for line in probe_log.splitlines() if "OpenGL API" in line]
+          if result.returncode or not renderer or not re.search(r"llvmpipe|softpipe", probe_log, re.I):
+              summary("Linux Xvfb/Mesa source render: **NOT_RUN**; no successful software OpenGL preflight.\n```text\n" + probe_log[-5000:] + "\n```")
+              raise SystemExit(0)
+
+          try:
+              result = subprocess.run(base + ["--path", "godot", "--script", "res://tools/capture_full_game.gd"],
+                                      capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=240)
+          except subprocess.TimeoutExpired as error:
+              partial = error.stdout or b""
+              partial = partial.decode("utf-8", errors="replace") if isinstance(partial, bytes) else partial
+              (artifacts / "full-render.log").write_text(partial, encoding="utf-8")
+              summary("Linux source render/input: **FAIL** (240-second timeout).\n```text\n" + partial[-14000:] + "\n```")
+              raise SystemExit(1)
+          log = result.stdout + result.stderr
+          (artifacts / "full-render.log").write_text(log, encoding="utf-8")
+          summary("Linux software-renderer execution log (virtual X11, source scene, Dummy audio; not physical GUI/audio acceptance):\n```text\n" + log[-14000:] + "\n```")
+          reports = []
+          for line in log.splitlines():
+              try:
+                  report = json.loads(line)
+              except ValueError:
+                  continue
+              if isinstance(report, dict) and report.get("suite") == "rendered_full_game":
+                  reports.append(report)
+          if result.returncode or re.search(r"(^|\s)(SCRIPT ERROR:|Parse Error:|ERROR:)", log):
+              raise SystemExit("Source renderer or integration failed; inspect the execution log above")
+          if "OpenGL API" not in log or not re.search(r"llvmpipe|softpipe", log, re.I):
+              raise SystemExit("Full source capture did not identify the software OpenGL renderer")
+          if (len(reports) != 1 or type(reports[0].get("checks")) is not int
+                  or reports[0]["checks"] <= 0 or reports[0].get("failures") != []):
+              raise SystemExit("Missing or unsuccessful rendered_full_game report")
+          report = reports[0]
+          captures = report.get("captures", [])
+          metrics = report.get("capture_metrics", [])
+          if not captures or len(metrics) != len(captures):
+              raise SystemExit("Missing captured PNG metrics")
+          rows = ["| PNG | Pixels | Sample luminance min/max | SHA256 |", "|---|---|---|---|"]
+          for path, metric in zip(captures, metrics):
+              file = Path(path)
+              with file.open("rb") as stream:
+                  header = stream.read(24)
+                  stream.seek(0)
+                  digest = hashlib.file_digest(stream, "sha256").hexdigest()
+              if header[:8] != b"\x89PNG\r\n\x1a\n" or len(header) != 24:
+                  raise SystemExit("Invalid captured PNG")
+              width, height = struct.unpack(">II", header[16:24])
+              low, high = metric.get("min_sample_luminance"), metric.get("max_sample_luminance")
+              if (metric.get("path") != path or metric.get("width") != width or metric.get("height") != height
+                      or metric.get("sha256") != digest or not (width > 0 and height > 0)
+                      or type(low) not in (int, float) or type(high) not in (int, float)
+                      or not (0 <= low < high <= 1 and high - low > 0.005)):
+                  raise SystemExit("Captured PNG metrics or hash verification failed")
+              rows.append(f"| {file.name} | {width}×{height} | {low:.5f}/{high:.5f} | `{digest}` |")
+          summary("Linux Xvfb/Mesa source render: **PASS**\n\n" + "\n".join(renderer) + "\n\n" + "\n".join(rows)
+                  + "\n\nPNG binaries are not uploaded: only these metrics, hashes and execution logs persist in the job summary.")
+          PY
+
+      - name: Keep unexecuted renderer acceptance explicit
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import os
+          platform = os.environ["RUNNER_OS"]
+          message = {
+              "Windows": "Windows native Compatibility/D3D12-WARP pixel/input acceptance: NOT_RUN. Headless gate does not prove it; WARP availability is not established and D3D12 is a different renderer from shipping OpenGL Compatibility.",
+              "macOS": "macOS hosted-runner native pixel/input acceptance: NOT_RUN. The headless gate is separate from local macOS native captures.",
+              "Linux": "Linux virtual-X11 source render is reported in its separate step. Physical Linux hardware, audio hearing, device IME and packaged-app GUI acceptance remain NOT_RUN.",
+          }[platform]
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as stream:
+              stream.write(message + "\n")
+          print(message)
+          PY

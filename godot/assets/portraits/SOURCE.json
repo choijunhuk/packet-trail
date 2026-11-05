@@ -1,0 +1,142 @@
+{
+  "generator": "built-in image_gen; underlying model not exposed",
+  "created": "2026-11-05",
+  "authorship": "Original fictional adult characters generated for Midnight Access. No real-person reference or original game assets.",
+  "source_prompts": "docs/CHARACTER_ART.md and .omx/artifacts/full-production/portrait-variants.json",
+  "expressions": [
+    "neutral",
+    "focused",
+    "guarded",
+    "relieved"
+  ],
+  "files": [
+    {
+      "file": "C01-focused.png",
+      "sha256": "a095d51a8e40429e2accf1603d55fdad08a059fdcaa597f0d4b86f20b1036e4d",
+      "bytes": 1352169,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C01-guarded.png",
+      "sha256": "42d1bc04486541bd132b44f7c6e2878da55d3bcf8dbb26a74f206ec864372fd6",
+      "bytes": 1350403,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C01-neutral.png",
+      "sha256": "08e99f560646c0608f43dbfb1e53500e3b5ab63d3df1fbd8a6582a3e1f9aafef",
+      "bytes": 1458716,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C01-relieved.png",
+      "sha256": "ff1c16574c18527044c2f0e17f9134d88a65893f5dbc90f9ee1f0ee3d5d57e88",
+      "bytes": 1346041,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C02-focused.png",
+      "sha256": "b4162dceb35c9bf535286a4aaa9676c6bc9195822df1e05c1c7a36b003b8dee9",
+      "bytes": 1530192,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C02-guarded.png",
+      "sha256": "f12ff63c13f85aed3ea80f220e81f40ead7f1afb4c1607c19339dcee3adb3271",
+      "bytes": 1553830,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C02-neutral.png",
+      "sha256": "e879f5e3e0a75af7450ca118f0336b70338ceefdadb9fcccbf0f96bcb102c7e0",
+      "bytes": 1634969,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C02-relieved.png",
+      "sha256": "420042b8811afb559ce13e6b3d19dbf7db0982bd430ca01bb849aa140cb95aa0",
+      "bytes": 1538673,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C03-focused.png",
+      "sha256": "82d2a49618d21dc68fe393e1c75d0006bbf4aff80b4540722369724d7161e71d",
+      "bytes": 1496607,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C03-guarded.png",
+      "sha256": "0f6e67b0d13e1c562a0521a7e582b6176c191640821ce5f4a2c2298229c3abb5",
+      "bytes": 1492743,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C03-neutral.png",
+      "sha256": "d15204616a11ffd1107ba042ea7881f5803b875fbf45287ed9e8a47f95d05bc9",
+      "bytes": 1634907,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C03-relieved.png",
+      "sha256": "d528a13fddfe468e6c34337985463e45a255b4f066bf5fb83edd42a3532f697d",
+      "bytes": 1491405,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C04-focused.png",
+      "sha256": "01b9a385d5c2f3c6d394d84680c69c8d5fbc4aefd205f8376423777db8e6ced9",
+      "bytes": 1497400,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C04-guarded.png",
+      "sha256": "81b045e8a1de7182010927c2142412821e1b109b0c565f9943706aa1b0aab3ef",
+      "bytes": 1510949,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C04-neutral.png",
+      "sha256": "b7edc3ffac63468352cccf59e5407697aaf281d86256cb0683f2114641900de8",
+      "bytes": 1634711,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    },
+    {
+      "file": "C04-relieved.png",
+      "sha256": "3f530c248ca53aad55d8cfa4d8b1648621bbd2490cc66cb22b32fa0c94077b7c",
+      "bytes": 1520182,
+      "width": 1254,
+      "height": 1254,
+      "png_color_type": 6
+    }
+  ]
+}

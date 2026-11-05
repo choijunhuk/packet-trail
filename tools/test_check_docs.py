@@ -3,11 +3,13 @@
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
+from urllib.parse import unquote, urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,7 +25,15 @@ class CheckDocsTests(unittest.TestCase):
             target = self.root / source.relative_to(ROOT)
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source, target)
-        (self.root / "tools").mkdir()
+            for link in re.findall(r"(?<!!)\[[^\]]+\]\(([^\s)]+)", source.read_text(encoding="utf-8")):
+                if urlparse(link).scheme:
+                    continue
+                resource = (source.parent / unquote(link.strip("<>").split("#")[0])).resolve()
+                if resource.is_file() and resource.is_relative_to(ROOT):
+                    copy = self.root / resource.relative_to(ROOT)
+                    copy.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copyfile(resource, copy)
+        (self.root / "tools").mkdir(exist_ok=True)
         shutil.copyfile(ROOT / "tools/check_docs.py", self.root / "tools/check_docs.py")
 
     def run_checker(self, *, ascii_locale=False):

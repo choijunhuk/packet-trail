@@ -1,0 +1,6873 @@
+{
+  "schema_version": 1,
+  "missions": {
+    "M01": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Guest clue and maintenance handoff",
+          "actions": [
+            {
+              "kind": "browse",
+              "url": "https://archive.packet.test"
+            },
+            {
+              "kind": "command",
+              "line": "ssh guest@archive.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "guest"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/readme.txt"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/shift-note.txt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh maint@archive.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lumen-47"
+            },
+            {
+              "kind": "command",
+              "line": "cat /vault/handoff.log"
+            },
+            {
+              "kind": "command",
+              "line": "scp /vault/handoff.log ~/archive"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m01_evidence"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "handoff-47"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Public clue and retained mirror",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh guest@archive.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "guest"
+            },
+            {
+              "kind": "command",
+              "line": "ls /public"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/shift-note.txt"
+            },
+            {
+              "kind": "browse",
+              "url": "https://mirror.packet.test/cache/47"
+            },
+            {
+              "kind": "collect_web",
+              "url": "https://mirror.packet.test/cache/47"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m01_evidence"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "handoff-47"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M02": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh logreader@relay02.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "patrol-ember"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh logreader@relay-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "patrol-ember-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/r204.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m02_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "rotated:N47:R204",
+                  "right": "current:N47:R204"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m02_primary",
+              "params": {
+                "input": "request=R204"
+              }
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m02_evidence",
+              "m02_exhibit_1"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M02_RECORD",
+              "M02_EXHIBIT_1"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh logreader@relay02.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "patrol-ember"
+            },
+            {
+              "kind": "command",
+              "line": "ssh registrar@custodym02.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "paper-thrush"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh registrar@registry-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "paper-thrush-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/r204.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m02_exhibit_1_b",
+              "params": {
+                "input": "reference=R204"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m02_alternate",
+              "params": {
+                "input": {
+                  "left": "R204:relay02",
+                  "right": "R204:transit04"
+                }
+              }
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m02_evidence",
+              "m02_exhibit_1"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M02_RECORD",
+              "M02_EXHIBIT_1"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M03": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh watch@transit04.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "channel-birch"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh watch@service-watch.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "channel-birch-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/t404.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m03_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "notice:public-page:retired",
+                  "right": "roster:maintenance:retained"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "netprobe",
+              "params": {
+                "target": "transit04"
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m03_primary",
+              "params": {
+                "input": {
+                  "left": "22:open:ssh",
+                  "right": "443:filtered:https"
+                }
+              }
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m03_evidence",
+              "m03_exhibit_1"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M03_RECORD",
+              "M03_EXHIBIT_1"
+            ],
+            "sources_preserved": true,
+            "session": {
+              "host_id": "transit04",
+              "account_id": "watch"
+            }
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh watch@transit04.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "channel-birch"
+            },
+            {
+              "kind": "command",
+              "line": "ssh mapkeeper@custodym03.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "north-span"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh mapkeeper@route-office.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "north-span-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/t404.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m03_exhibit_1_b",
+              "params": {
+                "input": "reference=T404"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m03_alternate",
+              "params": {
+                "input": "service=maintenance"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m03_evidence",
+              "m03_exhibit_1"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M03_RECORD",
+              "M03_EXHIBIT_1"
+            ],
+            "sources_preserved": true,
+            "session": {
+              "host_id": "transit04",
+              "account_id": "watch"
+            }
+          }
+        }
+      ]
+    },
+    "M04": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh librarian@library.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "amber-index"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh librarian@booking-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "amber-index-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/b204.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m04_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "booking:B204:cancelled",
+                  "right": "transfer:R204:C731"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m04_primary",
+              "params": {
+                "input": {
+                  "left": "screen:cancelled:B204",
+                  "right": "server:transferred:C731"
+                }
+              }
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m04_evidence",
+              "m04_exhibit_1"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M04_RECORD",
+              "M04_EXHIBIT_1"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh librarian@library.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "amber-index"
+            },
+            {
+              "kind": "command",
+              "line": "ssh clerk@custodym04.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "quiet-reading"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh clerk@transfer-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "quiet-reading-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/b204.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m04_exhibit_1_b",
+              "params": {
+                "input": "reference=B204"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m04_alternate",
+              "params": {
+                "input": "request=R204"
+              }
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m04_evidence",
+              "m04_exhibit_1"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M04_RECORD",
+              "M04_EXHIBIT_1"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M05": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh caseworker@repair.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "green-receipt"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/receipts.csv"
+            },
+            {
+              "kind": "command",
+              "line": "ssh caseworker@receipt-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "green-receipt-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/c731.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m05_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "session:caseworker:own",
+                  "right": "docket:C731:Serin"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m05_primary",
+              "params": {
+                "input": {
+                  "object_id": "C731"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh caseworker@receipt-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "green-receipt-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/c731-h.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m05_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "original:C731:exception-hold",
+                  "right": "distributed:C731:hold-omitted"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m05_evidence",
+              "m05_exhibit_1",
+              "m05_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M05_RECORD",
+              "M05_EXHIBIT_1",
+              "M05_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh caseworker@repair.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "green-receipt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh ombuds@custodym05.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "cedar-envelope"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-receipts.csv"
+            },
+            {
+              "kind": "command",
+              "line": "ssh ombuds@assignment-ledger.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "cedar-envelope-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/c731.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m05_exhibit_1_b",
+              "params": {
+                "input": "reference=C731"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m05_alternate",
+              "params": {
+                "input": "receipt=C731"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh ombuds@assignment-ledger.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "cedar-envelope-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/c731-h.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m05_exhibit_2_b",
+              "params": {
+                "input": "reference=C731-H"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m05_evidence",
+              "m05_exhibit_1",
+              "m05_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M05_RECORD",
+              "M05_EXHIBIT_1",
+              "M05_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M06": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh shiftlead@auth.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "warm-circuit"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/signins.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh shiftlead@access-watch.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "warm-circuit-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/auth61.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "attempt:unknown-source:failure",
+                  "right": "notifier:ward-relay:legitimate"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "configure rate_limit true"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_primary",
+              "params": {
+                "input": {
+                  "action": "login",
+                  "username": "shiftlead",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_primary",
+              "params": {
+                "input": {
+                  "action": "login",
+                  "username": "shiftlead",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_primary",
+              "params": {
+                "input": {
+                  "action": "login",
+                  "username": "shiftlead",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 429
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_primary",
+              "params": {
+                "input": {
+                  "action": "wait",
+                  "ticks": 2
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_primary",
+              "params": {
+                "input": {
+                  "action": "login",
+                  "username": "shiftlead",
+                  "password": "warm-circuit"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh shiftlead@access-watch.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "warm-circuit-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/n61.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "queue:N61:accepted-once",
+                  "right": "auth:N61:staff-valid"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m06_evidence",
+              "m06_exhibit_1",
+              "m06_exhibit_2"
+            ],
+            "policies": {
+              "rate_limit": true
+            },
+            "archive_record_ids": [
+              "M06_RECORD",
+              "M06_EXHIBIT_1",
+              "M06_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh shiftlead@auth.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "warm-circuit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh recovery@custodym06.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "blue-ward"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-signins.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh recovery@ward-scheduler.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "blue-ward-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/auth61.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_exhibit_1_b",
+              "params": {
+                "input": "reference=AUTH61"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_policy",
+              "params": {
+                "input": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://auth.packet.test/workbench",
+              "body": {
+                "input": {
+                  "action": "login",
+                  "username": "shiftlead",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://auth.packet.test/workbench",
+              "body": {
+                "input": {
+                  "action": "login",
+                  "username": "shiftlead",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://auth.packet.test/workbench",
+              "body": {
+                "input": {
+                  "action": "login",
+                  "username": "shiftlead",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 429
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://auth.packet.test/workbench",
+              "body": {
+                "input": {
+                  "action": "wait",
+                  "ticks": 2
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://auth.packet.test/workbench",
+              "body": {
+                "input": {
+                  "action": "login",
+                  "username": "shiftlead",
+                  "password": "warm-circuit"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh recovery@ward-scheduler.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "blue-ward-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/n61.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m06_exhibit_2_b",
+              "params": {
+                "input": "reference=N61"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m06_evidence",
+              "m06_exhibit_1",
+              "m06_exhibit_2"
+            ],
+            "policies": {
+              "rate_limit": true
+            },
+            "archive_record_ids": [
+              "M06_RECORD",
+              "M06_EXHIBIT_1",
+              "M06_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M07": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh operator@session.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "evening-window"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/shifts.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh operator@session-office.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "evening-window-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/s707.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m07_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "shift:00:58:closed",
+                  "right": "session:01:03:stale-N47"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "configure session_revocation true"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m07_primary",
+              "params": {
+                "input": {
+                  "action": "issue",
+                  "token": "new-N47"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m07_primary",
+              "params": {
+                "input": {
+                  "action": "reuse",
+                  "token": "stale-N47"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 403
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m07_primary",
+              "params": {
+                "input": {
+                  "action": "reuse",
+                  "token": "new-N47"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh operator@session-office.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "evening-window-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/s707-f.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m07_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "fresh:booking-change:allowed",
+                  "right": "retired:temporary-admin:blocked"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m07_evidence",
+              "m07_exhibit_1",
+              "m07_exhibit_2"
+            ],
+            "policies": {
+              "session_revocation": true
+            },
+            "archive_record_ids": [
+              "M07_RECORD",
+              "M07_EXHIBIT_1",
+              "M07_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh operator@session.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "evening-window"
+            },
+            {
+              "kind": "command",
+              "line": "ssh custodian@custodym07.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sparrow-vault"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-shifts.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh custodian@shift-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sparrow-vault-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/s707.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m07_exhibit_1_b",
+              "params": {
+                "input": "reference=S707"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m07_policy",
+              "params": {
+                "input": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://session.packet.test/workbench",
+              "body": {
+                "input": {
+                  "action": "issue",
+                  "token": "new-N47"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://session.packet.test/workbench",
+              "body": {
+                "input": {
+                  "action": "reuse",
+                  "token": "stale-N47"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 403
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://session.packet.test/workbench",
+              "body": {
+                "input": {
+                  "action": "reuse",
+                  "token": "new-N47"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh custodian@shift-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sparrow-vault-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/s707-f.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m07_exhibit_2_b",
+              "params": {
+                "input": "reference=S707-F"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m07_evidence",
+              "m07_exhibit_1",
+              "m07_exhibit_2"
+            ],
+            "policies": {
+              "session_revocation": true
+            },
+            "archive_record_ids": [
+              "M07_RECORD",
+              "M07_EXHIBIT_1",
+              "M07_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M08": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh editor@subscription.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "tide-card"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/changes.http"
+            },
+            {
+              "kind": "command",
+              "line": "ssh editor@notice-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "tide-card-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/ctx81.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m08_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "notice:https://news.packet.test",
+                  "right": "setting:https://subscription.packet.test"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "configure request_context true"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m08_primary",
+              "params": {
+                "input": {
+                  "origin": "https://news.packet.test",
+                  "token": "wrong",
+                  "value": "unexpected"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 403
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m08_primary",
+              "params": {
+                "input": {
+                  "origin": "https://subscription.packet.test",
+                  "token": "intent-N47",
+                  "value": "approved"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh editor@notice-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "tide-card-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/ctx81-v.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m08_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "session:attached:not-intent",
+                  "right": "form:origin-and-token:verified"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m08_evidence",
+              "m08_exhibit_1",
+              "m08_exhibit_2"
+            ],
+            "policies": {
+              "request_context": true
+            },
+            "archive_record_ids": [
+              "M08_RECORD",
+              "M08_EXHIBIT_1",
+              "M08_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh editor@subscription.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "tide-card"
+            },
+            {
+              "kind": "command",
+              "line": "ssh inspector@custodym08.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "close-harbor"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-changes.http"
+            },
+            {
+              "kind": "command",
+              "line": "ssh inspector@intent-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "close-harbor-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/ctx81.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m08_exhibit_1_b",
+              "params": {
+                "input": "reference=CTX81"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m08_policy",
+              "params": {
+                "input": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://subscription.packet.test/workbench",
+              "body": {
+                "input": {
+                  "origin": "https://news.packet.test",
+                  "token": "wrong",
+                  "value": "unexpected"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 403
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://subscription.packet.test/workbench",
+              "body": {
+                "input": {
+                  "origin": "https://subscription.packet.test",
+                  "token": "intent-N47",
+                  "value": "approved"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh inspector@intent-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "close-harbor-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/ctx81-v.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m08_exhibit_2_b",
+              "params": {
+                "input": "reference=CTX81-V"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m08_evidence",
+              "m08_exhibit_1",
+              "m08_exhibit_2"
+            ],
+            "policies": {
+              "request_context": true
+            },
+            "archive_record_ids": [
+              "M08_RECORD",
+              "M08_EXHIBIT_1",
+              "M08_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M09": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh researcher@records.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "ash-catalog"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/catalogue.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh researcher@catalogue-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "ash-catalog-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/r609.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m09_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "index:R609:absent",
+                  "right": "retention:R609:C731"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m09_primary",
+              "params": {
+                "input": "N47' OR 1=1"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh researcher@catalogue-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "ash-catalog-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/r609-c.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m09_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "search:R609:excluded",
+                  "right": "signed-register:R609:C731"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m09_evidence",
+              "m09_exhibit_1",
+              "m09_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M09_RECORD",
+              "M09_EXHIBIT_1",
+              "M09_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh researcher@records.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "ash-catalog"
+            },
+            {
+              "kind": "command",
+              "line": "ssh witness@custodym09.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "uncut-leaf"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-catalogue.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh witness@retention-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "uncut-leaf-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/r609.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m09_exhibit_1_b",
+              "params": {
+                "input": "reference=R609"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m09_alternate",
+              "params": {
+                "input": "job=R609"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh witness@retention-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "uncut-leaf-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/r609-c.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m09_exhibit_2_b",
+              "params": {
+                "input": "reference=R609-C"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m09_evidence",
+              "m09_exhibit_1",
+              "m09_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M09_RECORD",
+              "M09_EXHIBIT_1",
+              "M09_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M10": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh moderator@bulletin.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "still-signal"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/notice.txt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh moderator@notice-source.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "still-signal-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/v10.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m10_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "stored:V10:hold",
+                  "right": "render-log:V10:complete"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m10_primary",
+              "params": {
+                "input": "signal:NOTICE10"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh moderator@notice-source.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "still-signal-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/v10-i.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m10_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "inspection:NOTICE10:effect",
+                  "right": "citizen:V10:unchanged"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m10_evidence",
+              "m10_exhibit_1",
+              "m10_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M10_RECORD",
+              "M10_EXHIBIT_1",
+              "M10_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh moderator@bulletin.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "still-signal"
+            },
+            {
+              "kind": "command",
+              "line": "ssh compositor@custodym10.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "ivory-type"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-notice.txt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh compositor@render-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "ivory-type-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/v10.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m10_exhibit_1_b",
+              "params": {
+                "input": "reference=V10"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m10_alternate",
+              "params": {
+                "input": {
+                  "left": "stored:text:NOTICE10",
+                  "right": "rendered:action:NOTICE10"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh compositor@render-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "ivory-type-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/v10-i.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m10_exhibit_2_b",
+              "params": {
+                "input": "reference=V10-I"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m10_evidence",
+              "m10_exhibit_1",
+              "m10_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M10_RECORD",
+              "M10_EXHIBIT_1",
+              "M10_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M11": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh librarian@files.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "brick-stair"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/downloads.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh librarian@download-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "brick-stair-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/path11.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m11_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "base:/srv/public",
+                  "right": "neighbor:/srv/private"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m11_primary",
+              "params": {
+                "input": "../private/marker.log"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh librarian@download-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "brick-stair-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/u12.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m11_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "marker:release-U12",
+                  "right": "queue-handoff:release-U12"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m11_evidence",
+              "m11_exhibit_1",
+              "m11_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M11_RECORD",
+              "M11_EXHIBIT_1",
+              "M11_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh librarian@files.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "brick-stair"
+            },
+            {
+              "kind": "command",
+              "line": "ssh archivist@custodym11.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "shelf-larch"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-downloads.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh archivist@storage-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "shelf-larch-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/path11.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m11_exhibit_1_b",
+              "params": {
+                "input": "reference=PATH11"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m11_alternate",
+              "params": {
+                "input": {
+                  "left": "download:/srv/public",
+                  "right": "resolved:/srv/private/marker.log"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh archivist@storage-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "shelf-larch-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/u12.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m11_exhibit_2_b",
+              "params": {
+                "input": "reference=U12"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m11_evidence",
+              "m11_exhibit_1",
+              "m11_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M11_RECORD",
+              "M11_EXHIBIT_1",
+              "M11_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M12": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh curator@upload.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "photo-bridge"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/intake.csv"
+            },
+            {
+              "kind": "command",
+              "line": "ssh curator@media-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "photo-bridge-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/up12.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m12_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "name:inspection.jpg",
+                  "right": "destination:job-queue"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "configure upload_checked true"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m12_primary",
+              "params": {
+                "input": {
+                  "filename": "fake.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "SCRIPT"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 415
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m12_primary",
+              "params": {
+                "input": {
+                  "filename": "normal.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "JPEG"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 201
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh curator@media-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "photo-bridge-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/up12-v.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m12_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "disguised:SCRIPT:rejected",
+                  "right": "normal:JPEG:accepted"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m12_evidence",
+              "m12_exhibit_1",
+              "m12_exhibit_2"
+            ],
+            "policies": {
+              "upload_checked": true
+            },
+            "archive_record_ids": [
+              "M12_RECORD",
+              "M12_EXHIBIT_1",
+              "M12_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh curator@upload.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "photo-bridge"
+            },
+            {
+              "kind": "command",
+              "line": "ssh reviewer@custodym12.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sepia-glass"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-intake.csv"
+            },
+            {
+              "kind": "command",
+              "line": "ssh reviewer@processing-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sepia-glass-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/up12.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m12_exhibit_1_b",
+              "params": {
+                "input": "reference=UP12"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m12_policy",
+              "params": {
+                "input": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://upload.packet.test/workbench",
+              "body": {
+                "input": {
+                  "filename": "fake.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "SCRIPT"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 415
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://upload.packet.test/workbench",
+              "body": {
+                "input": {
+                  "filename": "normal.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "JPEG"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 201
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh reviewer@processing-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sepia-glass-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/up12-v.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m12_exhibit_2_b",
+              "params": {
+                "input": "reference=UP12-V"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m12_evidence",
+              "m12_exhibit_1",
+              "m12_exhibit_2"
+            ],
+            "policies": {
+              "upload_checked": true
+            },
+            "archive_record_ids": [
+              "M12_RECORD",
+              "M12_EXHIBIT_1",
+              "M12_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M13": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh diagnostician@diagnostic.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "copper-lens"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/jobs.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh diagnostician@jobqueue.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "copper-lens-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/job13.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m13_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "request:N47:diagnostic",
+                  "right": "queue:N47:inspect-QUEUE13"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh diagnostician@jobqueue.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "copper-lens-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/job13-a.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m13_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "worker:inspection:read",
+                  "right": "administrator:control:absent"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m13_primary",
+              "params": {
+                "input": "diagnose;inspect:QUEUE13"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh diagnostician@jobqueue.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "copper-lens-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/job13-d.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m13_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "job:QUEUE13:status-internal",
+                  "right": "authority:marker-read:not-admin"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m13_evidence",
+              "m13_exhibit_1",
+              "m13_exhibit_2",
+              "m13_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M13_RECORD",
+              "M13_EXHIBIT_1",
+              "M13_EXHIBIT_2",
+              "M13_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh diagnostician@diagnostic.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "copper-lens"
+            },
+            {
+              "kind": "command",
+              "line": "ssh dispatcher@custodym13.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "patient-motor"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-jobs.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh dispatcher@execution-audit.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "patient-motor-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/job13.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m13_exhibit_1_b",
+              "params": {
+                "input": "reference=JOB13"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh dispatcher@execution-audit.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "patient-motor-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/job13-a.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m13_exhibit_2_b",
+              "params": {
+                "input": "reference=JOB13-A"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m13_alternate",
+              "params": {
+                "input": "parent=N47"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh dispatcher@execution-audit.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "patient-motor-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/job13-d.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m13_exhibit_3_b",
+              "params": {
+                "input": "reference=JOB13-D"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m13_evidence",
+              "m13_exhibit_1",
+              "m13_exhibit_2",
+              "m13_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M13_RECORD",
+              "M13_EXHIBIT_1",
+              "M13_EXHIBIT_2",
+              "M13_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M14": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh previewer@preview.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "marsh-frame"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/requests.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh previewer@resolver.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "marsh-frame-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/hop14.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m14_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "citizen:status:unreachable",
+                  "right": "preview-worker:status:reachable"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh previewer@resolver.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "marsh-frame-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/hop14-r.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m14_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "initial:cover-image",
+                  "right": "final:status.packet.test/internal/marker"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "traceroute",
+              "params": {
+                "target": "status"
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m14_primary",
+              "params": {
+                "input": "https://status.packet.test/internal/marker"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh previewer@resolver.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "marsh-frame-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/hop14-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m14_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "marker:read:yes",
+                  "right": "management:write:unproven"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m14_evidence",
+              "m14_exhibit_1",
+              "m14_exhibit_2",
+              "m14_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M14_RECORD",
+              "M14_EXHIBIT_1",
+              "M14_EXHIBIT_2",
+              "M14_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh previewer@preview.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "marsh-frame"
+            },
+            {
+              "kind": "command",
+              "line": "ssh proxyreader@custodym14.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "inland-heron"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-requests.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh proxyreader@edgewatch.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "inland-heron-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/hop14.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m14_exhibit_1_b",
+              "params": {
+                "input": "reference=HOP14"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh proxyreader@edgewatch.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "inland-heron-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/hop14-r.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m14_exhibit_2_b",
+              "params": {
+                "input": "reference=HOP14-R"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m14_alternate",
+              "params": {
+                "input": "request=HOP14"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh proxyreader@edgewatch.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "inland-heron-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/hop14-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m14_exhibit_3_b",
+              "params": {
+                "input": "reference=HOP14-S"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m14_evidence",
+              "m14_exhibit_1",
+              "m14_exhibit_2",
+              "m14_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M14_RECORD",
+              "M14_EXHIBIT_1",
+              "M14_EXHIBIT_2",
+              "M14_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M15": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh relayop@gateway.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-gate"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/network.txt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh relayop@firewall-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-gate-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/lan15.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m15_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "plan:management:closed",
+                  "right": "relay:management:reachable"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh relayop@firewall-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-gate-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/lan15-l.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m15_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "permit:emergency:expired",
+                  "right": "relay:lease:still-active"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/target-handoff.note"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m15_primary",
+              "params": {
+                "input": {
+                  "left": "citizen:443:filtered",
+                  "right": "relay:443:open"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh observer@management.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "view-15"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/verify.txt"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh relayop@firewall-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-gate-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/lan15-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m15_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "observer:evidence:read",
+                  "right": "observer:accounts:no-change"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh observer@management.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "view-15"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m15_evidence",
+              "m15_exhibit_1",
+              "m15_exhibit_2",
+              "m15_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M15_RECORD",
+              "M15_EXHIBIT_1",
+              "M15_EXHIBIT_2",
+              "M15_EXHIBIT_3"
+            ],
+            "sources_preserved": true,
+            "session": {
+              "host_id": "management",
+              "account_id": "observer"
+            }
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh relayop@gateway.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-gate"
+            },
+            {
+              "kind": "command",
+              "line": "ssh networkauditor@custodym15.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "winter-span"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-network.txt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh networkauditor@relay-map.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "winter-span-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/lan15.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m15_exhibit_1_b",
+              "params": {
+                "input": "reference=LAN15"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh networkauditor@relay-map.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "winter-span-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/lan15-l.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m15_exhibit_2_b",
+              "params": {
+                "input": "reference=LAN15-L"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m15_alternate",
+              "params": {
+                "input": "auditors"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh observer@management.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "view-15"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/verify.txt"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh networkauditor@relay-map.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "winter-span-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/lan15-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m15_exhibit_3_b",
+              "params": {
+                "input": "reference=LAN15-S"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh observer@management.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "view-15"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m15_evidence",
+              "m15_exhibit_1",
+              "m15_exhibit_2",
+              "m15_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M15_RECORD",
+              "M15_EXHIBIT_1",
+              "M15_EXHIBIT_2",
+              "M15_EXHIBIT_3"
+            ],
+            "sources_preserved": true,
+            "session": {
+              "host_id": "management",
+              "account_id": "observer"
+            }
+          }
+        }
+      ]
+    },
+    "M16": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh technician@operations.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lintel-fern"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/permissions.txt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh technician@acl-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lintel-fern-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/acl16.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m16_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "staff:ancestor:closed",
+                  "right": "retention:ancestor:traversable"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh technician@acl-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lintel-fern-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/acl16-g.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m16_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "temporary-account:staff",
+                  "right": "effective-groups:staff+retention"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m16_primary",
+              "params": {
+                "input": "retention"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh technician@acl-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lintel-fern-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/acl16-p.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m16_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "retention:signature-MS",
+                  "right": "external-copy:signature-MS"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m16_evidence",
+              "m16_exhibit_1",
+              "m16_exhibit_2",
+              "m16_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M16_RECORD",
+              "M16_EXHIBIT_1",
+              "M16_EXHIBIT_2",
+              "M16_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh technician@operations.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lintel-fern"
+            },
+            {
+              "kind": "command",
+              "line": "ssh recordsman@custodym16.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "old-granite"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-permissions.txt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh recordsman@retention-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "old-granite-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/acl16.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m16_exhibit_1_b",
+              "params": {
+                "input": "reference=ACL16"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh recordsman@retention-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "old-granite-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/acl16-g.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m16_exhibit_2_b",
+              "params": {
+                "input": "reference=ACL16-G"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m16_alternate",
+              "params": {
+                "input": "permit=ACL16"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh recordsman@retention-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "old-granite-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/acl16-p.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m16_exhibit_3_b",
+              "params": {
+                "input": "reference=ACL16-P"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m16_evidence",
+              "m16_exhibit_1",
+              "m16_exhibit_2",
+              "m16_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M16_RECORD",
+              "M16_EXHIBIT_1",
+              "M16_EXHIBIT_2",
+              "M16_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M17": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh auditor@auditvault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "mapped-star"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/audit-bytes.txt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh auditor@audit-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "mapped-star-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/aud17.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m17_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "online:rate-limited",
+                  "right": "offline:audit-copy:available"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh auditor@audit-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "mapped-star-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/aud17-c.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m17_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "dictionary:small:bounded",
+                  "right": "unmatched:not-proven-safe"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/target-handoff.note"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m17_primary",
+              "params": {
+                "input": "lumen-17"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh reader@proofvault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lumen-17"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/verify.txt"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh auditor@audit-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "mapped-star-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/aud17-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m17_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "reader:verification:allowed",
+                  "right": "reader:other-accounts:denied"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh reader@proofvault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lumen-17"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m17_evidence",
+              "m17_exhibit_1",
+              "m17_exhibit_2",
+              "m17_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M17_RECORD",
+              "M17_EXHIBIT_1",
+              "M17_EXHIBIT_2",
+              "M17_EXHIBIT_3"
+            ],
+            "sources_preserved": true,
+            "session": {
+              "host_id": "proofvault",
+              "account_id": "reader"
+            }
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh auditor@auditvault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "mapped-star"
+            },
+            {
+              "kind": "command",
+              "line": "ssh delegate@custodym17.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "field-chestnut"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-audit-bytes.txt"
+            },
+            {
+              "kind": "command",
+              "line": "ssh delegate@witness-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "field-chestnut-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/aud17.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m17_exhibit_1_b",
+              "params": {
+                "input": "reference=AUD17"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh delegate@witness-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "field-chestnut-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/aud17-c.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m17_exhibit_2_b",
+              "params": {
+                "input": "reference=AUD17-C"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m17_alternate",
+              "params": {
+                "input": "auditors"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh reader@proofvault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lumen-17"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/verify.txt"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh delegate@witness-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "field-chestnut-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/aud17-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m17_exhibit_3_b",
+              "params": {
+                "input": "reference=AUD17-S"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh reader@proofvault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "lumen-17"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m17_evidence",
+              "m17_exhibit_1",
+              "m17_exhibit_2",
+              "m17_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M17_RECORD",
+              "M17_EXHIBIT_1",
+              "M17_EXHIBIT_2",
+              "M17_EXHIBIT_3"
+            ],
+            "sources_preserved": true,
+            "session": {
+              "host_id": "proofvault",
+              "account_id": "reader"
+            }
+          }
+        }
+      ]
+    },
+    "M18": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh builder@repository.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hidden-seam"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/build-history.conf"
+            },
+            {
+              "kind": "command",
+              "line": "ssh builder@build-repository.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hidden-seam-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/cfg18.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m18_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "current:token-field:empty",
+                  "right": "history:retention-token:present"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh builder@build-repository.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hidden-seam-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/cfg18-r.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m18_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "config:retention-read-N47",
+                  "right": "job:retention-service:N47"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m18_primary",
+              "params": {
+                "input": "retention-read-N47"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh builder@build-repository.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hidden-seam-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/cfg18-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m18_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "file:token:deleted",
+                  "right": "server:retention-read:active"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m18_evidence",
+              "m18_exhibit_1",
+              "m18_exhibit_2",
+              "m18_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M18_RECORD",
+              "M18_EXHIBIT_1",
+              "M18_EXHIBIT_2",
+              "M18_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh builder@repository.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hidden-seam"
+            },
+            {
+              "kind": "command",
+              "line": "ssh scheduler@custodym18.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "folded-atlas"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-build-history.conf"
+            },
+            {
+              "kind": "command",
+              "line": "ssh scheduler@job-archive.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "folded-atlas-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/cfg18.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m18_exhibit_1_b",
+              "params": {
+                "input": "reference=CFG18"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh scheduler@job-archive.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "folded-atlas-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/cfg18-r.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m18_exhibit_2_b",
+              "params": {
+                "input": "reference=CFG18-R"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m18_alternate",
+              "params": {
+                "input": "token=retention-read-N47"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh scheduler@job-archive.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "folded-atlas-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/cfg18-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m18_exhibit_3_b",
+              "params": {
+                "input": "reference=CFG18-S"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m18_evidence",
+              "m18_exhibit_1",
+              "m18_exhibit_2",
+              "m18_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M18_RECORD",
+              "M18_EXHIBIT_1",
+              "M18_EXHIBIT_2",
+              "M18_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M19": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh observer@edge.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "silver-estuary"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/capture.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh observer@ingress-watch.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "silver-estuary-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pk19.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m19_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "transit:encrypted-segment",
+                  "right": "endpoint:application-log"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh observer@ingress-watch.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "silver-estuary-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pk19-i.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m19_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "transit:request-N47",
+                  "right": "endpoint:request-N47"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m19_primary",
+              "params": {
+                "input": "request=N47"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh observer@ingress-watch.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "silver-estuary-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pk19-v.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m19_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "endpoint:body:visible",
+                  "right": "transit:body:unavailable"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m19_evidence",
+              "m19_exhibit_1",
+              "m19_exhibit_2",
+              "m19_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M19_RECORD",
+              "M19_EXHIBIT_1",
+              "M19_EXHIBIT_2",
+              "M19_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh observer@edge.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "silver-estuary"
+            },
+            {
+              "kind": "command",
+              "line": "ssh terminator@custodym19.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "warm-endpoint"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-capture.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh terminator@termination-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "warm-endpoint-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pk19.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m19_exhibit_1_b",
+              "params": {
+                "input": "reference=PK19"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh terminator@termination-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "warm-endpoint-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pk19-i.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m19_exhibit_2_b",
+              "params": {
+                "input": "reference=PK19-I"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m19_alternate",
+              "params": {
+                "input": {
+                  "left": "transit:N47:encrypted",
+                  "right": "endpoint:N47:marker"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh terminator@termination-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "warm-endpoint-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pk19-v.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m19_exhibit_3_b",
+              "params": {
+                "input": "reference=PK19-V"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m19_evidence",
+              "m19_exhibit_1",
+              "m19_exhibit_2",
+              "m19_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M19_RECORD",
+              "M19_EXHIBIT_1",
+              "M19_EXHIBIT_2",
+              "M19_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M20": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh analyst@timeline.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "steady-clock"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/clock-register.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh analyst@timekeeper.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "steady-clock-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/clk20.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m20_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "approval-clock:+90s",
+                  "right": "classification-clock:-30s"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh analyst@timekeeper.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "steady-clock-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/clk20-a.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m20_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "signed:connection-continuity",
+                  "right": "applied:retention-exclusion"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m20_primary",
+              "params": {
+                "input": "request=N47"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh analyst@timekeeper.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "steady-clock-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/clk20-c.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m20_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "sequence:connection>classification",
+                  "right": "sequence:classification>exclusion"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m20_evidence",
+              "m20_exhibit_1",
+              "m20_exhibit_2",
+              "m20_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M20_RECORD",
+              "M20_EXHIBIT_1",
+              "M20_EXHIBIT_2",
+              "M20_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh analyst@timeline.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "steady-clock"
+            },
+            {
+              "kind": "command",
+              "line": "ssh notary@custodym20.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "true-minute"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-clock-register.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh notary@signing-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "true-minute-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/clk20.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m20_exhibit_1_b",
+              "params": {
+                "input": "reference=CLK20"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh notary@signing-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "true-minute-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/clk20-a.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m20_exhibit_2_b",
+              "params": {
+                "input": "reference=CLK20-A"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m20_alternate",
+              "params": {
+                "input": {
+                  "left": "approval:00:45:scope=connection",
+                  "right": "exclusion:00:47:scope=retention"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh notary@signing-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "true-minute-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/clk20-c.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m20_exhibit_3_b",
+              "params": {
+                "input": "reference=CLK20-C"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m20_evidence",
+              "m20_exhibit_1",
+              "m20_exhibit_2",
+              "m20_exhibit_3"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M20_RECORD",
+              "M20_EXHIBIT_1",
+              "M20_EXHIBIT_2",
+              "M20_EXHIBIT_3"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M21": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh caseworker@portal.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sealed-iris"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/portal.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh caseworker@receipt-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sealed-iris-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/web21.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "receipt:C731:lookup-ECHO21",
+                  "right": "sealed:ECHO21:separate-authority"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh caseworker@receipt-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sealed-iris-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/web21-r.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "object:C731:application-sheet",
+                  "right": "attachment:ECHO21:application-sheet"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_receipt",
+              "params": {
+                "input": {
+                  "object_id": "C731"
+                }
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_primary",
+              "params": {
+                "input": "ECHO-21' OR 1=1"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh caseworker@receipt-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sealed-iris-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/web21-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "sheet:cohort-C731",
+                  "right": "scope:not-all-citizens"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh caseworker@receipt-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sealed-iris-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/web21-n.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_exhibit_4_a",
+              "params": {
+                "input": {
+                  "left": "application:ECHO21:approval-22",
+                  "right": "management:ECHO22:scope"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m21_evidence",
+              "m21_exhibit_1",
+              "m21_exhibit_2",
+              "m21_exhibit_3",
+              "m21_exhibit_4"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M21_RECORD",
+              "M21_EXHIBIT_1",
+              "M21_EXHIBIT_2",
+              "M21_EXHIBIT_3",
+              "M21_EXHIBIT_4"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh caseworker@portal.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "sealed-iris"
+            },
+            {
+              "kind": "command",
+              "line": "ssh attachmentreader@custodym21.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hollow-shelf"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-portal.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh attachmentreader@retention-path.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hollow-shelf-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/web21.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_exhibit_1_b",
+              "params": {
+                "input": "reference=WEB21"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh attachmentreader@retention-path.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hollow-shelf-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/web21-r.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_exhibit_2_b",
+              "params": {
+                "input": "reference=WEB21-R"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_alternate",
+              "params": {
+                "input": "../../sealed/ECHO-21.log"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh attachmentreader@retention-path.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hollow-shelf-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/web21-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_exhibit_3_b",
+              "params": {
+                "input": "reference=WEB21-S"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh attachmentreader@retention-path.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "hollow-shelf-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/web21-n.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m21_exhibit_4_b",
+              "params": {
+                "input": "reference=WEB21-N"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m21_evidence",
+              "m21_exhibit_1",
+              "m21_exhibit_2",
+              "m21_exhibit_3",
+              "m21_exhibit_4"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M21_RECORD",
+              "M21_EXHIBIT_1",
+              "M21_EXHIBIT_2",
+              "M21_EXHIBIT_3",
+              "M21_EXHIBIT_4"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "M22": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh previewer@preview.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "gray-inlet"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/relay.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh previewer@relay-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "gray-inlet-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/net22.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "origin:citizen",
+                  "right": "internal-request:preview-worker"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh previewer@relay-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "gray-inlet-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/net22-h.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "pivot:internal-route:yes",
+                  "right": "management:authenticated-session:required"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/target-handoff.note"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_primary",
+              "params": {
+                "input": "https://control.packet.test/relay/entry"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh maint@control.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "inside-22"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/verify.txt"
+            },
+            {
+              "kind": "command",
+              "line": "cat /audit/target.log"
+            },
+            {
+              "kind": "command",
+              "line": "scp /audit/target.log ~/archive"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh previewer@relay-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "gray-inlet-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/net22-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "maint:target-file:read",
+                  "right": "maint:other-accounts:unchanged"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh previewer@relay-index.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "gray-inlet-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/net22-c.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_exhibit_4_a",
+              "params": {
+                "input": {
+                  "left": "ECHO21:cohort-C731",
+                  "right": "ECHO22:cohort-C731"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh maint@control.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "inside-22"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m22_evidence",
+              "m22_exhibit_1",
+              "m22_exhibit_2",
+              "m22_exhibit_3",
+              "m22_exhibit_4"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M22_RECORD",
+              "M22_EXHIBIT_1",
+              "M22_EXHIBIT_2",
+              "M22_EXHIBIT_3",
+              "M22_EXHIBIT_4"
+            ],
+            "sources_preserved": true,
+            "session": {
+              "host_id": "control",
+              "account_id": "maint"
+            }
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh previewer@preview.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "gray-inlet"
+            },
+            {
+              "kind": "command",
+              "line": "ssh jobreader@custodym22.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-bridge"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-relay.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh jobreader@workqueue.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-bridge-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/net22.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_exhibit_1_b",
+              "params": {
+                "input": "reference=NET22"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh jobreader@workqueue.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-bridge-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/net22-h.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_exhibit_2_b",
+              "params": {
+                "input": "reference=NET22-H"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_alternate",
+              "params": {
+                "input": "../../handoff/control.key"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh maint@control.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "inside-22"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/verify.txt"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh jobreader@workqueue.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-bridge-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/net22-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_exhibit_3_b",
+              "params": {
+                "input": "reference=NET22-S"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh jobreader@workqueue.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "narrow-bridge-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/net22-c.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m22_exhibit_4_b",
+              "params": {
+                "input": "reference=NET22-C"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh maint@control.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "inside-22"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m22_evidence",
+              "m22_exhibit_1",
+              "m22_exhibit_2",
+              "m22_exhibit_3",
+              "m22_exhibit_4"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M22_RECORD",
+              "M22_EXHIBIT_1",
+              "M22_EXHIBIT_2",
+              "M22_EXHIBIT_3",
+              "M22_EXHIBIT_4"
+            ],
+            "sources_preserved": true,
+            "session": {
+              "host_id": "control",
+              "account_id": "maint"
+            }
+          }
+        }
+      ]
+    },
+    "M23": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh caretaker@recovery.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "bright-corridor"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/workflows.conf"
+            },
+            {
+              "kind": "command",
+              "line": "ssh caretaker@scheduler-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "bright-corridor-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/rec23.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "before:photos+notify+staff:working",
+                  "right": "blanket-rule:three-workflows:blocked"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh caretaker@scheduler-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "bright-corridor-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/rec23-g.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "normal:scoped-access:restore",
+                  "right": "retired-token+bypass:remain-blocked"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "configure precise_access true"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_primary",
+              "params": {
+                "input": true
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_photo",
+              "params": {
+                "input": {
+                  "filename": "fake.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "SCRIPT"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 415
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_photo",
+              "params": {
+                "input": {
+                  "filename": "normal.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "JPEG"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 201
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_session",
+              "params": {
+                "input": {
+                  "action": "issue",
+                  "token": "fresh-M23"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_session",
+              "params": {
+                "input": {
+                  "action": "reuse",
+                  "token": "retired-M23"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 403
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_session",
+              "params": {
+                "input": {
+                  "action": "reuse",
+                  "token": "fresh-M23"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_login",
+              "params": {
+                "input": {
+                  "action": "login",
+                  "username": "caretaker",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_login",
+              "params": {
+                "input": {
+                  "action": "login",
+                  "username": "caretaker",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_login",
+              "params": {
+                "input": {
+                  "action": "login",
+                  "username": "caretaker",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 429
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_login",
+              "params": {
+                "input": {
+                  "action": "wait",
+                  "ticks": 2
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_login",
+              "params": {
+                "input": {
+                  "action": "login",
+                  "username": "caretaker",
+                  "password": "bright-corridor"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh caretaker@scheduler-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "bright-corridor-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/rec23-v.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "verified:photo+session+login",
+                  "right": "service:443+5050:open"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m23_evidence",
+              "m23_normal_photo",
+              "m23_retired_blocked",
+              "m23_normal_login",
+              "m23_exhibit_1",
+              "m23_exhibit_2",
+              "m23_exhibit_3"
+            ],
+            "policies": {
+              "precise_access": true,
+              "retired_tokens_blocked": true,
+              "broad_bypass": false
+            },
+            "archive_record_ids": [
+              "M23_RECORD",
+              "M23_EXHIBIT_1",
+              "M23_EXHIBIT_2",
+              "M23_EXHIBIT_3"
+            ],
+            "sources_preserved": true,
+            "services": [
+              {
+                "host_id": "recovery",
+                "port": "443",
+                "state": "open"
+              },
+              {
+                "host_id": "recovery",
+                "port": "5050",
+                "state": "open"
+              }
+            ],
+            "session": {
+              "host_id": "recovery",
+              "account_id": "caretaker"
+            }
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh caretaker@recovery.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "bright-corridor"
+            },
+            {
+              "kind": "command",
+              "line": "ssh safetylead@custodym23.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "three-lanterns"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-workflows.conf"
+            },
+            {
+              "kind": "command",
+              "line": "ssh safetylead@auth-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "three-lanterns-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/rec23.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_exhibit_1_b",
+              "params": {
+                "input": "reference=REC23"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh safetylead@auth-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "three-lanterns-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/rec23-g.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_exhibit_2_b",
+              "params": {
+                "input": "reference=REC23-G"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_policy",
+              "params": {
+                "input": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/workbench",
+              "body": {
+                "input": true
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_photo",
+              "body": {
+                "input": {
+                  "filename": "fake.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "SCRIPT"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 415
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_photo",
+              "body": {
+                "input": {
+                  "filename": "normal.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "JPEG"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 201
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_session",
+              "body": {
+                "input": {
+                  "action": "issue",
+                  "token": "fresh-M23"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_session",
+              "body": {
+                "input": {
+                  "action": "reuse",
+                  "token": "retired-M23"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 403
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_session",
+              "body": {
+                "input": {
+                  "action": "reuse",
+                  "token": "fresh-M23"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_login",
+              "body": {
+                "input": {
+                  "action": "login",
+                  "username": "caretaker",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_login",
+              "body": {
+                "input": {
+                  "action": "login",
+                  "username": "caretaker",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_login",
+              "body": {
+                "input": {
+                  "action": "login",
+                  "username": "caretaker",
+                  "password": "wrong"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 429
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_login",
+              "body": {
+                "input": {
+                  "action": "wait",
+                  "ticks": 2
+                }
+              },
+              "expect": {
+                "ok": true
+              }
+            },
+            {
+              "kind": "request",
+              "method": "POST",
+              "url": "https://recovery.packet.test/m23_login",
+              "body": {
+                "input": {
+                  "action": "login",
+                  "username": "caretaker",
+                  "password": "bright-corridor"
+                }
+              },
+              "expect": {
+                "ok": true,
+                "status": 200
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh safetylead@auth-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "three-lanterns-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/rec23-v.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m23_exhibit_3_b",
+              "params": {
+                "input": "reference=REC23-V"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m23_evidence",
+              "m23_normal_photo",
+              "m23_retired_blocked",
+              "m23_normal_login",
+              "m23_exhibit_1",
+              "m23_exhibit_2",
+              "m23_exhibit_3"
+            ],
+            "policies": {
+              "precise_access": true,
+              "retired_tokens_blocked": true,
+              "broad_bypass": false
+            },
+            "archive_record_ids": [
+              "M23_RECORD",
+              "M23_EXHIBIT_1",
+              "M23_EXHIBIT_2",
+              "M23_EXHIBIT_3"
+            ],
+            "sources_preserved": true,
+            "services": [
+              {
+                "host_id": "recovery",
+                "port": "443",
+                "state": "open"
+              },
+              {
+                "host_id": "recovery",
+                "port": "5050",
+                "state": "open"
+              }
+            ],
+            "session": {
+              "host_id": "recovery",
+              "account_id": "caretaker"
+            }
+          }
+        }
+      ]
+    },
+    "M24": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh examiner@control.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "final-map"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/directive.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh examiner@signing-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "final-map-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/end24.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "continuity:service-availability",
+                  "right": "retention:records-obligation"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh examiner@signing-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "final-map-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/end24-p.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "control:handoff-N47",
+                  "right": "independent:handoff-N47"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_primary",
+              "params": {
+                "input": {
+                  "left": "continuity:services",
+                  "right": "retention:exceptions-excluded"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh examiner@signing-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "final-map-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/end24-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_exhibit_3_a",
+              "params": {
+                "input": {
+                  "left": "required:classification+retention",
+                  "right": "unrelated:personal-data:excluded"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh examiner@signing-desk.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "final-map-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/end24-d.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_exhibit_4_a",
+              "params": {
+                "input": {
+                  "left": "originals:preserved",
+                  "right": "custody:verifiable"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m24_evidence",
+              "m24_exhibit_1",
+              "m24_exhibit_2",
+              "m24_exhibit_3",
+              "m24_exhibit_4"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M24_RECORD",
+              "M24_EXHIBIT_1",
+              "M24_EXHIBIT_2",
+              "M24_EXHIBIT_3",
+              "M24_EXHIBIT_4"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh examiner@control.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "final-map"
+            },
+            {
+              "kind": "command",
+              "line": "ssh keeper@custodym24.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "open-slate"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-directive.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh keeper@civic-vault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "open-slate-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/end24.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_exhibit_1_b",
+              "params": {
+                "input": "reference=END24"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh keeper@civic-vault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "open-slate-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/end24-p.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_exhibit_2_b",
+              "params": {
+                "input": "reference=END24-P"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_alternate",
+              "params": {
+                "input": "directive=ECHO"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh keeper@civic-vault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "open-slate-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/end24-s.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_exhibit_3_b",
+              "params": {
+                "input": "reference=END24-S"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "ssh keeper@civic-vault.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "open-slate-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/end24-d.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "m24_exhibit_4_b",
+              "params": {
+                "input": "reference=END24-D"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "m24_evidence",
+              "m24_exhibit_1",
+              "m24_exhibit_2",
+              "m24_exhibit_3",
+              "m24_exhibit_4"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "M24_RECORD",
+              "M24_EXHIBIT_1",
+              "M24_EXHIBIT_2",
+              "M24_EXHIBIT_3",
+              "M24_EXHIBIT_4"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "S01": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh editor@publication.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "margin-ash"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh editor@notice-history.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "margin-ash-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pub-s1.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s01_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "mail:N47:00:47",
+                  "right": "publication:N47:00:47"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s01_primary",
+              "params": {
+                "input": {
+                  "left": "original:00:47",
+                  "right": "republished:01:12"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh editor@notice-history.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "margin-ash-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pub-s1-r.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s01_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "original:00:47",
+                  "right": "copy:republished-01:12"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "s01_evidence",
+              "s01_exhibit_1",
+              "s01_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "S01_RECORD",
+              "S01_EXHIBIT_1",
+              "S01_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh editor@publication.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "margin-ash"
+            },
+            {
+              "kind": "command",
+              "line": "ssh publisher@custodys01.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "second-ink"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh publisher@publication-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "second-ink-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pub-s1.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s01_exhibit_1_b",
+              "params": {
+                "input": "reference=PUB-S1"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s01_alternate",
+              "params": {
+                "input": "notice=N47"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh publisher@publication-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "second-ink-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/pub-s1-r.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s01_exhibit_2_b",
+              "params": {
+                "input": "reference=PUB-S1-R"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "s01_evidence",
+              "s01_exhibit_1",
+              "s01_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "S01_RECORD",
+              "S01_EXHIBIT_1",
+              "S01_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "S02": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh observer@relay02.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "one-echo"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh observer@relay-observer.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "one-echo-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/sig-s2.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s02_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "relay:N47:observed",
+                  "right": "endpoint:N47:observed"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s02_primary",
+              "params": {
+                "input": "request=N47"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh observer@relay-observer.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "one-echo-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/sig-s2-d.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s02_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "observations:two",
+                  "right": "business-deliveries:one"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "s02_evidence",
+              "s02_exhibit_1",
+              "s02_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "S02_RECORD",
+              "S02_EXHIBIT_1",
+              "S02_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh observer@relay02.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "one-echo"
+            },
+            {
+              "kind": "command",
+              "line": "ssh dispatcher@custodys02.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "counted-wave"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh dispatcher@delivery-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "counted-wave-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/sig-s2.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s02_exhibit_1_b",
+              "params": {
+                "input": "reference=SIG-S2"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s02_alternate",
+              "params": {
+                "input": "request=N47"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh dispatcher@delivery-register.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "counted-wave-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/sig-s2-d.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "s02_exhibit_2_b",
+              "params": {
+                "input": "reference=SIG-S2-D"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "s02_evidence",
+              "s02_exhibit_1",
+              "s02_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "S02_RECORD",
+              "S02_EXHIBIT_1",
+              "S02_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "R01": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh verifier@verifier.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "small-garnet"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh verifier@verifier-build.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "small-garnet-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/vm-r1.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "r01_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "string:approved:present",
+                  "right": "branch:comparison:required"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/verifier.asm"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "r01_primary",
+              "params": {
+                "input": "signature"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh verifier@verifier-build.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "small-garnet-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/vm-r1-l.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "r01_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "checked:signature-shape",
+                  "right": "unchecked:retention-policy"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "r01_evidence",
+              "r01_exhibit_1",
+              "r01_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "R01_RECORD",
+              "R01_EXHIBIT_1",
+              "R01_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh verifier@verifier.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "small-garnet"
+            },
+            {
+              "kind": "command",
+              "line": "ssh auditor@custodyr01.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "separate-larch"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh auditor@release-audit.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "separate-larch-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/vm-r1.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "r01_exhibit_1_b",
+              "params": {
+                "input": "reference=VM-R1"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "r01_alternate",
+              "params": {
+                "input": {
+                  "left": "check:signature-shape",
+                  "right": "unchecked:retention-intent"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh auditor@release-audit.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "separate-larch-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/vm-r1-l.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "r01_exhibit_2_b",
+              "params": {
+                "input": "reference=VM-R1-L"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "r01_evidence",
+              "r01_exhibit_1",
+              "r01_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "R01_RECORD",
+              "R01_EXHIBIT_1",
+              "R01_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    },
+    "P01": {
+      "paths": [
+        {
+          "id": "route_a",
+          "name": "Inspection and model observations",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh labuser@memorylab.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "bounded-copper"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh labuser@memory-workbench.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "bounded-copper-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/mem-p1.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "p01_exhibit_1_a",
+              "params": {
+                "input": {
+                  "left": "buffer:offsets-0..3",
+                  "right": "flag:offset-4"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "command",
+              "line": "cat /public/memory.map"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "p01_primary",
+              "params": {
+                "input": "41 41 41 41 47"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh labuser@memory-workbench.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "bounded-copper-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/mem-p1-l.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "p01_exhibit_2_a",
+              "params": {
+                "input": {
+                  "left": "model:flag:changed",
+                  "right": "real-system:authority:not-established"
+                }
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "p01_evidence",
+              "p01_exhibit_1",
+              "p01_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "P01_RECORD",
+              "P01_EXHIBIT_1",
+              "P01_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        },
+        {
+          "id": "route_b",
+          "name": "Independent custody and verified work",
+          "actions": [
+            {
+              "kind": "command",
+              "line": "ssh labuser@memorylab.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "bounded-copper"
+            },
+            {
+              "kind": "command",
+              "line": "ssh safety@custodyp01.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "calm-cell"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/retained-observations.log"
+            },
+            {
+              "kind": "command",
+              "line": "ssh safety@boundary-audit.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "calm-cell-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/mem-p1.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "p01_exhibit_1_b",
+              "params": {
+                "input": "reference=MEM-P1"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "p01_alternate",
+              "params": {
+                "input": "offset=4"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "ssh safety@boundary-audit.packet.test"
+            },
+            {
+              "kind": "password",
+              "value": "calm-cell-desk"
+            },
+            {
+              "kind": "command",
+              "line": "cat /desk/mem-p1-l.log"
+            },
+            {
+              "kind": "tool",
+              "tool_id": "p01_exhibit_2_b",
+              "params": {
+                "input": "reference=MEM-P1-L"
+              }
+            },
+            {
+              "kind": "command",
+              "line": "exit"
+            }
+          ],
+          "expected": {
+            "completed": true,
+            "facts": [
+              "p01_evidence",
+              "p01_exhibit_1",
+              "p01_exhibit_2"
+            ],
+            "policies": {},
+            "archive_record_ids": [
+              "P01_RECORD",
+              "P01_EXHIBIT_1",
+              "P01_EXHIBIT_2"
+            ],
+            "sources_preserved": true
+          }
+        }
+      ]
+    }
+  }
+}

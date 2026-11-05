@@ -1,0 +1,980 @@
+{
+  "M02": [
+    [
+      [
+        "欠けた送信番号",
+        "缺失的传输编号",
+        "El número de la transmisión perdida",
+        "Die fehlende Übertragungsnummer"
+      ],
+      [
+        "ローテーション前後の行は、ジョブ N47 と要求 R204 を共有しています。",
+        "轮转前后的行都指向任务 N47 与请求 R204。",
+        "Las filas anteriores y posteriores a la rotación comparten la tarea N47 y la petición R204.",
+        "Die Zeilen vor und nach der Rotation teilen Auftrag N47 und Anfrage R204."
+      ]
+    ]
+  ],
+  "M03": [
+    [
+      [
+        "廃止された画面、残った業務",
+        "退役页面，留存业务",
+        "Página retirada, trabajo pendiente",
+        "Stillgelegte Seite, verbliebene Arbeit"
+      ],
+      [
+        "廃止通知は公開画面を対象としており、保守サービスの廃止ではありません。",
+        "退役通知针对公开页面，并未批准停止维护服务。",
+        "El aviso retira la página pública, no el servicio de mantenimiento.",
+        "Die Stilllegungsmitteilung betrifft die öffentliche Seite, nicht den Wartungsdienst."
+      ]
+    ]
+  ],
+  "M04": [
+    [
+      [
+        "取り消しと移管の台帳",
+        "取消与移交的台账",
+        "El registro de cancelación y traslado",
+        "Das Storno- und Übertragungsbuch"
+      ],
+      [
+        "B204 の画面上の取り消しと、R204 の資料移管は別々の業務です。",
+        "B204 的页面取消与 R204 的记录移交是不同业务事件。",
+        "La cancelación en pantalla de B204 y el traslado de R204 son hechos distintos.",
+        "Die Bildschirmstornierung von B204 und die Übertragung in R204 sind getrennte Vorgänge."
+      ]
+    ]
+  ],
+  "M05": [
+    [
+      [
+        "受付票の本当の持ち主",
+        "受理单的实际主人",
+        "La verdadera dueña del recibo",
+        "Die tatsächliche Beleginhaberin"
+      ],
+      [
+        "C731 の持ち主はセリンであり、現在のアカウント自身の受付票ではありません。",
+        "C731 属于瑞琳，并非当前账号本人的受理单。",
+        "C731 pertenece a Serin; no es el recibo propio de la cuenta actual.",
+        "C731 gehört Serin, nicht dem aktuellen Konto."
+      ]
+    ],
+    [
+      [
+        "コピーから消えた一行",
+        "副本里缺失的一行",
+        "La línea que falta en la copia",
+        "Die fehlende Zeile der Kopie"
+      ],
+      [
+        "修理記録の原本には例外保留があり、配布コピーではその行が消えています。",
+        "维修原始条目包含例外暂缓，分发副本却缺少该行。",
+        "El original de reparación incluye una retención de excepción; la copia distribuida la omite.",
+        "Der Reparaturoriginaleintrag enthält einen Ausnahmevorbehalt, die verteilte Kopie nicht."
+      ]
+    ]
+  ],
+  "M06": [
+    [
+      [
+        "人の失敗、ジョブの失敗",
+        "人的失败与任务的失败",
+        "Fallos humanos y fallos de tareas",
+        "Fehlschläge von Menschen und Aufträgen"
+      ],
+      [
+        "繰り返しの失敗と病院通知の正規ログインは、同じアカウントでも要求元が違います。",
+        "重复失败与医院通知的有效登录虽使用同一账号，请求来源却不同。",
+        "Los fallos repetidos y el acceso válido del notificador usan la misma cuenta desde orígenes distintos.",
+        "Wiederholte Fehlschläge und die gültige Krankenhausanmeldung nutzen dasselbe Konto aus verschiedenen Quellen."
+      ]
+    ],
+    [
+      [
+        "制限後にも届く通知",
+        "限制之后仍在的通知",
+        "Una notificación tras el límite",
+        "Eine Meldung nach der Begrenzung"
+      ],
+      [
+        "失敗を制限した後も、正規ジョブ N61 は病院通知キューで一度だけ処理される必要があります。",
+        "限制失败后，正常任务 N61 仍须由病区通知队列处理一次。",
+        "Tras limitar los fallos, la cola hospitalaria debe seguir procesando la tarea N61 una sola vez.",
+        "Nach der Begrenzung muss der reguläre Auftrag N61 in der Stationswarteschlange genau einmal verarbeitet werden."
+      ]
+    ]
+  ],
+  "M07": [
+    [
+      [
+        "退勤とサーバーの鍵",
+        "下班签名与服务器钥匙",
+        "La salida del turno y la llave",
+        "Feierabend und Serverschlüssel"
+      ],
+      [
+        "退勤後も、セッション別名 stale-N47 にはサーバーの業務権限が残っていました。",
+        "下班后，会话别名 stale-N47 仍携带服务器业务权限。",
+        "Tras acabar el turno, el alias stale-N47 aún conservaba autoridad en el servidor.",
+        "Nach Schichtende besaß der Sitzungsalias stale-N47 weiterhin Serverrechte."
+      ]
+    ],
+    [
+      [
+        "新しいセッションの業務範囲",
+        "新会话的业务范围",
+        "El alcance de la sesión nueva",
+        "Der Arbeitsumfang der neuen Sitzung"
+      ],
+      [
+        "新しい保守セッションは、廃止した臨時権限を引き継がず、正規の予約変更だけを許します。",
+        "新的维护会话只允许正常预约修改，不继承已撤销的临时权限。",
+        "La sesión nueva permite cambios normales de reserva sin heredar autoridad temporal retirada.",
+        "Die neue Wartungssitzung erlaubt reguläre Reservierungsänderungen ohne alte vorläufige Rechte."
+      ]
+    ]
+  ],
+  "M08": [
+    [
+      [
+        "お知らせの閲覧と変更要求",
+        "公告阅读与变更请求",
+        "Leer el aviso, enviar el cambio",
+        "Mitteilung lesen, Änderung senden"
+      ],
+      [
+        "セリンが読んだお知らせと、設定変更を受けたサービスでは要求元が異なります。",
+        "瑞琳所读公告与接收设置变更的服务来自不同源。",
+        "El aviso que leyó Serin y el servicio que recibió el cambio tienen orígenes distintos.",
+        "Serins gelesene Mitteilung und der empfangende Einstellungsdienst haben verschiedene Ursprünge."
+      ]
+    ],
+    [
+      [
+        "意思と認証",
+        "意图与认证",
+        "Intención y autenticación",
+        "Absicht und Anmeldung"
+      ],
+      [
+        "セッション付きの要求でも、正規保存の要求元とトークン条件を満たす必要があります。",
+        "即使请求携带会话，也必须满足正常保存的来源与令牌条件。",
+        "Aunque lleve una sesión, la petición debe cumplir el origen y token del guardado legítimo.",
+        "Auch eine Anfrage mit Sitzung muss Herkunfts- und Tokenbedingungen regulären Speicherns erfüllen."
+      ]
+    ]
+  ],
+  "M09": [
+    [
+      [
+        "索引と保存一覧",
+        "索引与保留列表",
+        "El índice y la lista de conservación",
+        "Index und Aufbewahrungsliste"
+      ],
+      [
+        "画面の索引にない R609 が、保存一覧では C731 のジョブとして残っています。",
+        "显示索引中缺失的 R609，在保留列表中仍是 C731 的任务。",
+        "R609 falta en el índice mostrado, pero se conserva como la tarea de C731.",
+        "R609 fehlt im Anzeigeindex, bleibt aber als Auftrag zu C731 aufbewahrt."
+      ]
+    ],
+    [
+      [
+        "検索結果の照合",
+        "搜索结果交叉核验",
+        "Contrastar el resultado de búsqueda",
+        "Suchergebnis gegenprüfen"
+      ],
+      [
+        "取得した R609 は、似た名前の他人ではなく、C731 の除外記録です。",
+        "查询得到的 R609 是 C731 的排除记录，并非另一位姓名相似的市民。",
+        "El R609 obtenido es la exclusión de C731, no otra persona con nombre parecido.",
+        "Das abgerufene R609 ist der Ausschluss zu C731, kein namensähnlicher anderer Bürger."
+      ]
+    ]
+  ],
+  "M10": [
+    [
+      [
+        "お知らせ原文の版",
+        "公告源文版本",
+        "La versión original del aviso",
+        "Die Quellversion der Mitteilung"
+      ],
+      [
+        "原文と表示履歴が同じお知らせ V10 を指していることが、比較の前提です。",
+        "比较前须确认源文与渲染历史都指向同一公告 V10。",
+        "La fuente y el historial deben corresponder al mismo aviso V10 antes de compararlos.",
+        "Quelle und Darstellungshistorie müssen vor dem Vergleich dieselbe Mitteilung V10 betreffen."
+      ]
+    ],
+    [
+      [
+        "隔離された観測者",
+        "隔离的观察者",
+        "El observador aislado",
+        "Der isolierte Beobachter"
+      ],
+      [
+        "標識の効果は検証窓でだけ観察され、市民のお知らせやセッションは変わっていません。",
+        "标记效果仅在检查窗口中出现，市民公告与会话未改变。",
+        "El efecto se observó solo en la ventana de inspección; avisos y sesiones ciudadanos siguieron intactos.",
+        "Der Effekt trat nur im Prüffenster auf; Bürgermitteilungen und Sitzungen blieben unverändert."
+      ]
+    ]
+  ],
+  "M11": [
+    [
+      [
+        "よく似た名前の二つの保管庫",
+        "名字相近的两个资料库",
+        "Dos almacenes de nombre parecido",
+        "Zwei ähnlich benannte Speicher"
+      ],
+      [
+        "public と private は、名前の接頭辞ではなく解決済みディレクトリ境界で区別します。",
+        "public 与 private 应按解析后的目录边界区分，而非名称前缀。",
+        "public y private se separan por sus límites de directorio resueltos, no por el prefijo.",
+        "public und private trennt die aufgelöste Verzeichnisgrenze, kein Namenspräfix."
+      ]
+    ],
+    [
+      [
+        "標識の保管元",
+        "标记的保留来源",
+        "El origen conservado del marcador",
+        "Die aufbewahrte Herkunft der Markierung"
+      ],
+      [
+        "隣の標識とアップロードキュー U12 の引き継ぎ資料には、同じ配備参照があります。",
+        "相邻标记与上传队列 U12 的交接资料具有同一发布引用。",
+        "El marcador vecino comparte referencia de versión con el relevo de la cola U12.",
+        "Die benachbarte Markierung teilt ihre Versionsreferenz mit der Übergabe der Upload-Warteschlange U12."
+      ]
+    ]
+  ],
+  "M12": [
+    [
+      [
+        "写真の名前と処理経路",
+        "照片名称与处理路径",
+        "Nombre de foto y ruta de proceso",
+        "Fotoname und Verarbeitungsweg"
+      ],
+      [
+        "jpg という名前と実行処理キューへの登録は、別々に調べる条件です。",
+        "jpg 文件名与进入可执行处理队列是两个独立检查条件。",
+        "Un nombre jpg y entrar en la cola ejecutable son condiciones distintas que inspeccionar.",
+        "Ein jpg-Dateiname und der Eintritt in die ausführbare Warteschlange sind getrennt zu prüfen."
+      ]
+    ],
+    [
+      [
+        "正規の写真が戻る",
+        "正常照片的回归",
+        "Vuelve una foto legítima",
+        "Ein reguläres Foto kehrt zurück"
+      ],
+      [
+        "同じ状態のもとで、拒否する偽装ファイルと残すべき JPEG を比較します。",
+        "在同一状态下对比应拒绝的伪装文件与应保留的正常 JPEG。",
+        "Compara bajo el mismo estado el archivo disfrazado que rechazar y el JPEG legítimo que conservar.",
+        "Vergleiche im selben Zustand die abzuweisende Tarnung mit dem zu erhaltenden regulären JPEG."
+      ]
+    ]
+  ],
+  "M13": [
+    [
+      [
+        "一つの要求、二つのジョブ",
+        "一次请求，两个任务",
+        "Una petición, dos tareas",
+        "Eine Anfrage, zwei Aufträge"
+      ],
+      [
+        "N47 の診断照会の後に、別の inspect ジョブがつながっています。",
+        "请求 N47 的诊断查询后，接着一个独立 inspect 任务。",
+        "A la consulta de diagnóstico N47 le sigue una tarea inspect separada.",
+        "Auf die Diagnoseabfrage N47 folgt ein eigener inspect-Auftrag."
+      ]
+    ],
+    [
+      [
+        "実行担当者の身元",
+        "执行者的身份",
+        "La identidad de quien ejecuta",
+        "Die Identität des Ausführenden"
+      ],
+      [
+        "実行主体は管理者ではなく、inspection グループの worker です。",
+        "执行身份是 inspection 组的 worker，而非管理员。",
+        "Ejecuta worker del grupo inspection, no un administrador.",
+        "Die Ausführung erfolgt als worker der Gruppe inspection, nicht als Administrator."
+      ]
+    ],
+    [
+      [
+        "二つ目のジョブの宛先",
+        "第二个任务的目的地",
+        "El destino de la segunda tarea",
+        "Das Ziel des zweiten Auftrags"
+      ],
+      [
+        "追加ジョブは内部状態サービスを読みます。それ自体が管理セッションではありません。",
+        "额外任务读取内部状态服务，这本身并不是管理会话。",
+        "La tarea adicional lee un servicio interno de estado; eso no es una sesión de gestión.",
+        "Der Zusatzauftrag liest einen internen Statusdienst; das ist selbst keine Verwaltungssitzung."
+      ]
+    ]
+  ],
+  "M14": [
+    [
+      [
+        "要求者が変える地図",
+        "请求者改变的地图",
+        "Un mapa que cambia con quien pide",
+        "Eine Karte je nach Anfragendem"
+      ],
+      [
+        "市民 PC から閉じた内部アドレスも、プレビュー作業者からは経路があります。",
+        "对市民 PC 关闭的内部地址，预览任务却有通路。",
+        "La dirección interna cerrada al PC ciudadano tiene ruta desde el proceso de vista previa.",
+        "Die für den Bürger-PC gesperrte interne Adresse hat einen Weg vom Vorschauprozess."
+      ]
+    ],
+    [
+      [
+        "転送後の実際の宛先",
+        "重定向后的实际目的地",
+        "El destino tras la redirección",
+        "Das Ziel nach der Weiterleitung"
+      ],
+      [
+        "プレビューの最終宛先は、外部の表紙ページではなく内部状態ノードです。",
+        "预览的最终目的地是内部状态节点，而非外部封面页。",
+        "El destino final de la vista previa es el nodo interno, no la página externa de portada.",
+        "Das Endziel der Vorschau ist der interne Statusknoten, nicht die äußere Deckseite."
+      ]
+    ],
+    [
+      [
+        "到達と権限",
+        "可达性与权限",
+        "Alcance y autoridad",
+        "Erreichbarkeit und Rechte"
+      ],
+      [
+        "内部標識を読めても、管理記録を変更する権限の証明にはなりません。",
+        "读到内部标记，并不能证明有修改管理记录的权限。",
+        "Leer una marca interna no demuestra autoridad para modificar registros de gestión.",
+        "Das Lesen einer internen Markierung belegt keine Änderungsrechte auf Verwaltungsakten."
+      ]
+    ]
+  ],
+  "M15": [
+    [
+      [
+        "公式地図と残った中継",
+        "官方地图与留存中继",
+        "El mapa oficial y el repetidor",
+        "Die offizielle Karte und das Relais"
+      ],
+      [
+        "公式図面の閉じた管理網と、実際に動く中継を分けて確認します。",
+        "分别核实官方图纸上的封闭管理网与实际运行的中继。",
+        "Comprueba por separado la red cerrada del plano oficial y el repetidor activo.",
+        "Prüfe das laut Plan geschlossene Verwaltungsnetz getrennt vom aktiven Relais."
+      ]
+    ],
+    [
+      [
+        "終わらなかった臨時許可",
+        "从未结束的临时许可",
+        "El permiso temporal que no acabó",
+        "Die nie beendete Übergangserlaubnis"
+      ],
+      [
+        "緊急中継の許可はジョブ終了後に更新されていませんが、経路は残っていました。",
+        "任务结束后紧急中继许可未续期，通路却仍在。",
+        "El permiso de emergencia no se renovó tras la tarea, pero la ruta siguió activa.",
+        "Die Notrelaisgenehmigung wurde nach dem Auftrag nicht erneuert, der Weg blieb dennoch aktiv."
+      ]
+    ],
+    [
+      [
+        "読み取り限定の実際の範囲",
+        "只读权限的实际范围",
+        "El alcance real de solo lectura",
+        "Der tatsächliche Leseumfang"
+      ],
+      [
+        "管理の観測者は証拠を読むだけで、他の利用者の権限を変更しません。",
+        "管理观察者只能读取证据，不改变其他用户权限。",
+        "El observador de gestión lee pruebas sin modificar autoridad de otros usuarios.",
+        "Der Verwaltungsbeobachter liest Belege und verändert keine fremden Rechte."
+      ]
+    ]
+  ],
+  "M16": [
+    [
+      [
+        "親ディレクトリの門",
+        "上级目录之门",
+        "La puerta del directorio superior",
+        "Das Tor des übergeordneten Ordners"
+      ],
+      [
+        "同じファイル権限でも、親ディレクトリを通れるかでアクセス結果が変わります。",
+        "文件权限相同，上级目录遍历权限不同也会改变访问结果。",
+        "Los mismos permisos de archivo dan accesos distintos si cambia el recorrido de directorios superiores.",
+        "Gleiche Dateirechte können bei unterschiedlichem Zugriff auf übergeordnete Ordner andere Ergebnisse liefern."
+      ]
+    ],
+    [
+      [
+        "グループが残した余分な道",
+        "组留下的额外通路",
+        "La ruta adicional del grupo",
+        "Der zusätzliche Gruppenweg"
+      ],
+      [
+        "臨時アカウントに残った retention グループが、読み取り範囲を広げました。",
+        "临时账号上残留的 retention 组扩大了读取范围。",
+        "El grupo retention conservado en la cuenta temporal amplió su alcance de lectura.",
+        "Die am Übergangskonto verbliebene Gruppe retention erweiterte dessen Leseumfang."
+      ]
+    ],
+    [
+      [
+        "ミンソの原資料",
+        "敏瑞的原始资料",
+        "La fuente original de Minseo",
+        "Minseos Originalquelle"
+      ],
+      [
+        "保存記録の引き継ぎ署名が、外部検証者のコピーの出所につながります。",
+        "保留记录的交接签名与外部核验者副本的来源相互关联。",
+        "La firma de relevo de conservación conecta con el origen de la copia del verificador externo.",
+        "Die Aufbewahrungsübergabesignatur verbindet sich mit der Quelle der externen Prüferkopie."
+      ]
+    ]
+  ],
+  "M17": [
+    [
+      [
+        "オンライン認証から離れた資料",
+        "与在线登录分离的资料",
+        "Pruebas separadas del acceso en línea",
+        "Vom Onlinezugang getrennte Belege"
+      ],
+      [
+        "ログイン回数の制限と、すでに分離された監査バイトは別々の境界です。",
+        "服务器登录限流与已分离的审计字节属于不同验证边界。",
+        "Limitar accesos al servidor y proteger bytes de auditoría ya separados son límites distintos.",
+        "Server-Anmeldebegrenzung und bereits abgetrennte Auditbytes sind verschiedene Grenzen."
+      ]
+    ],
+    [
+      [
+        "小さな辞書の限界",
+        "小词典的局限",
+        "El límite del pequeño diccionario",
+        "Die Grenze des kleinen Wörterbuchs"
+      ],
+      [
+        "候補が見つからなくても不可能の証明にはなりません。モデルのコストは実機の時間ではありません。",
+        "未找到候选并不证明不可能，模型成本也不等于真实硬件耗时。",
+        "No encontrar un candidato no prueba imposibilidad; el coste del modelo no es tiempo real de hardware.",
+        "Ein fehlender Kandidat belegt keine Unmöglichkeit; Modellkosten sind keine reale Hardwarezeit."
+      ]
+    ],
+    [
+      [
+        "保管庫アカウントの範囲",
+        "保管库账号范围",
+        "El alcance de la cuenta de la cámara",
+        "Der Umfang des Tresorkontos"
+      ],
+      [
+        "保管庫の reader セッションは、指定の検証表だけを読むことができます。",
+        "保管库 reader 会话仅允许读取指定核验表。",
+        "La sesión reader de la cámara solo permite leer la hoja de verificación indicada.",
+        "Die Tresorsitzung reader darf nur die festgelegte Prüfliste lesen."
+      ]
+    ]
+  ],
+  "M18": [
+    [
+      [
+        "現在の設定と履歴",
+        "当前配置与历史",
+        "Configuración actual e historial",
+        "Aktuelle Konfiguration und Verlauf"
+      ],
+      [
+        "現在の空のトークン欄と、履歴に残る有効な参照は同じ意味ではありません。",
+        "当前为空的令牌字段，与历史中活跃的引用并不等价。",
+        "Un campo de token vacío ahora y una referencia activa en el historial no son equivalentes.",
+        "Ein heute leeres Tokenfeld und ein aktiver Verweis im Verlauf sind nicht gleichbedeutend."
+      ]
+    ],
+    [
+      [
+        "参照からサービスへ",
+        "从引用到服务",
+        "De la referencia al servicio",
+        "Vom Verweis zum Dienst"
+      ],
+      [
+        "設定履歴のトークン参照は、ジョブログの retention サービスに結び付きます。",
+        "配置历史中的令牌引用，关联任务日志所指的 retention 服务。",
+        "La referencia del token en el historial conecta con el servicio retention del registro de tareas.",
+        "Der Tokenverweis im Verlauf führt zum retention-Dienst des Auftragsprotokolls."
+      ]
+    ],
+    [
+      [
+        "削除後に残った効力",
+        "被删值留下的权限",
+        "La autoridad que queda tras borrar",
+        "Die Restberechtigung eines gelöschten Werts"
+      ],
+      [
+        "実際の読み取り範囲を比べ、ファイルから消えたトークンがサーバーで失効したか確かめます。",
+        "对比实际读取范围，确认文件中已删除的令牌是否在服务器端撤销。",
+        "Compara el alcance real para saber si el token borrado del archivo fue revocado en el servidor.",
+        "Vergleiche den tatsächlichen Leseumfang, um den serverseitigen Widerruf des gelöschten Tokens zu prüfen."
+      ]
+    ]
+  ],
+  "M19": [
+    [
+      [
+        "暗号化の終端",
+        "加密的终端",
+        "El extremo del cifrado",
+        "Der Verschlüsselungsendpunkt"
+      ],
+      [
+        "暗号化された転送区間とアプリのログは、同じ観測者ではありません。",
+        "加密传输段与应用日志并非同一观察者。",
+        "El tramo cifrado y el registro de aplicación no son el mismo observador.",
+        "Verschlüsselte Übertragungsstrecke und Anwendungsprotokoll sind nicht derselbe Beobachter."
+      ]
+    ],
+    [
+      [
+        "同じ要求を探す印",
+        "寻找同一请求的标记",
+        "Encontrar la misma petición",
+        "Dieselbe Anfrage wiederfinden"
+      ],
+      [
+        "二つの観察の要求 ID N47 が同じでも、本文の見え方は違う場合があります。",
+        "两次观察的请求 ID 都是 N47，正文可见性仍可能不同。",
+        "El ID N47 puede coincidir en dos observaciones aunque difiera la visibilidad del cuerpo.",
+        "Die Anfrage-ID N47 kann in zwei Beobachtungen gleich sein, die Inhaltssichtbarkeit aber verschieden."
+      ]
+    ],
+    [
+      [
+        "本文を見た主体",
+        "谁看到了正文",
+        "Quién vio el cuerpo",
+        "Wer den Inhalt sah"
+      ],
+      [
+        "本文は終端ログで確認されただけで、途中の暗号を解いた証拠ではありません。",
+        "正文是在终端日志中确认的，并不证明中间传输段被解密。",
+        "El cuerpo se acredita en el registro del extremo, no como descifrado del tránsito.",
+        "Der Inhalt ist im Endpunktprotokoll belegt, nicht als Entschlüsselung der Zwischenstrecke."
+      ]
+    ]
+  ],
+  "M20": [
+    [
+      [
+        "ずれた時計の基準",
+        "不同时钟的基准",
+        "Referencias de reloj",
+        "Bezugszeiten der Uhren"
+      ],
+      [
+        "独立基準によると、承認時計は 90 秒進み、分類時計は 30 秒遅れていました。",
+        "独立基准表明批准时钟快 90 秒，分类时钟慢 30 秒。",
+        "Una referencia independiente sitúa el reloj de aprobación 90 segundos adelantado y el de clasificación 30 atrasado.",
+        "Ein unabhängiger Bezug zeigt die Freigabeuhr 90 Sekunden vor und die Klassifizierungsuhr 30 Sekunden zurück."
+      ]
+    ],
+    [
+      [
+        "署名した範囲",
+        "签认的范围",
+        "El alcance firmado",
+        "Der unterschriebene Umfang"
+      ],
+      [
+        "テギョンの署名は接続継続を承認し、保存除外は別の適用段階でした。",
+        "泰景签署的是连接连续性；保留排除属于另一个应用步骤。",
+        "Taegyeong firmó la continuidad de conexión; excluir la conservación fue otro paso.",
+        "Taegyeong unterschrieb die Verbindungsfortführung; der Aufbewahrungsausschluss war ein eigener Schritt."
+      ]
+    ],
+    [
+      [
+        "三つの決定の連鎖",
+        "三项决定的链条",
+        "La cadena de tres decisiones",
+        "Die Kette dreier Entscheidungen"
+      ],
+      [
+        "緊急接続、例外分類、保存除外を、一人の一つの命令にまとめてはいけません。",
+        "不可把紧急连接、例外分类与保留排除，合并成一人的单一命令。",
+        "No reduzcas conexión de emergencia, clasificación y exclusión a una única orden personal.",
+        "Fasse Notverbindung, Ausnahmeklassifizierung und Aufbewahrungsausschluss nicht als einen Einzelbefehl zusammen."
+      ]
+    ]
+  ],
+  "M21": [
+    [
+      [
+        "受付から照会へ",
+        "从受理到查询",
+        "Del recibo a la consulta",
+        "Vom Beleg zur Abfrage"
+      ],
+      [
+        "受付票 C731 は封印記録を直接返さず、次の照会名を示します。",
+        "受理单 C731 只给出下一次查询名称，不直接返回封存记录。",
+        "El recibo C731 nombra la siguiente consulta, no devuelve directamente el registro sellado.",
+        "Beleg C731 nennt die nächste Abfrage, statt die versiegelte Aufzeichnung direkt zu liefern."
+      ]
+    ],
+    [
+      [
+        "異なる入口の境界",
+        "不同的进入边界",
+        "Límites de entrada distintos",
+        "Getrennte Eingangsgrenzen"
+      ],
+      [
+        "オブジェクト参照と添付パスは違う境界を越え、同じ適用表を指しています。",
+        "对象引用与附件路径跨越不同边界，却指向同一应用表。",
+        "Las referencias de objeto y rutas de adjuntos cruzan límites distintos hacia la misma hoja.",
+        "Objektverweise und Anhangspfade überschreiten verschiedene Grenzen zur selben Anwendungsliste."
+      ]
+    ],
+    [
+      [
+        "回収した適用表の対象",
+        "取回应用表的目标",
+        "Los objetivos de la hoja recuperada",
+        "Die Ziele der gesicherten Liste"
+      ],
+      [
+        "適用表の対象は特定の受付集団であり、市民台帳全体ではありません。",
+        "应用表针对特定受理集合，而非全部市民名册。",
+        "La hoja apunta a un conjunto de recibos, no a todo el registro ciudadano.",
+        "Die Anwendungsliste betrifft eine Beleggruppe, nicht das gesamte Bürgerregister."
+      ]
+    ],
+    [
+      [
+        "次の原本への参照",
+        "下一份原件的引用",
+        "La referencia al siguiente original",
+        "Der Verweis auf das nächste Original"
+      ],
+      [
+        "ECHO21 の承認参照が、管理網の範囲記録 ECHO22 につながります。",
+        "ECHO21 的批准引用关联管理网中的范围记录 ECHO22。",
+        "La aprobación de ECHO21 enlaza con el registro de alcance ECHO22 en gestión.",
+        "Der Freigabeverweis von ECHO21 führt zum Umfangsdatensatz ECHO22 in der Verwaltung."
+      ]
+    ]
+  ],
+  "M22": [
+    [
+      [
+        "外部から入った主体",
+        "外部入口的身份",
+        "La identidad de entrada externa",
+        "Die äußere Zugangsidentität"
+      ],
+      [
+        "要求を始めた市民と、内部要求を送った preview-worker は別の主体です。",
+        "发起请求的市民与发送内部请求的 preview-worker 是不同身份。",
+        "El ciudadano inicial y preview-worker, que envió la petición interna, son identidades distintas.",
+        "Der ursprüngliche Bürger und preview-worker als interner Anfragender sind verschiedene Identitäten."
+      ]
+    ],
+    [
+      [
+        "ピボット後の新しい権限",
+        "跳板后的新权限",
+        "Nueva autoridad tras el pivote",
+        "Neue Rechte nach dem Pivot"
+      ],
+      [
+        "内部アドレスに届いても、管理用の別認証が必要です。",
+        "到达内部地址之后，仍需独立管理认证。",
+        "Llegar a la dirección interna sigue requiriendo autenticación de gestión separada.",
+        "Auch nach Erreichen der internen Adresse ist eine eigene Verwaltungsanmeldung nötig."
+      ]
+    ],
+    [
+      [
+        "管理セッションが読んだ範囲",
+        "管理会话读取的范围",
+        "Qué leyó la sesión de gestión",
+        "Was die Verwaltungssitzung las"
+      ],
+      [
+        "maint の目標ファイル読み取りと、他アカウントの変更権限は別です。",
+        "maint 会话的目标文件读取与修改其他账号的权限是两回事。",
+        "Leer el archivo objetivo con maint es distinto de poder modificar otras cuentas.",
+        "Der Zieldateizugriff von maint ist getrennt von Änderungsrechten auf andere Konten."
+      ]
+    ],
+    [
+      [
+        "対象集団の照合",
+        "目标集合交叉核验",
+        "Contrastar el grupo objetivo",
+        "Die Zielgruppe gegenprüfen"
+      ],
+      [
+        "ECHO22 の除外対象は、回収した ECHO21 の受付集団と一致します。",
+        "ECHO22 的排除对象与已取得 ECHO21 表中的受理集合一致。",
+        "Las exclusiones ECHO22 coinciden con el grupo de recibos de la hoja ECHO21 recuperada.",
+        "Die Ausschlüsse in ECHO22 entsprechen der Beleggruppe der gesicherten ECHO21-Liste."
+      ]
+    ]
+  ],
+  "M23": [
+    [
+      [
+        "三つの業務が止まった理由",
+        "三项业务停摆的原因",
+        "Por qué se detuvieron tres procesos",
+        "Warum drei Abläufe stoppten"
+      ],
+      [
+        "写真、通知、保守ログインが同時に止まったのは、一括制限の影響です。",
+        "照片、通知与维护登录同时停止，是一刀切限制所致。",
+        "Fotos, avisos y acceso de mantenimiento pararon juntos por una restricción general.",
+        "Fotos, Meldungen und Wartungsanmeldung stoppten gemeinsam durch eine Pauschalsperre."
+      ]
+    ],
+    [
+      [
+        "戻してはいけない権限",
+        "不可恢复的权限",
+        "La autoridad que no debe volver",
+        "Rechte, die nicht zurückkehren dürfen"
+      ],
+      [
+        "正規経路を戻しても、廃止トークンや広域の迂回を戻してはいけません。",
+        "恢复正常通路时，不可恢复旧令牌或宽泛绕行。",
+        "Restaurar rutas legítimas no debe restaurar tokens retirados ni desvíos amplios.",
+        "Die Wiederherstellung regulärer Wege darf alte Tokens und breite Umgehungen nicht zurückbringen."
+      ]
+    ],
+    [
+      [
+        "同じ状態で正規動作を試す",
+        "同一状态下的正常验证",
+        "Pruebas legítimas en un mismo estado",
+        "Reguläre Prüfungen im selben Zustand"
+      ],
+      [
+        "同じ方針のもとで、正規 JPEG、新しいセッション、職員ログイン、通知サービスがすべて動く必要があります。",
+        "在同一策略状态下，正常 JPEG、新会话、职员登录与通知服务都必须可用。",
+        "Con la misma política deben funcionar el JPEG normal, una sesión nueva, el acceso del personal y las notificaciones.",
+        "Im selben Richtlinienzustand müssen reguläres JPEG, neue Sitzung, Personalzugang und Meldedienst funktionieren."
+      ]
+    ]
+  ],
+  "M24": [
+    [
+      [
+        "継続と保存の区別",
+        "连续性与保留",
+        "Continuidad y conservación",
+        "Fortführung und Aufbewahrung"
+      ],
+      [
+        "サービス継続と保存除外を、同じ承認として扱うことはできません。",
+        "服务连续性与记录保留排除，不能被视为同一授权。",
+        "La continuidad del servicio y excluir la conservación no equivalen a la misma autorización.",
+        "Dienstfortführung und Aufbewahrungsausschluss dürfen nicht als dieselbe Freigabe gelten."
+      ]
+    ],
+    [
+      [
+        "互いを検証する出所",
+        "相互核验的来源",
+        "Fuentes que se contrastan",
+        "Quellen zur gegenseitigen Prüfung"
+      ],
+      [
+        "最終指示の出所を示すには、制御原本と独立コピーの引き継ぎ参照がつながる必要があります。",
+        "综合控制原件与独立副本的交接引用须相连，才能证明指令来源。",
+        "El original de control y la copia independiente necesitan referencias enlazadas para probar la procedencia de la orden.",
+        "Steuerungsoriginal und unabhängige Kopie benötigen verknüpfte Übergabeverweise, um die Anweisungsherkunft zu belegen."
+      ]
+    ],
+    [
+      [
+        "必要な事実の範囲",
+        "所需事实的范围",
+        "El alcance necesario",
+        "Der nötige Umfang"
+      ],
+      [
+        "最終的な事実は受付分類と保存方針の関係であり、個人資料全体は不要です。",
+        "最终事实涉及受理分类与保留策略的关系，无需全部个人资料。",
+        "El hecho final relaciona clasificación y conservación; no requiere todos los datos personales.",
+        "Die letzte Tatsache betrifft Klassifizierung und Aufbewahrung, nicht sämtliche persönlichen Unterlagen."
+      ]
+    ],
+    [
+      [
+        "引き渡せる記録",
+        "可供交付的证据",
+        "Pruebas listas para entregar",
+        "Belege für die Übergabe"
+      ],
+      [
+        "保存した原本と出所があることで、公開、監査保管、独立検証を選べます。",
+        "保留的原件与来源支持公开、审计保管或独立核验的选择。",
+        "Originales y procedencia preservados permiten elegir publicación, auditoría o revisión independiente.",
+        "Erhaltene Originale und Herkunft ermöglichen Veröffentlichung, Auditverwahrung oder unabhängige Prüfung."
+      ]
+    ]
+  ],
+  "S01": [
+    [
+      [
+        "原本の配布時刻",
+        "原始分发时刻",
+        "La hora de distribución original",
+        "Die ursprüngliche Verteilzeit"
+      ],
+      [
+        "N47 のお知らせの初回配布は 00:47 でした。",
+        "N47 公告于 00:47 首次分发。",
+        "El aviso N47 se distribuyó por primera vez a las 00:47.",
+        "Die Mitteilung N47 wurde erstmals um 00:47 verteilt."
+      ]
+    ],
+    [
+      [
+        "再配布で変わった意味",
+        "再次发布改变的含义",
+        "Qué cambió la republicación",
+        "Was die Neuveröffentlichung änderte"
+      ],
+      [
+        "01:12 は元の事件ではなく、コピーの再配布時刻です。",
+        "01:12 是副本再次发布的时间，并非原始事件时间。",
+        "01:12 es la hora de republicación de una copia, no del hecho original.",
+        "01:12 ist die Neuveröffentlichung einer Kopie, nicht das ursprüngliche Ereignis."
+      ]
+    ]
+  ],
+  "S02": [
+    [
+      [
+        "中継地点の観察",
+        "中继点的观察",
+        "La observación del repetidor",
+        "Die Relaisbeobachtung"
+      ],
+      [
+        "中継と終端の印は、同じ要求 N47 に属します。",
+        "中继与终端的标记属于同一请求 N47。",
+        "Las marcas del repetidor y del extremo pertenecen a la misma petición N47.",
+        "Relais- und Endpunktmarkierung gehören zur selben Anfrage N47."
+      ]
+    ],
+    [
+      [
+        "業務の配達回数",
+        "业务送达的次数",
+        "Cuántas entregas de negocio hubo",
+        "Die Zahl der Geschäftszustellungen"
+      ],
+      [
+        "市民の配達台帳には、N47 を一回処理した記録だけが残っています。",
+        "市民送达台账中仅有一次 N47 处理事件。",
+        "El registro de entregas ciudadanas contiene un solo procesamiento de N47.",
+        "Das Bürgerzustellbuch enthält genau eine Verarbeitung von N47."
+      ]
+    ]
+  ],
+  "R01": [
+    [
+      [
+        "文字列と承認の分岐",
+        "字符串与批准分支",
+        "La cadena y la rama de aprobación",
+        "Zeichenfolge und Freigabezweig"
+      ],
+      [
+        "approved という文字列の存在と、入力比較の分岐を通ることは違います。",
+        "存在 approved 字符串，与通过输入比较分支并非一回事。",
+        "Que exista la cadena approved no equivale a superar la comparación de entrada.",
+        "Die vorhandene Zeichenfolge approved unterscheidet sich vom Bestehen des Eingabevergleichs."
+      ]
+    ],
+    [
+      [
+        "検証しなかった条件",
+        "未检查的条件",
+        "La condición no comprobada",
+        "Die ungeprüfte Bedingung"
+      ],
+      [
+        "小さな検証器は署名形式を確かめますが、保存方針の正当性は調べません。",
+        "小型验证器检查签名形式，不检查保留策略的正当性。",
+        "El pequeño verificador comprueba la forma de la firma, no la legitimidad de la política.",
+        "Der kleine Prüfer kontrolliert die Signaturform, nicht die Rechtmäßigkeit der Aufbewahrungsrichtlinie."
+      ]
+    ]
+  ],
+  "P01": [
+    [
+      [
+        "入力バッファーの終わり",
+        "输入缓冲区的末端",
+        "El final del búfer de entrada",
+        "Das Ende des Eingabepuffers"
+      ],
+      [
+        "オフセット 0–3 のバッファーと 4 の標識は、隣接する別々の領域です。",
+        "偏移 0–3 的缓冲区与偏移 4 的标记相邻，却是不同区域。",
+        "El búfer en 0–3 y la marca en 4 son regiones contiguas pero distintas.",
+        "Der Puffer an 0–3 und die Markierung an 4 sind benachbarte, getrennte Bereiche."
+      ]
+    ],
+    [
+      [
+        "標識と実際の権限",
+        "标记与真实权限",
+        "La marca y la autoridad real",
+        "Markierung und wirkliche Rechte"
+      ],
+      [
+        "仮想メモリーの標識を変えても、実際の OS 権限を得たことにはなりません。",
+        "改变虚拟内存标记，不代表取得真实操作系统权限。",
+        "Cambiar la marca de memoria virtual no demuestra autoridad real del sistema operativo.",
+        "Die Änderung einer virtuellen Speichermarkierung belegt keine echten Betriebssystemrechte."
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,514 @@
+{
+  "CAMPAIGN_RESULT_INVALID_CONTENT": [
+    "사건 데이터를 읽을 수 없습니다.\n{detail}",
+    "Cannot read the case data.\n{detail}",
+    "事件データを読み込めません。\n{detail}",
+    "无法读取事件数据。\n{detail}",
+    "No se pueden leer los datos del caso.\n{detail}",
+    "Die Falldaten können nicht gelesen werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_MISSION": [
+    "등록되지 않은 사건입니다.\n{detail}",
+    "This case is not registered.\n{detail}",
+    "登録されていない事件です。\n{detail}",
+    "此事件未注册。\n{detail}",
+    "Este caso no está registrado.\n{detail}",
+    "Dieser Fall ist nicht registriert.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_MISSION_LOCKED": [
+    "먼저 필요한 앞선 사건을 확인하세요.\n{detail}",
+    "Check the prerequisite cases first.\n{detail}",
+    "先に必要な事件を確認してください。\n{detail}",
+    "请先确认前置事件。\n{detail}",
+    "Revisa primero los casos previos necesarios.\n{detail}",
+    "Prüfe zuerst die vorausgesetzten Fälle.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_MISSION_SELECTED": [
+    "사건을 선택했습니다.\n{detail}",
+    "Case selected.\n{detail}",
+    "事件を選びました。\n{detail}",
+    "已选择事件。\n{detail}",
+    "Caso seleccionado.\n{detail}",
+    "Fall ausgewählt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_GOAL_NOT_MET": [
+    "현재 목표의 근거가 아직 부족합니다.\n{detail}",
+    "The current objective still needs evidence.\n{detail}",
+    "現在の目標を裏付ける証拠がまだ足りません。\n{detail}",
+    "当前目标所需证据仍不足。\n{detail}",
+    "Aún faltan pruebas para el objetivo actual.\n{detail}",
+    "Für das aktuelle Ziel fehlen noch Belege.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_CAMPAIGN_COMPLETE": [
+    "캠페인의 마지막 사건을 해결했습니다.\n{detail}",
+    "The campaign's final case is resolved.\n{detail}",
+    "キャンペーン最後の事件を解決しました。\n{detail}",
+    "已解决战役的最后一个事件。\n{detail}",
+    "Has resuelto el último caso de la campaña.\n{detail}",
+    "Der letzte Fall der Kampagne ist gelöst.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_ENDING_LOCKED": [
+    "이 전달 방식을 선택할 근거가 아직 부족합니다.\n{detail}",
+    "There is not yet enough evidence for this handoff.\n{detail}",
+    "この引き渡し方を選ぶ証拠がまだ足りません。\n{detail}",
+    "选择此交付方式的证据尚不足。\n{detail}",
+    "Aún no hay pruebas suficientes para esta entrega.\n{detail}",
+    "Für diese Übergabe fehlen noch Belege.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_ENDING_CHOSEN": [
+    "자료의 전달 방식을 선택했습니다.\n{detail}",
+    "Evidence handoff chosen.\n{detail}",
+    "資料の引き渡し方を選びました。\n{detail}",
+    "已选择证据交付方式。\n{detail}",
+    "Has elegido cómo entregar las pruebas.\n{detail}",
+    "Die Belegübergabe wurde gewählt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_ENDING": [
+    "등록되지 않은 전달 방식입니다.\n{detail}",
+    "This handoff is not registered.\n{detail}",
+    "登録されていない引き渡し方です。\n{detail}",
+    "此交付方式未注册。\n{detail}",
+    "Esta forma de entrega no está registrada.\n{detail}",
+    "Diese Übergabe ist nicht registriert.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_RESET": [
+    "현재 사건을 처음 상태로 되돌렸습니다.\n{detail}",
+    "The current case has been reset.\n{detail}",
+    "現在の事件を初期状態に戻しました。\n{detail}",
+    "当前事件已重置。\n{detail}",
+    "El caso actual vuelve a su estado inicial.\n{detail}",
+    "Der aktuelle Fall wurde zurückgesetzt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_HINT": [
+    "현재 사건의 단서 안내입니다.\n{detail}",
+    "Guidance for the current case.\n{detail}",
+    "現在の事件のヒントです。\n{detail}",
+    "当前事件提示。\n{detail}",
+    "Pistas para el caso actual.\n{detail}",
+    "Hinweise zum aktuellen Fall.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_RESTORED": [
+    "저장된 캠페인을 복원했습니다.\n{detail}",
+    "Saved campaign restored.\n{detail}",
+    "保存したキャンペーンを復元しました。\n{detail}",
+    "已恢复战役存档。\n{detail}",
+    "Campaña guardada restaurada.\n{detail}",
+    "Gespeicherte Kampagne wiederhergestellt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INVALID_SNAPSHOT": [
+    "저장 자료가 올바르지 않아 적용하지 않았습니다.\n{detail}",
+    "The save data is invalid and was not applied.\n{detail}",
+    "セーブデータが正しくないため適用しませんでした。\n{detail}",
+    "存档数据无效，未应用更改。\n{detail}",
+    "Los datos guardados no son válidos y no se han aplicado.\n{detail}",
+    "Die Speicherdaten sind ungültig und wurden nicht übernommen.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_IMPORTED_M01": [
+    "구버전 M01 진행을 가져왔습니다.\n{detail}",
+    "Legacy M01 progress imported.\n{detail}",
+    "旧版 M01 の進行を取り込みました。\n{detail}",
+    "已导入旧版 M01 进度。\n{detail}",
+    "Progreso de M01 anterior importado.\n{detail}",
+    "Alter M01-Fortschritt importiert.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INCOMPATIBLE_M01": [
+    "이 구버전 M01 저장은 가져올 수 없습니다.\n{detail}",
+    "This legacy M01 save cannot be imported.\n{detail}",
+    "この旧版 M01 セーブは取り込めません。\n{detail}",
+    "无法导入此旧版 M01 存档。\n{detail}",
+    "No se puede importar esta partida anterior de M01.\n{detail}",
+    "Dieser alte M01-Spielstand kann nicht importiert werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_LEGACY_NOT_FOUND": [
+    "구버전 M01 저장을 찾지 못했습니다.\n{detail}",
+    "No legacy M01 save was found.\n{detail}",
+    "旧版 M01 のセーブが見つかりません。\n{detail}",
+    "未找到旧版 M01 存档。\n{detail}",
+    "No se encontró una partida anterior de M01.\n{detail}",
+    "Kein alter M01-Spielstand gefunden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_LEGACY_SIZE_LIMIT": [
+    "구버전 저장이 허용된 크기를 넘습니다.\n{detail}",
+    "The legacy save exceeds the size limit.\n{detail}",
+    "旧版セーブがサイズ上限を超えています。\n{detail}",
+    "旧版存档超过大小限制。\n{detail}",
+    "La partida anterior supera el límite de tamaño.\n{detail}",
+    "Der alte Spielstand überschreitet die Größenbegrenzung.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_LEGACY_INVALID_JSON": [
+    "구버전 저장의 데이터 형식이 올바르지 않습니다.\n{detail}",
+    "The legacy save has an invalid data format.\n{detail}",
+    "旧版セーブのデータ形式が正しくありません。\n{detail}",
+    "旧版存档数据格式无效。\n{detail}",
+    "El formato de datos de la partida anterior no es válido.\n{detail}",
+    "Das Datenformat des alten Spielstands ist ungültig.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INVALID_TERMINAL": [
+    "사용할 수 없는 터미널입니다.\n{detail}",
+    "This terminal is unavailable.\n{detail}",
+    "使用できないターミナルです。\n{detail}",
+    "此终端不可用。\n{detail}",
+    "Este terminal no está disponible.\n{detail}",
+    "Dieses Terminal ist nicht verfügbar.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_AUTH_REQUIRED": [
+    "이 작업에는 인증된 가상 세션이 필요합니다.\n{detail}",
+    "This action requires an authenticated virtual session.\n{detail}",
+    "この操作には認証済みの仮想セッションが必要です。\n{detail}",
+    "此操作需要已认证的虚拟会话。\n{detail}",
+    "Esta acción requiere una sesión virtual autenticada.\n{detail}",
+    "Diese Aktion benötigt eine angemeldete virtuelle Sitzung.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_AUTH_DENIED": [
+    "가상 계정 인증이 거절되었습니다.\n{detail}",
+    "Virtual account authentication was refused.\n{detail}",
+    "仮想アカウントの認証が拒否されました。\n{detail}",
+    "虚拟账号认证被拒绝。\n{detail}",
+    "Se rechazó la autenticación de la cuenta virtual.\n{detail}",
+    "Die Anmeldung des virtuellen Kontos wurde abgelehnt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_CONNECTED": [
+    "가상 호스트에 연결했습니다. 현재 계정과 권한을 확인하세요.\n{detail}",
+    "Connected to the virtual host. Check the current account and authority.\n{detail}",
+    "仮想ホストに接続しました。現在のアカウントと権限を確認してください。\n{detail}",
+    "已连接虚拟主机。请确认当前账号与权限。\n{detail}",
+    "Conectado al host virtual. Comprueba la cuenta y su autoridad.\n{detail}",
+    "Mit dem virtuellen Host verbunden. Prüfe Konto und Rechte.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_DISCONNECTED": [
+    "가상 연결을 종료했습니다.\n{detail}",
+    "Virtual connection closed.\n{detail}",
+    "仮想接続を終了しました。\n{detail}",
+    "已关闭虚拟连接。\n{detail}",
+    "Conexión virtual cerrada.\n{detail}",
+    "Virtuelle Verbindung beendet.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_TOOL": [
+    "이 사건에서 사용할 수 없는 도구 또는 모형입니다.\n{detail}",
+    "This tool or model is unavailable in this case.\n{detail}",
+    "この事件では使えないツールまたはモデルです。\n{detail}",
+    "此事件中无法使用该工具或模型。\n{detail}",
+    "Esta herramienta o modelo no está disponible en el caso.\n{detail}",
+    "Dieses Werkzeug oder Modell ist in diesem Fall nicht verfügbar.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_MISSING_EVIDENCE": [
+    "필요한 관찰 또는 자료를 아직 확보하지 못했습니다.\n{detail}",
+    "The required observation or record is still missing.\n{detail}",
+    "必要な観察または資料がまだありません。\n{detail}",
+    "尚未取得所需观察或记录。\n{detail}",
+    "Aún falta la observación o el registro necesario.\n{detail}",
+    "Die nötige Beobachtung oder Aufzeichnung fehlt noch.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_MODEL_OBSERVED": [
+    "가상 모형 관찰 결과\n{detail}",
+    "Virtual model observations\n{detail}",
+    "仮想モデルの観察結果\n{detail}",
+    "虚拟模型观察结果\n{detail}",
+    "Observaciones del modelo virtual\n{detail}",
+    "Beobachtungen des virtuellen Modells\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INVALID_ARGUMENTS": [
+    "입력 형식을 확인하세요. 지원되는 인자만 사용할 수 있습니다.\n{detail}",
+    "Check the input format. Only supported arguments are accepted.\n{detail}",
+    "入力形式を確認してください。対応する引数だけが使えます。\n{detail}",
+    "请检查输入格式，仅接受支持的参数。\n{detail}",
+    "Revisa el formato de entrada. Solo se admiten argumentos compatibles.\n{detail}",
+    "Prüfe das Eingabeformat. Nur unterstützte Argumente sind zulässig.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_COMMAND": [
+    "지원하지 않는 가상 명령입니다. help에서 명령을 확인하세요.\n{detail}",
+    "Unsupported virtual command. Check help for available commands.\n{detail}",
+    "未対応の仮想コマンドです。help で一覧を確認してください。\n{detail}",
+    "不支持此虚拟命令。请通过 help 查看可用命令。\n{detail}",
+    "Comando virtual no compatible. Consulta help para ver los disponibles.\n{detail}",
+    "Nicht unterstützter virtueller Befehl. Verfügbare Befehle stehen unter help.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_HOST_NOT_FOUND": [
+    "가상 세계에 등록된 호스트를 찾지 못했습니다.\n{detail}",
+    "The host was not found in the fictional world.\n{detail}",
+    "架空世界に登録されたホストが見つかりません。\n{detail}",
+    "未在虚构世界中找到该主机。\n{detail}",
+    "No se encontró el host en el mundo ficticio.\n{detail}",
+    "Der Host wurde in der fiktiven Welt nicht gefunden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNREACHABLE": [
+    "현재 출발점에서는 대상에 도달할 수 없습니다.\n{detail}",
+    "The target cannot be reached from the current origin.\n{detail}",
+    "現在の出発点からは対象に届きません。\n{detail}",
+    "当前起点无法到达目标。\n{detail}",
+    "No se puede alcanzar el destino desde el origen actual.\n{detail}",
+    "Das Ziel ist vom aktuellen Ausgangspunkt nicht erreichbar.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SERVICE_UNAVAILABLE": [
+    "대상의 가상 서비스가 열려 있지 않습니다.\n{detail}",
+    "The target's virtual service is not open.\n{detail}",
+    "対象の仮想サービスは開いていません。\n{detail}",
+    "目标虚拟服务尚未开放。\n{detail}",
+    "El servicio virtual del destino no está abierto.\n{detail}",
+    "Der virtuelle Zieldienst ist nicht geöffnet.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_PROTOCOL_MISMATCH": [
+    "선택한 서비스와 요청 프로토콜이 맞지 않습니다.\n{detail}",
+    "The request protocol does not match the selected service.\n{detail}",
+    "要求プロトコルが選択したサービスと一致しません。\n{detail}",
+    "请求协议与所选服务不匹配。\n{detail}",
+    "El protocolo de la petición no coincide con el servicio.\n{detail}",
+    "Das Anfrageprotokoll passt nicht zum gewählten Dienst.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INVALID_POLICY": [
+    "등록된 정책과 허용 값을 확인하세요.\n{detail}",
+    "Check the registered policy and its allowed values.\n{detail}",
+    "登録された方針と許可される値を確認してください。\n{detail}",
+    "请检查已注册策略及允许值。\n{detail}",
+    "Comprueba la política registrada y sus valores permitidos.\n{detail}",
+    "Prüfe die registrierte Richtlinie und ihre zulässigen Werte.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_POLICY_CHANGED": [
+    "가상 서비스 정책을 변경했습니다. 정상 동작과 거절 동작을 다시 확인하세요.\n{detail}",
+    "Virtual service policy changed. Recheck legitimate and refused actions.\n{detail}",
+    "仮想サービスの方針を変更しました。正規操作と拒否される操作を再確認してください。\n{detail}",
+    "虚拟服务策略已修改。请重新检查正常与被拒操作。\n{detail}",
+    "Política virtual modificada. Comprueba de nuevo acciones legítimas y rechazadas.\n{detail}",
+    "Virtuelle Dienstrichtlinie geändert. Prüfe reguläre und abgewiesene Aktionen erneut.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_FILES_CHANGED": [
+    "가상 파일 상태가 바뀌었습니다.\n{detail}",
+    "Virtual file state changed.\n{detail}",
+    "仮想ファイルの状態が変わりました。\n{detail}",
+    "虚拟文件状态已更改。\n{detail}",
+    "Cambió el estado de los archivos virtuales.\n{detail}",
+    "Der virtuelle Dateizustand hat sich geändert.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_ARCHIVED": [
+    "자료 사본을 보관했습니다. 기록 ID와 출처를 확인하세요.\n{detail}",
+    "A record copy was archived. Check its ID and provenance.\n{detail}",
+    "資料のコピーを保管しました。記録 ID と出所を確認してください。\n{detail}",
+    "资料副本已归档。请确认记录 ID 与来源。\n{detail}",
+    "Se archivó una copia. Comprueba su ID y procedencia.\n{detail}",
+    "Eine Aufzeichnungskopie wurde archiviert. Prüfe ID und Herkunft.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_NO_RECORD": [
+    "이 결과에는 회수할 자료가 없습니다.\n{detail}",
+    "This result contains no record to recover.\n{detail}",
+    "この結果に回収できる資料はありません。\n{detail}",
+    "此结果中没有可取得的记录。\n{detail}",
+    "Este resultado no contiene registros recuperables.\n{detail}",
+    "Dieses Ergebnis enthält keine sicherbare Aufzeichnung.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_PERMISSION_DENIED": [
+    "현재 가상 계정에는 이 자원의 권한이 없습니다.\n{detail}",
+    "The current virtual account lacks permission for this resource.\n{detail}",
+    "現在の仮想アカウントには、この資源の権限がありません。\n{detail}",
+    "当前虚拟账号没有此资源的权限。\n{detail}",
+    "La cuenta virtual actual no tiene permiso para este recurso.\n{detail}",
+    "Das aktuelle virtuelle Konto hat keine Rechte auf diese Ressource.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_OBSERVATION_LIMIT": [
+    "이번 조사에서 보관할 수 있는 관찰 수에 도달했습니다.\n{detail}",
+    "The observation limit for this investigation has been reached.\n{detail}",
+    "この調査で保存できる観察数の上限に達しました。\n{detail}",
+    "已达到本次调查的观察保存数量上限。\n{detail}",
+    "Se alcanzó el límite de observaciones de esta investigación.\n{detail}",
+    "Die Beobachtungsgrenze dieser Untersuchung ist erreicht.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_CONTACT_LOCKED": [
+    "인물이 아직 얼굴 공개를 제안하지 않았습니다.\n{detail}",
+    "This contact has not offered to reveal their portrait yet.\n{detail}",
+    "この連絡先はまだ顔の公開を提案していません。\n{detail}",
+    "这位联系人尚未提出公开肖像。\n{detail}",
+    "Este contacto aún no ha ofrecido revelar su retrato.\n{detail}",
+    "Dieser Kontakt hat noch keine Porträtfreigabe angeboten.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_CONTACT_REVEALED": [
+    "선택한 연락처의 얼굴을 공개했습니다.\n{detail}",
+    "The selected contact’s portrait has been revealed.\n{detail}",
+    "選んだ連絡先の顔を公開しました。\n{detail}",
+    "已公开所选联系人的肖像。\n{detail}",
+    "Se ha revelado el retrato del contacto elegido.\n{detail}",
+    "Das Porträt des gewählten Kontakts wurde freigegeben.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INVALID_CHECKPOINT": [
+    "사건의 저장 상태가 올바르지 않아 불러오지 않았습니다.\n{detail}",
+    "The case checkpoint is invalid and was not loaded.\n{detail}",
+    "事件の保存状態が正しくないため読み込みませんでした。\n{detail}",
+    "事件检查点无效，未读取。\n{detail}",
+    "El punto guardado del caso no es válido y no se ha cargado.\n{detail}",
+    "Der Fallspeicherpunkt ist ungültig und wurde nicht geladen.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_IS_DIRECTORY": [
+    "파일이 필요한 곳에 폴더가 지정되었습니다.\n{detail}",
+    "A directory was specified where a file is required.\n{detail}",
+    "ファイルが必要な箇所にフォルダーが指定されています。\n{detail}",
+    "此处需要文件，但指定的是目录。\n{detail}",
+    "Se indicó una carpeta donde se necesita un archivo.\n{detail}",
+    "Ein Ordner wurde angegeben, wo eine Datei nötig ist.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_NOT_FOUND": [
+    "지정한 가상 파일이나 자원을 찾지 못했습니다.\n{detail}",
+    "The specified virtual file or resource was not found.\n{detail}",
+    "指定された仮想ファイルまたは資源が見つかりません。\n{detail}",
+    "未找到指定的虚拟文件或资源。\n{detail}",
+    "No se encontró el archivo o recurso virtual indicado.\n{detail}",
+    "Die angegebene virtuelle Datei oder Ressource wurde nicht gefunden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SERVICE_OPEN": [
+    "현재 관찰 지점에서 서비스가 열려 있습니다.\n{detail}",
+    "The service is open from the current observation point.\n{detail}",
+    "現在の観測地点からサービスが開いています。\n{detail}",
+    "从当前观察点可见该服务开放。\n{detail}",
+    "El servicio está abierto desde este punto de observación.\n{detail}",
+    "Der Dienst ist vom aktuellen Beobachtungspunkt aus geöffnet.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SERVICE_CLOSED": [
+    "현재 관찰 지점에서 서비스가 닫혀 있습니다.\n{detail}",
+    "The service is closed from the current observation point.\n{detail}",
+    "現在の観測地点からサービスは閉じています。\n{detail}",
+    "从当前观察点可见该服务关闭。\n{detail}",
+    "El servicio está cerrado desde este punto de observación.\n{detail}",
+    "Der Dienst ist vom aktuellen Beobachtungspunkt aus geschlossen.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SERVICE_FILTERED": [
+    "현재 관찰 지점에서 서비스 접근이 필터링됩니다.\n{detail}",
+    "Service access is filtered from the current observation point.\n{detail}",
+    "現在の観測地点からのサービス接続はフィルターされています。\n{detail}",
+    "当前观察点到该服务的访问被过滤。\n{detail}",
+    "El acceso al servicio se filtra desde este punto de observación.\n{detail}",
+    "Der Dienstzugang wird vom aktuellen Beobachtungspunkt aus gefiltert.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_MODEL": [
+    "등록되지 않은 가상 모형입니다.\n{detail}",
+    "This virtual model is not registered.\n{detail}",
+    "登録されていない仮想モデルです。\n{detail}",
+    "此虚拟模型未注册。\n{detail}",
+    "Este modelo virtual no está registrado.\n{detail}",
+    "Dieses virtuelle Modell ist nicht registriert.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INPUT_TOO_LONG": [
+    "입력이 허용된 길이를 넘습니다.\n{detail}",
+    "The input exceeds the allowed length.\n{detail}",
+    "入力が許可された長さを超えています。\n{detail}",
+    "输入超过允许长度。\n{detail}",
+    "La entrada supera la longitud permitida.\n{detail}",
+    "Die Eingabe überschreitet die zulässige Länge.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNSUPPORTED_SYNTAX": [
+    "지원하지 않는 가상 명령 문법입니다.\n{detail}",
+    "This virtual command syntax is unsupported.\n{detail}",
+    "対応していない仮想コマンド構文です。\n{detail}",
+    "不支持此虚拟命令语法。\n{detail}",
+    "Esta sintaxis de comando virtual no es compatible.\n{detail}",
+    "Diese virtuelle Befehlssyntax wird nicht unterstützt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INVALID_PATH": [
+    "가상 경로의 형식을 확인하세요.\n{detail}",
+    "Check the virtual path format.\n{detail}",
+    "仮想パスの形式を確認してください。\n{detail}",
+    "请检查虚拟路径格式。\n{detail}",
+    "Comprueba el formato de la ruta virtual.\n{detail}",
+    "Prüfe das Format des virtuellen Pfads.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_ARCHIVE_LIMIT": [
+    "보관할 수 있는 파일 수에 도달했습니다.\n{detail}",
+    "The archive file limit has been reached.\n{detail}",
+    "保管できるファイル数の上限に達しました。\n{detail}",
+    "已达到归档文件数量上限。\n{detail}",
+    "Se alcanzó el límite de archivos del archivo.\n{detail}",
+    "Die Dateigrenze des Archivs ist erreicht.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_AUTH_CANCELLED": [
+    "인증 입력을 취소했습니다.\n{detail}",
+    "Authentication input cancelled.\n{detail}",
+    "認証入力を取り消しました。\n{detail}",
+    "已取消认证输入。\n{detail}",
+    "Entrada de autenticación cancelada.\n{detail}",
+    "Authentifizierungseingabe abgebrochen.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_EMPTY_INPUT": [
+    "가상 명령을 입력하세요.\n{detail}",
+    "Enter a virtual command.\n{detail}",
+    "仮想コマンドを入力してください。\n{detail}",
+    "请输入虚拟命令。\n{detail}",
+    "Introduce un comando virtual.\n{detail}",
+    "Gib einen virtuellen Befehl ein.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_NOT_DIRECTORY": [
+    "지정한 경로는 폴더가 아닙니다.\n{detail}",
+    "The specified path is not a directory.\n{detail}",
+    "指定したパスはフォルダーではありません。\n{detail}",
+    "指定路径不是目录。\n{detail}",
+    "La ruta indicada no es una carpeta.\n{detail}",
+    "Der angegebene Pfad ist kein Ordner.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_NO_AUTH_PENDING": [
+    "진행 중인 가상 인증이 없습니다.\n{detail}",
+    "No virtual authentication is pending.\n{detail}",
+    "進行中の仮想認証はありません。\n{detail}",
+    "没有待完成的虚拟认证。\n{detail}",
+    "No hay autenticación virtual pendiente.\n{detail}",
+    "Es läuft keine virtuelle Authentifizierung.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_NO_CONNECTION": [
+    "현재 로컬 세션입니다. 먼저 가상 서버에 연결하세요.\n{detail}",
+    "This is a local session. Connect to a virtual server first.\n{detail}",
+    "現在はローカルセッションです。先に仮想サーバーに接続してください。\n{detail}",
+    "当前为本地会话，请先连接虚拟服务器。\n{detail}",
+    "Esta sesión es local. Conecta primero con un servidor virtual.\n{detail}",
+    "Dies ist eine lokale Sitzung. Verbinde dich zuerst mit einem virtuellen Server.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SESSION_LIMIT": [
+    "가상 세션 수에 도달했습니다. exit로 이전 연결을 종료하세요.\n{detail}",
+    "The virtual session limit has been reached. Use exit to close a previous connection.\n{detail}",
+    "仮想セッションの上限に達しました。exit で前の接続を終了してください。\n{detail}",
+    "已达到虚拟会话数量上限。请用 exit 结束先前连接。\n{detail}",
+    "Se alcanzó el límite de sesiones virtuales. Usa exit para cerrar una conexión anterior.\n{detail}",
+    "Die Grenze virtueller Sitzungen ist erreicht. Beende eine frühere Verbindung mit exit.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_URL": [
+    "이 주소에는 등록된 가상 페이지가 없습니다.\n{detail}",
+    "There is no registered virtual page at this address.\n{detail}",
+    "このアドレスに登録された仮想ページはありません。\n{detail}",
+    "此地址没有已注册的虚拟页面。\n{detail}",
+    "No hay una página virtual registrada en esta dirección.\n{detail}",
+    "Unter dieser Adresse ist keine virtuelle Seite registriert.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_ROUTE_HOST_MISMATCH": [
+    "페이지의 호스트가 가상 요청 경로와 다릅니다.\n{detail}",
+    "The page host does not match the virtual request route.\n{detail}",
+    "ページのホストが仮想要求の経路と一致しません。\n{detail}",
+    "页面主机与虚拟请求路径不匹配。\n{detail}",
+    "El host de la página no coincide con la ruta virtual de la petición.\n{detail}",
+    "Der Seitenhost passt nicht zum virtuellen Anfrageweg.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_WEB_AUTHENTICATED": [
+    "가상 웹 계정에 로그인했습니다.\n{detail}",
+    "Signed in to the virtual web account.\n{detail}",
+    "仮想ウェブアカウントにログインしました。\n{detail}",
+    "已登录虚拟网页账号。\n{detail}",
+    "Has iniciado sesión en la cuenta web virtual.\n{detail}",
+    "Am virtuellen Webkonto angemeldet.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_WEB_LOGGED_OUT": [
+    "가상 웹 세션을 종료했습니다.\n{detail}",
+    "Virtual web session ended.\n{detail}",
+    "仮想ウェブセッションを終了しました。\n{detail}",
+    "已结束虚拟网页会话。\n{detail}",
+    "Sesión web virtual finalizada.\n{detail}",
+    "Virtuelle Websitzung beendet.\n{detail}"
+  ],
+  "CAMPAIGN_HELP_OVERVIEW": [
+    "지원하는 가상 Linux 명령: {commands}\n실제 셸, 파이프, 치환은 실행하지 않습니다.\ntool <challengeID> 'input/JSON' · configure <policyID> true",
+    "Supported virtual Linux commands: {commands}\nNo real shell, pipes or substitutions are executed.\ntool <challengeID> 'input/JSON' · configure <policyID> true",
+    "対応する仮想 Linux コマンド: {commands}\n実際のシェル、パイプ、置換は実行しません。\ntool <challengeID> 'input/JSON' · configure <policyID> true",
+    "支持的虚拟 Linux 命令：{commands}\n不执行真实 shell、管道或替换。\ntool <challengeID> 'input/JSON' · configure <policyID> true",
+    "Comandos Linux virtuales compatibles: {commands}\nNo se ejecutan shells reales, tuberías ni sustituciones.\ntool <challengeID> 'input/JSON' · configure <policyID> true",
+    "Unterstützte virtuelle Linux-Befehle: {commands}\nKeine echte Shell, Pipes oder Ersetzungen werden ausgeführt.\ntool <challengeID> 'input/JSON' · configure <policyID> true"
+  ],
+  "CAMPAIGN_HELP_COMMAND": [
+    "가상 명령 지원 구문: {command}\n사건 안내와 도구의 입력 형식을 확인하세요. 문서에 없는 옵션은 거절됩니다.",
+    "Supported virtual command syntax: {command}\nCheck case guidance and tool input formats. Undocumented options are refused.",
+    "仮想コマンドの対応構文: {command}\n事件の案内とツールの入力形式を確認してください。文書にないオプションは拒否します。",
+    "虚拟命令支持语法：{command}\n请查看事件提示与工具输入格式。未记录的选项将被拒绝。",
+    "Sintaxis virtual compatible: {command}\nConsulta las pistas del caso y los formatos de las herramientas. Se rechazan opciones no documentadas.",
+    "Unterstützte virtuelle Befehlssyntax: {command}\nPrüfe Fallhinweise und Werkzeugeingaben. Nicht dokumentierte Optionen werden abgewiesen."
+  ]
+}

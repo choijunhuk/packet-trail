@@ -9,11 +9,17 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RUNTIME_DIRS = ("godot/scripts/core", "godot/scripts/apps")
+RUNTIME_DIRS = ("godot/scripts",)
 FILE_IO_ALLOWED = {
     "godot/scripts/core/content_loader.gd",
     "godot/scripts/core/save_store.gd",
+    "godot/scripts/core/campaign_loader.gd",
+    "godot/scripts/core/campaign_game.gd",
+    "godot/scripts/presentation/settings_store.gd",
 }
+READ_ONLY = {"godot/scripts/core/content_loader.gd", "godot/scripts/core/campaign_loader.gd",
+             "godot/scripts/core/campaign_game.gd"}
+READ_ONLY_FORBIDDEN = re.compile(r"\bDirAccess\b|\bFileAccess\s*\.\s*(?:WRITE|READ_WRITE|WRITE_READ)\b")
 FORBIDDEN = re.compile(
     r"\bOS\s*\.\s*(?:execute|create_process|execute_with_pipe|shell_open)\b"
     r"|\b(?:HTTPRequest|HTTPClient|StreamPeerTCP|TCPServer|PacketPeerUDP|UDPServer|"
@@ -30,6 +36,8 @@ def inspect_source(relative_path, source):
     code = NON_CODE.sub(lambda match: "\n" * match[0].count("\n") + " ", source)
     errors = []
     patterns = [FORBIDDEN] if relative_path in FILE_IO_ALLOWED else [FORBIDDEN, FILE_IO]
+    if relative_path in READ_ONLY:
+        patterns.append(READ_ONLY_FORBIDDEN)
     for pattern in patterns:
         for match in pattern.finditer(code):
             line = code.count("\n", 0, match.start()) + 1
@@ -72,12 +80,19 @@ class BoundaryChecks(unittest.TestCase):
             with self.subTest(source=source):
                 self.assertTrue(inspect_source("godot/scripts/core/game.gd", source))
 
-    def test_file_io_is_confined_to_two_adapters(self):
+    def test_file_io_is_confined_to_validated_adapters(self):
         source = "var file = FileAccess.open(path, FileAccess.READ)\nDirAccess.open(path)"
         self.assertTrue(inspect_source("godot/scripts/apps/desktop.gd", source))
-        for path in FILE_IO_ALLOWED:
+        for path in FILE_IO_ALLOWED - READ_ONLY:
             self.assertEqual(inspect_source(path, source), [])
             self.assertTrue(inspect_source(path, "OS.execute(path, [])"))
+
+    def test_content_and_legacy_read_adapters_cannot_write(self):
+        for path in READ_ONLY:
+            self.assertEqual(inspect_source(path, "FileAccess.open(PATH, FileAccess.READ)"), [])
+            for source in ["FileAccess.open(PATH, FileAccess.WRITE)", "DirAccess.remove_absolute(PATH)",
+                           "FileAccess.open(PATH, FileAccess.READ_WRITE)"]:
+                self.assertTrue(inspect_source(path, source))
 
     def test_documentation_and_ui_strings_are_not_executable_calls(self):
         source = '# OS.execute(command)\nvar text = "HTTPRequest / FileAccess"\nvar x = 1'
