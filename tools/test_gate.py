@@ -22,6 +22,8 @@ stages = {
     "res://tools/validate_campaign.gd": ("campaign_content", "campaign_content"),
     "res://tests/headless/test_campaign.gd": ("campaign", "campaign"),
     "res://tools/run_presentation.gd": ("presentation", "presentation"),
+    "res://tools/run_audio_revision.gd": ("audio_revision", "audio_revision"),
+    "res://tools/run_ui_context.gd": ("ui_context", "ui_context"),
     "res://tools/validate_portraits.gd": ("portraits", "portraits"),
 }
 stage, suite = next((value for key, value in stages.items() if key in sys.argv), ("import", None))
@@ -53,6 +55,14 @@ class GateFailureTests(unittest.TestCase):
             "godot/scenes/campaign_desktop.tscn", "godot/scripts/apps/campaign_desktop.gd",
             "godot/tools/validate_portraits.gd", "godot/tools/probe_grep_flags.gd",
             "tools/test_shell_commands.py", "tools/test_check_campaign.py",
+            "godot/scripts/core/campaign_catalog.gd", "godot/data/campaign/legacy_v1.json",
+            "godot/data/campaign/packs/intruder_v2.json", "godot/data/campaign/packs/defender_v1.json",
+            "godot/data/campaign/packs/tracker_v1.json", "godot/tests/fixtures/perspectives_solutions.json",
+            "godot/tests/headless/test_mutation_limits.gd", "godot/tests/headless/test_perspectives.gd",
+            "godot/tests/headless/test_audio_revision.gd", "godot/tools/run_audio_revision.gd",
+            "godot/tools/inspect_package.gd", "tools/test_mutation_limits.py", "tools/test_perspectives.py",
+            "tools/build_expansion_content.py",
+            "godot/tests/headless/test_ui_context.gd", "godot/tools/run_ui_context.gd",
         )
         for relative in required:
             target = self.root / relative
@@ -85,20 +95,20 @@ class GateFailureTests(unittest.TestCase):
         return result
 
     def test_exit_zero_godot_errors_stop_every_headless_stage(self):
-        for stage in ("import", "content", "runner", "campaign_content", "campaign", "presentation", "portraits"):
+        for stage in ("import", "content", "runner", "campaign_content", "campaign", "presentation", "audio_revision", "ui_context", "portraits"):
             for error in ("SCRIPT ERROR: fixture", "Parse Error: fixture", "ERROR: fixture"):
                 with self.subTest(stage=stage, error=error):
                     self.assert_blocked(stage, error, expected=f"{stage} reported a Godot error")
 
     def test_nonzero_godot_exit_is_propagated_from_every_stage(self):
-        for stage in ("import", "content", "runner", "campaign_content", "campaign", "presentation", "portraits"):
+        for stage in ("import", "content", "runner", "campaign_content", "campaign", "presentation", "audio_revision", "ui_context", "portraits"):
             with self.subTest(stage=stage):
                 result = self.assert_blocked(stage, "injected failure", exit_code=7,
                                              expected="injected failure")
                 self.assertEqual(result.returncode, 7)
 
     def test_missing_wrong_failed_and_malformed_suite_reports_are_rejected(self):
-        for stage, suite in (("content", "content_validation"), ("runner", "first_playable"), ("campaign_content", "campaign_content"), ("campaign", "campaign"), ("presentation", "presentation"), ("portraits", "portraits")):
+        for stage, suite in (("content", "content_validation"), ("runner", "first_playable"), ("campaign_content", "campaign_content"), ("campaign", "campaign"), ("presentation", "presentation"), ("audio_revision", "audio_revision"), ("ui_context", "ui_context"), ("portraits", "portraits")):
             reports = [
                 "no suite report", "{not json}",
                 json.dumps({"suite": "wrong_suite", "checks": 3, "failures": []}),
@@ -111,7 +121,7 @@ class GateFailureTests(unittest.TestCase):
                                         expected=f"invalid or missing successful {suite} report")
 
     def test_suite_requires_positive_integer_checks_and_one_report(self):
-        for stage, suite in (("content", "content_validation"), ("runner", "first_playable"), ("campaign_content", "campaign_content"), ("campaign", "campaign"), ("presentation", "presentation"), ("portraits", "portraits")):
+        for stage, suite in (("content", "content_validation"), ("runner", "first_playable"), ("campaign_content", "campaign_content"), ("campaign", "campaign"), ("presentation", "presentation"), ("audio_revision", "audio_revision"), ("ui_context", "ui_context"), ("portraits", "portraits")):
             reports = [json.dumps({"suite": suite, "checks": count, "failures": []})
                        for count in (0, -1, True, 1.5, "3", None)]
             valid = json.dumps({"suite": suite, "checks": 3, "failures": []})

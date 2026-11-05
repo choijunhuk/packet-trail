@@ -315,7 +315,7 @@ def main():
     parser.add_argument("--output", type=Path)
     parser.add_argument("--source-commit")
     parser.add_argument("--source-tree")
-    parser.add_argument("--version", default="1.0.0-rc1")
+    parser.add_argument("--version", default="1.1.0-rc1")
     parser.add_argument("--target", choices=TARGETS)
     args = parser.parse_args()
     if args.self_test:

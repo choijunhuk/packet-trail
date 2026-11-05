@@ -510,5 +510,373 @@
     "虚拟命令支持语法：{command}\n请查看事件提示与工具输入格式。未记录的选项将被拒绝。",
     "Sintaxis virtual compatible: {command}\nConsulta las pistas del caso y los formatos de las herramientas. Se rechazan opciones no documentadas.",
     "Unterstützte virtuelle Befehlssyntax: {command}\nPrüfe Fallhinweise und Werkzeugeingaben. Nicht dokumentierte Optionen werden abgewiesen."
+  ],
+  "CAMPAIGN_RESULT_EXTERNAL_URL": [
+    "게임에 등록된 가상 주소만 열 수 있습니다.\n{detail}",
+    "Only registered virtual game addresses can be opened.\n{detail}",
+    "ゲームに登録された仮想アドレスだけを開けます。\n{detail}",
+    "只能打开游戏中已注册的虚拟地址。\n{detail}",
+    "Solo pueden abrirse direcciones virtuales registradas del juego.\n{detail}",
+    "Nur registrierte virtuelle Spieladressen können geöffnet werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INVALID_METHOD": [
+    "지원하지 않는 가상 요청 메서드입니다.\n{detail}",
+    "This virtual request method is unsupported.\n{detail}",
+    "対応していない仮想要求メソッドです。\n{detail}",
+    "不支持此虚拟请求方法。\n{detail}",
+    "Este método de petición virtual no es compatible.\n{detail}",
+    "Diese virtuelle Anfragemethode wird nicht unterstützt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVED": [
+    "캠페인 진행을 저장했습니다.\n{detail}",
+    "Campaign progress saved.\n{detail}",
+    "キャンペーンの進行を保存しました。\n{detail}",
+    "已保存战役进度。\n{detail}",
+    "Progreso de campaña guardado.\n{detail}",
+    "Kampagnenfortschritt gespeichert.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_LOADED": [
+    "저장한 캠페인 진행을 불러왔습니다.\n{detail}",
+    "Saved campaign progress loaded.\n{detail}",
+    "保存したキャンペーンの進行を読み込みました。\n{detail}",
+    "已读取保存的战役进度。\n{detail}",
+    "Progreso guardado de la campaña cargado.\n{detail}",
+    "Gespeicherten Kampagnenfortschritt geladen.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_RECOVERED": [
+    "정상 백업에서 진행을 복구했습니다.\n{detail}",
+    "Progress recovered from a valid backup.\n{detail}",
+    "正常なバックアップから進行を復旧しました。\n{detail}",
+    "已从有效备份恢复进度。\n{detail}",
+    "Progreso recuperado de una copia válida.\n{detail}",
+    "Fortschritt aus gültiger Sicherung wiederhergestellt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_NEW_STARTED": [
+    "현재 진행을 새 저장으로 기록했습니다.\n{detail}",
+    "Current progress written to a new save.\n{detail}",
+    "現在の進行を新しいセーブに記録しました。\n{detail}",
+    "已将当前进度写入新存档。\n{detail}",
+    "Progreso actual escrito en un guardado nuevo.\n{detail}",
+    "Aktuellen Fortschritt in einem neuen Speicherstand abgelegt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED": [
+    "현재 저장은 정상이며 복구가 필요하지 않습니다.\n{detail}",
+    "The current save is valid and does not need recovery.\n{detail}",
+    "現在のセーブは正常で、復旧は不要です。\n{detail}",
+    "当前存档有效，无需恢复。\n{detail}",
+    "El guardado actual es válido y no necesita recuperación.\n{detail}",
+    "Der aktuelle Speicherstand ist gültig und benötigt keine Wiederherstellung.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_BACKUP_INVALID": [
+    "사용할 수 있는 정상 백업이 없습니다.\n{detail}",
+    "No valid backup is available.\n{detail}",
+    "使用できる正常なバックアップがありません。\n{detail}",
+    "没有可用的有效备份。\n{detail}",
+    "No hay una copia válida disponible.\n{detail}",
+    "Keine gültige Sicherung verfügbar.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_BACKUP_REPLACE_FAILED": [
+    "백업 파일을 교체하지 못했습니다.\n{detail}",
+    "The backup file could not be replaced.\n{detail}",
+    "バックアップファイルを置き換えられませんでした。\n{detail}",
+    "无法替换备份文件。\n{detail}",
+    "No se pudo reemplazar la copia de seguridad.\n{detail}",
+    "Die Sicherungsdatei konnte nicht ersetzt werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_DIRECTORY_FAILED": [
+    "저장 폴더를 만들지 못했습니다.\n{detail}",
+    "The save directory could not be created.\n{detail}",
+    "セーブ用フォルダーを作成できませんでした。\n{detail}",
+    "无法创建存档目录。\n{detail}",
+    "No se pudo crear la carpeta de guardado.\n{detail}",
+    "Der Speicherordner konnte nicht erstellt werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_DIRECTORY_OPEN_FAILED": [
+    "저장 폴더를 열지 못했습니다.\n{detail}",
+    "The save directory could not be opened.\n{detail}",
+    "セーブ用フォルダーを開けませんでした。\n{detail}",
+    "无法打开存档目录。\n{detail}",
+    "No se pudo abrir la carpeta de guardado.\n{detail}",
+    "Der Speicherordner konnte nicht geöffnet werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_INVALID_ENCODING": [
+    "저장 파일의 문자 인코딩이 올바르지 않습니다.\n{detail}",
+    "The save file has invalid text encoding.\n{detail}",
+    "セーブファイルの文字コードが正しくありません。\n{detail}",
+    "存档文件的文字编码无效。\n{detail}",
+    "La codificación del archivo guardado no es válida.\n{detail}",
+    "Die Zeichenkodierung der Speicherdatei ist ungültig.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_INVALID_JSON": [
+    "저장 파일의 JSON 형식이 올바르지 않습니다.\n{detail}",
+    "The save file contains invalid JSON.\n{detail}",
+    "セーブファイルの JSON 形式が正しくありません。\n{detail}",
+    "存档文件的 JSON 格式无效。\n{detail}",
+    "El JSON del archivo guardado no es válido.\n{detail}",
+    "Die Speicherdatei enthält ungültiges JSON.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_INVALID_SNAPSHOT": [
+    "저장할 진행 상태가 검증을 통과하지 못했습니다.\n{detail}",
+    "The progress state did not pass save validation.\n{detail}",
+    "保存する進行状態が検証に通りませんでした。\n{detail}",
+    "进度状态未通过存档验证。\n{detail}",
+    "El estado de progreso no superó la validación.\n{detail}",
+    "Der Fortschrittszustand bestand die Speicherprüfung nicht.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_INVALID_VALIDATOR": [
+    "저장 검증을 준비하지 못했습니다.\n{detail}",
+    "Save validation could not be prepared.\n{detail}",
+    "セーブの検証を準備できませんでした。\n{detail}",
+    "无法准备存档验证。\n{detail}",
+    "No se pudo preparar la validación del guardado.\n{detail}",
+    "Die Speicherprüfung konnte nicht vorbereitet werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_NEW_REPLACE_FAILED": [
+    "새 저장으로 교체하지 못했습니다.\n{detail}",
+    "The file could not be replaced with the new save.\n{detail}",
+    "新しいセーブに置き換えられませんでした。\n{detail}",
+    "无法用新存档替换文件。\n{detail}",
+    "No se pudo sustituir por el guardado nuevo.\n{detail}",
+    "Die Datei konnte nicht durch den neuen Speicherstand ersetzt werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_NOT_FOUND": [
+    "저장 파일을 찾지 못했습니다.\n{detail}",
+    "The save file was not found.\n{detail}",
+    "セーブファイルが見つかりません。\n{detail}",
+    "未找到存档文件。\n{detail}",
+    "No se encontró el archivo guardado.\n{detail}",
+    "Die Speicherdatei wurde nicht gefunden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_PATH_IS_DIRECTORY": [
+    "저장 파일 경로에 폴더가 있습니다.\n{detail}",
+    "The save file path points to a directory.\n{detail}",
+    "セーブファイルのパスがフォルダーを指しています。\n{detail}",
+    "存档文件路径指向目录。\n{detail}",
+    "La ruta de guardado apunta a una carpeta.\n{detail}",
+    "Der Speicherdateipfad verweist auf einen Ordner.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_PATH_REJECTED": [
+    "허용되지 않는 저장 경로입니다.\n{detail}",
+    "This save path is not allowed.\n{detail}",
+    "許可されていないセーブパスです。\n{detail}",
+    "不允许使用此存档路径。\n{detail}",
+    "Esta ruta de guardado no está permitida.\n{detail}",
+    "Dieser Speicherpfad ist nicht zulässig.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_PRESERVE_FAILED": [
+    "기존 파일을 별도 보존하지 못했습니다.\n{detail}",
+    "The existing file could not be preserved separately.\n{detail}",
+    "既存ファイルを別に保持できませんでした。\n{detail}",
+    "无法单独保留现有文件。\n{detail}",
+    "No se pudo conservar por separado el archivo existente.\n{detail}",
+    "Die bestehende Datei konnte nicht separat erhalten werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_READ_FAILED": [
+    "저장 파일을 읽는 중 오류가 발생했습니다.\n{detail}",
+    "An error occurred while reading the save file.\n{detail}",
+    "セーブファイルの読み取り中にエラーが発生しました。\n{detail}",
+    "读取存档文件时出错。\n{detail}",
+    "Error al leer el archivo guardado.\n{detail}",
+    "Beim Lesen der Speicherdatei ist ein Fehler aufgetreten.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_READ_OPEN_FAILED": [
+    "저장 파일을 읽기 위해 열지 못했습니다.\n{detail}",
+    "The save file could not be opened for reading.\n{detail}",
+    "セーブファイルを読み取り用に開けませんでした。\n{detail}",
+    "无法打开存档文件进行读取。\n{detail}",
+    "No se pudo abrir el archivo guardado para leerlo.\n{detail}",
+    "Die Speicherdatei konnte nicht zum Lesen geöffnet werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_RECOVERY_FAILED": [
+    "저장 진행을 복구하지 못했습니다.\n{detail}",
+    "Save progress could not be recovered.\n{detail}",
+    "保存した進行を復旧できませんでした。\n{detail}",
+    "无法恢复存档进度。\n{detail}",
+    "No se pudo recuperar el progreso guardado.\n{detail}",
+    "Der gespeicherte Fortschritt konnte nicht wiederhergestellt werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_RECOVERY_NOT_NEEDED": [
+    "정상 저장이 있어 복구할 필요가 없습니다.\n{detail}",
+    "A valid save exists; recovery is unnecessary.\n{detail}",
+    "正常なセーブがあるため、復旧は不要です。\n{detail}",
+    "已有有效存档，无需恢复。\n{detail}",
+    "Hay un guardado válido; no hace falta recuperar.\n{detail}",
+    "Ein gültiger Speicherstand ist vorhanden; eine Wiederherstellung ist unnötig.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_RECOVERY_PATH_FAILED": [
+    "복구 파일의 경로를 준비하지 못했습니다.\n{detail}",
+    "The recovery file path could not be prepared.\n{detail}",
+    "復旧ファイルのパスを準備できませんでした。\n{detail}",
+    "无法准备恢复文件路径。\n{detail}",
+    "No se pudo preparar la ruta de recuperación.\n{detail}",
+    "Der Wiederherstellungspfad konnte nicht vorbereitet werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_RECOVERY_REQUIRED": [
+    "저장에 복구 선택이 필요합니다. 기존 파일은 자동으로 덮어쓰지 않았습니다.\n{detail}",
+    "A recovery choice is required. The existing save was not automatically overwritten.\n{detail}",
+    "復旧方法の選択が必要です。既存のセーブは自動で上書きしていません。\n{detail}",
+    "需要选择恢复方式，未自动覆盖现有存档。\n{detail}",
+    "Debes elegir cómo recuperar. No se sobrescribió automáticamente el guardado.\n{detail}",
+    "Eine Wiederherstellungswahl ist nötig. Der bestehende Stand wurde nicht automatisch überschrieben.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_REPLACE_FAILED": [
+    "저장 파일을 교체하지 못했습니다.\n{detail}",
+    "The save file could not be replaced.\n{detail}",
+    "セーブファイルを置き換えられませんでした。\n{detail}",
+    "无法替换存档文件。\n{detail}",
+    "No se pudo reemplazar el archivo guardado.\n{detail}",
+    "Die Speicherdatei konnte nicht ersetzt werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_ROUNDTRIP_MISMATCH": [
+    "다시 읽은 저장 내용이 원래 진행과 다릅니다.\n{detail}",
+    "The reread save differs from the original progress.\n{detail}",
+    "読み直したセーブが元の進行と一致しません。\n{detail}",
+    "重新读取的存档与原进度不一致。\n{detail}",
+    "El guardado releído no coincide con el progreso original.\n{detail}",
+    "Der erneut gelesene Stand weicht vom ursprünglichen Fortschritt ab.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_SIZE_LIMIT": [
+    "저장 상태가 허용된 크기를 넘습니다.\n{detail}",
+    "The save state exceeds the size limit.\n{detail}",
+    "セーブ状態がサイズ上限を超えています。\n{detail}",
+    "存档状态超过大小限制。\n{detail}",
+    "El estado guardado supera el límite de tamaño.\n{detail}",
+    "Der Speicherzustand überschreitet die Größenbegrenzung.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_WRITE_FAILED": [
+    "저장 파일에 기록하는 중 오류가 발생했습니다.\n{detail}",
+    "An error occurred while writing the save file.\n{detail}",
+    "セーブファイルの書き込み中にエラーが発生しました。\n{detail}",
+    "写入存档文件时出错。\n{detail}",
+    "Error al escribir el archivo guardado.\n{detail}",
+    "Beim Schreiben der Speicherdatei ist ein Fehler aufgetreten.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_WRITE_OPEN_FAILED": [
+    "저장 파일을 쓰기 위해 열지 못했습니다.\n{detail}",
+    "The save file could not be opened for writing.\n{detail}",
+    "セーブファイルを書き込み用に開けませんでした。\n{detail}",
+    "无法打开存档文件进行写入。\n{detail}",
+    "No se pudo abrir el archivo guardado para escribir.\n{detail}",
+    "Die Speicherdatei konnte nicht zum Schreiben geöffnet werden.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INVALID_CONTROL": [
+    "허용된 대응 조치와 값을 확인하세요.\n{detail}",
+    "Check the allowed response control and value.\n{detail}",
+    "許可された対応策と値を確認してください。\n{detail}",
+    "请检查允许的应对措施与取值。\n{detail}",
+    "Comprueba el control y valor de respuesta permitidos.\n{detail}",
+    "Prüfe die erlaubte Abwehrmaßnahme und ihren Wert.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_RESPONSE_OBSERVED": [
+    "가상 업무·대응 상태를 확인했습니다.\n{detail}",
+    "Virtual work and response state observed.\n{detail}",
+    "仮想業務と対応の状態を確認しました。\n{detail}",
+    "已观察虚拟业务与应对状态。\n{detail}",
+    "Estado de trabajo y respuesta virtual observado.\n{detail}",
+    "Virtuellen Arbeits- und Abwehrzustand beobachtet.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_CASE": [
+    "등록된 요청·입력 사례를 선택하세요.\n{detail}",
+    "Choose a registered request or input case.\n{detail}",
+    "登録された要求・入力ケースを選んでください。\n{detail}",
+    "请选择已注册的请求或输入样例。\n{detail}",
+    "Elige un caso registrado de petición o entrada.\n{detail}",
+    "Wähle einen registrierten Anfrage- oder Eingabefall.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_OPERATION": [
+    "지원되는 동작을 선택하세요.\n{detail}",
+    "Choose a supported action.\n{detail}",
+    "対応している操作を選んでください。\n{detail}",
+    "请选择支持的操作。\n{detail}",
+    "Elige una acción compatible.\n{detail}",
+    "Wähle eine unterstützte Aktion.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_ROUTE": [
+    "등록된 요청 경로를 확인하세요.\n{detail}",
+    "Check the registered request route.\n{detail}",
+    "登録された要求経路を確認してください。\n{detail}",
+    "请检查已注册的请求通路。\n{detail}",
+    "Comprueba la ruta registrada de la petición.\n{detail}",
+    "Prüfe den registrierten Anfrageweg.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_TOKEN": [
+    "폐기할 세션의 등록된 참조를 확인하세요.\n{detail}",
+    "Check the registered session reference to revoke.\n{detail}",
+    "失効させるセッションの登録参照を確認してください。\n{detail}",
+    "请检查要撤销会话的已注册引用。\n{detail}",
+    "Comprueba la referencia registrada de la sesión que revocar.\n{detail}",
+    "Prüfe den registrierten Verweis der zu widerrufenden Sitzung.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_HANDOFF_INCOMPLETE": [
+    "인계에 필요한 연결·근거·후속 관찰이 아직 부족합니다.\n{detail}",
+    "The handoff still needs required links, evidence or follow-up observations.\n{detail}",
+    "引き継ぎに必要な関係・根拠・後続観察がまだ不足しています。\n{detail}",
+    "交接所需连接、证据或后续观察仍不足。\n{detail}",
+    "Aún faltan conexiones, pruebas u observaciones de seguimiento para la entrega.\n{detail}",
+    "Für die Übergabe fehlen noch Verbindungen, Belege oder Folgebeobachtungen.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_INVALID_CLAIM": [
+    "주장 형식과 수집한 관측의 참조를 확인하세요.\n{detail}",
+    "Check the claim format and references to collected observations.\n{detail}",
+    "主張の形式と、収集した観察への参照を確認してください。\n{detail}",
+    "请检查主张格式与已采集观察的引用。\n{detail}",
+    "Comprueba el formato de la afirmación y sus referencias a observaciones recogidas.\n{detail}",
+    "Prüfe das Behauptungsformat und die Verweise auf erhobene Beobachtungen.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_OBSERVATION_RECORDED": [
+    "관측·가설 처리 결과입니다.\n{detail}",
+    "Observation and hypothesis result.\n{detail}",
+    "観察・仮説の処理結果です。\n{detail}",
+    "观察与假设处理结果。\n{detail}",
+    "Resultado de observaciones e hipótesis.\n{detail}",
+    "Ergebnis der Beobachtungs- und Hypothesenverarbeitung.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_UNKNOWN_SENSOR": [
+    "등록된 관찰 지점을 확인하세요.\n{detail}",
+    "Check the registered vantage point.\n{detail}",
+    "登録された観測地点を確認してください。\n{detail}",
+    "请检查已注册观察点。\n{detail}",
+    "Comprueba el punto de observación registrado.\n{detail}",
+    "Prüfe den registrierten Beobachtungspunkt.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_WINDOW_END": [
+    "이 관찰 지점에는 다음 관측 구간이 없습니다.\n{detail}",
+    "This vantage point has no further observation window.\n{detail}",
+    "この地点には次の観測区間がありません。\n{detail}",
+    "此观察点没有下一个观察窗口。\n{detail}",
+    "Este punto no tiene otra ventana de observación.\n{detail}",
+    "Dieser Messpunkt hat kein weiteres Beobachtungsfenster.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_VM_INVALID": [
+    "가상 프로그램이나 입력 형식을 확인하세요.\n{detail}",
+    "Check the virtual program or input format.\n{detail}",
+    "仮想プログラムか入力の形式を確認してください。\n{detail}",
+    "请检查虚拟程序或输入格式。\n{detail}",
+    "Comprueba el programa virtual o el formato de entrada.\n{detail}",
+    "Prüfe das virtuelle Programm oder Eingabeformat.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_VM_LIMIT": [
+    "가상 프로그램의 허용 예산을 넘었습니다.\n{detail}",
+    "The virtual program limit was exceeded.\n{detail}",
+    "仮想プログラムの許可された上限を超えました。\n{detail}",
+    "已超过虚拟程序允许的预算。\n{detail}",
+    "Se superó el límite del programa virtual.\n{detail}",
+    "Die Grenze des virtuellen Programms wurde überschritten.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_VM_OBSERVED": [
+    "가상 프로그램 상태입니다.\n{detail}",
+    "Virtual program state.\n{detail}",
+    "仮想プログラムの状態です。\n{detail}",
+    "虚拟程序状态。\n{detail}",
+    "Estado del programa virtual.\n{detail}",
+    "Zustand des virtuellen Programms.\n{detail}"
+  ],
+  "CAMPAIGN_RESULT_SAVE_DIFFERENT_CAMPAIGN": [
+    "다른 캠페인 또는 콘텐츠 버전으로 표시된 저장입니다. 원본과 백업을 보존하고 교체하지 않았습니다.\n{detail}",
+    "This save is marked for a different campaign or content version. It and its backup were preserved.\n{detail}",
+    "別のキャンペーンまたはコンテンツ版として記録されたセーブです。原本とバックアップを保持し、置き換えていません。\n{detail}",
+    "此存档标记为其他战役或内容版本。原件与备份均已保留，未被替换。\n{detail}",
+    "El guardado está marcado para otra campaña o versión de contenido. Se conservaron el original y su copia sin sustituirlos.\n{detail}",
+    "Dieser Stand ist für eine andere Kampagne oder Inhaltsversion gekennzeichnet. Original und Sicherung blieben ohne Ersatz erhalten.\n{detail}"
   ]
 }

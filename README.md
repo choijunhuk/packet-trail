@@ -10,11 +10,12 @@
 
 | 문서 | 내용 |
 |---|---|
-| [최신 읽기 전용 Claude 검사](docs/reviews/CLAUDE_FULL_AUDIT_20261105.md) | 중요3·중간3 재판정, 실제 재현, OST 강화 비교본, 게임 코드 변경 없음 |
-| [전체판 구현·검증](docs/implementation/2026-11-05-full-production.md) | 현재 전체 캠페인·실제 검증·배포 기록 |
+| [1.1 세 관점 구현·검증](docs/implementation/2026-11-05-three-perspectives.md) | 결함 수정·침투 개선·독립 방어/추적·OST 적용과 실제 검증 |
+| [수정 전 Claude 검사](docs/reviews/CLAUDE_FULL_AUDIT_20261105.md) | 1.0 감사의 발견·실제 재현과 판단 원본 |
+| [1.0 전체판 기록](docs/implementation/2026-11-05-full-production.md) | 이전 전체 캠페인·당시 검증·배포 기록 |
 | [실행·조작·저장 안내](docs/PLAYING.md) | 배포 ZIP 실행, 단축키, 저장 백업과 업데이트 |
 | [첫 실행 묶음 기록](docs/implementation/2026-11-05-first-playable.md) | 이전 M01 개발판의 당시 구현·검증 범위 |
-| [후속 3관점 캠페인](docs/FUTURE_CAMPAIGNS.md) | 침투자·방어자·추적자의 독립 이야기 |
+| [3관점 캠페인 결정](docs/FUTURE_CAMPAIGNS.md) | 초기 제안과 1.1의 세 독립 이야기 |
 | [전체 기획](PROJECT_PLAN.md) | 침투의 손맛·이야기·자유도·최종 범위 |
 | [2차 피드백 독립 재검토](docs/reviews/CODEX_R2_REVIEW_20261105.md) | 남은 계약 보완·검사기 회귀 검증 |
 | [Claude 피드백과 수용 판단](docs/reviews/CLAUDE_FEEDBACK_RESPONSE_20261104.md) | 1·2차 피드백의 채택·수정·보류와 개정 이유 |
@@ -35,27 +36,25 @@
 
 ## 제품 목표와 제작 순서
 
-- 최종: Windows/macOS/Linux, 3D 거점+가상 OS, 다국어·OST, 메인24+선택4.
+- Windows/macOS/Linux, 3D 거점+가상 OS, 다국어·OST, 침투 메인24+선택4와 독립 방어8·추적8.
 - 플레이타임: 빠른 첫회 약8시간, 충분한 탐색 약12시간. 강제 대기로 시간을 맞추지 않는다.
 - 제작 단계: P0 2D 입력 → P1 M01 한 사건 → P2 3미션 시제품 → MVP → 1.0. 범위와 판단은 [단계표](docs/ROADMAP_AND_QA.md#단계별-필수-범위)가 기준이다.
 
 ## 현재 상태
 
-**전체 캠페인 1.0.0-rc1 구현·검증·3OS 패키지 배포 완료.** [배포본 다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.0.0-rc1)에서 설치형 게임을 받을 수 있다.
+**1.1.0-rc1 세 관점 확장의 구현을 마치고 최종 통합·배포 검증 중이다.** 마지막 완료 상태·검증한 소스와 패키지는 [1.1 실행 기록](docs/implementation/2026-11-05-three-perspectives.md)을 따른다. 이전 [1.0 배포본](https://github.com/choijunhuk/packet-trail/releases/tag/v1.0.0-rc1)은 보존한다.
 
-- 6장 메인24 + 선택 S01·S02·R01·P01, 28사건×2개 실행 경로 fixture, 근거에 따른 결말3개. 독립 퍼즐 다양성과 반복 비중은 최신 검사에서 보완 과제로 확인됐다.
-- 113개 사건별 가상 호스트, 89개 필수 자료와 연쇄 근거. 소개된 도구·힌트·읽기 순서 자체는 완료 조건이 아니다.
-- 독립된 터미널4개와 Linux식 명령, 가상 브라우저·RequestLab·분석 도구·파일/보관 자료·사건 보드·연락처·일시정지.
-- 작은3D 야간 작업실, WASD/RMB/E/F10 전환, 접근성·글자 크기·개별 음량·화면 설정.
-- 한국어·영어·일본어·간체 중국어·스페인어·독일어: 1,443키/언어. 번역은 원어민 검수 전 초안이다.
-- 원곡 OST7큐 19분51.64초·효과음·환경음, 성인 허구 인물4명의 정본/표정16장.
-- 안전한 campaign v2 고정 슬롯, 명시적인 구버전 M01 가져오기. 구버전 슬롯은 자동 덮어쓰지 않는다.
+- 침투 메인24+선택4, 방어8, 추적8의 공개44사건. 각 편의 온보딩·이야기·결말·저장이 독립돼 있다.
+- 필수 공통 자료66개와 반복 회수 체인을 제거하고, 다섯 복구 사건에 실제 다른 서비스·정책·승인 경로를 통한 대안을 추가했다. 88개 해법 fixture는 실행 경로 수이며 서로 다른88개 퍼즐이라는 뜻은 아니다.
+- 방어는 정상 업무와 위협의 실제 요청 결과·격리·부분 복원으로, 추적은 수집한 관측·시간·출처와 가설의 지원/반박/부족으로 판정한다. 선택 R01은 제한된 VM의 분기·호출·정상 입력·반례를 실행한다.
+- 터미널4개, Linux식 명령, 가상 브라우저·RequestLab·구조화된 도구 폼·파일·사건 보드·연락처, 작은3D 작업실과 접근성 설정을 공유한다.
+- 한국어·영어·일본어·간체 중국어·스페인어·독일어, 2,574키/언어. 번역은 원어민 검수 전 초안이다.
+- 강화 원곡 OST7큐와 엔딩 편집본 약20분23초, 효과음12개·환경음, 허구 성인4명의 정본/표정16장.
+- 저장 크기·경로·항목 경계, 인증 관측과 보상 분리, 창 순환·활성 세션·음악·불러오기 확인을 수리했다. 기존 진행은 원본을 보존하는 별도 이전판 이어하기로 제공한다.
 
-세OS 전체 headless CI, 개발 Mac의 실제 렌더·입력 3,761항목/28사건 완주, Linux 소프트웨어 렌더 부분 GUI 450항목/첫 사건, 세 패키지의 실제 PCK 각47항목이 통과했다. 최종 Mac ZIP은 압축 해제 뒤 실제 OS 마우스·키보드·저장 복원·3D 왕복도 확인했다. 소스·체크섬·독립 검토·한계는 [전체판 기록](docs/implementation/2026-11-05-full-production.md)을 따른다. 8~12시간은 분량 예산이며 실제 사람의 플레이타임·재미로 측정한 수치가 아니다.
+Claude의 수정 전 감사와 C21/C22 읽기 전용 후속 검토는 실제 회귀 실행과 대조해 수용했다. 요청 모델·실제 응답 모델·추론 수준은 [AI 기록](docs/AI_WORKFLOW.md)에 있다. [캐릭터 실제 제작](docs/implementation/character-production.md)도 별도로 보존한다.
 
-이후 [전체 읽기 전용 재검사](docs/reviews/CLAUDE_FULL_AUDIT_20261105.md)의 현재 판정은 **REVISE**다. 저장 경계 오류·필수 근거 반복/최종 사건 계약·한국어 교육 문단의 영어 잔류를 중요3개로 확인했다. 기존 자동 통과는 이 문제들의 반증이 아니다. 요청에 따라 게임 코드·콘텐츠·앱은 수정하지 않았으며, OST 강화본도 현재 배포본과 별도인 비교용이다.
-
-후속 방어자·추적자 캠페인은 같은 세계관의 독립 이야기로 기획돼 있으며 이번 침투자편을 세 편으로 나누지 않는다. [캐릭터 실제 제작](docs/implementation/character-production.md), [모델·추론 수준](docs/AI_WORKFLOW.md)을 함께 기록했다. 가칭 상표·스토어 등록·Apple 공증은 완료했다고 주장하지 않는다.
+침투편8~12시간은 분량 설계 목표이며 실제 사람의 시간·재미·난이도 측정값이 아니다. 자동/headless·렌더·실제 OS·사람 평가는 실행 기록에서 구분한다. 가칭 상표·스토어 등록·Apple 공증은 완료했다고 주장하지 않는다.
 
 ## 실행
 
@@ -73,7 +72,7 @@ ZIP 전체를 압축 해제한 뒤 내부 `MidnightAccess/README.md`를 읽는�
 godot --path godot
 ```
 
-게임 전체 자동 검증은 `bash tools/gate.sh`다. GUI/IME·실제 각 OS 플레이·사람의 재미 판단은 별도다. 기본 캠페인 저장은 Godot 사용자 데이터의 `MidnightAccess/saves/campaign_01.json`, 설정은 `MidnightAccess/settings.json`이다. 구버전 `saves/slot_01.json`은 명시적 가져오기용으로 보존한다. 파일 이름·캐노니컬 자료와 번역 표시를 분리한다.
+게임 전체 자동 검증은 `bash tools/gate.sh`다. GUI/IME·실제 각 OS 플레이·사람의 재미 판단은 별도다. Godot 사용자 데이터 `MidnightAccess/saves/` 안에 `intruder_v2_01.json`, `defender_01.json`, `tracker_01.json`을 분리한다. 이전판은 `legacy_continue_01.json` 사본에서 이어가며 원본 `campaign_01.json`·구버전 `slot_01.json`을 보존한다. 설정은 `MidnightAccess/settings.json`이다. 자세한 경로는 [실행 안내](docs/PLAYING.md#저장과-업데이트)를 따른다.
 
 ## 문서 검증 재실행
 

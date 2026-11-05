@@ -526,5 +526,189 @@
     "旧版 M01 存档会保留。导入的进度将替换当前战役槽；现有战役会先备份。",
     "Se conserva la partida anterior de M01. El progreso importado sustituye la campaña actual; si ya existe una campaña, se hará una copia de seguridad.",
     "Der alte M01-Spielstand bleibt erhalten. Importierter Fortschritt ersetzt den aktuellen Kampagnenplatz; eine bestehende Kampagne wird zuvor gesichert."
+  ],
+  "CAMPAIGN_SELECT": [
+    "캠페인 선택",
+    "Choose a campaign",
+    "キャンペーンを選ぶ",
+    "选择战役",
+    "Elegir campaña",
+    "Kampagne wählen"
+  ],
+  "CAMPAIGN_INTRUDER": [
+    "침투자",
+    "Intruder",
+    "侵入者",
+    "入侵者",
+    "Intruso",
+    "Eindringling"
+  ],
+  "CAMPAIGN_DEFENDER": [
+    "방어자",
+    "Defender",
+    "防御者",
+    "防御者",
+    "Defensor",
+    "Verteidiger"
+  ],
+  "CAMPAIGN_TRACKER": [
+    "추적자",
+    "Tracker",
+    "追跡者",
+    "追踪者",
+    "Rastreador",
+    "Ermittler"
+  ],
+  "CAMPAIGN_INTRUDER_DESC": [
+    "닫힌 경로를 열고 숨겨진 기록을 회수하세요.",
+    "Open new routes and recover hidden records.",
+    "閉じた経路を開き、隠された記録を回収してください。",
+    "打开封闭通路，取得隐藏记录。",
+    "Abre nuevas rutas y recupera registros ocultos.",
+    "Öffne neue Wege und sichere verborgene Aufzeichnungen."
+  ],
+  "CAMPAIGN_DEFENDER_DESC": [
+    "위협을 막으면서 정상 업무를 지키세요.",
+    "Stop threats while keeping legitimate work running.",
+    "脅威を防ぎながら、正規の業務を守ってください。",
+    "阻止威胁，同时维持正常业务。",
+    "Detén amenazas sin interrumpir el trabajo legítimo.",
+    "Wehre Bedrohungen ab und erhalte die reguläre Arbeit."
+  ],
+  "CAMPAIGN_TRACKER_DESC": [
+    "관측과 반증으로 연결을 좁히세요.",
+    "Follow observations and counterevidence to narrow the trail.",
+    "観察と反証で、つながりを絞り込んでください。",
+    "依据观察与反证缩小追踪范围。",
+    "Acota el rastro mediante observaciones y pruebas en contra.",
+    "Grenze die Spur durch Beobachtungen und Gegenbelege ein."
+  ],
+  "CAMPAIGN_PROGRESS": [
+    "진행 {done}/{total}",
+    "Progress {done}/{total}",
+    "進行 {done}/{total}",
+    "进度 {done}/{total}",
+    "Progreso {done}/{total}",
+    "Fortschritt {done}/{total}"
+  ],
+  "CAMPAIGN_NO_SAVE": [
+    "아직 저장된 진행 없음",
+    "No saved progress yet",
+    "保存した進行はまだありません",
+    "暂无已保存进度",
+    "Aún no hay progreso guardado",
+    "Noch kein Fortschritt gespeichert"
+  ],
+  "LEGACY_CONTINUE": [
+    "이전판 계속",
+    "Continue previous edition",
+    "旧版を続ける",
+    "继续旧版",
+    "Continuar edición anterior",
+    "Vorherige Fassung fortsetzen"
+  ],
+  "LEGACY_CONTINUE_DESC": [
+    "이전판 진행을 그대로 재개합니다. 새 캠페인과는 별도로 보존됩니다.",
+    "Resume the previous edition. Its progress stays separate from the new campaigns.",
+    "旧版の進行をそのまま再開します。新しいキャンペーンとは別に保持されます。",
+    "原样继续旧版进度，与新战役分别保留。",
+    "Retoma la edición anterior. Su progreso se conserva separado de las campañas nuevas.",
+    "Setze die vorige Fassung fort. Ihr Fortschritt bleibt von den neuen Kampagnen getrennt."
+  ],
+  "CAMPAIGN_NEW_CONFIRM": [
+    "{campaign}의 기존 진행을 백업하고 새로 시작합니다. 다른 캠페인과 이전판 저장은 유지됩니다.",
+    "Back up and restart {campaign}. Other campaigns and previous-edition saves are preserved.",
+    "{campaign} の進行をバックアップして新しく始めます。他のキャンペーンと旧版のセーブは保持されます。",
+    "备份 {campaign} 的现有进度后重新开始。其他战役与旧版存档会保留。",
+    "Se hará una copia de {campaign} y se reiniciará. Se conservan las otras campañas y los guardados anteriores.",
+    "Der Fortschritt von {campaign} wird gesichert und neu begonnen. Andere Kampagnen und alte Spielstände bleiben erhalten."
+  ],
+  "ROLE_AUDIO_LABEL": [
+    "캠페인 분위기",
+    "Campaign atmosphere",
+    "キャンペーンの雰囲気",
+    "战役氛围",
+    "Ambiente de campaña",
+    "Kampagnenatmosphäre"
+  ],
+  "PACK_INTRUDER_TITLE": [
+    "침투자",
+    "Intruder",
+    "侵入者",
+    "入侵者",
+    "Intruso",
+    "Eindringling"
+  ],
+  "PACK_INTRUDER_SUMMARY": [
+    "닫힌 경로를 열고 숨겨진 기록을 회수하세요.",
+    "Open new routes and recover hidden records.",
+    "閉じた経路を開き、隠された記録を回収してください。",
+    "打开封闭通路，取得隐藏记录。",
+    "Abre nuevas rutas y recupera registros ocultos.",
+    "Öffne neue Wege und sichere verborgene Aufzeichnungen."
+  ],
+  "PACK_DEFENDER_TITLE": [
+    "방어자",
+    "Defender",
+    "防御者",
+    "防御者",
+    "Defensor",
+    "Verteidiger"
+  ],
+  "PACK_DEFENDER_SUMMARY": [
+    "위협을 막으면서 정상 업무를 지키세요.",
+    "Stop threats while keeping legitimate work running.",
+    "脅威を防ぎながら、正規の業務を守ってください。",
+    "阻止威胁，同时维持正常业务。",
+    "Detén amenazas sin interrumpir el trabajo legítimo.",
+    "Wehre Bedrohungen ab und erhalte die reguläre Arbeit."
+  ],
+  "PACK_TRACKER_TITLE": [
+    "추적자",
+    "Tracker",
+    "追跡者",
+    "追踪者",
+    "Rastreador",
+    "Ermittler"
+  ],
+  "PACK_TRACKER_SUMMARY": [
+    "관측과 반증으로 연결을 좁히세요.",
+    "Follow observations and counterevidence to narrow the trail.",
+    "観察と反証で、つながりを絞り込んでください。",
+    "依据观察与反证缩小追踪范围。",
+    "Acota el rastro mediante observaciones y pruebas en contra.",
+    "Grenze die Spur durch Beobachtungen und Gegenbelege ein."
+  ],
+  "PACK_LEGACY_TITLE": [
+    "이전판",
+    "Previous edition",
+    "旧版",
+    "旧版",
+    "Edición anterior",
+    "Vorherige Fassung"
+  ],
+  "UI_TOOLKIND_RESPONSE_LAB": [
+    "대응 작업대",
+    "Response workbench",
+    "対応作業台",
+    "应对工作台",
+    "Banco de respuesta",
+    "Reaktionswerkbank"
+  ],
+  "UI_TOOLKIND_OBSERVATION_CASE": [
+    "관측과 가설",
+    "Observations and hypotheses",
+    "観察と仮説",
+    "观察与假设",
+    "Observaciones e hipótesis",
+    "Beobachtungen und Hypothesen"
+  ],
+  "UI_TOOLKIND_BRANCH_VM": [
+    "분기·호출 분석",
+    "Branch and call analysis",
+    "分岐・呼び出し分析",
+    "分支与调用分析",
+    "Análisis de ramas y llamadas",
+    "Verzweigungs- und Aufrufanalyse"
   ]
 }

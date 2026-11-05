@@ -191,3 +191,26 @@ A26은 마지막 실제 재실행에서 일반 입력 대기와 캡처 draw를 �
 세 Claude 호출은 로컬 CLI2.1.311의 safe-mode/restricted, tools빈목록·empty strict MCP·dontAsk/permission-promptsnone·no-session-persistence로 수행했다. Write/Edit/Bash/Read를 포함한 파일/실행 도구를 주지 않고 동결 본문만 전달했으며 permission_denials는 모두빈배열이다. 전역 Claude 설정·인증은 바꾸지 않았다. 실제 사용 모델과 요청 수준을 별도로 기록했으며 숨은 thinking 원문은 보고서에 옮기지 않았다.
 
 부모는 새 임시 진단 파일과 고유 테스트 슬롯으로 최종경로 초과 저장 거절, 완료 여부에 따른 reset복구 차이,128항목 보관 제한, M06/M23 HTTP보상 비대칭, 역방향 창 순환, UI등록 배열 누적을 재현했다. 기본 저장/설정 SHA는 같았다. 기존 전체 gate도 다시 PASS였지만 새 결함을 덮는 근거로 사용하지 않았다. 사람 청취·재미·원어민·실제8~12시간과 독립 퍼즐 다양성은 자동 검사와 구분했다. 게임/테스트/제작 도구 원본은 수정하지 않았다.
+
+### 2026-11-05 수정·게임성·세 관점 확장 실행
+
+사용자의 “수정 ㄱㄱ”와 기존 확장까지 계속 진행 요청으로 구현을 시작했다. 중간 포기 메시지는 다른 작업 오입력이라고 철회됐다. `packet-trail-expansion/feat/three-perspectives`에서 기존 입력·진행·릴리스를 보존하고, Claude는 계속 tools빈목록 읽기 전용 검토만 담당한다. [구현·실행 기록](implementation/2026-11-05-three-perspectives.md)의 최종 완료 절이 배포 상태다.
+
+| ID·책임 | 모델·추론 수준 | 실제 작업 |
+|---|---|---|
+| A32 코어/계약 | gpt-6.1-sol / xhigh | 고정 catalog·독립팩/슬롯·구판 continuation, 저장/인증 경계, 정상업무/관측/분기 VM·현재세경계, 독립 RED 발견의 소유 core 수리 |
+| A33 콘텐츠 | gpt-6.1-sol / high | 침투28·방어8·추적8,66필수 반복체인 제거, M24/R01과5복구 실제대안·반례·KOEN/fixture/generator |
+| A34 UI/연결 | gpt-6.1-sol / high | 캠페인 선택·캐시/진행/구판·형식입력/상태표·역순환/누적·공개 artifact·역할/장 음악 문맥 |
+| A35 현지화 | gpt-6.1-sol / high | KO영어교육문단 교정·새원고4번역·6PO/SHA/보간/토큰/CJK·현재/과거 상태 문구 |
+| A36 오디오 | gpt-6.1-sol / high | 강화7곡/ending edit 적용·순환 신호/codec경계·실제one-shot·독립Audio147검사 |
+| A37 독립 QA | gpt-6.1-sol / xhigh | 별도 회귀 RED→GREEN,44사건88경로·업무/권한/관측/부정/원본보존, 추적 PCK검사와 외부deadline |
+| A38 실제 렌더 검사 | gpt-6.1-sol / high | A36과 같은 native세션을 재사용해 공개3편 smoke/full 입력·기본폼·PNG·source/저장보호를 분리 기록 |
+| A39 fresh 독립 source 검토 | gpt-6.1-sol / xhigh | 구현자와 다른 새context 전체브랜치 검토. Critical0/Important4를 제시하고 제품 수정·실행은 하지 않음 |
+| C21 수정코어 | claude-opus-5-5 / xhigh 요청 | **실제 modelUsage5.5+4.8**,675.233초,exit0/is_error=false,정적 READY C0/I0. 구체 현재권한/예산/sidecars/eligibility/모형코드18파일 snapshot,새5대안원고는범위밖 |
+| C22 UI/콘텐츠 | claude-opus-5-5 / xhigh 요청 | **실제 modelUsage5.5**,953.445초,exit0/is_error=false,정적 REVISE C0/I2. 수정UI/Audio/Catalog/projection+44개요·선택실제정의·복구5actualfixtures |
+
+두 Claude 호출은 CLI2.1.311의 safe-mode/restricted/strict empty MCP, tools빈목록·dontAsk/permission-promptsnone·no-session-persistence를 유지했다. permission_denials는 빈 배열이며 원문 prompt·argv·sourceSHA·결과 JSON은 `.omx/artifacts/final-advisor/`에 보관했다. C21의 최종화자별 귀속/두모델 사용 원인은 미노출이며 호출자가4.8 fallback을 선택하지 않았다. 숨은 thinking 원문은 사용자 보고서로 옮기지 않는다.
+
+Claude가 소스 대조를 “재현”이라고 표현한 부분도 **실행 재현으로 취급하지 않는다**. 원문과 부모의 판정을 분리한다. A39의4중요 발견은 독립 QA의38실제RED→후속GREEN으로 수리했고,5복구사건의 A-only false인B와 현재 업무/위협/반례도 별도로 검증했다. C21 뒤의 중첩 terminal shape는 작은 후속 Medium으로 cleanreject 회귀를 추가했다. C22의 구판E 재입장과 과거결말에 음악고정 문제는 별도 실제 UI회귀로 수리·검증하며 소스검토 동의만으로 완료시키지 않는다.
+
+기존 336/31,717과 새 mutation/공개88/Audio/locale/실제native/PCK/3OS 결과는 각 실행 로그와 최신 구현 기록을 따른다. fixture 수를 독립 퍼즐 수나 사람 플레이타임으로 바꾸지 않는다. 사람 청취·장기 피로도·재미/난이도·원어민·물리IME/기기는 자동/정적 모델 검토와 별도다.

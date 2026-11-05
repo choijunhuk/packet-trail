@@ -23,7 +23,10 @@ static func normalize(path: String, cwd: String = "/", home: String = "/home/pla
 				parts.pop_back()
 		else:
 			parts.append(part)
-	return {"ok": true, "path": "/" + "/".join(parts)}
+	var normalized: String = "/" + "/".join(parts)
+	if normalized.length() > 1024:
+		return {"ok": false, "code": "INVALID_PATH", "text": "The final virtual path exceeds 1024 characters."}
+	return {"ok": true, "path": normalized}
 
 static func permitted(entry: Dictionary, account: String, groups: Array, bit: int) -> bool:
 	var mode := String(entry.get("mode", "000"))

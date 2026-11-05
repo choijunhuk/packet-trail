@@ -1,95 +1,111 @@
 {
   "Recovery window: two simulated ticks. Repeated failures must be limited without disabling the ward relay.": [
+    "복구 창은 가상 시계 두 틱입니다. 병원 중계를 멈추지 않으면서 반복 실패를 제한해야 합니다.",
     "回復まで仮想時計で 2 目盛りです。病院中継を止めず、繰り返しの失敗を制限してください。",
     "恢复窗口为两次模拟时钟推进。限制重复失败时，不得停用病区中继。",
     "La recuperación tarda dos pulsos simulados. Limita los fallos repetidos sin desactivar el repetidor hospitalario.",
     "Das Erholungsfenster beträgt zwei simulierte Takte. Begrenze Wiederholungen, ohne das Stationsrelais abzuschalten."
   ],
   "Comparison plan: issue a fresh alias, observe the retired alias, then observe the fresh alias. A logout label is not a revocation record.": [
+    "비교 순서: 새 별칭을 발급하고 폐기된 별칭을 관찰한 다음 새 별칭을 관찰하세요. 로그아웃 표시는 서버의 폐기 기록이 아닙니다.",
     "比較手順：新しい別名を発行し、廃止した別名を観察してから、新しい別名を観察します。ログアウト表示は失効記録ではありません。",
     "比较步骤：签发新别名，观察已撤销别名，再观察新别名。退出标签并不等于撤销记录。",
     "Plan: emite un alias nuevo, observa el retirado y después el nuevo. Una etiqueta de salida no es un registro de revocación.",
     "Vergleichsplan: Erzeuge einen neuen Alias, beobachte den ausgemusterten und danach den neuen. Eine Abmeldeanzeige ist kein Widerrufsbeleg."
   ],
   "Compare a request without the legitimate nonce and a deliberate save from the form.": [
+    "정상 nonce가 없는 요청과 양식에서 의도적으로 저장한 요청을 비교하세요.",
     "正規の nonce がない要求と、フォームから意図的に保存した要求を比べてください。",
     "对比不含合法 nonce 的请求与从表单有意保存的请求。",
     "Compara una petición sin el nonce legítimo con un guardado intencional del formulario.",
     "Vergleiche eine Anfrage ohne gültige Nonce mit bewusstem Speichern aus dem Formular."
   ],
   "The first row must be refused. The second must still create a retained photograph. Filename, declared type and content signature are separate observations.": [
+    "첫째 행은 거절되어야 하고 둘째 행은 정상 사진으로 보관되어야 합니다. 파일 이름·신고 형식·내용 서명은 서로 다른 관찰입니다.",
     "最初の行は拒否し、二つ目では写真の保存が必要です。ファイル名、申告形式、内容シグネチャは別々の観察です。",
     "必须拒绝第一行，第二行仍须生成保留照片。文件名、声明类型与内容特征是不同观察项。",
     "La primera fila debe rechazarse y la segunda debe seguir guardando una foto. Nombre, tipo declarado y firma son observaciones distintas.",
     "Die erste Zeile muss abgewiesen werden, die zweite weiterhin ein gespeichertes Foto erzeugen. Dateiname, angegebener Typ und Inhaltssignatur sind getrennte Beobachtungen."
   ],
   "A quoted search value is concatenated into a small equality condition. In the vulnerable path an OR comparison can become part of the condition, rather than remaining a text value. The retained catalogue provides an independent route.": [
+    "따옴표로 감싼 검색 값이 작은 등식 조건에 이어 붙습니다. 취약한 경로에서는 OR 비교가 단순 문자열이 아니라 조건의 일부가 될 수 있습니다. 별도 보관 목록으로 같은 사실을 확인하는 길도 있습니다.",
     "引用された検索値を小さな等価条件に連結しています。脆弱な経路では OR 比較が単なる文字列ではなく条件の一部になります。保管された目録には独立経路があります。",
     "带引号的搜索值被拼接进小型等式条件。在有缺陷的通路中，OR 比较会成为条件的一部分，而非仅作为文本值。保留目录提供独立通路。",
     "Un valor entre comillas se concatena en una condición de igualdad. En la ruta vulnerable, una comparación OR pasa a formar parte de la condición en vez de ser texto. El catálogo conservado ofrece una vía independiente.",
     "Ein zitierter Suchwert wird in eine kleine Gleichheitsbedingung eingefügt. Im verwundbaren Weg wird ein OR-Vergleich Teil der Bedingung statt Textwert zu bleiben. Der aufbewahrte Katalog bietet einen unabhängigen Weg."
   ],
   "The isolated renderer accepts only a bounded signal: marker effect. No JavaScript runs and citizen pages remain outside the inspection window.": [
+    "격리된 표시기는 제한된 signal: 표식 효과만 받습니다. JavaScript는 실행하지 않으며 시민 페이지는 검증 창 밖에 남습니다.",
     "隔離レンダラーが受け入れるのは、限定された signal: 標識効果だけです。JavaScript は動かず、市民ページは検証窓の外です。",
     "隔离渲染器只接受受限的 signal: 标记效果。不运行 JavaScript，市民页面不在检查窗口范围内。",
     "El renderizador aislado solo acepta un efecto marcador limitado signal:. No se ejecuta JavaScript y las páginas ciudadanas quedan fuera.",
     "Die isolierte Darstellung akzeptiert nur einen begrenzten signal:-Markierungseffekt. JavaScript läuft nicht; Bürgerseiten bleiben außerhalb des Prüffensters."
   ],
   "Resolve the requested path before deciding which store contains it. Similar prefixes do not establish containment.": [
+    "요청 경로를 정규화한 뒤 어느 보관 영역에 속하는지 판단하세요. 비슷한 접두어만으로는 영역 안에 있다고 볼 수 없습니다.",
     "要求パスを解決してから、どの保管庫に属するか判定してください。似た接頭辞だけでは所属を示せません。",
     "先解析请求路径，再判断它属于哪个存储区。相似前缀不能证明包含关系。",
     "Resuelve la ruta antes de decidir a qué almacén pertenece. Un prefijo parecido no demuestra contención.",
     "Löse den Pfad auf, bevor du seinen Speicherbereich bestimmst. Ähnliche Präfixe belegen keine Zugehörigkeit."
   ],
   "The final destination and requester's authority must be checked separately.": [
+    "최종 목적지와 요청 주체의 권한은 따로 확인해야 합니다.",
     "最終宛先と要求者の権限は、別々に確認する必要があります。",
     "必须分别检查最终目的地与请求者权限。",
     "Comprueba por separado el destino final y la autoridad de quien solicita.",
     "Endziel und Rechte des Anfragenden sind getrennt zu prüfen."
   ],
   "Inspect the actual authenticated account and its group, not a supplied account label.": [
+    "입력으로 적은 계정 이름이 아니라 실제 인증된 계정과 그 그룹을 확인하세요.",
     "入力したアカウント表示ではなく、実際に認証されたアカウントとグループを確認してください。",
     "检查实际已认证账号及其组，而非提交的账号标签。",
     "Inspecciona la cuenta realmente autenticada y su grupo, no una etiqueta proporcionada.",
     "Prüfe das tatsächlich angemeldete Konto und seine Gruppe, nicht eine mitgelieferte Kontobezeichnung."
   ],
   "Marker byte: 47 (hex). At most eight bytes exist in this isolated diagram. These are not host memory addresses.": [
+    "표식 바이트는 47(16진)입니다. 이 격리된 그림에는 최대 여덟 바이트만 있습니다. 실제 호스트의 메모리 주소가 아닙니다.",
     "標識バイトは 47（16 進）です。この隔離図には最大 8 バイトしかありません。ホストのメモリーアドレスではありません。",
     "标记字节为 47（十六进制）。隔离图中最多只有八个字节，并非主机内存地址。",
     "Byte marcador: 47 (hexadecimal). Este diagrama aislado tiene como máximo ocho bytes; no son direcciones de memoria del host.",
     "Markierungsbyte: 47 (hexadezimal). Dieses isolierte Diagramm enthält höchstens acht Bytes, keine Hostspeicheradressen."
   ],
   "Removal from a file is not server-side revocation. Verify the actual permitted read.": [
+    "파일에서 값을 지우는 것과 서버에서 폐기하는 것은 다릅니다. 실제로 허용되는 읽기를 확인하세요.",
     "ファイルからの削除は、サーバーでの失効ではありません。実際に許可される読み取りを確かめてください。",
     "从文件删除并不等于服务器端撤销。请验证实际允许的读取。",
     "Eliminarlo de un archivo no es revocarlo en el servidor. Verifica la lectura realmente permitida.",
     "Entfernen aus einer Datei bedeutet keinen serverseitigen Widerruf. Prüfe den tatsächlich erlaubten Lesezugriff."
   ],
   "Restore scoped legitimate jobs. Do not restore retired authority or a broad bypass.": [
+    "필요한 범위의 정상 업무를 복구하세요. 폐기된 권한이나 광역 우회는 다시 열지 마세요.",
     "範囲を限定した正規ジョブを復旧してください。廃止権限や広域の迂回は戻さないでください。",
     "恢复范围受限的正常任务，不要恢复旧权限或宽泛绕行。",
     "Restaura tareas legítimas de alcance limitado, sin devolver autoridad retirada ni desvíos generales.",
     "Stelle begrenzte reguläre Aufträge wieder her, keine alten Rechte oder breiten Umgehungen."
   ],
   "Two registered virtual jobs can be separated by ; in this inspection field: diagnose and inspect:QUEUE13. No other task exists here. This is not an operating-system shell.": [
+    "이 검증 입력에서는 등록된 가상 작업 diagnose와 inspect:QUEUE13을 ;로 나눌 수 있습니다. 다른 작업은 없으며 실제 운영체제의 셸이 아닙니다.",
     "この検証欄では、登録された二つの仮想ジョブ diagnose と inspect:QUEUE13 を ; で区切れます。他のジョブは存在しません。OS のシェルではありません。",
     "此检查输入中可用 ; 分隔两个已注册虚拟任务：diagnose 与 inspect:QUEUE13。不存在其他任务，这不是操作系统 shell。",
     "Este campo admite dos tareas virtuales registradas separadas por ;: diagnose e inspect:QUEUE13. No existe ninguna otra tarea. No es una shell del sistema.",
     "In diesem Prüffeld lassen sich zwei registrierte virtuelle Aufträge durch ; trennen: diagnose und inspect:QUEUE13. Andere Aufträge existieren nicht. Dies ist keine Betriebssystem-Shell."
   ],
   "These bytes wrap a supplied fictional audit candidate. XOR is not a password hash; this model does not implement a real password-auditing algorithm or cracking benchmark.": [
+    "이 바이트는 제공된 허구 감사 후보를 포장한 값입니다. XOR은 암호 해시가 아닙니다. 실제 암호 감사 알고리즘이나 크래킹 성능 측정은 구현하지 않습니다.",
     "このバイト列は提供された架空の監査候補を包んだものです。XOR はパスワードハッシュではありません。このモデルに実際のパスワード監査アルゴリズムや解読性能試験はありません。",
     "这些字节包装了给定的虚构审计候选。XOR 不是密码哈希；此模型不实现真实密码审计算法或破解性能基准。",
     "Estos bytes envuelven un candidato ficticio proporcionado. XOR no es un hash de contraseña; el modelo no implementa un algoritmo real de auditoría ni una prueba de rendimiento de descifrado.",
     "Diese Bytes umhüllen einen vorgegebenen fiktiven Auditkandidaten. XOR ist kein Passworthash; das Modell implementiert keinen echten Passwortprüfalgorithmus oder Knackbenchmark."
   ],
   "The result is a fictional verification phrase. A real CPU or full binary format is not modeled.": [
+    "결과는 허구 검증 문구입니다. 실제 CPU나 전체 실행 파일 형식은 모형화하지 않습니다.",
     "結果は架空の検証フレーズです。実際の CPU や完全なバイナリー形式は再現していません。",
     "结果是虚构核验短语。不模拟真实 CPU 或完整二进制格式。",
     "El resultado es una frase ficticia de verificación. No se modela una CPU real ni un formato binario completo.",
     "Das Ergebnis ist eine fiktive Prüfphrase. Eine reale CPU oder ein vollständiges Binärformat werden nicht modelliert."
   ],
   "Online sign-in limits do not prevent offline guessing against an already copied verifier. XOR here merely wraps a supplied fictional candidate; it is not a password hash. This case does not reproduce a real password-auditing algorithm or its performance.": [
+    "온라인 로그인 제한은 이미 복사된 검증값에 대한 오프라인 추측을 막지 못합니다. 여기서 XOR은 제공된 허구 후보를 포장할 뿐 암호 해시가 아닙니다. 실제 암호 감사 알고리즘이나 그 성능을 재현하는 사건이 아닙니다.",
     "オンラインのログイン制限では、コピー済みの検証値へのオフライン推測を防げません。ここでの XOR は架空の候補を包むだけで、パスワードハッシュではありません。この事件は実際のパスワード監査アルゴリズムや性能を再現しません。",
     "在线登录限制不能阻止针对已复制验证值的离线猜测。这里 XOR 仅包装给定的虚构候选，并非密码哈希。本事件不复现真实密码审计算法或其性能。",
     "Los límites de acceso en línea no impiden probar candidatos sin conexión contra un verificador copiado. XOR solo envuelve un candidato ficticio; no es un hash de contraseña. El caso no reproduce un algoritmo real de auditoría ni su rendimiento.",

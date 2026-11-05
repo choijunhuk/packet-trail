@@ -13,12 +13,18 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 LOCALES = ('ko', 'en', 'ja', 'zh_Hans', 'es', 'de')
+CAMPAIGN_SOURCES = {
+    'legacy_intruder': ('godot/data/campaign/locales/{}.json', ''),
+    'intruder': ('godot/data/campaign/locales/intruder_v2.{}.json', 'IN2_'),
+    'defender': ('godot/data/campaign/locales/defender_v1.{}.json', 'DF1_'),
+    'tracker': ('godot/data/campaign/locales/tracker_v1.{}.json', 'TR1_'),
+}
 KEY = re.compile(r'^[A-Z][A-Z0-9_]*$')
 NAMED = re.compile(r'(?<!\{)\{(?:[A-Za-z_][A-Za-z_0-9]*|\d+)\}(?!\})')
 PRINTF = re.compile(r'%(?:\([A-Za-z_][A-Za-z_0-9]*\))?[-+0 #]*\d*(?:\.\d+)?[sdifxXocv]')
 CANONICAL = re.compile(
     r'`[^`\n]+`|https?://[A-Za-z0-9./_?=&%:+#~-]+'
-    r'|[a-z][a-z0-9_-]*@[a-z0-9.-]+ / [A-Za-z0-9_-]+'
+    r'|[a-z][a-z0-9_-]*@[a-z0-9.-]+(?: / |\n)[A-Za-z0-9_-]+'
     r'|(?<![A-Za-z0-9_/])~?/(?:[A-Za-z0-9_.-]+/)*[A-Za-z0-9_.-]+'
     r'|(?<![A-Za-z0-9_])(?:[a-z0-9-]+\.)+packet\.test(?:/[A-Za-z0-9./_-]+)?'
     r'|\b(?:\d{1,3}\.){3}\d{1,3}\b'
@@ -105,6 +111,83 @@ def pseudo_expand(text: str, ratio: float = 0.4) -> str:
     return '⟦' + text + ' ' + '·' * max(1, round(len(text) * ratio)) + '⟧'
 
 
+def read_operational_prose(root: Path = ROOT) -> dict[str, list[str]]:
+    prose = json.loads((root / 'godot/locales/operational-prose.json').read_text(encoding='utf-8'))
+    if not isinstance(prose, dict) or len(prose) != 16 or any(not isinstance(key, str) or not isinstance(values, list)
+            or len(values) != 5 or any(not isinstance(value, str) or not value.strip() for value in values)
+            for key, values in prose.items()):
+        raise ValueError('legacy educational prose requires 16 ko/ja/zh_Hans/es/de entries')
+    return prose
+
+
+def translate_prose(text: str, locale: str, prose: dict[str, list[str]]) -> str:
+    if locale == 'en':
+        return text
+    index = ('ko', 'ja', 'zh_Hans', 'es', 'de').index(locale)
+    for original, values in prose.items():
+        text = text.replace(original, values[index])
+    return text
+
+
+def validate_educational_prose(catalogs: dict[str, dict[str, str]], prose: dict[str, list[str]]) -> list[str]:
+    return [f'{locale}/{key}: untranslated educational paragraph'
+            for locale, catalog in catalogs.items() if locale != 'en'
+            for key, text in catalog.items() if any(original in text for original in prose)]
+
+
+def reviewed_catalog(root: Path, relative: str, review: dict) -> dict[str, str]:
+    path = root / relative
+    if not isinstance(review, dict) or review.get('path') != relative:
+        raise ValueError(f'{relative}: source is not registered for review')
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != review.get('sha256'):
+        raise ValueError(f'{relative}: source revision needs translation review')
+    source = json.loads(raw.decode('utf-8'))
+    if not isinstance(source, dict) or not source or any(not KEY.fullmatch(key) or not isinstance(value, str)
+            or not value.strip() for key, value in source.items()):
+        raise ValueError(f'{relative}: invalid stable-key source catalog')
+    return source
+
+
+def read_source_reviews(root: Path) -> dict:
+    reviews = json.loads((root / 'godot/locales/source-revisions.json').read_text(encoding='utf-8'))
+    if not isinstance(reviews, dict) or set(reviews) != {'campaigns', 'ui'}:
+        raise ValueError('invalid locale source review manifest')
+    if not isinstance(reviews['campaigns'], dict) or not isinstance(reviews['ui'], dict):
+        raise ValueError('invalid locale source review groups')
+    if set(reviews['ui']) != {'ko', 'en'} or any(not isinstance(group, dict) or set(group) != {'ko', 'en'}
+            for group in reviews['campaigns'].values()):
+        raise ValueError('source review requires explicit KO/EN revisions')
+    return reviews
+
+
+def read_campaign_sources(root: Path = ROOT) -> dict[str, dict[str, dict[str, str]]]:
+    reviews = read_source_reviews(root)['campaigns']
+    if not isinstance(reviews, dict) or set(reviews) - set(CAMPAIGN_SOURCES):
+        raise ValueError('unregistered campaign source pack')
+    result = {}
+    for pack, (pattern, prefix) in CAMPAIGN_SOURCES.items():
+        if pack not in reviews and not any((root / pattern.format(locale)).exists() for locale in ('ko', 'en')):
+            continue
+        group = {locale: reviewed_catalog(root, pattern.format(locale), reviews.get(pack, {}).get(locale))
+                 for locale in ('ko', 'en')}
+        if set(group['ko']) != set(group['en']):
+            raise ValueError(f'{pack}: KO/EN source keys differ')
+        if prefix and any(not key.startswith(prefix) for key in group['en']):
+            raise ValueError(f'{pack}: source keys require {prefix} namespace')
+        result[pack] = group
+    return result
+
+
+def read_ui_sources(root: Path = ROOT) -> dict[str, dict[str, str]]:
+    reviews = read_source_reviews(root)['ui']
+    result = {locale: reviewed_catalog(root, f'godot/assets/ui/strings_{locale}.json', reviews.get(locale))
+              for locale in ('ko', 'en')}
+    if set(result['ko']) != set(result['en']):
+        raise ValueError('UI source keys differ')
+    return result
+
+
 def validate_catalogs(catalogs: dict[str, dict[str, str]], required: set[str] | None = None) -> list[str]:
     errors: list[str] = []
     baseline = catalogs.get('en', {})
@@ -135,12 +218,12 @@ def validate_catalogs(catalogs: dict[str, dict[str, str]], required: set[str] | 
 
 def required_content_keys(root: Path) -> set[str]:
     result: set[str] = set()
-    campaign = root / 'godot/data/campaign/campaign.json'
-    if not campaign.exists():
-        return result
     presentation = {'title', 'name', 'goal_text', 'sender', 'subject', 'body', 'hints', 'tutorial',
                     'explain', 'principle', 'abstraction', 'limit', 'text', 'label', 'description'}
     def visit(value: object, field: str = '') -> None:
+        if field == 'program':
+            # Keep virtual instruction labels and opcodes canonical.
+            return
         if isinstance(value, dict):
             for key, item in value.items():
                 visit(item, key)
@@ -149,7 +232,12 @@ def required_content_keys(root: Path) -> set[str]:
                 visit(item, field)
         elif isinstance(value, str) and (field in presentation or field.endswith('_key')) and KEY.fullmatch(value):
             result.add(value)
-    visit(json.loads(campaign.read_text(encoding='utf-8')))
+    for relative in ['godot/data/campaign/campaign.json', 'godot/data/campaign/legacy_v1.json',
+                     'godot/data/campaign/packs/intruder_v2.json', 'godot/data/campaign/packs/defender_v1.json',
+                     'godot/data/campaign/packs/tracker_v1.json']:
+        campaign = root / relative
+        if campaign.exists():
+            visit(json.loads(campaign.read_text(encoding='utf-8')))
     return result
 
 
@@ -251,19 +339,19 @@ def check(root: Path = ROOT) -> dict:
             catalogs[locale] = catalog
         except (OSError, UnicodeError, ValueError) as error:
             errors.append(f'{locale}: {error}')
+    prose = read_operational_prose(root)
     errors += validate_catalogs(catalogs, required_content_keys(root))
-    for group, pattern in [('campaign', 'godot/data/campaign/locales/{}.json'),
-                           ('UI', 'godot/assets/ui/strings_{}.json')]:
-        if not any((root / pattern.format(locale)).exists() for locale in ('ko', 'en')):
-            continue
+    errors += validate_educational_prose(catalogs, prose)
+    sources = read_campaign_sources(root)
+    sources['UI'] = read_ui_sources(root)
+    merged = {'ko': {}, 'en': {}}
+    for group, translations in sources.items():
         for locale in ('ko', 'en'):
-            source_path = root / pattern.format(locale)
-            if not source_path.is_file():
-                errors.append(f'{locale}: missing {group} source catalog')
-                continue
-            source = json.loads(source_path.read_text(encoding='utf-8'))
-            for key, value in source.items():
-                if catalogs.get(locale, {}).get(key) != value:
+            for key, value in translations[locale].items():
+                if key in merged[locale] and merged[locale][key] != value:
+                    errors.append(f'{group}/{locale}/{key}: conflicting shared source key')
+                merged[locale][key] = value
+                if catalogs.get(locale, {}).get(key) != translate_prose(value, locale, prose):
                     errors.append(f'{locale}/{key}: {group} source changed; rebuild translations')
     errors += check_fonts(root)
     errors += check_glyphs(root, catalogs)
@@ -281,7 +369,7 @@ def check(root: Path = ROOT) -> dict:
     except (OSError, ValueError, KeyError, TypeError) as error:
         errors.append(f'pseudo layout data: {error}')
     return {'ok': not errors, 'locales': len(catalogs), 'messages_per_locale': len(catalogs.get('en', {})),
-            'checks': ['PO syntax', 'six-locale parity', 'nonempty', 'placeholders', 'canonical tokens', 'campaign/UI keys/source sync', 'font hashes/licenses', 'all catalog glyphs', 'pseudo expansion data'],
+            'checks': ['PO syntax', 'six-locale parity', 'nonempty', 'placeholders', 'canonical tokens', 'localized educational paragraphs', 'campaign/UI keys/source sync', 'font hashes/licenses', 'all catalog glyphs', 'pseudo expansion data'],
             'errors': errors}
 
 

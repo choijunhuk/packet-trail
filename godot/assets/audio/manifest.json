@@ -1,6 +1,7 @@
 {
-  "version": 1,
-  "author": "Codex gpt-6.1-sol / high; original offline synthesis, 2026-11-05",
+  "version": 3,
+  "loop_validation_version": 2,
+  "author": "Codex gpt-6.1-sol / high; original rhythmic OST, circular production revision 2026-11-05",
   "sample_rate": 44100,
   "channels": 2,
   "provenance": "Original note scores and offline additive synthesis; no third-party audio or samples.",
@@ -11,8 +12,8 @@
       "title": "Signal Home",
       "file": "a01_signal_home",
       "mood": "home",
-      "bpm": 80,
-      "bars": 48,
+      "bpm": 120,
+      "bars": 80,
       "chords": [
         [
           50,
@@ -53,120 +54,282 @@
         72,
         67
       ],
-      "rhythm": 0.2,
-      "color": "warm suspended D minor; breathing pad / glass answer",
+      "rhythm": 0.82,
+      "style": "synthwave",
+      "color": "D minor analog drive / four-on-floor and glass motif",
+      "target_rms": 0.095,
+      "arrangement": [
+        {
+          "name": "drive_intro",
+          "start_bar": 0,
+          "end_bar": 16,
+          "start_seconds": 0.0,
+          "end_seconds": 32.0
+        },
+        {
+          "name": "main_a",
+          "start_bar": 16,
+          "end_bar": 32,
+          "start_seconds": 32.0,
+          "end_seconds": 64.0
+        },
+        {
+          "name": "break_build",
+          "start_bar": 32,
+          "end_bar": 48,
+          "start_seconds": 64.0,
+          "end_seconds": 96.0
+        },
+        {
+          "name": "return",
+          "start_bar": 48,
+          "end_bar": 64,
+          "start_seconds": 96.0,
+          "end_seconds": 128.0
+        },
+        {
+          "name": "main_b",
+          "start_bar": 64,
+          "end_bar": 80,
+          "start_seconds": 128.0,
+          "end_seconds": 160.0
+        }
+      ],
+      "event_counts": {
+        "kick": 304,
+        "snare": 179,
+        "hat": 992,
+        "open_hat": 0,
+        "bass": 608,
+        "arp": 1070,
+        "lead": 152
+      },
+      "rms_policy": "Rhythmic re-arrangement plus modest mastering presence; audition preview is independently loudness-matched.",
       "path": "assets/audio/music/a01_signal_home.ogg",
       "loop": true,
       "master": "builds/audio-masters/a01_signal_home.wav",
       "master_stats": {
-        "seconds": 144.0,
-        "peak": 0.375585,
-        "peak_dbfs": -8.506,
-        "rms": 0.077994,
-        "rms_dbfs": -22.159,
-        "dc": 3e-08,
+        "seconds": 160.0,
+        "peak": 0.630004,
+        "peak_dbfs": -4.013,
+        "rms": 0.095,
+        "rms_dbfs": -20.446,
+        "dc": 1e-08,
         "silent_seconds": 0,
-        "loop_jump": 0.0,
+        "loop_jump": 0.0074673,
+        "loop_metrics": {
+          "sample_count": 7056000,
+          "seam_difference": 0.007467262,
+          "adjacent_derivative_q999": 0.047623612,
+          "derivative_limit": 0.083463391,
+          "seam_curvature": 0.007091926,
+          "adjacent_curvature_q999": 0.08012869,
+          "curvature_limit": 0.140469348,
+          "rms_boundary_windows": {
+            "2": 0.10761046851739588,
+            "50": 0.10393296159922416,
+            "2000": 0.09048423548542207
+          },
+          "boundary_rms_2ms_ratio": 1.035383,
+          "passed": true
+        },
         "clipped_samples": 0
       },
       "encoded_stats": {
-        "seconds": 144.0,
-        "peak": 0.374938,
-        "peak_dbfs": -8.521,
-        "rms": 0.078011,
-        "rms_dbfs": -22.157,
-        "dc": 4.58e-06,
+        "seconds": 160.0,
+        "peak": 0.628004,
+        "peak_dbfs": -4.041,
+        "rms": 0.095049,
+        "rms_dbfs": -20.441,
+        "dc": 4.7e-07,
         "silent_seconds": 0,
-        "loop_jump": 0.0009637,
+        "loop_jump": 0.006674,
+        "loop_metrics": {
+          "sample_count": 7056000,
+          "seam_difference": 0.006673962,
+          "adjacent_derivative_q999": 0.038834735,
+          "derivative_limit": 0.068082857,
+          "seam_curvature": 0.00879355,
+          "adjacent_curvature_q999": 0.060385862,
+          "curvature_limit": 0.1059194,
+          "rms_boundary_windows": {
+            "2": 0.10851542360511295,
+            "50": 0.1036137590482549,
+            "2000": 0.09053883790353519
+          },
+          "boundary_rms_2ms_ratio": 1.047307,
+          "passed": true
+        },
         "clipped_samples": 0
       },
-      "bytes": 872307,
-      "sha256": "87c8babcece4effb9c44306f999b620b4f0de33bff1c928ca57d9d715c119201"
+      "bytes": 2150769,
+      "sha256": "c614be37e9424b4f8a9d9b34822c993e6070992f9d8d9aa9a3f545ad6b391ee8"
     },
     {
       "id": "A02",
       "title": "First Connection",
       "file": "a02_first_connection",
       "mood": "intro",
-      "bpm": 84,
-      "bars": 48,
+      "bpm": 128,
+      "bars": 80,
       "chords": [
         [
           48,
           55,
-          59,
+          58,
           62,
           67
         ],
         [
-          45,
-          52,
+          44,
+          51,
           55,
-          59,
-          64
+          58,
+          63
         ],
         [
           53,
           60,
-          64,
+          63,
           67,
-          72
+          70
         ],
         [
-          50,
-          57,
+          46,
+          53,
+          58,
           60,
-          65,
-          69
+          65
         ]
       ],
       "motif": [
         67,
-        71,
+        70,
         null,
         74,
         72,
         null,
         67,
-        64
+        63
       ],
-      "rhythm": 0.12,
-      "color": "C major / A minor; patient descending connection motif",
+      "rhythm": 0.74,
+      "style": "breakbeat",
+      "color": "C minor first infiltration / syncopated bass and restrained backbeat",
+      "target_rms": 0.1,
+      "arrangement": [
+        {
+          "name": "drive_intro",
+          "start_bar": 0,
+          "end_bar": 16,
+          "start_seconds": 0.0,
+          "end_seconds": 30.0
+        },
+        {
+          "name": "main_a",
+          "start_bar": 16,
+          "end_bar": 32,
+          "start_seconds": 30.0,
+          "end_seconds": 60.0
+        },
+        {
+          "name": "break_build",
+          "start_bar": 32,
+          "end_bar": 48,
+          "start_seconds": 60.0,
+          "end_seconds": 90.0
+        },
+        {
+          "name": "return",
+          "start_bar": 48,
+          "end_bar": 64,
+          "start_seconds": 90.0,
+          "end_seconds": 120.0
+        },
+        {
+          "name": "main_b",
+          "start_bar": 64,
+          "end_bar": 80,
+          "start_seconds": 120.0,
+          "end_seconds": 150.0
+        }
+      ],
+      "event_counts": {
+        "kick": 268,
+        "snare": 179,
+        "hat": 992,
+        "open_hat": 144,
+        "bass": 456,
+        "arp": 1070,
+        "lead": 148
+      },
+      "rms_policy": "Rhythmic re-arrangement plus modest mastering presence; audition preview is independently loudness-matched.",
       "path": "assets/audio/music/a02_first_connection.ogg",
       "loop": true,
       "master": "builds/audio-masters/a02_first_connection.wav",
       "master_stats": {
-        "seconds": 137.142857,
-        "peak": 0.361303,
-        "peak_dbfs": -8.843,
-        "rms": 0.077993,
-        "rms_dbfs": -22.159,
-        "dc": 7e-08,
+        "seconds": 150.000907,
+        "peak": 0.564969,
+        "peak_dbfs": -4.96,
+        "rms": 0.1,
+        "rms_dbfs": -20.0,
+        "dc": 3e-08,
         "silent_seconds": 0,
-        "loop_jump": 0.0,
+        "loop_jump": 0.0054655,
+        "loop_metrics": {
+          "sample_count": 6615040,
+          "seam_difference": 0.00546549,
+          "adjacent_derivative_q999": 0.043732747,
+          "derivative_limit": 0.076654377,
+          "seam_curvature": 0.005127624,
+          "adjacent_curvature_q999": 0.071501421,
+          "curvature_limit": 0.125371627,
+          "rms_boundary_windows": {
+            "2": 0.12172410863799775,
+            "50": 0.11027644077709041,
+            "2000": 0.09643796012436605
+          },
+          "boundary_rms_2ms_ratio": 1.103809,
+          "passed": true
+        },
         "clipped_samples": 0
       },
       "encoded_stats": {
-        "seconds": 137.142857,
-        "peak": 0.36211,
-        "peak_dbfs": -8.823,
-        "rms": 0.078012,
-        "rms_dbfs": -22.157,
-        "dc": 3.76e-06,
+        "seconds": 150.000907,
+        "peak": 0.569032,
+        "peak_dbfs": -4.897,
+        "rms": 0.100058,
+        "rms_dbfs": -19.995,
+        "dc": 7.03e-06,
         "silent_seconds": 0,
-        "loop_jump": 0.0012044,
+        "loop_jump": 0.0039122,
+        "loop_metrics": {
+          "sample_count": 6615040,
+          "seam_difference": 0.003912175,
+          "adjacent_derivative_q999": 0.036547052,
+          "derivative_limit": 0.064079412,
+          "seam_curvature": 0.007392877,
+          "adjacent_curvature_q999": 0.050060081,
+          "curvature_limit": 0.087849283,
+          "rms_boundary_windows": {
+            "2": 0.12088009435485376,
+            "50": 0.11018112771623641,
+            "2000": 0.09654282779767097
+          },
+          "boundary_rms_2ms_ratio": 1.097103,
+          "passed": true
+        },
         "clipped_samples": 0
       },
-      "bytes": 792016,
-      "sha256": "ff1b873c1b4da601d38fa0bdc63ee2a0512dfc3346a409142724c6e4f073e23e"
+      "bytes": 2113547,
+      "sha256": "f9df8f006876156f1464b1b4ad9c013a6291f32b3175c5a5c74ad298fc4c7bbb"
     },
     {
       "id": "A03",
       "title": "Hidden Route",
       "file": "a03_hidden_route",
       "mood": "investigate",
-      "bpm": 76,
-      "bars": 64,
+      "bpm": 124,
+      "bars": 112,
       "chords": [
         [
           45,
@@ -207,43 +370,138 @@
         null,
         67
       ],
-      "rhythm": 0.24,
-      "color": "A dorian shadows; sparse delayed keys / wide filtered pad",
+      "rhythm": 0.78,
+      "style": "breakbeat",
+      "color": "A dorian investigation / broken kick pattern and rotating sixteenth arp",
+      "target_rms": 0.1,
+      "arrangement": [
+        {
+          "name": "drive_intro",
+          "start_bar": 0,
+          "end_bar": 16,
+          "start_seconds": 0.0,
+          "end_seconds": 30.9677
+        },
+        {
+          "name": "main_a",
+          "start_bar": 16,
+          "end_bar": 32,
+          "start_seconds": 30.9677,
+          "end_seconds": 61.9355
+        },
+        {
+          "name": "main_b",
+          "start_bar": 32,
+          "end_bar": 48,
+          "start_seconds": 61.9355,
+          "end_seconds": 92.9032
+        },
+        {
+          "name": "break_build",
+          "start_bar": 48,
+          "end_bar": 64,
+          "start_seconds": 92.9032,
+          "end_seconds": 123.871
+        },
+        {
+          "name": "return",
+          "start_bar": 64,
+          "end_bar": 80,
+          "start_seconds": 123.871,
+          "end_seconds": 154.8387
+        },
+        {
+          "name": "main_b",
+          "start_bar": 80,
+          "end_bar": 96,
+          "start_seconds": 154.8387,
+          "end_seconds": 185.8065
+        },
+        {
+          "name": "coda",
+          "start_bar": 96,
+          "end_bar": 112,
+          "start_seconds": 185.8065,
+          "end_seconds": 216.7742
+        }
+      ],
+      "event_counts": {
+        "kick": 380,
+        "snare": 251,
+        "hat": 1453,
+        "open_hat": 208,
+        "bass": 648,
+        "arp": 1574,
+        "lead": 178
+      },
+      "rms_policy": "Rhythmic re-arrangement plus modest mastering presence; audition preview is independently loudness-matched.",
       "path": "assets/audio/music/a03_hidden_route.ogg",
       "loop": true,
       "master": "builds/audio-masters/a03_hidden_route.wav",
       "master_stats": {
-        "seconds": 202.105261,
-        "peak": 0.357232,
-        "peak_dbfs": -8.941,
-        "rms": 0.077998,
-        "rms_dbfs": -22.158,
-        "dc": 0.0,
+        "seconds": 216.77424,
+        "peak": 0.555384,
+        "peak_dbfs": -5.108,
+        "rms": 0.1,
+        "rms_dbfs": -20.0,
+        "dc": 3e-08,
         "silent_seconds": 0,
-        "loop_jump": 0.0,
+        "loop_jump": 0.0027861,
+        "loop_metrics": {
+          "sample_count": 9559744,
+          "seam_difference": 0.002786075,
+          "adjacent_derivative_q999": 0.049031459,
+          "derivative_limit": 0.085927123,
+          "seam_curvature": 0.002153732,
+          "adjacent_curvature_q999": 0.070796358,
+          "curvature_limit": 0.124137767,
+          "rms_boundary_windows": {
+            "2": 0.1264030329173614,
+            "50": 0.11599810315956259,
+            "2000": 0.0912950638776347
+          },
+          "boundary_rms_2ms_ratio": 1.089699,
+          "passed": true
+        },
         "clipped_samples": 0
       },
       "encoded_stats": {
-        "seconds": 202.106485,
-        "peak": 0.362588,
-        "peak_dbfs": -8.812,
-        "rms": 0.078007,
-        "rms_dbfs": -22.157,
-        "dc": 3.73e-06,
+        "seconds": 216.77424,
+        "peak": 0.558876,
+        "peak_dbfs": -5.054,
+        "rms": 0.100056,
+        "rms_dbfs": -19.995,
+        "dc": 6.73e-06,
         "silent_seconds": 0,
-        "loop_jump": 0.0001488,
+        "loop_jump": 0.0007801,
+        "loop_metrics": {
+          "sample_count": 9559744,
+          "seam_difference": 0.000780133,
+          "adjacent_derivative_q999": 0.041506029,
+          "derivative_limit": 0.072757622,
+          "seam_curvature": 0.002674929,
+          "adjacent_curvature_q999": 0.053399479,
+          "curvature_limit": 0.093693228,
+          "rms_boundary_windows": {
+            "2": 0.12771966425557102,
+            "50": 0.11640983204243098,
+            "2000": 0.09137938067933135
+          },
+          "boundary_rms_2ms_ratio": 1.097155,
+          "passed": true
+        },
         "clipped_samples": 0
       },
-      "bytes": 1102680,
-      "sha256": "b40bbaf17b1e31fc5e13f50e702935d4fc6409aa0f99aaad8e62b92e1eba9ee0"
+      "bytes": 3031060,
+      "sha256": "282ebebe2bdfef49bc725385b9596eaa6fef0bb726f6b29cbb5720f31e5529fb"
     },
     {
       "id": "A04",
       "title": "Packet Flow",
       "file": "a04_packet_flow",
       "mood": "flow",
-      "bpm": 92,
-      "bars": 80,
+      "bpm": 136,
+      "bars": 112,
       "chords": [
         [
           52,
@@ -284,43 +542,138 @@
         69,
         null
       ],
-      "rhythm": 0.5,
-      "color": "E minor ninths; interlocking soft pulse / rising three-note motif",
+      "rhythm": 0.92,
+      "style": "breakbeat",
+      "color": "E minor packet momentum / punchy breaks and rising synth counterline",
+      "target_rms": 0.105,
+      "arrangement": [
+        {
+          "name": "drive_intro",
+          "start_bar": 0,
+          "end_bar": 16,
+          "start_seconds": 0.0,
+          "end_seconds": 28.2353
+        },
+        {
+          "name": "main_a",
+          "start_bar": 16,
+          "end_bar": 32,
+          "start_seconds": 28.2353,
+          "end_seconds": 56.4706
+        },
+        {
+          "name": "main_b",
+          "start_bar": 32,
+          "end_bar": 48,
+          "start_seconds": 56.4706,
+          "end_seconds": 84.7059
+        },
+        {
+          "name": "break_build",
+          "start_bar": 48,
+          "end_bar": 64,
+          "start_seconds": 84.7059,
+          "end_seconds": 112.9412
+        },
+        {
+          "name": "return",
+          "start_bar": 64,
+          "end_bar": 80,
+          "start_seconds": 112.9412,
+          "end_seconds": 141.1765
+        },
+        {
+          "name": "main_b",
+          "start_bar": 80,
+          "end_bar": 96,
+          "start_seconds": 141.1765,
+          "end_seconds": 169.4118
+        },
+        {
+          "name": "coda",
+          "start_bar": 96,
+          "end_bar": 112,
+          "start_seconds": 169.4118,
+          "end_seconds": 197.6471
+        }
+      ],
+      "event_counts": {
+        "kick": 380,
+        "snare": 251,
+        "hat": 1453,
+        "open_hat": 208,
+        "bass": 648,
+        "arp": 1574,
+        "lead": 228
+      },
+      "rms_policy": "Rhythmic re-arrangement plus modest mastering presence; audition preview is independently loudness-matched.",
       "path": "assets/audio/music/a04_packet_flow.ogg",
       "loop": true,
       "master": "builds/audio-masters/a04_packet_flow.wav",
       "master_stats": {
-        "seconds": 208.695646,
-        "peak": 0.395871,
-        "peak_dbfs": -8.049,
-        "rms": 0.077998,
-        "rms_dbfs": -22.158,
-        "dc": 0.0,
+        "seconds": 197.648254,
+        "peak": 0.566767,
+        "peak_dbfs": -4.932,
+        "rms": 0.105,
+        "rms_dbfs": -19.576,
+        "dc": 2e-08,
         "silent_seconds": 0,
-        "loop_jump": 0.0,
+        "loop_jump": 0.0018259,
+        "loop_metrics": {
+          "sample_count": 8716288,
+          "seam_difference": 0.001825897,
+          "adjacent_derivative_q999": 0.053995913,
+          "derivative_limit": 0.094614919,
+          "seam_curvature": 0.000527168,
+          "adjacent_curvature_q999": 0.079352124,
+          "curvature_limit": 0.139110358,
+          "rms_boundary_windows": {
+            "2": 0.13029053807589075,
+            "50": 0.1323210314509344,
+            "2000": 0.10249324651107046
+          },
+          "boundary_rms_2ms_ratio": 0.984655,
+          "passed": true
+        },
         "clipped_samples": 0
       },
       "encoded_stats": {
-        "seconds": 208.696599,
-        "peak": 0.397003,
-        "peak_dbfs": -8.024,
-        "rms": 0.07802,
-        "rms_dbfs": -22.156,
-        "dc": 4.87e-06,
+        "seconds": 197.648254,
+        "peak": 0.577109,
+        "peak_dbfs": -4.775,
+        "rms": 0.105053,
+        "rms_dbfs": -19.572,
+        "dc": 5.02e-06,
         "silent_seconds": 0,
-        "loop_jump": 0.0003349,
+        "loop_jump": 0.0036004,
+        "loop_metrics": {
+          "sample_count": 8716288,
+          "seam_difference": 0.003600386,
+          "adjacent_derivative_q999": 0.043870944,
+          "derivative_limit": 0.076896222,
+          "seam_curvature": 0.003933006,
+          "adjacent_curvature_q999": 0.057153951,
+          "curvature_limit": 0.100263554,
+          "rms_boundary_windows": {
+            "2": 0.1299337278262672,
+            "50": 0.13268065908257842,
+            "2000": 0.10255329130590114
+          },
+          "boundary_rms_2ms_ratio": 0.979297,
+          "passed": true
+        },
         "clipped_samples": 0
       },
-      "bytes": 1309423,
-      "sha256": "08fee48ac45516d27bf8bdc5a934e5a93efea6e19e8121026b1db004407a1877"
+      "bytes": 3032467,
+      "sha256": "cb79c5754856236f572466171388905c0a6826c3349178fda77e56292be076f2"
     },
     {
       "id": "A05",
       "title": "Raised Alert",
       "file": "a05_raised_alert",
       "mood": "alert",
-      "bpm": 104,
-      "bars": 64,
+      "bpm": 148,
+      "bars": 96,
       "chords": [
         [
           42,
@@ -361,43 +714,131 @@
         null,
         68
       ],
-      "rhythm": 0.78,
-      "color": "F sharp minor tension; muted kick / unsettled semitone answer",
+      "rhythm": 1.0,
+      "style": "alert",
+      "color": "F sharp minor pursuit / strongest breakbeat, sixteenth bass and tension stabs",
+      "target_rms": 0.112,
+      "arrangement": [
+        {
+          "name": "drive_intro",
+          "start_bar": 0,
+          "end_bar": 16,
+          "start_seconds": 0.0,
+          "end_seconds": 25.9459
+        },
+        {
+          "name": "main_a",
+          "start_bar": 16,
+          "end_bar": 32,
+          "start_seconds": 25.9459,
+          "end_seconds": 51.8919
+        },
+        {
+          "name": "main_b",
+          "start_bar": 32,
+          "end_bar": 48,
+          "start_seconds": 51.8919,
+          "end_seconds": 77.8378
+        },
+        {
+          "name": "break_build",
+          "start_bar": 48,
+          "end_bar": 64,
+          "start_seconds": 77.8378,
+          "end_seconds": 103.7838
+        },
+        {
+          "name": "return",
+          "start_bar": 64,
+          "end_bar": 80,
+          "start_seconds": 103.7838,
+          "end_seconds": 129.7297
+        },
+        {
+          "name": "coda",
+          "start_bar": 80,
+          "end_bar": 96,
+          "start_seconds": 129.7297,
+          "end_seconds": 155.6757
+        }
+      ],
+      "event_counts": {
+        "kick": 500,
+        "snare": 215,
+        "hat": 1222,
+        "open_hat": 176,
+        "bass": 1080,
+        "arp": 1322,
+        "lead": 188
+      },
+      "rms_policy": "Rhythmic re-arrangement plus modest mastering presence; audition preview is independently loudness-matched.",
       "path": "assets/audio/music/a05_raised_alert.ogg",
       "loop": true,
       "master": "builds/audio-masters/a05_raised_alert.wav",
       "master_stats": {
-        "seconds": 147.692313,
-        "peak": 0.430406,
-        "peak_dbfs": -7.322,
-        "rms": 0.084996,
-        "rms_dbfs": -21.412,
-        "dc": 8e-08,
+        "seconds": 155.676735,
+        "peak": 0.538784,
+        "peak_dbfs": -5.372,
+        "rms": 0.112,
+        "rms_dbfs": -19.016,
+        "dc": 1e-08,
         "silent_seconds": 0,
-        "loop_jump": 0.0,
+        "loop_jump": 0.0198128,
+        "loop_metrics": {
+          "sample_count": 6865344,
+          "seam_difference": 0.019812841,
+          "adjacent_derivative_q999": 0.047029377,
+          "derivative_limit": 0.08242348,
+          "seam_curvature": 0.019202445,
+          "adjacent_curvature_q999": 0.071955824,
+          "curvature_limit": 0.126166833,
+          "rms_boundary_windows": {
+            "2": 0.15921312983766622,
+            "50": 0.11988875247827542,
+            "2000": 0.10429464663264516
+          },
+          "boundary_rms_2ms_ratio": 1.328007,
+          "passed": true
+        },
         "clipped_samples": 0
       },
       "encoded_stats": {
-        "seconds": 147.693424,
-        "peak": 0.428486,
-        "peak_dbfs": -7.361,
-        "rms": 0.085014,
-        "rms_dbfs": -21.41,
-        "dc": 2.23e-06,
+        "seconds": 155.676735,
+        "peak": 0.545478,
+        "peak_dbfs": -5.264,
+        "rms": 0.112091,
+        "rms_dbfs": -19.009,
+        "dc": 1.5e-06,
         "silent_seconds": 0,
-        "loop_jump": 0.0001997,
+        "loop_jump": 0.0145045,
+        "loop_metrics": {
+          "sample_count": 6865344,
+          "seam_difference": 0.014504546,
+          "adjacent_derivative_q999": 0.031462834,
+          "derivative_limit": 0.055182029,
+          "seam_curvature": 0.01929665,
+          "adjacent_curvature_q999": 0.043849446,
+          "curvature_limit": 0.076980671,
+          "rms_boundary_windows": {
+            "2": 0.16100856102149527,
+            "50": 0.11972761265615005,
+            "2000": 0.10441642985642531
+          },
+          "boundary_rms_2ms_ratio": 1.344791,
+          "passed": true
+        },
         "clipped_samples": 0
       },
-      "bytes": 838873,
-      "sha256": "e93d503a02d5c308888e4cc6186bec7802d16323120dbf7b1d8d7702c490c4b2"
+      "bytes": 2052339,
+      "sha256": "10becd4b3ed4fffe8e90d129f0f8c3b49b420dc2007ff1a750d3605e725917f1"
     },
     {
       "id": "A06",
       "title": "Broken Pattern",
       "file": "a06_broken_pattern",
       "mood": "reveal",
-      "bpm": 72,
-      "bars": 48,
+      "bpm": 112,
+      "bars": 64,
       "chords": [
         [
           47,
@@ -438,43 +879,117 @@
         66,
         null
       ],
-      "rhythm": 0.1,
-      "color": "B minor / G major ambiguity; reverse-like pad / fragile bell",
+      "rhythm": 0.6,
+      "style": "halftime",
+      "color": "B minor reveal / half-time snare and gated bass, release against alert",
+      "target_rms": 0.085,
+      "arrangement": [
+        {
+          "name": "drive_intro",
+          "start_bar": 0,
+          "end_bar": 16,
+          "start_seconds": 0.0,
+          "end_seconds": 34.2857
+        },
+        {
+          "name": "main_a",
+          "start_bar": 16,
+          "end_bar": 32,
+          "start_seconds": 34.2857,
+          "end_seconds": 68.5714
+        },
+        {
+          "name": "break_build",
+          "start_bar": 32,
+          "end_bar": 48,
+          "start_seconds": 68.5714,
+          "end_seconds": 102.8571
+        },
+        {
+          "name": "return",
+          "start_bar": 48,
+          "end_bar": 64,
+          "start_seconds": 102.8571,
+          "end_seconds": 137.1429
+        }
+      ],
+      "event_counts": {
+        "kick": 184,
+        "snare": 80,
+        "hat": 410,
+        "open_hat": 0,
+        "bass": 360,
+        "arp": 434,
+        "lead": 106
+      },
+      "rms_policy": "Rhythmic re-arrangement plus modest mastering presence; audition preview is independently loudness-matched.",
       "path": "assets/audio/music/a06_broken_pattern.ogg",
       "loop": true,
       "master": "builds/audio-masters/a06_broken_pattern.wav",
       "master_stats": {
-        "seconds": 160.0,
-        "peak": 0.382888,
-        "peak_dbfs": -8.339,
-        "rms": 0.077994,
-        "rms_dbfs": -22.159,
-        "dc": 2e-08,
+        "seconds": 137.142857,
+        "peak": 0.479071,
+        "peak_dbfs": -6.392,
+        "rms": 0.085,
+        "rms_dbfs": -21.412,
+        "dc": 1e-08,
         "silent_seconds": 0,
-        "loop_jump": 0.0,
+        "loop_jump": 0.0072705,
+        "loop_metrics": {
+          "sample_count": 6048000,
+          "seam_difference": 0.007270476,
+          "adjacent_derivative_q999": 0.040105918,
+          "derivative_limit": 0.070307427,
+          "seam_curvature": 0.006506974,
+          "adjacent_curvature_q999": 0.065389379,
+          "curvature_limit": 0.114675553,
+          "rms_boundary_windows": {
+            "2": 0.11496080669509925,
+            "50": 0.10771694101253906,
+            "2000": 0.080814436752504
+          },
+          "boundary_rms_2ms_ratio": 1.067249,
+          "passed": true
+        },
         "clipped_samples": 0
       },
       "encoded_stats": {
-        "seconds": 160.0,
-        "peak": 0.384899,
-        "peak_dbfs": -8.293,
-        "rms": 0.078,
-        "rms_dbfs": -22.158,
-        "dc": 3.28e-06,
+        "seconds": 137.142857,
+        "peak": 0.480494,
+        "peak_dbfs": -6.366,
+        "rms": 0.085038,
+        "rms_dbfs": -21.408,
+        "dc": 2.87e-06,
         "silent_seconds": 0,
-        "loop_jump": 0.0007379,
+        "loop_jump": 0.0084449,
+        "loop_metrics": {
+          "sample_count": 6048000,
+          "seam_difference": 0.008444887,
+          "adjacent_derivative_q999": 0.03280426,
+          "derivative_limit": 0.057529526,
+          "seam_curvature": 0.012116181,
+          "adjacent_curvature_q999": 0.053279595,
+          "curvature_limit": 0.093483431,
+          "rms_boundary_windows": {
+            "2": 0.11596081818795977,
+            "50": 0.10785316185189318,
+            "2000": 0.08088062917097859
+          },
+          "boundary_rms_2ms_ratio": 1.075173,
+          "passed": true
+        },
         "clipped_samples": 0
       },
-      "bytes": 910995,
-      "sha256": "4420d85342d206271f5db8c88983e7e3ca78f73b466e2691b89772efb0f40c0e"
+      "bytes": 1567771,
+      "sha256": "1743ef34c594e16fec68b94e64794c92c995b9d9a3a456ca36fd47c3f564ba1a"
     },
     {
       "id": "A07",
       "title": "Clear Channel",
       "file": "a07_clear_channel",
       "mood": "ending",
-      "bpm": 80,
-      "bars": 64,
+      "bpm": 112,
+      "bars": 96,
       "chords": [
         [
           55,
@@ -515,35 +1030,123 @@
         74,
         null
       ],
-      "rhythm": 0.28,
-      "color": "G major ninths; open register / gentle resolution, no victory fanfare",
+      "rhythm": 0.68,
+      "style": "ending",
+      "color": "G major recovery / steady forward beat with open resolving synth theme",
+      "target_rms": 0.09,
+      "arrangement": [
+        {
+          "name": "drive_intro",
+          "start_bar": 0,
+          "end_bar": 16,
+          "start_seconds": 0.0,
+          "end_seconds": 34.2857
+        },
+        {
+          "name": "main_a",
+          "start_bar": 16,
+          "end_bar": 32,
+          "start_seconds": 34.2857,
+          "end_seconds": 68.5714
+        },
+        {
+          "name": "main_b",
+          "start_bar": 32,
+          "end_bar": 48,
+          "start_seconds": 68.5714,
+          "end_seconds": 102.8571
+        },
+        {
+          "name": "break_build",
+          "start_bar": 48,
+          "end_bar": 64,
+          "start_seconds": 102.8571,
+          "end_seconds": 137.1429
+        },
+        {
+          "name": "return",
+          "start_bar": 64,
+          "end_bar": 80,
+          "start_seconds": 137.1429,
+          "end_seconds": 171.4286
+        },
+        {
+          "name": "coda",
+          "start_bar": 80,
+          "end_bar": 96,
+          "start_seconds": 171.4286,
+          "end_seconds": 205.7143
+        }
+      ],
+      "event_counts": {
+        "kick": 368,
+        "snare": 215,
+        "hat": 640,
+        "open_hat": 0,
+        "bass": 736,
+        "arp": 682,
+        "lead": 184
+      },
+      "rms_policy": "Rhythmic re-arrangement plus modest mastering presence; audition preview is independently loudness-matched.",
       "path": "assets/audio/music/a07_clear_channel.ogg",
       "loop": true,
       "master": "builds/audio-masters/a07_clear_channel.wav",
       "master_stats": {
-        "seconds": 192.0,
-        "peak": 0.389306,
-        "peak_dbfs": -8.194,
-        "rms": 0.077998,
-        "rms_dbfs": -22.158,
-        "dc": 6e-08,
+        "seconds": 205.714286,
+        "peak": 0.619127,
+        "peak_dbfs": -4.164,
+        "rms": 0.09,
+        "rms_dbfs": -20.915,
+        "dc": 0.0,
         "silent_seconds": 0,
-        "loop_jump": 0.0,
+        "loop_jump": 0.0016107,
+        "loop_metrics": {
+          "sample_count": 9072000,
+          "seam_difference": 0.001610708,
+          "adjacent_derivative_q999": 0.038818665,
+          "derivative_limit": 0.068054734,
+          "seam_curvature": 0.001642786,
+          "adjacent_curvature_q999": 0.070547144,
+          "curvature_limit": 0.123701643,
+          "rms_boundary_windows": {
+            "2": 0.09482752562035177,
+            "50": 0.08529811793918839,
+            "2000": 0.08052670719237663
+          },
+          "boundary_rms_2ms_ratio": 1.111719,
+          "passed": true
+        },
         "clipped_samples": 0
       },
       "encoded_stats": {
-        "seconds": 192.0,
-        "peak": 0.3894,
-        "peak_dbfs": -8.192,
-        "rms": 0.078008,
-        "rms_dbfs": -22.157,
-        "dc": 2.45e-06,
+        "seconds": 205.714286,
+        "peak": 0.621668,
+        "peak_dbfs": -4.129,
+        "rms": 0.090041,
+        "rms_dbfs": -20.911,
+        "dc": 2.79e-06,
         "silent_seconds": 0,
-        "loop_jump": 0.0004806,
+        "loop_jump": 0.0012545,
+        "loop_metrics": {
+          "sample_count": 9072000,
+          "seam_difference": 0.001254466,
+          "adjacent_derivative_q999": 0.03176899,
+          "derivative_limit": 0.055717803,
+          "seam_curvature": 0.003045131,
+          "adjacent_curvature_q999": 0.044366058,
+          "curvature_limit": 0.077884742,
+          "rms_boundary_windows": {
+            "2": 0.09460974037115503,
+            "50": 0.08498257638442583,
+            "2000": 0.08051725243971529
+          },
+          "boundary_rms_2ms_ratio": 1.113284,
+          "passed": true
+        },
         "clipped_samples": 0
       },
-      "bytes": 1239012,
-      "sha256": "a72c2d9a85f6ad69f07ace33dc6097b31ca1b75bf578487076b911feb3ebb3e0"
+      "bytes": 2572268,
+      "sha256": "52b1e74dc0b0a72015c2d7fe7cc2adfc66dfeb64491deb7e9be1ecdd7ed7776d"
     }
   ],
   "edits": [
@@ -555,29 +1158,61 @@
       "loop": false,
       "master": "builds/audio-masters/a07_clear_channel_ending.wav",
       "master_stats": {
-        "seconds": 192.0,
-        "peak": 0.389306,
-        "peak_dbfs": -8.194,
-        "rms": 0.076452,
-        "rms_dbfs": -22.332,
-        "dc": 2e-08,
+        "seconds": 205.714286,
+        "peak": 0.619127,
+        "peak_dbfs": -4.164,
+        "rms": 0.087727,
+        "rms_dbfs": -21.137,
+        "dc": 3.37e-06,
         "silent_seconds": 0,
         "loop_jump": 0.0,
+        "loop_metrics": {
+          "sample_count": 9072000,
+          "seam_difference": 0.0,
+          "adjacent_derivative_q999": 1.1766e-05,
+          "derivative_limit": 0.000142661,
+          "seam_curvature": 0.0,
+          "adjacent_curvature_q999": 2.818e-06,
+          "curvature_limit": 0.000249073,
+          "rms_boundary_windows": {
+            "2": 1.4348132500029286e-07,
+            "50": 2.7903216442653524e-05,
+            "2000": 0.030576188504730782
+          },
+          "boundary_rms_2ms_ratio": 0.005142,
+          "passed": true
+        },
         "clipped_samples": 0
       },
       "encoded_stats": {
-        "seconds": 192.0,
-        "peak": 0.3894,
-        "peak_dbfs": -8.192,
-        "rms": 0.076463,
-        "rms_dbfs": -22.331,
-        "dc": 2.27e-06,
+        "seconds": 205.714286,
+        "peak": 0.621668,
+        "peak_dbfs": -4.129,
+        "rms": 0.087767,
+        "rms_dbfs": -21.133,
+        "dc": 1.96e-06,
         "silent_seconds": 0,
-        "loop_jump": 0.0,
+        "loop_jump": 1e-06,
+        "loop_metrics": {
+          "sample_count": 9072000,
+          "seam_difference": 1.016e-06,
+          "adjacent_derivative_q999": 3.0148e-05,
+          "derivative_limit": 0.00017483,
+          "seam_curvature": 1.016e-06,
+          "adjacent_curvature_q999": 3.4037e-05,
+          "curvature_limit": 0.000303706,
+          "rms_boundary_windows": {
+            "2": 4.6546942098468545e-07,
+            "50": 2.1133159452242557e-05,
+            "2000": 0.030596196746401457
+          },
+          "boundary_rms_2ms_ratio": 0.022026,
+          "passed": true
+        },
         "clipped_samples": 0
       },
-      "bytes": 1266267,
-      "sha256": "7c597dce4625de5d36dbff3c17800ee7fcb5d7a16fbba65e6008a45e6cacec92"
+      "bytes": 2586243,
+      "sha256": "56c96a65c067d1c9889153658662a7b782e79645e58457897aa0589dc15cda1b"
     }
   ],
   "effects": [
@@ -957,6 +1592,8 @@
   "ambience": [
     {
       "title": "Night Rain and Workstation Air",
+      "phase_offset_samples": 1661036,
+      "loop_policy": "Circular FFT noise with natural value/slope phase selection; no sample fade.",
       "path": "assets/audio/ambience/night_rain_air.ogg",
       "loop": true,
       "master": "builds/audio-masters/night_rain_air.wav",
@@ -964,26 +1601,58 @@
         "seconds": 48.0,
         "peak": 0.191905,
         "peak_dbfs": -14.338,
-        "rms": 0.034984,
-        "rms_dbfs": -29.123,
-        "dc": 3e-08,
+        "rms": 0.035,
+        "rms_dbfs": -29.119,
+        "dc": 0.0,
         "silent_seconds": 0,
-        "loop_jump": 0.0,
+        "loop_jump": 0.000102,
+        "loop_metrics": {
+          "sample_count": 2116800,
+          "seam_difference": 0.00010196,
+          "adjacent_derivative_q999": 0.016480365,
+          "derivative_limit": 0.02896271,
+          "seam_curvature": 0.002523755,
+          "adjacent_curvature_q999": 0.005036812,
+          "curvature_limit": 0.009058562,
+          "rms_boundary_windows": {
+            "2": 0.027616989120823592,
+            "50": 0.02941163429481571,
+            "2000": 0.029417334323498225
+          },
+          "boundary_rms_2ms_ratio": 0.938982,
+          "passed": true
+        },
         "clipped_samples": 0
       },
       "encoded_stats": {
         "seconds": 48.0,
-        "peak": 0.193633,
-        "peak_dbfs": -14.26,
-        "rms": 0.034871,
-        "rms_dbfs": -29.151,
-        "dc": 3.76e-06,
+        "peak": 0.190183,
+        "peak_dbfs": -14.417,
+        "rms": 0.034891,
+        "rms_dbfs": -29.146,
+        "dc": 5.69e-06,
         "silent_seconds": 0,
-        "loop_jump": 0.0007161,
+        "loop_jump": 0.005054,
+        "loop_metrics": {
+          "sample_count": 2116800,
+          "seam_difference": 0.005053957,
+          "adjacent_derivative_q999": 0.016759555,
+          "derivative_limit": 0.029451291,
+          "seam_curvature": 0.008093918,
+          "adjacent_curvature_q999": 0.004899155,
+          "curvature_limit": 0.008817661,
+          "rms_boundary_windows": {
+            "2": 0.02740955697562424,
+            "50": 0.029322139854159584,
+            "2000": 0.029333660217274116
+          },
+          "boundary_rms_2ms_ratio": 0.934773,
+          "passed": true
+        },
         "clipped_samples": 0
       },
-      "bytes": 837548,
-      "sha256": "eb2c07d37d0eca03eb65e3008a200dbe2674494612838c4d9af77bc2e76c506b"
+      "bytes": 837343,
+      "sha256": "229ba6bc774070def85bec63fd704577d7494b7f7cb09dcc970b1c6404bd22e6"
     }
   ]
 }

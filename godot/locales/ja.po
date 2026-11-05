@@ -38,11 +38,35 @@ msgstr "テギョン"
 msgid "CAMPAIGN_COMPLETE"
 msgstr "深夜の記録がつながりました。"
 
+msgid "CAMPAIGN_DEFENDER"
+msgstr "防御者"
+
+msgid "CAMPAIGN_DEFENDER_DESC"
+msgstr "脅威を防ぎながら、正規の業務を守ってください。"
+
 msgid "CAMPAIGN_HELP_COMMAND"
 msgstr "仮想コマンドの対応構文: {command}\n事件の案内とツールの入力形式を確認してください。文書にないオプションは拒否します。"
 
 msgid "CAMPAIGN_HELP_OVERVIEW"
 msgstr "対応する仮想 Linux コマンド: {commands}\n実際のシェル、パイプ、置換は実行しません。\ntool <challengeID> 'input/JSON' · configure <policyID> true"
+
+msgid "CAMPAIGN_IMPORT_CONFIRM"
+msgstr "旧版 M01 を旧版キャンペーンへ取り込みます。既存の旧版スロットはバックアップ後に置き換え、新しいキャンペーンのセーブは保持します。"
+
+msgid "CAMPAIGN_INTRUDER"
+msgstr "侵入者"
+
+msgid "CAMPAIGN_INTRUDER_DESC"
+msgstr "閉じた経路を開き、隠された記録を回収してください。"
+
+msgid "CAMPAIGN_NEW_CONFIRM"
+msgstr "{campaign} の進行をバックアップして新しく始めます。他のキャンペーンと旧版のセーブは保持されます。"
+
+msgid "CAMPAIGN_NO_SAVE"
+msgstr "保存した進行はまだありません"
+
+msgid "CAMPAIGN_PROGRESS"
+msgstr "進行 {done}/{total}"
 
 msgid "CAMPAIGN_RESULT_ARCHIVED"
 msgstr "資料のコピーを保管しました。記録 ID と出所を確認してください。\n{detail}"
@@ -83,11 +107,17 @@ msgstr "資料の引き渡し方を選びました。\n{detail}"
 msgid "CAMPAIGN_RESULT_ENDING_LOCKED"
 msgstr "この引き渡し方を選ぶ証拠がまだ足りません。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_EXTERNAL_URL"
+msgstr "ゲームに登録された仮想アドレスだけを開けます。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_FILES_CHANGED"
 msgstr "仮想ファイルの状態が変わりました。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_GOAL_NOT_MET"
 msgstr "現在の目標を裏付ける証拠がまだ足りません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_HANDOFF_INCOMPLETE"
+msgstr "引き継ぎに必要な関係・根拠・後続観察がまだ不足しています。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HINT"
 msgstr "現在の事件のヒントです。\n{detail}"
@@ -110,8 +140,17 @@ msgstr "入力形式を確認してください。対応する引数だけが使
 msgid "CAMPAIGN_RESULT_INVALID_CHECKPOINT"
 msgstr "事件の保存状態が正しくないため読み込みませんでした。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_INVALID_CLAIM"
+msgstr "主張の形式と、収集した観察への参照を確認してください。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_INVALID_CONTENT"
 msgstr "事件データを読み込めません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_CONTROL"
+msgstr "許可された対応策と値を確認してください。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_METHOD"
+msgstr "対応していない仮想要求メソッドです。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_INVALID_PATH"
 msgstr "仮想パスの形式を確認してください。\n{detail}"
@@ -137,6 +176,9 @@ msgstr "旧版 M01 のセーブが見つかりません。\n{detail}"
 msgid "CAMPAIGN_RESULT_LEGACY_SIZE_LIMIT"
 msgstr "旧版セーブがサイズ上限を超えています。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_LOADED"
+msgstr "保存したキャンペーンの進行を読み込みました。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_MISSING_EVIDENCE"
 msgstr "必要な観察または資料がまだありません。\n{detail}"
 
@@ -148,6 +190,9 @@ msgstr "事件を選びました。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_MODEL_OBSERVED"
 msgstr "仮想モデルの観察結果\n{detail}"
+
+msgid "CAMPAIGN_RESULT_NEW_STARTED"
+msgstr "現在の進行を新しいセーブに記録しました。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_NOT_DIRECTORY"
 msgstr "指定したパスはフォルダーではありません。\n{detail}"
@@ -167,6 +212,9 @@ msgstr "この結果に回収できる資料はありません。\n{detail}"
 msgid "CAMPAIGN_RESULT_OBSERVATION_LIMIT"
 msgstr "この調査で保存できる観察数の上限に達しました。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_OBSERVATION_RECORDED"
+msgstr "観察・仮説の処理結果です。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_PERMISSION_DENIED"
 msgstr "現在の仮想アカウントには、この資源の権限がありません。\n{detail}"
 
@@ -176,14 +224,101 @@ msgstr "仮想サービスの方針を変更しました。正規操作と拒否
 msgid "CAMPAIGN_RESULT_PROTOCOL_MISMATCH"
 msgstr "要求プロトコルが選択したサービスと一致しません。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_RECOVERED"
+msgstr "正常なバックアップから進行を復旧しました。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
+msgstr "現在のセーブは正常で、復旧は不要です。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "現在の事件を初期状態に戻しました。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RESPONSE_OBSERVED"
+msgstr "仮想業務と対応の状態を確認しました。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RESTORED"
 msgstr "保存したキャンペーンを復元しました。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_ROUTE_HOST_MISMATCH"
 msgstr "ページのホストが仮想要求の経路と一致しません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVED"
+msgstr "キャンペーンの進行を保存しました。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_INVALID"
+msgstr "使用できる正常なバックアップがありません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_REPLACE_FAILED"
+msgstr "バックアップファイルを置き換えられませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIFFERENT_CAMPAIGN"
+msgstr "別のキャンペーンまたはコンテンツ版として記録されたセーブです。原本とバックアップを保持し、置き換えていません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_FAILED"
+msgstr "セーブ用フォルダーを作成できませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_OPEN_FAILED"
+msgstr "セーブ用フォルダーを開けませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_ENCODING"
+msgstr "セーブファイルの文字コードが正しくありません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_JSON"
+msgstr "セーブファイルの JSON 形式が正しくありません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_SNAPSHOT"
+msgstr "保存する進行状態が検証に通りませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_VALIDATOR"
+msgstr "セーブの検証を準備できませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NEW_REPLACE_FAILED"
+msgstr "新しいセーブに置き換えられませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NOT_FOUND"
+msgstr "セーブファイルが見つかりません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_IS_DIRECTORY"
+msgstr "セーブファイルのパスがフォルダーを指しています。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_REJECTED"
+msgstr "許可されていないセーブパスです。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PRESERVE_FAILED"
+msgstr "既存ファイルを別に保持できませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_FAILED"
+msgstr "セーブファイルの読み取り中にエラーが発生しました。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_OPEN_FAILED"
+msgstr "セーブファイルを読み取り用に開けませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_FAILED"
+msgstr "保存した進行を復旧できませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_NOT_NEEDED"
+msgstr "正常なセーブがあるため、復旧は不要です。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_PATH_FAILED"
+msgstr "復旧ファイルのパスを準備できませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_REQUIRED"
+msgstr "復旧方法の選択が必要です。既存のセーブは自動で上書きしていません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_REPLACE_FAILED"
+msgstr "セーブファイルを置き換えられませんでした。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_ROUNDTRIP_MISMATCH"
+msgstr "読み直したセーブが元の進行と一致しません。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_SIZE_LIMIT"
+msgstr "セーブ状態がサイズ上限を超えています。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_FAILED"
+msgstr "セーブファイルの書き込み中にエラーが発生しました。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_OPEN_FAILED"
+msgstr "セーブファイルを書き込み用に開けませんでした。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_SERVICE_CLOSED"
 msgstr "現在の観測地点からサービスは閉じています。\n{detail}"
@@ -200,6 +335,9 @@ msgstr "対象の仮想サービスは開いていません。\n{detail}"
 msgid "CAMPAIGN_RESULT_SESSION_LIMIT"
 msgstr "仮想セッションの上限に達しました。exit で前の接続を終了してください。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_UNKNOWN_CASE"
+msgstr "登録された要求・入力ケースを選んでください。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_UNKNOWN_COMMAND"
 msgstr "未対応の仮想コマンドです。help で一覧を確認してください。\n{detail}"
 
@@ -211,6 +349,18 @@ msgstr "登録されていない事件です。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_MODEL"
 msgstr "登録されていない仮想モデルです。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_OPERATION"
+msgstr "対応している操作を選んでください。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_ROUTE"
+msgstr "登録された要求経路を確認してください。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_SENSOR"
+msgstr "登録された観測地点を確認してください。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_TOKEN"
+msgstr "失効させるセッションの登録参照を確認してください。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_TOOL"
 msgstr "この事件では使えないツールまたはモデルです。\n{detail}"
@@ -224,11 +374,35 @@ msgstr "現在の出発点からは対象に届きません。\n{detail}"
 msgid "CAMPAIGN_RESULT_UNSUPPORTED_SYNTAX"
 msgstr "対応していない仮想コマンド構文です。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_VM_INVALID"
+msgstr "仮想プログラムか入力の形式を確認してください。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_LIMIT"
+msgstr "仮想プログラムの許可された上限を超えました。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_OBSERVED"
+msgstr "仮想プログラムの状態です。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_WEB_AUTHENTICATED"
 msgstr "仮想ウェブアカウントにログインしました。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_WEB_LOGGED_OUT"
 msgstr "仮想ウェブセッションを終了しました。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_WINDOW_END"
+msgstr "この地点には次の観測区間がありません。\n{detail}"
+
+msgid "CAMPAIGN_SAVE_ATTENTION"
+msgstr "セーブ状態の確認や、使用できるバックアップの復旧ができます。"
+
+msgid "CAMPAIGN_SELECT"
+msgstr "キャンペーンを選ぶ"
+
+msgid "CAMPAIGN_TRACKER"
+msgstr "追跡者"
+
+msgid "CAMPAIGN_TRACKER_DESC"
+msgstr "観察と反証で、つながりを絞り込んでください。"
 
 msgid "CANCEL"
 msgstr "キャンセル"
@@ -284,6 +458,585 @@ msgstr "自主制作のハッキングシミュレーター\n仮想サーバー�
 msgid "DESKTOP_NOT_READY"
 msgstr "デスクトップへの接続を準備できませんでした。"
 
+msgid "DF1_D01_ABSTRACTION"
+msgstr "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。"
+
+msgid "DF1_D01_BRIEF"
+msgstr "夜間サービス担当の初日ですね。現場技術者のドユンです。市民が自分の受付票を読む要求と、他人の票を読む要求があります。サーバーを止めれば両方消えますが、それが目標ではありません。\n\n業務アカウントで接続し、まず正規の要求を観察してください。所有者確認を直すか、露出した道を閉じて正規業務を狭い委任経路へ移せます。何が消えたかだけでなく、誰が仕事を続けられるかを確かめてください。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d01.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D01_CASE_FOREIGN_DIRECT"
+msgstr "元の入口の担当外アカウント"
+
+msgid "DF1_D01_CASE_FOREIGN_GATEWAY"
+msgstr "承認済み経路の担当外アカウント"
+
+msgid "DF1_D01_CASE_OWN_A"
+msgstr "市民 A 自身の受付票"
+
+msgid "DF1_D01_CASE_OWN_B"
+msgstr "市民 B 自身の受付票"
+
+msgid "DF1_D01_CASE_STAFF"
+msgstr "担当職員に委任された受付票"
+
+msgid "DF1_D01_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "DF1_D01_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "DF1_D01_CONTROL_OWNER_CHECK"
+msgstr "受付票の所有者確認"
+
+msgid "DF1_D01_DESK_NAME"
+msgstr "扉を閉じずに防ぐ · 作業端末"
+
+msgid "DF1_D01_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "DF1_D01_GOAL"
+msgstr "担当外の閲覧を拒否し、両市民と担当職員の読み取りを守る。"
+
+msgid "DF1_D01_HINT_1"
+msgstr "正規の業務と問題のある要求を分けて観察してください。所有者確認か、範囲を絞った委任で結果がどう変わるか観察してください。"
+
+msgid "DF1_D01_HINT_2"
+msgstr "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。"
+
+msgid "DF1_D01_HINT_3"
+msgstr "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。"
+
+msgid "DF1_D01_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "DF1_D01_LIMIT"
+msgstr "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。"
+
+msgid "DF1_D01_PRINCIPLE"
+msgstr "所有者確認か、範囲を絞った委任で結果がどう変わるか観察してください。"
+
+msgid "DF1_D01_REPLY"
+msgstr "セリンも保守担当者も仕事を続け、無関係な閲覧は防げました。次の対応にも使える基準です。次の警報では、一つのアドレスから正規の市民と繰り返し試行が一緒に届きます。"
+
+msgid "DF1_D01_SENDER"
+msgstr "ドユン"
+
+msgid "DF1_D01_TITLE"
+msgstr "扉を閉じずに防ぐ"
+
+msgid "DF1_D02_ABSTRACTION"
+msgstr "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。"
+
+msgid "DF1_D02_BRIEF"
+msgstr "病院中継のアドレスからログイン失敗が続いています。同じ場所から正規の仕事も来ます。アドレス全体を遮断するのは簡単ですが、先に誰が困るか見てください。\n\nアカウント別の連続試行を制限するか、正規業務を承認済みの認証経路へ分けてください。制限後も夜間担当者が正常に認証できるか確かめます。実時間を待つ必要はありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d02.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D02_CASE_FAILED_1"
+msgstr "繰り返し失敗 1"
+
+msgid "DF1_D02_CASE_FAILED_2"
+msgstr "繰り返し失敗 2"
+
+msgid "DF1_D02_CASE_FAILED_3"
+msgstr "繰り返し失敗 3"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_1"
+msgstr "繰り返し失敗 1（承認済み経路）"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_2"
+msgstr "繰り返し失敗 2（承認済み経路）"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_3"
+msgstr "繰り返し失敗 3（承認済み経路）"
+
+msgid "DF1_D02_CASE_LEGITIMATE"
+msgstr "共有の出発点からの正規市民要求"
+
+msgid "DF1_D02_CASE_WARD_JOB"
+msgstr "病院通知ジョブの正規認証"
+
+msgid "DF1_D02_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "DF1_D02_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "DF1_D02_CONTROL_RETRY_LIMIT"
+msgstr "アカウント別の再試行制限"
+
+msgid "DF1_D02_DESK_NAME"
+msgstr "一つのアドレス、二人の利用者 · 作業端末"
+
+msgid "DF1_D02_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "DF1_D02_GOAL"
+msgstr "共有の出発点で連続認証失敗を制限し、正規の市民と通知のアクセスを残す。"
+
+msgid "DF1_D02_HINT_1"
+msgstr "正規の業務と問題のある要求を分けて観察してください。アドレス全体を遮断せず、アカウント別の試行と承認済み認証経路を比べてください。"
+
+msgid "DF1_D02_HINT_2"
+msgstr "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。"
+
+msgid "DF1_D02_HINT_3"
+msgstr "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。"
+
+msgid "DF1_D02_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "DF1_D02_LIMIT"
+msgstr "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。"
+
+msgid "DF1_D02_PRINCIPLE"
+msgstr "アドレス全体を遮断せず、アカウント別の試行と承認済み認証経路を比べてください。"
+
+msgid "DF1_D02_REPLY"
+msgstr "一つのアドレスを一人と決めつけず、病院の仕事を守れました。この失敗記録に出た臨時アカウントには、有効なセッションが残っています。"
+
+msgid "DF1_D02_SENDER"
+msgstr "ドユン"
+
+msgid "DF1_D02_TITLE"
+msgstr "一つのアドレス、二人の利用者"
+
+msgid "DF1_D03_ABSTRACTION"
+msgstr "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。"
+
+msgid "DF1_D03_BRIEF"
+msgstr "ソユンです。臨時保守の仕事は終わりましたが、そのセッションからまだ資料を読めます。正規の長時間ジョブも同じサービスを使うため、全員をログアウトさせると困ります。\n\n露出したセッションだけを失効させるか、終わった権限を絞って置き換えてください。新しい正規アクセスが生きていることと、古いセッションを拒否することを別々に確かめます。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d03.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D03_CASE_FRESH"
+msgstr "新しい正規セッション"
+
+msgid "DF1_D03_CASE_OTHER_JOB"
+msgstr "他の正規の長時間ジョブ"
+
+msgid "DF1_D03_CASE_RETIRED"
+msgstr "元の経路での終了済み権限"
+
+msgid "DF1_D03_CASE_RETIRED_GATEWAY"
+msgstr "承認済み経路での終了済み権限"
+
+msgid "DF1_D03_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "DF1_D03_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "DF1_D03_CONTROL_SESSION_GUARD"
+msgstr "終了したセッション権限を検査"
+
+msgid "DF1_D03_DESK_NAME"
+msgstr "終わらせるべき鍵 · 作業端末"
+
+msgid "DF1_D03_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "DF1_D03_GOAL"
+msgstr "終了した権限を拒否し、他の正規セッションを保つ。"
+
+msgid "DF1_D03_HINT_1"
+msgstr "正規の業務と問題のある要求を分けて観察してください。限定した失効と、旧セッションを発行していない承認経路への移行を比べてください。"
+
+msgid "DF1_D03_HINT_2"
+msgstr "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。"
+
+msgid "DF1_D03_HINT_3"
+msgstr "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。"
+
+msgid "DF1_D03_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "DF1_D03_LIMIT"
+msgstr "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。"
+
+msgid "DF1_D03_PRINCIPLE"
+msgstr "限定した失効と、旧セッションを発行していない承認経路への移行を比べてください。"
+
+msgid "DF1_D03_REPLY"
+msgstr "終了した権限は拒否され、正規の仕事は残りました。古いセッションが拒否されることを、安心させる表示ではなくサーバー応答で確認しました。次は写真の名前で届く入力です。"
+
+msgid "DF1_D03_SENDER"
+msgstr "ソユン"
+
+msgid "DF1_D03_TITLE"
+msgstr "終わらせるべき鍵"
+
+msgid "DF1_D04_ABSTRACTION"
+msgstr "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。"
+
+msgid "DF1_D04_BRIEF"
+msgstr "保守写真が処理ジョブとして実行されました。拡張子を禁じるだけでは、内容と保存場所の関係は直りません。写真受付を閉じれば現場が止まります。\n\n形式検査と実行できない保存境界を直すか、処理を隔離して承認済みの写真だけを公開してください。偽装ファイルの拒否と正規 JPEG の作成・閲覧が両方必要です。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d04.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D04_CASE_DISGUISED"
+msgstr "写真を装った入力"
+
+msgid "DF1_D04_CASE_DISGUISED_GATEWAY"
+msgstr "承認済み処理側の偽装ファイル"
+
+msgid "DF1_D04_CASE_PHOTO"
+msgstr "正規 JPEG を作成"
+
+msgid "DF1_D04_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "DF1_D04_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "DF1_D04_CONTROL_NO_EXECUTION"
+msgstr "アップロードを実行せず保存"
+
+msgid "DF1_D04_CONTROL_PHOTO_CHECK"
+msgstr "写真の内容形式を検査"
+
+msgid "DF1_D04_DESK_NAME"
+msgstr "写真の作業台 · 作業端末"
+
+msgid "DF1_D04_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "DF1_D04_GOAL"
+msgstr "偽装ファイルの作成を防ぎ、安全な処理で正規 JPEG を作る。"
+
+msgid "DF1_D04_HINT_1"
+msgstr "正規の業務と問題のある要求を分けて観察してください。名前・MIME・内容シグネチャと、実際の保存・実行状態を分けてください。"
+
+msgid "DF1_D04_HINT_2"
+msgstr "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。"
+
+msgid "DF1_D04_HINT_3"
+msgstr "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。"
+
+msgid "DF1_D04_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "DF1_D04_LIMIT"
+msgstr "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。"
+
+msgid "DF1_D04_PRINCIPLE"
+msgstr "名前・MIME・内容シグネチャと、実際の保存・実行状態を分けてください。"
+
+msgid "DF1_D04_REPLY"
+msgstr "正規の写真は届き、不正な処理効果は止まりました。次の問題は、ファイル担当ジョブから他の内部サービスへ何が届くかです。"
+
+msgid "DF1_D04_SENDER"
+msgstr "ドユン"
+
+msgid "DF1_D04_TITLE"
+msgstr "写真の作業台"
+
+msgid "DF1_D05_ABSTRACTION"
+msgstr "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。"
+
+msgid "DF1_D05_BRIEF"
+msgstr "市のサービス担当テギョンです。プレビュー処理が内部資料に届きました。内部接続をすべて切ると、稼働確認と市民ページも動きません。許可された用途と宛先を分けましょう。\n\n内部オブジェクトの権限を絞るか、承認済みプロキシに必要な要求だけを通してください。方針を決めるのは隠れた攻撃者の印ではなく、実際の主体と対象です。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d05.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D05_CASE_HEALTH"
+msgstr "作業者に必要な稼働確認"
+
+msgid "DF1_D05_CASE_PREVIEW"
+msgstr "市民の正規プレビュー"
+
+msgid "DF1_D05_CASE_PROXY_SECRET"
+msgstr "承認済みプロキシでの範囲外要求"
+
+msgid "DF1_D05_CASE_SECRET"
+msgstr "作業者による範囲外保存資料の読み取り"
+
+msgid "DF1_D05_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "DF1_D05_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "DF1_D05_CONTROL_OWNER_CHECK"
+msgstr "受付票の所有者確認"
+
+msgid "DF1_D05_DESK_NAME"
+msgstr "内側へ向かう要求 · 作業端末"
+
+msgid "DF1_D05_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "DF1_D05_GOAL"
+msgstr "プレビューと稼働確認を残し、無許可の内部読み取りを防ぐ。"
+
+msgid "DF1_D05_HINT_1"
+msgstr "正規の業務と問題のある要求を分けて観察してください。作業者のオブジェクト所有関係と、承認済みプロキシの範囲を比べてください。"
+
+msgid "DF1_D05_HINT_2"
+msgstr "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。"
+
+msgid "DF1_D05_HINT_3"
+msgstr "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。"
+
+msgid "DF1_D05_INTERNAL_NAME"
+msgstr "内部稼働確認・保存サービス"
+
+msgid "DF1_D05_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "DF1_D05_LIMIT"
+msgstr "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。"
+
+msgid "DF1_D05_PRINCIPLE"
+msgstr "作業者のオブジェクト所有関係と、承認済みプロキシの範囲を比べてください。"
+
+msgid "DF1_D05_REPLY"
+msgstr "稼働確認とプレビューを残し、無許可の内部読み取りを防げました。狭い境界ができましたね。ただ、急いで変えたファイル権限で配備が止まっています。"
+
+msgid "DF1_D05_SENDER"
+msgstr "テギョン"
+
+msgid "DF1_D05_TITLE"
+msgstr "内側へ向かう要求"
+
+msgid "DF1_D06_ABSTRACTION"
+msgstr "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。"
+
+msgid "DF1_D06_BRIEF"
+msgstr "担当外の書き込みを防ぐ変更で、配備アカウントも親フォルダーを通れなくなりました。ファイルだけを見ていては原因を逃します。グループと経路上の門を確かめてください。\n\n必要なグループ・ACL だけを直すか、承認された作業アカウントと経路へ移せます。全員に全権限を与えることは解決ではありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d06.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D06_CASE_FOREIGN_APPROVED"
+msgstr "承認済み経路での担当外書き込み"
+
+msgid "DF1_D06_CASE_FOREIGN_WRITE"
+msgstr "担当外アカウントによる配備の変更"
+
+msgid "DF1_D06_CASE_READ"
+msgstr "配備アカウントが自分の状態を読む"
+
+msgid "DF1_D06_CASE_WRITE"
+msgstr "配備アカウントが作業結果を書く"
+
+msgid "DF1_D06_DESK_NAME"
+msgstr "直した権限、止まった仕事 · 作業端末"
+
+msgid "DF1_D06_DIRECTORY_MODE"
+msgstr "配備フォルダーの通過権限"
+
+msgid "DF1_D06_FILE_MODE"
+msgstr "作業結果ファイルの権限"
+
+msgid "DF1_D06_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "DF1_D06_GOAL"
+msgstr "配備の読み書きを許可し、担当外の変更は拒否する。"
+
+msgid "DF1_D06_HINT_1"
+msgstr "正規の業務と問題のある要求を分けて観察してください。親ディレクトリと現在のグループを調べるか、承認済みの代替経路を使ってください。"
+
+msgid "DF1_D06_HINT_2"
+msgstr "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。"
+
+msgid "DF1_D06_HINT_3"
+msgstr "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。"
+
+msgid "DF1_D06_JOB_GROUPS"
+msgstr "配備アカウントに必要なグループ"
+
+msgid "DF1_D06_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "DF1_D06_LIMIT"
+msgstr "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。"
+
+msgid "DF1_D06_PRINCIPLE"
+msgstr "親ディレクトリと現在のグループを調べるか、承認済みの代替経路を使ってください。"
+
+msgid "DF1_D06_REPLY"
+msgstr "配備と保守が動き、担当外の書き込みは拒否されています。必要な権限を狭く保てました。次は実際の脅威と誤った緊急規則が同時に届きます。"
+
+msgid "DF1_D06_SENDER"
+msgstr "ドユン"
+
+msgid "DF1_D06_TITLE"
+msgstr "直した権限、止まった仕事"
+
+msgid "DF1_D07_ABSTRACTION"
+msgstr "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。"
+
+msgid "DF1_D07_BASELINE_CHECKPOINT"
+msgstr "検証済み引き継ぎ時点の通知可用性"
+
+msgid "DF1_D07_BRIEF"
+msgstr "無許可の内部要求を止めたら、正規の通知も止まりました。世界全体を前の状態に戻すと、失効済みの鍵まで生き返るかもしれません。今回は、戻す範囲が判断の中心です。\n\n誤った方針グループだけを戻すか、正規業務を承認済みの待機サービスへ移してください。セッションの失効と収集資料は、戻す対象ではありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d07.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D07_CASE_FRESH"
+msgstr "新しい正規セッション"
+
+msgid "DF1_D07_CASE_INTERNAL_TARGET"
+msgstr "範囲外の内部対象"
+
+msgid "DF1_D07_CASE_NOTIFY"
+msgstr "正規の病院通知を届ける"
+
+msgid "DF1_D07_CASE_OTHER_JOB"
+msgstr "他の正規の長時間ジョブ"
+
+msgid "DF1_D07_CASE_RETIRED"
+msgstr "元の経路での終了済み権限"
+
+msgid "DF1_D07_CASE_RETIRED_GATEWAY"
+msgstr "承認済み経路での終了済み権限"
+
+msgid "DF1_D07_CASE_STANDBY_TARGET"
+msgstr "待機サービスでの範囲外対象"
+
+msgid "DF1_D07_CONTROL_NOTIFY_OPEN"
+msgstr "主通知経路を有効化"
+
+msgid "DF1_D07_CONTROL_SESSION_GUARD"
+msgstr "終了したセッション権限を検査"
+
+msgid "DF1_D07_CONTROL_STANDBY_OPEN"
+msgstr "待機通知経路を有効化"
+
+msgid "DF1_D07_CONTROL_TARGET_SCOPE"
+msgstr "通知対象を制限"
+
+msgid "DF1_D07_DESK_NAME"
+msgstr "二つの障害の夜 · 作業端末"
+
+msgid "DF1_D07_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "DF1_D07_GOAL"
+msgstr "失効セッションと範囲外対象を拒否したまま、通知を復旧する。"
+
+msgid "DF1_D07_HINT_1"
+msgstr "正規の業務と問題のある要求を分けて観察してください。戻すのは方針グループだけです。失効した鍵は戻りません。"
+
+msgid "DF1_D07_HINT_2"
+msgstr "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。"
+
+msgid "DF1_D07_HINT_3"
+msgstr "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。"
+
+msgid "DF1_D07_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "DF1_D07_LIMIT"
+msgstr "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。"
+
+msgid "DF1_D07_PRINCIPLE"
+msgstr "戻すのは方針グループだけです。失効した鍵は戻りません。"
+
+msgid "DF1_D07_REPLY"
+msgstr "通知が再び届き、廃止セッションは戻りませんでした。管理された仮移行と完全復旧を区別して引き継ぎます。"
+
+msgid "DF1_D07_SENDER"
+msgstr "テギョン"
+
+msgid "DF1_D07_TITLE"
+msgstr "二つの障害の夜"
+
+msgid "DF1_D08_ABSTRACTION"
+msgstr "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。"
+
+msgid "DF1_D08_BRIEF"
+msgstr "最後の夜間引き継ぎです。ウェブ受付、内部通知、保守作業はつながっています。警報を消すことと、街を守ることは同じではありません。\n\n既存サービスを精密に復旧するか、承認済みの代替経路で継続させてください。選んだ構成で正規業務とモデル内の脅威を両方確かめ、残る制限を正直に伝えましょう。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d08.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D08_CASE_FOREIGN_DIRECT"
+msgstr "元の入口の担当外アカウント"
+
+msgid "DF1_D08_CASE_FOREIGN_GATEWAY"
+msgstr "承認済み経路の担当外アカウント"
+
+msgid "DF1_D08_CASE_FRESH"
+msgstr "新しい正規セッション"
+
+msgid "DF1_D08_CASE_INTERNAL_TARGET"
+msgstr "範囲外の内部対象"
+
+msgid "DF1_D08_CASE_NOTIFY"
+msgstr "正規の病院通知を届ける"
+
+msgid "DF1_D08_CASE_OTHER_JOB"
+msgstr "他の正規の長時間ジョブ"
+
+msgid "DF1_D08_CASE_OWN_A"
+msgstr "市民 A 自身の受付票"
+
+msgid "DF1_D08_CASE_OWN_B"
+msgstr "市民 B 自身の受付票"
+
+msgid "DF1_D08_CASE_RETIRED"
+msgstr "元の経路での終了済み権限"
+
+msgid "DF1_D08_CASE_RETIRED_GATEWAY"
+msgstr "承認済み経路での終了済み権限"
+
+msgid "DF1_D08_CASE_STAFF"
+msgstr "担当職員に委任された受付票"
+
+msgid "DF1_D08_CASE_STANDBY_TARGET"
+msgstr "待機サービスでの範囲外対象"
+
+msgid "DF1_D08_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "DF1_D08_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "DF1_D08_CONTROL_NOTIFY_OPEN"
+msgstr "主通知経路を有効化"
+
+msgid "DF1_D08_CONTROL_OWNER_CHECK"
+msgstr "受付票の所有者確認"
+
+msgid "DF1_D08_CONTROL_SESSION_GUARD"
+msgstr "終了したセッション権限を検査"
+
+msgid "DF1_D08_CONTROL_STANDBY_OPEN"
+msgstr "待機通知経路を有効化"
+
+msgid "DF1_D08_CONTROL_TARGET_SCOPE"
+msgstr "通知対象を制限"
+
+msgid "DF1_D08_DESK_NAME"
+msgstr "動き続ける街 · 作業端末"
+
+msgid "DF1_D08_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "DF1_D08_GOAL"
+msgstr "選んだ経路で、脅威の拒否と正規の受付・通知・セッション業務を両立する。"
+
+msgid "DF1_D08_HINT_1"
+msgstr "正規の業務と問題のある要求を分けて観察してください。一つのサービスの成功だけでは、別の業務が動く証拠になりません。"
+
+msgid "DF1_D08_HINT_2"
+msgstr "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。"
+
+msgid "DF1_D08_HINT_3"
+msgstr "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。"
+
+msgid "DF1_D08_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "DF1_D08_LIMIT"
+msgstr "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。"
+
+msgid "DF1_D08_PRINCIPLE"
+msgstr "一つのサービスの成功だけでは、別の業務が動く証拠になりません。"
+
+msgid "DF1_D08_REPLY"
+msgstr "街は動き続けています。止めた脅威の道と、生きている業務が同じ記録に残りました。すべての危険が消えたと宣言せず、次の担当者が確認して安全に直せる状態を渡します。"
+
+msgid "DF1_D08_SENDER"
+msgstr "ドユン"
+
+msgid "DF1_D08_TITLE"
+msgstr "動き続ける街"
+
+msgid "DF1_ENDING_TITLE"
+msgstr "次の担当者へ"
+
+msgid "DF1_PACK_TITLE"
+msgstr "防御者 · 動き続ける街"
+
 msgid "ENDING_PUBLIC_TEXT"
 msgstr "元のお知らせと再配布を区別したうえで、匿名化した事件記録を公開します。ソユンの署名もドユンの臨時中継も残ります。単なる障害ではなかったことを、未解決の問いと証拠とともに伝えます。公開は原本の破壊でも、全資料の投下でもありません。"
 
@@ -332,11 +1085,1751 @@ msgstr "旧版 M01 のセーブは保持されます。取り込んだ進行で�
 msgid "IMPORT_LEGACY"
 msgstr "旧版 M01 を取り込む"
 
+msgid "IN2_C01_NAME"
+msgstr "ソユン"
+
+msgid "IN2_C02_NAME"
+msgstr "ドユン"
+
+msgid "IN2_C03_NAME"
+msgstr "ミンソ"
+
+msgid "IN2_C04_NAME"
+msgstr "テギョン"
+
+msgid "IN2_COMMON_ABSTRACTION"
+msgstr "ゲーム内の小さな状態・証拠モデルです。入力は登録された架空世界にだけ作用します。"
+
+msgid "IN2_COMMON_CONTEXT_TITLE"
+msgstr "この事件の観察資料"
+
+msgid "IN2_COMMON_INDEX_TITLE"
+msgstr "夜間依頼の索引"
+
+msgid "IN2_COMMON_LIMIT"
+msgstr "プロトコル、OS、実務ツール全体の習熟を保証しません。実システムでは許可と環境ごとの検証が別途必要です。"
+
+msgid "IN2_COMMON_LOGIN_TITLE"
+msgstr "架空の業務アカウントにログイン"
+
+msgid "IN2_COMMON_WORKBENCH_TITLE"
+msgstr "隔離された仮想検証窓"
+
+msgid "IN2_ENDING_PUBLIC_TEXT"
+msgstr "元のお知らせと再配布を区別したうえで、匿名化した事件記録を公開します。ソユンの署名もドユンの臨時中継も残ります。単なる障害ではなかったことを、未解決の問いと証拠とともに伝えます。公開は原本の破壊でも、全資料の投下でもありません。"
+
+msgid "IN2_ENDING_PUBLIC_TITLE"
+msgstr "市民を守る公開記録"
+
+msgid "IN2_ENDING_REVIEW_TEXT"
+msgstr "独立した転送証拠と、小さな検証器・メモリーモデルの限界を一緒に保管します。ミンソは一つの道具の成功をシステム全体の証明にはしません。最小限のコピーを別々の保管者に渡し、同じ事実を照合できるようにします。最後の画面に残るのは万能の鍵ではなく、出所と未解決の問いです。"
+
+msgid "IN2_ENDING_REVIEW_TITLE"
+msgstr "互いに確かめられるコピー"
+
+msgid "IN2_ENDING_SEALED_TEXT"
+msgstr "ソユンは移管を、ドユンは守ったサービスを記録します。テギョンは緊急承認と監督の不備を別々に署名し、ミンソは空白を不明と記します。資料は封印監査へ引き継がれます。すべての市民が今夜を知るわけではありませんが、原本と記録を問い直す道は残ります。"
+
+msgid "IN2_ENDING_SEALED_TITLE"
+msgstr "封印された監査への引き継ぎ"
+
+msgid "IN2_M01_BRIEF"
+msgstr "このメールは一度だけ送ります。夜間保管庫の引き継ぎ記録 N47 が、まもなく削除されます。原本を残し、~/archive に一部だけコピーしてください。\n\n公開アカウントは guest / guest です。保護フォルダーが開かなければ、残された引き継ぎメモを読んでください。直接入るか、保存されたコピーを探すかは、あなた次第です。"
+
+msgid "IN2_M01_EXPLAIN"
+msgstr "接続、認証、ファイル権限、回収は別々の状態です。有効なコピーは、おとりのファイル名ではなく本文、記録 ID、出所が一致していました。別の有効経路でも同じ目標を満たせます。"
+
+msgid "IN2_M01_FILE_HANDOFF_LOG"
+msgstr "[保管終了]\n古い点検用紙です。目標の引き継ぎ記録ではありません。\n"
+
+msgid "IN2_M01_FILE_README_TXT"
+msgstr "夜間点検\n保護記録は /vault にあります。\n/public/shift-note.txt の引き継ぎメモを読んでください。\n"
+
+msgid "IN2_M01_FILE_SHIFT_NOTE_TXT"
+msgstr "[引き継ぎメモ]\n保守アカウント: maint\n仮の合言葉: lumen-47\n引き継ぎ記録: /vault/handoff.log\n保存コピー: https://mirror.packet.test/cache/47\n原本を変更・削除しないこと。\n"
+
+msgid "IN2_M01_GOAL"
+msgstr "原本を残し、引き継ぎ記録 N47 を ~/archive に回収する。"
+
+msgid "IN2_M01_HINT_1"
+msgstr "公開アカウントで接続し、保護フォルダーと公開メモを比べてください。拒否される体験は必須ではありません。"
+
+msgid "IN2_M01_HINT_2"
+msgstr "/public/shift-note.txt には maint アカウントと、別のウェブ保存コピーが書かれています。"
+
+msgid "IN2_M01_HINT_3"
+msgstr "保守経路で /vault/handoff.log を回収するか、mirror.packet.test/cache/47 のコピーを保存してください。public/handoff.log は同名の別記録です。"
+
+msgid "IN2_M01_HOST_NAME"
+msgstr "夜間保管庫"
+
+msgid "IN2_M01_PAGE_1_BODY"
+msgstr "夜間移管中です。\n公開のお知らせは閲覧できます。保護された引き継ぎ記録には保守セッションが必要です。"
+
+msgid "IN2_M01_PAGE_1_LINK_1"
+msgstr "配備のお知らせを見る"
+
+msgid "IN2_M01_PAGE_1_TITLE"
+msgstr "夜間保管庫"
+
+msgid "IN2_M01_PAGE_2_BODY"
+msgstr "引き継ぎ資料の提供状況を点検しています。別の中継に仮のコピーが残っています。場所はサーバーの引き継ぎメモで確認してください。"
+
+msgid "IN2_M01_PAGE_2_LINK_1"
+msgstr "保管庫ホーム"
+
+msgid "IN2_M01_PAGE_2_TITLE"
+msgstr "夜間配備のお知らせ"
+
+msgid "IN2_M01_PAGE_3_TITLE"
+msgstr "中継キャッシュ / 引き継ぎ 47"
+
+msgid "IN2_M01_RECORD_TEXT"
+msgstr "[N47 / HANDOFF]\n夜間引き継ぎ · 00:47\n転送: relay-02 -> archive-17\n承認標識: SY / 照合待ち\n原本を保存し、コピーだけを渡すこと。\n次の手掛かり: relay 02 の消えた送信。\n"
+
+msgid "IN2_M01_REPLY"
+msgstr "受け取りました。原本も残っていますね。でも、この記録には送信が一件欠けています。relay 02 が宛先を変えた時刻、00:47 を覚えておいてください。次のアドレスを送りました。"
+
+msgid "IN2_M01_REPLY_SUBJECT"
+msgstr "[確認] 最初の夜の依頼"
+
+msgid "IN2_M01_SUBJECT"
+msgstr "[夜間依頼] 最初の夜の依頼"
+
+msgid "IN2_M01_TITLE"
+msgstr "最初の夜の依頼"
+
+msgid "IN2_M02_AUDIT"
+msgstr "[M02 観察資料]\nR204 から送信者と新しい宛先を結び付ける。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\njob N47 changed destination under request R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M02_AUDIT_NAME"
+msgstr "Relay02 独立保管先"
+
+msgid "IN2_M02_BRIEF"
+msgstr "ソユンから資料を受け取りました。夜間ネットワークを担当していたドユンです。N47 に失敗の印がないのに、なぜ送信が欠けたのでしょう。ファイル名順に読むと、大切な行を見落とします。\n\n現行ログ、ローテーション済みログ、配備メモのジョブ ID を照合してください。修理の依頼ではありません。まず、誰が何をどこへ送ったかを調べましょう。\n\nlogreader@relay02.packet.test / patrol-ember\nregistrar@custodym02.packet.test / paper-thrush\n"
+
+msgid "IN2_M02_CONTEXT"
+msgstr "[R204 から送信者と新しい宛先を結び付ける。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\njob | request | destination\nN47 | R204 | transit04\nN46 | R203 | archive"
+
+msgid "IN2_M02_EXPLAIN"
+msgstr "R204 から送信者と新しい宛先を結び付ける。\n現行ファイルには、ローテーション直前の宛先がありません。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M02_GOAL"
+msgstr "R204 から送信者と新しい宛先を結び付ける。"
+
+msgid "IN2_M02_HINT_1"
+msgstr "現行ファイルには、ローテーション直前の宛先がありません。"
+
+msgid "IN2_M02_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M02_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M02_HOST_NAME"
+msgstr "Relay02 業務サービス"
+
+msgid "IN2_M02_PRINCIPLE"
+msgstr "現行ファイルには、ローテーション直前の宛先がありません。"
+
+msgid "IN2_M02_REPLY"
+msgstr "接続は切れていませんでした。宛先が relay-02 から transit-04 に変わり、例外項目だけが消えています。聞いていた障害の説明とは違いますね。そのサーバーが本当に停止しているか確かめましょう。"
+
+msgid "IN2_M02_REPLY_SUBJECT"
+msgstr "[確認] ログが示した裏口"
+
+msgid "IN2_M02_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nDESK TRANSCRIPT\nR204:relay02\n\nRETAINED TRANSCRIPT\nR204:transit04"
+
+msgid "IN2_M02_SUBJECT"
+msgstr "[夜間依頼] ログが示した裏口"
+
+msgid "IN2_M02_TITLE"
+msgstr "ログが示した裏口"
+
+msgid "IN2_M03_AUDIT"
+msgstr "[M03 観察資料]\nサービスの見え方を比べ、制限付き点検セッションに入る。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nmaintenance service on transit-04 still serves marker R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M03_AUDIT_NAME"
+msgstr "Transit04 独立保管先"
+
+msgid "IN2_M03_BRIEF"
+msgstr "transit-04 は廃止済みとされています。でも、引き継ぎ記録はそこを通りました。思い込んだアドレスで同じ扉を叩き続けないでください。応答するサービスと閉じた扉は別物です。\n\nドユンが NetProbe を接続しました。ポートが見えても権限は得られません。サービスを特定し、制限付き点検セッションに入り、標識を確認してください。\n\nwatch@transit04.packet.test / channel-birch\nmapkeeper@custodym03.packet.test / north-span\n"
+
+msgid "IN2_M03_CONTEXT"
+msgstr "[サービスの見え方を比べ、制限付き点検セッションに入る。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nDESK TRANSCRIPT\n22:open:ssh\n\nRETAINED TRANSCRIPT\n443:filtered:https"
+
+msgid "IN2_M03_EXPLAIN"
+msgstr "サービスの見え方を比べ、制限付き点検セッションに入る。\nHTTPS がフィルターされても、SSH の点検サービスは開いている場合があります。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M03_GOAL"
+msgstr "サービスの見え方を比べ、制限付き点検セッションに入る。"
+
+msgid "IN2_M03_HINT_1"
+msgstr "HTTPS がフィルターされても、SSH の点検サービスは開いている場合があります。"
+
+msgid "IN2_M03_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M03_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M03_HOST_NAME"
+msgstr "Transit04 業務サービス"
+
+msgid "IN2_M03_PRINCIPLE"
+msgstr "HTTPS がフィルターされても、SSH の点検サービスは開いている場合があります。"
+
+msgid "IN2_M03_REPLY"
+msgstr "廃止されたのは市民向けの画面だけでした。保守サービスは動いていて、R204 も残っています。次の記録は図書館の予約サーバーから照会されました。誰かが残されたシステムを通路にしています。"
+
+msgid "IN2_M03_REPLY_SUBJECT"
+msgstr "[確認] まだ応答するポート"
+
+msgid "IN2_M03_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nservice | port | state\nmaintenance | 22 | open\ncitizen | 443 | filtered"
+
+msgid "IN2_M03_SUBJECT"
+msgstr "[夜間依頼] まだ応答するポート"
+
+msgid "IN2_M03_TITLE"
+msgstr "まだ応答するポート"
+
+msgid "IN2_M04_AUDIT"
+msgstr "[M04 観察資料]\n画面と応答の参照を比べ、C731 の変更記録を回収する。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nreservation amendment R204 links receipt C731\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M04_AUDIT_NAME"
+msgstr "Library 独立保管先"
+
+msgid "IN2_M04_BRIEF"
+msgstr "予約画面には面会が取り消されたと出ますが、サーバーの応答は別の記録を指しています。画面の更新だけでは、どちらが正しいかわかりません。\n\nRequestLab で照会要求と応答の参照先を並べてください。市民の予約を作ったり取り消したりする必要はありません。消えた変更記録一件だけを探してください。\n\nlibrarian@library.packet.test / amber-index\nclerk@custodym04.packet.test / quiet-reading\n"
+
+msgid "IN2_M04_CONTEXT"
+msgstr "[画面と応答の参照を比べ、C731 の変更記録を回収する。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nDESK TRANSCRIPT\nscreen:cancelled:B204\n\nRETAINED TRANSCRIPT\nserver:transferred:C731"
+
+msgid "IN2_M04_EXPLAIN"
+msgstr "画面と応答の参照を比べ、C731 の変更記録を回収する。\n状態コードだけでなく、応答が示す実際の業務状態を見てください。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M04_GOAL"
+msgstr "画面と応答の参照を比べ、C731 の変更記録を回収する。"
+
+msgid "IN2_M04_HINT_1"
+msgstr "状態コードだけでなく、応答が示す実際の業務状態を見てください。"
+
+msgid "IN2_M04_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M04_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M04_HOST_NAME"
+msgstr "Library 業務サービス"
+
+msgid "IN2_M04_PRINCIPLE"
+msgstr "状態コードだけでなく、応答が示す実際の業務状態を見てください。"
+
+msgid "IN2_M04_REPLY"
+msgstr "画面の取り消しとサーバーの移管は、同じ出来事ではありませんでした。受付票 C731 は修理ポータルへ移っています。セリンに連絡します。ここからは、資料の持ち主が重要になります。"
+
+msgid "IN2_M04_REPLY_SUBJECT"
+msgstr "[確認] 同じアドレス、違う答え"
+
+msgid "IN2_M04_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nrequest | receipt | event\nR204 | C731 | transferred\nR203 | C730 | cancelled"
+
+msgid "IN2_M04_SUBJECT"
+msgstr "[夜間依頼] 同じアドレス、違う答え"
+
+msgid "IN2_M04_TITLE"
+msgstr "同じアドレス、違う答え"
+
+msgid "IN2_M05_AUDIT"
+msgstr "[M05 観察資料]\n最小限の証拠で、対象報告書と所有権境界を示す。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nreceipt C731 exposes exception-hold amendment\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M05_AUDIT_NAME"
+msgstr "Repair 独立保管先"
+
+msgid "IN2_M05_BRIEF"
+msgstr "セリンの受付票は本人の修理履歴ではなく、消えた保守報告書を参照しています。画面にボタンがなくても、サーバーは資料を返すのでしょうか。本人の受付票を基準に比べてください。\n\n対象は C731 の架空報告書だけです。オブジェクト参照を調べても、変更履歴のコピーをたどっても構いません。他の市民の資料を集めることは成功ではありません。\n\ncaseworker@repair.packet.test / green-receipt\nombuds@custodym05.packet.test / cedar-envelope\n"
+
+msgid "IN2_M05_CONTEXT"
+msgstr "[最小限の証拠で、対象報告書と所有権境界を示す。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nRECEIPT REGISTER\nreference | owner | attachment\nown | current caseworker | personal receipt\nC731 | Serin | exception-hold report\n\nREQUEST WINDOW\nGET /receipts/own\nGET /receipts/C731\n"
+
+msgid "IN2_M05_EXPLAIN"
+msgstr "最小限の証拠で、対象報告書と所有権境界を示す。\nown と C731 を比較してください。認証とオブジェクトの所有者は別です。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M05_GOAL"
+msgstr "最小限の証拠で、対象報告書と所有権境界を示す。"
+
+msgid "IN2_M05_HINT_1"
+msgstr "own と C731 を比較してください。認証とオブジェクトの所有者は別です。"
+
+msgid "IN2_M05_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M05_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M05_HOST_NAME"
+msgstr "Repair 業務サービス"
+
+msgid "IN2_M05_PRINCIPLE"
+msgstr "own と C731 を比較してください。認証とオブジェクトの所有者は別です。"
+
+msgid "IN2_M05_REPLY"
+msgstr "資料の所有者を決めるのはサービス画面ではありませんでした。C731 の原本には「例外保留」があり、コピーでは消えています。アクセスの欠陥と記録の欠落は別の問題です。ログインサーバーが急に騒がしくなりました。"
+
+msgid "IN2_M05_REPLY_SUBJECT"
+msgstr "[確認] 他人の修理受付票"
+
+msgid "IN2_M05_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nreceipt | owner | attachment\nC731 | Serin | exception-hold\nC730 | other | ordinary"
+
+msgid "IN2_M05_SUBJECT"
+msgstr "[夜間依頼] 他人の修理受付票"
+
+msgid "IN2_M05_TITLE"
+msgstr "他人の修理受付票"
+
+msgid "IN2_M06_AUDIT"
+msgstr "元のサービスと承認済みサービスへの反復失敗を抑え、正規認証を守る。\n\n正規業務の成功と拒否すべき要求の結果を確認した対応記録です。原資料も保管されています。"
+
+msgid "IN2_M06_AUDIT_NAME"
+msgstr "Auth 独立保管先"
+
+msgid "IN2_M06_BRIEF"
+msgstr "夜間アカウントへの連続ログインで、正規の保守担当者まで締め出されています。全員を止めれば試行も止まりますが、病院の通知ジョブも止まります。今回は経路を見つけるだけでは足りません。\n\n失敗記録を比べ、繰り返し試行を制限しつつ正規のログインを残してください。仮想時計は必要なときだけ進めます。待ち時間を技能として評価しません。\n\nshiftlead@auth.packet.test / warm-circuit\nrecovery@custodym06.packet.test / blue-ward\n\n\n既存サービスのアカウント別制限を直すか、脆弱な入口を閉じ、独自の制限を備えた承認済み認証サービスへ正規業務を移せます。設定名だけでなく、正規ログインと反復失敗への実際の応答を確かめてください。"
+
+msgid "IN2_M06_CASE_FAILED_1"
+msgstr "繰り返し失敗 1"
+
+msgid "IN2_M06_CASE_FAILED_2"
+msgstr "繰り返し失敗 2"
+
+msgid "IN2_M06_CASE_FAILED_3"
+msgstr "繰り返し失敗 3"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_1"
+msgstr "繰り返し失敗 1（承認済み経路）"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_2"
+msgstr "繰り返し失敗 2（承認済み経路）"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_3"
+msgstr "繰り返し失敗 3（承認済み経路）"
+
+msgid "IN2_M06_CASE_LEGITIMATE"
+msgstr "共有の出発点からの正規市民要求"
+
+msgid "IN2_M06_CASE_WARD_JOB"
+msgstr "病院通知ジョブの正規認証"
+
+msgid "IN2_M06_CONTEXT"
+msgstr "既存サービスのアカウント別制限を直すか、脆弱な入口を閉じ、独自の制限を備えた承認済み認証サービスへ正規業務を移せます。設定名だけでなく、正規ログインと反復失敗への実際の応答を確かめてください。"
+
+msgid "IN2_M06_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "IN2_M06_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "IN2_M06_CONTROL_RETRY_LIMIT"
+msgstr "アカウント別の再試行制限"
+
+msgid "IN2_M06_EXPLAIN"
+msgstr "既存サービスのアカウント別制限を直すか、脆弱な入口を閉じ、独自の制限を備えた承認済み認証サービスへ正規業務を移せます。設定名だけでなく、正規ログインと反復失敗への実際の応答を確かめてください。"
+
+msgid "IN2_M06_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "IN2_M06_GOAL"
+msgstr "元のサービスと承認済みサービスへの反復失敗を抑え、正規認証を守る。"
+
+msgid "IN2_M06_HINT_1"
+msgstr "元のサービスと承認済みサービスへの反復失敗を抑え、正規認証を守る。"
+
+msgid "IN2_M06_HINT_2"
+msgstr "既存サービスのアカウント別制限を直すか、脆弱な入口を閉じ、独自の制限を備えた承認済み認証サービスへ正規業務を移せます。設定名だけでなく、正規ログインと反復失敗への実際の応答を確かめてください。"
+
+msgid "IN2_M06_HINT_3"
+msgstr "直接対応では該当する制御を直します。代替策では元の入口を制限し、正規の要求に承認経路を選んでください。すべて止めると正規業務も失敗します。"
+
+msgid "IN2_M06_HOST_NAME"
+msgstr "Auth 業務サービス"
+
+msgid "IN2_M06_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "IN2_M06_PRINCIPLE"
+msgstr "許可は操作する主体・対象・業務権限で決まります。処理経路を変えた場合は、新しい経路でも正規業務と拒否すべき要求を確かめてください。"
+
+msgid "IN2_M06_REPLY"
+msgstr "正規の作業が再開し、繰り返しの失敗も制限されました。要求の印は未知の侵入者ではなく、古い復旧ジョブと重なります。そのジョブに誰のセッションが残ったのか調べましょう。"
+
+msgid "IN2_M06_REPLY_SUBJECT"
+msgstr "[確認] 十回のノック"
+
+msgid "IN2_M06_ROUTE"
+msgstr "既存サービスのアカウント別制限を直すか、脆弱な入口を閉じ、独自の制限を備えた承認済み認証サービスへ正規業務を移せます。設定名だけでなく、正規ログインと反復失敗への実際の応答を確かめてください。"
+
+msgid "IN2_M06_SUBJECT"
+msgstr "[夜間依頼] 十回のノック"
+
+msgid "IN2_M06_TITLE"
+msgstr "十回のノック"
+
+msgid "IN2_M07_AUDIT"
+msgstr "終了済みセッションの権限を拒否し、新しいセッションと正規の長時間ジョブを保つ。\n\n正規業務の成功と拒否すべき要求の結果を確認した対応記録です。原資料も保管されています。"
+
+msgid "IN2_M07_AUDIT_NAME"
+msgstr "Session 独立保管先"
+
+msgid "IN2_M07_BRIEF"
+msgstr "臨時の保守担当者は退勤し、画面もログアウト状態です。それでも古いセッションで設定変更が続いています。画面から鍵が消えれば、サーバーも失効させたといえるでしょうか。\n\n古いセッションと新しいセッションを別々に比べてください。全部消すのではなく、誰に何がまだできるかを確かめ、終わった権限だけを終わらせましょう。\n\noperator@session.packet.test / evening-window\ncustodian@custodym07.packet.test / sparrow-vault\n\n\n失効を検査して露出した鍵を取り消すか、元の入口を閉じ、その鍵を発行していない承認済みサービスへ移行できます。新しいセッションと長時間ジョブが動き続けるか確認してください。"
+
+msgid "IN2_M07_CASE_FRESH"
+msgstr "新しい正規セッション"
+
+msgid "IN2_M07_CASE_OTHER_JOB"
+msgstr "他の正規の長時間ジョブ"
+
+msgid "IN2_M07_CASE_RETIRED"
+msgstr "元の経路での終了済み権限"
+
+msgid "IN2_M07_CASE_RETIRED_GATEWAY"
+msgstr "承認済み経路での終了済み権限"
+
+msgid "IN2_M07_CONTEXT"
+msgstr "失効を検査して露出した鍵を取り消すか、元の入口を閉じ、その鍵を発行していない承認済みサービスへ移行できます。新しいセッションと長時間ジョブが動き続けるか確認してください。"
+
+msgid "IN2_M07_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "IN2_M07_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "IN2_M07_CONTROL_SESSION_GUARD"
+msgstr "終了したセッション権限を検査"
+
+msgid "IN2_M07_EXPLAIN"
+msgstr "失効を検査して露出した鍵を取り消すか、元の入口を閉じ、その鍵を発行していない承認済みサービスへ移行できます。新しいセッションと長時間ジョブが動き続けるか確認してください。"
+
+msgid "IN2_M07_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "IN2_M07_GOAL"
+msgstr "終了済みセッションの権限を拒否し、新しいセッションと正規の長時間ジョブを保つ。"
+
+msgid "IN2_M07_HINT_1"
+msgstr "終了済みセッションの権限を拒否し、新しいセッションと正規の長時間ジョブを保つ。"
+
+msgid "IN2_M07_HINT_2"
+msgstr "失効を検査して露出した鍵を取り消すか、元の入口を閉じ、その鍵を発行していない承認済みサービスへ移行できます。新しいセッションと長時間ジョブが動き続けるか確認してください。"
+
+msgid "IN2_M07_HINT_3"
+msgstr "直接対応では該当する制御を直します。代替策では元の入口を制限し、正規の要求に承認経路を選んでください。すべて止めると正規業務も失敗します。"
+
+msgid "IN2_M07_HOST_NAME"
+msgstr "Session 業務サービス"
+
+msgid "IN2_M07_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "IN2_M07_PRINCIPLE"
+msgstr "許可は操作する主体・対象・業務権限で決まります。処理経路を変えた場合は、新しい経路でも正規業務と拒否すべき要求を確かめてください。"
+
+msgid "IN2_M07_REPLY"
+msgstr "古いセッションは無効になり、新しい保守セッションは正常です。最後の変更は再ログインの直後ではなく、外部のお知らせを見た後でした。鍵の持ち主が自分の意思で扉を開けたとは限りません。"
+
+msgid "IN2_M07_REPLY_SUBJECT"
+msgstr "[確認] ログアウト後に残った鍵"
+
+msgid "IN2_M07_ROUTE"
+msgstr "失効を検査して露出した鍵を取り消すか、元の入口を閉じ、その鍵を発行していない承認済みサービスへ移行できます。新しいセッションと長時間ジョブが動き続けるか確認してください。"
+
+msgid "IN2_M07_SUBJECT"
+msgstr "[夜間依頼] ログアウト後に残った鍵"
+
+msgid "IN2_M07_TITLE"
+msgstr "ログアウト後に残った鍵"
+
+msgid "IN2_M08_AUDIT"
+msgstr "本人が意図した設定保存を許可し、誘導された変更と委任外の変更を拒否する。\n\n正規業務の成功と拒否すべき要求の結果を確認した対応記録です。原資料も保管されています。"
+
+msgid "IN2_M08_AUDIT_NAME"
+msgstr "Subscription 独立保管先"
+
+msgid "IN2_M08_BRIEF"
+msgstr "セリンは通知先を変えていないと言います。セッションは本物でも、意思が一致しません。お知らせの閲覧と設定変更の文脈を比べてください。\n\nユーザーの鍵が付いた要求でも、すべての変更が意図されたとは限りません。誘導された変更を止め、正規の保存は残してください。この章の記録をつなげれば、検索の隠れた項目が見えるはずです。\n\neditor@subscription.packet.test / tide-card\ninspector@custodym08.packet.test / close-harbor\n\n\n元のフォームでアカウント別 nonce を検査するか、変更入口を閉じ、独立した nonce と本人設定だけの範囲を持つ承認ゲートウェイを使えます。正規の Origin とトークンの文脈はサービスごとに異なります。"
+
+msgid "IN2_M08_CASE_FORGED_DIRECT"
+msgstr "外部のお知らせから誘導された設定変更"
+
+msgid "IN2_M08_CASE_FORGED_GATEWAY"
+msgstr "承認経路からの偽造された変更"
+
+msgid "IN2_M08_CASE_SAVE_A"
+msgstr "市民 A の正規の通知設定保存"
+
+msgid "IN2_M08_CASE_SAVE_B"
+msgstr "市民 B の正規の通知設定保存"
+
+msgid "IN2_M08_CASE_UNASSIGNED_GATEWAY"
+msgstr "委任されていないアカウントの設定変更"
+
+msgid "IN2_M08_CONTEXT"
+msgstr "元のフォームでアカウント別 nonce を検査するか、変更入口を閉じ、独立した nonce と本人設定だけの範囲を持つ承認ゲートウェイを使えます。正規の Origin とトークンの文脈はサービスごとに異なります。"
+
+msgid "IN2_M08_CONTROL_CONTEXT_ORIGIN"
+msgstr "元のフォームの要求元を検査"
+
+msgid "IN2_M08_CONTROL_CONTEXT_TOKEN"
+msgstr "元のフォームのアカウント別 nonce を検査"
+
+msgid "IN2_M08_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "IN2_M08_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "IN2_M08_EXPLAIN"
+msgstr "元のフォームでアカウント別 nonce を検査するか、変更入口を閉じ、独立した nonce と本人設定だけの範囲を持つ承認ゲートウェイを使えます。正規の Origin とトークンの文脈はサービスごとに異なります。"
+
+msgid "IN2_M08_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "IN2_M08_GOAL"
+msgstr "本人が意図した設定保存を許可し、誘導された変更と委任外の変更を拒否する。"
+
+msgid "IN2_M08_HINT_1"
+msgstr "本人が意図した設定保存を許可し、誘導された変更と委任外の変更を拒否する。"
+
+msgid "IN2_M08_HINT_2"
+msgstr "元のフォームでアカウント別 nonce を検査するか、変更入口を閉じ、独立した nonce と本人設定だけの範囲を持つ承認ゲートウェイを使えます。正規の Origin とトークンの文脈はサービスごとに異なります。"
+
+msgid "IN2_M08_HINT_3"
+msgstr "直接対応では該当する制御を直します。代替策では元の入口を制限し、正規の要求に承認経路を選んでください。すべて止めると正規業務も失敗します。"
+
+msgid "IN2_M08_HOST_NAME"
+msgstr "Subscription 業務サービス"
+
+msgid "IN2_M08_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "IN2_M08_PRINCIPLE"
+msgstr "許可は操作する主体・対象・業務権限で決まります。処理経路を変えた場合は、新しい経路でも正規業務と拒否すべき要求を確かめてください。"
+
+msgid "IN2_M08_REPLY"
+msgstr "正規の保存はでき、意図しない変更は止まりました。その要求は検索索引の欠落を隠すために使われていました。新しい連絡先が原資料を求めています。信じてと言う代わりに、証拠を送ります。"
+
+msgid "IN2_M08_REPLY_SUBJECT"
+msgstr "[確認] クリックしていない変更"
+
+msgid "IN2_M08_ROUTE"
+msgstr "元のフォームでアカウント別 nonce を検査するか、変更入口を閉じ、独立した nonce と本人設定だけの範囲を持つ承認ゲートウェイを使えます。正規の Origin とトークンの文脈はサービスごとに異なります。"
+
+msgid "IN2_M08_SUBJECT"
+msgstr "[夜間依頼] クリックしていない変更"
+
+msgid "IN2_M08_TITLE"
+msgstr "クリックしていない変更"
+
+msgid "IN2_M09_AUDIT"
+msgstr "[M09 観察資料]\n検索か保管資料から R609 と C731 のつながりを示す。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nquery record R609 links receipt C731 to exclusion queue\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M09_AUDIT_NAME"
+msgstr "Records 独立保管先"
+
+msgid "IN2_M09_BRIEF"
+msgstr "皆さんが持つのは、同じ報告書の異なるコピーです。ミンソと呼んでください。見えない記録を推測せず、入力がどんな照会構造になるか確かめましょう。\n\n小さな検索モデルと保守ログには同じジョブの痕跡があります。どちらの経路でも、R609 と C731 のつながりを示せます。行数を増やすことと、必要な事実を見つけることは違います。\n\nresearcher@records.packet.test / ash-catalog\nwitness@custodym09.packet.test / uncut-leaf\n"
+
+msgid "IN2_M09_CONTEXT"
+msgstr "[検索か保管資料から R609 と C731 のつながりを示す。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nCATALOGUE LOOKUP\nquery field: q\npublic term: N47\nretained job: R609 / receipt C731\n\nTRACE\n引用された検索値を小さな等価条件に連結しています。脆弱な経路では OR 比較が単なる文字列ではなく条件の一部になります。保管された目録には独立経路があります。\n"
+
+msgid "IN2_M09_EXPLAIN"
+msgstr "検索か保管資料から R609 と C731 のつながりを示す。\n小さなモデルで、データが照会構造へ変わる場所を見てください。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M09_GOAL"
+msgstr "検索か保管資料から R609 と C731 のつながりを示す。"
+
+msgid "IN2_M09_HINT_1"
+msgstr "小さなモデルで、データが照会構造へ変わる場所を見てください。"
+
+msgid "IN2_M09_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M09_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M09_HOST_NAME"
+msgstr "Records 業務サービス"
+
+msgid "IN2_M09_PRINCIPLE"
+msgstr "小さなモデルで、データが照会構造へ変わる場所を見てください。"
+
+msgid "IN2_M09_REPLY"
+msgstr "R609 は失敗ではなく「分類による除外」でした。単なる障害と呼べば、影響を受けた人が見えなくなります。次の印は、お知らせの原文と表示の間にあります。見た目だけを信じないでください。"
+
+msgid "IN2_M09_REPLY_SUBJECT"
+msgstr "[確認] 検索窓の裏のクエリ"
+
+msgid "IN2_M09_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\njob | receipt | classification\nR609 | C731 | excluded\nR608 | C730 | retained"
+
+msgid "IN2_M09_SUBJECT"
+msgstr "[夜間依頼] 検索窓の裏のクエリ"
+
+msgid "IN2_M09_TITLE"
+msgstr "検索窓の裏のクエリ"
+
+msgid "IN2_M10_AUDIT"
+msgstr "[M10 観察資料]\n隔離したお知らせの表示境界か、独立した追跡資料で事実を示す。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nuntrusted notice marker crosses the isolated render boundary\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M10_AUDIT_NAME"
+msgstr "Bulletin 独立保管先"
+
+msgid "IN2_M10_BRIEF"
+msgstr "原文は「受付保留」なのに、画面には「修理完了」と出ます。隔離した検証窓を用意しました。市民の画面は変えず、その窓だけで入力がどこから動作になるか確かめてください。\n\n安全に保存したことと、安全に表示したことは別の主張です。標識の効果でも、独立した表示追跡資料でも境界を示せます。\n\nmoderator@bulletin.packet.test / still-signal\ncompositor@custodym10.packet.test / ivory-type\n"
+
+msgid "IN2_M10_CONTEXT"
+msgstr "[隔離したお知らせの表示境界か、独立した追跡資料で事実を示す。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nNOTICE VERSION V10\nStored text: receipt on hold\nDisplayed state: repair complete\nInspection marker: NOTICE10\n\n隔離レンダラーが受け入れるのは、限定された signal: 標識効果だけです。JavaScript は動かず、市民ページは検証窓の外です。\n"
+
+msgid "IN2_M10_EXPLAIN"
+msgstr "隔離したお知らせの表示境界か、独立した追跡資料で事実を示す。\nNOTICE10 は仮想効果の印で、実際のスクリプトではありません。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M10_GOAL"
+msgstr "隔離したお知らせの表示境界か、独立した追跡資料で事実を示す。"
+
+msgid "IN2_M10_HINT_1"
+msgstr "NOTICE10 は仮想効果の印で、実際のスクリプトではありません。"
+
+msgid "IN2_M10_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M10_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M10_HOST_NAME"
+msgstr "Bulletin 業務サービス"
+
+msgid "IN2_M10_PRINCIPLE"
+msgstr "NOTICE10 は仮想効果の印で、実際のスクリプトではありません。"
+
+msgid "IN2_M10_REPLY"
+msgstr "内容が動作になった場所を見つけました。ただし、誤ったお知らせの原因がすべてこれとは限りません。保管経路も調べましょう。公開資料室の隣に、よく似た名前の別フォルダーがあります。"
+
+msgid "IN2_M10_REPLY_SUBJECT"
+msgstr "[確認] お知らせに紛れた動作"
+
+msgid "IN2_M10_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nDESK TRANSCRIPT\nstored:text:NOTICE10\n\nRETAINED TRANSCRIPT\nrendered:action:NOTICE10"
+
+msgid "IN2_M10_SUBJECT"
+msgstr "[夜間依頼] お知らせに紛れた動作"
+
+msgid "IN2_M10_TITLE"
+msgstr "お知らせに紛れた動作"
+
+msgid "IN2_M11_AUDIT"
+msgstr "[M11 観察資料]\n解決済みのパスが、基準フォルダー外の標識に届くと示す。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nresolved attachment path reaches the adjacent marker file\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M11_AUDIT_NAME"
+msgstr "Files 独立保管先"
+
+msgid "IN2_M11_BRIEF"
+msgstr "担当者はパスの接頭辞を確認したから安全だと言います。しかし添付参照は隣の保管フォルダーを指します。実際のパスに解決した後も境界内なのか確認してください。\n\n必要なのは境界を示す標識ファイル一件だけです。他の設定や市民資料は不要です。ファイル監査者の経路も開いています。\n\nlibrarian@files.packet.test / brick-stair\narchivist@custodym11.packet.test / shelf-larch\n"
+
+msgid "IN2_M11_CONTEXT"
+msgstr "[解決済みのパスが、基準フォルダー外の標識に届くと示す。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nDOWNLOAD HANDOFF\nbase directory: /srv/public\nneighbor marker: /srv/private/marker.log\n\n要求パスを解決してから、どの保管庫に属するか判定してください。似た接頭辞だけでは所属を示せません。\n"
+
+msgid "IN2_M11_EXPLAIN"
+msgstr "解決済みのパスが、基準フォルダー外の標識に届くと示す。\n文字列の接頭辞では、実際にそのフォルダー内かどうかは決まりません。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M11_GOAL"
+msgstr "解決済みのパスが、基準フォルダー外の標識に届くと示す。"
+
+msgid "IN2_M11_HINT_1"
+msgstr "文字列の接頭辞では、実際にそのフォルダー内かどうかは決まりません。"
+
+msgid "IN2_M11_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M11_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M11_HOST_NAME"
+msgstr "Files 業務サービス"
+
+msgid "IN2_M11_PRINCIPLE"
+msgstr "文字列の接頭辞では、実際にそのフォルダー内かどうかは決まりません。"
+
+msgid "IN2_M11_REPLY"
+msgstr "名前の先頭が同じでも、場所は違いました。標識にはアップロード処理キューが記されています。承認票にはソユンの名前もあります。私が説明する番が近づいてきました。"
+
+msgid "IN2_M11_REPLY_SUBJECT"
+msgstr "[確認] 資料室の外のファイル"
+
+msgid "IN2_M11_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nDESK TRANSCRIPT\ndownload:/srv/public\n\nRETAINED TRANSCRIPT\nresolved:/srv/private/marker.log"
+
+msgid "IN2_M11_SUBJECT"
+msgstr "[夜間依頼] 資料室の外のファイル"
+
+msgid "IN2_M11_TITLE"
+msgstr "資料室の外のファイル"
+
+msgid "IN2_M12_AUDIT"
+msgstr "正規 JPEG の受付を守り、偽装された新規ファイルを拒否し、保存済みの非信頼アップロードの実行リスクを封じる。\n\n正規業務の成功と拒否すべき要求の結果を確認した対応記録です。原資料も保管されています。"
+
+msgid "IN2_M12_AUDIT_NAME"
+msgstr "Upload 独立保管先"
+
+msgid "IN2_M12_BRIEF"
+msgstr "写真を上げると仮想処理ジョブが始まります。拡張子だけで止めると、正規の写真も失います。名前、内容形式、保存場所、実行経路を分けて考えましょう。\n\n保守写真を受け付けたまま、誤った処理経路だけを閉じてください。その後、ソユンが通話したいそうです。顔を公開するかどうかは事件の進行に影響しません。\n\ncurator@upload.packet.test / photo-bridge\nreviewer@custodym12.packet.test / sepia-glass\n\n\n元の処理で内容検査と実行できない保存を直すか、脆弱な入口を閉じて正規写真を承認済みの限定処理へ移せます。以前に保存した危険なアップロードも、現在は実行できない状態にしてください。"
+
+msgid "IN2_M12_CASE_DISGUISED"
+msgstr "写真を装った入力"
+
+msgid "IN2_M12_CASE_DISGUISED_GATEWAY"
+msgstr "承認済み処理側の偽装ファイル"
+
+msgid "IN2_M12_CASE_PHOTO"
+msgstr "正規 JPEG を作成"
+
+msgid "IN2_M12_CONTEXT"
+msgstr "元の処理で内容検査と実行できない保存を直すか、脆弱な入口を閉じて正規写真を承認済みの限定処理へ移せます。以前に保存した危険なアップロードも、現在は実行できない状態にしてください。"
+
+msgid "IN2_M12_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "IN2_M12_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "IN2_M12_CONTROL_NO_EXECUTION"
+msgstr "アップロードを実行せず保存"
+
+msgid "IN2_M12_CONTROL_PHOTO_CHECK"
+msgstr "写真の内容形式を検査"
+
+msgid "IN2_M12_EXPLAIN"
+msgstr "元の処理で内容検査と実行できない保存を直すか、脆弱な入口を閉じて正規写真を承認済みの限定処理へ移せます。以前に保存した危険なアップロードも、現在は実行できない状態にしてください。"
+
+msgid "IN2_M12_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "IN2_M12_GOAL"
+msgstr "正規 JPEG の受付を守り、偽装された新規ファイルを拒否し、保存済みの非信頼アップロードの実行リスクを封じる。"
+
+msgid "IN2_M12_HINT_1"
+msgstr "正規 JPEG の受付を守り、偽装された新規ファイルを拒否し、保存済みの非信頼アップロードの実行リスクを封じる。"
+
+msgid "IN2_M12_HINT_2"
+msgstr "元の処理で内容検査と実行できない保存を直すか、脆弱な入口を閉じて正規写真を承認済みの限定処理へ移せます。以前に保存した危険なアップロードも、現在は実行できない状態にしてください。"
+
+msgid "IN2_M12_HINT_3"
+msgstr "直接対応では該当する制御を直します。代替策では元の入口を制限し、正規の要求に承認経路を選んでください。すべて止めると正規業務も失敗します。"
+
+msgid "IN2_M12_HOST_NAME"
+msgstr "Upload 業務サービス"
+
+msgid "IN2_M12_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "IN2_M12_PRINCIPLE"
+msgstr "許可は操作する主体・対象・業務権限で決まります。処理経路を変えた場合は、新しい経路でも正規業務と拒否すべき要求を確かめてください。"
+
+msgid "IN2_M12_REPLY"
+msgstr "写真は届き、実行境界も守られています。ソユンです。移管ツールは作りましたが、分類除外は承認していません。署名だけで結論を出さず、診断サーバーが実際に動かしたジョブを見てください。"
+
+msgid "IN2_M12_REPLY_SUBJECT"
+msgstr "[確認] 写真と名付けられたファイル"
+
+msgid "IN2_M12_ROUTE"
+msgstr "元の処理で内容検査と実行できない保存を直すか、脆弱な入口を閉じて正規写真を承認済みの限定処理へ移せます。以前に保存した危険なアップロードも、現在は実行できない状態にしてください。"
+
+msgid "IN2_M12_SUBJECT"
+msgstr "[夜間依頼] 写真と名付けられたファイル"
+
+msgid "IN2_M12_TITLE"
+msgstr "写真と名付けられたファイル"
+
+msgid "IN2_M13_AUDIT"
+msgstr "[M13 観察資料]\n登録済み仮想ジョブの実行主体と引数の境界を示す。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\ndiagnostic input triggers the bounded marker job under worker identity\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M13_AUDIT_NAME"
+msgstr "Diagnostic 独立保管先"
+
+msgid "IN2_M13_BRIEF"
+msgstr "診断ログの照会は一件なのに、キューにはジョブが二件あります。入力がどこでジョブ構造になったか追ってください。ここでは実際のプログラムは起動しません。\n\n試せるのは登録済みの無害な仮想標識ジョブだけです。実行境界を直接確認しても、ジョブ監査で同じ事実を示しても構いません。不要な変更は残さないでください。\n\ndiagnostician@diagnostic.packet.test / copper-lens\ndispatcher@custodym13.packet.test / patient-motor\n"
+
+msgid "IN2_M13_CONTEXT"
+msgstr "[登録済み仮想ジョブの実行主体と引数の境界を示す。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nDIAGNOSTIC QUEUE\nrequest N47: diagnose\nadditional job: inspect:QUEUE13\nworker: inspection / limited read\n\nこの検証欄では、登録された二つの仮想ジョブ diagnose と inspect:QUEUE13 を ; で区切れます。他のジョブは存在しません。OS のシェルではありません。\n"
+
+msgid "IN2_M13_EXPLAIN"
+msgstr "登録済み仮想ジョブの実行主体と引数の境界を示す。\nQUEUE13 の inspect 標識は、実際のシェルコマンドではありません。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M13_GOAL"
+msgstr "登録済み仮想ジョブの実行主体と引数の境界を示す。"
+
+msgid "IN2_M13_HINT_1"
+msgstr "QUEUE13 の inspect 標識は、実際のシェルコマンドではありません。"
+
+msgid "IN2_M13_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M13_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M13_HOST_NAME"
+msgstr "Diagnostic 業務サービス"
+
+msgid "IN2_M13_PRINCIPLE"
+msgstr "QUEUE13 の inspect 標識は、実際のシェルコマンドではありません。"
+
+msgid "IN2_M13_REPLY"
+msgstr "二つ目のジョブは内部状態チェッカーを呼びました。実行できても管理者になったわけではありません。そのジョブから見えるアドレスを、次のサーバーで調べてください。"
+
+msgid "IN2_M13_REPLY_SUBJECT"
+msgstr "[確認] 診断ボタンの二つ目の仕事"
+
+msgid "IN2_M13_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nparent | job | actor\nN47 | inspect:QUEUE13 | worker\nN46 | status | worker"
+
+msgid "IN2_M13_SUBJECT"
+msgstr "[夜間依頼] 診断ボタンの二つ目の仕事"
+
+msgid "IN2_M13_TITLE"
+msgstr "診断ボタンの二つ目の仕事"
+
+msgid "IN2_M14_AUDIT"
+msgstr "[M14 観察資料]\nサーバーの主体を経由し、内部標識と経路を確認する。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\npreview worker reaches internal status marker through a server-side route\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M14_AUDIT_NAME"
+msgstr "Preview 独立保管先"
+
+msgid "IN2_M14_BRIEF"
+msgstr "私のブラウザーからは閉じていても、プレビューサーバーからは見えるアドレスがあります。要求する主体によって地図は変わります。外部アドレスではなく、仮想ノード間の経路を見てください。\n\nTraceRoute を接続しました。最終宛先と要求主体を確かめ、内部標識を一件回収してください。承認済みの保守プロキシ経路でも同じ資料を確認できます。\n\npreviewer@preview.packet.test / marsh-frame\nproxyreader@custodym14.packet.test / inland-heron\n"
+
+msgid "IN2_M14_CONTEXT"
+msgstr "[サーバーの主体を経由し、内部標識と経路を確認する。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://status.packet.test/internal/marker\npublic browser: no direct internal route\n\n最終宛先と要求者の権限は、別々に確認する必要があります。\n"
+
+msgid "IN2_M14_EXPLAIN"
+msgstr "サーバーの主体を経由し、内部標識と経路を確認する。\nアドレスだけでなく、誰がそれを要求するかを見てください。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M14_GOAL"
+msgstr "サーバーの主体を経由し、内部標識と経路を確認する。"
+
+msgid "IN2_M14_HINT_1"
+msgstr "アドレスだけでなく、誰がそれを要求するかを見てください。"
+
+msgid "IN2_M14_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M14_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M14_HOST_NAME"
+msgstr "Preview 業務サービス"
+
+msgid "IN2_M14_INTERNAL_NAME"
+msgstr "内部状態標識"
+
+msgid "IN2_M14_PRINCIPLE"
+msgstr "アドレスだけでなく、誰がそれを要求するかを見てください。"
+
+msgid "IN2_M14_REPLY"
+msgstr "見えなかった管理網につながりました。ただし標識サービスへの到達と管理権限は別です。市の担当者テギョンが記録を確認したいそうです。公式の地図と実際の経路を比べましょう。"
+
+msgid "IN2_M14_REPLY_SUBJECT"
+msgstr "[確認] サーバーだけに見えるアドレス"
+
+msgid "IN2_M14_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nrequest | actor | target\nHOP14 | preview-worker | status-internal\nHOP13 | citizen | public"
+
+msgid "IN2_M14_SUBJECT"
+msgstr "[夜間依頼] サーバーだけに見えるアドレス"
+
+msgid "IN2_M14_TITLE"
+msgstr "サーバーだけに見えるアドレス"
+
+msgid "IN2_M15_AUDIT"
+msgstr "[M15 観察資料]\n露出経路と権限を確かめ、制限付き管理セッションに入る。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nold relay permits a read-only management session while public work continues\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M15_AUDIT_NAME"
+msgstr "Gateway 独立保管先"
+
+msgid "IN2_M15_BRIEF"
+msgstr "市のサービス担当、テギョンです。公開された管理経路はないと報告されていましたが、あなたの資料はそれと矛盾します。市民サービスを止めず、どこまで到達できるか確認してください。\n\n古い中継と臨時保守アカウントが廃止されていません。扉が開いただけで完了とせず、たどり着いたセッションの権限を確かめてください。\n\nrelayop@gateway.packet.test / narrow-gate\nnetworkauditor@custodym15.packet.test / winter-span\n"
+
+msgid "IN2_M15_CONTEXT"
+msgstr "[露出経路と権限を確かめ、制限付き管理セッションに入る。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nDESK TRANSCRIPT\ncitizen:443:filtered\n\nRETAINED TRANSCRIPT\nrelay:443:open"
+
+msgid "IN2_M15_EXPLAIN"
+msgstr "露出経路と権限を確かめ、制限付き管理セッションに入る。\n同じポートでも、公開網と中継網では見え方が変わります。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M15_GOAL"
+msgstr "露出経路と権限を確かめ、制限付き管理セッションに入る。"
+
+msgid "IN2_M15_HINT_1"
+msgstr "同じポートでも、公開網と中継網では見え方が変わります。"
+
+msgid "IN2_M15_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M15_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M15_HOST_NAME"
+msgstr "Gateway 業務サービス"
+
+msgid "IN2_M15_PRINCIPLE"
+msgstr "同じポートでも、公開網と中継網では見え方が変わります。"
+
+msgid "IN2_M15_REPLY"
+msgstr "読み取り限定の管理セッションは実在しました。私が承認したのは緊急接続で、無期限の管理経路ではありません。その隙間がどう広がったか、次のフォルダーのグループ権限を見てください。"
+
+msgid "IN2_M15_REPLY_SUBJECT"
+msgstr "[確認] 閉じたはずの管理網"
+
+msgid "IN2_M15_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nACCESS REGISTER\nrequired group: auditors\naccount: networkauditor\nscope: limited evidence read\n\n入力したアカウント表示ではなく、実際に認証されたアカウントとグループを確認してください。\n"
+
+msgid "IN2_M15_SUBJECT"
+msgstr "[夜間依頼] 閉じたはずの管理網"
+
+msgid "IN2_M15_TARGET_NAME"
+msgstr "M15 制限付き証拠サービス"
+
+msgid "IN2_M15_TITLE"
+msgstr "閉じたはずの管理網"
+
+msgid "IN2_M16_AUDIT"
+msgstr "[M16 観察資料]\n現在のグループの過剰な読み取り範囲を示し、記録を回収する。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nshared group path expands read access to the signed retention record\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M16_AUDIT_NAME"
+msgstr "Operations 独立保管先"
+
+msgid "IN2_M16_BRIEF"
+msgstr "今のセッションで読めないファイルが、同じグループのジョブ経路からは見えます。アカウント名だけでなくグループと親ディレクトリを見てください。万能な権限ではなく、必要な記録までの狭い拡張が目標です。\n\n署名付き監査コピーもあります。どちらでも原本と他人の権限を守ってください。その後、私の資料の出所も明かします。\n\ntechnician@operations.packet.test / lintel-fern\nrecordsman@custodym16.packet.test / old-granite\n"
+
+msgid "IN2_M16_CONTEXT"
+msgstr "[現在のグループの過剰な読み取り範囲を示し、記録を回収する。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nACCESS REGISTER\nrequired group: retention\naccount: technician\nscope: limited evidence read\n\n入力したアカウント表示ではなく、実際に認証されたアカウントとグループを確認してください。\n"
+
+msgid "IN2_M16_EXPLAIN"
+msgstr "現在のグループの過剰な読み取り範囲を示し、記録を回収する。\nアカウント名だけでなく、親ディレクトリとグループも調べてください。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M16_GOAL"
+msgstr "現在のグループの過剰な読み取り範囲を示し、記録を回収する。"
+
+msgid "IN2_M16_HINT_1"
+msgstr "アカウント名だけでなく、親ディレクトリとグループも調べてください。"
+
+msgid "IN2_M16_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M16_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M16_HOST_NAME"
+msgstr "Operations 業務サービス"
+
+msgid "IN2_M16_PRINCIPLE"
+msgstr "アカウント名だけでなく、親ディレクトリとグループも調べてください。"
+
+msgid "IN2_M16_REPLY"
+msgstr "追加の読み取り範囲を示せました。ミンソです。私は記録の保存義務を検証していました。移管後の除外を独立に確かめる監査資料が残っています。弱い秘密とサーバーの権限は分けて調べてください。"
+
+msgid "IN2_M16_REPLY_SUBJECT"
+msgstr "[確認] 共有された保守フォルダー"
+
+msgid "IN2_M16_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\npermit | group | scope\nACL16 | retention | extra-read\nACL15 | staff | normal"
+
+msgid "IN2_M16_SUBJECT"
+msgstr "[夜間依頼] 共有された保守フォルダー"
+
+msgid "IN2_M16_TITLE"
+msgstr "共有された保守フォルダー"
+
+msgid "IN2_M17_AUDIT"
+msgstr "指定された保存検証表の正規コピーです。実際に使った保管庫または委任経路の出所を残してください。\n\nVerification ledger 17\nReader scope: designated retention sheet only.\nOriginal retained.\n"
+
+msgid "IN2_M17_AUDIT_NAME"
+msgstr "Auditvault 独立保管先"
+
+msgid "IN2_M17_BRIEF"
+msgstr "承認済みの架空候補一覧と、委任監査の経路があります。制限付き保管庫の実際の認証で候補を確かめるか、狭く承認された委任経路で同じ表を読んでください。XOR の単語復元でも、実際のパスワードハッシュ解読性能試験でもありません。\n\nauditor@auditvault.packet.test / mapped-star\ndelegate@custodym17.packet.test / field-chestnut\n"
+
+msgid "IN2_M17_CONTEXT"
+msgstr "引き継ぎの命名規則と承認済み候補を比べてください。実際の仮想アカウント認証と限定ファイル権限で確かめます。オフラインのパスワードハッシュ解読アルゴリズムではありません。\n\nAPPROVED CANDIDATES\nlumen-71\nlumen-17\nlunar-17\nSHIFT REGISTER\nlabel=lumen\nshift=17\nphrase=label-shift\nVAULT=proofvault.packet.test\nACCOUNT=reader\nSCOPE=verification-sheet\n"
+
+msgid "IN2_M17_EXPLAIN"
+msgstr "候補を知ることと、その資料への権限は別の条件です。仮想認証とファイルアクセスをそれぞれ確かめてください。"
+
+msgid "IN2_M17_GOAL"
+msgstr "承認済み候補か限定された監査委任で、指定の検証表だけを回収する。"
+
+msgid "IN2_M17_HINT_1"
+msgstr "提示された候補規則と保管庫アカウントの範囲を確認してください。"
+
+msgid "IN2_M17_HINT_2"
+msgstr "/desk/candidates.txt の label/shift 規則と保管庫アドレスを読むか、承認済み委任を使ってください。"
+
+msgid "IN2_M17_HINT_3"
+msgstr "候補が有効かは実際の認証で決まります。無関係な資料は不要で、XOR の単語が解答ではありません。"
+
+msgid "IN2_M17_HOST_NAME"
+msgstr "Auditvault 業務サービス"
+
+msgid "IN2_M17_PRINCIPLE"
+msgstr "候補を知ることと、その資料への権限は別の条件です。仮想認証とファイルアクセスをそれぞれ確かめてください。"
+
+msgid "IN2_M17_REPLY"
+msgstr "保管庫の N47 検証表を確認しました。有効なトークンは現在の設定から消えていますが、変更履歴には参照が残っています。削除と失効が同じ出来事だったのか確かめてください。"
+
+msgid "IN2_M17_REPLY_SUBJECT"
+msgstr "[確認] 短い秘密、長い痕跡"
+
+msgid "IN2_M17_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nACCESS REGISTER\nrequired group: auditors\naccount: delegate\nscope: limited evidence read\n\n入力したアカウント表示ではなく、実際に認証されたアカウントとグループを確認してください。\n"
+
+msgid "IN2_M17_SUBJECT"
+msgstr "[夜間依頼] 短い秘密、長い痕跡"
+
+msgid "IN2_M17_TARGET_NAME"
+msgstr "M17 制限付き証拠サービス"
+
+msgid "IN2_M17_TITLE"
+msgstr "短い秘密、長い痕跡"
+
+msgid "IN2_M18_AUDIT"
+msgstr "[M18 観察資料]\n古いトークンの出所、有効性、読み取り範囲を示す。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nretired configuration reference reconstructs a still-valid scoped token\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M18_AUDIT_NAME"
+msgstr "Repository 独立保管先"
+
+msgid "IN2_M18_BRIEF"
+msgstr "現在の設定にトークンはありません。でも古いトークンが無効とは限りません。変更履歴とジョブログに分かれたサービスアドレスとトークン参照を組み合わせてください。\n\n使うのは承認済みの架空トークンだけです。出所、現在の読み取り範囲、その権限が記録に合うかを調べます。実在の秘密は扱いません。\n\nbuilder@repository.packet.test / hidden-seam\nscheduler@custodym18.packet.test / folded-atlas\n"
+
+msgid "IN2_M18_CONTEXT"
+msgstr "[古いトークンの出所、有効性、読み取り範囲を示す。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nBUILD HISTORY\nold setting: RETENTION_TOKEN=retention-read-N47\ncurrent setting: RETENTION_TOKEN=(removed)\njob target: retention service\n\nファイルからの削除は、サーバーでの失効ではありません。実際に許可される読み取りを確かめてください。\n"
+
+msgid "IN2_M18_EXPLAIN"
+msgstr "古いトークンの出所、有効性、読み取り範囲を示す。\n現在の設定から消えているだけで、失効したと判断しないでください。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M18_GOAL"
+msgstr "古いトークンの出所、有効性、読み取り範囲を示す。"
+
+msgid "IN2_M18_HINT_1"
+msgstr "現在の設定から消えているだけで、失効したと判断しないでください。"
+
+msgid "IN2_M18_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M18_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M18_HOST_NAME"
+msgstr "Repository 業務サービス"
+
+msgid "IN2_M18_PRINCIPLE"
+msgstr "現在の設定から消えているだけで、失効したと判断しないでください。"
+
+msgid "IN2_M18_REPLY"
+msgstr "トークンは有効で、文書より広い範囲を読めました。同じ要求が暗号化区間を通ったという報告もあります。それだけで、誰が内容を見たかは結論できません。"
+
+msgid "IN2_M18_REPLY_SUBJECT"
+msgstr "[確認] 消しても残る設定"
+
+msgid "IN2_M18_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\ntoken | state | scope\nretention-read-N47 | active | retention-read\nretired-N46 | revoked | none"
+
+msgid "IN2_M18_SUBJECT"
+msgstr "[夜間依頼] 消しても残る設定"
+
+msgid "IN2_M18_TITLE"
+msgstr "消しても残る設定"
+
+msgid "IN2_M19_AUDIT"
+msgstr "[M19 観察資料]\n要求 N47 の本文が見える場所と見えない場所を区別する。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nrequest N47 body visibility differs between transit and termination\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M19_AUDIT_NAME"
+msgstr "Edge 独立保管先"
+
+msgid "IN2_M19_BRIEF"
+msgstr "PacketLens は魔法の復号器ではありません。途中の観測者と復号する終端では見えるものが違います。同じ要求 ID が見えても、本文は見えないことがあります。\n\n平文区間、暗号化区間、終端ログを分け、標識がどこで露出したか確かめてください。不明なことは不明と残し、正規の通信を守りましょう。\n\nobserver@edge.packet.test / silver-estuary\nterminator@custodym19.packet.test / warm-endpoint\n"
+
+msgid "IN2_M19_CONTEXT"
+msgstr "[要求 N47 の本文が見える場所と見えない場所を区別する。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nrequest | point | body\nN47 | transit | encrypted\nN47 | endpoint | marker:N47\nN46 | endpoint | unrelated"
+
+msgid "IN2_M19_EXPLAIN"
+msgstr "要求 N47 の本文が見える場所と見えない場所を区別する。\n同じ要求 ID を軸に、途中と終端の観察を比べてください。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M19_GOAL"
+msgstr "要求 N47 の本文が見える場所と見えない場所を区別する。"
+
+msgid "IN2_M19_HINT_1"
+msgstr "同じ要求 ID を軸に、途中と終端の観察を比べてください。"
+
+msgid "IN2_M19_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M19_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M19_HOST_NAME"
+msgstr "Edge 業務サービス"
+
+msgid "IN2_M19_PRINCIPLE"
+msgstr "同じ要求 ID を軸に、途中と終端の観察を比べてください。"
+
+msgid "IN2_M19_REPLY"
+msgstr "途中では本文が見えず、終端ログには残っていました。外部盗聴の証拠にはなりません。次は、ずれた時計の記録を同じ出来事に結び付けましょう。"
+
+msgid "IN2_M19_REPLY_SUBJECT"
+msgstr "[確認] 見えるパケット、見えない内容"
+
+msgid "IN2_M19_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nDESK TRANSCRIPT\ntransit:N47:encrypted\n\nRETAINED TRANSCRIPT\nendpoint:N47:marker"
+
+msgid "IN2_M19_SUBJECT"
+msgstr "[夜間依頼] 見えるパケット、見えない内容"
+
+msgid "IN2_M19_TITLE"
+msgstr "見えるパケット、見えない内容"
+
+msgid "IN2_M20_AUDIT"
+msgstr "[M20 観察資料]\n時計のずれを考慮し、承認、分類、除外の順序を示す。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nclock offsets separate emergency approval from classification and exclusion\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M20_AUDIT_NAME"
+msgstr "Timeline 独立保管先"
+
+msgid "IN2_M20_BRIEF"
+msgstr "私の緊急承認は移管より後に見えます。サーバー時計が違っても、署名の範囲は消えません。時刻と責任を混同せず、原本で確かめてください。\n\n要求 ID、セッション、トークン、転送記録をつなげば順序を復元できます。ドユンの中継は病院通知を守りましたが、開いたままにした決定も記録に残す必要があります。\n\nanalyst@timeline.packet.test / steady-clock\nnotary@custodym20.packet.test / true-minute\n"
+
+msgid "IN2_M20_CONTEXT"
+msgstr "[時計のずれを考慮し、承認、分類、除外の順序を示す。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nrequest | event | clock_offset\nN47 | approval | 90\nN47 | classification | -30\nN47 | retention-exclusion | 0"
+
+msgid "IN2_M20_EXPLAIN"
+msgstr "時計のずれを考慮し、承認、分類、除外の順序を示す。\n時刻が似た行より、要求 ID が同じ行を先につないでください。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M20_GOAL"
+msgstr "時計のずれを考慮し、承認、分類、除外の順序を示す。"
+
+msgid "IN2_M20_HINT_1"
+msgstr "時刻が似た行より、要求 ID が同じ行を先につないでください。"
+
+msgid "IN2_M20_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M20_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M20_HOST_NAME"
+msgstr "Timeline 業務サービス"
+
+msgid "IN2_M20_PRINCIPLE"
+msgstr "時刻が似た行より、要求 ID が同じ行を先につないでください。"
+
+msgid "IN2_M20_REPLY"
+msgstr "緊急接続の承認、例外分類の適用、保存対象からの除外は三段階でした。一人の命令だけでは説明できません。ポータルと内部網の原本があれば、推測を事実に変えられます。"
+
+msgid "IN2_M20_REPLY_SUBJECT"
+msgstr "[確認] 違う時計、同じ事件"
+
+msgid "IN2_M20_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nDESK TRANSCRIPT\napproval:00:45:scope=connection\n\nRETAINED TRANSCRIPT\nexclusion:00:47:scope=retention"
+
+msgid "IN2_M20_SUBJECT"
+msgstr "[夜間依頼] 違う時計、同じ事件"
+
+msgid "IN2_M20_TITLE"
+msgstr "違う時計、同じ事件"
+
+msgid "IN2_M21_AUDIT"
+msgstr "[M21 観察資料]\nポータルへの入口と記録の権限を分け、封印資料に届く。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nsealed application sheet ECHO-21 identifies excluded receipt cohorts\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M21_AUDIT_NAME"
+msgstr "Portal 独立保管先"
+
+msgid "IN2_M21_BRIEF"
+msgstr "今回は使うツールを指定しません。市民ポータルの受付参照と照会境界には別々の経路があります。これまでの道具をどこで再利用できるか考えてください。\n\n目標は封印記録 ECHO-21 一件です。最初の扉を開いても、最後の記録の権限は得られません。出所と保存条件を満たせば、どの有効経路でも構いません。\n\ncaseworker@portal.packet.test / sealed-iris\nattachmentreader@custodym21.packet.test / hollow-shelf\n"
+
+msgid "IN2_M21_CONTEXT"
+msgstr "[ポータルへの入口と記録の権限を分け、封印資料に届く。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nCATALOGUE LOOKUP\nquery field: q\nsealed lookup: ECHO-21\nreceipt lead: C731\nreceipt lookup endpoint: /receipts\n\nTRACE\n引用された検索値を小さな等価条件に連結しています。脆弱な経路では OR 比較が単なる文字列ではなく条件の一部になります。保管された目録には独立経路があります。\n"
+
+msgid "IN2_M21_EXPLAIN"
+msgstr "ポータルへの入口と記録の権限を分け、封印資料に届く。\n最初の受付参照は次の照会の手掛かりで、最終記録そのものではありません。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M21_GOAL"
+msgstr "ポータルへの入口と記録の権限を分け、封印資料に届く。"
+
+msgid "IN2_M21_HINT_1"
+msgstr "最初の受付参照は次の照会の手掛かりで、最終記録そのものではありません。"
+
+msgid "IN2_M21_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M21_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M21_HOST_NAME"
+msgstr "Portal 業務サービス"
+
+msgid "IN2_M21_PRINCIPLE"
+msgstr "最初の受付参照は次の照会の手掛かりで、最終記録そのものではありません。"
+
+msgid "IN2_M21_REPLY"
+msgstr "分類除外の適用表を得ました。でも最初の承認者の意図までは示せません。内部管理記録で対象と承認範囲を確かめましょう。"
+
+msgid "IN2_M21_REPLY_SUBJECT"
+msgstr "[確認] ポータルの奥の封印記録"
+
+msgid "IN2_M21_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nDOWNLOAD HANDOFF\nbase directory: /portal/attachments\nneighbor marker: /sealed/ECHO-21.log\n\n要求パスを解決してから、どの保管庫に属するか判定してください。似た接頭辞だけでは所属を示せません。\n"
+
+msgid "IN2_M21_SUBJECT"
+msgstr "[夜間依頼] ポータルの奥の封印記録"
+
+msgid "IN2_M21_TITLE"
+msgstr "ポータルの奥の封印記録"
+
+msgid "IN2_M22_AUDIT"
+msgstr "[M22 観察資料]\n公開サーバーから管理網まで、主体と権限の変化を確認する。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nmanagement record ECHO-22 links exception cohorts to retention overrides\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M22_AUDIT_NAME"
+msgstr "Preview 独立保管先"
+
+msgid "IN2_M22_BRIEF"
+msgstr "プレビューサーバーから内部管理網へつながりますが、途中で要求主体と権限が変わります。地図に線を引くだけでなく、各段階が本当に可能か確かめてください。\n\n必要なのは管理セッションの ECHO-22 一件だけです。ジョブログから保守中継へ入る別経路もあります。市民サービスと他のアカウントを守る道を選んでください。\n\npreviewer@preview.packet.test / gray-inlet\njobreader@custodym22.packet.test / narrow-bridge\n"
+
+msgid "IN2_M22_CONTEXT"
+msgstr "[公開サーバーから管理網まで、主体と権限の変化を確認する。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://control.packet.test/relay/entry\npublic browser: no direct internal route\n\n最終宛先と要求者の権限は、別々に確認する必要があります。\n"
+
+msgid "IN2_M22_EXPLAIN"
+msgstr "公開サーバーから管理網まで、主体と権限の変化を確認する。\nピボット標識の先に、別の内部セッションと目標ファイルがあります。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M22_GOAL"
+msgstr "公開サーバーから管理網まで、主体と権限の変化を確認する。"
+
+msgid "IN2_M22_HINT_1"
+msgstr "ピボット標識の先に、別の内部セッションと目標ファイルがあります。"
+
+msgid "IN2_M22_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M22_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M22_HOST_NAME"
+msgstr "Preview 業務サービス"
+
+msgid "IN2_M22_PRINCIPLE"
+msgstr "ピボット標識の先に、別の内部セッションと目標ファイルがあります。"
+
+msgid "IN2_M22_REPLY"
+msgstr "対象は故障サーバーではなく、「整理する例外」とされた受付でした。サービス継続と記録保存は別々の方針に結ばれています。最後のアクセスの前に、正規の業務を戻しましょう。"
+
+msgid "IN2_M22_REPLY_SUBJECT"
+msgstr "[確認] ウェブから管理網へ"
+
+msgid "IN2_M22_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nDOWNLOAD HANDOFF\nbase directory: /jobs/archive\nneighbor marker: /handoff/control.key\n\n要求パスを解決してから、どの保管庫に属するか判定してください。似た接頭辞だけでは所属を示せません。\n"
+
+msgid "IN2_M22_SUBJECT"
+msgstr "[夜間依頼] ウェブから管理網へ"
+
+msgid "IN2_M22_TARGET_NAME"
+msgstr "M22 制限付き証拠サービス"
+
+msgid "IN2_M22_TITLE"
+msgstr "ウェブから管理網へ"
+
+msgid "IN2_M23_AUDIT"
+msgstr "選んだ経路で認証・セッション・写真・通知を復旧し、それぞれのモデル内の脅威を拒否し続ける。\n\n正規業務の成功と拒否すべき要求の結果を確認した対応記録です。原資料も保管されています。"
+
+msgid "IN2_M23_AUDIT_NAME"
+msgstr "Recovery 独立保管先"
+
+msgid "IN2_M23_BRIEF"
+msgstr "急な一括対処で写真、通知、保守がすべて止まりました。以前の無防備な状態に戻すわけにはいきません。業務に必要な経路と権限だけを戻しましょう。\n\n市民一人の成功だけで終わらず、保守担当者と作業アカウントも確認してください。古いトークンと無許可要求は拒否したままにします。部分復旧か、承認経路への移行を選べます。\n\ncaretaker@recovery.packet.test / bright-corridor\nsafetylead@custodym23.packet.test / three-lanterns\n\n\n元の認証・ファイル・セッション制御を精密に復旧するか、脆弱な入口を隔離し、承認ゲートウェイと待機通知へ業務を移せます。新しいサービスでも、終了済み権限・偽装ファイル・範囲外対象を拒否する必要があります。"
+
+msgid "IN2_M23_CASE_DISGUISED"
+msgstr "写真を装った入力"
+
+msgid "IN2_M23_CASE_DISGUISED_GATEWAY"
+msgstr "承認済み処理側の偽装ファイル"
+
+msgid "IN2_M23_CASE_FAILED_1"
+msgstr "繰り返し失敗 1"
+
+msgid "IN2_M23_CASE_FAILED_2"
+msgstr "繰り返し失敗 2"
+
+msgid "IN2_M23_CASE_FAILED_3"
+msgstr "繰り返し失敗 3"
+
+msgid "IN2_M23_CASE_FRESH"
+msgstr "新しい正規セッション"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_1"
+msgstr "繰り返し失敗 1（承認済み経路）"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_2"
+msgstr "繰り返し失敗 2（承認済み経路）"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_3"
+msgstr "繰り返し失敗 3（承認済み経路）"
+
+msgid "IN2_M23_CASE_INTERNAL_TARGET"
+msgstr "範囲外の内部対象"
+
+msgid "IN2_M23_CASE_LEGITIMATE"
+msgstr "共有の出発点からの正規市民要求"
+
+msgid "IN2_M23_CASE_NOTIFY"
+msgstr "正規の病院通知を届ける"
+
+msgid "IN2_M23_CASE_OTHER_JOB"
+msgstr "他の正規の長時間ジョブ"
+
+msgid "IN2_M23_CASE_PHOTO"
+msgstr "正規 JPEG を作成"
+
+msgid "IN2_M23_CASE_RETIRED"
+msgstr "元の経路での終了済み権限"
+
+msgid "IN2_M23_CASE_RETIRED_GATEWAY"
+msgstr "承認済み経路での終了済み権限"
+
+msgid "IN2_M23_CASE_STANDBY_TARGET"
+msgstr "待機サービスでの範囲外対象"
+
+msgid "IN2_M23_CASE_WARD_JOB"
+msgstr "病院通知ジョブの正規認証"
+
+msgid "IN2_M23_CONTEXT"
+msgstr "元の認証・ファイル・セッション制御を精密に復旧するか、脆弱な入口を隔離し、承認ゲートウェイと待機通知へ業務を移せます。新しいサービスでも、終了済み権限・偽装ファイル・範囲外対象を拒否する必要があります。"
+
+msgid "IN2_M23_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "IN2_M23_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "IN2_M23_CONTROL_NOTIFY_OPEN"
+msgstr "主通知経路を有効化"
+
+msgid "IN2_M23_CONTROL_NO_EXECUTION"
+msgstr "アップロードを実行せず保存"
+
+msgid "IN2_M23_CONTROL_PHOTO_CHECK"
+msgstr "写真の内容形式を検査"
+
+msgid "IN2_M23_CONTROL_RETRY_LIMIT"
+msgstr "アカウント別の再試行制限"
+
+msgid "IN2_M23_CONTROL_SESSION_GUARD"
+msgstr "終了したセッション権限を検査"
+
+msgid "IN2_M23_CONTROL_STANDBY_OPEN"
+msgstr "待機通知経路を有効化"
+
+msgid "IN2_M23_CONTROL_TARGET_SCOPE"
+msgstr "通知対象を制限"
+
+msgid "IN2_M23_EXPLAIN"
+msgstr "元の認証・ファイル・セッション制御を精密に復旧するか、脆弱な入口を隔離し、承認ゲートウェイと待機通知へ業務を移せます。新しいサービスでも、終了済み権限・偽装ファイル・範囲外対象を拒否する必要があります。"
+
+msgid "IN2_M23_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "IN2_M23_GOAL"
+msgstr "選んだ経路で認証・セッション・写真・通知を復旧し、それぞれのモデル内の脅威を拒否し続ける。"
+
+msgid "IN2_M23_HINT_1"
+msgstr "選んだ経路で認証・セッション・写真・通知を復旧し、それぞれのモデル内の脅威を拒否し続ける。"
+
+msgid "IN2_M23_HINT_2"
+msgstr "元の認証・ファイル・セッション制御を精密に復旧するか、脆弱な入口を隔離し、承認ゲートウェイと待機通知へ業務を移せます。新しいサービスでも、終了済み権限・偽装ファイル・範囲外対象を拒否する必要があります。"
+
+msgid "IN2_M23_HINT_3"
+msgstr "直接対応では該当する制御を直します。代替策では元の入口を制限し、正規の要求に承認経路を選んでください。すべて止めると正規業務も失敗します。"
+
+msgid "IN2_M23_HOST_NAME"
+msgstr "Recovery 業務サービス"
+
+msgid "IN2_M23_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "IN2_M23_PRINCIPLE"
+msgstr "許可は操作する主体・対象・業務権限で決まります。処理経路を変えた場合は、新しい経路でも正規業務と拒否すべき要求を確かめてください。"
+
+msgid "IN2_M23_REPLY"
+msgstr "古い露出を戻さずに、サービスが復旧しました。これで最後の記録を読んでも、市民が代償を払うことはありません。結論を誰にどう渡すか、あなたが決めてください。"
+
+msgid "IN2_M23_REPLY_SUBJECT"
+msgstr "[確認] 安全になって止まった街"
+
+msgid "IN2_M23_ROUTE"
+msgstr "元の認証・ファイル・セッション制御を精密に復旧するか、脆弱な入口を隔離し、承認ゲートウェイと待機通知へ業務を移せます。新しいサービスでも、終了済み権限・偽装ファイル・範囲外対象を拒否する必要があります。"
+
+msgid "IN2_M23_SUBJECT"
+msgstr "[夜間依頼] 安全になって止まった街"
+
+msgid "IN2_M23_TITLE"
+msgstr "安全になって止まった街"
+
+msgid "IN2_M24_AUDIT"
+msgstr "[M24 観察資料]\n最終指示の出所と範囲を示し、資料の引き渡し方を選ぶ。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nECHO directive separated service continuity from record-retention obligations\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M24_AUDIT_NAME"
+msgstr "Control 独立保管先"
+
+msgid "IN2_M24_BRIEF"
+msgstr "最後の依頼です。統合制御記録か独立保管コピーを選べます。ここまでの事実を結び、ECHO の適用範囲と保存除外の指示を確認してください。\n\n署名した人、経路を残した人、移管ツールの作者は、それぞれ責任を負っています。一人の顔で置き換えないでください。目標の原本を残し、必要な事実だけを回収しましょう。\n\nexaminer@control.packet.test / final-map\nkeeper@custodym24.packet.test / open-slate\n"
+
+msgid "IN2_M24_CASE_FOREIGN_DIRECT"
+msgstr "元の入口の担当外アカウント"
+
+msgid "IN2_M24_CASE_FOREIGN_GATEWAY"
+msgstr "承認済み経路の担当外アカウント"
+
+msgid "IN2_M24_CASE_OWN_A"
+msgstr "市民 A 自身の受付票"
+
+msgid "IN2_M24_CASE_OWN_B"
+msgstr "市民 B 自身の受付票"
+
+msgid "IN2_M24_CASE_ROUTE_ALLOWED"
+msgstr "現在の中継から内部稼働記録を読む"
+
+msgid "IN2_M24_CASE_ROUTE_DENIED"
+msgstr "公開ノードから内部への直接経路"
+
+msgid "IN2_M24_CASE_SERVICE_ALLOWED"
+msgstr "限定資格による指示記録の読み取り"
+
+msgid "IN2_M24_CASE_SERVICE_DENIED"
+msgstr "資格範囲外の指示記録要求"
+
+msgid "IN2_M24_CASE_STAFF"
+msgstr "担当職員に委任された受付票"
+
+msgid "IN2_M24_CONTEXT"
+msgstr "過去の完了や台帳は、現在のアクセス結果の代わりにはなりません。同じ現在の世界で、本人と担当外のウェブアクセス、中継と公開ノードからの内部到達、限定資格と無関係な資格をそれぞれ確かめてください。"
+
+msgid "IN2_M24_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "IN2_M24_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "IN2_M24_CONTROL_OWNER_CHECK"
+msgstr "受付票の所有者確認"
+
+msgid "IN2_M24_EDGE_NAME"
+msgstr "公開側の観測ノード"
+
+msgid "IN2_M24_EXPLAIN"
+msgstr "最終指示の出所と範囲を示し、資料の引き渡し方を選ぶ。\nサービス継続と保存除外は、別々の方針として比べる必要があります。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_M24_GATEWAY_NAME"
+msgstr "承認済みの業務経路"
+
+msgid "IN2_M24_GOAL"
+msgstr "最終コピーを保管し、現在のウェブ・内部経路・サービス権限の境界を独立に検証する。"
+
+msgid "IN2_M24_HINT_1"
+msgstr "サービス継続と保存除外は、別々の方針として比べる必要があります。"
+
+msgid "IN2_M24_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_M24_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_M24_HOST_NAME"
+msgstr "Control 業務サービス"
+
+msgid "IN2_M24_LAB_NAME"
+msgstr "稼働業務と対応策の検証"
+
+msgid "IN2_M24_PRINCIPLE"
+msgstr "サービス継続と保存除外は、別々の方針として比べる必要があります。"
+
+msgid "IN2_M24_REPLY"
+msgstr "得たのは万能の鍵ではなく、互いに照合できる記録です。市民を匿名化した公開コピー、封印監査への引き継ぎ、独立検証の保管から選べます。今夜の接続が終わっても、記録は残ります。"
+
+msgid "IN2_M24_REPLY_SUBJECT"
+msgstr "[確認] 最後のアクセス、残る真実"
+
+msgid "IN2_M24_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\ndirective | continuity | exclusion\nECHO | services | retention\nROUTINE | none | none"
+
+msgid "IN2_M24_SUBJECT"
+msgstr "[夜間依頼] 最後のアクセス、残る真実"
+
+msgid "IN2_M24_TITLE"
+msgstr "最後のアクセス、残る真実"
+
+msgid "IN2_M24_VAULT_NAME"
+msgstr "限定された指示記録の保管庫"
+
+msgid "IN2_P01_AUDIT"
+msgstr "[P01 観察資料]\n架空バッファーの境界と、隣の標識状態を示す。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nbounded memory model separates input buffer from adjacent approval state\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_P01_AUDIT_NAME"
+msgstr "Memorylab 独立保管先"
+
+msgid "IN2_P01_BRIEF"
+msgstr "任意の依頼です。固定長メモリー図の隣に承認標識があります。実プロセスもシェルコードもありません。モデルの入力長が隣の状態へどう影響するか観察してください。\n\n指定の無害な標識でも、独立した安全監査資料でも同じ事実を示せます。アドレスの暗記より、誰がどの境界を守るべきかに注目してください。\n\nlabuser@memorylab.packet.test / bounded-copper\nsafety@custodyp01.packet.test / calm-cell\n"
+
+msgid "IN2_P01_CONTEXT"
+msgstr "[架空バッファーの境界と、隣の標識状態を示す。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nMEMORY WORKBENCH\nregion | offsets | initial\ninput buffer | 0..3 | 00 00 00 00\napproval marker | 4 | 00\npadding | 5..7 | 00 00 00\n\n標識バイトは 47（16 進）です。この隔離図には最大 8 バイトしかありません。ホストのメモリーアドレスではありません。\n"
+
+msgid "IN2_P01_EXPLAIN"
+msgstr "架空バッファーの境界と、隣の標識状態を示す。\n4 バイトのバッファー後、オフセット 4 の標識は 0x47 です。実メモリーアドレスではありません。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_P01_GOAL"
+msgstr "架空バッファーの境界と、隣の標識状態を示す。"
+
+msgid "IN2_P01_HINT_1"
+msgstr "4 バイトのバッファー後、オフセット 4 の標識は 0x47 です。実メモリーアドレスではありません。"
+
+msgid "IN2_P01_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_P01_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_P01_HOST_NAME"
+msgstr "Memorylab 業務サービス"
+
+msgid "IN2_P01_PRINCIPLE"
+msgstr "4 バイトのバッファー後、オフセット 4 の標識は 0x47 です。実メモリーアドレスではありません。"
+
+msgid "IN2_P01_REPLY"
+msgstr "モデルの一マスが変わり、実際の認可と同じではないと確かめました。境界を守ることと表示を信じることは違います。実プログラムには、さらに多くの保護と環境条件があります。"
+
+msgid "IN2_P01_REPLY_SUBJECT"
+msgstr "[確認] 境界の隣の一マス"
+
+msgid "IN2_P01_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\noffset | region | value\n3 | buffer | 41\n4 | approval-flag | 47"
+
+msgid "IN2_P01_SUBJECT"
+msgstr "[夜間依頼] 境界の隣の一マス"
+
+msgid "IN2_P01_TITLE"
+msgstr "境界の隣の一マス"
+
+msgid "IN2_PACK_TITLE"
+msgstr "侵入者 · ミッドナイト・アクセス"
+
+msgid "IN2_R01_AUDIT"
+msgstr "[R01 観察資料]\n架空の検証器の定数と分岐から、承認範囲を確認する。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nbounded verifier accepts signature shape without checking retention intent\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_R01_AUDIT_NAME"
+msgstr "Verifier 独立保管先"
+
+msgid "IN2_R01_BRIEF"
+msgstr "小さな検証器の形式・署名・権限範囲を調べてください。擬似コードと呼び出し関係を読むか、入力の組と実行記録を比べられます。正規範囲での許可と、範囲外でも公開される反例を実際に実行してください。"
+
+msgid "IN2_R01_CONTEXT"
+msgstr "小さな検証器の形式・署名・権限範囲を調べてください。擬似コードと呼び出し関係を読むか、入力の組と実行記録を比べられます。正規範囲での許可と、範囲外でも公開される反例を実際に実行してください。\n\nmain(document, permit):\n  if not format_ok(document): deny\n  signature = check_signature(document)\n  if signature: release(document)\n  else: deny\ncheck_signature(document):\n  return signature_ok(document)\n# retention_scope は入力されるが release 前に検査しない\n"
+
+msgid "IN2_R01_EXPLAIN"
+msgstr "形式と署名が通っても、プログラムが調べない権限範囲まで正当に許可されたことにはなりません。"
+
+msgid "IN2_R01_GOAL"
+msgstr "分岐と呼び出しを実行し、正規の許可と範囲外公開の反例を確かめる。"
+
+msgid "IN2_R01_HINT_1"
+msgstr "実際に読まれる入力と、呼ばれる検査を追ってください。"
+
+msgid "IN2_R01_HINT_2"
+msgstr "format_ok・signature_ok と並び、retention_scope がどの分岐に影響するか探してください。"
+
+msgid "IN2_R01_HINT_3"
+msgstr "形式と署名を true に保ち、範囲 authorized/excluded を変え、release の出力と呼び出し記録を比べてください。"
+
+msgid "IN2_R01_HOST_NAME"
+msgstr "Verifier 業務サービス"
+
+msgid "IN2_R01_PRINCIPLE"
+msgstr "形式と署名が通っても、プログラムが調べない権限範囲まで正当に許可されたことにはなりません。"
+
+msgid "IN2_R01_REPLY"
+msgstr "画面の文言と承認分岐は別でした。配備検証器が確かめたのは署名の形で、保存方針ではありません。この限界を監査記録に加えましょう。"
+
+msgid "IN2_R01_REPLY_SUBJECT"
+msgstr "[確認] 小さな検証器の言葉"
+
+msgid "IN2_R01_SUBJECT"
+msgstr "[夜間依頼] 小さな検証器の言葉"
+
+msgid "IN2_R01_TITLE"
+msgstr "小さな検証器の言葉"
+
+msgid "IN2_R01_VM_NAME"
+msgstr "配備検証器の分岐・呼び出し"
+
+msgid "IN2_S01_AUDIT"
+msgstr "[S01 観察資料]\n原本日と再配布日が、別々の出来事を指すか確かめる。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\nnotice original and republication timestamps refer to distinct events\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S01_AUDIT_NAME"
+msgstr "Publication 独立保管先"
+
+msgid "IN2_S01_BRIEF"
+msgstr "任意の依頼です。同じお知らせの二つのコピーで日付が違います。本筋の鍵ではありませんが、誰が記憶を編集したかがわかるかもしれません。仮想サイト、メール、ローテーション済みファイルを比べてください。\n\neditor@publication.packet.test / margin-ash\npublisher@custodys01.packet.test / second-ink\n"
+
+msgid "IN2_S01_CONTEXT"
+msgstr "[原本日と再配布日が、別々の出来事を指すか確かめる。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nDESK TRANSCRIPT\noriginal:00:47\n\nRETAINED TRANSCRIPT\nrepublished:01:12"
+
+msgid "IN2_S01_EXPLAIN"
+msgstr "原本日と再配布日が、別々の出来事を指すか確かめる。\n日付が違う二つのコピーだけで、嘘だとは決められません。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_S01_GOAL"
+msgstr "原本日と再配布日が、別々の出来事を指すか確かめる。"
+
+msgid "IN2_S01_HINT_1"
+msgstr "日付が違う二つのコピーだけで、嘘だとは決められません。"
+
+msgid "IN2_S01_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_S01_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_S01_HOST_NAME"
+msgstr "Publication 業務サービス"
+
+msgid "IN2_S01_PRINCIPLE"
+msgstr "日付が違う二つのコピーだけで、嘘だとは決められません。"
+
+msgid "IN2_S01_REPLY"
+msgstr "後の日付は偽の日付ではなく再配布日でした。原本を見なければ、誰かを嘘つきと決めつけたかもしれません。出所を確かめた記録と一緒に、この違いを残します。"
+
+msgid "IN2_S01_REPLY_SUBJECT"
+msgstr "[確認] 消された引き継ぎのお知らせ"
+
+msgid "IN2_S01_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nnotice | event | time\nN47 | original | 00:47\nN47 | republished | 01:12"
+
+msgid "IN2_S01_SUBJECT"
+msgstr "[夜間依頼] 消された引き継ぎのお知らせ"
+
+msgid "IN2_S01_TITLE"
+msgstr "消された引き継ぎのお知らせ"
+
+msgid "IN2_S02_AUDIT"
+msgstr "[S02 観察資料]\n二つの観察を一回の送信に結び、業務重複の有無を確かめる。\nこの事件の観察資料です。取得経路は source で確認し、ファイル名より記録 ID、本文、出所を検証してください。\n\nNIGHT HANDOFF\ntwo observations correlate to one delivered notification\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S02_AUDIT_NAME"
+msgstr "Relay02 独立保管先"
+
+msgid "IN2_S02_BRIEF"
+msgstr "任意の依頼です。同じ通知が二つの観測地点にあり、市民に二度届いたといわれています。パケットを二度見ることと、業務が二度処理されることは違います。終端の要求 ID と中継経路を比べてください。\n\nobserver@relay02.packet.test / one-echo\ndispatcher@custodys02.packet.test / counted-wave\n"
+
+msgid "IN2_S02_CONTEXT"
+msgstr "[二つの観察を一回の送信に結び、業務重複の有無を確かめる。]\n\n業務台帳から該当する行を探してください。名前や時刻が似た別事件と混同しないでください。以下の識別値、要求、パスは観察原文のままです。\n\nrequest | point | delivery\nN47 | relay02 | one\nN47 | edge | one"
+
+msgid "IN2_S02_EXPLAIN"
+msgstr "二つの観察を一回の送信に結び、業務重複の有無を確かめる。\n観測地点の数と、市民に届いた業務の数を分けてください。\n事件の根拠は使った道具ではなく、観察された状態と出所です。使わなかった技術は失敗ではなく未評価です。"
+
+msgid "IN2_S02_GOAL"
+msgstr "二つの観察を一回の送信に結び、業務重複の有無を確かめる。"
+
+msgid "IN2_S02_HINT_1"
+msgstr "観測地点の数と、市民に届いた業務の数を分けてください。"
+
+msgid "IN2_S02_HINT_2"
+msgstr "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。"
+
+msgid "IN2_S02_HINT_3"
+msgstr "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。"
+
+msgid "IN2_S02_HOST_NAME"
+msgstr "Relay02 業務サービス"
+
+msgid "IN2_S02_PRINCIPLE"
+msgstr "観測地点の数と、市民に届いた業務の数を分けてください。"
+
+msgid "IN2_S02_REPLY"
+msgstr "一つの要求を二地点で見ただけで、業務の重複はありませんでした。ドユンが中継を残した理由も少しわかります。その説明で選択の危険が消えるわけではありませんが、事実は変わります。"
+
+msgid "IN2_S02_REPLY_SUBJECT"
+msgstr "[確認] 二度届いた信号"
+
+msgid "IN2_S02_ROUTE"
+msgstr "[独立保管担当者の作業メモ]\nこの観察台帳は現場応答と独立して残されました。該当する業務番号を探し、現在の事件台帳と比べてください。\n\nrequest | delivery_count | endpoint\nN47 | 1 | citizen\nN46 | 1 | maintenance"
+
+msgid "IN2_S02_SUBJECT"
+msgstr "[夜間依頼] 二度届いた信号"
+
+msgid "IN2_S02_TITLE"
+msgstr "二度届いた信号"
+
+msgid "IN2_TOOL_AUTH_NAME"
+msgstr "ログイン監視"
+
+msgid "IN2_TOOL_COMPARE_NAME"
+msgstr "証拠の比較"
+
+msgid "IN2_TOOL_EXEC_NAME"
+msgstr "JobLens"
+
+msgid "IN2_TOOL_FETCH_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_IDOR_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_MEMORY_NAME"
+msgstr "MemoryLab"
+
+msgid "IN2_TOOL_PACKET_NAME"
+msgstr "PacketLens"
+
+msgid "IN2_TOOL_PATH_NAME"
+msgstr "FileLens"
+
+msgid "IN2_TOOL_PERMISSION_NAME"
+msgstr "AccessView"
+
+msgid "IN2_TOOL_QUERY_NAME"
+msgstr "QueryProbe"
+
+msgid "IN2_TOOL_RENDER_NAME"
+msgstr "ブラウザー追跡"
+
+msgid "IN2_TOOL_SESSION_NAME"
+msgstr "セッション監視"
+
+msgid "IN2_TOOL_TOKEN_NAME"
+msgstr "資格情報の範囲"
+
+msgid "IN2_TOOL_TRACE_NAME"
+msgstr "LogLens"
+
+msgid "IN2_TOOL_UPLOAD_NAME"
+msgstr "メディア受付"
+
 msgid "KEYBOARD_VOLUME"
 msgstr "キーボード音"
 
 msgid "LANGUAGE"
 msgstr "言語"
+
+msgid "LEGACY_CONTINUE"
+msgstr "旧版を続ける"
+
+msgid "LEGACY_CONTINUE_DESC"
+msgstr "旧版の進行をそのまま再開します。新しいキャンペーンとは別に保持されます。"
+
+msgid "LEGACY_SOURCE_UNSUPPORTED"
+msgstr "旧版セーブは見つかりましたが、現在の検証に通りませんでした。原本は保持し、新しいキャンペーンには適用しません。理由: {code}"
 
 msgid "LOAD_GAME"
 msgstr "ロード"
@@ -2489,6 +4982,27 @@ msgstr "[夜間依頼] 境界の隣の一マス"
 msgid "P01_TITLE"
 msgstr "境界の隣の一マス"
 
+msgid "PACK_DEFENDER_SUMMARY"
+msgstr "脅威を防ぎながら、正規の業務を守ってください。"
+
+msgid "PACK_DEFENDER_TITLE"
+msgstr "防御者"
+
+msgid "PACK_INTRUDER_SUMMARY"
+msgstr "閉じた経路を開き、隠された記録を回収してください。"
+
+msgid "PACK_INTRUDER_TITLE"
+msgstr "侵入者"
+
+msgid "PACK_LEGACY_TITLE"
+msgstr "旧版"
+
+msgid "PACK_TRACKER_SUMMARY"
+msgstr "観察と反証で、つながりを絞り込んでください。"
+
+msgid "PACK_TRACKER_TITLE"
+msgstr "追跡者"
+
 msgid "QUIT"
 msgstr "終了"
 
@@ -2581,6 +5095,9 @@ msgstr "やり直す"
 
 msgid "RETURN_TO_ROOM"
 msgstr "F10 · 作業部屋に戻る"
+
+msgid "ROLE_AUDIO_LABEL"
+msgstr "キャンペーンの雰囲気"
 
 msgid "ROOM_CONTROLS"
 msgstr "WASD 移動 · マウス右ボタン長押しで視点操作 · E コンピューター · Esc メニュー"
@@ -2903,6 +5420,399 @@ msgstr "メディア受付"
 msgid "TOOL_VOLUME"
 msgstr "ツール音"
 
+msgid "TR1_ENDING_TITLE"
+msgstr "検証できる引き継ぎ"
+
+msgid "TR1_PACK_TITLE"
+msgstr "追跡者 · 残るつながり"
+
+msgid "TR1_T01_ABSTRACTION"
+msgstr "この事件では、許可された観測区間と限られた関係の種類だけを扱います。"
+
+msgid "TR1_T01_BRIEF"
+msgstr "独立記録調査チームのミンソです。初めてでも始められるよう、二つの観察と収集許可を用意しました。同じ IP が見えても、同じ人とは限りません。\n\nセッション記録と中継の両端のどちらを見れば、二つの説明を分けられるでしょう。見えるつながりを確かめ、次の観測地点を示してください。犯人の名前を当てる依頼ではありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T01_DESK_NAME"
+msgstr "一つのアドレスのいくつもの影 · 作業端末"
+
+msgid "TR1_T01_GOAL"
+msgstr "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。"
+
+msgid "TR1_T01_HINT_1"
+msgstr "現在の観察で示せることと、まだ不明なことを分けてください。"
+
+msgid "TR1_T01_HINT_2"
+msgstr "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。"
+
+msgid "TR1_T01_HINT_3"
+msgstr "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。"
+
+msgid "TR1_T01_LIMIT"
+msgstr "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。"
+
+msgid "TR1_T01_NEXT_SENSOR"
+msgstr "次に引き継ぐ観測地点"
+
+msgid "TR1_T01_PRINCIPLE"
+msgstr "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。"
+
+msgid "TR1_T01_REPLY"
+msgstr "一つのアドレスの背後の接続と、人物の身元を区別できました。次は、時計が違うのに同時と呼ばれた送信です。"
+
+msgid "TR1_T01_SENDER"
+msgstr "ミンソ"
+
+msgid "TR1_T01_SENSOR_FIELD"
+msgstr "現場の観察"
+
+msgid "TR1_T01_SENSOR_INDEPENDENT"
+msgstr "独立した出所の観察"
+
+msgid "TR1_T01_TITLE"
+msgstr "一つのアドレスのいくつもの影"
+
+msgid "TR1_T01_TOOL_NAME"
+msgstr "出所・観察・仮説"
+
+msgid "TR1_T02_ABSTRACTION"
+msgstr "この事件では、許可された観測区間と限られた関係の種類だけを扱います。"
+
+msgid "TR1_T02_BRIEF"
+msgstr "二台のサーバーが同じ時刻を残しましたが、基準イベントと誤差区間が違います。正確な秒を作り出さず、可能な順序を絞ってください。\n\n共通イベントで補正するか、署名付き引き継ぎ順序と独立記録を合わせて調べられます。どちらも隠れた完全な時計を見せる道ではありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T02_DESK_NAME"
+msgstr "合わない二つの時計 · 作業端末"
+
+msgid "TR1_T02_GOAL"
+msgstr "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。"
+
+msgid "TR1_T02_HINT_1"
+msgstr "現在の観察で示せることと、まだ不明なことを分けてください。"
+
+msgid "TR1_T02_HINT_2"
+msgstr "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。"
+
+msgid "TR1_T02_HINT_3"
+msgstr "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。"
+
+msgid "TR1_T02_LIMIT"
+msgstr "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。"
+
+msgid "TR1_T02_NEXT_SENSOR"
+msgstr "次に引き継ぐ観測地点"
+
+msgid "TR1_T02_PRINCIPLE"
+msgstr "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。"
+
+msgid "TR1_T02_REPLY"
+msgstr "離れた時間区間は順序を支持し、重なる区間は未確定として残しました。次のコピーは、誰が収集して渡したかから確かめましょう。"
+
+msgid "TR1_T02_SENDER"
+msgstr "ミンソ"
+
+msgid "TR1_T02_SENSOR_FIELD"
+msgstr "現場の観察"
+
+msgid "TR1_T02_SENSOR_INDEPENDENT"
+msgstr "独立した出所の観察"
+
+msgid "TR1_T02_TITLE"
+msgstr "合わない二つの時計"
+
+msgid "TR1_T02_TOOL_NAME"
+msgstr "出所・観察・仮説"
+
+msgid "TR1_T03_ABSTRACTION"
+msgstr "この事件では、許可された観測区間と限られた関係の種類だけを扱います。"
+
+msgid "TR1_T03_BRIEF"
+msgstr "二つのコピーが違います。改変、再配布、収集漏れのどれも説明になり得ます。ハッシュの一致は収集後の不変性を支えても、内容が真実だとは保証しません。\n\n独立した受信記録や保管元を結び、コピーの経路を調べてください。出所の弱い文章から人物を断定しないでください。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T03_DESK_NAME"
+msgstr "コピーされた記録の出所 · 作業端末"
+
+msgid "TR1_T03_GOAL"
+msgstr "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。"
+
+msgid "TR1_T03_HINT_1"
+msgstr "現在の観察で示せることと、まだ不明なことを分けてください。"
+
+msgid "TR1_T03_HINT_2"
+msgstr "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。"
+
+msgid "TR1_T03_HINT_3"
+msgstr "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。"
+
+msgid "TR1_T03_LIMIT"
+msgstr "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。"
+
+msgid "TR1_T03_NEXT_SENSOR"
+msgstr "次に引き継ぐ観測地点"
+
+msgid "TR1_T03_PRINCIPLE"
+msgstr "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。"
+
+msgid "TR1_T03_REPLY"
+msgstr "コピーの出所と、原資料が主張する内容を分けて記録しました。次は、どこで新しい観察を得るべきか選びましょう。"
+
+msgid "TR1_T03_SENDER"
+msgstr "ミンソ"
+
+msgid "TR1_T03_SENSOR_FIELD"
+msgstr "現場の観察"
+
+msgid "TR1_T03_SENSOR_INDEPENDENT"
+msgstr "独立した出所の観察"
+
+msgid "TR1_T03_TITLE"
+msgstr "コピーされた記録の出所"
+
+msgid "TR1_T03_TOOL_NAME"
+msgstr "出所・観察・仮説"
+
+msgid "TR1_T04_ABSTRACTION"
+msgstr "この事件では、許可された観測区間と限られた関係の種類だけを扱います。"
+
+msgid "TR1_T04_BRIEF"
+msgstr "今の記録を読み直しても、二つの候補経路は分かれません。許可された観測地点を選び、仮想の観測区間を次へ進めてください。実時間は待ちません。\n\n中継の境界か、範囲を絞った終端を見られます。新しい観察がどの説明を支持・反証するか確かめてください。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T04_DESK_NAME"
+msgstr "次の接続を観察する場所 · 作業端末"
+
+msgid "TR1_T04_GOAL"
+msgstr "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。"
+
+msgid "TR1_T04_HINT_1"
+msgstr "現在の観察で示せることと、まだ不明なことを分けてください。"
+
+msgid "TR1_T04_HINT_2"
+msgstr "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。"
+
+msgid "TR1_T04_HINT_3"
+msgstr "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。"
+
+msgid "TR1_T04_LIMIT"
+msgstr "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。"
+
+msgid "TR1_T04_NEXT_SENSOR"
+msgstr "次に引き継ぐ観測地点"
+
+msgid "TR1_T04_PRINCIPLE"
+msgstr "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。"
+
+msgid "TR1_T04_REPLY"
+msgstr "観測地点を選んだことで、つながりが絞れました。次の記録では、アカウント名と実際にセッションを使った人を同一視できません。"
+
+msgid "TR1_T04_SENDER"
+msgstr "ミンソ"
+
+msgid "TR1_T04_SENSOR_FIELD"
+msgstr "現場の観察"
+
+msgid "TR1_T04_SENSOR_INDEPENDENT"
+msgstr "独立した出所の観察"
+
+msgid "TR1_T04_TITLE"
+msgstr "次の接続を観察する場所"
+
+msgid "TR1_T04_TOOL_NAME"
+msgstr "出所・観察・仮説"
+
+msgid "TR1_T05_ABSTRACTION"
+msgstr "この事件では、許可された観測区間と限られた関係の種類だけを扱います。"
+
+msgid "TR1_T05_BRIEF"
+msgstr "同じアカウント名が二つの経路にあります。共有、残ったセッション、窃取はどれも説明の候補です。先に人物を名指しすれば、結論が証拠を追い越します。\n\nセッション寿命と経路、または委任と失効記録を結び、今示せるつながりを調べてください。実際にキーボードを打った人は不明のままかもしれません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T05_DESK_NAME"
+msgstr "盗まれた名前 · 作業端末"
+
+msgid "TR1_T05_GOAL"
+msgstr "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。"
+
+msgid "TR1_T05_HINT_1"
+msgstr "現在の観察で示せることと、まだ不明なことを分けてください。"
+
+msgid "TR1_T05_HINT_2"
+msgstr "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。"
+
+msgid "TR1_T05_HINT_3"
+msgstr "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。"
+
+msgid "TR1_T05_LIMIT"
+msgstr "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。"
+
+msgid "TR1_T05_NEXT_SENSOR"
+msgstr "次に引き継ぐ観測地点"
+
+msgid "TR1_T05_PRINCIPLE"
+msgstr "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。"
+
+msgid "TR1_T05_REPLY"
+msgstr "アカウントとセッションの関係を確認し、人物の身元は誇張しませんでした。次の送信には、内容が見えない区間があります。"
+
+msgid "TR1_T05_SENDER"
+msgstr "ミンソ"
+
+msgid "TR1_T05_SENSOR_FIELD"
+msgstr "現場の観察"
+
+msgid "TR1_T05_SENSOR_INDEPENDENT"
+msgstr "独立した出所の観察"
+
+msgid "TR1_T05_TITLE"
+msgstr "盗まれた名前"
+
+msgid "TR1_T05_TOOL_NAME"
+msgstr "出所・観察・仮説"
+
+msgid "TR1_T06_ABSTRACTION"
+msgstr "この事件では、許可された観測区間と限られた関係の種類だけを扱います。"
+
+msgid "TR1_T06_BRIEF"
+msgstr "記録は暗号化区間を越えています。本文を勝手に復号するボタンはありません。それでも、許可されたメタデータと終端記録で限定的なつながりを示せます。\n\n誰が何を見られたかを記録し、無関係な人の内容を集めずに次の対象を絞ってください。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T06_DESK_NAME"
+msgstr "見えない区間 · 作業端末"
+
+msgid "TR1_T06_GOAL"
+msgstr "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。"
+
+msgid "TR1_T06_HINT_1"
+msgstr "現在の観察で示せることと、まだ不明なことを分けてください。"
+
+msgid "TR1_T06_HINT_2"
+msgstr "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。"
+
+msgid "TR1_T06_HINT_3"
+msgstr "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。"
+
+msgid "TR1_T06_LIMIT"
+msgstr "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。"
+
+msgid "TR1_T06_NEXT_SENSOR"
+msgstr "次に引き継ぐ観測地点"
+
+msgid "TR1_T06_PRINCIPLE"
+msgstr "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。"
+
+msgid "TR1_T06_REPLY"
+msgstr "見えない内容を作らずに、移動を確認できました。しかし新しい記録が、以前は有力だった説明と合いません。"
+
+msgid "TR1_T06_SENDER"
+msgstr "ミンソ"
+
+msgid "TR1_T06_SENSOR_FIELD"
+msgstr "現場の観察"
+
+msgid "TR1_T06_SENSOR_INDEPENDENT"
+msgstr "独立した出所の観察"
+
+msgid "TR1_T06_TITLE"
+msgstr "見えない区間"
+
+msgid "TR1_T06_TOOL_NAME"
+msgstr "出所・観察・仮説"
+
+msgid "TR1_T07_ABSTRACTION"
+msgstr "この事件では、許可された観測区間と限られた関係の種類だけを扱います。"
+
+msgid "TR1_T07_BRIEF"
+msgstr "前の調査者は同じセッションだと推測しました。それを自分の考えとして受け入れる必要はありません。新しい観察から、よりよく支持される関係へ直接進めます。\n\n基準イベントか、競合する説明が予測する次の観察を収集してください。すでに仮説を立てたなら履歴と反証を残して訂正し、まだなら支持される関係を直接引き継げます。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T07_DESK_NAME"
+msgstr "有力な仮説を手放すとき · 作業端末"
+
+msgid "TR1_T07_GOAL"
+msgstr "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。"
+
+msgid "TR1_T07_HINT_1"
+msgstr "現在の観察で示せることと、まだ不明なことを分けてください。"
+
+msgid "TR1_T07_HINT_2"
+msgstr "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。"
+
+msgid "TR1_T07_HINT_3"
+msgstr "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。"
+
+msgid "TR1_T07_LIMIT"
+msgstr "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。"
+
+msgid "TR1_T07_NEXT_SENSOR"
+msgstr "次に引き継ぐ観測地点"
+
+msgid "TR1_T07_PRINCIPLE"
+msgstr "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。"
+
+msgid "TR1_T07_PRIOR"
+msgstr "前の調査者による同一セッションの推測"
+
+msgid "TR1_T07_REPLY"
+msgstr "新しい観察で、以前のメモの限界が見えました。履歴を消さず訂正しても、最初から独立証拠で進んでも構いませんでした。最後の引き継ぎでは、何を示せたかを正確にまとめましょう。"
+
+msgid "TR1_T07_SENDER"
+msgstr "ミンソ"
+
+msgid "TR1_T07_SENSOR_FIELD"
+msgstr "現場の観察"
+
+msgid "TR1_T07_SENSOR_INDEPENDENT"
+msgstr "独立した出所の観察"
+
+msgid "TR1_T07_TITLE"
+msgstr "有力な仮説を手放すとき"
+
+msgid "TR1_T07_TOOL_NAME"
+msgstr "出所・観察・仮説"
+
+msgid "TR1_T08_ABSTRACTION"
+msgstr "この事件では、許可された観測区間と限られた関係の種類だけを扱います。"
+
+msgid "TR1_T08_BRIEF"
+msgstr "最後の引き継ぎです。独立した観測地点と出所を結ぶ最小の経路を示してください。全候補の本名を知る必要はありません。\n\nどの送信がどの境界を越え、どの主張が反証され、どこに観察がないかを分けます。必要なつながりと後続観察を省き、全部不明と書くだけでは足りません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T08_DESK_NAME"
+msgstr "最後のつながりの限界 · 作業端末"
+
+msgid "TR1_T08_GOAL"
+msgstr "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。"
+
+msgid "TR1_T08_HINT_1"
+msgstr "現在の観察で示せることと、まだ不明なことを分けてください。"
+
+msgid "TR1_T08_HINT_2"
+msgstr "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。"
+
+msgid "TR1_T08_HINT_3"
+msgstr "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。"
+
+msgid "TR1_T08_LIMIT"
+msgstr "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。"
+
+msgid "TR1_T08_NEXT_SENSOR"
+msgstr "次に引き継ぐ観測地点"
+
+msgid "TR1_T08_PRINCIPLE"
+msgstr "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。"
+
+msgid "TR1_T08_REPLY"
+msgstr "観察が支持する関係は残り、不明な身元を作りませんでした。次のチームは出所、反証、必要な次の観察を受け取ります。追跡は正解の名前ではなく、検証可能な引き継ぎで終わります。"
+
+msgid "TR1_T08_SENDER"
+msgstr "ミンソ"
+
+msgid "TR1_T08_SENSOR_FIELD"
+msgstr "現場の観察"
+
+msgid "TR1_T08_SENSOR_INDEPENDENT"
+msgstr "独立した出所の観察"
+
+msgid "TR1_T08_TITLE"
+msgstr "最後のつながりの限界"
+
+msgid "TR1_T08_TOOL_NAME"
+msgstr "出所・観察・仮説"
+
 msgid "UI_ALERT_EXPLAIN_0"
 msgstr "観察された危険なし。ローカルの誤入力・読むこと・窓の切り替えは警戒度に無関係です。"
 
@@ -3117,7 +6027,7 @@ msgid "UI_BD_STATE_LOCKED"
 msgstr "前の事件の解決が必要"
 
 msgid "UI_BD_STATE_RECHECK"
-msgstr "現在の状態は再び未達成（完了記録は保持）"
+msgstr "現在の状態では目標を満たしていません（完了記録は保持）"
 
 msgid "UI_BD_SWITCH"
 msgstr "この事件へ切り替え"
@@ -3464,6 +6374,141 @@ msgstr "{name}の顔を見る"
 msgid "UI_MAIL_REVEAL_TIP"
 msgstr "物語で公開済みの人物写真を表示します。望まなければ抽象の印を保持できます。"
 
+msgid "UI_MODEL_ACTION"
+msgstr "動作"
+
+msgid "UI_MODEL_ACTION_ADVANCE"
+msgstr "次の業務処理ステップへ"
+
+msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
+msgstr "次の観測区間へ"
+
+msgid "UI_MODEL_ACTION_CHECKPOINT"
+msgstr "方針グループを保存"
+
+msgid "UI_MODEL_ACTION_COLLECT"
+msgstr "この地点の観察を収集"
+
+msgid "UI_MODEL_ACTION_HANDOFF"
+msgstr "示せた関係と限界を引き継ぐ"
+
+msgid "UI_MODEL_ACTION_HYPOTHESIZE"
+msgstr "仮説を立てる"
+
+msgid "UI_MODEL_ACTION_INSPECT"
+msgstr "現在の状態を見る"
+
+msgid "UI_MODEL_ACTION_PROBE"
+msgstr "要求と正規業務を検証"
+
+msgid "UI_MODEL_ACTION_QUARANTINE"
+msgstr "保存オブジェクトの隔離状態を変更"
+
+msgid "UI_MODEL_ACTION_RESET"
+msgstr "現在の実行を初期化"
+
+msgid "UI_MODEL_ACTION_REVISE"
+msgstr "根拠を残して仮説を訂正"
+
+msgid "UI_MODEL_ACTION_REVOKE"
+msgstr "セッションを失効"
+
+msgid "UI_MODEL_ACTION_ROLLBACK"
+msgstr "選んだ方針だけを戻す"
+
+msgid "UI_MODEL_ACTION_RUN"
+msgstr "プログラムを実行"
+
+msgid "UI_MODEL_ACTION_SET_CONTROL"
+msgstr "精密な対応策を適用"
+
+msgid "UI_MODEL_ACTION_SET_INPUT"
+msgstr "入力ケースを用意"
+
+msgid "UI_MODEL_ACTION_STEP"
+msgstr "分岐を一段ずつ確認"
+
+msgid "UI_MODEL_ACTION_TEST"
+msgstr "収集した根拠で検証"
+
+msgid "UI_MODEL_ALLOW"
+msgstr "許可"
+
+msgid "UI_MODEL_AUTHORIZED"
+msgstr "許可された範囲"
+
+msgid "UI_MODEL_CLIENT_SUPPLIED"
+msgstr "クライアントが渡した標識"
+
+msgid "UI_MODEL_COMPLETE_WINDOW"
+msgstr "この区間を全件観測"
+
+msgid "UI_MODEL_DENY"
+msgstr "遮断"
+
+msgid "UI_MODEL_EVENT_ACCEPTED"
+msgstr "アップロードを受理"
+
+msgid "UI_MODEL_EVENT_QUARANTINE_CHANGED"
+msgstr "隔離状態の変更"
+
+msgid "UI_MODEL_EXCLUDED"
+msgstr "範囲外"
+
+msgid "UI_MODEL_FORM_NOTE"
+msgstr "現在の権限と観察で公開された選択肢です。操作・仮説・入力を選んで実行してください。"
+
+msgid "UI_MODEL_HALTED"
+msgstr "実行終了"
+
+msgid "UI_MODEL_IDLE"
+msgstr "入力ケース待ち"
+
+msgid "UI_MODEL_METADATA_ONLY"
+msgstr "メタデータのみ"
+
+msgid "UI_MODEL_NORMAL"
+msgstr "正規の業務"
+
+msgid "UI_MODEL_NO_ACTIONS"
+msgstr "現在使える操作はありません。権限と観察を確認してください。"
+
+msgid "UI_MODEL_NO_OBSERVATIONS"
+msgstr "表示できる観察はまだありません。"
+
+msgid "UI_MODEL_PERMITTED_PLAINTEXT"
+msgstr "許可された平文"
+
+msgid "UI_MODEL_REFUTED"
+msgstr "反証あり"
+
+msgid "UI_MODEL_REL_BEFORE"
+msgstr "先に起きたか"
+
+msgid "UI_MODEL_REL_FORWARDED_TO"
+msgstr "次のノードへ渡ったか"
+
+msgid "UI_MODEL_REL_SAME_SESSION"
+msgstr "同じセッションか"
+
+msgid "UI_MODEL_RUNNING"
+msgstr "実行中"
+
+msgid "UI_MODEL_SAMPLED_WINDOW"
+msgstr "標本として一部のみ観測"
+
+msgid "UI_MODEL_SERVER_ISSUED"
+msgstr "サーバーが発行した標識"
+
+msgid "UI_MODEL_SUPPORTED"
+msgstr "根拠が支持"
+
+msgid "UI_MODEL_THREAT"
+msgstr "脅威となる要求"
+
+msgid "UI_MODEL_UNDETERMINED"
+msgstr "根拠不足・判断保留"
+
 msgid "UI_NET_CONNECTED"
 msgstr "接続 · ターミナル {list}"
 
@@ -3563,6 +6608,24 @@ msgstr "{id} で必要なアカウントのセッションを取得"
 msgid "UI_OBJ_SOURCES_PRESERVED"
 msgstr "遠隔の原本を変更・削除せず保存"
 
+msgid "UI_OBSERVATION_ENTITIES"
+msgstr "収集した観察に現れる対象"
+
+msgid "UI_OBSERVATION_EVIDENCE"
+msgstr "収集した観察と出所"
+
+msgid "UI_OBSERVATION_HISTORY"
+msgstr "仮説の訂正履歴"
+
+msgid "UI_OBSERVATION_HYPOTHESES"
+msgstr "仮説と現在の根拠"
+
+msgid "UI_OBSERVATION_INITIAL_CLAIMS"
+msgstr "渡された仮説 · まだ未検証"
+
+msgid "UI_OBSERVATION_SENSORS"
+msgstr "観測地点と収集範囲"
+
 msgid "UI_OK"
 msgstr "確認"
 
@@ -3613,6 +6676,27 @@ msgstr "バックアップ復旧失敗 ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "破損セーブを別名で保持し、正常なバックアップから復旧"
+
+msgid "UI_RESPONSE_ARTIFACTS"
+msgstr "観察された保存済みアップロード"
+
+msgid "UI_RESPONSE_ARTIFACT_EVENTS"
+msgstr "アップロードと隔離の履歴"
+
+msgid "UI_RESPONSE_BUSINESS_OBJECTS"
+msgstr "業務結果と保存オブジェクト"
+
+msgid "UI_RESPONSE_CHECKPOINTS"
+msgstr "部分的に戻す保存点"
+
+msgid "UI_RESPONSE_CONTROLS"
+msgstr "現在の対応策"
+
+msgid "UI_RESPONSE_HISTORY"
+msgstr "要求の観察履歴"
+
+msgid "UI_RESPONSE_MATRIX"
+msgstr "正規業務と脅威要求の比較"
 
 msgid "UI_RL_BODY"
 msgstr "本文（JSON オブジェクト）"
@@ -3797,6 +6881,15 @@ msgstr "実時間は待ちません。ticks 単位の論理時計であり、実
 msgid "UI_TOOLKIND_AUTH_MODEL"
 msgstr "アカウントごとの失敗回数と仮想待機を計算します。方針を有効にし、連続失敗の拒否と待機後の正規ログインを両方観察します。"
 
+msgid "UI_TOOLKIND_BRANCH_VM"
+msgstr "分岐・呼び出し分析"
+
+msgid "UI_TOOLKIND_BRANCH_VM_LIMIT"
+msgstr "実際の CPU・バイナリー・シェルは実行しません。プログラムと予算は事件から与えられ、ボタンを決まった回数押すことは目標ではありません。"
+
+msgid "UI_TOOLKIND_BRANCH_VM_MODEL"
+msgstr "決められた仮想命令の分岐・関数呼び出し・戻り・出力を、小さな入力ケースで実行し、記録を比較します。"
+
 msgid "UI_TOOLKIND_COMPARE"
 msgstr "観察の比較"
 
@@ -3869,6 +6962,15 @@ msgstr "実プロセスのメモリー、アドレス、保護策は再現せず
 msgid "UI_TOOLKIND_MEMORY_MODEL"
 msgstr "固定長バッファーと後続セルを表示します。16 進バイトを書き込むと、あふれたバイトが届く場所を確認できます。"
 
+msgid "UI_TOOLKIND_OBSERVATION_CASE"
+msgstr "観察と仮説"
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_LIMIT"
+msgstr "同じ IP だけで同じ人物とは判断しません。時計誤差・標本の欠落・標識の出所が結論を制限します。隠れた犯人と照合しません。"
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_MODEL"
+msgstr "許可された区間と地点で観察を集め、収集コピーだけを使って主張を支持・反証・未確定に分けます。"
+
 msgid "UI_TOOLKIND_PACKET"
 msgstr "パケット観察"
 
@@ -3922,6 +7024,15 @@ msgstr "実際の JavaScript は実行しません。他の利用者への影響
 
 msgid "UI_TOOLKIND_RENDER_MODEL"
 msgstr "入力が文字として表示されるか、仮想の表示信号になるかを比較します。エスケープ方針を有効にすると文字としてだけ表示します。"
+
+msgid "UI_TOOLKIND_RESPONSE_LAB"
+msgstr "対応作業台"
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_LIMIT"
+msgstr "すべてを遮断しても成功とは限りません。保存点で戻せるのは指定方針グループだけです。失効した資格情報や収集記録は巻き戻しません。"
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_MODEL"
+msgstr "許可済みの要求を同じ仮想サービスへ送り、正規業務と脅威の結果を比べます。対応策は他のツールと共通の方針・セッションを変えます。"
 
 msgid "UI_TOOLKIND_REVERSE"
 msgstr "処理の解析"
@@ -4025,26 +7136,164 @@ msgstr "待機 (ticks) は整数が必要です。"
 msgid "UI_TOOL_ERR_UNKNOWN_TOOL"
 msgstr "現在の事件にはないツールです。"
 
+msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
+msgstr "アップロード受理ステップ"
+
+msgid "UI_TOOL_FIELD_ACQUISITION"
+msgstr "収集方法"
+
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "動作"
+
+msgid "UI_TOOL_FIELD_ARTIFACT_ID"
+msgstr "保存オブジェクト"
+
+msgid "UI_TOOL_FIELD_AVAILABLE"
+msgstr "収集可能"
+
+msgid "UI_TOOL_FIELD_BUSINESS_KEY"
+msgstr "業務項目"
+
+msgid "UI_TOOL_FIELD_BUSINESS_VALUE"
+msgstr "業務への反映結果"
+
+msgid "UI_TOOL_FIELD_CALL_STACK"
+msgstr "呼び出しスタック"
+
+msgid "UI_TOOL_FIELD_CASE_ID"
+msgstr "要求・入力ケース"
+
+msgid "UI_TOOL_FIELD_CHECKPOINT_ID"
+msgstr "戻す保存点"
+
+msgid "UI_TOOL_FIELD_CLAIM"
+msgstr "主張"
+
+msgid "UI_TOOL_FIELD_CLASS"
+msgstr "分類"
+
+msgid "UI_TOOL_FIELD_CLOCK_OFFSET"
+msgstr "時計のずれ"
+
+msgid "UI_TOOL_FIELD_COLLECTOR"
+msgstr "収集者"
+
+msgid "UI_TOOL_FIELD_CONTROL_ID"
+msgstr "対応策"
+
+msgid "UI_TOOL_FIELD_COUNT"
+msgstr "実行するステップ数"
+
+msgid "UI_TOOL_FIELD_COVERAGE"
+msgstr "観測範囲"
+
+msgid "UI_TOOL_FIELD_CURRENT"
+msgstr "現在の値"
+
+msgid "UI_TOOL_FIELD_CURSOR"
+msgstr "現在の観測区間"
+
+msgid "UI_TOOL_FIELD_DST"
+msgstr "結果を入れるレジスター"
+
+msgid "UI_TOOL_FIELD_ELSE"
+msgstr "偽の場合の分岐"
+
+msgid "UI_TOOL_FIELD_ENDPOINT_ID"
+msgstr "受理サービス"
+
+msgid "UI_TOOL_FIELD_ENTITY_REF"
+msgstr "観察に現れた対象"
+
+msgid "UI_TOOL_FIELD_EVENT"
+msgstr "観察履歴の種類"
+
+msgid "UI_TOOL_FIELD_EVENT_ID"
+msgstr "イベント ID"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
+msgstr "現在の実行許可"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
+msgstr "受理時の実行許可"
 
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "ファイル名"
 
+msgid "UI_TOOL_FIELD_FORMAT_OK"
+msgstr "形式の確認"
+
+msgid "UI_TOOL_FIELD_FROM"
+msgstr "呼び出し元の関数"
+
+msgid "UI_TOOL_FIELD_FROM_NODE"
+msgstr "観測した送信元ノード"
+
+msgid "UI_TOOL_FIELD_FUNCTION"
+msgstr "関数"
+
+msgid "UI_TOOL_FIELD_GROUP"
+msgstr "方針グループ"
+
+msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
+msgstr "仮説名"
+
+msgid "UI_TOOL_FIELD_ID"
+msgstr "ID"
+
 msgid "UI_TOOL_FIELD_INPUT"
 msgstr "入力"
 
+msgid "UI_TOOL_FIELD_INPUTS"
+msgstr "入力ケース"
+
+msgid "UI_TOOL_FIELD_INTENDED"
+msgstr "必要な結果"
+
+msgid "UI_TOOL_FIELD_KIND"
+msgstr "関係の種類"
+
+msgid "UI_TOOL_FIELD_LABEL"
+msgstr "名前"
+
 msgid "UI_TOOL_FIELD_LEFT"
-msgstr "一つ目の観察"
+msgstr "比較する一つ目の対象"
+
+msgid "UI_TOOL_FIELD_MARKER_AUTHORITY"
+msgstr "標識の由来"
 
 msgid "UI_TOOL_FIELD_MIME"
 msgstr "MIME 型"
 
+msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
+msgstr "次の観測地点"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "オブジェクト ID"
 
+msgid "UI_TOOL_FIELD_OBSERVATION_IDS"
+msgstr "根拠とする観察"
+
+msgid "UI_TOOL_FIELD_OBSERVED"
+msgstr "観察した結果"
+
+msgid "UI_TOOL_FIELD_OBSERVED_AT"
+msgstr "観測時刻の区間"
+
+msgid "UI_TOOL_FIELD_OP"
+msgstr "命令"
+
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "要求元 (origin)"
+
+msgid "UI_TOOL_FIELD_OUTPUT"
+msgstr "出力"
+
+msgid "UI_TOOL_FIELD_OUTPUTS"
+msgstr "出力値"
+
+msgid "UI_TOOL_FIELD_OWNER_FUNCTION"
+msgstr "命令が属する関数"
 
 msgid "UI_TOOL_FIELD_PASSWORD"
 msgstr "パスワード"
@@ -4052,26 +7301,137 @@ msgstr "パスワード"
 msgid "UI_TOOL_FIELD_PATH"
 msgstr "ファイルパス"
 
+msgid "UI_TOOL_FIELD_PC"
+msgstr "命令の位置"
+
+msgid "UI_TOOL_FIELD_PROVENANCE"
+msgstr "出所と収集根拠"
+
+msgid "UI_TOOL_FIELD_PUBLIC"
+msgstr "公開された観察"
+
+msgid "UI_TOOL_FIELD_QUARANTINED"
+msgstr "隔離状態"
+
+msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
+msgstr "訂正の根拠"
+
+msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
+msgstr "反証された仮説"
+
+msgid "UI_TOOL_FIELD_REG"
+msgstr "読むレジスター"
+
+msgid "UI_TOOL_FIELD_REGISTERS"
+msgstr "仮想レジスター"
+
+msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
+msgstr "訂正した主張"
+
+msgid "UI_TOOL_FIELD_REQUEST_TAG"
+msgstr "要求標識"
+
+msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
+msgstr "保存範囲"
+
 msgid "UI_TOOL_FIELD_RIGHT"
-msgstr "二つ目の観察"
+msgstr "比較する二つ目の対象"
+
+msgid "UI_TOOL_FIELD_ROUTE_ID"
+msgstr "要求経路"
+
+msgid "UI_TOOL_FIELD_SAMPLING"
+msgstr "標本の方式"
+
+msgid "UI_TOOL_FIELD_SECTION"
+msgstr "表示内容"
+
+msgid "UI_TOOL_FIELD_SENSOR_ID"
+msgstr "観測地点"
+
+msgid "UI_TOOL_FIELD_SESSION_TAG"
+msgstr "セッション標識"
+
+msgid "UI_TOOL_FIELD_SHA256"
+msgstr "SHA256"
+
+msgid "UI_TOOL_FIELD_SHARED_ADDRESS"
+msgstr "共有され得るアドレス"
 
 msgid "UI_TOOL_FIELD_SIGNATURE"
 msgstr "ファイルシグネチャ"
 
+msgid "UI_TOOL_FIELD_SIGNATURE_OK"
+msgstr "署名の確認"
+
+msgid "UI_TOOL_FIELD_SIGNATURE_VALID"
+msgstr "ファイル形式の検証を通過"
+
+msgid "UI_TOOL_FIELD_SOURCE_ID"
+msgstr "出所 ID"
+
+msgid "UI_TOOL_FIELD_STATUS"
+msgstr "状態"
+
+msgid "UI_TOOL_FIELD_STEPS_USED"
+msgstr "使ったステップ"
+
+msgid "UI_TOOL_FIELD_STORED_AS"
+msgstr "保存参照"
+
+msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
+msgstr "支持された仮説"
+
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "対象ホスト"
+
+msgid "UI_TOOL_FIELD_THEN"
+msgstr "真の場合の分岐"
+
+msgid "UI_TOOL_FIELD_TICK"
+msgstr "発生ステップ"
 
 msgid "UI_TOOL_FIELD_TICKS"
 msgstr "待機 (ticks)"
 
+msgid "UI_TOOL_FIELD_TO"
+msgstr "呼び出し先"
+
 msgid "UI_TOOL_FIELD_TOKEN"
 msgstr "トークン"
+
+msgid "UI_TOOL_FIELD_TOKEN_REF"
+msgstr "失効させるセッション"
+
+msgid "UI_TOOL_FIELD_TO_NODE"
+msgstr "観測した宛先ノード"
+
+msgid "UI_TOOL_FIELD_TRACE"
+msgstr "実行記録"
+
+msgid "UI_TOOL_FIELD_UNKNOWN_EDGES"
+msgstr "未確定のつながり"
 
 msgid "UI_TOOL_FIELD_USERNAME"
 msgstr "アカウント"
 
 msgid "UI_TOOL_FIELD_VALUE"
-msgstr "変更する値"
+msgstr "値"
+
+msgid "UI_TOOL_FIELD_VALUES"
+msgstr "入力値"
+
+msgid "UI_TOOL_FIELD_VANTAGE"
+msgstr "収集した位置"
+
+msgid "UI_TOOL_FIELD_VERDICT"
+msgstr "根拠による判定"
+
+msgid "UI_TOOL_FIELD_VISIBILITY"
+msgstr "見える情報"
+
+msgid "UI_TOOL_FIELD_WINDOW"
+msgstr "観測区間"
 
 msgid "UI_TOOL_FILTER"
 msgstr "フィルター"
@@ -4301,6 +7661,9 @@ msgstr "入力した鍵だけで計算し、結果は入力欄に自動挿入し
 msgid "UI_TOOL_XOR_RESULT"
 msgstr "鍵 {key} の結果 · {text}"
 
+msgid "UI_TOP_CAMPAIGN_MISSION"
+msgstr "{campaign} · {id} · {title}"
+
 msgid "UI_TOP_CASE_DONE"
 msgstr "事件解決"
 
@@ -4315,6 +7678,36 @@ msgstr "完了記録あり · 現在の目標 {done}/{total}"
 
 msgid "UI_TOP_SESSION"
 msgstr "ターミナル {n} · {user}@{host}"
+
+msgid "UI_VALUE_FALSE"
+msgstr "いいえ"
+
+msgid "UI_VALUE_TRUE"
+msgstr "はい"
+
+msgid "UI_VM_CALL_GRAPH"
+msgstr "関数の呼び出し関係"
+
+msgid "UI_VM_CASES"
+msgstr "用意した入力ケース"
+
+msgid "UI_VM_LIMITS"
+msgstr "仮想実行の予算"
+
+msgid "UI_VM_LIMITS_LINE"
+msgstr "ケース別予算: {steps} ステップ · 呼び出し深さ {stack} · 仮想メモリー {memory}"
+
+msgid "UI_VM_LISTING"
+msgstr "プログラムの分岐"
+
+msgid "UI_VM_OUTPUTS"
+msgstr "実際の出力"
+
+msgid "UI_VM_STATE_LINE"
+msgstr "仮想実行: {state} · 使用ステップ {steps}"
+
+msgid "UI_VM_TRACE"
+msgstr "実行した分岐・呼び出しの記録"
 
 msgid "UI_VOLUME"
 msgstr "操作音"

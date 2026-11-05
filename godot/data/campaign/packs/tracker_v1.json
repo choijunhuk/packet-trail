@@ -1,0 +1,2797 @@
+{
+  "schema_version": 1,
+  "content_version": 1,
+  "campaign_id": "midnight_tracker",
+  "title": "TR1_PACK_TITLE",
+  "start_mission": "T01",
+  "mission_order": [
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+    "T06",
+    "T07",
+    "T08"
+  ],
+  "missions": {
+    "T01": {
+      "schema_version": 1,
+      "mission_id": "T01",
+      "title": "TR1_T01_TITLE",
+      "chapter": 1,
+      "optional": false,
+      "prerequisites": [],
+      "alert_max": 2,
+      "initial_web_url": "https://t01.tracker.packet.test",
+      "goal": {
+        "record_id": "tr1_t01_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "observation_handoff",
+          "challenge_id": "tr1_t01_observations",
+          "label_display": "TR1_T01_GOAL",
+          "target_display": "https://t01.tracker.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "tr1_t01_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:tr1_t01_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "tr1_t01_desk": {
+          "name": "TR1_T01_DESK_NAME",
+          "domain": "t01.tracker.packet.test",
+          "address": "10.53.60.70",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://t01.tracker.packet.test": {
+          "title": "TR1_T01_TITLE",
+          "body": "TR1_T01_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "TR1_T01_SENDER",
+          "subject": "TR1_T01_TITLE",
+          "body": "TR1_T01_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "TR1_T01_SENDER",
+          "subject": "TR1_T01_TITLE",
+          "body": "TR1_T01_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "tr1_t01_observations": {
+          "kind": "observation_case",
+          "name": "TR1_T01_TOOL_NAME",
+          "sensors": {
+            "tr1_t01_field": {
+              "label": "TR1_T01_SENSOR_FIELD",
+              "host_id": "tr1_t01_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  100,
+                  115
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T01_ADDRESS_A",
+                      "observed_at": [
+                        100,
+                        115
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T01:shared-address",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "client_supplied"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T01_ADDRESS_B",
+                      "observed_at": [
+                        100,
+                        115
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S2",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T01:shared-address",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "client_supplied"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T01_DEPART",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N01",
+                        "from_node": "edge",
+                        "to_node": "relay",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T01:field",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t01_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t01_independent": {
+              "label": "TR1_T01_SENSOR_INDEPENDENT",
+              "host_id": "tr1_t01_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  110,
+                  113
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T01_DEPART",
+                      "observed_at": [
+                        110,
+                        113
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N01",
+                        "from_node": "edge",
+                        "to_node": "relay",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T01:receiver",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t01_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t01_next": {
+              "label": "TR1_T01_NEXT_SENSOR",
+              "host_id": "tr1_t01_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  150,
+                  180
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t01_desk",
+                "account_id": "investigator"
+              }
+            }
+          },
+          "claim_types": [
+            "same_session",
+            "forwarded_to",
+            "before"
+          ],
+          "initial_claims": {},
+          "handoff_requirements": {
+            "supported": [
+              {
+                "kind": "forwarded_to",
+                "request_tag": "N01",
+                "target_node": "relay"
+              }
+            ],
+            "refuted": [],
+            "next_vantage": [
+              "tr1_t01_next"
+            ],
+            "allow_identity_unknown": true
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "TR1_T01_GOAL",
+      "hints": [
+        "TR1_T01_HINT_1",
+        "TR1_T01_HINT_2",
+        "TR1_T01_HINT_3"
+      ],
+      "principle": "TR1_T01_PRINCIPLE",
+      "abstraction": "TR1_T01_ABSTRACTION",
+      "limit": "TR1_T01_LIMIT",
+      "tutorial": "TR1_T01_HINT_1",
+      "explain": "TR1_T01_PRINCIPLE"
+    },
+    "T02": {
+      "schema_version": 1,
+      "mission_id": "T02",
+      "title": "TR1_T02_TITLE",
+      "chapter": 1,
+      "optional": false,
+      "prerequisites": [
+        "T01"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://t02.tracker.packet.test",
+      "goal": {
+        "record_id": "tr1_t02_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "observation_handoff",
+          "challenge_id": "tr1_t02_observations",
+          "label_display": "TR1_T02_GOAL",
+          "target_display": "https://t02.tracker.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "tr1_t02_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:tr1_t02_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "tr1_t02_desk": {
+          "name": "TR1_T02_DESK_NAME",
+          "domain": "t02.tracker.packet.test",
+          "address": "10.53.126.228",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://t02.tracker.packet.test": {
+          "title": "TR1_T02_TITLE",
+          "body": "TR1_T02_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "TR1_T02_SENDER",
+          "subject": "TR1_T02_TITLE",
+          "body": "TR1_T02_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "TR1_T02_SENDER",
+          "subject": "TR1_T02_TITLE",
+          "body": "TR1_T02_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "tr1_t02_observations": {
+          "kind": "observation_case",
+          "name": "TR1_T02_TOOL_NAME",
+          "sensors": {
+            "tr1_t02_field": {
+              "label": "TR1_T02_SENSOR_FIELD",
+              "host_id": "tr1_t02_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  140,
+                  202
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T02_DEPART",
+                      "observed_at": [
+                        200,
+                        202
+                      ],
+                      "clock_offset": [
+                        90,
+                        92
+                      ],
+                      "public": {
+                        "request_tag": "N02",
+                        "from_node": "edge",
+                        "to_node": "relay"
+                      },
+                      "provenance": {
+                        "source_id": "T02:clock-a",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T02_ARRIVE",
+                      "observed_at": [
+                        140,
+                        142
+                      ],
+                      "clock_offset": [
+                        20,
+                        22
+                      ],
+                      "public": {
+                        "request_tag": "N02",
+                        "from_node": "relay",
+                        "to_node": "vault"
+                      },
+                      "provenance": {
+                        "source_id": "T02:clock-b",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t02_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t02_independent": {
+              "label": "TR1_T02_SENSOR_INDEPENDENT",
+              "host_id": "tr1_t02_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  109,
+                  121
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T02_DEPART",
+                      "observed_at": [
+                        109,
+                        111
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N02",
+                        "from_node": "edge",
+                        "to_node": "relay"
+                      },
+                      "provenance": {
+                        "source_id": "T02:signed-order",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T02_ARRIVE",
+                      "observed_at": [
+                        119,
+                        121
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N02",
+                        "from_node": "relay",
+                        "to_node": "vault"
+                      },
+                      "provenance": {
+                        "source_id": "T02:recipient",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t02_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t02_next": {
+              "label": "TR1_T02_NEXT_SENSOR",
+              "host_id": "tr1_t02_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  150,
+                  180
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t02_desk",
+                "account_id": "investigator"
+              }
+            }
+          },
+          "claim_types": [
+            "same_session",
+            "forwarded_to",
+            "before"
+          ],
+          "initial_claims": {},
+          "handoff_requirements": {
+            "supported": [
+              {
+                "kind": "before",
+                "left": "event:TR1_T02_DEPART",
+                "right": "event:TR1_T02_ARRIVE"
+              }
+            ],
+            "refuted": [],
+            "next_vantage": [
+              "tr1_t02_next"
+            ],
+            "allow_identity_unknown": true
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "TR1_T02_GOAL",
+      "hints": [
+        "TR1_T02_HINT_1",
+        "TR1_T02_HINT_2",
+        "TR1_T02_HINT_3"
+      ],
+      "principle": "TR1_T02_PRINCIPLE",
+      "abstraction": "TR1_T02_ABSTRACTION",
+      "limit": "TR1_T02_LIMIT",
+      "tutorial": "TR1_T02_HINT_1",
+      "explain": "TR1_T02_PRINCIPLE"
+    },
+    "T03": {
+      "schema_version": 1,
+      "mission_id": "T03",
+      "title": "TR1_T03_TITLE",
+      "chapter": 2,
+      "optional": false,
+      "prerequisites": [
+        "T02"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://t03.tracker.packet.test",
+      "goal": {
+        "record_id": "tr1_t03_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "observation_handoff",
+          "challenge_id": "tr1_t03_observations",
+          "label_display": "TR1_T03_GOAL",
+          "target_display": "https://t03.tracker.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "tr1_t03_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:tr1_t03_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "tr1_t03_desk": {
+          "name": "TR1_T03_DESK_NAME",
+          "domain": "t03.tracker.packet.test",
+          "address": "10.53.21.63",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://t03.tracker.packet.test": {
+          "title": "TR1_T03_TITLE",
+          "body": "TR1_T03_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "TR1_T03_SENDER",
+          "subject": "TR1_T03_TITLE",
+          "body": "TR1_T03_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "TR1_T03_SENDER",
+          "subject": "TR1_T03_TITLE",
+          "body": "TR1_T03_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "tr1_t03_observations": {
+          "kind": "observation_case",
+          "name": "TR1_T03_TOOL_NAME",
+          "sensors": {
+            "tr1_t03_field": {
+              "label": "TR1_T03_SENSOR_FIELD",
+              "host_id": "tr1_t03_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  100,
+                  130
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T03_COPY",
+                      "observed_at": [
+                        100,
+                        130
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "record_digest": "paper-N47",
+                        "claimed_account": "maint"
+                      },
+                      "provenance": {
+                        "source_id": "T03:republished-copy",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "client_supplied"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T03_DEPART",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N03",
+                        "from_node": "edge",
+                        "to_node": "archive",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8",
+                        "record_digest": "paper-N47"
+                      },
+                      "provenance": {
+                        "source_id": "T03:field",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t03_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t03_independent": {
+              "label": "TR1_T03_SENSOR_INDEPENDENT",
+              "host_id": "tr1_t03_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  110,
+                  113
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T03_DEPART",
+                      "observed_at": [
+                        110,
+                        113
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N03",
+                        "from_node": "edge",
+                        "to_node": "archive",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8",
+                        "record_digest": "paper-N47"
+                      },
+                      "provenance": {
+                        "source_id": "T03:receiver",
+                        "collector": "authorized-export",
+                        "vantage": "archive",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t03_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t03_next": {
+              "label": "TR1_T03_NEXT_SENSOR",
+              "host_id": "tr1_t03_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  150,
+                  180
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t03_desk",
+                "account_id": "investigator"
+              }
+            }
+          },
+          "claim_types": [
+            "same_session",
+            "forwarded_to",
+            "before"
+          ],
+          "initial_claims": {},
+          "handoff_requirements": {
+            "supported": [
+              {
+                "kind": "forwarded_to",
+                "request_tag": "N03",
+                "target_node": "archive"
+              }
+            ],
+            "refuted": [],
+            "next_vantage": [
+              "tr1_t03_next"
+            ],
+            "allow_identity_unknown": true
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "TR1_T03_GOAL",
+      "hints": [
+        "TR1_T03_HINT_1",
+        "TR1_T03_HINT_2",
+        "TR1_T03_HINT_3"
+      ],
+      "principle": "TR1_T03_PRINCIPLE",
+      "abstraction": "TR1_T03_ABSTRACTION",
+      "limit": "TR1_T03_LIMIT",
+      "tutorial": "TR1_T03_HINT_1",
+      "explain": "TR1_T03_PRINCIPLE"
+    },
+    "T04": {
+      "schema_version": 1,
+      "mission_id": "T04",
+      "title": "TR1_T04_TITLE",
+      "chapter": 2,
+      "optional": false,
+      "prerequisites": [
+        "T03"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://t04.tracker.packet.test",
+      "goal": {
+        "record_id": "tr1_t04_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "observation_handoff",
+          "challenge_id": "tr1_t04_observations",
+          "label_display": "TR1_T04_GOAL",
+          "target_display": "https://t04.tracker.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "tr1_t04_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:tr1_t04_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "tr1_t04_desk": {
+          "name": "TR1_T04_DESK_NAME",
+          "domain": "t04.tracker.packet.test",
+          "address": "10.53.81.137",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://t04.tracker.packet.test": {
+          "title": "TR1_T04_TITLE",
+          "body": "TR1_T04_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "TR1_T04_SENDER",
+          "subject": "TR1_T04_TITLE",
+          "body": "TR1_T04_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "TR1_T04_SENDER",
+          "subject": "TR1_T04_TITLE",
+          "body": "TR1_T04_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "tr1_t04_observations": {
+          "kind": "observation_case",
+          "name": "TR1_T04_TOOL_NAME",
+          "sensors": {
+            "tr1_t04_field": {
+              "label": "TR1_T04_SENSOR_FIELD",
+              "host_id": "tr1_t04_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  100,
+                  112
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T04_RELAY",
+                      "observed_at": [
+                        100,
+                        105
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N04",
+                        "from_node": "edge",
+                        "to_node": "relay"
+                      },
+                      "provenance": {
+                        "source_id": "T04:old-window",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T04_DEPART",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N04",
+                        "from_node": "edge",
+                        "to_node": "north",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T04:field",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t04_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t04_independent": {
+              "label": "TR1_T04_SENSOR_INDEPENDENT",
+              "host_id": "tr1_t04_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  110,
+                  113
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T04_DEPART",
+                      "observed_at": [
+                        110,
+                        113
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N04",
+                        "from_node": "edge",
+                        "to_node": "north",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T04:receiver",
+                        "collector": "authorized-export",
+                        "vantage": "north",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t04_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t04_next": {
+              "label": "TR1_T04_NEXT_SENSOR",
+              "host_id": "tr1_t04_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  150,
+                  180
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t04_desk",
+                "account_id": "investigator"
+              }
+            }
+          },
+          "claim_types": [
+            "same_session",
+            "forwarded_to",
+            "before"
+          ],
+          "initial_claims": {},
+          "handoff_requirements": {
+            "supported": [
+              {
+                "kind": "forwarded_to",
+                "request_tag": "N04",
+                "target_node": "north"
+              }
+            ],
+            "refuted": [],
+            "next_vantage": [
+              "tr1_t04_next"
+            ],
+            "allow_identity_unknown": true
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "TR1_T04_GOAL",
+      "hints": [
+        "TR1_T04_HINT_1",
+        "TR1_T04_HINT_2",
+        "TR1_T04_HINT_3"
+      ],
+      "principle": "TR1_T04_PRINCIPLE",
+      "abstraction": "TR1_T04_ABSTRACTION",
+      "limit": "TR1_T04_LIMIT",
+      "tutorial": "TR1_T04_HINT_1",
+      "explain": "TR1_T04_PRINCIPLE"
+    },
+    "T05": {
+      "schema_version": 1,
+      "mission_id": "T05",
+      "title": "TR1_T05_TITLE",
+      "chapter": 3,
+      "optional": false,
+      "prerequisites": [
+        "T04"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://t05.tracker.packet.test",
+      "goal": {
+        "record_id": "tr1_t05_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "observation_handoff",
+          "challenge_id": "tr1_t05_observations",
+          "label_display": "TR1_T05_GOAL",
+          "target_display": "https://t05.tracker.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "tr1_t05_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:tr1_t05_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "tr1_t05_desk": {
+          "name": "TR1_T05_DESK_NAME",
+          "domain": "t05.tracker.packet.test",
+          "address": "10.53.0.193",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://t05.tracker.packet.test": {
+          "title": "TR1_T05_TITLE",
+          "body": "TR1_T05_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "TR1_T05_SENDER",
+          "subject": "TR1_T05_TITLE",
+          "body": "TR1_T05_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "TR1_T05_SENDER",
+          "subject": "TR1_T05_TITLE",
+          "body": "TR1_T05_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "tr1_t05_observations": {
+          "kind": "observation_case",
+          "name": "TR1_T05_TOOL_NAME",
+          "sensors": {
+            "tr1_t05_field": {
+              "label": "TR1_T05_SENSOR_FIELD",
+              "host_id": "tr1_t05_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  100,
+                  112
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T05_ROTATE",
+                      "observed_at": [
+                        100,
+                        102
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "account_handle": "maint",
+                        "event": "credential-replaced"
+                      },
+                      "provenance": {
+                        "source_id": "T05:credential-history",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T05_DEPART",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N05",
+                        "from_node": "edge",
+                        "to_node": "retention",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8",
+                        "account_handle": "maint"
+                      },
+                      "provenance": {
+                        "source_id": "T05:field",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t05_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t05_independent": {
+              "label": "TR1_T05_SENSOR_INDEPENDENT",
+              "host_id": "tr1_t05_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  99,
+                  113
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T05_ROTATE",
+                      "observed_at": [
+                        99,
+                        103
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "account_handle": "maint",
+                        "event": "credential-replaced"
+                      },
+                      "provenance": {
+                        "source_id": "T05:signed-delegation",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T05_DEPART",
+                      "observed_at": [
+                        110,
+                        113
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N05",
+                        "from_node": "edge",
+                        "to_node": "retention",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8",
+                        "account_handle": "maint"
+                      },
+                      "provenance": {
+                        "source_id": "T05:receiver",
+                        "collector": "authorized-export",
+                        "vantage": "retention",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t05_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t05_next": {
+              "label": "TR1_T05_NEXT_SENSOR",
+              "host_id": "tr1_t05_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  150,
+                  180
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t05_desk",
+                "account_id": "investigator"
+              }
+            }
+          },
+          "claim_types": [
+            "same_session",
+            "forwarded_to",
+            "before"
+          ],
+          "initial_claims": {},
+          "handoff_requirements": {
+            "supported": [
+              {
+                "kind": "forwarded_to",
+                "request_tag": "N05",
+                "target_node": "retention"
+              },
+              {
+                "kind": "before",
+                "left": "event:TR1_T05_ROTATE",
+                "right": "event:TR1_T05_DEPART"
+              }
+            ],
+            "refuted": [],
+            "next_vantage": [
+              "tr1_t05_next"
+            ],
+            "allow_identity_unknown": true
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "TR1_T05_GOAL",
+      "hints": [
+        "TR1_T05_HINT_1",
+        "TR1_T05_HINT_2",
+        "TR1_T05_HINT_3"
+      ],
+      "principle": "TR1_T05_PRINCIPLE",
+      "abstraction": "TR1_T05_ABSTRACTION",
+      "limit": "TR1_T05_LIMIT",
+      "tutorial": "TR1_T05_HINT_1",
+      "explain": "TR1_T05_PRINCIPLE"
+    },
+    "T06": {
+      "schema_version": 1,
+      "mission_id": "T06",
+      "title": "TR1_T06_TITLE",
+      "chapter": 3,
+      "optional": false,
+      "prerequisites": [
+        "T05"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://t06.tracker.packet.test",
+      "goal": {
+        "record_id": "tr1_t06_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "observation_handoff",
+          "challenge_id": "tr1_t06_observations",
+          "label_display": "TR1_T06_GOAL",
+          "target_display": "https://t06.tracker.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "tr1_t06_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:tr1_t06_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "tr1_t06_desk": {
+          "name": "TR1_T06_DESK_NAME",
+          "domain": "t06.tracker.packet.test",
+          "address": "10.53.97.33",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://t06.tracker.packet.test": {
+          "title": "TR1_T06_TITLE",
+          "body": "TR1_T06_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "TR1_T06_SENDER",
+          "subject": "TR1_T06_TITLE",
+          "body": "TR1_T06_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "TR1_T06_SENDER",
+          "subject": "TR1_T06_TITLE",
+          "body": "TR1_T06_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "tr1_t06_observations": {
+          "kind": "observation_case",
+          "name": "TR1_T06_TOOL_NAME",
+          "sensors": {
+            "tr1_t06_field": {
+              "label": "TR1_T06_SENSOR_FIELD",
+              "host_id": "tr1_t06_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  110,
+                  112
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T06_DEPART",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N06",
+                        "from_node": "edge",
+                        "to_node": "vault",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8",
+                        "encrypted": true,
+                        "size_bucket": "small"
+                      },
+                      "provenance": {
+                        "source_id": "T06:field",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t06_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t06_independent": {
+              "label": "TR1_T06_SENSOR_INDEPENDENT",
+              "host_id": "tr1_t06_desk",
+              "visibility": "endpoint",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  110,
+                  113
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T06_DEPART",
+                      "observed_at": [
+                        110,
+                        113
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N06",
+                        "from_node": "edge",
+                        "to_node": "vault",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8",
+                        "application_event": "handoff-marker",
+                        "authorized_excerpt": "delivery accepted"
+                      },
+                      "provenance": {
+                        "source_id": "T06:receiver",
+                        "collector": "authorized-export",
+                        "vantage": "vault",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t06_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t06_next": {
+              "label": "TR1_T06_NEXT_SENSOR",
+              "host_id": "tr1_t06_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  150,
+                  180
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t06_desk",
+                "account_id": "investigator"
+              }
+            }
+          },
+          "claim_types": [
+            "same_session",
+            "forwarded_to",
+            "before"
+          ],
+          "initial_claims": {},
+          "handoff_requirements": {
+            "supported": [
+              {
+                "kind": "forwarded_to",
+                "request_tag": "N06",
+                "target_node": "vault"
+              }
+            ],
+            "refuted": [],
+            "next_vantage": [
+              "tr1_t06_next"
+            ],
+            "allow_identity_unknown": true
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "TR1_T06_GOAL",
+      "hints": [
+        "TR1_T06_HINT_1",
+        "TR1_T06_HINT_2",
+        "TR1_T06_HINT_3"
+      ],
+      "principle": "TR1_T06_PRINCIPLE",
+      "abstraction": "TR1_T06_ABSTRACTION",
+      "limit": "TR1_T06_LIMIT",
+      "tutorial": "TR1_T06_HINT_1",
+      "explain": "TR1_T06_PRINCIPLE"
+    },
+    "T07": {
+      "schema_version": 1,
+      "mission_id": "T07",
+      "title": "TR1_T07_TITLE",
+      "chapter": 3,
+      "optional": false,
+      "prerequisites": [
+        "T06"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://t07.tracker.packet.test",
+      "goal": {
+        "record_id": "tr1_t07_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "observation_handoff",
+          "challenge_id": "tr1_t07_observations",
+          "label_display": "TR1_T07_GOAL",
+          "target_display": "https://t07.tracker.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "tr1_t07_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:tr1_t07_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "tr1_t07_desk": {
+          "name": "TR1_T07_DESK_NAME",
+          "domain": "t07.tracker.packet.test",
+          "address": "10.53.155.11",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://t07.tracker.packet.test": {
+          "title": "TR1_T07_TITLE",
+          "body": "TR1_T07_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "TR1_T07_SENDER",
+          "subject": "TR1_T07_TITLE",
+          "body": "TR1_T07_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "TR1_T07_SENDER",
+          "subject": "TR1_T07_TITLE",
+          "body": "TR1_T07_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "tr1_t07_observations": {
+          "kind": "observation_case",
+          "name": "TR1_T07_TOOL_NAME",
+          "sensors": {
+            "tr1_t07_field": {
+              "label": "TR1_T07_SENSOR_FIELD",
+              "host_id": "tr1_t07_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  90,
+                  130
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T07_WEAK_A",
+                      "observed_at": [
+                        90,
+                        130
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T07:prior-notes",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "client_supplied"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T07_WEAK_B",
+                      "observed_at": [
+                        90,
+                        130
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S2",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T07:prior-notes",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "client_supplied"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T07_DEPART",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N07",
+                        "from_node": "edge",
+                        "to_node": "east",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T07:field",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T07_TRUSTED_A",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T07:field-registry",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T07_TRUSTED_B",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S2",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T07:field-registry",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t07_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t07_independent": {
+              "label": "TR1_T07_SENSOR_INDEPENDENT",
+              "host_id": "tr1_t07_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  110,
+                  113
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T07_DEPART",
+                      "observed_at": [
+                        110,
+                        113
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N07",
+                        "from_node": "edge",
+                        "to_node": "east",
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T07:receiver",
+                        "collector": "authorized-export",
+                        "vantage": "east",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T07_TRUSTED_A",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S1",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T07:independent-registry",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T07_TRUSTED_B",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S2",
+                        "shared_address": "10.53.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "T07:independent-registry",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t07_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t07_next": {
+              "label": "TR1_T07_NEXT_SENSOR",
+              "host_id": "tr1_t07_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  150,
+                  180
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t07_desk",
+                "account_id": "investigator"
+              }
+            }
+          },
+          "claim_types": [
+            "same_session",
+            "forwarded_to",
+            "before"
+          ],
+          "initial_claims": {
+            "prior": {
+              "label": "TR1_T07_PRIOR",
+              "claim": {
+                "kind": "same_session",
+                "left": "session:S1",
+                "right": "session:S2"
+              },
+              "source_id": "prior-notes"
+            }
+          },
+          "handoff_requirements": {
+            "supported": [
+              {
+                "kind": "forwarded_to",
+                "request_tag": "N07",
+                "target_node": "east"
+              }
+            ],
+            "refuted": [
+              "prior"
+            ],
+            "next_vantage": [
+              "tr1_t07_next"
+            ],
+            "allow_identity_unknown": true
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "TR1_T07_GOAL",
+      "hints": [
+        "TR1_T07_HINT_1",
+        "TR1_T07_HINT_2",
+        "TR1_T07_HINT_3"
+      ],
+      "principle": "TR1_T07_PRINCIPLE",
+      "abstraction": "TR1_T07_ABSTRACTION",
+      "limit": "TR1_T07_LIMIT",
+      "tutorial": "TR1_T07_HINT_1",
+      "explain": "TR1_T07_PRINCIPLE"
+    },
+    "T08": {
+      "schema_version": 1,
+      "mission_id": "T08",
+      "title": "TR1_T08_TITLE",
+      "chapter": 4,
+      "optional": false,
+      "prerequisites": [
+        "T07"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://t08.tracker.packet.test",
+      "goal": {
+        "record_id": "tr1_t08_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "observation_handoff",
+          "challenge_id": "tr1_t08_observations",
+          "label_display": "TR1_T08_GOAL",
+          "target_display": "https://t08.tracker.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "tr1_t08_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:tr1_t08_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "tr1_t08_desk": {
+          "name": "TR1_T08_DESK_NAME",
+          "domain": "t08.tracker.packet.test",
+          "address": "10.53.148.115",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://t08.tracker.packet.test": {
+          "title": "TR1_T08_TITLE",
+          "body": "TR1_T08_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "TR1_T08_SENDER",
+          "subject": "TR1_T08_TITLE",
+          "body": "TR1_T08_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "TR1_T08_SENDER",
+          "subject": "TR1_T08_TITLE",
+          "body": "TR1_T08_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "tr1_t08_observations": {
+          "kind": "observation_case",
+          "name": "TR1_T08_TOOL_NAME",
+          "sensors": {
+            "tr1_t08_field": {
+              "label": "TR1_T08_SENSOR_FIELD",
+              "host_id": "tr1_t08_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  110,
+                  120
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T08_DEPART",
+                      "observed_at": [
+                        110,
+                        112
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N08",
+                        "from_node": "edge",
+                        "to_node": "relay",
+                        "session_tag": "S1"
+                      },
+                      "provenance": {
+                        "source_id": "T08:edge-outbox",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T08_ARRIVE",
+                      "observed_at": [
+                        118,
+                        120
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N08",
+                        "from_node": "relay",
+                        "to_node": "vault",
+                        "session_tag": "S1"
+                      },
+                      "provenance": {
+                        "source_id": "T08:relay-outbox",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t08_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t08_independent": {
+              "label": "TR1_T08_SENSOR_INDEPENDENT",
+              "host_id": "tr1_t08_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  109,
+                  121
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "TR1_T08_DEPART",
+                      "observed_at": [
+                        109,
+                        113
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N08",
+                        "from_node": "edge",
+                        "to_node": "relay",
+                        "session_tag": "S1"
+                      },
+                      "provenance": {
+                        "source_id": "T08:relay-inbox",
+                        "collector": "authorized-export",
+                        "vantage": "relay",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "TR1_T08_ARRIVE",
+                      "observed_at": [
+                        117,
+                        121
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "request_tag": "N08",
+                        "from_node": "relay",
+                        "to_node": "vault",
+                        "session_tag": "S1"
+                      },
+                      "provenance": {
+                        "source_id": "T08:vault-inbox",
+                        "collector": "authorized-export",
+                        "vantage": "vault",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t08_desk",
+                "account_id": "investigator"
+              }
+            },
+            "tr1_t08_next": {
+              "label": "TR1_T08_NEXT_SENSOR",
+              "host_id": "tr1_t08_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  150,
+                  180
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "tr1_t08_desk",
+                "account_id": "investigator"
+              }
+            }
+          },
+          "claim_types": [
+            "same_session",
+            "forwarded_to",
+            "before"
+          ],
+          "initial_claims": {},
+          "handoff_requirements": {
+            "supported": [
+              {
+                "kind": "forwarded_to",
+                "request_tag": "N08",
+                "target_node": "relay"
+              },
+              {
+                "kind": "forwarded_to",
+                "request_tag": "N08",
+                "target_node": "vault"
+              }
+            ],
+            "refuted": [],
+            "next_vantage": [
+              "tr1_t08_next"
+            ],
+            "allow_identity_unknown": true
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "TR1_T08_GOAL",
+      "hints": [
+        "TR1_T08_HINT_1",
+        "TR1_T08_HINT_2",
+        "TR1_T08_HINT_3"
+      ],
+      "principle": "TR1_T08_PRINCIPLE",
+      "abstraction": "TR1_T08_ABSTRACTION",
+      "limit": "TR1_T08_LIMIT",
+      "tutorial": "TR1_T08_HINT_1",
+      "explain": "TR1_T08_PRINCIPLE"
+    }
+  },
+  "endings": [
+    {
+      "id": "tr1_handoff",
+      "title": "TR1_ENDING_TITLE",
+      "text": "TR1_T08_REPLY",
+      "requires_facts": []
+    }
+  ],
+  "contacts": {
+    "C03": {
+      "name_key": "TR1_T01_SENDER",
+      "introduced_by": [
+        "T01"
+      ],
+      "face_gate": {
+        "when": "introduced",
+        "mission_id": "T01",
+        "explicit": false
+      }
+    }
+  }
+}

@@ -1,7 +1,11 @@
 extends RefCounted
 
 const FS = preload("res://scripts/core/virtual_fs.gd")
-const KINDS := ["query", "render", "path", "exec", "fetch", "permission", "audit", "reverse", "memory", "packet", "trace", "compare", "token", "policy", "idor", "session", "csrf", "upload"]
+const ResponseLab = preload("res://scripts/core/response_lab.gd")
+const ObservationCase = preload("res://scripts/core/observation_case.gd")
+const BranchVM = preload("res://scripts/core/branch_vm.gd")
+const STATEFUL_KINDS := ["response_lab", "observation_case", "branch_vm"]
+const KINDS := ["query", "render", "path", "exec", "fetch", "permission", "audit", "reverse", "memory", "packet", "trace", "compare", "token", "policy", "idor", "session", "csrf", "upload", "response_lab", "observation_case", "branch_vm"]
 
 
 static func normalize_value(value: Variant) -> Variant:
@@ -20,7 +24,11 @@ static func normalize_value(value: Variant) -> Variant:
 	return value
 
 
-static func apply_challenge(definition: Dictionary, input: Variant, policies: Dictionary, previous: Dictionary, account: String = "") -> Dictionary:
+static func apply_challenge(definition: Dictionary, input: Variant, policies: Dictionary, previous: Dictionary, account: String = "", context: Dictionary = {}) -> Dictionary:
+	match definition.get("kind", ""):
+		"response_lab": return ResponseLab.apply_action(definition, input, previous, context)
+		"observation_case": return ObservationCase.apply_action(definition, input, previous, context)
+		"branch_vm": return BranchVM.apply_action(definition, input, previous, context)
 	var state: Dictionary = previous.duplicate(true)
 	var kind: String = definition.get("kind", "")
 	var policy: Variant = policies.get(definition.get("policy_id", ""), false)

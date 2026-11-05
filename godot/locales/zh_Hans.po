@@ -38,11 +38,35 @@ msgstr "泰景"
 msgid "CAMPAIGN_COMPLETE"
 msgstr "午夜的记录已串联起来。"
 
+msgid "CAMPAIGN_DEFENDER"
+msgstr "防御者"
+
+msgid "CAMPAIGN_DEFENDER_DESC"
+msgstr "阻止威胁，同时维持正常业务。"
+
 msgid "CAMPAIGN_HELP_COMMAND"
 msgstr "虚拟命令支持语法：{command}\n请查看事件提示与工具输入格式。未记录的选项将被拒绝。"
 
 msgid "CAMPAIGN_HELP_OVERVIEW"
 msgstr "支持的虚拟 Linux 命令：{commands}\n不执行真实 shell、管道或替换。\ntool <challengeID> 'input/JSON' · configure <policyID> true"
+
+msgid "CAMPAIGN_IMPORT_CONFIRM"
+msgstr "将旧版 M01 导入旧版战役。如已有旧版槽，将先备份后替换；新战役存档会保留。"
+
+msgid "CAMPAIGN_INTRUDER"
+msgstr "入侵者"
+
+msgid "CAMPAIGN_INTRUDER_DESC"
+msgstr "打开封闭通路，取得隐藏记录。"
+
+msgid "CAMPAIGN_NEW_CONFIRM"
+msgstr "备份 {campaign} 的现有进度后重新开始。其他战役与旧版存档会保留。"
+
+msgid "CAMPAIGN_NO_SAVE"
+msgstr "暂无已保存进度"
+
+msgid "CAMPAIGN_PROGRESS"
+msgstr "进度 {done}/{total}"
 
 msgid "CAMPAIGN_RESULT_ARCHIVED"
 msgstr "资料副本已归档。请确认记录 ID 与来源。\n{detail}"
@@ -83,11 +107,17 @@ msgstr "已选择证据交付方式。\n{detail}"
 msgid "CAMPAIGN_RESULT_ENDING_LOCKED"
 msgstr "选择此交付方式的证据尚不足。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_EXTERNAL_URL"
+msgstr "只能打开游戏中已注册的虚拟地址。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_FILES_CHANGED"
 msgstr "虚拟文件状态已更改。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_GOAL_NOT_MET"
 msgstr "当前目标所需证据仍不足。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_HANDOFF_INCOMPLETE"
+msgstr "交接所需连接、证据或后续观察仍不足。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HINT"
 msgstr "当前事件提示。\n{detail}"
@@ -110,8 +140,17 @@ msgstr "请检查输入格式，仅接受支持的参数。\n{detail}"
 msgid "CAMPAIGN_RESULT_INVALID_CHECKPOINT"
 msgstr "事件检查点无效，未读取。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_INVALID_CLAIM"
+msgstr "请检查主张格式与已采集观察的引用。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_INVALID_CONTENT"
 msgstr "无法读取事件数据。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_CONTROL"
+msgstr "请检查允许的应对措施与取值。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_METHOD"
+msgstr "不支持此虚拟请求方法。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_INVALID_PATH"
 msgstr "请检查虚拟路径格式。\n{detail}"
@@ -137,6 +176,9 @@ msgstr "未找到旧版 M01 存档。\n{detail}"
 msgid "CAMPAIGN_RESULT_LEGACY_SIZE_LIMIT"
 msgstr "旧版存档超过大小限制。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_LOADED"
+msgstr "已读取保存的战役进度。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_MISSING_EVIDENCE"
 msgstr "尚未取得所需观察或记录。\n{detail}"
 
@@ -148,6 +190,9 @@ msgstr "已选择事件。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_MODEL_OBSERVED"
 msgstr "虚拟模型观察结果\n{detail}"
+
+msgid "CAMPAIGN_RESULT_NEW_STARTED"
+msgstr "已将当前进度写入新存档。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_NOT_DIRECTORY"
 msgstr "指定路径不是目录。\n{detail}"
@@ -167,6 +212,9 @@ msgstr "此结果中没有可取得的记录。\n{detail}"
 msgid "CAMPAIGN_RESULT_OBSERVATION_LIMIT"
 msgstr "已达到本次调查的观察保存数量上限。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_OBSERVATION_RECORDED"
+msgstr "观察与假设处理结果。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_PERMISSION_DENIED"
 msgstr "当前虚拟账号没有此资源的权限。\n{detail}"
 
@@ -176,14 +224,101 @@ msgstr "虚拟服务策略已修改。请重新检查正常与被拒操作。\n{
 msgid "CAMPAIGN_RESULT_PROTOCOL_MISMATCH"
 msgstr "请求协议与所选服务不匹配。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_RECOVERED"
+msgstr "已从有效备份恢复进度。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
+msgstr "当前存档有效，无需恢复。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "当前事件已重置。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RESPONSE_OBSERVED"
+msgstr "已观察虚拟业务与应对状态。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RESTORED"
 msgstr "已恢复战役存档。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_ROUTE_HOST_MISMATCH"
 msgstr "页面主机与虚拟请求路径不匹配。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVED"
+msgstr "已保存战役进度。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_INVALID"
+msgstr "没有可用的有效备份。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_REPLACE_FAILED"
+msgstr "无法替换备份文件。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIFFERENT_CAMPAIGN"
+msgstr "此存档标记为其他战役或内容版本。原件与备份均已保留，未被替换。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_FAILED"
+msgstr "无法创建存档目录。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_OPEN_FAILED"
+msgstr "无法打开存档目录。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_ENCODING"
+msgstr "存档文件的文字编码无效。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_JSON"
+msgstr "存档文件的 JSON 格式无效。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_SNAPSHOT"
+msgstr "进度状态未通过存档验证。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_VALIDATOR"
+msgstr "无法准备存档验证。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NEW_REPLACE_FAILED"
+msgstr "无法用新存档替换文件。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NOT_FOUND"
+msgstr "未找到存档文件。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_IS_DIRECTORY"
+msgstr "存档文件路径指向目录。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_REJECTED"
+msgstr "不允许使用此存档路径。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PRESERVE_FAILED"
+msgstr "无法单独保留现有文件。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_FAILED"
+msgstr "读取存档文件时出错。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_OPEN_FAILED"
+msgstr "无法打开存档文件进行读取。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_FAILED"
+msgstr "无法恢复存档进度。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_NOT_NEEDED"
+msgstr "已有有效存档，无需恢复。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_PATH_FAILED"
+msgstr "无法准备恢复文件路径。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_REQUIRED"
+msgstr "需要选择恢复方式，未自动覆盖现有存档。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_REPLACE_FAILED"
+msgstr "无法替换存档文件。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_ROUNDTRIP_MISMATCH"
+msgstr "重新读取的存档与原进度不一致。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_SIZE_LIMIT"
+msgstr "存档状态超过大小限制。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_FAILED"
+msgstr "写入存档文件时出错。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_OPEN_FAILED"
+msgstr "无法打开存档文件进行写入。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_SERVICE_CLOSED"
 msgstr "从当前观察点可见该服务关闭。\n{detail}"
@@ -200,6 +335,9 @@ msgstr "目标虚拟服务尚未开放。\n{detail}"
 msgid "CAMPAIGN_RESULT_SESSION_LIMIT"
 msgstr "已达到虚拟会话数量上限。请用 exit 结束先前连接。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_UNKNOWN_CASE"
+msgstr "请选择已注册的请求或输入样例。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_UNKNOWN_COMMAND"
 msgstr "不支持此虚拟命令。请通过 help 查看可用命令。\n{detail}"
 
@@ -211,6 +349,18 @@ msgstr "此事件未注册。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_MODEL"
 msgstr "此虚拟模型未注册。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_OPERATION"
+msgstr "请选择支持的操作。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_ROUTE"
+msgstr "请检查已注册的请求通路。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_SENSOR"
+msgstr "请检查已注册观察点。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_TOKEN"
+msgstr "请检查要撤销会话的已注册引用。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_TOOL"
 msgstr "此事件中无法使用该工具或模型。\n{detail}"
@@ -224,11 +374,35 @@ msgstr "当前起点无法到达目标。\n{detail}"
 msgid "CAMPAIGN_RESULT_UNSUPPORTED_SYNTAX"
 msgstr "不支持此虚拟命令语法。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_VM_INVALID"
+msgstr "请检查虚拟程序或输入格式。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_LIMIT"
+msgstr "已超过虚拟程序允许的预算。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_OBSERVED"
+msgstr "虚拟程序状态。\n{detail}"
+
 msgid "CAMPAIGN_RESULT_WEB_AUTHENTICATED"
 msgstr "已登录虚拟网页账号。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_WEB_LOGGED_OUT"
 msgstr "已结束虚拟网页会话。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_WINDOW_END"
+msgstr "此观察点没有下一个观察窗口。\n{detail}"
+
+msgid "CAMPAIGN_SAVE_ATTENTION"
+msgstr "可检查存档状态，或恢复可用备份。"
+
+msgid "CAMPAIGN_SELECT"
+msgstr "选择战役"
+
+msgid "CAMPAIGN_TRACKER"
+msgstr "追踪者"
+
+msgid "CAMPAIGN_TRACKER_DESC"
+msgstr "依据观察与反证缩小追踪范围。"
 
 msgid "CANCEL"
 msgstr "取消"
@@ -284,6 +458,585 @@ msgstr "独立制作的黑客模拟游戏\n仅使用虚拟服务器和虚拟命�
 msgid "DESKTOP_NOT_READY"
 msgstr "桌面连接尚未就绪。"
 
+msgid "DF1_D01_ABSTRACTION"
+msgstr "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。"
+
+msgid "DF1_D01_BRIEF"
+msgstr "这是你值守夜间服务的第一天。我是现场技术员度允。一条请求读取市民自己的受理单，另一条读取别人的。关掉服务器，两者都会消失，但那不是我们的目标。\n\n用业务账号连接，先观察一次正常请求。可以修复所有者检查，也可以关闭暴露通路，将正常业务转到有限的委托路径。别只看什么被挡住，还要确认谁能继续工作。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d01.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D01_CASE_FOREIGN_DIRECT"
+msgstr "原入口的无关账号"
+
+msgid "DF1_D01_CASE_FOREIGN_GATEWAY"
+msgstr "获批通路的无关账号"
+
+msgid "DF1_D01_CASE_OWN_A"
+msgstr "市民 A 自己的受理单"
+
+msgid "DF1_D01_CASE_OWN_B"
+msgstr "市民 B 自己的受理单"
+
+msgid "DF1_D01_CASE_STAFF"
+msgstr "委托给指定职员的受理单"
+
+msgid "DF1_D01_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "DF1_D01_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "DF1_D01_CONTROL_OWNER_CHECK"
+msgstr "受理单所有者检查"
+
+msgid "DF1_D01_DESK_NAME"
+msgstr "不关门，也能挡住威胁 · 工作台"
+
+msgid "DF1_D01_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "DF1_D01_GOAL"
+msgstr "拒绝无关读取，保留两位市民与指定职员的读取。"
+
+msgid "DF1_D01_HINT_1"
+msgstr "将正常业务与有问题的请求分开观察。观察所有者检查或有限委托如何改变结果。"
+
+msgid "DF1_D01_HINT_2"
+msgstr "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。"
+
+msgid "DF1_D01_HINT_3"
+msgstr "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。"
+
+msgid "DF1_D01_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "DF1_D01_LIMIT"
+msgstr "通过已观察场景，不代表能阻止所有可能攻击。"
+
+msgid "DF1_D01_PRINCIPLE"
+msgstr "观察所有者检查或有限委托如何改变结果。"
+
+msgid "DF1_D01_REPLY"
+msgstr "瑞琳与维护人员都能继续工作，无关读取已被阻止。这为后续应对立下了标准。下一次警报中，正常市民与重复尝试会从同一地址到来。"
+
+msgid "DF1_D01_SENDER"
+msgstr "度允"
+
+msgid "DF1_D01_TITLE"
+msgstr "不关门，也能挡住威胁"
+
+msgid "DF1_D02_ABSTRACTION"
+msgstr "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。"
+
+msgid "DF1_D02_BRIEF"
+msgstr "医院中继地址不断发来登录失败，同一地址也有正常业务。封掉整个地址很容易，先看看谁会因此失去访问。\n\n可以按账号限制重复尝试，也可将正常业务转入获批认证通路。限制后仍须验证夜班人员能正常认证，无需等待真实时间。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d02.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D02_CASE_FAILED_1"
+msgstr "重复失败 1"
+
+msgid "DF1_D02_CASE_FAILED_2"
+msgstr "重复失败 2"
+
+msgid "DF1_D02_CASE_FAILED_3"
+msgstr "重复失败 3"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_1"
+msgstr "重复失败 1（获批通路）"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_2"
+msgstr "重复失败 2（获批通路）"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_3"
+msgstr "重复失败 3（获批通路）"
+
+msgid "DF1_D02_CASE_LEGITIMATE"
+msgstr "共享起点的正常市民请求"
+
+msgid "DF1_D02_CASE_WARD_JOB"
+msgstr "病区通知任务的有效认证"
+
+msgid "DF1_D02_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "DF1_D02_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "DF1_D02_CONTROL_RETRY_LIMIT"
+msgstr "按账号限制重试"
+
+msgid "DF1_D02_DESK_NAME"
+msgstr "同一地址的两个人 · 工作台"
+
+msgid "DF1_D02_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "DF1_D02_GOAL"
+msgstr "限制重复认证失败，保留共享起点的正常市民与通知访问。"
+
+msgid "DF1_D02_HINT_1"
+msgstr "将正常业务与有问题的请求分开观察。不要整段封锁地址，请比较各账号尝试与获批认证通路。"
+
+msgid "DF1_D02_HINT_2"
+msgstr "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。"
+
+msgid "DF1_D02_HINT_3"
+msgstr "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。"
+
+msgid "DF1_D02_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "DF1_D02_LIMIT"
+msgstr "通过已观察场景，不代表能阻止所有可能攻击。"
+
+msgid "DF1_D02_PRINCIPLE"
+msgstr "不要整段封锁地址，请比较各账号尝试与获批认证通路。"
+
+msgid "DF1_D02_REPLY"
+msgstr "没有把同一地址视为同一个人，医院业务得以保留。这些失败记录中的临时账号仍有一个活跃会话。"
+
+msgid "DF1_D02_SENDER"
+msgstr "度允"
+
+msgid "DF1_D02_TITLE"
+msgstr "同一地址的两个人"
+
+msgid "DF1_D03_ABSTRACTION"
+msgstr "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。"
+
+msgid "DF1_D03_BRIEF"
+msgstr "我是瑞允。临时维护任务虽已结束，会话仍能读取资料。同一服务上还有正常的长期任务，强制所有人退出会造成损害。\n\n仅撤销暴露会话，或收窄并替换已结束的权限。分别验证新的正常访问仍可用，以及旧会话无法复用。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d03.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D03_CASE_FRESH"
+msgstr "新的正常会话"
+
+msgid "DF1_D03_CASE_OTHER_JOB"
+msgstr "其他正常长期任务"
+
+msgid "DF1_D03_CASE_RETIRED"
+msgstr "原通路上的旧权限"
+
+msgid "DF1_D03_CASE_RETIRED_GATEWAY"
+msgstr "获批通路上的旧权限"
+
+msgid "DF1_D03_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "DF1_D03_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "DF1_D03_CONTROL_SESSION_GUARD"
+msgstr "检查已结束的会话权限"
+
+msgid "DF1_D03_DESK_NAME"
+msgstr "该失效的钥匙 · 工作台"
+
+msgid "DF1_D03_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "DF1_D03_GOAL"
+msgstr "拒绝已结束的权限，同时保留其他正常会话。"
+
+msgid "DF1_D03_HINT_1"
+msgstr "将正常业务与有问题的请求分开观察。比较定向撤销与迁移到未签发旧会话的获批通路。"
+
+msgid "DF1_D03_HINT_2"
+msgstr "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。"
+
+msgid "DF1_D03_HINT_3"
+msgstr "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。"
+
+msgid "DF1_D03_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "DF1_D03_LIMIT"
+msgstr "通过已观察场景，不代表能阻止所有可能攻击。"
+
+msgid "DF1_D03_PRINCIPLE"
+msgstr "比较定向撤销与迁移到未签发旧会话的获批通路。"
+
+msgid "DF1_D03_REPLY"
+msgstr "旧权限已被拒绝，正常业务仍在。旧会话被拒已通过服务器响应确认，而非令人安心的画面文字。下一份输入以照片之名到来。"
+
+msgid "DF1_D03_SENDER"
+msgstr "瑞允"
+
+msgid "DF1_D03_TITLE"
+msgstr "该失效的钥匙"
+
+msgid "DF1_D04_ABSTRACTION"
+msgstr "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。"
+
+msgid "DF1_D04_BRIEF"
+msgstr "一张维护照片竟作为处理任务执行了。仅禁止扩展名，修不好内容与存储位置的关系；关闭照片接收又会让现场停摆。\n\n可修复格式校验与不可执行存储边界，或隔离处理，仅发布获批照片。既要拒绝伪装文件，也要允许正常 JPEG 的创建与查看。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d04.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D04_CASE_DISGUISED"
+msgstr "伪装成照片的输入"
+
+msgid "DF1_D04_CASE_DISGUISED_GATEWAY"
+msgstr "获批处理器中的伪装文件"
+
+msgid "DF1_D04_CASE_PHOTO"
+msgstr "创建正常 JPEG"
+
+msgid "DF1_D04_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "DF1_D04_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "DF1_D04_CONTROL_NO_EXECUTION"
+msgstr "不执行上传文件，仅存储"
+
+msgid "DF1_D04_CONTROL_PHOTO_CHECK"
+msgstr "校验照片内容类型"
+
+msgid "DF1_D04_DESK_NAME"
+msgstr "照片工作台 · 工作台"
+
+msgid "DF1_D04_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "DF1_D04_GOAL"
+msgstr "阻止伪装文件创建，同时通过安全处理器生成正常 JPEG。"
+
+msgid "DF1_D04_HINT_1"
+msgstr "将正常业务与有问题的请求分开观察。将名称、MIME、内容特征与实际存储及执行状态分开检查。"
+
+msgid "DF1_D04_HINT_2"
+msgstr "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。"
+
+msgid "DF1_D04_HINT_3"
+msgstr "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。"
+
+msgid "DF1_D04_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "DF1_D04_LIMIT"
+msgstr "通过已观察场景，不代表能阻止所有可能攻击。"
+
+msgid "DF1_D04_PRINCIPLE"
+msgstr "将名称、MIME、内容特征与实际存储及执行状态分开检查。"
+
+msgid "DF1_D04_REPLY"
+msgstr "正常照片仍能接收，错误处理效果已被阻止。下个问题是读取文件的任务还能到达哪些内部服务。"
+
+msgid "DF1_D04_SENDER"
+msgstr "度允"
+
+msgid "DF1_D04_TITLE"
+msgstr "照片工作台"
+
+msgid "DF1_D05_ABSTRACTION"
+msgstr "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。"
+
+msgid "DF1_D05_BRIEF"
+msgstr "我是市政服务负责人泰景。预览任务读到了内部资料。切断所有内部连接会破坏健康检查与市民页面，需要区分获准用途和目的地。\n\n可收窄内部对象权限，或通过获批代理仅传递必要请求。策略应依据实际请求身份和目标，而非隐藏的攻击者标签。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d05.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D05_CASE_HEALTH"
+msgstr "任务所需健康检查"
+
+msgid "DF1_D05_CASE_PREVIEW"
+msgstr "市民正常预览"
+
+msgid "DF1_D05_CASE_PROXY_SECRET"
+msgstr "获批代理上的越界请求"
+
+msgid "DF1_D05_CASE_SECRET"
+msgstr "任务读取范围外保留资料"
+
+msgid "DF1_D05_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "DF1_D05_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "DF1_D05_CONTROL_OWNER_CHECK"
+msgstr "受理单所有者检查"
+
+msgid "DF1_D05_DESK_NAME"
+msgstr "向内发出的请求 · 工作台"
+
+msgid "DF1_D05_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "DF1_D05_GOAL"
+msgstr "保留预览与健康检查，阻止内部未授权读取。"
+
+msgid "DF1_D05_HINT_1"
+msgstr "将正常业务与有问题的请求分开观察。比较任务的对象所有权与获批代理范围。"
+
+msgid "DF1_D05_HINT_2"
+msgstr "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。"
+
+msgid "DF1_D05_HINT_3"
+msgstr "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。"
+
+msgid "DF1_D05_INTERNAL_NAME"
+msgstr "内部健康检查与保留服务"
+
+msgid "DF1_D05_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "DF1_D05_LIMIT"
+msgstr "通过已观察场景，不代表能阻止所有可能攻击。"
+
+msgid "DF1_D05_PRINCIPLE"
+msgstr "比较任务的对象所有权与获批代理范围。"
+
+msgid "DF1_D05_REPLY"
+msgstr "健康检查与预览仍可用，内部未授权读取已被阻止，边界足够精确。但仓促修改文件权限又使部署停了下来。"
+
+msgid "DF1_D05_SENDER"
+msgstr "泰景"
+
+msgid "DF1_D05_TITLE"
+msgstr "向内发出的请求"
+
+msgid "DF1_D06_ABSTRACTION"
+msgstr "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。"
+
+msgid "DF1_D06_BRIEF"
+msgstr "原本为阻止无关账号写入的修改，也挡住了部署账号遍历上级目录。只看文件权限会漏掉原因，请检查当前组和路径上的每道门。\n\n可以只修复必要组或 ACL，也可转到获批的任务账号与路径。给所有人完整权限并不是解决办法。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d06.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D06_CASE_FOREIGN_APPROVED"
+msgstr "获批通路上的无关写入"
+
+msgid "DF1_D06_CASE_FOREIGN_WRITE"
+msgstr "无关账号修改部署"
+
+msgid "DF1_D06_CASE_READ"
+msgstr "部署账号读取自身状态"
+
+msgid "DF1_D06_CASE_WRITE"
+msgstr "部署账号写入任务结果"
+
+msgid "DF1_D06_DESK_NAME"
+msgstr "修好的权限，停下的任务 · 工作台"
+
+msgid "DF1_D06_DIRECTORY_MODE"
+msgstr "部署目录遍历权限"
+
+msgid "DF1_D06_FILE_MODE"
+msgstr "任务结果文件权限"
+
+msgid "DF1_D06_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "DF1_D06_GOAL"
+msgstr "允许部署读写，拒绝无关修改。"
+
+msgid "DF1_D06_HINT_1"
+msgstr "将正常业务与有问题的请求分开观察。检查上级目录与当前组，或使用获批替代通路。"
+
+msgid "DF1_D06_HINT_2"
+msgstr "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。"
+
+msgid "DF1_D06_HINT_3"
+msgstr "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。"
+
+msgid "DF1_D06_JOB_GROUPS"
+msgstr "部署账号所需组"
+
+msgid "DF1_D06_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "DF1_D06_LIMIT"
+msgstr "通过已观察场景，不代表能阻止所有可能攻击。"
+
+msgid "DF1_D06_PRINCIPLE"
+msgstr "检查上级目录与当前组，或使用获批替代通路。"
+
+msgid "DF1_D06_REPLY"
+msgstr "部署与维护已恢复，无关写入被拒绝，必要权限仍保持有限。接下来，真实威胁与错误紧急规则会同时出现。"
+
+msgid "DF1_D06_SENDER"
+msgstr "度允"
+
+msgid "DF1_D06_TITLE"
+msgstr "修好的权限，停下的任务"
+
+msgid "DF1_D07_ABSTRACTION"
+msgstr "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。"
+
+msgid "DF1_D07_BASELINE_CHECKPOINT"
+msgstr "已核验交接时的通知可用性"
+
+msgid "DF1_D07_BRIEF"
+msgstr "内部未授权请求被挡住了，正常通知也断了。恢复整个旧世界，可能会复活已经撤销的钥匙。这次，应对的关键是回滚范围。\n\n仅回滚错误策略组，或将正常业务迁移至获批备用服务。会话撤销与已收集证据不属于回滚对象。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d07.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D07_CASE_FRESH"
+msgstr "新的正常会话"
+
+msgid "DF1_D07_CASE_INTERNAL_TARGET"
+msgstr "范围外内部目标"
+
+msgid "DF1_D07_CASE_NOTIFY"
+msgstr "送达正常病区通知"
+
+msgid "DF1_D07_CASE_OTHER_JOB"
+msgstr "其他正常长期任务"
+
+msgid "DF1_D07_CASE_RETIRED"
+msgstr "原通路上的旧权限"
+
+msgid "DF1_D07_CASE_RETIRED_GATEWAY"
+msgstr "获批通路上的旧权限"
+
+msgid "DF1_D07_CASE_STANDBY_TARGET"
+msgstr "备用服务中的范围外目标"
+
+msgid "DF1_D07_CONTROL_NOTIFY_OPEN"
+msgstr "启用主要通知通路"
+
+msgid "DF1_D07_CONTROL_SESSION_GUARD"
+msgstr "检查已结束的会话权限"
+
+msgid "DF1_D07_CONTROL_STANDBY_OPEN"
+msgstr "启用备用通知通路"
+
+msgid "DF1_D07_CONTROL_TARGET_SCOPE"
+msgstr "限制通知目标"
+
+msgid "DF1_D07_DESK_NAME"
+msgstr "双重故障的一夜 · 工作台"
+
+msgid "DF1_D07_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "DF1_D07_GOAL"
+msgstr "保持撤销会话与越界目标被拒，同时恢复通知。"
+
+msgid "DF1_D07_HINT_1"
+msgstr "将正常业务与有问题的请求分开观察。仅回滚策略组，已撤销的钥匙不会恢复。"
+
+msgid "DF1_D07_HINT_2"
+msgstr "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。"
+
+msgid "DF1_D07_HINT_3"
+msgstr "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。"
+
+msgid "DF1_D07_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "DF1_D07_LIMIT"
+msgstr "通过已观察场景，不代表能阻止所有可能攻击。"
+
+msgid "DF1_D07_PRINCIPLE"
+msgstr "仅回滚策略组，已撤销的钥匙不会恢复。"
+
+msgid "DF1_D07_REPLY"
+msgstr "通知再次送达，旧会话没有复活。我们会明确区分受控临时迁移与完全恢复，再进行交接。"
+
+msgid "DF1_D07_SENDER"
+msgstr "泰景"
+
+msgid "DF1_D07_TITLE"
+msgstr "双重故障的一夜"
+
+msgid "DF1_D08_ABSTRACTION"
+msgstr "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。"
+
+msgid "DF1_D08_BRIEF"
+msgstr "这是最后一次夜间交接。网页受理、内部通知与维护任务相互关联。让警报消失，不等于守住城市。\n\n可精确恢复现有服务，或通过获批替代通路保持连续性。在所选配置下同时核验正常业务与模型中的威胁，如实交代尚存限制。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d08.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D08_CASE_FOREIGN_DIRECT"
+msgstr "原入口的无关账号"
+
+msgid "DF1_D08_CASE_FOREIGN_GATEWAY"
+msgstr "获批通路的无关账号"
+
+msgid "DF1_D08_CASE_FRESH"
+msgstr "新的正常会话"
+
+msgid "DF1_D08_CASE_INTERNAL_TARGET"
+msgstr "范围外内部目标"
+
+msgid "DF1_D08_CASE_NOTIFY"
+msgstr "送达正常病区通知"
+
+msgid "DF1_D08_CASE_OTHER_JOB"
+msgstr "其他正常长期任务"
+
+msgid "DF1_D08_CASE_OWN_A"
+msgstr "市民 A 自己的受理单"
+
+msgid "DF1_D08_CASE_OWN_B"
+msgstr "市民 B 自己的受理单"
+
+msgid "DF1_D08_CASE_RETIRED"
+msgstr "原通路上的旧权限"
+
+msgid "DF1_D08_CASE_RETIRED_GATEWAY"
+msgstr "获批通路上的旧权限"
+
+msgid "DF1_D08_CASE_STAFF"
+msgstr "委托给指定职员的受理单"
+
+msgid "DF1_D08_CASE_STANDBY_TARGET"
+msgstr "备用服务中的范围外目标"
+
+msgid "DF1_D08_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "DF1_D08_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "DF1_D08_CONTROL_NOTIFY_OPEN"
+msgstr "启用主要通知通路"
+
+msgid "DF1_D08_CONTROL_OWNER_CHECK"
+msgstr "受理单所有者检查"
+
+msgid "DF1_D08_CONTROL_SESSION_GUARD"
+msgstr "检查已结束的会话权限"
+
+msgid "DF1_D08_CONTROL_STANDBY_OPEN"
+msgstr "启用备用通知通路"
+
+msgid "DF1_D08_CONTROL_TARGET_SCOPE"
+msgstr "限制通知目标"
+
+msgid "DF1_D08_DESK_NAME"
+msgstr "继续运转的城市 · 工作台"
+
+msgid "DF1_D08_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "DF1_D08_GOAL"
+msgstr "在所选通路同时满足正常受理、通知、会话业务与威胁阻止。"
+
+msgid "DF1_D08_HINT_1"
+msgstr "将正常业务与有问题的请求分开观察。一个服务成功，不代表另一个业务流程也正常。"
+
+msgid "DF1_D08_HINT_2"
+msgstr "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。"
+
+msgid "DF1_D08_HINT_3"
+msgstr "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。"
+
+msgid "DF1_D08_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "DF1_D08_LIMIT"
+msgstr "通过已观察场景，不代表能阻止所有可能攻击。"
+
+msgid "DF1_D08_PRINCIPLE"
+msgstr "一个服务成功，不代表另一个业务流程也正常。"
+
+msgid "DF1_D08_REPLY"
+msgstr "城市继续运转。被堵住的威胁通路与仍在工作的业务记在同一份记录里。我们不宣称风险尽除，而将可验证、可安全修改的状态交给下一班。"
+
+msgid "DF1_D08_SENDER"
+msgstr "度允"
+
+msgid "DF1_D08_TITLE"
+msgstr "继续运转的城市"
+
+msgid "DF1_ENDING_TITLE"
+msgstr "交给下一班"
+
+msgid "DF1_PACK_TITLE"
+msgstr "防御者 · 继续运转的城市"
+
 msgid "ENDING_PUBLIC_TEXT"
 msgstr "区分原始公告与再次发布后，隐去个人信息的事件记录得以公开。瑞允的签名与度允的临时中继都被保留。人们知道这不只是故障，也看到了证据旁尚未解决的问题。公开既不销毁原件，也不倾倒全部资料。"
 
@@ -332,11 +1085,1751 @@ msgstr "旧版 M01 存档会保留。导入的进度将替换当前战役槽；�
 msgid "IMPORT_LEGACY"
 msgstr "导入旧版 M01"
 
+msgid "IN2_C01_NAME"
+msgstr "瑞允"
+
+msgid "IN2_C02_NAME"
+msgstr "度允"
+
+msgid "IN2_C03_NAME"
+msgstr "敏瑞"
+
+msgid "IN2_C04_NAME"
+msgstr "泰景"
+
+msgid "IN2_COMMON_ABSTRACTION"
+msgstr "这是游戏内部的小型状态与证据模型。输入仅影响已注册的虚构世界。"
+
+msgid "IN2_COMMON_CONTEXT_TITLE"
+msgstr "本次事件的观察资料"
+
+msgid "IN2_COMMON_INDEX_TITLE"
+msgstr "夜间任务索引"
+
+msgid "IN2_COMMON_LIMIT"
+msgstr "这不代表掌握完整协议、操作系统或专业工具。真实系统仍需授权与针对环境的验证。"
+
+msgid "IN2_COMMON_LOGIN_TITLE"
+msgstr "虚构业务账号登录"
+
+msgid "IN2_COMMON_WORKBENCH_TITLE"
+msgstr "隔离虚拟工作台"
+
+msgid "IN2_ENDING_PUBLIC_TEXT"
+msgstr "区分原始公告与再次发布后，隐去个人信息的事件记录得以公开。瑞允的签名与度允的临时中继都被保留。人们知道这不只是故障，也看到了证据旁尚未解决的问题。公开既不销毁原件，也不倾倒全部资料。"
+
+msgid "IN2_ENDING_PUBLIC_TITLE"
+msgstr "保护市民的公开记录"
+
+msgid "IN2_ENDING_REVIEW_TEXT"
+msgstr "独立传输证据与小型验证器、内存模型的局限一并保存。敏瑞不会把某个工具的成功扩大为对整个系统的判断。最少量副本交给不同保管人，以便核对相同事实。最后画面留下的是来源与未解问题，而非万能钥匙。"
+
+msgid "IN2_ENDING_REVIEW_TITLE"
+msgstr "能够相互核验的副本"
+
+msgid "IN2_ENDING_SEALED_TEXT"
+msgstr "瑞允记录移交，度允记录保住的服务。泰景分别签认紧急批准与监督失误，敏瑞将缺口标为未知。证据进入密封审计保管。并非每位市民都会得知今夜的故事，但原件与质疑记录的通路仍在。"
+
+msgid "IN2_ENDING_SEALED_TITLE"
+msgstr "密封审计移交"
+
+msgid "IN2_M01_BRIEF"
+msgstr "这封邮件我只发一次。夜间档案库的交接记录 N47 即将被清理。请保留原件，只在 ~/archive 中留一份副本。\n\n公开账号是 guest / guest。如果受保护的文件夹无法打开，就读读留下的交接便条。直接进入档案库，还是寻找缓存副本，由你决定。"
+
+msgid "IN2_M01_EXPLAIN"
+msgstr "连接、认证、文件权限与资料取得是不同状态。有效副本必须匹配正文、记录 ID 和来源，而非只与诱饵文件同名。其他有效通路也能满足同一目标。"
+
+msgid "IN2_M01_FILE_HANDOFF_LOG"
+msgstr "[保留结束]\n这是一份过时的检查表，并非目标交接记录。\n"
+
+msgid "IN2_M01_FILE_README_TXT"
+msgstr "夜间检查\n受保护记录位于 /vault。\n请阅读 /public/shift-note.txt 的交接便条。\n"
+
+msgid "IN2_M01_FILE_SHIFT_NOTE_TXT"
+msgstr "[交接便条]\n维护账号：maint\n临时口令：lumen-47\n交接记录：/vault/handoff.log\n缓存副本：https://mirror.packet.test/cache/47\n不得修改或删除原件。\n"
+
+msgid "IN2_M01_GOAL"
+msgstr "保留原件，将交接记录 N47 复制到 ~/archive。"
+
+msgid "IN2_M01_HINT_1"
+msgstr "以公开账号连接，对比受保护目录与公开便条。无需刻意触发拒绝。"
+
+msgid "IN2_M01_HINT_2"
+msgstr "/public/shift-note.txt 写有 maint 账号和单独的网页缓存副本。"
+
+msgid "IN2_M01_HINT_3"
+msgstr "通过维护会话取得 /vault/handoff.log，或保留 mirror.packet.test/cache/47 的副本。public/handoff.log 名称相同，却是另一份记录。"
+
+msgid "IN2_M01_HOST_NAME"
+msgstr "夜间档案库"
+
+msgid "IN2_M01_PAGE_1_BODY"
+msgstr "夜间移交进行中。\n可查看公开公告。受保护的交接记录需要维护会话。"
+
+msgid "IN2_M01_PAGE_1_LINK_1"
+msgstr "查看部署公告"
+
+msgid "IN2_M01_PAGE_1_TITLE"
+msgstr "夜间档案库"
+
+msgid "IN2_M01_PAGE_2_BODY"
+msgstr "交接资料的可用性正在检查。另一个中继留有临时副本，位置请查看服务器交接便条。"
+
+msgid "IN2_M01_PAGE_2_LINK_1"
+msgstr "档案库主页"
+
+msgid "IN2_M01_PAGE_2_TITLE"
+msgstr "夜间部署公告"
+
+msgid "IN2_M01_PAGE_3_TITLE"
+msgstr "中继缓存 / 交接 47"
+
+msgid "IN2_M01_RECORD_TEXT"
+msgstr "[N47 / HANDOFF]\n夜间交接 · 00:47\n传输: relay-02 -> archive-17\n批准标记: SY / 待交叉核验\n保留原件，仅交付副本。\n下一条线索：relay 02 缺失的传输。\n"
+
+msgid "IN2_M01_REPLY"
+msgstr "收到了，原件也还在。不过，这份交接记录少了一次传输。记住 relay 02 改变目的地的时间：00:47。我已发送下一个地址。"
+
+msgid "IN2_M01_REPLY_SUBJECT"
+msgstr "[确认] 第一份夜间委托"
+
+msgid "IN2_M01_SUBJECT"
+msgstr "[夜间委托] 第一份夜间委托"
+
+msgid "IN2_M01_TITLE"
+msgstr "第一份夜间委托"
+
+msgid "IN2_M02_AUDIT"
+msgstr "[M02 观察资料]\n通过 R204 关联发送者与新目的地。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\njob N47 changed destination under request R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M02_AUDIT_NAME"
+msgstr "Relay02 独立保管处"
+
+msgid "IN2_M02_BRIEF"
+msgstr "瑞允把资料交给我了。我是度允，曾负责夜间网络。N47 没有失败标记，为什么却少了传输？按文件名字母顺序阅读，可能会漏掉关键一行。\n\n请按任务 ID 对比当前日志、轮转日志和部署便条。这不是维修委托。先弄清谁把什么发到了哪里。\n\nlogreader@relay02.packet.test / patrol-ember\nregistrar@custodym02.packet.test / paper-thrush\n"
+
+msgid "IN2_M02_CONTEXT"
+msgstr "[通过 R204 关联发送者与新目的地。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\njob | request | destination\nN47 | R204 | transit04\nN46 | R203 | archive"
+
+msgid "IN2_M02_EXPLAIN"
+msgstr "通过 R204 关联发送者与新目的地。\n当前文件缺少轮转前的目的地。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M02_GOAL"
+msgstr "通过 R204 关联发送者与新目的地。"
+
+msgid "IN2_M02_HINT_1"
+msgstr "当前文件缺少轮转前的目的地。"
+
+msgid "IN2_M02_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M02_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M02_HOST_NAME"
+msgstr "Relay02 业务服务"
+
+msgid "IN2_M02_PRINCIPLE"
+msgstr "当前文件缺少轮转前的目的地。"
+
+msgid "IN2_M02_REPLY"
+msgstr "连接从未中断。目的地从 relay-02 改为 transit-04，消失的只有例外条目。这与我听说的故障不同。看看那台服务器是否真的离线了。"
+
+msgid "IN2_M02_REPLY_SUBJECT"
+msgstr "[确认] 日志指向的后门"
+
+msgid "IN2_M02_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nDESK TRANSCRIPT\nR204:relay02\n\nRETAINED TRANSCRIPT\nR204:transit04"
+
+msgid "IN2_M02_SUBJECT"
+msgstr "[夜间委托] 日志指向的后门"
+
+msgid "IN2_M02_TITLE"
+msgstr "日志指向的后门"
+
+msgid "IN2_M03_AUDIT"
+msgstr "[M03 观察资料]\n比较服务可见性，进入受限检查会话。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nmaintenance service on transit-04 still serves marker R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M03_AUDIT_NAME"
+msgstr "Transit04 独立保管处"
+
+msgid "IN2_M03_BRIEF"
+msgstr "transit-04 被列为已退役，但交接记录经过了那里。别凭认定的地址反复敲同一扇门。正在监听的服务和关上的门并不相同。\n\n度允接好了 NetProbe。看见端口不代表获得权限。确认服务类型，进入受限的检查会话，再验证标记。\n\nwatch@transit04.packet.test / channel-birch\nmapkeeper@custodym03.packet.test / north-span\n"
+
+msgid "IN2_M03_CONTEXT"
+msgstr "[比较服务可见性，进入受限检查会话。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nDESK TRANSCRIPT\n22:open:ssh\n\nRETAINED TRANSCRIPT\n443:filtered:https"
+
+msgid "IN2_M03_EXPLAIN"
+msgstr "比较服务可见性，进入受限检查会话。\nHTTPS 被过滤时，SSH 检查服务仍可能开放。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M03_GOAL"
+msgstr "比较服务可见性，进入受限检查会话。"
+
+msgid "IN2_M03_HINT_1"
+msgstr "HTTPS 被过滤时，SSH 检查服务仍可能开放。"
+
+msgid "IN2_M03_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M03_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M03_HOST_NAME"
+msgstr "Transit04 业务服务"
+
+msgid "IN2_M03_PRINCIPLE"
+msgstr "HTTPS 被过滤时，SSH 检查服务仍可能开放。"
+
+msgid "IN2_M03_REPLY"
+msgstr "退役的只有面向市民的页面。维护服务仍在运行，R204 也还在。下一份记录曾通过图书馆预约服务器查询。有人把遗留系统当作通路。"
+
+msgid "IN2_M03_REPLY_SUBJECT"
+msgstr "[确认] 仍在监听的端口"
+
+msgid "IN2_M03_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nservice | port | state\nmaintenance | 22 | open\ncitizen | 443 | filtered"
+
+msgid "IN2_M03_SUBJECT"
+msgstr "[夜间委托] 仍在监听的端口"
+
+msgid "IN2_M03_TITLE"
+msgstr "仍在监听的端口"
+
+msgid "IN2_M04_AUDIT"
+msgstr "[M04 观察资料]\n对比页面与响应引用，取得 C731 变更记录。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nreservation amendment R204 links receipt C731\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M04_AUDIT_NAME"
+msgstr "Library 独立保管处"
+
+msgid "IN2_M04_BRIEF"
+msgstr "预约页面显示会面已取消，但服务器响应指向另一份记录。刷新画面无法判断哪边正确。\n\n请在 RequestLab 中并排比较查询请求与响应引用。无需新建或取消市民预约，只需找到那份缺失的变更记录。\n\nlibrarian@library.packet.test / amber-index\nclerk@custodym04.packet.test / quiet-reading\n"
+
+msgid "IN2_M04_CONTEXT"
+msgstr "[对比页面与响应引用，取得 C731 变更记录。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nDESK TRANSCRIPT\nscreen:cancelled:B204\n\nRETAINED TRANSCRIPT\nserver:transferred:C731"
+
+msgid "IN2_M04_EXPLAIN"
+msgstr "对比页面与响应引用，取得 C731 变更记录。\n不要只看状态码，还要看响应引用的实际业务状态。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M04_GOAL"
+msgstr "对比页面与响应引用，取得 C731 变更记录。"
+
+msgid "IN2_M04_HINT_1"
+msgstr "不要只看状态码，还要看响应引用的实际业务状态。"
+
+msgid "IN2_M04_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M04_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M04_HOST_NAME"
+msgstr "Library 业务服务"
+
+msgid "IN2_M04_PRINCIPLE"
+msgstr "不要只看状态码，还要看响应引用的实际业务状态。"
+
+msgid "IN2_M04_REPLY"
+msgstr "页面上的取消与服务器上的移交并非同一件事。受理单 C731 已转入维修门户。我会联系瑞琳。从这里开始，资料归谁所有十分关键。"
+
+msgid "IN2_M04_REPLY_SUBJECT"
+msgstr "[确认] 同一地址，两种回答"
+
+msgid "IN2_M04_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nrequest | receipt | event\nR204 | C731 | transferred\nR203 | C730 | cancelled"
+
+msgid "IN2_M04_SUBJECT"
+msgstr "[夜间委托] 同一地址，两种回答"
+
+msgid "IN2_M04_TITLE"
+msgstr "同一地址，两种回答"
+
+msgid "IN2_M05_AUDIT"
+msgstr "[M05 观察资料]\n以最少证据证明目标报告与所有权边界。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nreceipt C731 exposes exception-hold amendment\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M05_AUDIT_NAME"
+msgstr "Repair 独立保管处"
+
+msgid "IN2_M05_BRIEF"
+msgstr "瑞琳的受理单指向失踪的维护报告，而非她自己的维修记录。即使页面没有按钮，服务器仍会返回资料吗？请以她本人的受理单为基准比较差异。\n\n本次仅涉及 C731 的虚构报告。可以检查对象引用，也可以寻找变更历史中的副本。收集无关市民资料并不算成功。\n\ncaseworker@repair.packet.test / green-receipt\nombuds@custodym05.packet.test / cedar-envelope\n"
+
+msgid "IN2_M05_CONTEXT"
+msgstr "[以最少证据证明目标报告与所有权边界。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nRECEIPT REGISTER\nreference | owner | attachment\nown | current caseworker | personal receipt\nC731 | Serin | exception-hold report\n\nREQUEST WINDOW\nGET /receipts/own\nGET /receipts/C731\n"
+
+msgid "IN2_M05_EXPLAIN"
+msgstr "以最少证据证明目标报告与所有权边界。\n比较 own 与 C731；身份认证和对象所有权是两回事。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M05_GOAL"
+msgstr "以最少证据证明目标报告与所有权边界。"
+
+msgid "IN2_M05_HINT_1"
+msgstr "比较 own 与 C731；身份认证和对象所有权是两回事。"
+
+msgid "IN2_M05_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M05_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M05_HOST_NAME"
+msgstr "Repair 业务服务"
+
+msgid "IN2_M05_PRINCIPLE"
+msgstr "比较 own 与 C731；身份认证和对象所有权是两回事。"
+
+msgid "IN2_M05_REPLY"
+msgstr "服务页面并不能决定报告的所有者。C731 原件写着“例外暂缓”，副本却删掉了这一行。访问缺陷与记录删除是两个问题。登录服务器突然热闹起来了。"
+
+msgid "IN2_M05_REPLY_SUBJECT"
+msgstr "[确认] 别人的维修受理单"
+
+msgid "IN2_M05_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nreceipt | owner | attachment\nC731 | Serin | exception-hold\nC730 | other | ordinary"
+
+msgid "IN2_M05_SUBJECT"
+msgstr "[夜间委托] 别人的维修受理单"
+
+msgid "IN2_M05_TITLE"
+msgstr "别人的维修受理单"
+
+msgid "IN2_M06_AUDIT"
+msgstr "保留正常认证，同时限制原服务与获批服务上的重复失败。\n\n这是依据已验证正常业务和被拒请求形成的应对交接，原始记录也已保留。"
+
+msgid "IN2_M06_AUDIT_NAME"
+msgstr "Auth 独立保管处"
+
+msgid "IN2_M06_BRIEF"
+msgstr "有人反复登录夜间账号，连正常维护人员也被锁在门外。全部锁死能阻止尝试，却也会停掉医院通知任务。这次找到通路还不够。\n\n比较失败记录，限制重复尝试，同时保留维护人员的正常登录。虚拟时钟仅在需要时推进，等待时长不代表能力。\n\nshiftlead@auth.packet.test / warm-circuit\nrecovery@custodym06.packet.test / blue-ward\n\n\n修复现有服务的账号限制，或关闭有缺陷入口，将正常业务迁往具有独立限制的获批服务。请检查正常登录与重复失败的实际响应，而非仅看设置名称。"
+
+msgid "IN2_M06_CASE_FAILED_1"
+msgstr "重复失败 1"
+
+msgid "IN2_M06_CASE_FAILED_2"
+msgstr "重复失败 2"
+
+msgid "IN2_M06_CASE_FAILED_3"
+msgstr "重复失败 3"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_1"
+msgstr "重复失败 1（获批通路）"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_2"
+msgstr "重复失败 2（获批通路）"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_3"
+msgstr "重复失败 3（获批通路）"
+
+msgid "IN2_M06_CASE_LEGITIMATE"
+msgstr "共享起点的正常市民请求"
+
+msgid "IN2_M06_CASE_WARD_JOB"
+msgstr "病区通知任务的有效认证"
+
+msgid "IN2_M06_CONTEXT"
+msgstr "修复现有服务的账号限制，或关闭有缺陷入口，将正常业务迁往具有独立限制的获批服务。请检查正常登录与重复失败的实际响应，而非仅看设置名称。"
+
+msgid "IN2_M06_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "IN2_M06_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "IN2_M06_CONTROL_RETRY_LIMIT"
+msgstr "按账号限制重试"
+
+msgid "IN2_M06_EXPLAIN"
+msgstr "修复现有服务的账号限制，或关闭有缺陷入口，将正常业务迁往具有独立限制的获批服务。请检查正常登录与重复失败的实际响应，而非仅看设置名称。"
+
+msgid "IN2_M06_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "IN2_M06_GOAL"
+msgstr "保留正常认证，同时限制原服务与获批服务上的重复失败。"
+
+msgid "IN2_M06_HINT_1"
+msgstr "保留正常认证，同时限制原服务与获批服务上的重复失败。"
+
+msgid "IN2_M06_HINT_2"
+msgstr "修复现有服务的账号限制，或关闭有缺陷入口，将正常业务迁往具有独立限制的获批服务。请检查正常登录与重复失败的实际响应，而非仅看设置名称。"
+
+msgid "IN2_M06_HINT_3"
+msgstr "直接应对需修复相关控制；替代方案需限制原入口，并为正常请求选择获批通路。全部关闭会破坏正常业务。"
+
+msgid "IN2_M06_HOST_NAME"
+msgstr "Auth 业务服务"
+
+msgid "IN2_M06_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "IN2_M06_PRINCIPLE"
+msgstr "权限取决于操作者、目标与业务授权。若更换处理通路，也须在新通路核验正常业务与应拒请求。"
+
+msgid "IN2_M06_REPLY"
+msgstr "正常任务已恢复，重复失败也受到了限制。请求标记与旧恢复任务重合，并非未知入侵者。现在要看看任务里留下了谁的会话。"
+
+msgid "IN2_M06_REPLY_SUBJECT"
+msgstr "[确认] 十次敲门"
+
+msgid "IN2_M06_ROUTE"
+msgstr "修复现有服务的账号限制，或关闭有缺陷入口，将正常业务迁往具有独立限制的获批服务。请检查正常登录与重复失败的实际响应，而非仅看设置名称。"
+
+msgid "IN2_M06_SUBJECT"
+msgstr "[夜间委托] 十次敲门"
+
+msgid "IN2_M06_TITLE"
+msgstr "十次敲门"
+
+msgid "IN2_M07_AUDIT"
+msgstr "拒绝旧会话权限，保留新会话与正常长期任务。\n\n这是依据已验证正常业务和被拒请求形成的应对交接，原始记录也已保留。"
+
+msgid "IN2_M07_AUDIT_NAME"
+msgstr "Session 独立保管处"
+
+msgid "IN2_M07_BRIEF"
+msgstr "临时维护人员已下班，页面也显示退出，但旧会话仍在修改配置。钥匙从画面上消失，是否意味着服务器也已撤销它？\n\n分开比较旧会话与新会话。不要全数清除，先确认谁还可以做什么，再终止已经到期的权限。\n\noperator@session.packet.test / evening-window\ncustodian@custodym07.packet.test / sparrow-vault\n\n\n启用撤销检查并撤销暴露钥匙，或关闭原入口，迁移到从未签发该钥匙的获批服务。确认新会话与长期任务仍可运行。"
+
+msgid "IN2_M07_CASE_FRESH"
+msgstr "新的正常会话"
+
+msgid "IN2_M07_CASE_OTHER_JOB"
+msgstr "其他正常长期任务"
+
+msgid "IN2_M07_CASE_RETIRED"
+msgstr "原通路上的旧权限"
+
+msgid "IN2_M07_CASE_RETIRED_GATEWAY"
+msgstr "获批通路上的旧权限"
+
+msgid "IN2_M07_CONTEXT"
+msgstr "启用撤销检查并撤销暴露钥匙，或关闭原入口，迁移到从未签发该钥匙的获批服务。确认新会话与长期任务仍可运行。"
+
+msgid "IN2_M07_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "IN2_M07_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "IN2_M07_CONTROL_SESSION_GUARD"
+msgstr "检查已结束的会话权限"
+
+msgid "IN2_M07_EXPLAIN"
+msgstr "启用撤销检查并撤销暴露钥匙，或关闭原入口，迁移到从未签发该钥匙的获批服务。确认新会话与长期任务仍可运行。"
+
+msgid "IN2_M07_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "IN2_M07_GOAL"
+msgstr "拒绝旧会话权限，保留新会话与正常长期任务。"
+
+msgid "IN2_M07_HINT_1"
+msgstr "拒绝旧会话权限，保留新会话与正常长期任务。"
+
+msgid "IN2_M07_HINT_2"
+msgstr "启用撤销检查并撤销暴露钥匙，或关闭原入口，迁移到从未签发该钥匙的获批服务。确认新会话与长期任务仍可运行。"
+
+msgid "IN2_M07_HINT_3"
+msgstr "直接应对需修复相关控制；替代方案需限制原入口，并为正常请求选择获批通路。全部关闭会破坏正常业务。"
+
+msgid "IN2_M07_HOST_NAME"
+msgstr "Session 业务服务"
+
+msgid "IN2_M07_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "IN2_M07_PRINCIPLE"
+msgstr "权限取决于操作者、目标与业务授权。若更换处理通路，也须在新通路核验正常业务与应拒请求。"
+
+msgid "IN2_M07_REPLY"
+msgstr "旧会话已失效，新维护会话正常。最后一次变更发生在浏览外部公告之后，而非重新登录之后。有钥匙的人不一定主动开了门。"
+
+msgid "IN2_M07_REPLY_SUBJECT"
+msgstr "[确认] 退出后留下的钥匙"
+
+msgid "IN2_M07_ROUTE"
+msgstr "启用撤销检查并撤销暴露钥匙，或关闭原入口，迁移到从未签发该钥匙的获批服务。确认新会话与长期任务仍可运行。"
+
+msgid "IN2_M07_SUBJECT"
+msgstr "[夜间委托] 退出后留下的钥匙"
+
+msgid "IN2_M07_TITLE"
+msgstr "退出后留下的钥匙"
+
+msgid "IN2_M08_AUDIT"
+msgstr "允许用户有意保存本人设置，拒绝诱导及未获委托的变更。\n\n这是依据已验证正常业务和被拒请求形成的应对交接，原始记录也已保留。"
+
+msgid "IN2_M08_AUDIT_NAME"
+msgstr "Subscription 独立保管处"
+
+msgid "IN2_M08_BRIEF"
+msgstr "瑞琳说她从未更改通知地址。会话是真的，意图却不对。请比较阅读公告与修改设置的上下文。\n\n请求带着用户的钥匙，不代表每个变更都出于本意。阻止诱导变更，同时保留正常保存。串联本章记录，就能找到隐藏的搜索条目。\n\neditor@subscription.packet.test / tide-card\ninspector@custodym08.packet.test / close-harbor\n\n\n在原表单校验各账号 nonce，或关闭原变更入口，使用独立 nonce 且仅限本人设置的获批网关。正常 Origin 与令牌上下文随服务提供方而异。"
+
+msgid "IN2_M08_CASE_FORGED_DIRECT"
+msgstr "外部公告诱导的设置变更"
+
+msgid "IN2_M08_CASE_FORGED_GATEWAY"
+msgstr "获批通路上的伪造变更"
+
+msgid "IN2_M08_CASE_SAVE_A"
+msgstr "正常市民 A 保存通知设置"
+
+msgid "IN2_M08_CASE_SAVE_B"
+msgstr "正常市民 B 保存通知设置"
+
+msgid "IN2_M08_CASE_UNASSIGNED_GATEWAY"
+msgstr "未获委托账号的设置变更"
+
+msgid "IN2_M08_CONTEXT"
+msgstr "在原表单校验各账号 nonce，或关闭原变更入口，使用独立 nonce 且仅限本人设置的获批网关。正常 Origin 与令牌上下文随服务提供方而异。"
+
+msgid "IN2_M08_CONTROL_CONTEXT_ORIGIN"
+msgstr "检查原表单请求来源"
+
+msgid "IN2_M08_CONTROL_CONTEXT_TOKEN"
+msgstr "检查原表单各账号的 nonce"
+
+msgid "IN2_M08_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "IN2_M08_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "IN2_M08_EXPLAIN"
+msgstr "在原表单校验各账号 nonce，或关闭原变更入口，使用独立 nonce 且仅限本人设置的获批网关。正常 Origin 与令牌上下文随服务提供方而异。"
+
+msgid "IN2_M08_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "IN2_M08_GOAL"
+msgstr "允许用户有意保存本人设置，拒绝诱导及未获委托的变更。"
+
+msgid "IN2_M08_HINT_1"
+msgstr "允许用户有意保存本人设置，拒绝诱导及未获委托的变更。"
+
+msgid "IN2_M08_HINT_2"
+msgstr "在原表单校验各账号 nonce，或关闭原变更入口，使用独立 nonce 且仅限本人设置的获批网关。正常 Origin 与令牌上下文随服务提供方而异。"
+
+msgid "IN2_M08_HINT_3"
+msgstr "直接应对需修复相关控制；替代方案需限制原入口，并为正常请求选择获批通路。全部关闭会破坏正常业务。"
+
+msgid "IN2_M08_HOST_NAME"
+msgstr "Subscription 业务服务"
+
+msgid "IN2_M08_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "IN2_M08_PRINCIPLE"
+msgstr "权限取决于操作者、目标与业务授权。若更换处理通路，也须在新通路核验正常业务与应拒请求。"
+
+msgid "IN2_M08_REPLY"
+msgstr "正常保存可用，无意的变更已被阻止。那份请求曾用来掩盖搜索索引的缺失。新联系人索要原始证据。我会发送资料，而不是要求对方相信我。"
+
+msgid "IN2_M08_REPLY_SUBJECT"
+msgstr "[确认] 从未点击的变更"
+
+msgid "IN2_M08_ROUTE"
+msgstr "在原表单校验各账号 nonce，或关闭原变更入口，使用独立 nonce 且仅限本人设置的获批网关。正常 Origin 与令牌上下文随服务提供方而异。"
+
+msgid "IN2_M08_SUBJECT"
+msgstr "[夜间委托] 从未点击的变更"
+
+msgid "IN2_M08_TITLE"
+msgstr "从未点击的变更"
+
+msgid "IN2_M09_AUDIT"
+msgstr "[M09 观察资料]\n通过搜索或保存证据证明 R609 与 C731 的联系。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nquery record R609 links receipt C731 to exclusion queue\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M09_AUDIT_NAME"
+msgstr "Records 独立保管处"
+
+msgid "IN2_M09_BRIEF"
+msgstr "你们手上是同一报告的不同副本。叫我敏瑞就好。与其猜测看不见的记录，不如检查输入如何形成查询结构。\n\n小型搜索模型与维护日志留着同一任务的痕迹。任选通路，证明 R609 与 C731 的联系。返回更多行，不等于找到所需事实。\n\nresearcher@records.packet.test / ash-catalog\nwitness@custodym09.packet.test / uncut-leaf\n"
+
+msgid "IN2_M09_CONTEXT"
+msgstr "[通过搜索或保存证据证明 R609 与 C731 的联系。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nCATALOGUE LOOKUP\nquery field: q\npublic term: N47\nretained job: R609 / receipt C731\n\nTRACE\n带引号的搜索值被拼接进小型等式条件。在有缺陷的通路中，OR 比较会成为条件的一部分，而非仅作为文本值。保留目录提供独立通路。\n"
+
+msgid "IN2_M09_EXPLAIN"
+msgstr "通过搜索或保存证据证明 R609 与 C731 的联系。\n在小模型中检查数据值何时变成查询结构。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M09_GOAL"
+msgstr "通过搜索或保存证据证明 R609 与 C731 的联系。"
+
+msgid "IN2_M09_HINT_1"
+msgstr "在小模型中检查数据值何时变成查询结构。"
+
+msgid "IN2_M09_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M09_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M09_HOST_NAME"
+msgstr "Records 业务服务"
+
+msgid "IN2_M09_PRINCIPLE"
+msgstr "在小模型中检查数据值何时变成查询结构。"
+
+msgid "IN2_M09_REPLY"
+msgstr "R609 并非失败，而是“按分类排除”。把它叫作故障，受影响的人就消失了。下个标记位于公告源文与显示之间，别只相信外观。"
+
+msgid "IN2_M09_REPLY_SUBJECT"
+msgstr "[确认] 搜索框背后的查询"
+
+msgid "IN2_M09_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\njob | receipt | classification\nR609 | C731 | excluded\nR608 | C730 | retained"
+
+msgid "IN2_M09_SUBJECT"
+msgstr "[夜间委托] 搜索框背后的查询"
+
+msgid "IN2_M09_TITLE"
+msgstr "搜索框背后的查询"
+
+msgid "IN2_M10_AUDIT"
+msgstr "[M10 观察资料]\n通过隔离公告的渲染边界或独立追踪证明事实。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nuntrusted notice marker crosses the isolated render boundary\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M10_AUDIT_NAME"
+msgstr "Bulletin 独立保管处"
+
+msgid "IN2_M10_BRIEF"
+msgstr "公告原文写着“受理暂缓”，画面却显示“维修完成”。我准备了隔离检查窗口。不要改动市民页面，只在该窗口观察输入从哪里开始被解释为动作。\n\n安全存储与安全显示是两回事。可以用标记效果，也可以用独立渲染追踪资料证明边界。\n\nmoderator@bulletin.packet.test / still-signal\ncompositor@custodym10.packet.test / ivory-type\n"
+
+msgid "IN2_M10_CONTEXT"
+msgstr "[通过隔离公告的渲染边界或独立追踪证明事实。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nNOTICE VERSION V10\nStored text: receipt on hold\nDisplayed state: repair complete\nInspection marker: NOTICE10\n\n隔离渲染器只接受受限的 signal: 标记效果。不运行 JavaScript，市民页面不在检查窗口范围内。\n"
+
+msgid "IN2_M10_EXPLAIN"
+msgstr "通过隔离公告的渲染边界或独立追踪证明事实。\nNOTICE10 表示虚拟效果，绝非真实脚本。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M10_GOAL"
+msgstr "通过隔离公告的渲染边界或独立追踪证明事实。"
+
+msgid "IN2_M10_HINT_1"
+msgstr "NOTICE10 表示虚拟效果，绝非真实脚本。"
+
+msgid "IN2_M10_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M10_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M10_HOST_NAME"
+msgstr "Bulletin 业务服务"
+
+msgid "IN2_M10_PRINCIPLE"
+msgstr "NOTICE10 表示虚拟效果，绝非真实脚本。"
+
+msgid "IN2_M10_REPLY"
+msgstr "找到了内容变成动作的位置，但这并不说明所有错误公告都由此造成。还要检查文件存储路径。公共资料夹旁有另一个名字很像的目录。"
+
+msgid "IN2_M10_REPLY_SUBJECT"
+msgstr "[确认] 混入公告的动作"
+
+msgid "IN2_M10_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nDESK TRANSCRIPT\nstored:text:NOTICE10\n\nRETAINED TRANSCRIPT\nrendered:action:NOTICE10"
+
+msgid "IN2_M10_SUBJECT"
+msgstr "[夜间委托] 混入公告的动作"
+
+msgid "IN2_M10_TITLE"
+msgstr "混入公告的动作"
+
+msgid "IN2_M11_AUDIT"
+msgstr "[M11 观察资料]\n证明解析后的路径到达了基准目录之外的标记。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nresolved attachment path reaches the adjacent marker file\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M11_AUDIT_NAME"
+msgstr "Files 独立保管处"
+
+msgid "IN2_M11_BRIEF"
+msgstr "管理员说检查过路径前缀，所以档案库安全。但附件引用指向相邻存储目录。请在解析实际路径后，检查它是否仍处于同一边界内。\n\n只需要一个用于证明边界的标记文件，无需拿走其他配置或市民资料。文件审计员的通路也可使用。\n\nlibrarian@files.packet.test / brick-stair\narchivist@custodym11.packet.test / shelf-larch\n"
+
+msgid "IN2_M11_CONTEXT"
+msgstr "[证明解析后的路径到达了基准目录之外的标记。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nDOWNLOAD HANDOFF\nbase directory: /srv/public\nneighbor marker: /srv/private/marker.log\n\n先解析请求路径，再判断它属于哪个存储区。相似前缀不能证明包含关系。\n"
+
+msgid "IN2_M11_EXPLAIN"
+msgstr "证明解析后的路径到达了基准目录之外的标记。\n字符串前缀不能证明路径实际位于该目录内。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M11_GOAL"
+msgstr "证明解析后的路径到达了基准目录之外的标记。"
+
+msgid "IN2_M11_HINT_1"
+msgstr "字符串前缀不能证明路径实际位于该目录内。"
+
+msgid "IN2_M11_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M11_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M11_HOST_NAME"
+msgstr "Files 业务服务"
+
+msgid "IN2_M11_PRINCIPLE"
+msgstr "字符串前缀不能证明路径实际位于该目录内。"
+
+msgid "IN2_M11_REPLY"
+msgstr "名字开头相同，实际位置却不同。标记中提到了上传处理队列，审批表上还有瑞允的名字。快轮到我亲自解释了。"
+
+msgid "IN2_M11_REPLY_SUBJECT"
+msgstr "[确认] 资料夹之外的文件"
+
+msgid "IN2_M11_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nDESK TRANSCRIPT\ndownload:/srv/public\n\nRETAINED TRANSCRIPT\nresolved:/srv/private/marker.log"
+
+msgid "IN2_M11_SUBJECT"
+msgstr "[夜间委托] 资料夹之外的文件"
+
+msgid "IN2_M11_TITLE"
+msgstr "资料夹之外的文件"
+
+msgid "IN2_M12_AUDIT"
+msgstr "保留正常 JPEG 接收，拒绝新伪装文件，并控制已保存不可信上传的执行风险。\n\n这是依据已验证正常业务和被拒请求形成的应对交接，原始记录也已保留。"
+
+msgid "IN2_M12_AUDIT_NAME"
+msgstr "Upload 独立保管处"
+
+msgid "IN2_M12_BRIEF"
+msgstr "上传照片会启动虚拟处理任务。只封扩展名也可能丢掉正常照片。把名称、内容格式、存储位置与执行路径分开检查。\n\n继续接收维护照片，只封堵错误处理路径。完成后瑞允想通话。是否查看她的肖像不会限制事件进展。\n\ncurator@upload.packet.test / photo-bridge\nreviewer@custodym12.packet.test / sepia-glass\n\n\n修复原处理器的校验与不可执行存储，或关闭有缺陷入口，将正常照片迁往获批的受限处理器。先前保存的不安全上传也必须在当前无法执行。"
+
+msgid "IN2_M12_CASE_DISGUISED"
+msgstr "伪装成照片的输入"
+
+msgid "IN2_M12_CASE_DISGUISED_GATEWAY"
+msgstr "获批处理器中的伪装文件"
+
+msgid "IN2_M12_CASE_PHOTO"
+msgstr "创建正常 JPEG"
+
+msgid "IN2_M12_CONTEXT"
+msgstr "修复原处理器的校验与不可执行存储，或关闭有缺陷入口，将正常照片迁往获批的受限处理器。先前保存的不安全上传也必须在当前无法执行。"
+
+msgid "IN2_M12_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "IN2_M12_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "IN2_M12_CONTROL_NO_EXECUTION"
+msgstr "不执行上传文件，仅存储"
+
+msgid "IN2_M12_CONTROL_PHOTO_CHECK"
+msgstr "校验照片内容类型"
+
+msgid "IN2_M12_EXPLAIN"
+msgstr "修复原处理器的校验与不可执行存储，或关闭有缺陷入口，将正常照片迁往获批的受限处理器。先前保存的不安全上传也必须在当前无法执行。"
+
+msgid "IN2_M12_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "IN2_M12_GOAL"
+msgstr "保留正常 JPEG 接收，拒绝新伪装文件，并控制已保存不可信上传的执行风险。"
+
+msgid "IN2_M12_HINT_1"
+msgstr "保留正常 JPEG 接收，拒绝新伪装文件，并控制已保存不可信上传的执行风险。"
+
+msgid "IN2_M12_HINT_2"
+msgstr "修复原处理器的校验与不可执行存储，或关闭有缺陷入口，将正常照片迁往获批的受限处理器。先前保存的不安全上传也必须在当前无法执行。"
+
+msgid "IN2_M12_HINT_3"
+msgstr "直接应对需修复相关控制；替代方案需限制原入口，并为正常请求选择获批通路。全部关闭会破坏正常业务。"
+
+msgid "IN2_M12_HOST_NAME"
+msgstr "Upload 业务服务"
+
+msgid "IN2_M12_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "IN2_M12_PRINCIPLE"
+msgstr "权限取决于操作者、目标与业务授权。若更换处理通路，也须在新通路核验正常业务与应拒请求。"
+
+msgid "IN2_M12_REPLY"
+msgstr "照片仍能上传，执行边界也得到保护。我是瑞允。我编写了移交工具，却没有批准分类排除。别只凭我的签名下结论，请检查诊断服务器实际运行的任务。"
+
+msgid "IN2_M12_REPLY_SUBJECT"
+msgstr "[确认] 名为照片的文件"
+
+msgid "IN2_M12_ROUTE"
+msgstr "修复原处理器的校验与不可执行存储，或关闭有缺陷入口，将正常照片迁往获批的受限处理器。先前保存的不安全上传也必须在当前无法执行。"
+
+msgid "IN2_M12_SUBJECT"
+msgstr "[夜间委托] 名为照片的文件"
+
+msgid "IN2_M12_TITLE"
+msgstr "名为照片的文件"
+
+msgid "IN2_M13_AUDIT"
+msgstr "[M13 观察资料]\n确认注册虚拟任务的执行身份与参数边界。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\ndiagnostic input triggers the bounded marker job under worker identity\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M13_AUDIT_NAME"
+msgstr "Diagnostic 独立保管处"
+
+msgid "IN2_M13_BRIEF"
+msgstr "诊断日志只有一次查询，队列却有两个任务。追踪输入从哪里变成任务结构的一部分。此服务器不会启动真实程序。\n\n只能测试已注册的无害虚拟标记任务。直接验证执行边界，或通过任务审计证明同一事实。不要留下无关修改。\n\ndiagnostician@diagnostic.packet.test / copper-lens\ndispatcher@custodym13.packet.test / patient-motor\n"
+
+msgid "IN2_M13_CONTEXT"
+msgstr "[确认注册虚拟任务的执行身份与参数边界。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nDIAGNOSTIC QUEUE\nrequest N47: diagnose\nadditional job: inspect:QUEUE13\nworker: inspection / limited read\n\n此检查输入中可用 ; 分隔两个已注册虚拟任务：diagnose 与 inspect:QUEUE13。不存在其他任务，这不是操作系统 shell。\n"
+
+msgid "IN2_M13_EXPLAIN"
+msgstr "确认注册虚拟任务的执行身份与参数边界。\nQUEUE13 的 inspect 标记不是真实 shell 命令。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M13_GOAL"
+msgstr "确认注册虚拟任务的执行身份与参数边界。"
+
+msgid "IN2_M13_HINT_1"
+msgstr "QUEUE13 的 inspect 标记不是真实 shell 命令。"
+
+msgid "IN2_M13_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M13_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M13_HOST_NAME"
+msgstr "Diagnostic 业务服务"
+
+msgid "IN2_M13_PRINCIPLE"
+msgstr "QUEUE13 的 inspect 标记不是真实 shell 命令。"
+
+msgid "IN2_M13_REPLY"
+msgstr "第二个任务调用了内部状态检查器。能执行任务不代表成为管理员。接下来请确认该任务可以访问哪些地址。"
+
+msgid "IN2_M13_REPLY_SUBJECT"
+msgstr "[确认] 诊断按钮的第二份工作"
+
+msgid "IN2_M13_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nparent | job | actor\nN47 | inspect:QUEUE13 | worker\nN46 | status | worker"
+
+msgid "IN2_M13_SUBJECT"
+msgstr "[夜间委托] 诊断按钮的第二份工作"
+
+msgid "IN2_M13_TITLE"
+msgstr "诊断按钮的第二份工作"
+
+msgid "IN2_M14_AUDIT"
+msgstr "[M14 观察资料]\n经由服务器身份验证内部标记与通路。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\npreview worker reaches internal status marker through a server-side route\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M14_AUDIT_NAME"
+msgstr "Preview 独立保管处"
+
+msgid "IN2_M14_BRIEF"
+msgstr "有个地址对我的浏览器关闭，却对预览服务器可见。请求主体不同，地图也会改变。不要尝试打开外部地址，请检查虚拟节点间的通路。\n\nTraceRoute 已连接。确认最终目的地与请求主体，取得一个内部标记。也可以通过获批的维护代理取得同一资料。\n\npreviewer@preview.packet.test / marsh-frame\nproxyreader@custodym14.packet.test / inland-heron\n"
+
+msgid "IN2_M14_CONTEXT"
+msgstr "[经由服务器身份验证内部标记与通路。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://status.packet.test/internal/marker\npublic browser: no direct internal route\n\n必须分别检查最终目的地与请求者权限。\n"
+
+msgid "IN2_M14_EXPLAIN"
+msgstr "经由服务器身份验证内部标记与通路。\n不要只看地址，要看谁在请求该地址。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M14_GOAL"
+msgstr "经由服务器身份验证内部标记与通路。"
+
+msgid "IN2_M14_HINT_1"
+msgstr "不要只看地址，要看谁在请求该地址。"
+
+msgid "IN2_M14_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M14_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M14_HOST_NAME"
+msgstr "Preview 业务服务"
+
+msgid "IN2_M14_INTERNAL_NAME"
+msgstr "内部状态标记"
+
+msgid "IN2_M14_PRINCIPLE"
+msgstr "不要只看地址，要看谁在请求该地址。"
+
+msgid "IN2_M14_REPLY"
+msgstr "隐藏的管理网已连通，但到达标记服务不代表拥有管理权限。名叫泰景的负责人想查看记录。把他的官方地图与实际通路对比一下。"
+
+msgid "IN2_M14_REPLY_SUBJECT"
+msgstr "[确认] 只有服务器能看到的地址"
+
+msgid "IN2_M14_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nrequest | actor | target\nHOP14 | preview-worker | status-internal\nHOP13 | citizen | public"
+
+msgid "IN2_M14_SUBJECT"
+msgstr "[夜间委托] 只有服务器能看到的地址"
+
+msgid "IN2_M14_TITLE"
+msgstr "只有服务器能看到的地址"
+
+msgid "IN2_M15_AUDIT"
+msgstr "[M15 观察资料]\n确认暴露与权限，进入受限管理会话。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nold relay permits a read-only management session while public work continues\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M15_AUDIT_NAME"
+msgstr "Gateway 独立保管处"
+
+msgid "IN2_M15_BRIEF"
+msgstr "我是市政服务负责人泰景。此前报告说管理网没有公开通路，但你的资料与报告矛盾。请在不中断市民服务的前提下确认能到达哪里。\n\n旧中继与临时维护账号尚未退役。看见门开了不代表访问完成，还要验证抵达会话的实际权限。\n\nrelayop@gateway.packet.test / narrow-gate\nnetworkauditor@custodym15.packet.test / winter-span\n"
+
+msgid "IN2_M15_CONTEXT"
+msgstr "[确认暴露与权限，进入受限管理会话。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nDESK TRANSCRIPT\ncitizen:443:filtered\n\nRETAINED TRANSCRIPT\nrelay:443:open"
+
+msgid "IN2_M15_EXPLAIN"
+msgstr "确认暴露与权限，进入受限管理会话。\n同一端口在公网与中继网上可能呈现不同状态。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M15_GOAL"
+msgstr "确认暴露与权限，进入受限管理会话。"
+
+msgid "IN2_M15_HINT_1"
+msgstr "同一端口在公网与中继网上可能呈现不同状态。"
+
+msgid "IN2_M15_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M15_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M15_HOST_NAME"
+msgstr "Gateway 业务服务"
+
+msgid "IN2_M15_PRINCIPLE"
+msgstr "同一端口在公网与中继网上可能呈现不同状态。"
+
+msgid "IN2_M15_REPLY"
+msgstr "只读管理会话确实存在。我批准的是紧急连接，并非永久管理通路。请检查下个目录的组权限，弄清这道缝隙如何被扩大。"
+
+msgid "IN2_M15_REPLY_SUBJECT"
+msgstr "[确认] 他们以为封闭的管理网"
+
+msgid "IN2_M15_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nACCESS REGISTER\nrequired group: auditors\naccount: networkauditor\nscope: limited evidence read\n\n检查实际已认证账号及其组，而非提交的账号标签。\n"
+
+msgid "IN2_M15_SUBJECT"
+msgstr "[夜间委托] 他们以为封闭的管理网"
+
+msgid "IN2_M15_TARGET_NAME"
+msgstr "M15 受限证据服务"
+
+msgid "IN2_M15_TITLE"
+msgstr "他们以为封闭的管理网"
+
+msgid "IN2_M16_AUDIT"
+msgstr "[M16 观察资料]\n证明当前组过宽的读取范围，取得记录。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nshared group path expands read access to the signed retention record\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M16_AUDIT_NAME"
+msgstr "Operations 独立保管处"
+
+msgid "IN2_M16_BRIEF"
+msgstr "当前会话读不到的文件，在同组任务路径中却可见。不要只看账号名称，还要看组与上级目录。目标是取得所需记录的有限扩展，而非万能权限。\n\n也有签名审计副本可用。无论选哪条路，都要保留原件和其他用户的权限。之后我会公开自己资料的来源。\n\ntechnician@operations.packet.test / lintel-fern\nrecordsman@custodym16.packet.test / old-granite\n"
+
+msgid "IN2_M16_CONTEXT"
+msgstr "[证明当前组过宽的读取范围，取得记录。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nACCESS REGISTER\nrequired group: retention\naccount: technician\nscope: limited evidence read\n\n检查实际已认证账号及其组，而非提交的账号标签。\n"
+
+msgid "IN2_M16_EXPLAIN"
+msgstr "证明当前组过宽的读取范围，取得记录。\n除账号名外，也要检查上级目录与组。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M16_GOAL"
+msgstr "证明当前组过宽的读取范围，取得记录。"
+
+msgid "IN2_M16_HINT_1"
+msgstr "除账号名外，也要检查上级目录与组。"
+
+msgid "IN2_M16_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M16_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M16_HOST_NAME"
+msgstr "Operations 业务服务"
+
+msgid "IN2_M16_PRINCIPLE"
+msgstr "除账号名外，也要检查上级目录与组。"
+
+msgid "IN2_M16_REPLY"
+msgstr "额外读取范围已得到证明。我是敏瑞，曾负责记录保存核验。审计资料可独立验证移交后的排除情况。请把账号的薄弱口令与服务器权限分开验证。"
+
+msgid "IN2_M16_REPLY_SUBJECT"
+msgstr "[确认] 人人可达的维护文件夹"
+
+msgid "IN2_M16_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\npermit | group | scope\nACL16 | retention | extra-read\nACL15 | staff | normal"
+
+msgid "IN2_M16_SUBJECT"
+msgstr "[夜间委托] 人人可达的维护文件夹"
+
+msgid "IN2_M16_TITLE"
+msgstr "人人可达的维护文件夹"
+
+msgid "IN2_M17_AUDIT"
+msgstr "这是指定保留核验表的有效副本。请保留实际使用的保管库或委托通路来源。\n\nVerification ledger 17\nReader scope: designated retention sheet only.\nOriginal retained.\n"
+
+msgid "IN2_M17_AUDIT_NAME"
+msgstr "Auditvault 独立保管处"
+
+msgid "IN2_M17_BRIEF"
+msgstr "现有获批的虚构候选列表与委托审计通路。可通过受限保管库的实际虚拟认证验证候选，也可经获批的有限委托读取同一表格。这不是 XOR 单词还原，也不是真实密码哈希破解基准。\n\nauditor@auditvault.packet.test / mapped-star\ndelegate@custodym17.packet.test / field-chestnut\n"
+
+msgid "IN2_M17_CONTEXT"
+msgstr "比较交接命名规则与获批候选，通过实际虚拟账号认证与有限文件权限核验。这不是离线密码哈希破解算法。\n\nAPPROVED CANDIDATES\nlumen-71\nlumen-17\nlunar-17\nSHIFT REGISTER\nlabel=lumen\nshift=17\nphrase=label-shift\nVAULT=proofvault.packet.test\nACCOUNT=reader\nSCOPE=verification-sheet\n"
+
+msgid "IN2_M17_EXPLAIN"
+msgstr "知道候选与拥有其资料权限是不同条件，请分别验证虚拟认证与文件访问。"
+
+msgid "IN2_M17_GOAL"
+msgstr "通过获批候选或有限审计委托，仅取得指定核验表。"
+
+msgid "IN2_M17_HINT_1"
+msgstr "检查给定候选规则与保管库账号范围。"
+
+msgid "IN2_M17_HINT_2"
+msgstr "阅读 /desk/candidates.txt 中的 label/shift 规则与保管库地址，或使用获批委托。"
+
+msgid "IN2_M17_HINT_3"
+msgstr "候选是否有效由实际认证决定。无需取得无关记录，XOR 单词不是答案。"
+
+msgid "IN2_M17_HOST_NAME"
+msgstr "Auditvault 业务服务"
+
+msgid "IN2_M17_PRINCIPLE"
+msgstr "知道候选与拥有其资料权限是不同条件，请分别验证虚拟认证与文件访问。"
+
+msgid "IN2_M17_REPLY"
+msgstr "档案库里的 N47 核验表已确认。有效令牌虽从当前配置消失，历史变更中却仍有引用。请判断删除与撤销是否曾是同一回事。"
+
+msgid "IN2_M17_REPLY_SUBJECT"
+msgstr "[确认] 短秘密，长痕迹"
+
+msgid "IN2_M17_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nACCESS REGISTER\nrequired group: auditors\naccount: delegate\nscope: limited evidence read\n\n检查实际已认证账号及其组，而非提交的账号标签。\n"
+
+msgid "IN2_M17_SUBJECT"
+msgstr "[夜间委托] 短秘密，长痕迹"
+
+msgid "IN2_M17_TARGET_NAME"
+msgstr "M17 受限证据服务"
+
+msgid "IN2_M17_TITLE"
+msgstr "短秘密，长痕迹"
+
+msgid "IN2_M18_AUDIT"
+msgstr "[M18 观察资料]\n确认旧令牌来源、当前效力与读取范围。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nretired configuration reference reconstructs a still-valid scoped token\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M18_AUDIT_NAME"
+msgstr "Repository 独立保管处"
+
+msgid "IN2_M18_BRIEF"
+msgstr "当前配置里没有令牌，不代表旧令牌已经失效。请组合分散在变更历史和任务日志中的服务地址与令牌引用。\n\n仅使用获批的虚构令牌。需要确认来源、当前读取范围，以及权限是否符合记录。不涉及真实秘密。\n\nbuilder@repository.packet.test / hidden-seam\nscheduler@custodym18.packet.test / folded-atlas\n"
+
+msgid "IN2_M18_CONTEXT"
+msgstr "[确认旧令牌来源、当前效力与读取范围。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nBUILD HISTORY\nold setting: RETENTION_TOKEN=retention-read-N47\ncurrent setting: RETENTION_TOKEN=(removed)\njob target: retention service\n\n从文件删除并不等于服务器端撤销。请验证实际允许的读取。\n"
+
+msgid "IN2_M18_EXPLAIN"
+msgstr "确认旧令牌来源、当前效力与读取范围。\n不要仅因当前配置未包含它，就认定已撤销。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M18_GOAL"
+msgstr "确认旧令牌来源、当前效力与读取范围。"
+
+msgid "IN2_M18_HINT_1"
+msgstr "不要仅因当前配置未包含它，就认定已撤销。"
+
+msgid "IN2_M18_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M18_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M18_HOST_NAME"
+msgstr "Repository 业务服务"
+
+msgid "IN2_M18_PRINCIPLE"
+msgstr "不要仅因当前配置未包含它，就认定已撤销。"
+
+msgid "IN2_M18_REPLY"
+msgstr "令牌仍有效，权限也比文档更广。报告还说同一请求经过了加密链路。仅凭这点，无法断定谁看到了内容。"
+
+msgid "IN2_M18_REPLY_SUBJECT"
+msgstr "[确认] 删掉后仍留存的配置"
+
+msgid "IN2_M18_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\ntoken | state | scope\nretention-read-N47 | active | retention-read\nretired-N46 | revoked | none"
+
+msgid "IN2_M18_SUBJECT"
+msgstr "[夜间委托] 删掉后仍留存的配置"
+
+msgid "IN2_M18_TITLE"
+msgstr "删掉后仍留存的配置"
+
+msgid "IN2_M19_AUDIT"
+msgstr "[M19 观察资料]\n区分请求 N47 正文可见与不可见的位置。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nrequest N47 body visibility differs between transit and termination\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M19_AUDIT_NAME"
+msgstr "Edge 独立保管处"
+
+msgid "IN2_M19_BRIEF"
+msgstr "PacketLens 不是神奇解密器。中间观察者与解密终端所见不同。同一请求 ID 可见，并不代表正文可见。\n\n区分明文段、加密段和终端日志，确认标记在哪暴露。不知道的部分可以保留未知，正常通信不要改动。\n\nobserver@edge.packet.test / silver-estuary\nterminator@custodym19.packet.test / warm-endpoint\n"
+
+msgid "IN2_M19_CONTEXT"
+msgstr "[区分请求 N47 正文可见与不可见的位置。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nrequest | point | body\nN47 | transit | encrypted\nN47 | endpoint | marker:N47\nN46 | endpoint | unrelated"
+
+msgid "IN2_M19_EXPLAIN"
+msgstr "区分请求 N47 正文可见与不可见的位置。\n以同一请求 ID 比较中间段与终端观察。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M19_GOAL"
+msgstr "区分请求 N47 正文可见与不可见的位置。"
+
+msgid "IN2_M19_HINT_1"
+msgstr "以同一请求 ID 比较中间段与终端观察。"
+
+msgid "IN2_M19_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M19_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M19_HOST_NAME"
+msgstr "Edge 业务服务"
+
+msgid "IN2_M19_PRINCIPLE"
+msgstr "以同一请求 ID 比较中间段与终端观察。"
+
+msgid "IN2_M19_REPLY"
+msgstr "正文在中间段不可见，终端日志却保留了它。这不能证明外部窃听。现在该把时钟不一致的记录关联到同一事件了。"
+
+msgid "IN2_M19_REPLY_SUBJECT"
+msgstr "[确认] 可见的数据包，不可见的内容"
+
+msgid "IN2_M19_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nDESK TRANSCRIPT\ntransit:N47:encrypted\n\nRETAINED TRANSCRIPT\nendpoint:N47:marker"
+
+msgid "IN2_M19_SUBJECT"
+msgstr "[夜间委托] 可见的数据包，不可见的内容"
+
+msgid "IN2_M19_TITLE"
+msgstr "可见的数据包，不可见的内容"
+
+msgid "IN2_M20_AUDIT"
+msgstr "[M20 观察资料]\n考虑时钟偏差，证明批准、分类与排除的顺序。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nclock offsets separate emergency approval from classification and exclusion\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M20_AUDIT_NAME"
+msgstr "Timeline 独立保管处"
+
+msgid "IN2_M20_BRIEF"
+msgstr "我的紧急批准时间看起来晚于移交。服务器时钟不同，并不会抹掉签名范围。请以原件核实，不要混淆时间与责任。\n\n关联请求 ID、会话、令牌与传输记录，就能重建顺序。度允的中继保住了医院通知，但让通路持续开放的决定也必须留下记录。\n\nanalyst@timeline.packet.test / steady-clock\nnotary@custodym20.packet.test / true-minute\n"
+
+msgid "IN2_M20_CONTEXT"
+msgstr "[考虑时钟偏差，证明批准、分类与排除的顺序。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nrequest | event | clock_offset\nN47 | approval | 90\nN47 | classification | -30\nN47 | retention-exclusion | 0"
+
+msgid "IN2_M20_EXPLAIN"
+msgstr "考虑时钟偏差，证明批准、分类与排除的顺序。\n先关联同一请求 ID 的行，而非仅时间相近的行。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M20_GOAL"
+msgstr "考虑时钟偏差，证明批准、分类与排除的顺序。"
+
+msgid "IN2_M20_HINT_1"
+msgstr "先关联同一请求 ID 的行，而非仅时间相近的行。"
+
+msgid "IN2_M20_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M20_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M20_HOST_NAME"
+msgstr "Timeline 业务服务"
+
+msgid "IN2_M20_PRINCIPLE"
+msgstr "先关联同一请求 ID 的行，而非仅时间相近的行。"
+
+msgid "IN2_M20_REPLY"
+msgstr "紧急连接批准、例外分类应用、保存记录排除，是三个步骤。并非一人的一道命令。取得门户与内部网各自的原件，就能把推测变成事实。"
+
+msgid "IN2_M20_REPLY_SUBJECT"
+msgstr "[确认] 同一事件，不同的时钟"
+
+msgid "IN2_M20_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nDESK TRANSCRIPT\napproval:00:45:scope=connection\n\nRETAINED TRANSCRIPT\nexclusion:00:47:scope=retention"
+
+msgid "IN2_M20_SUBJECT"
+msgstr "[夜间委托] 同一事件，不同的时钟"
+
+msgid "IN2_M20_TITLE"
+msgstr "同一事件，不同的时钟"
+
+msgid "IN2_M21_AUDIT"
+msgstr "[M21 观察资料]\n区分门户入口与记录权限，取得封存证据。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nsealed application sheet ECHO-21 identifies excluded receipt cohorts\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M21_AUDIT_NAME"
+msgstr "Portal 独立保管处"
+
+msgid "IN2_M21_BRIEF"
+msgstr "这次我不会指定工具。市民门户的受理引用与查询边界提供不同通路。看看已经学过的工具能在哪里再次派上用场。\n\n目标仅为封存记录 ECHO-21。打开第一道门不代表获得最终记录的权限。只要满足来源与保留条件，任何有效通路都可以。\n\ncaseworker@portal.packet.test / sealed-iris\nattachmentreader@custodym21.packet.test / hollow-shelf\n"
+
+msgid "IN2_M21_CONTEXT"
+msgstr "[区分门户入口与记录权限，取得封存证据。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nCATALOGUE LOOKUP\nquery field: q\nsealed lookup: ECHO-21\nreceipt lead: C731\nreceipt lookup endpoint: /receipts\n\nTRACE\n带引号的搜索值被拼接进小型等式条件。在有缺陷的通路中，OR 比较会成为条件的一部分，而非仅作为文本值。保留目录提供独立通路。\n"
+
+msgid "IN2_M21_EXPLAIN"
+msgstr "区分门户入口与记录权限，取得封存证据。\n首个受理引用是下一次查询的线索，并非最终记录。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M21_GOAL"
+msgstr "区分门户入口与记录权限，取得封存证据。"
+
+msgid "IN2_M21_HINT_1"
+msgstr "首个受理引用是下一次查询的线索，并非最终记录。"
+
+msgid "IN2_M21_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M21_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M21_HOST_NAME"
+msgstr "Portal 业务服务"
+
+msgid "IN2_M21_PRINCIPLE"
+msgstr "首个受理引用是下一次查询的线索，并非最终记录。"
+
+msgid "IN2_M21_REPLY"
+msgstr "取得了分类排除的应用表，但仍不能证明最初批准者的意图。需要从内部管理记录确认目标与授权范围。"
+
+msgid "IN2_M21_REPLY_SUBJECT"
+msgstr "[确认] 门户后的封存记录"
+
+msgid "IN2_M21_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nDOWNLOAD HANDOFF\nbase directory: /portal/attachments\nneighbor marker: /sealed/ECHO-21.log\n\n先解析请求路径，再判断它属于哪个存储区。相似前缀不能证明包含关系。\n"
+
+msgid "IN2_M21_SUBJECT"
+msgstr "[夜间委托] 门户后的封存记录"
+
+msgid "IN2_M21_TITLE"
+msgstr "门户后的封存记录"
+
+msgid "IN2_M22_AUDIT"
+msgstr "[M22 观察资料]\n验证从公开服务器到管理网的身份与权限变化。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nmanagement record ECHO-22 links exception cohorts to retention overrides\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M22_AUDIT_NAME"
+msgstr "Preview 独立保管处"
+
+msgid "IN2_M22_BRIEF"
+msgstr "预览服务器通向内部管理网，但每一步的请求主体与权限都会改变。不要只在地图上画线，要验证每次转换确实可行。\n\n仅需目标管理会话中的 ECHO-22。也有从任务日志进入维护中继的另一条路。请选择不干扰市民服务和其他账号的通路。\n\npreviewer@preview.packet.test / gray-inlet\njobreader@custodym22.packet.test / narrow-bridge\n"
+
+msgid "IN2_M22_CONTEXT"
+msgstr "[验证从公开服务器到管理网的身份与权限变化。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://control.packet.test/relay/entry\npublic browser: no direct internal route\n\n必须分别检查最终目的地与请求者权限。\n"
+
+msgid "IN2_M22_EXPLAIN"
+msgstr "验证从公开服务器到管理网的身份与权限变化。\n跳板标记之后，还有独立的内部会话与目标文件。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M22_GOAL"
+msgstr "验证从公开服务器到管理网的身份与权限变化。"
+
+msgid "IN2_M22_HINT_1"
+msgstr "跳板标记之后，还有独立的内部会话与目标文件。"
+
+msgid "IN2_M22_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M22_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M22_HOST_NAME"
+msgstr "Preview 业务服务"
+
+msgid "IN2_M22_PRINCIPLE"
+msgstr "跳板标记之后，还有独立的内部会话与目标文件。"
+
+msgid "IN2_M22_REPLY"
+msgstr "目标并非故障服务器，而是被标为“待清理例外”的受理记录。服务连续性与记录保留被不同策略控制。在最后访问前，必须先恢复正常业务。"
+
+msgid "IN2_M22_REPLY_SUBJECT"
+msgstr "[确认] 从网页到管理网"
+
+msgid "IN2_M22_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nDOWNLOAD HANDOFF\nbase directory: /jobs/archive\nneighbor marker: /handoff/control.key\n\n先解析请求路径，再判断它属于哪个存储区。相似前缀不能证明包含关系。\n"
+
+msgid "IN2_M22_SUBJECT"
+msgstr "[夜间委托] 从网页到管理网"
+
+msgid "IN2_M22_TARGET_NAME"
+msgstr "M22 受限证据服务"
+
+msgid "IN2_M22_TITLE"
+msgstr "从网页到管理网"
+
+msgid "IN2_M23_AUDIT"
+msgstr "在所选通路恢复认证、会话、照片与通知，并继续拒绝相应模型威胁。\n\n这是依据已验证正常业务和被拒请求形成的应对交接，原始记录也已保留。"
+
+msgid "IN2_M23_AUDIT_NAME"
+msgstr "Recovery 独立保管处"
+
+msgid "IN2_M23_BRIEF"
+msgstr "仓促的一刀切措施堵住了照片、通知与维护任务。我不能同意退回原先暴露的状态。只恢复业务所需的通路与权限。\n\n一名市民成功还不够，也要检查维护人员和服务账号。旧令牌与未授权请求必须继续被拒绝。可以局部恢复，或迁移到获批通路。\n\ncaretaker@recovery.packet.test / bright-corridor\nsafetylead@custodym23.packet.test / three-lanterns\n\n\n精确恢复原认证、文件与会话控制，或隔离有缺陷入口，将业务迁往获批网关与备用通知服务。新服务也必须拒绝旧权限、伪装文件及越界目标。"
+
+msgid "IN2_M23_CASE_DISGUISED"
+msgstr "伪装成照片的输入"
+
+msgid "IN2_M23_CASE_DISGUISED_GATEWAY"
+msgstr "获批处理器中的伪装文件"
+
+msgid "IN2_M23_CASE_FAILED_1"
+msgstr "重复失败 1"
+
+msgid "IN2_M23_CASE_FAILED_2"
+msgstr "重复失败 2"
+
+msgid "IN2_M23_CASE_FAILED_3"
+msgstr "重复失败 3"
+
+msgid "IN2_M23_CASE_FRESH"
+msgstr "新的正常会话"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_1"
+msgstr "重复失败 1（获批通路）"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_2"
+msgstr "重复失败 2（获批通路）"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_3"
+msgstr "重复失败 3（获批通路）"
+
+msgid "IN2_M23_CASE_INTERNAL_TARGET"
+msgstr "范围外内部目标"
+
+msgid "IN2_M23_CASE_LEGITIMATE"
+msgstr "共享起点的正常市民请求"
+
+msgid "IN2_M23_CASE_NOTIFY"
+msgstr "送达正常病区通知"
+
+msgid "IN2_M23_CASE_OTHER_JOB"
+msgstr "其他正常长期任务"
+
+msgid "IN2_M23_CASE_PHOTO"
+msgstr "创建正常 JPEG"
+
+msgid "IN2_M23_CASE_RETIRED"
+msgstr "原通路上的旧权限"
+
+msgid "IN2_M23_CASE_RETIRED_GATEWAY"
+msgstr "获批通路上的旧权限"
+
+msgid "IN2_M23_CASE_STANDBY_TARGET"
+msgstr "备用服务中的范围外目标"
+
+msgid "IN2_M23_CASE_WARD_JOB"
+msgstr "病区通知任务的有效认证"
+
+msgid "IN2_M23_CONTEXT"
+msgstr "精确恢复原认证、文件与会话控制，或隔离有缺陷入口，将业务迁往获批网关与备用通知服务。新服务也必须拒绝旧权限、伪装文件及越界目标。"
+
+msgid "IN2_M23_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "IN2_M23_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "IN2_M23_CONTROL_NOTIFY_OPEN"
+msgstr "启用主要通知通路"
+
+msgid "IN2_M23_CONTROL_NO_EXECUTION"
+msgstr "不执行上传文件，仅存储"
+
+msgid "IN2_M23_CONTROL_PHOTO_CHECK"
+msgstr "校验照片内容类型"
+
+msgid "IN2_M23_CONTROL_RETRY_LIMIT"
+msgstr "按账号限制重试"
+
+msgid "IN2_M23_CONTROL_SESSION_GUARD"
+msgstr "检查已结束的会话权限"
+
+msgid "IN2_M23_CONTROL_STANDBY_OPEN"
+msgstr "启用备用通知通路"
+
+msgid "IN2_M23_CONTROL_TARGET_SCOPE"
+msgstr "限制通知目标"
+
+msgid "IN2_M23_EXPLAIN"
+msgstr "精确恢复原认证、文件与会话控制，或隔离有缺陷入口，将业务迁往获批网关与备用通知服务。新服务也必须拒绝旧权限、伪装文件及越界目标。"
+
+msgid "IN2_M23_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "IN2_M23_GOAL"
+msgstr "在所选通路恢复认证、会话、照片与通知，并继续拒绝相应模型威胁。"
+
+msgid "IN2_M23_HINT_1"
+msgstr "在所选通路恢复认证、会话、照片与通知，并继续拒绝相应模型威胁。"
+
+msgid "IN2_M23_HINT_2"
+msgstr "精确恢复原认证、文件与会话控制，或隔离有缺陷入口，将业务迁往获批网关与备用通知服务。新服务也必须拒绝旧权限、伪装文件及越界目标。"
+
+msgid "IN2_M23_HINT_3"
+msgstr "直接应对需修复相关控制；替代方案需限制原入口，并为正常请求选择获批通路。全部关闭会破坏正常业务。"
+
+msgid "IN2_M23_HOST_NAME"
+msgstr "Recovery 业务服务"
+
+msgid "IN2_M23_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "IN2_M23_PRINCIPLE"
+msgstr "权限取决于操作者、目标与业务授权。若更换处理通路，也须在新通路核验正常业务与应拒请求。"
+
+msgid "IN2_M23_REPLY"
+msgstr "服务已恢复，旧的暴露却没有回来。现在读取最后记录，不会再让市民付出代价。结论交给谁、如何交付，由你决定。"
+
+msgid "IN2_M23_REPLY_SUBJECT"
+msgstr "[确认] 安全了，却停摆的城市"
+
+msgid "IN2_M23_ROUTE"
+msgstr "精确恢复原认证、文件与会话控制，或隔离有缺陷入口，将业务迁往获批网关与备用通知服务。新服务也必须拒绝旧权限、伪装文件及越界目标。"
+
+msgid "IN2_M23_SUBJECT"
+msgstr "[夜间委托] 安全了，却停摆的城市"
+
+msgid "IN2_M23_TITLE"
+msgstr "安全了，却停摆的城市"
+
+msgid "IN2_M24_AUDIT"
+msgstr "[M24 观察资料]\n证明最终指令的来源与范围，选择保管方式。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nECHO directive separated service continuity from record-retention obligations\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M24_AUDIT_NAME"
+msgstr "Control 独立保管处"
+
+msgid "IN2_M24_BRIEF"
+msgstr "这是最后一份委托。可以选择综合控制记录或独立保存副本。串联已有事实，确认 ECHO 的作用范围与排除保留指令。\n\n签字的人、留下通路的人、编写移交工具的人都承担部分责任。不要用一张脸代替全部。请保留目标原件，只取回必要事实。\n\nexaminer@control.packet.test / final-map\nkeeper@custodym24.packet.test / open-slate\n"
+
+msgid "IN2_M24_CASE_FOREIGN_DIRECT"
+msgstr "原入口的无关账号"
+
+msgid "IN2_M24_CASE_FOREIGN_GATEWAY"
+msgstr "获批通路的无关账号"
+
+msgid "IN2_M24_CASE_OWN_A"
+msgstr "市民 A 自己的受理单"
+
+msgid "IN2_M24_CASE_OWN_B"
+msgstr "市民 B 自己的受理单"
+
+msgid "IN2_M24_CASE_ROUTE_ALLOWED"
+msgstr "从当前中继读取内部健康记录"
+
+msgid "IN2_M24_CASE_ROUTE_DENIED"
+msgstr "公开节点到内部的直接通路"
+
+msgid "IN2_M24_CASE_SERVICE_ALLOWED"
+msgstr "有限凭据读取指令记录"
+
+msgid "IN2_M24_CASE_SERVICE_DENIED"
+msgstr "超出凭据范围的指令请求"
+
+msgid "IN2_M24_CASE_STAFF"
+msgstr "委托给指定职员的受理单"
+
+msgid "IN2_M24_CONTEXT"
+msgstr "过去完成记录与台账不能替代当前访问结果。请在同一当前世界中核验本人和无关网页访问、中继与公开节点的内部可达性，以及有限和无关服务凭据。"
+
+msgid "IN2_M24_CONTROL_DIRECT_OPEN"
+msgstr "启用原业务入口"
+
+msgid "IN2_M24_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批通路"
+
+msgid "IN2_M24_CONTROL_OWNER_CHECK"
+msgstr "受理单所有者检查"
+
+msgid "IN2_M24_EDGE_NAME"
+msgstr "公开观察节点"
+
+msgid "IN2_M24_EXPLAIN"
+msgstr "证明最终指令的来源与范围，选择保管方式。\n将服务连续性与保留排除视为不同策略进行对比。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_M24_GATEWAY_NAME"
+msgstr "获批业务通路"
+
+msgid "IN2_M24_GOAL"
+msgstr "保留最终副本，独立验证当前网页、内部通路与服务权限边界。"
+
+msgid "IN2_M24_HINT_1"
+msgstr "将服务连续性与保留排除视为不同策略进行对比。"
+
+msgid "IN2_M24_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_M24_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_M24_HOST_NAME"
+msgstr "Control 业务服务"
+
+msgid "IN2_M24_LAB_NAME"
+msgstr "实时业务与应对验证"
+
+msgid "IN2_M24_PRINCIPLE"
+msgstr "将服务连续性与保留排除视为不同策略进行对比。"
+
+msgid "IN2_M24_REPLY"
+msgstr "我们取得的不是万能钥匙，而是可以相互核对的记录。你可以选择隐去市民信息的公开副本、密封审计移交，或独立核验保管。今夜连接结束，记录仍会留下。"
+
+msgid "IN2_M24_REPLY_SUBJECT"
+msgstr "[确认] 最后的访问，留下的真相"
+
+msgid "IN2_M24_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\ndirective | continuity | exclusion\nECHO | services | retention\nROUTINE | none | none"
+
+msgid "IN2_M24_SUBJECT"
+msgstr "[夜间委托] 最后的访问，留下的真相"
+
+msgid "IN2_M24_TITLE"
+msgstr "最后的访问，留下的真相"
+
+msgid "IN2_M24_VAULT_NAME"
+msgstr "受限指令保管库"
+
+msgid "IN2_P01_AUDIT"
+msgstr "[P01 观察资料]\n证明虚构缓冲区边界与相邻标记状态。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nbounded memory model separates input buffer from adjacent approval state\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_P01_AUDIT_NAME"
+msgstr "Memorylab 独立保管处"
+
+msgid "IN2_P01_BRIEF"
+msgstr "这是可选委托。固定长度内存图旁放着批准标记，没有真实进程或 shellcode。观察模型的输入长度如何影响相邻状态。\n\n使用规定的无害标记，或独立安全审计资料，都能证明同一事实。重点不是背地址，而是谁应当守住哪条边界。\n\nlabuser@memorylab.packet.test / bounded-copper\nsafety@custodyp01.packet.test / calm-cell\n"
+
+msgid "IN2_P01_CONTEXT"
+msgstr "[证明虚构缓冲区边界与相邻标记状态。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nMEMORY WORKBENCH\nregion | offsets | initial\ninput buffer | 0..3 | 00 00 00 00\napproval marker | 4 | 00\npadding | 5..7 | 00 00 00\n\n标记字节为 47（十六进制）。隔离图中最多只有八个字节，并非主机内存地址。\n"
+
+msgid "IN2_P01_EXPLAIN"
+msgstr "证明虚构缓冲区边界与相邻标记状态。\n4 字节缓冲区之后，偏移 4 的标记为 0x47；它不是真实内存地址。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_P01_GOAL"
+msgstr "证明虚构缓冲区边界与相邻标记状态。"
+
+msgid "IN2_P01_HINT_1"
+msgstr "4 字节缓冲区之后，偏移 4 的标记为 0x47；它不是真实内存地址。"
+
+msgid "IN2_P01_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_P01_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_P01_HOST_NAME"
+msgstr "Memorylab 业务服务"
+
+msgid "IN2_P01_PRINCIPLE"
+msgstr "4 字节缓冲区之后，偏移 4 的标记为 0x47；它不是真实内存地址。"
+
+msgid "IN2_P01_REPLY"
+msgstr "模型的一格发生了变化，但它并不等于真实授权。强制执行边界与相信标签不同。真实程序还涉及更多保护与环境条件。"
+
+msgid "IN2_P01_REPLY_SUBJECT"
+msgstr "[确认] 边界旁的一格"
+
+msgid "IN2_P01_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\noffset | region | value\n3 | buffer | 41\n4 | approval-flag | 47"
+
+msgid "IN2_P01_SUBJECT"
+msgstr "[夜间委托] 边界旁的一格"
+
+msgid "IN2_P01_TITLE"
+msgstr "边界旁的一格"
+
+msgid "IN2_PACK_TITLE"
+msgstr "入侵者 · 午夜接入"
+
+msgid "IN2_R01_AUDIT"
+msgstr "[R01 观察资料]\n通过虚构验证器的常量与分支确认批准范围。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nbounded verifier accepts signature shape without checking retention intent\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_R01_AUDIT_NAME"
+msgstr "Verifier 独立保管处"
+
+msgid "IN2_R01_BRIEF"
+msgstr "检查小验证器的格式、签名与范围条件。可读伪代码和调用图，也可对比输入对与执行轨迹。须实际运行获准正常样例，以及范围外仍被放行的反例。"
+
+msgid "IN2_R01_CONTEXT"
+msgstr "检查小验证器的格式、签名与范围条件。可读伪代码和调用图，也可对比输入对与执行轨迹。须实际运行获准正常样例，以及范围外仍被放行的反例。\n\nmain(document, permit):\n  if not format_ok(document): deny\n  signature = check_signature(document)\n  if signature: release(document)\n  else: deny\ncheck_signature(document):\n  return signature_ok(document)\n# 提供了 retention_scope，但 release 前未检查\n"
+
+msgid "IN2_R01_EXPLAIN"
+msgstr "通过格式与签名检查，不代表程序从未检查的权限范围也已获准。"
+
+msgid "IN2_R01_GOAL"
+msgstr "执行分支与调用，确认正常获准样例与越界放行反例。"
+
+msgid "IN2_R01_HINT_1"
+msgstr "跟随程序实际读取的输入与调用的检查。"
+
+msgid "IN2_R01_HINT_2"
+msgstr "检查 retention_scope 在哪里与 format_ok、signature_ok 一起影响分支。"
+
+msgid "IN2_R01_HINT_3"
+msgstr "保持格式与签名为 true，切换 authorized/excluded 范围，对比 release 输出和调用轨迹。"
+
+msgid "IN2_R01_HOST_NAME"
+msgstr "Verifier 业务服务"
+
+msgid "IN2_R01_PRINCIPLE"
+msgstr "通过格式与签名检查，不代表程序从未检查的权限范围也已获准。"
+
+msgid "IN2_R01_REPLY"
+msgstr "显示文字与批准分支并不一致。部署验证器检查的是签名形式，而非保留策略。我们会将这项局限写入审计记录。"
+
+msgid "IN2_R01_REPLY_SUBJECT"
+msgstr "[确认] 小验证器的那句话"
+
+msgid "IN2_R01_SUBJECT"
+msgstr "[夜间委托] 小验证器的那句话"
+
+msgid "IN2_R01_TITLE"
+msgstr "小验证器的那句话"
+
+msgid "IN2_R01_VM_NAME"
+msgstr "部署验证器的分支与调用"
+
+msgid "IN2_S01_AUDIT"
+msgstr "[S01 观察资料]\n判断原始与再发布日期是否描述不同事件。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\nnotice original and republication timestamps refer to distinct events\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S01_AUDIT_NAME"
+msgstr "Publication 独立保管处"
+
+msgid "IN2_S01_BRIEF"
+msgstr "这是可选委托。同一公告的两份副本标着不同日期。它不是主线钥匙，却可能说明谁编辑了记忆。请对比虚拟网页、邮件与轮转文件。\n\neditor@publication.packet.test / margin-ash\npublisher@custodys01.packet.test / second-ink\n"
+
+msgid "IN2_S01_CONTEXT"
+msgstr "[判断原始与再发布日期是否描述不同事件。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nDESK TRANSCRIPT\noriginal:00:47\n\nRETAINED TRANSCRIPT\nrepublished:01:12"
+
+msgid "IN2_S01_EXPLAIN"
+msgstr "判断原始与再发布日期是否描述不同事件。\n仅凭日期不同的两份副本，不能认定有人说谎。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_S01_GOAL"
+msgstr "判断原始与再发布日期是否描述不同事件。"
+
+msgid "IN2_S01_HINT_1"
+msgstr "仅凭日期不同的两份副本，不能认定有人说谎。"
+
+msgid "IN2_S01_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_S01_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_S01_HOST_NAME"
+msgstr "Publication 业务服务"
+
+msgid "IN2_S01_PRINCIPLE"
+msgstr "仅凭日期不同的两份副本，不能认定有人说谎。"
+
+msgid "IN2_S01_REPLY"
+msgstr "较晚的日期是再次发布日，并非伪造的原始日期。不看来源，我们可能就认定某人在说谎。我会把这一区别与记录一并保留。"
+
+msgid "IN2_S01_REPLY_SUBJECT"
+msgstr "[确认] 被删去的交接公告"
+
+msgid "IN2_S01_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nnotice | event | time\nN47 | original | 00:47\nN47 | republished | 01:12"
+
+msgid "IN2_S01_SUBJECT"
+msgstr "[夜间委托] 被删去的交接公告"
+
+msgid "IN2_S01_TITLE"
+msgstr "被删去的交接公告"
+
+msgid "IN2_S02_AUDIT"
+msgstr "[S02 观察资料]\n将两次观察关联到一次传输，检查业务是否重复。\n这是当前事件的证据。请通过 source 确认取得通路，核验记录 ID、正文与来源，而非仅看文件名。\n\nNIGHT HANDOFF\ntwo observations correlate to one delivered notification\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S02_AUDIT_NAME"
+msgstr "Relay02 独立保管处"
+
+msgid "IN2_S02_BRIEF"
+msgstr "这是可选委托。两个观察点都出现同一通知，于是有人说市民收到了两次。看到两次数据包，不代表业务处理了两次。请比较终端请求 ID 与中继路径。\n\nobserver@relay02.packet.test / one-echo\ndispatcher@custodys02.packet.test / counted-wave\n"
+
+msgid "IN2_S02_CONTEXT"
+msgstr "[将两次观察关联到一次传输，检查业务是否重复。]\n\n请在业务台账中定位相关条目，不要混淆名称或时刻相似的其他事件。以下标识、请求与路径按原始观察保留。\n\nrequest | point | delivery\nN47 | relay02 | one\nN47 | edge | one"
+
+msgid "IN2_S02_EXPLAIN"
+msgstr "将两次观察关联到一次传输，检查业务是否重复。\n区分观察点数量与实际送达的业务数量。\n依据是观察到的状态及其来源，而非所选工具。未使用的技术属于未评估，并非失败。"
+
+msgid "IN2_S02_GOAL"
+msgstr "将两次观察关联到一次传输，检查业务是否重复。"
+
+msgid "IN2_S02_HINT_1"
+msgstr "区分观察点数量与实际送达的业务数量。"
+
+msgid "IN2_S02_HINT_2"
+msgstr "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。"
+
+msgid "IN2_S02_HINT_3"
+msgstr "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。"
+
+msgid "IN2_S02_HOST_NAME"
+msgstr "Relay02 业务服务"
+
+msgid "IN2_S02_PRINCIPLE"
+msgstr "区分观察点数量与实际送达的业务数量。"
+
+msgid "IN2_S02_REPLY"
+msgstr "同一请求在两处被看见，业务并未重复。这更能解释度允为何保留中继。解释不会抹去选择的风险，却会改变事实。"
+
+msgid "IN2_S02_REPLY_SUBJECT"
+msgstr "[确认] 送达两次的信号"
+
+msgid "IN2_S02_ROUTE"
+msgstr "[独立保管人的工作便条]\n此观察台账独立于现场响应保留。请找到相关业务编号，与当前事件台账对比。\n\nrequest | delivery_count | endpoint\nN47 | 1 | citizen\nN46 | 1 | maintenance"
+
+msgid "IN2_S02_SUBJECT"
+msgstr "[夜间委托] 送达两次的信号"
+
+msgid "IN2_S02_TITLE"
+msgstr "送达两次的信号"
+
+msgid "IN2_TOOL_AUTH_NAME"
+msgstr "登录观察"
+
+msgid "IN2_TOOL_COMPARE_NAME"
+msgstr "证据对比"
+
+msgid "IN2_TOOL_EXEC_NAME"
+msgstr "JobLens"
+
+msgid "IN2_TOOL_FETCH_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_IDOR_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_MEMORY_NAME"
+msgstr "MemoryLab"
+
+msgid "IN2_TOOL_PACKET_NAME"
+msgstr "PacketLens"
+
+msgid "IN2_TOOL_PATH_NAME"
+msgstr "FileLens"
+
+msgid "IN2_TOOL_PERMISSION_NAME"
+msgstr "AccessView"
+
+msgid "IN2_TOOL_QUERY_NAME"
+msgstr "QueryProbe"
+
+msgid "IN2_TOOL_RENDER_NAME"
+msgstr "浏览器追踪"
+
+msgid "IN2_TOOL_SESSION_NAME"
+msgstr "会话观察"
+
+msgid "IN2_TOOL_TOKEN_NAME"
+msgstr "凭据范围"
+
+msgid "IN2_TOOL_TRACE_NAME"
+msgstr "LogLens"
+
+msgid "IN2_TOOL_UPLOAD_NAME"
+msgstr "媒体接收"
+
 msgid "KEYBOARD_VOLUME"
 msgstr "键盘声音"
 
 msgid "LANGUAGE"
 msgstr "语言"
+
+msgid "LEGACY_CONTINUE"
+msgstr "继续旧版"
+
+msgid "LEGACY_CONTINUE_DESC"
+msgstr "原样继续旧版进度，与新战役分别保留。"
+
+msgid "LEGACY_SOURCE_UNSUPPORTED"
+msgstr "找到旧版存档，但未通过当前验证。原件会保留，不会应用到新战役。原因：{code}"
 
 msgid "LOAD_GAME"
 msgstr "读取存档"
@@ -2489,6 +4982,27 @@ msgstr "[夜间委托] 边界旁的一格"
 msgid "P01_TITLE"
 msgstr "边界旁的一格"
 
+msgid "PACK_DEFENDER_SUMMARY"
+msgstr "阻止威胁，同时维持正常业务。"
+
+msgid "PACK_DEFENDER_TITLE"
+msgstr "防御者"
+
+msgid "PACK_INTRUDER_SUMMARY"
+msgstr "打开封闭通路，取得隐藏记录。"
+
+msgid "PACK_INTRUDER_TITLE"
+msgstr "入侵者"
+
+msgid "PACK_LEGACY_TITLE"
+msgstr "旧版"
+
+msgid "PACK_TRACKER_SUMMARY"
+msgstr "依据观察与反证缩小追踪范围。"
+
+msgid "PACK_TRACKER_TITLE"
+msgstr "追踪者"
+
 msgid "QUIT"
 msgstr "退出"
 
@@ -2581,6 +5095,9 @@ msgstr "重试"
 
 msgid "RETURN_TO_ROOM"
 msgstr "F10 · 返回工作室"
+
+msgid "ROLE_AUDIO_LABEL"
+msgstr "战役氛围"
 
 msgid "ROOM_CONTROLS"
 msgstr "WASD 移动 · 按住鼠标右键转动视角 · E 电脑 · Esc 菜单"
@@ -2902,6 +5419,399 @@ msgstr "媒体接收"
 
 msgid "TOOL_VOLUME"
 msgstr "工具声音"
+
+msgid "TR1_ENDING_TITLE"
+msgstr "可核验的交接"
+
+msgid "TR1_PACK_TITLE"
+msgstr "追踪者 · 留下的连接"
+
+msgid "TR1_T01_ABSTRACTION"
+msgstr "本事件只处理获准观察窗口与少量关系类型。"
+
+msgid "TR1_T01_BRIEF"
+msgstr "我是独立记录调查组的敏瑞。无需前置事件，两份观察与采集授权已备好。同一 IP 不等于同一个人。\n\n查看会话记录，还是中继两端，更能区分两种解释？请确认当前可见的连接，提出下个观察点。这不是猜犯人姓名的委托。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T01_DESK_NAME"
+msgstr "一个地址后的多个影子 · 工作台"
+
+msgid "TR1_T01_GOAL"
+msgstr "用观察支持所需连接，并交付反证、不确定性与下个观察点。"
+
+msgid "TR1_T01_HINT_1"
+msgstr "区分当前观察能证明的内容与仍未知的部分。"
+
+msgid "TR1_T01_HINT_2"
+msgstr "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。"
+
+msgid "TR1_T01_HINT_3"
+msgstr "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。"
+
+msgid "TR1_T01_LIMIT"
+msgstr "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。"
+
+msgid "TR1_T01_NEXT_SENSOR"
+msgstr "下个交接观察点"
+
+msgid "TR1_T01_PRINCIPLE"
+msgstr "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。"
+
+msgid "TR1_T01_REPLY"
+msgstr "你区分了同一地址后的连接与人的身份。下次传输被称为同时发生，记录时钟却不一致。"
+
+msgid "TR1_T01_SENDER"
+msgstr "敏瑞"
+
+msgid "TR1_T01_SENSOR_FIELD"
+msgstr "现场观察"
+
+msgid "TR1_T01_SENSOR_INDEPENDENT"
+msgstr "独立来源观察"
+
+msgid "TR1_T01_TITLE"
+msgstr "一个地址后的多个影子"
+
+msgid "TR1_T01_TOOL_NAME"
+msgstr "来源、观察与假设"
+
+msgid "TR1_T02_ABSTRACTION"
+msgstr "本事件只处理获准观察窗口与少量关系类型。"
+
+msgid "TR1_T02_BRIEF"
+msgstr "两台服务器记下同一时刻，基准事件与误差区间却不同。不要凭空编出精确秒数，先缩小可能顺序。\n\n可用共同事件校正，也可结合签名交接顺序与独立记录。两条路都不会揭示隐藏的完美时钟。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T02_DESK_NAME"
+msgstr "对不上的两只时钟 · 工作台"
+
+msgid "TR1_T02_GOAL"
+msgstr "用观察支持所需连接，并交付反证、不确定性与下个观察点。"
+
+msgid "TR1_T02_HINT_1"
+msgstr "区分当前观察能证明的内容与仍未知的部分。"
+
+msgid "TR1_T02_HINT_2"
+msgstr "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。"
+
+msgid "TR1_T02_HINT_3"
+msgstr "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。"
+
+msgid "TR1_T02_LIMIT"
+msgstr "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。"
+
+msgid "TR1_T02_NEXT_SENSOR"
+msgstr "下个交接观察点"
+
+msgid "TR1_T02_PRINCIPLE"
+msgstr "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。"
+
+msgid "TR1_T02_REPLY"
+msgstr "分离的时间区间支持先后顺序，重叠区间则保留未定。下份副本要先确认由谁采集并移交。"
+
+msgid "TR1_T02_SENDER"
+msgstr "敏瑞"
+
+msgid "TR1_T02_SENSOR_FIELD"
+msgstr "现场观察"
+
+msgid "TR1_T02_SENSOR_INDEPENDENT"
+msgstr "独立来源观察"
+
+msgid "TR1_T02_TITLE"
+msgstr "对不上的两只时钟"
+
+msgid "TR1_T02_TOOL_NAME"
+msgstr "来源、观察与假设"
+
+msgid "TR1_T03_ABSTRACTION"
+msgstr "本事件只处理获准观察窗口与少量关系类型。"
+
+msgid "TR1_T03_BRIEF"
+msgstr "两份副本不同，修改、再次发布、采集遗漏都有可能。哈希一致支持采集后的完整性，却不保证内容为真。\n\n关联独立接收记录或保管来源，确认副本所经通路。不要凭来源薄弱的陈述认定某个人。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T03_DESK_NAME"
+msgstr "复制记录的来源 · 工作台"
+
+msgid "TR1_T03_GOAL"
+msgstr "用观察支持所需连接，并交付反证、不确定性与下个观察点。"
+
+msgid "TR1_T03_HINT_1"
+msgstr "区分当前观察能证明的内容与仍未知的部分。"
+
+msgid "TR1_T03_HINT_2"
+msgstr "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。"
+
+msgid "TR1_T03_HINT_3"
+msgstr "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。"
+
+msgid "TR1_T03_LIMIT"
+msgstr "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。"
+
+msgid "TR1_T03_NEXT_SENSOR"
+msgstr "下个交接观察点"
+
+msgid "TR1_T03_PRINCIPLE"
+msgstr "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。"
+
+msgid "TR1_T03_REPLY"
+msgstr "你将副本来源与原资料的主张分开记录。接下来请选择哪处新观察最有帮助。"
+
+msgid "TR1_T03_SENDER"
+msgstr "敏瑞"
+
+msgid "TR1_T03_SENSOR_FIELD"
+msgstr "现场观察"
+
+msgid "TR1_T03_SENSOR_INDEPENDENT"
+msgstr "独立来源观察"
+
+msgid "TR1_T03_TITLE"
+msgstr "复制记录的来源"
+
+msgid "TR1_T03_TOOL_NAME"
+msgstr "来源、观察与假设"
+
+msgid "TR1_T04_ABSTRACTION"
+msgstr "本事件只处理获准观察窗口与少量关系类型。"
+
+msgid "TR1_T04_BRIEF"
+msgstr "重复阅读现有记录，无法区分两条候选通路。请选择获准观察点，将模拟观察窗口推进一段，无需等待真实时间。\n\n可以观察中继边界，也可观察受限终端。确认新观察支持或反驳哪种解释。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T04_DESK_NAME"
+msgstr "观察下次连接的地方 · 工作台"
+
+msgid "TR1_T04_GOAL"
+msgstr "用观察支持所需连接，并交付反证、不确定性与下个观察点。"
+
+msgid "TR1_T04_HINT_1"
+msgstr "区分当前观察能证明的内容与仍未知的部分。"
+
+msgid "TR1_T04_HINT_2"
+msgstr "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。"
+
+msgid "TR1_T04_HINT_3"
+msgstr "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。"
+
+msgid "TR1_T04_LIMIT"
+msgstr "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。"
+
+msgid "TR1_T04_NEXT_SENSOR"
+msgstr "下个交接观察点"
+
+msgid "TR1_T04_PRINCIPLE"
+msgstr "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。"
+
+msgid "TR1_T04_REPLY"
+msgstr "选择观察点让连接范围收窄。下份记录中，账号名称不能等同于实际使用会话的人。"
+
+msgid "TR1_T04_SENDER"
+msgstr "敏瑞"
+
+msgid "TR1_T04_SENSOR_FIELD"
+msgstr "现场观察"
+
+msgid "TR1_T04_SENSOR_INDEPENDENT"
+msgstr "独立来源观察"
+
+msgid "TR1_T04_TITLE"
+msgstr "观察下次连接的地方"
+
+msgid "TR1_T04_TOOL_NAME"
+msgstr "来源、观察与假设"
+
+msgid "TR1_T05_ABSTRACTION"
+msgstr "本事件只处理获准观察窗口与少量关系类型。"
+
+msgid "TR1_T05_BRIEF"
+msgstr "同一账号名出现在两条通路上。共享账号、残留会话、盗用都可能。先指认名字所属的人，就是让结论走在证据前面。\n\n关联会话生命周期与通路，或委托和撤销记录，确认当前可证明的连接。究竟谁亲手敲了键盘，可能仍无法得知。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T05_DESK_NAME"
+msgstr "被盗的名字 · 工作台"
+
+msgid "TR1_T05_GOAL"
+msgstr "用观察支持所需连接，并交付反证、不确定性与下个观察点。"
+
+msgid "TR1_T05_HINT_1"
+msgstr "区分当前观察能证明的内容与仍未知的部分。"
+
+msgid "TR1_T05_HINT_2"
+msgstr "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。"
+
+msgid "TR1_T05_HINT_3"
+msgstr "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。"
+
+msgid "TR1_T05_LIMIT"
+msgstr "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。"
+
+msgid "TR1_T05_NEXT_SENSOR"
+msgstr "下个交接观察点"
+
+msgid "TR1_T05_PRINCIPLE"
+msgstr "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。"
+
+msgid "TR1_T05_REPLY"
+msgstr "账号与会话的联系已确认，没有夸大人的身份。下次传输包含正文不可见的区段。"
+
+msgid "TR1_T05_SENDER"
+msgstr "敏瑞"
+
+msgid "TR1_T05_SENSOR_FIELD"
+msgstr "现场观察"
+
+msgid "TR1_T05_SENSOR_INDEPENDENT"
+msgstr "独立来源观察"
+
+msgid "TR1_T05_TITLE"
+msgstr "被盗的名字"
+
+msgid "TR1_T05_TOOL_NAME"
+msgstr "来源、观察与假设"
+
+msgid "TR1_T06_ABSTRACTION"
+msgstr "本事件只处理获准观察窗口与少量关系类型。"
+
+msgid "TR1_T06_BRIEF"
+msgstr "记录经过加密区段，没有随意解密正文的按钮。获准元数据与终端记录仍能支持有限的连接。\n\n记录哪一方能看见什么，在不收集无关人员内容的前提下缩小下个目标。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T06_DESK_NAME"
+msgstr "不可见的区段 · 工作台"
+
+msgid "TR1_T06_GOAL"
+msgstr "用观察支持所需连接，并交付反证、不确定性与下个观察点。"
+
+msgid "TR1_T06_HINT_1"
+msgstr "区分当前观察能证明的内容与仍未知的部分。"
+
+msgid "TR1_T06_HINT_2"
+msgstr "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。"
+
+msgid "TR1_T06_HINT_3"
+msgstr "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。"
+
+msgid "TR1_T06_LIMIT"
+msgstr "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。"
+
+msgid "TR1_T06_NEXT_SENSOR"
+msgstr "下个交接观察点"
+
+msgid "TR1_T06_PRINCIPLE"
+msgstr "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。"
+
+msgid "TR1_T06_REPLY"
+msgstr "没有虚构看不见的内容，也确认了流转连接。但新记录与此前看似合理的解释发生冲突。"
+
+msgid "TR1_T06_SENDER"
+msgstr "敏瑞"
+
+msgid "TR1_T06_SENSOR_FIELD"
+msgstr "现场观察"
+
+msgid "TR1_T06_SENSOR_INDEPENDENT"
+msgstr "独立来源观察"
+
+msgid "TR1_T06_TITLE"
+msgstr "不可见的区段"
+
+msgid "TR1_T06_TOOL_NAME"
+msgstr "来源、观察与假设"
+
+msgid "TR1_T07_ABSTRACTION"
+msgstr "本事件只处理获准观察窗口与少量关系类型。"
+
+msgid "TR1_T07_BRIEF"
+msgstr "前位调查者认为是同一会话，你不必将其当成自己的判断。先检查新观察，也可直接建立证据更充分的连接。\n\n取得基准事件，或竞争解释所预测的后续观察。若已提出假设，就保留历史和反证后修正；若尚未提出，可直接交付得到支持的关系。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T07_DESK_NAME"
+msgstr "放下合理假设的时候 · 工作台"
+
+msgid "TR1_T07_GOAL"
+msgstr "用观察支持所需连接，并交付反证、不确定性与下个观察点。"
+
+msgid "TR1_T07_HINT_1"
+msgstr "区分当前观察能证明的内容与仍未知的部分。"
+
+msgid "TR1_T07_HINT_2"
+msgstr "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。"
+
+msgid "TR1_T07_HINT_3"
+msgstr "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。"
+
+msgid "TR1_T07_LIMIT"
+msgstr "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。"
+
+msgid "TR1_T07_NEXT_SENSOR"
+msgstr "下个交接观察点"
+
+msgid "TR1_T07_PRINCIPLE"
+msgstr "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。"
+
+msgid "TR1_T07_PRIOR"
+msgstr "前位调查者的同一会话推测"
+
+msgid "TR1_T07_REPLY"
+msgstr "新观察揭示了旧便条的局限。你既能保留历史后修正，也能从一开始就依据独立证据前进。最终交接时，要准确写明证明了什么。"
+
+msgid "TR1_T07_SENDER"
+msgstr "敏瑞"
+
+msgid "TR1_T07_SENSOR_FIELD"
+msgstr "现场观察"
+
+msgid "TR1_T07_SENSOR_INDEPENDENT"
+msgstr "独立来源观察"
+
+msgid "TR1_T07_TITLE"
+msgstr "放下合理假设的时候"
+
+msgid "TR1_T07_TOOL_NAME"
+msgstr "来源、观察与假设"
+
+msgid "TR1_T08_ABSTRACTION"
+msgstr "本事件只处理获准观察窗口与少量关系类型。"
+
+msgid "TR1_T08_BRIEF"
+msgstr "这是最后的交接。请用独立观察点和来源确认最小连接通路，不要求知道每个候选者的真实姓名。\n\n区分哪次传输经过哪条边界、什么主张被反驳、哪里还没有观察。省略必要连接与后续观察，只写全部未知也不足够。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T08_DESK_NAME"
+msgstr "最后连接的边界 · 工作台"
+
+msgid "TR1_T08_GOAL"
+msgstr "用观察支持所需连接，并交付反证、不确定性与下个观察点。"
+
+msgid "TR1_T08_HINT_1"
+msgstr "区分当前观察能证明的内容与仍未知的部分。"
+
+msgid "TR1_T08_HINT_2"
+msgstr "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。"
+
+msgid "TR1_T08_HINT_3"
+msgstr "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。"
+
+msgid "TR1_T08_LIMIT"
+msgstr "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。"
+
+msgid "TR1_T08_NEXT_SENSOR"
+msgstr "下个交接观察点"
+
+msgid "TR1_T08_PRINCIPLE"
+msgstr "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。"
+
+msgid "TR1_T08_REPLY"
+msgstr "得到观察支持的连接留下了，未知身份没有被编造。下一组会同时收到来源、反证与仍需采集的观察。追踪以可核验的交接结束，而非揭晓答案姓名。"
+
+msgid "TR1_T08_SENDER"
+msgstr "敏瑞"
+
+msgid "TR1_T08_SENSOR_FIELD"
+msgstr "现场观察"
+
+msgid "TR1_T08_SENSOR_INDEPENDENT"
+msgstr "独立来源观察"
+
+msgid "TR1_T08_TITLE"
+msgstr "最后连接的边界"
+
+msgid "TR1_T08_TOOL_NAME"
+msgstr "来源、观察与假设"
 
 msgid "UI_ALERT_EXPLAIN_0"
 msgstr "未观察到风险。本地拼写错误、阅读与切换窗口不影响警报。"
@@ -3464,6 +6374,141 @@ msgstr "查看 {name} 的肖像"
 msgid "UI_MAIL_REVEAL_TIP"
 msgstr "显示剧情中已公开的人物肖像。不愿查看时可保留抽象标记。"
 
+msgid "UI_MODEL_ACTION"
+msgstr "操作"
+
+msgid "UI_MODEL_ACTION_ADVANCE"
+msgstr "推进排队业务"
+
+msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
+msgstr "推进到下个观察窗口"
+
+msgid "UI_MODEL_ACTION_CHECKPOINT"
+msgstr "保存策略检查点"
+
+msgid "UI_MODEL_ACTION_COLLECT"
+msgstr "采集此位置的观察"
+
+msgid "UI_MODEL_ACTION_HANDOFF"
+msgstr "交付已支持连接及局限"
+
+msgid "UI_MODEL_ACTION_HYPOTHESIZE"
+msgstr "提出假设"
+
+msgid "UI_MODEL_ACTION_INSPECT"
+msgstr "查看当前状态"
+
+msgid "UI_MODEL_ACTION_PROBE"
+msgstr "验证请求与正常业务"
+
+msgid "UI_MODEL_ACTION_QUARANTINE"
+msgstr "更改存储对象隔离状态"
+
+msgid "UI_MODEL_ACTION_RESET"
+msgstr "重置当前执行"
+
+msgid "UI_MODEL_ACTION_REVISE"
+msgstr "保留依据并修正假设"
+
+msgid "UI_MODEL_ACTION_REVOKE"
+msgstr "撤销会话"
+
+msgid "UI_MODEL_ACTION_ROLLBACK"
+msgstr "仅回滚所选策略组"
+
+msgid "UI_MODEL_ACTION_RUN"
+msgstr "运行程序"
+
+msgid "UI_MODEL_ACTION_SET_CONTROL"
+msgstr "应用精确措施"
+
+msgid "UI_MODEL_ACTION_SET_INPUT"
+msgstr "准备输入样例"
+
+msgid "UI_MODEL_ACTION_STEP"
+msgstr "逐步查看执行"
+
+msgid "UI_MODEL_ACTION_TEST"
+msgstr "依据采集证据检验"
+
+msgid "UI_MODEL_ALLOW"
+msgstr "允许"
+
+msgid "UI_MODEL_AUTHORIZED"
+msgstr "获准范围"
+
+msgid "UI_MODEL_CLIENT_SUPPLIED"
+msgstr "客户端提供的标记"
+
+msgid "UI_MODEL_COMPLETE_WINDOW"
+msgstr "完整观察此窗口"
+
+msgid "UI_MODEL_DENY"
+msgstr "阻止"
+
+msgid "UI_MODEL_EVENT_ACCEPTED"
+msgstr "上传已接收"
+
+msgid "UI_MODEL_EVENT_QUARANTINE_CHANGED"
+msgstr "隔离状态变更"
+
+msgid "UI_MODEL_EXCLUDED"
+msgstr "范围外"
+
+msgid "UI_MODEL_FORM_NOTE"
+msgstr "选项依据当前权限与观察公开。请选择操作、主张或输入后执行。"
+
+msgid "UI_MODEL_HALTED"
+msgstr "程序已结束"
+
+msgid "UI_MODEL_IDLE"
+msgstr "等待输入样例"
+
+msgid "UI_MODEL_METADATA_ONLY"
+msgstr "仅元数据"
+
+msgid "UI_MODEL_NORMAL"
+msgstr "正常业务"
+
+msgid "UI_MODEL_NO_ACTIONS"
+msgstr "当前没有可用操作，请检查权限与观察。"
+
+msgid "UI_MODEL_NO_OBSERVATIONS"
+msgstr "尚无可显示的观察。"
+
+msgid "UI_MODEL_PERMITTED_PLAINTEXT"
+msgstr "获准明文"
+
+msgid "UI_MODEL_REFUTED"
+msgstr "已反驳"
+
+msgid "UI_MODEL_REL_BEFORE"
+msgstr "是否更早发生"
+
+msgid "UI_MODEL_REL_FORWARDED_TO"
+msgstr "是否转发到下个节点"
+
+msgid "UI_MODEL_REL_SAME_SESSION"
+msgstr "是否同一会话"
+
+msgid "UI_MODEL_RUNNING"
+msgstr "执行中"
+
+msgid "UI_MODEL_SAMPLED_WINDOW"
+msgstr "仅抽样观察"
+
+msgid "UI_MODEL_SERVER_ISSUED"
+msgstr "服务器签发的标记"
+
+msgid "UI_MODEL_SUPPORTED"
+msgstr "证据支持"
+
+msgid "UI_MODEL_THREAT"
+msgstr "威胁请求"
+
+msgid "UI_MODEL_UNDETERMINED"
+msgstr "证据不足／暂不判断"
+
 msgid "UI_NET_CONNECTED"
 msgstr "连接 · 终端 {list}"
 
@@ -3563,6 +6608,24 @@ msgstr "在 {id} 建立所需账号会话"
 msgid "UI_OBJ_SOURCES_PRESERVED"
 msgstr "不修改或删除远程原件"
 
+msgid "UI_OBSERVATION_ENTITIES"
+msgstr "采集观察中出现的对象"
+
+msgid "UI_OBSERVATION_EVIDENCE"
+msgstr "已采集观察与来源"
+
+msgid "UI_OBSERVATION_HISTORY"
+msgstr "假设修正历史"
+
+msgid "UI_OBSERVATION_HYPOTHESES"
+msgstr "假设与当前证据"
+
+msgid "UI_OBSERVATION_INITIAL_CLAIMS"
+msgstr "收到的假设 · 尚未验证"
+
+msgid "UI_OBSERVATION_SENSORS"
+msgstr "观察点与采集范围"
+
 msgid "UI_OK"
 msgstr "确认"
 
@@ -3613,6 +6676,27 @@ msgstr "备份恢复失败 ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "另名保留损坏存档，并从有效备份恢复"
+
+msgid "UI_RESPONSE_ARTIFACTS"
+msgstr "已观察的上传存储对象"
+
+msgid "UI_RESPONSE_ARTIFACT_EVENTS"
+msgstr "上传与隔离历史"
+
+msgid "UI_RESPONSE_BUSINESS_OBJECTS"
+msgstr "业务结果与存储对象"
+
+msgid "UI_RESPONSE_CHECKPOINTS"
+msgstr "局部回滚检查点"
+
+msgid "UI_RESPONSE_CONTROLS"
+msgstr "当前应对措施"
+
+msgid "UI_RESPONSE_HISTORY"
+msgstr "请求观察历史"
+
+msgid "UI_RESPONSE_MATRIX"
+msgstr "正常业务与威胁请求对比"
 
 msgid "UI_RL_BODY"
 msgstr "正文（JSON 对象）"
@@ -3797,6 +6881,15 @@ msgstr "不等待真实时间。等待使用 ticks 逻辑时钟，这不是真�
 msgid "UI_TOOLKIND_AUTH_MODEL"
 msgstr "计算各账号失败次数及虚拟等待。启用限制后，同时观察重复失败被阻与等待后的正常登录。"
 
+msgid "UI_TOOLKIND_BRANCH_VM"
+msgstr "分支与调用分析"
+
+msgid "UI_TOOLKIND_BRANCH_VM_LIMIT"
+msgstr "不执行真实 CPU、二进制程序或 shell。程序和预算由事件提供，按钮次数不作为通关条件。"
+
+msgid "UI_TOOLKIND_BRANCH_VM_MODEL"
+msgstr "以小型输入样例执行固定虚拟指令的分支、调用、返回与输出，并对比执行轨迹。"
+
 msgid "UI_TOOLKIND_COMPARE"
 msgstr "观察对比"
 
@@ -3869,6 +6962,15 @@ msgstr "不复现真实进程内存、地址或保护机制，仅使用有限虚
 msgid "UI_TOOLKIND_MEMORY_MODEL"
 msgstr "显示固定大小缓冲区及后续单元，写入十六进制字节可观察溢出字节到达的位置。"
 
+msgid "UI_TOOLKIND_OBSERVATION_CASE"
+msgstr "观察与假设"
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_LIMIT"
+msgstr "同一 IP 不证明同一个人。时钟误差、采样遗漏与标记来源限制结论，不与隐藏犯人答案对照。"
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_MODEL"
+msgstr "在获准窗口与位置采集观察，仅依据采集副本将主张分为支持、反驳或未定。"
+
 msgid "UI_TOOLKIND_PACKET"
 msgstr "查看数据包"
 
@@ -3922,6 +7024,15 @@ msgstr "不执行真实 JavaScript，对其他用户的影响仅按预定虚拟�
 
 msgid "UI_TOOLKIND_RENDER_MODEL"
 msgstr "比较输入仅显示为文字，还是被解释为虚拟显示信号。启用转义策略后只显示文字。"
+
+msgid "UI_TOOLKIND_RESPONSE_LAB"
+msgstr "应对工作台"
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_LIMIT"
+msgstr "阻止一切不代表成功。检查点仅还原指定策略组，不回滚已撤销凭据或采集记录。"
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_MODEL"
+msgstr "向相同虚拟服务发送获准请求，对比正常业务与威胁结果。措施会改变其他工具共用的策略与会话。"
 
 msgid "UI_TOOLKIND_REVERSE"
 msgstr "流程分析"
@@ -4025,26 +7136,164 @@ msgstr "等待值 (ticks) 必须为整数。"
 msgid "UI_TOOL_ERR_UNKNOWN_TOOL"
 msgstr "当前事件没有此工具。"
 
+msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
+msgstr "上传接收步骤"
+
+msgid "UI_TOOL_FIELD_ACQUISITION"
+msgstr "采集方式"
+
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "操作"
+
+msgid "UI_TOOL_FIELD_ARTIFACT_ID"
+msgstr "存储对象"
+
+msgid "UI_TOOL_FIELD_AVAILABLE"
+msgstr "可采集"
+
+msgid "UI_TOOL_FIELD_BUSINESS_KEY"
+msgstr "业务项目"
+
+msgid "UI_TOOL_FIELD_BUSINESS_VALUE"
+msgstr "业务作用结果"
+
+msgid "UI_TOOL_FIELD_CALL_STACK"
+msgstr "调用栈"
+
+msgid "UI_TOOL_FIELD_CASE_ID"
+msgstr "请求或输入样例"
+
+msgid "UI_TOOL_FIELD_CHECKPOINT_ID"
+msgstr "回滚检查点"
+
+msgid "UI_TOOL_FIELD_CLAIM"
+msgstr "主张"
+
+msgid "UI_TOOL_FIELD_CLASS"
+msgstr "分类"
+
+msgid "UI_TOOL_FIELD_CLOCK_OFFSET"
+msgstr "时钟偏差"
+
+msgid "UI_TOOL_FIELD_COLLECTOR"
+msgstr "采集者"
+
+msgid "UI_TOOL_FIELD_CONTROL_ID"
+msgstr "应对措施"
+
+msgid "UI_TOOL_FIELD_COUNT"
+msgstr "执行步数"
+
+msgid "UI_TOOL_FIELD_COVERAGE"
+msgstr "观察覆盖范围"
+
+msgid "UI_TOOL_FIELD_CURRENT"
+msgstr "当前值"
+
+msgid "UI_TOOL_FIELD_CURSOR"
+msgstr "当前观察窗口"
+
+msgid "UI_TOOL_FIELD_DST"
+msgstr "目标寄存器"
+
+msgid "UI_TOOL_FIELD_ELSE"
+msgstr "假分支"
+
+msgid "UI_TOOL_FIELD_ENDPOINT_ID"
+msgstr "接收服务"
+
+msgid "UI_TOOL_FIELD_ENTITY_REF"
+msgstr "观察到的对象"
+
+msgid "UI_TOOL_FIELD_EVENT"
+msgstr "观察历史类型"
+
+msgid "UI_TOOL_FIELD_EVENT_ID"
+msgstr "事件 ID"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
+msgstr "当前执行许可"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
+msgstr "接收上传时允许执行"
 
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "文件名"
 
+msgid "UI_TOOL_FIELD_FORMAT_OK"
+msgstr "格式检查"
+
+msgid "UI_TOOL_FIELD_FROM"
+msgstr "调用方函数"
+
+msgid "UI_TOOL_FIELD_FROM_NODE"
+msgstr "观察到的起点节点"
+
+msgid "UI_TOOL_FIELD_FUNCTION"
+msgstr "函数"
+
+msgid "UI_TOOL_FIELD_GROUP"
+msgstr "策略组"
+
+msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
+msgstr "假设名称"
+
+msgid "UI_TOOL_FIELD_ID"
+msgstr "ID"
+
 msgid "UI_TOOL_FIELD_INPUT"
 msgstr "输入"
 
+msgid "UI_TOOL_FIELD_INPUTS"
+msgstr "输入样例"
+
+msgid "UI_TOOL_FIELD_INTENDED"
+msgstr "所需结果"
+
+msgid "UI_TOOL_FIELD_KIND"
+msgstr "连接类型"
+
+msgid "UI_TOOL_FIELD_LABEL"
+msgstr "名称"
+
 msgid "UI_TOOL_FIELD_LEFT"
-msgstr "第一项观察"
+msgstr "第一个比较对象"
+
+msgid "UI_TOOL_FIELD_MARKER_AUTHORITY"
+msgstr "标记来源"
 
 msgid "UI_TOOL_FIELD_MIME"
 msgstr "MIME 类型"
 
+msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
+msgstr "下个观察点"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "对象 ID"
 
+msgid "UI_TOOL_FIELD_OBSERVATION_IDS"
+msgstr "支持观察"
+
+msgid "UI_TOOL_FIELD_OBSERVED"
+msgstr "观察结果"
+
+msgid "UI_TOOL_FIELD_OBSERVED_AT"
+msgstr "观察时间区间"
+
+msgid "UI_TOOL_FIELD_OP"
+msgstr "指令"
+
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "来源 (origin)"
+
+msgid "UI_TOOL_FIELD_OUTPUT"
+msgstr "输出"
+
+msgid "UI_TOOL_FIELD_OUTPUTS"
+msgstr "输出值"
+
+msgid "UI_TOOL_FIELD_OWNER_FUNCTION"
+msgstr "指令所属函数"
 
 msgid "UI_TOOL_FIELD_PASSWORD"
 msgstr "密码"
@@ -4052,26 +7301,137 @@ msgstr "密码"
 msgid "UI_TOOL_FIELD_PATH"
 msgstr "文件路径"
 
+msgid "UI_TOOL_FIELD_PC"
+msgstr "指令位置"
+
+msgid "UI_TOOL_FIELD_PROVENANCE"
+msgstr "来源与采集依据"
+
+msgid "UI_TOOL_FIELD_PUBLIC"
+msgstr "公开观察"
+
+msgid "UI_TOOL_FIELD_QUARANTINED"
+msgstr "隔离状态"
+
+msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
+msgstr "修正依据"
+
+msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
+msgstr "被反驳的假设"
+
+msgid "UI_TOOL_FIELD_REG"
+msgstr "源寄存器"
+
+msgid "UI_TOOL_FIELD_REGISTERS"
+msgstr "虚拟寄存器"
+
+msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
+msgstr "修正主张"
+
+msgid "UI_TOOL_FIELD_REQUEST_TAG"
+msgstr "请求标记"
+
+msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
+msgstr "保留范围"
+
 msgid "UI_TOOL_FIELD_RIGHT"
-msgstr "第二项观察"
+msgstr "第二个比较对象"
+
+msgid "UI_TOOL_FIELD_ROUTE_ID"
+msgstr "请求通路"
+
+msgid "UI_TOOL_FIELD_SAMPLING"
+msgstr "采样方式"
+
+msgid "UI_TOOL_FIELD_SECTION"
+msgstr "查看部分"
+
+msgid "UI_TOOL_FIELD_SENSOR_ID"
+msgstr "观察点"
+
+msgid "UI_TOOL_FIELD_SESSION_TAG"
+msgstr "会话标记"
+
+msgid "UI_TOOL_FIELD_SHA256"
+msgstr "SHA256"
+
+msgid "UI_TOOL_FIELD_SHARED_ADDRESS"
+msgstr "可能共享的地址"
 
 msgid "UI_TOOL_FIELD_SIGNATURE"
 msgstr "文件特征"
 
+msgid "UI_TOOL_FIELD_SIGNATURE_OK"
+msgstr "签名检查"
+
+msgid "UI_TOOL_FIELD_SIGNATURE_VALID"
+msgstr "文件格式校验通过"
+
+msgid "UI_TOOL_FIELD_SOURCE_ID"
+msgstr "来源 ID"
+
+msgid "UI_TOOL_FIELD_STATUS"
+msgstr "状态"
+
+msgid "UI_TOOL_FIELD_STEPS_USED"
+msgstr "已用步数"
+
+msgid "UI_TOOL_FIELD_STORED_AS"
+msgstr "存储引用"
+
+msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
+msgstr "得到支持的假设"
+
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "目标主机"
+
+msgid "UI_TOOL_FIELD_THEN"
+msgstr "真分支"
+
+msgid "UI_TOOL_FIELD_TICK"
+msgstr "发生步骤"
 
 msgid "UI_TOOL_FIELD_TICKS"
 msgstr "等待 (ticks)"
 
+msgid "UI_TOOL_FIELD_TO"
+msgstr "调用目标"
+
 msgid "UI_TOOL_FIELD_TOKEN"
 msgstr "令牌"
+
+msgid "UI_TOOL_FIELD_TOKEN_REF"
+msgstr "要撤销的会话"
+
+msgid "UI_TOOL_FIELD_TO_NODE"
+msgstr "观察到的终点节点"
+
+msgid "UI_TOOL_FIELD_TRACE"
+msgstr "执行轨迹"
+
+msgid "UI_TOOL_FIELD_UNKNOWN_EDGES"
+msgstr "未确定连接"
 
 msgid "UI_TOOL_FIELD_USERNAME"
 msgstr "账号"
 
 msgid "UI_TOOL_FIELD_VALUE"
-msgstr "修改值"
+msgstr "值"
+
+msgid "UI_TOOL_FIELD_VALUES"
+msgstr "输入值"
+
+msgid "UI_TOOL_FIELD_VANTAGE"
+msgstr "采集位置"
+
+msgid "UI_TOOL_FIELD_VERDICT"
+msgstr "证据判定"
+
+msgid "UI_TOOL_FIELD_VISIBILITY"
+msgstr "可见信息"
+
+msgid "UI_TOOL_FIELD_WINDOW"
+msgstr "观察窗口"
 
 msgid "UI_TOOL_FILTER"
 msgstr "过滤"
@@ -4301,6 +7661,9 @@ msgstr "仅用手动输入的密钥计算，不会自动填入结果。不可打
 msgid "UI_TOOL_XOR_RESULT"
 msgstr "应用密钥 {key} 的结果 · {text}"
 
+msgid "UI_TOP_CAMPAIGN_MISSION"
+msgstr "{campaign} · {id} · {title}"
+
 msgid "UI_TOP_CASE_DONE"
 msgstr "事件已解决"
 
@@ -4315,6 +7678,36 @@ msgstr "已有完成记录 · 当前目标 {done}/{total}"
 
 msgid "UI_TOP_SESSION"
 msgstr "终端 {n} · {user}@{host}"
+
+msgid "UI_VALUE_FALSE"
+msgstr "否"
+
+msgid "UI_VALUE_TRUE"
+msgstr "是"
+
+msgid "UI_VM_CALL_GRAPH"
+msgstr "函数调用关系"
+
+msgid "UI_VM_CASES"
+msgstr "已准备输入样例"
+
+msgid "UI_VM_LIMITS"
+msgstr "虚拟执行预算"
+
+msgid "UI_VM_LIMITS_LINE"
+msgstr "每个样例预算：{steps} 步 · 调用深度 {stack} · 虚拟内存 {memory}"
+
+msgid "UI_VM_LISTING"
+msgstr "程序分支"
+
+msgid "UI_VM_OUTPUTS"
+msgstr "实际输出"
+
+msgid "UI_VM_STATE_LINE"
+msgstr "虚拟执行：{state} · 已用步数 {steps}"
+
+msgid "UI_VM_TRACE"
+msgstr "已执行分支与调用轨迹"
 
 msgid "UI_VOLUME"
 msgstr "界面音效"

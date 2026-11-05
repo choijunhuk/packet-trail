@@ -156,6 +156,12 @@ func _rollback_new(preserved: Dictionary, failure: Dictionary) -> Dictionary:
 	return failure
 
 
+func path_status(path: String, validator: Callable) -> Dictionary:
+	var guard: Dictionary = _guard(path, validator)
+	if not guard.ok: return guard
+	return {"ok": true, "exists": FileAccess.file_exists(path) or DirAccess.dir_exists_absolute(path), "backup_exists": FileAccess.file_exists(path + ".bak") or DirAccess.dir_exists_absolute(path + ".bak")}
+
+
 func _guard(path: String, validator: Callable) -> Dictionary:
 	if not validator.is_valid():
 		return _failure("SAVE_INVALID_VALIDATOR", "저장 검증 함수를 사용할 수 없습니다.")

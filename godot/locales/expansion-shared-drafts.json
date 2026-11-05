@@ -1,0 +1,782 @@
+{
+  "The authorized work account is below. After connecting, the case tool shows current observations and permitted actions.": [
+    "以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。",
+    "以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。",
+    "Debajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.",
+    "Unten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen."
+  ],
+  "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers.": [
+    "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。",
+    "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。",
+    "Es un modelo limitado con peticiones, cuentas, servicios y políticas registrados. Los resultados proceden del mismo mundo virtual compartido.",
+    "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+  ],
+  "Passing the observed scenarios does not establish prevention of every possible attack.": [
+    "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。",
+    "通过已观察场景，不代表能阻止所有可能攻击。",
+    "Superar los escenarios observados no demuestra prevenir todos los ataques posibles.",
+    "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+  ],
+  "Observe legitimate work separately from the problematic requests.": [
+    "正規の業務と問題のある要求を分けて観察してください。",
+    "将正常业务与有问题的请求分开观察。",
+    "Observa por separado el trabajo legítimo y las peticiones problemáticas.",
+    "Beobachte reguläre Arbeit getrennt von problematischen Anfragen."
+  ],
+  "Hold actor, target and route fixed and change one response scope to compare results.": [
+    "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。",
+    "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。",
+    "Mantén actor, destino y ruta y cambia un solo alcance de respuesta para comparar.",
+    "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+  ],
+  "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work.": [
+    "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。",
+    "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。",
+    "Elige control preciso de la ruta original o una alternativa aprobada. Apagar todo también impide el trabajo legítimo.",
+    "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+  ],
+  "Live Work and Response Checks": [
+    "稼働業務と対応策の検証",
+    "实时业务与应对验证",
+    "Comprobación de trabajo y respuesta",
+    "Prüfung laufender Arbeit und Abwehr"
+  ],
+  "Approved Work Route": [
+    "承認済みの業務経路",
+    "获批业务通路",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "Enable Original Work Entrance": [
+    "元の業務入口を有効化",
+    "启用原业务入口",
+    "Habilitar la entrada original",
+    "Ursprünglichen Arbeitszugang aktivieren"
+  ],
+  "Enable Approved Route": [
+    "承認済み経路を有効化",
+    "启用获批通路",
+    "Habilitar la ruta aprobada",
+    "Genehmigten Weg aktivieren"
+  ],
+  "Receipt Ownership Check": [
+    "受付票の所有者確認",
+    "受理单所有者检查",
+    "Comprobar propiedad del recibo",
+    "Belegeigentümer prüfen"
+  ],
+  "Unrelated Account at the Original Entrance": [
+    "元の入口の担当外アカウント",
+    "原入口的无关账号",
+    "Cuenta ajena al trámite en la entrada original",
+    "Unbeteiligtes Konto am ursprünglichen Zugang"
+  ],
+  "Unrelated Account at the Approved Route": [
+    "承認済み経路の担当外アカウント",
+    "获批通路的无关账号",
+    "Cuenta ajena al trámite en la ruta aprobada",
+    "Unbeteiligtes Konto am genehmigten Weg"
+  ],
+  "Citizen A's Own Receipt": [
+    "市民 A 自身の受付票",
+    "市民 A 自己的受理单",
+    "Recibo propio del ciudadano A",
+    "Eigener Beleg von Bürger A"
+  ],
+  "Citizen B's Own Receipt": [
+    "市民 B 自身の受付票",
+    "市民 B 自己的受理单",
+    "Recibo propio del ciudadano B",
+    "Eigener Beleg von Bürger B"
+  ],
+  "Assigned Staff's Delegated Receipt": [
+    "担当職員に委任された受付票",
+    "委托给指定职员的受理单",
+    "Recibo delegado al personal asignado",
+    "Delegierter Beleg des zuständigen Personals"
+  ],
+  "Refuse unrelated receipt access while preserving both citizens' and assigned staff reads.": [
+    "担当外の閲覧を拒否し、両市民と担当職員の読み取りを守る。",
+    "拒绝无关读取，保留两位市民与指定职员的读取。",
+    "Rechaza accesos ajenos y conserva lecturas de ambos ciudadanos y del personal asignado.",
+    "Weise unbeteiligte Zugriffe ab und erhalte das Lesen beider Bürger und des zuständigen Personals."
+  ],
+  "Observe how ownership checks or narrow delegation change the result.": [
+    "所有者確認か、範囲を絞った委任で結果がどう変わるか観察してください。",
+    "观察所有者检查或有限委托如何改变结果。",
+    "Observa cómo cambian el resultado la propiedad o una delegación limitada.",
+    "Beobachte, wie Eigentümerprüfung oder enge Delegation das Ergebnis verändern."
+  ],
+  "Per-account Retry Limit": [
+    "アカウント別の再試行制限",
+    "按账号限制重试",
+    "Límite de reintentos por cuenta",
+    "Wiederholungsgrenze je Konto"
+  ],
+  "Legitimate Citizen at the Shared Origin": [
+    "共有の出発点からの正規市民要求",
+    "共享起点的正常市民请求",
+    "Ciudadano legítimo desde el origen compartido",
+    "Regulärer Bürger am gemeinsamen Ausgangspunkt"
+  ],
+  "Valid Ward Notification Job Authentication": [
+    "病院通知ジョブの正規認証",
+    "病区通知任务的有效认证",
+    "Acceso válido del notificador hospitalario",
+    "Gültige Anmeldung des Stationsmeldeauftrags"
+  ],
+  "Limit repeated authentication failures while retaining legitimate citizen and notification access at the shared origin.": [
+    "共有の出発点で連続認証失敗を制限し、正規の市民と通知のアクセスを残す。",
+    "限制重复认证失败，保留共享起点的正常市民与通知访问。",
+    "Limita fallos repetidos y conserva accesos legítimos de ciudadanos y avisos desde el mismo origen.",
+    "Begrenze wiederholte Anmeldefehler und erhalte reguläre Bürger- und Meldezugriffe am gemeinsamen Ausgangspunkt."
+  ],
+  "Compare account-specific attempts and approved authentication routes instead of blocking an address.": [
+    "アドレス全体を遮断せず、アカウント別の試行と承認済み認証経路を比べてください。",
+    "不要整段封锁地址，请比较各账号尝试与获批认证通路。",
+    "Compara intentos por cuenta y rutas de acceso aprobadas en vez de bloquear una dirección.",
+    "Vergleiche kontobezogene Versuche und genehmigte Anmeldewege, statt eine Adresse zu sperren."
+  ],
+  "Fresh Legitimate Session": [
+    "新しい正規セッション",
+    "新的正常会话",
+    "Sesión legítima nueva",
+    "Neue reguläre Sitzung"
+  ],
+  "Other Legitimate Long-running Job": [
+    "他の正規の長時間ジョブ",
+    "其他正常长期任务",
+    "Otro trabajo legítimo de larga duración",
+    "Anderer regulärer Dauerauftrag"
+  ],
+  "Retired Authority at the Original Route": [
+    "元の経路での終了済み権限",
+    "原通路上的旧权限",
+    "Autoridad retirada en la ruta original",
+    "Ausgemusterte Berechtigung am ursprünglichen Weg"
+  ],
+  "Retired Authority at the Approved Route": [
+    "承認済み経路での終了済み権限",
+    "获批通路上的旧权限",
+    "Autoridad retirada en la ruta aprobada",
+    "Ausgemusterte Berechtigung am genehmigten Weg"
+  ],
+  "Check Expired Session Authority": [
+    "終了したセッション権限を検査",
+    "检查已结束的会话权限",
+    "Comprobar autoridad de sesiones caducadas",
+    "Abgelaufene Sitzungsrechte prüfen"
+  ],
+  "Refuse expired authority while keeping other legitimate sessions working.": [
+    "終了した権限を拒否し、他の正規セッションを保つ。",
+    "拒绝已结束的权限，同时保留其他正常会话。",
+    "Rechaza autoridad caducada y conserva otras sesiones legítimas.",
+    "Weise abgelaufene Rechte ab und erhalte andere reguläre Sitzungen."
+  ],
+  "Compare targeted revocation with migration to an approved route that did not issue the old session.": [
+    "限定した失効と、旧セッションを発行していない承認経路への移行を比べてください。",
+    "比较定向撤销与迁移到未签发旧会话的获批通路。",
+    "Compara revocación selectiva y migración a una ruta que no emitió la sesión antigua.",
+    "Vergleiche gezielten Widerruf mit dem Wechsel auf einen genehmigten Weg, der die alte Sitzung nicht ausgestellt hat."
+  ],
+  "Input Disguised as a Photo": [
+    "写真を装った入力",
+    "伪装成照片的输入",
+    "Entrada disfrazada de foto",
+    "Als Foto getarnte Eingabe"
+  ],
+  "Disguised File at the Approved Processor": [
+    "承認済み処理側の偽装ファイル",
+    "获批处理器中的伪装文件",
+    "Archivo disfrazado en el procesador aprobado",
+    "Getarnte Datei an der genehmigten Verarbeitung"
+  ],
+  "Create a Legitimate JPEG": [
+    "正規 JPEG を作成",
+    "创建正常 JPEG",
+    "Crear un JPEG legítimo",
+    "Reguläres JPEG erzeugen"
+  ],
+  "Store Uploads Without Execution": [
+    "アップロードを実行せず保存",
+    "不执行上传文件，仅存储",
+    "Guardar subidas sin ejecución",
+    "Uploads ohne Ausführung speichern"
+  ],
+  "Validate Photo Content Type": [
+    "写真の内容形式を検査",
+    "校验照片内容类型",
+    "Validar el tipo real de la foto",
+    "Fotoinhaltsformat prüfen"
+  ],
+  "Prevent disguised-file creation while creating a legitimate JPEG through a safe processor.": [
+    "偽装ファイルの作成を防ぎ、安全な処理で正規 JPEG を作る。",
+    "阻止伪装文件创建，同时通过安全处理器生成正常 JPEG。",
+    "Impide crear el archivo disfrazado y crea un JPEG legítimo mediante un proceso seguro.",
+    "Verhindere getarnte Dateien und erzeuge ein reguläres JPEG über sichere Verarbeitung."
+  ],
+  "Separate name, MIME type and content signature from actual storage and execution state.": [
+    "名前・MIME・内容シグネチャと、実際の保存・実行状態を分けてください。",
+    "将名称、MIME、内容特征与实际存储及执行状态分开检查。",
+    "Distingue nombre, MIME y firma del estado real de almacenamiento y ejecución.",
+    "Trenne Name, MIME und Inhaltssignatur vom tatsächlichen Speicher- und Ausführungszustand."
+  ],
+  "Worker's Required Health Check": [
+    "作業者に必要な稼働確認",
+    "任务所需健康检查",
+    "Comprobación de salud necesaria del proceso",
+    "Benötigte Zustandsprüfung des Arbeitsprozesses"
+  ],
+  "Citizen's Legitimate Preview": [
+    "市民の正規プレビュー",
+    "市民正常预览",
+    "Vista previa legítima del ciudadano",
+    "Reguläre Bürgervorschau"
+  ],
+  "Out-of-scope Request at the Approved Proxy": [
+    "承認済みプロキシでの範囲外要求",
+    "获批代理上的越界请求",
+    "Petición fuera de ámbito en el proxy aprobado",
+    "Anfrage außerhalb des Bereichs am genehmigten Proxy"
+  ],
+  "Worker Reading Out-of-scope Retention Data": [
+    "作業者による範囲外保存資料の読み取り",
+    "任务读取范围外保留资料",
+    "Proceso leyendo datos de conservación fuera de ámbito",
+    "Arbeitsprozess liest fremde Aufbewahrungsdaten"
+  ],
+  "Preserve previews and health checks while preventing unauthorized internal reads.": [
+    "プレビューと稼働確認を残し、無許可の内部読み取りを防ぐ。",
+    "保留预览与健康检查，阻止内部未授权读取。",
+    "Conserva vistas previas y comprobaciones y evita lecturas internas no autorizadas.",
+    "Erhalte Vorschau und Zustandsprüfungen und verhindere unberechtigte interne Lesezugriffe."
+  ],
+  "Compare the worker's object ownership with the approved proxy's scope.": [
+    "作業者のオブジェクト所有関係と、承認済みプロキシの範囲を比べてください。",
+    "比较任务的对象所有权与获批代理范围。",
+    "Compara la propiedad del proceso con el alcance del proxy aprobado.",
+    "Vergleiche Objekteigentum des Arbeitsprozesses mit dem Umfang des genehmigten Proxys."
+  ],
+  "Internal Health and Retention Service": [
+    "内部稼働確認・保存サービス",
+    "内部健康检查与保留服务",
+    "Servicio interno de salud y conservación",
+    "Interner Zustands- und Aufbewahrungsdienst"
+  ],
+  "Unrelated Write at the Approved Route": [
+    "承認済み経路での担当外書き込み",
+    "获批通路上的无关写入",
+    "Escritura ajena en la ruta aprobada",
+    "Unbeteiligter Schreibzugriff am genehmigten Weg"
+  ],
+  "Unrelated Account Modifying Deployment": [
+    "担当外アカウントによる配備の変更",
+    "无关账号修改部署",
+    "Cuenta ajena modificando el despliegue",
+    "Unbeteiligtes Konto verändert die Bereitstellung"
+  ],
+  "Deployment Account Reading Its Status": [
+    "配備アカウントが自分の状態を読む",
+    "部署账号读取自身状态",
+    "La cuenta de despliegue lee su estado",
+    "Bereitstellungskonto liest seinen Zustand"
+  ],
+  "Deployment Account Writing Its Work Result": [
+    "配備アカウントが作業結果を書く",
+    "部署账号写入任务结果",
+    "La cuenta de despliegue escribe su resultado",
+    "Bereitstellungskonto schreibt sein Arbeitsergebnis"
+  ],
+  "Deployment Folder Traversal Rights": [
+    "配備フォルダーの通過権限",
+    "部署目录遍历权限",
+    "Permiso de recorrido de la carpeta de despliegue",
+    "Durchquerungsrechte des Bereitstellungsordners"
+  ],
+  "Work Result File Rights": [
+    "作業結果ファイルの権限",
+    "任务结果文件权限",
+    "Permisos del archivo de resultados",
+    "Rechte der Arbeitsergebnisdatei"
+  ],
+  "Required Deployment Account Groups": [
+    "配備アカウントに必要なグループ",
+    "部署账号所需组",
+    "Grupos necesarios de la cuenta de despliegue",
+    "Benötigte Gruppen des Bereitstellungskontos"
+  ],
+  "Enable deployment reads and writes while refusing unrelated modifications.": [
+    "配備の読み書きを許可し、担当外の変更は拒否する。",
+    "允许部署读写，拒绝无关修改。",
+    "Permite lectura y escritura de despliegue y rechaza cambios ajenos.",
+    "Ermögliche Lesen und Schreiben der Bereitstellung und weise fremde Änderungen ab."
+  ],
+  "Inspect ancestor directories and current groups, or use the approved alternative route.": [
+    "親ディレクトリと現在のグループを調べるか、承認済みの代替経路を使ってください。",
+    "检查上级目录与当前组，或使用获批替代通路。",
+    "Inspecciona directorios superiores y grupos actuales, o usa la alternativa aprobada.",
+    "Prüfe übergeordnete Ordner und aktuelle Gruppen oder nutze den genehmigten Alternativweg."
+  ],
+  "An Out-of-scope Internal Target": [
+    "範囲外の内部対象",
+    "范围外内部目标",
+    "Destino interno fuera de ámbito",
+    "Internes Ziel außerhalb des Bereichs"
+  ],
+  "Deliver a Legitimate Ward Notification": [
+    "正規の病院通知を届ける",
+    "送达正常病区通知",
+    "Entregar un aviso hospitalario legítimo",
+    "Reguläre Stationsmeldung zustellen"
+  ],
+  "Out-of-scope Target at Standby": [
+    "待機サービスでの範囲外対象",
+    "备用服务中的范围外目标",
+    "Destino fuera de ámbito en la reserva",
+    "Unzulässiges Ziel am Ersatzdienst"
+  ],
+  "Enable Primary Notification Route": [
+    "主通知経路を有効化",
+    "启用主要通知通路",
+    "Habilitar la ruta principal de avisos",
+    "Hauptmeldeweg aktivieren"
+  ],
+  "Enable Standby Notification Route": [
+    "待機通知経路を有効化",
+    "启用备用通知通路",
+    "Habilitar la ruta de avisos de reserva",
+    "Ersatzmeldeweg aktivieren"
+  ],
+  "Constrain Notification Targets": [
+    "通知対象を制限",
+    "限制通知目标",
+    "Limitar destinos de avisos",
+    "Meldeziele begrenzen"
+  ],
+  "Restore notifications while keeping revoked sessions and out-of-scope targets refused.": [
+    "失効セッションと範囲外対象を拒否したまま、通知を復旧する。",
+    "保持撤销会话与越界目标被拒，同时恢复通知。",
+    "Restaura avisos manteniendo el rechazo de sesiones retiradas y destinos ajenos.",
+    "Stelle Meldungen wieder her und erhalte die Ablehnung widerrufener Sitzungen und unzulässiger Ziele."
+  ],
+  "Only the policy group is rolled back; a revoked key does not return.": [
+    "戻すのは方針グループだけです。失効した鍵は戻りません。",
+    "仅回滚策略组，已撤销的钥匙不会恢复。",
+    "Solo se revierte el grupo de políticas; la llave revocada no vuelve.",
+    "Nur die Richtliniengruppe wird zurückgenommen; ein widerrufener Schlüssel kehrt nicht zurück."
+  ],
+  "Satisfy legitimate receipt, notification and session work alongside threat refusal on the chosen routes.": [
+    "選んだ経路で、脅威の拒否と正規の受付・通知・セッション業務を両立する。",
+    "在所选通路同时满足正常受理、通知、会话业务与威胁阻止。",
+    "Cumple recibos, avisos y sesiones legítimos mientras rechazas amenazas en las rutas elegidas.",
+    "Erfülle reguläre Beleg-, Melde- und Sitzungsarbeit samt Bedrohungsabwehr auf den gewählten Wegen."
+  ],
+  "Success in one service does not establish another workflow.": [
+    "一つのサービスの成功だけでは、別の業務が動く証拠になりません。",
+    "一个服务成功，不代表另一个业务流程也正常。",
+    "El éxito de un servicio no acredita otro proceso.",
+    "Der Erfolg eines Dienstes belegt keinen anderen Arbeitsablauf."
+  ],
+  "This is a bounded case with authorized observation windows and a small set of relation types.": [
+    "この事件では、許可された観測区間と限られた関係の種類だけを扱います。",
+    "本事件只处理获准观察窗口与少量关系类型。",
+    "Es un caso limitado a ventanas autorizadas y un conjunto pequeño de relaciones.",
+    "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+  ],
+  "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage.": [
+    "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。",
+    "用观察支持所需连接，并交付反证、不确定性与下个观察点。",
+    "Respalda la conexión con observaciones y entrega contradicciones, incertidumbre y el siguiente punto.",
+    "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+  ],
+  "Separate what current observations establish from what remains unknown.": [
+    "現在の観察で示せることと、まだ不明なことを分けてください。",
+    "区分当前观察能证明的内容与仍未知的部分。",
+    "Separa lo que acreditan las observaciones de lo que sigue desconocido.",
+    "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+  ],
+  "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name.": [
+    "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。",
+    "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。",
+    "Relaciona procedencia, marcas del servidor e intervalos corregidos, no solo IP o nombres.",
+    "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+  ],
+  "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis.": [
+    "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。",
+    "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。",
+    "Recoge observaciones de campo o independientes. No tienes que aceptar la nota previa ni formular a propósito una hipótesis errónea.",
+    "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+  ],
+  "A supported session or transmission link does not establish a person's identity or unseen content.": [
+    "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。",
+    "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。",
+    "Un enlace de sesión o transmisión respaldado no identifica a una persona ni acredita contenido invisible.",
+    "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+  ],
+  "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name.": [
+    "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。",
+    "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。",
+    "El estado de la hipótesis deriva solo de observaciones públicas recogidas, no de un nombre oculto.",
+    "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+  ],
+  "Next Handoff Vantage": [
+    "次に引き継ぐ観測地点",
+    "下个交接观察点",
+    "Siguiente punto para el relevo",
+    "Nächster Messpunkt für die Übergabe"
+  ],
+  "Field Observation": [
+    "現場の観察",
+    "现场观察",
+    "Observación de campo",
+    "Vor-Ort-Beobachtung"
+  ],
+  "Independent Source Observation": [
+    "独立した出所の観察",
+    "独立来源观察",
+    "Observación de fuente independiente",
+    "Beobachtung aus unabhängiger Quelle"
+  ],
+  "Sources, Observations and Hypotheses": [
+    "出所・観察・仮説",
+    "来源、观察与假设",
+    "Fuentes, observaciones e hipótesis",
+    "Quellen, Beobachtungen und Hypothesen"
+  ],
+  "Prior Investigator's Same-session Suggestion": [
+    "前の調査者による同一セッションの推測",
+    "前位调查者的同一会话推测",
+    "Propuesta previa de una misma sesión",
+    "Frühere Vermutung derselben Sitzung"
+  ],
+  "To the Next Shift": [
+    "次の担当者へ",
+    "交给下一班",
+    "Al siguiente turno",
+    "An die nächste Schicht"
+  ],
+  "A Verifiable Handoff": [
+    "検証できる引き継ぎ",
+    "可核验的交接",
+    "Una entrega verificable",
+    "Eine prüfbare Übergabe"
+  ],
+  "Tracker · The Remaining Connection": [
+    "追跡者 · 残るつながり",
+    "追踪者 · 留下的连接",
+    "Rastreador · La conexión que queda",
+    "Ermittler · Die verbleibende Verbindung"
+  ],
+  "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger.": [
+    "現在の主体・対象・経路・求める結果を比べてください。同じ台帳を取り直す必要はありません。",
+    "比较当前身份、目标、通路与请求结果，不必重复采集同一台账。",
+    "Compara actor, destino, ruta y resultado solicitado. No vuelvas a recoger el mismo registro.",
+    "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+  ],
+  "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements.": [
+    "境界を確かめる実験か、承認された別経路を選んでください。ヒントや特定ツールの使用は完了条件ではありません。",
+    "选择边界实验或获批替代通路。提示与特定工具不属于完成条件。",
+    "Elige el experimento de límite o una alternativa aprobada. Las pistas y herramientas concretas no son requisitos.",
+    "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+  ],
+  "A valid copy of the designated retention sheet. Preserve the provenance of the vault or delegation route actually used.": [
+    "指定された保存検証表の正規コピーです。実際に使った保管庫または委任経路の出所を残してください。",
+    "这是指定保留核验表的有效副本。请保留实际使用的保管库或委托通路来源。",
+    "Copia válida de la hoja indicada. Conserva la procedencia de la cámara o delegación realmente usada.",
+    "Gültige Kopie der vorgesehenen Aufbewahrungsliste. Erhalte die Herkunft des tatsächlich genutzten Tresor- oder Delegationswegs."
+  ],
+  "An approved fictional candidate list and a delegated audit route are available. Verify a candidate through actual limited-vault authentication, or read the same sheet through approved narrow delegation. This is neither XOR word recovery nor a benchmark of real password-hash cracking.": [
+    "承認済みの架空候補一覧と、委任監査の経路があります。制限付き保管庫の実際の認証で候補を確かめるか、狭く承認された委任経路で同じ表を読んでください。XOR の単語復元でも、実際のパスワードハッシュ解読性能試験でもありません。",
+    "现有获批的虚构候选列表与委托审计通路。可通过受限保管库的实际虚拟认证验证候选，也可经获批的有限委托读取同一表格。这不是 XOR 单词还原，也不是真实密码哈希破解基准。",
+    "Hay candidatos ficticios aprobados y una ruta de auditoría delegada. Verifica uno mediante la autenticación de la cámara limitada o lee la misma hoja por delegación autorizada. No es recuperación de palabras XOR ni una prueba real de descifrado de hashes.",
+    "Eine genehmigte fiktive Kandidatenliste und ein delegierter Auditweg sind verfügbar. Prüfe einen Kandidaten durch echte Anmeldung am begrenzten virtuellen Tresor oder lies dieselbe Liste über enge Delegation. Dies ist weder XOR-Wortrekonstruktion noch ein realer Passworthash-Benchmark."
+  ],
+  "Compare the shift handoff naming convention with the approved candidates. Verify through actual virtual-account authentication and limited file authority. This is not an offline password-hash cracking algorithm.": [
+    "引き継ぎの命名規則と承認済み候補を比べてください。実際の仮想アカウント認証と限定ファイル権限で確かめます。オフラインのパスワードハッシュ解読アルゴリズムではありません。",
+    "比较交接命名规则与获批候选，通过实际虚拟账号认证与有限文件权限核验。这不是离线密码哈希破解算法。",
+    "Compara la regla de nombres del relevo con los candidatos. Verifica mediante autenticación virtual y permisos limitados. No es un algoritmo de descifrado de hashes sin conexión.",
+    "Vergleiche Übergabenamensregel und genehmigte Kandidaten. Prüfe durch tatsächliche virtuelle Anmeldung und begrenzte Dateirechte. Dies ist kein Offline-Algorithmus zum Knacken von Passworthashes."
+  ],
+  "Knowing a candidate and having authority for its records are separate conditions. Verify actual virtual authentication and file access separately.": [
+    "候補を知ることと、その資料への権限は別の条件です。仮想認証とファイルアクセスをそれぞれ確かめてください。",
+    "知道候选与拥有其资料权限是不同条件，请分别验证虚拟认证与文件访问。",
+    "Conocer un candidato y tener derechos sobre sus registros son condiciones distintas. Comprueba autenticación virtual y acceso por separado.",
+    "Einen Kandidaten zu kennen und Rechte auf seine Daten zu haben sind getrennte Bedingungen. Prüfe virtuelle Anmeldung und Dateizugang einzeln."
+  ],
+  "Recover only the designated verification sheet through an approved candidate or narrow audit delegation.": [
+    "承認済み候補か限定された監査委任で、指定の検証表だけを回収する。",
+    "通过获批候选或有限审计委托，仅取得指定核验表。",
+    "Recupera solo la hoja indicada mediante un candidato aprobado o delegación limitada.",
+    "Sichere nur die vorgesehene Prüfliste über einen genehmigten Kandidaten oder enge Auditdelegation."
+  ],
+  "Check the supplied candidate convention and the vault account scope.": [
+    "提示された候補規則と保管庫アカウントの範囲を確認してください。",
+    "检查给定候选规则与保管库账号范围。",
+    "Comprueba la regla de candidatos y el alcance de la cuenta de la cámara.",
+    "Prüfe Kandidatenregel und Berechtigungsumfang des Tresorkontos."
+  ],
+  "Read the label/shift rule and vault address in /desk/candidates.txt, or use approved delegation.": [
+    "/desk/candidates.txt の label/shift 規則と保管庫アドレスを読むか、承認済み委任を使ってください。",
+    "阅读 /desk/candidates.txt 中的 label/shift 规则与保管库地址，或使用获批委托。",
+    "Lee la regla label/shift y la dirección en /desk/candidates.txt, o usa la delegación aprobada.",
+    "Lies label/shift-Regel und Tresoradresse in /desk/candidates.txt oder nutze genehmigte Delegation."
+  ],
+  "Actual authentication determines candidate validity. Unrelated records are unnecessary; an XOR word is not the answer.": [
+    "候補が有効かは実際の認証で決まります。無関係な資料は不要で、XOR の単語が解答ではありません。",
+    "候选是否有效由实际认证决定。无需取得无关记录，XOR 单词不是答案。",
+    "La autenticación real del modelo decide la validez. No necesitas registros ajenos; una palabra XOR no es la respuesta.",
+    "Die tatsächliche Modellanmeldung entscheidet die Gültigkeit. Fremde Daten sind unnötig; ein XOR-Wort ist nicht die Lösung."
+  ],
+  "Internal Health Record from the Current Relay": [
+    "現在の中継から内部稼働記録を読む",
+    "从当前中继读取内部健康记录",
+    "Registro interno de salud desde el repetidor actual",
+    "Interner Zustandsbeleg vom aktuellen Relais"
+  ],
+  "Direct Internal Route from the Public Node": [
+    "公開ノードから内部への直接経路",
+    "公开节点到内部的直接通路",
+    "Ruta interna directa desde el nodo público",
+    "Direkter interner Weg vom öffentlichen Knoten"
+  ],
+  "Directive Read by a Limited Credential": [
+    "限定資格による指示記録の読み取り",
+    "有限凭据读取指令记录",
+    "Lectura de la directiva con credenciales limitadas",
+    "Anweisungszugriff mit begrenzter Berechtigung"
+  ],
+  "Directive Request Outside Credential Scope": [
+    "資格範囲外の指示記録要求",
+    "超出凭据范围的指令请求",
+    "Petición de directiva fuera del alcance autorizado",
+    "Anweisungsanfrage außerhalb des Berechtigungsumfangs"
+  ],
+  "Past completion and ledgers do not replace current access results. Check own and unrelated web access, internal reachability from relay and public nodes, and limited versus unrelated service credentials in the same current world.": [
+    "過去の完了や台帳は、現在のアクセス結果の代わりにはなりません。同じ現在の世界で、本人と担当外のウェブアクセス、中継と公開ノードからの内部到達、限定資格と無関係な資格をそれぞれ確かめてください。",
+    "过去完成记录与台账不能替代当前访问结果。请在同一当前世界中核验本人和无关网页访问、中继与公开节点的内部可达性，以及有限和无关服务凭据。",
+    "La finalización pasada y los registros no sustituyen los accesos actuales. En el mismo estado comprueba acceso web propio y ajeno, alcance interno desde relés y nodos públicos y credenciales limitadas frente a ajenas.",
+    "Frühere Abschlüsse und Bücher ersetzen keine aktuellen Zugriffsergebnisse. Prüfe in derselben Welt eigene und fremde Webzugriffe, interne Erreichbarkeit aus Relais und öffentlichem Netz sowie begrenzte und unbeteiligte Dienstberechtigungen."
+  ],
+  "Public Observation Node": [
+    "公開側の観測ノード",
+    "公开观察节点",
+    "Nodo público de observación",
+    "Öffentlicher Beobachtungsknoten"
+  ],
+  "Retain the final copy and independently verify current web, internal-route and service-authority boundaries.": [
+    "最終コピーを保管し、現在のウェブ・内部経路・サービス権限の境界を独立に検証する。",
+    "保留最终副本，独立验证当前网页、内部通路与服务权限边界。",
+    "Conserva la copia final y verifica de forma independiente los límites actuales de web, rutas y autoridad.",
+    "Erhalte die letzte Kopie und prüfe die aktuellen Web-, internen Weg- und Dienstberechtigungsgrenzen unabhängig."
+  ],
+  "Limited Directive Vault": [
+    "限定された指示記録の保管庫",
+    "受限指令保管库",
+    "Cámara limitada de directivas",
+    "Begrenzter Anweisungstresor"
+  ],
+  "Intruder · Midnight Access": [
+    "侵入者 · ミッドナイト・アクセス",
+    "入侵者 · 午夜接入",
+    "Intruso · Acceso de medianoche",
+    "Eindringling · Mitternachtszugang"
+  ],
+  "Inspect the small verifier’s format, signature and scope conditions. Read its pseudocode and call graph, or compare input pairs and execution traces. Actually execute a permitted normal case and an out-of-scope case that is still released.": [
+    "小さな検証器の形式・署名・権限範囲を調べてください。擬似コードと呼び出し関係を読むか、入力の組と実行記録を比べられます。正規範囲での許可と、範囲外でも公開される反例を実際に実行してください。",
+    "检查小验证器的格式、签名与范围条件。可读伪代码和调用图，也可对比输入对与执行轨迹。须实际运行获准正常样例，以及范围外仍被放行的反例。",
+    "Inspecciona formato, firma y ámbito del verificador. Lee pseudocódigo y llamadas o compara pares de entradas y trazas. Ejecuta realmente un caso permitido y otro fuera de ámbito que aun así se publica.",
+    "Prüfe Format-, Signatur- und Umfangsbedingungen des kleinen Prüfers. Lies Pseudocode und Aufrufgraph oder vergleiche Eingabepaare und Ausführungsspuren. Führe einen regulär erlaubten Fall und ein trotzdem freigegebenes Gegenbeispiel außerhalb des Bereichs tatsächlich aus."
+  ],
+  "Passing format and signature checks does not authorize a scope the program never checks.": [
+    "形式と署名が通っても、プログラムが調べない権限範囲まで正当に許可されたことにはなりません。",
+    "通过格式与签名检查，不代表程序从未检查的权限范围也已获准。",
+    "Superar formato y firma no autoriza un ámbito que el programa nunca comprueba.",
+    "Bestandene Format- und Signaturprüfungen erlauben keinen Umfang, den das Programm nie prüft."
+  ],
+  "Execute the branches and calls to establish a normal permitted case and an out-of-scope release counterexample.": [
+    "分岐と呼び出しを実行し、正規の許可と範囲外公開の反例を確かめる。",
+    "执行分支与调用，确认正常获准样例与越界放行反例。",
+    "Ejecuta ramas y llamadas para demostrar un caso permitido y un contraejemplo fuera de ámbito.",
+    "Führe Zweige und Aufrufe aus und belege einen regulären Fall sowie eine Freigabe außerhalb des Bereichs."
+  ],
+  "Follow the inputs the program actually reads and the checks it calls.": [
+    "実際に読まれる入力と、呼ばれる検査を追ってください。",
+    "跟随程序实际读取的输入与调用的检查。",
+    "Sigue las entradas leídas y las comprobaciones llamadas realmente.",
+    "Verfolge tatsächlich gelesene Eingaben und aufgerufene Prüfungen."
+  ],
+  "Locate where retention_scope affects a branch alongside format_ok and signature_ok.": [
+    "format_ok・signature_ok と並び、retention_scope がどの分岐に影響するか探してください。",
+    "检查 retention_scope 在哪里与 format_ok、signature_ok 一起影响分支。",
+    "Localiza dónde retention_scope afecta una rama junto a format_ok y signature_ok.",
+    "Suche, wo retention_scope neben format_ok und signature_ok eine Verzweigung beeinflusst."
+  ],
+  "Hold format and signature true, vary authorized/excluded scope, and compare release outputs and the call trace.": [
+    "形式と署名を true に保ち、範囲 authorized/excluded を変え、release の出力と呼び出し記録を比べてください。",
+    "保持格式与签名为 true，切换 authorized/excluded 范围，对比 release 输出和调用轨迹。",
+    "Mantén formato y firma en true, varía authorized/excluded y compara las salidas release y las llamadas.",
+    "Halte Format und Signatur auf true, variiere authorized/excluded und vergleiche release-Ausgaben und Aufrufspuren."
+  ],
+  "Deployment Verifier Branches and Calls": [
+    "配備検証器の分岐・呼び出し",
+    "部署验证器的分支与调用",
+    "Ramas y llamadas del verificador de despliegue",
+    "Verzweigungen und Aufrufe des Bereitstellungsprüfers"
+  ],
+  "Notification Availability at the Verified Handoff": [
+    "検証済み引き継ぎ時点の通知可用性",
+    "已核验交接时的通知可用性",
+    "Disponibilidad de avisos en el relevo verificado",
+    "Meldeverfügbarkeit bei der geprüften Übergabe"
+  ],
+  "A response handoff supported by current registered legitimate and threat requests and preservation checks. It does not assume which policy or route was used.": [
+    "現在の登録済み正規要求・脅威要求と資料保存の確認に基づく対応記録です。どの方針や経路を選んだかは決めつけません。",
+    "这是依据当前已注册正常、威胁请求及保留检查形成的应对交接，不预设使用了哪项策略或通路。",
+    "Entrega respaldada por peticiones legítimas y de amenaza registradas y por comprobaciones de conservación. No presupone una política ni una ruta concretas.",
+    "Eine Übergabe auf Grundlage aktueller registrierter regulärer und bedrohlicher Anfragen sowie Erhaltungsprüfungen. Sie setzt keine bestimmte Richtlinie oder Route voraus."
+  ],
+  "Repair per-account limits at the existing service, or close its vulnerable entrance and move legitimate work to an independently limited approved provider. Actual outcomes matter, not one original protection flag.": [
+    "既存サービスのアカウント別制限を直すか、脆弱な入口を閉じ、独自の制限を備えた承認済み認証サービスへ正規業務を移せます。元の防御設定一つではなく、実際の結果を確認してください。",
+    "修复现有服务的账号限制，或关闭有缺陷入口，将正常业务迁往具有独立限制的获批服务。目标依据实际结果，而非原先某个保护开关。",
+    "Repara los límites por cuenta o cierra la entrada vulnerable y migra el trabajo legítimo a un proveedor aprobado con límites propios. Importan los resultados, no un único indicador de protección.",
+    "Repariere die Kontogrenzen des bestehenden Dienstes oder schließe den anfälligen Zugang und verlege reguläre Arbeit zu einem genehmigten Anbieter mit eigenen Grenzen. Entscheidend sind tatsächliche Ergebnisse, kein einzelner ursprünglicher Schutzschalter."
+  ],
+  "Enable revocation checking and revoke the exposed key, or close the original entrance and migrate to an approved provider that never issued it. Verify that fresh sessions and long-running work continue.": [
+    "失効を検査して露出した鍵を取り消すか、元の入口を閉じ、その鍵を発行していない承認済みサービスへ移行できます。新しいセッションと長時間ジョブが動き続けるか確認してください。",
+    "启用撤销检查并撤销暴露钥匙，或关闭原入口，迁移到从未签发该钥匙的获批服务。确认新会话与长期任务仍可运行。",
+    "Activa la comprobación de revocación y revoca la llave expuesta, o cierra la entrada original y migra a un proveedor que nunca la emitió. Verifica sesiones nuevas y tareas largas.",
+    "Aktiviere die Widerrufsprüfung und widerrufe den offenen Schlüssel oder schließe den alten Zugang und wechsle zu einem genehmigten Anbieter, der ihn nie ausgestellt hat. Prüfe neue Sitzungen und laufende Daueraufträge."
+  ],
+  "Validate the original form’s per-account nonce and origin boundary, or close that change entrance and use an approved gateway with independent nonces and own-setting scope. Legitimate Origin and token context differs by provider.": [
+    "元のフォームでアカウント別 nonce と出所を確認するか、変更入口を閉じ、独立した nonce と本人設定だけの範囲を持つ承認ゲートウェイを使えます。正規の Origin とトークンの文脈はサービスごとに異なります。",
+    "检查原表单的账号 nonce 与来源边界，或关闭原变更入口，使用独立 nonce 且仅限本人设置的获批网关。正常 Origin 与令牌上下文随服务提供方而异。",
+    "Valida nonce por cuenta y origen del formulario, o cierra esa entrada y usa una pasarela aprobada con nonces propios y alcance limitado a ajustes propios. El Origin y token legítimos dependen del proveedor.",
+    "Prüfe kontobezogene Nonce und Herkunft des alten Formulars oder schließe dessen Änderungszugang und nutze ein genehmigtes Gateway mit eigenen Nonces und auf eigene Einstellungen begrenztem Umfang. Gültiger Origin und Tokenkontext hängen vom Anbieter ab."
+  ],
+  "Repair validation and non-executable storage at the original processor, or close its vulnerable entrance and move legitimate photos to an approved bounded processor. Previously retained unsafe uploads must also be unable to execute now.": [
+    "元の処理で内容検査と実行できない保存を直すか、脆弱な入口を閉じて正規写真を承認済みの限定処理へ移せます。以前に保存した危険なアップロードも、現在は実行できない状態にしてください。",
+    "修复原处理器的校验与不可执行存储，或关闭有缺陷入口，将正常照片迁往获批的受限处理器。先前保存的不安全上传也必须在当前无法执行。",
+    "Repara validación y almacenamiento no ejecutable o cierra la entrada vulnerable y migra las fotos legítimas a un procesador limitado aprobado. Las subidas inseguras ya guardadas tampoco deben poder ejecutarse ahora.",
+    "Repariere Prüfung und nicht ausführbare Speicherung der alten Verarbeitung oder schließe ihren anfälligen Zugang und verlege reguläre Fotos auf eine genehmigte begrenzte Verarbeitung. Auch früher gespeicherte unsichere Uploads dürfen jetzt nicht ausführbar sein."
+  ],
+  "Precisely restore the original authentication, file and session controls, or isolate the vulnerable entrance and migrate work to an approved gateway and standby notifications. The new providers must also refuse retired authority, disguised files and out-of-scope targets.": [
+    "元の認証・ファイル・セッション制御を精密に復旧するか、脆弱な入口を隔離し、承認ゲートウェイと待機通知へ業務を移せます。新しいサービスでも、終了済み権限・偽装ファイル・範囲外対象を拒否する必要があります。",
+    "精确恢复原认证、文件与会话控制，或隔离有缺陷入口，将业务迁往获批网关与备用通知服务。新服务也必须拒绝旧权限、伪装文件及越界目标。",
+    "Restaura con precisión autenticación, archivos y sesiones o aísla la entrada vulnerable y migra a una pasarela aprobada y avisos de reserva. Los proveedores nuevos también deben rechazar autoridad retirada, archivos disfrazados y destinos ajenos.",
+    "Stelle Authentifizierung, Datei- und Sitzungskontrollen gezielt wieder her oder isoliere den anfälligen Zugang und verlege Arbeit auf ein genehmigtes Gateway und Ersatzmeldungen. Auch neue Anbieter müssen alte Rechte, getarnte Dateien und unzulässige Ziele ablehnen."
+  ],
+  "Preserve legitimate authentication while limiting repeated failures at original and approved providers.": [
+    "元のサービスと承認済みサービスへの反復失敗を抑え、正規認証を守る。",
+    "保留正常认证，同时限制原服务与获批服务上的重复失败。",
+    "Conserva la autenticación legítima y limita fallos repetidos en ambos proveedores.",
+    "Erhalte reguläre Anmeldungen und begrenze Wiederholungsfehler beim ursprünglichen und genehmigten Anbieter."
+  ],
+  "Refuse retired session authority while preserving fresh sessions and legitimate long-running work.": [
+    "終了済みセッションの権限を拒否し、新しいセッションと正規の長時間ジョブを保つ。",
+    "拒绝旧会话权限，保留新会话与正常长期任务。",
+    "Rechaza autoridad de sesiones retiradas y conserva sesiones nuevas y tareas largas legítimas.",
+    "Weise ausgemusterte Sitzungsrechte ab und erhalte neue Sitzungen und reguläre Daueraufträge."
+  ],
+  "Allow intentional saves of the user’s own settings while refusing induced and undelegated changes.": [
+    "本人が意図した設定保存を許可し、誘導された変更と委任外の変更を拒否する。",
+    "允许用户有意保存本人设置，拒绝诱导及未获委托的变更。",
+    "Permite guardar ajustes propios intencionalmente y rechaza cambios inducidos o no delegados.",
+    "Erlaube beabsichtigtes Speichern eigener Einstellungen und weise veranlasste oder nicht delegierte Änderungen ab."
+  ],
+  "Preserve legitimate JPEG intake while refusing disguised new files and containing execution risks in retained untrusted uploads.": [
+    "正規 JPEG の受付を守り、偽装された新規ファイルを拒否し、保存済みの非信頼アップロードの実行リスクを封じる。",
+    "保留正常 JPEG 接收，拒绝新伪装文件，并控制已保存不可信上传的执行风险。",
+    "Conserva la recepción de JPEG legítimos, rechaza nuevas falsificaciones y contiene la ejecución de subidas no fiables ya guardadas.",
+    "Erhalte reguläre JPEG-Annahme, weise neue getarnte Dateien ab und begrenze Ausführungsrisiken bereits gespeicherter unzuverlässiger Uploads."
+  ],
+  "Restore authentication, sessions, photos and notifications on chosen routes while continuing to refuse their modeled threats.": [
+    "選んだ経路で認証・セッション・写真・通知を復旧し、それぞれのモデル内の脅威を拒否し続ける。",
+    "在所选通路恢复认证、会话、照片与通知，并继续拒绝相应模型威胁。",
+    "Restaura accesos, sesiones, fotos y avisos en las rutas elegidas y sigue rechazando sus amenazas modeladas.",
+    "Stelle Anmeldung, Sitzungen, Fotos und Meldungen auf den gewählten Wegen wieder her und erhalte die Abwehr ihrer modellierten Bedrohungen."
+  ],
+  "For a direct response, repair the relevant control. For the alternative, constrain the original entrance and select the approved route for legitimate cases. Turning everything off fails legitimate work.": [
+    "直接対応では該当する制御を直します。代替策では元の入口を制限し、正規ケースに承認経路を選んでください。すべて止めると正規業務も失敗します。",
+    "直接应对需修复相关控制；替代方案需限制原入口，并为正常样例选择获批通路。全部关闭会破坏正常业务。",
+    "Para responder directamente, repara el control pertinente. Para la alternativa, limita la entrada original y elige la ruta aprobada para casos legítimos. Apagarlo todo impide el trabajo normal.",
+    "Repariere für direkte Abwehr die betreffende Kontrolle. Begrenze für die Alternative den ursprünglichen Zugang und wähle den genehmigten Weg für reguläre Fälle. Alles abzuschalten verhindert reguläre Arbeit."
+  ],
+  "Authentication, current actor, target, provider and route determine actual permission and refusal. A second input surface does not itself create an alternative strategy.": [
+    "認証・現在の主体・対象・サービス・経路から、実際の許可と拒否が決まります。入力画面を変えただけでは別の戦略にはなりません。",
+    "认证、当前身份、目标、服务与通路决定实际允许或拒绝。换一个输入界面本身不构成替代策略。",
+    "Autenticación, actor, destino, proveedor y ruta determinan permisos reales del modelo. Cambiar de interfaz no crea por sí solo otra estrategia.",
+    "Anmeldung, aktueller Handelnder, Ziel, Anbieter und Weg bestimmen die tatsächliche Zulassung oder Ablehnung. Eine andere Eingabeoberfläche allein bildet keine neue Strategie."
+  ],
+  "Setting Change Induced by an External Notice": [
+    "外部のお知らせから誘導された設定変更",
+    "外部公告诱导的设置变更",
+    "Cambio inducido por un aviso externo",
+    "Durch externe Mitteilung veranlasste Änderung"
+  ],
+  "Forged Change at the Approved Route": [
+    "承認経路からの偽造された変更",
+    "获批通路上的伪造变更",
+    "Cambio falsificado en la ruta aprobada",
+    "Gefälschte Änderung am genehmigten Weg"
+  ],
+  "Legitimate Citizen A Saving Notifications": [
+    "市民 A の正規の通知設定保存",
+    "正常市民 A 保存通知设置",
+    "Ciudadano A guarda avisos legítimamente",
+    "Bürger A speichert Meldungen regulär"
+  ],
+  "Legitimate Citizen B Saving Notifications": [
+    "市民 B の正規の通知設定保存",
+    "正常市民 B 保存通知设置",
+    "Ciudadano B guarda avisos legítimamente",
+    "Bürger B speichert Meldungen regulär"
+  ],
+  "Setting Change by an Undelegated Account": [
+    "委任されていないアカウントの設定変更",
+    "未获委托账号的设置变更",
+    "Cambio por una cuenta sin delegación",
+    "Änderung durch ein nicht delegiertes Konto"
+  ],
+  "Check Request Origin at the Original Form": [
+    "元のフォームの要求元を検査",
+    "检查原表单请求来源",
+    "Comprobar el origen en el formulario original",
+    "Anfrageherkunft am ursprünglichen Formular prüfen"
+  ],
+  "Check Per-account Nonces at the Original Form": [
+    "元のフォームのアカウント別 nonce を検査",
+    "检查原表单各账号的 nonce",
+    "Comprobar nonces por cuenta en el formulario original",
+    "Kontobezogene Nonces am ursprünglichen Formular prüfen"
+  ],
+  "Repair per-account limits at the existing service, or close its vulnerable entrance and move legitimate work to an independently limited approved provider. Check actual responses to legitimate sign-ins and repeated failures rather than a setting’s name.": [
+    "既存サービスのアカウント別制限を直すか、脆弱な入口を閉じ、独自の制限を備えた承認済み認証サービスへ正規業務を移せます。設定名だけでなく、正規ログインと反復失敗への実際の応答を確かめてください。",
+    "修复现有服务的账号限制，或关闭有缺陷入口，将正常业务迁往具有独立限制的获批服务。请检查正常登录与重复失败的实际响应，而非仅看设置名称。",
+    "Repara límites por cuenta o cierra la entrada vulnerable y migra el trabajo legítimo a un proveedor aprobado con límites propios. Comprueba las respuestas a accesos legítimos y fallos repetidos, no solo el nombre del ajuste.",
+    "Repariere die Kontogrenzen des bestehenden Dienstes oder schließe den anfälligen Zugang und verlege reguläre Arbeit zu einem genehmigten Anbieter mit eigenen Grenzen. Prüfe die tatsächlichen Antworten auf reguläre Anmeldungen und wiederholte Fehlschläge statt nur den Einstellungsnamen."
+  ],
+  "Apply per-account nonce validation at the original form, or close that change entrance and use an approved gateway with independent nonces and own-setting scope. Legitimate Origin and token context differs by provider.": [
+    "元のフォームでアカウント別 nonce を検査するか、変更入口を閉じ、独立した nonce と本人設定だけの範囲を持つ承認ゲートウェイを使えます。正規の Origin とトークンの文脈はサービスごとに異なります。",
+    "在原表单校验各账号 nonce，或关闭原变更入口，使用独立 nonce 且仅限本人设置的获批网关。正常 Origin 与令牌上下文随服务提供方而异。",
+    "Valida el nonce por cuenta en el formulario original o cierra esa entrada y usa una pasarela aprobada con nonces propios y alcance limitado a ajustes propios. El Origin y token legítimos dependen del proveedor.",
+    "Prüfe kontobezogene Nonces im ursprünglichen Formular oder schließe dessen Änderungszugang und nutze ein genehmigtes Gateway mit eigenen Nonces und auf eigene Einstellungen begrenztem Umfang. Gültiger Origin und Tokenkontext hängen vom Anbieter ab."
+  ],
+  "For a direct response, repair the relevant control. For the alternative, constrain the original entrance and select the approved route for legitimate requests. Turning everything off fails legitimate work.": [
+    "直接対応では該当する制御を直します。代替策では元の入口を制限し、正規の要求に承認経路を選んでください。すべて止めると正規業務も失敗します。",
+    "直接应对需修复相关控制；替代方案需限制原入口，并为正常请求选择获批通路。全部关闭会破坏正常业务。",
+    "Para responder directamente, repara el control pertinente. Para la alternativa, limita la entrada original y elige la ruta aprobada para peticiones legítimas. Apagarlo todo impide el trabajo normal.",
+    "Repariere für direkte Abwehr die betreffende Kontrolle. Begrenze für die Alternative den ursprünglichen Zugang und wähle den genehmigten Weg für reguläre Anfragen. Alles abzuschalten verhindert reguläre Arbeit."
+  ],
+  "Permission depends on who acts, the target and the work authority. If the processing route changes, verify legitimate work and refused requests on the new route as well.": [
+    "許可は操作する主体・対象・業務権限で決まります。処理経路を変えた場合は、新しい経路でも正規業務と拒否すべき要求を確かめてください。",
+    "权限取决于操作者、目标与业务授权。若更换处理通路，也须在新通路核验正常业务与应拒请求。",
+    "El permiso depende de quién actúa, del destino y de su autoridad de trabajo. Si cambia la ruta, verifica también allí el trabajo legítimo y las peticiones que deben rechazarse.",
+    "Die Berechtigung hängt vom Handelnden, Ziel und Arbeitsauftrag ab. Prüfe nach einem Wechsel des Verarbeitungswegs auch dort reguläre Arbeit und abzuweisende Anfragen."
+  ],
+  "A response handoff based on verified legitimate work and refused requests. Original records were also preserved.": [
+    "正規業務の成功と拒否すべき要求の結果を確認した対応記録です。原資料も保管されています。",
+    "这是依据已验证正常业务和被拒请求形成的应对交接，原始记录也已保留。",
+    "Entrega basada en trabajo legítimo verificado y peticiones rechazadas. También se conservaron los registros originales.",
+    "Übergabe auf Grundlage geprüfter regulärer Arbeit und abgewiesener Anfragen. Auch die Originalaufzeichnungen blieben erhalten."
+  ]
+}

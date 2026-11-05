@@ -345,7 +345,10 @@ func _archive(source: Dictionary, name: String, destination: String) -> Dictiona
 		var stem := original_path.get_basename()
 		path = "%s(%d)%s" % [stem, counter, "." + extension if not extension.is_empty() else ""]
 		counter += 1
-	if local.size() >= 128:
+	var final_path := FS.normalize(path)
+	if not final_path.ok or final_path.path != path:
+		return _result(false, "INVALID_PATH", "The final archive path is invalid or too long.")
+	if local.size() >= _archive_limit():
 		return _result(false, "ARCHIVE_LIMIT", "보관 파일 수 제한에 도달했습니다.")
 	var copy := _entry("file", "600", String(source.get("content", "")))
 	copy.record_id = String(source.get("record_id", ""))
@@ -365,6 +368,10 @@ func _archive(source: Dictionary, name: String, destination: String) -> Dictiona
 		else:
 			text += "\n이 사본은 아직 목표 인계 기록과 일치하지 않습니다."
 	return _result(true, "ARCHIVED", text, true, "mission_completed" if finished else "record_archived")
+
+
+func _archive_limit() -> int:
+	return 128
 
 func _evaluate_completion() -> bool:
 	if _world.completed or not _sources_preserved():

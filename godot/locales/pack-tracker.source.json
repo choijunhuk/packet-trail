@@ -1,0 +1,1050 @@
+{
+  "TR1_ENDING_TITLE": [
+    "검증 가능한 인계",
+    "A Verifiable Handoff",
+    "検証できる引き継ぎ",
+    "可核验的交接",
+    "Una entrega verificable",
+    "Eine prüfbare Übergabe"
+  ],
+  "TR1_PACK_TITLE": [
+    "추적자 · 남은 연결의 범위",
+    "Tracker · The Remaining Connection",
+    "追跡者 · 残るつながり",
+    "追踪者 · 留下的连接",
+    "Rastreador · La conexión que queda",
+    "Ermittler · Die verbleibende Verbindung"
+  ],
+  "TR1_T01_ABSTRACTION": [
+    "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다.",
+    "This is a bounded case with authorized observation windows and a small set of relation types.",
+    "この事件では、許可された観測区間と限られた関係の種類だけを扱います。",
+    "本事件只处理获准观察窗口与少量关系类型。",
+    "Es un caso limitado a ventanas autorizadas y un conjunto pequeño de relaciones.",
+    "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+  ],
+  "TR1_T01_BRIEF": [
+    "독립 기록 조사 팀의 민서입니다. 오늘 처음 들어온 분도 시작할 수 있도록 관측 두 개와 수집 허가를 준비했습니다. 같은 IP가 보이지만 그것이 같은 사람이라는 뜻은 아닙니다.\n\n계정/세션 기록이나 중계 양끝 중 어디를 더 보면 두 설명을 구분할 수 있을까요? 현재 보이는 연결을 확인하고 다음 관찰 지점을 남겨 주세요. 범인의 이름을 맞히는 의뢰가 아닙니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n",
+    "I am Minseo from the independent records team. You can begin here without prior cases; two observations and collection authorization are ready. The same IP does not establish the same person.\n\nWould session records or both sides of the relay better distinguish the explanations? Establish the visible connection and nominate the next observation point. This is not a job to guess a culprit's name.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n",
+    "独立記録調査チームのミンソです。初めてでも始められるよう、二つの観察と収集許可を用意しました。同じ IP が見えても、同じ人とは限りません。\n\nセッション記録と中継の両端のどちらを見れば、二つの説明を分けられるでしょう。見えるつながりを確かめ、次の観測地点を示してください。犯人の名前を当てる依頼ではありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n",
+    "我是独立记录调查组的敏瑞。无需前置事件，两份观察与采集授权已备好。同一 IP 不等于同一个人。\n\n查看会话记录，还是中继两端，更能区分两种解释？请确认当前可见的连接，提出下个观察点。这不是猜犯人姓名的委托。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n",
+    "Soy Minseo, del equipo independiente de registros. Puedes empezar aquí: hay dos observaciones y autorización para recoger datos. Compartir IP no demuestra ser la misma persona.\n\n¿Distinguirían mejor las explicaciones los registros de sesión o ambos extremos del repetidor? Establece la conexión visible y propone el siguiente punto. No se trata de adivinar el nombre de un culpable.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n",
+    "Ich bin Minseo vom unabhängigen Dokumententeam. Du kannst hier ohne Vorkenntnisse anfangen: Zwei Beobachtungen und eine Erhebungserlaubnis liegen bereit. Dieselbe IP belegt nicht dieselbe Person.\n\nUnterscheiden Sitzungsaufzeichnungen oder beide Relaisenden die Erklärungen besser? Stelle die sichtbare Verbindung fest und benenne den nächsten Beobachtungspunkt. Du sollst keinen Täternamen erraten.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n"
+  ],
+  "TR1_T01_DESK_NAME": [
+    "한 주소의 여러 그림자 담당실",
+    "Several Shadows at One Address Desk",
+    "一つのアドレスのいくつもの影 · 作業端末",
+    "一个地址后的多个影子 · 工作台",
+    "Mesa de Varias sombras, una dirección",
+    "Viele Schatten an einer Adresse · Arbeitsplatz"
+  ],
+  "TR1_T01_GOAL": [
+    "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다.",
+    "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage.",
+    "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。",
+    "用观察支持所需连接，并交付反证、不确定性与下个观察点。",
+    "Respalda la conexión con observaciones y entrega contradicciones, incertidumbre y el siguiente punto.",
+    "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+  ],
+  "TR1_T01_HINT_1": [
+    "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요.",
+    "Separate what current observations establish from what remains unknown.",
+    "現在の観察で示せることと、まだ不明なことを分けてください。",
+    "区分当前观察能证明的内容与仍未知的部分。",
+    "Separa lo que acreditan las observaciones de lo que sigue desconocido.",
+    "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+  ],
+  "TR1_T01_HINT_2": [
+    "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요.",
+    "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name.",
+    "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。",
+    "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。",
+    "Relaciona procedencia, marcas del servidor e intervalos corregidos, no solo IP o nombres.",
+    "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+  ],
+  "TR1_T01_HINT_3": [
+    "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다.",
+    "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis.",
+    "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。",
+    "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。",
+    "Recoge observaciones de campo o independientes. No tienes que aceptar la nota previa ni formular a propósito una hipótesis errónea.",
+    "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+  ],
+  "TR1_T01_LIMIT": [
+    "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다.",
+    "A supported session or transmission link does not establish a person's identity or unseen content.",
+    "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。",
+    "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。",
+    "Un enlace de sesión o transmisión respaldado no identifica a una persona ni acredita contenido invisible.",
+    "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+  ],
+  "TR1_T01_NEXT_SENSOR": [
+    "다음 인계 관찰 지점",
+    "Next Handoff Vantage",
+    "次に引き継ぐ観測地点",
+    "下个交接观察点",
+    "Siguiente punto para el relevo",
+    "Nächster Messpunkt für die Übergabe"
+  ],
+  "TR1_T01_PRINCIPLE": [
+    "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다.",
+    "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name.",
+    "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。",
+    "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。",
+    "El estado de la hipótesis deriva solo de observaciones públicas recogidas, no de un nombre oculto.",
+    "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+  ],
+  "TR1_T01_REPLY": [
+    "한 주소 뒤의 연결과 사람의 정체를 구분했습니다. 다음 사건은 기록 시계가 서로 다른데도 같은 시간이라고 불린 전송입니다.",
+    "You separated a connection behind one address from a person's identity. The next transmission was called simultaneous even though its clocks disagree.",
+    "一つのアドレスの背後の接続と、人物の身元を区別できました。次は、時計が違うのに同時と呼ばれた送信です。",
+    "你区分了同一地址后的连接与人的身份。下次传输被称为同时发生，记录时钟却不一致。",
+    "Separaste la conexión tras una dirección de la identidad de una persona. La próxima transmisión se llamó simultánea aunque sus relojes no coinciden.",
+    "Du hast Verbindung und Personenidentität hinter einer Adresse getrennt. Die nächste Übertragung galt als gleichzeitig, obwohl ihre Uhren abweichen."
+  ],
+  "TR1_T01_SENDER": [
+    "민서",
+    "Minseo",
+    "ミンソ",
+    "敏瑞",
+    "Minseo",
+    "Minseo"
+  ],
+  "TR1_T01_SENSOR_FIELD": [
+    "현장 관측",
+    "Field Observation",
+    "現場の観察",
+    "现场观察",
+    "Observación de campo",
+    "Vor-Ort-Beobachtung"
+  ],
+  "TR1_T01_SENSOR_INDEPENDENT": [
+    "독립 출처 관측",
+    "Independent Source Observation",
+    "独立した出所の観察",
+    "独立来源观察",
+    "Observación de fuente independiente",
+    "Beobachtung aus unabhängiger Quelle"
+  ],
+  "TR1_T01_TITLE": [
+    "한 주소의 여러 그림자",
+    "Several Shadows at One Address",
+    "一つのアドレスのいくつもの影",
+    "一个地址后的多个影子",
+    "Varias sombras, una dirección",
+    "Viele Schatten an einer Adresse"
+  ],
+  "TR1_T01_TOOL_NAME": [
+    "출처·관측·가설",
+    "Sources, Observations and Hypotheses",
+    "出所・観察・仮説",
+    "来源、观察与假设",
+    "Fuentes, observaciones e hipótesis",
+    "Quellen, Beobachtungen und Hypothesen"
+  ],
+  "TR1_T02_ABSTRACTION": [
+    "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다.",
+    "This is a bounded case with authorized observation windows and a small set of relation types.",
+    "この事件では、許可された観測区間と限られた関係の種類だけを扱います。",
+    "本事件只处理获准观察窗口与少量关系类型。",
+    "Es un caso limitado a ventanas autorizadas y un conjunto pequeño de relaciones.",
+    "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+  ],
+  "TR1_T02_BRIEF": [
+    "두 서버가 같은 시각을 남겼지만 기준 이벤트와 오차 범위가 다릅니다. 정확한 초를 만들어 내지 말고 가능한 순서부터 좁혀 보세요.\n\n공통 이벤트를 기준으로 보정하거나 서명 인계의 순서와 독립 기록을 함께 볼 수 있습니다. 어느 쪽도 내부의 정답 시계를 보여 주지는 않습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n",
+    "Two servers recorded the same time with different anchors and error intervals. Narrow the possible order instead of inventing exact seconds.\n\nUse a shared reference event, or combine signed handoff order with independent records. Neither route reveals a hidden perfect clock.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n",
+    "二台のサーバーが同じ時刻を残しましたが、基準イベントと誤差区間が違います。正確な秒を作り出さず、可能な順序を絞ってください。\n\n共通イベントで補正するか、署名付き引き継ぎ順序と独立記録を合わせて調べられます。どちらも隠れた完全な時計を見せる道ではありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n",
+    "两台服务器记下同一时刻，基准事件与误差区间却不同。不要凭空编出精确秒数，先缩小可能顺序。\n\n可用共同事件校正，也可结合签名交接顺序与独立记录。两条路都不会揭示隐藏的完美时钟。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n",
+    "Dos servidores registraron la misma hora con referencias e intervalos de error distintos. Acota el orden posible sin inventar segundos exactos.\n\nUsa un evento común para ajustar o combina el orden firmado de entrega con registros independientes. Ninguna vía revela un reloj perfecto oculto.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n",
+    "Zwei Server vermerkten dieselbe Zeit mit unterschiedlichen Bezugsereignissen und Fehlerintervallen. Grenze die mögliche Reihenfolge ein, statt exakte Sekunden zu erfinden.\n\nNutze ein gemeinsames Ereignis zur Korrektur oder verbinde unterschriebene Übergabefolge mit unabhängigen Akten. Kein Weg offenbart eine verborgene perfekte Uhr.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n"
+  ],
+  "TR1_T02_DESK_NAME": [
+    "맞지 않는 두 시계 담당실",
+    "Two Clocks That Disagree Desk",
+    "合わない二つの時計 · 作業端末",
+    "对不上的两只时钟 · 工作台",
+    "Mesa de Dos relojes en desacuerdo",
+    "Zwei uneinige Uhren · Arbeitsplatz"
+  ],
+  "TR1_T02_GOAL": [
+    "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다.",
+    "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage.",
+    "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。",
+    "用观察支持所需连接，并交付反证、不确定性与下个观察点。",
+    "Respalda la conexión con observaciones y entrega contradicciones, incertidumbre y el siguiente punto.",
+    "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+  ],
+  "TR1_T02_HINT_1": [
+    "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요.",
+    "Separate what current observations establish from what remains unknown.",
+    "現在の観察で示せることと、まだ不明なことを分けてください。",
+    "区分当前观察能证明的内容与仍未知的部分。",
+    "Separa lo que acreditan las observaciones de lo que sigue desconocido.",
+    "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+  ],
+  "TR1_T02_HINT_2": [
+    "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요.",
+    "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name.",
+    "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。",
+    "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。",
+    "Relaciona procedencia, marcas del servidor e intervalos corregidos, no solo IP o nombres.",
+    "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+  ],
+  "TR1_T02_HINT_3": [
+    "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다.",
+    "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis.",
+    "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。",
+    "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。",
+    "Recoge observaciones de campo o independientes. No tienes que aceptar la nota previa ni formular a propósito una hipótesis errónea.",
+    "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+  ],
+  "TR1_T02_LIMIT": [
+    "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다.",
+    "A supported session or transmission link does not establish a person's identity or unseen content.",
+    "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。",
+    "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。",
+    "Un enlace de sesión o transmisión respaldado no identifica a una persona ni acredita contenido invisible.",
+    "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+  ],
+  "TR1_T02_NEXT_SENSOR": [
+    "다음 인계 관찰 지점",
+    "Next Handoff Vantage",
+    "次に引き継ぐ観測地点",
+    "下个交接观察点",
+    "Siguiente punto para el relevo",
+    "Nächster Messpunkt für die Übergabe"
+  ],
+  "TR1_T02_PRINCIPLE": [
+    "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다.",
+    "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name.",
+    "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。",
+    "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。",
+    "El estado de la hipótesis deriva solo de observaciones públicas recogidas, no de un nombre oculto.",
+    "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+  ],
+  "TR1_T02_REPLY": [
+    "분리된 시간 구간은 순서를 지지하고 겹치는 구간은 아직 모른다고 남겼습니다. 다음 사본은 누가 만들고 전달했는지부터 확인해야 합니다.",
+    "Separated time intervals support an order; overlapping ones remain unresolved. For the next copy, first establish who collected and transferred it.",
+    "離れた時間区間は順序を支持し、重なる区間は未確定として残しました。次のコピーは、誰が収集して渡したかから確かめましょう。",
+    "分离的时间区间支持先后顺序，重叠区间则保留未定。下份副本要先确认由谁采集并移交。",
+    "Los intervalos separados respaldan un orden; los solapados quedan sin resolver. Para la siguiente copia, averigua primero quién la recogió y entregó.",
+    "Getrennte Zeitintervalle stützen eine Reihenfolge; überlappende bleiben offen. Kläre bei der nächsten Kopie zuerst, wer sie erhoben und übergeben hat."
+  ],
+  "TR1_T02_SENDER": [
+    "민서",
+    "Minseo",
+    "ミンソ",
+    "敏瑞",
+    "Minseo",
+    "Minseo"
+  ],
+  "TR1_T02_SENSOR_FIELD": [
+    "현장 관측",
+    "Field Observation",
+    "現場の観察",
+    "现场观察",
+    "Observación de campo",
+    "Vor-Ort-Beobachtung"
+  ],
+  "TR1_T02_SENSOR_INDEPENDENT": [
+    "독립 출처 관측",
+    "Independent Source Observation",
+    "独立した出所の観察",
+    "独立来源观察",
+    "Observación de fuente independiente",
+    "Beobachtung aus unabhängiger Quelle"
+  ],
+  "TR1_T02_TITLE": [
+    "맞지 않는 두 시계",
+    "Two Clocks That Disagree",
+    "合わない二つの時計",
+    "对不上的两只时钟",
+    "Dos relojes en desacuerdo",
+    "Zwei uneinige Uhren"
+  ],
+  "TR1_T02_TOOL_NAME": [
+    "출처·관측·가설",
+    "Sources, Observations and Hypotheses",
+    "出所・観察・仮説",
+    "来源、观察与假设",
+    "Fuentes, observaciones e hipótesis",
+    "Quellen, Beobachtungen und Hypothesen"
+  ],
+  "TR1_T03_ABSTRACTION": [
+    "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다.",
+    "This is a bounded case with authorized observation windows and a small set of relation types.",
+    "この事件では、許可された観測区間と限られた関係の種類だけを扱います。",
+    "本事件只处理获准观察窗口与少量关系类型。",
+    "Es un caso limitado a ventanas autorizadas y un conjunto pequeño de relaciones.",
+    "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+  ],
+  "TR1_T03_BRIEF": [
+    "사본 두 개가 다릅니다. 변조, 재배포, 수집 누락이 모두 가능한 설명이에요. 해시가 같으면 수집 뒤 바뀌지 않았다는 근거가 되지만 내용이 참이라는 보증은 아닙니다.\n\n독립 수신 기록이나 인계 출처를 연결해 자료가 어느 경로로 왔는지 확인하세요. 출처가 약한 문장의 내용으로 사람을 확정하지 않습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n",
+    "Two copies differ. Modification, republication and collection gaps are all possible. A matching hash supports integrity after collection, not the truth of the content.\n\nConnect independent receipt records or custody sources to establish the copy's route. Do not attribute a person from a weakly sourced statement.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n",
+    "二つのコピーが違います。改変、再配布、収集漏れのどれも説明になり得ます。ハッシュの一致は収集後の不変性を支えても、内容が真実だとは保証しません。\n\n独立した受信記録や保管元を結び、コピーの経路を調べてください。出所の弱い文章から人物を断定しないでください。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n",
+    "两份副本不同，修改、再次发布、采集遗漏都有可能。哈希一致支持采集后的完整性，却不保证内容为真。\n\n关联独立接收记录或保管来源，确认副本所经通路。不要凭来源薄弱的陈述认定某个人。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n",
+    "Dos copias difieren. Pueden explicarlo modificaciones, republicación o huecos de recogida. Un hash coincidente respalda la integridad después de la recogida, no la verdad del contenido.\n\nEnlaza recepciones independientes o fuentes de custodia para establecer la ruta. No atribuyas a una persona una afirmación de origen débil.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n",
+    "Zwei Kopien unterscheiden sich. Änderung, Neuveröffentlichung und Erhebungslücken sind möglich. Ein gleicher Hash stützt Unverändertheit seit der Erhebung, nicht die Wahrheit des Inhalts.\n\nVerbinde unabhängige Empfangsbelege oder Verwahrquellen zum Kopienweg. Schreibe einer Person nichts allein aufgrund einer schwach belegten Aussage zu.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n"
+  ],
+  "TR1_T03_DESK_NAME": [
+    "복사된 기록의 출처 담당실",
+    "The Copy's Provenance Desk",
+    "コピーされた記録の出所 · 作業端末",
+    "复制记录的来源 · 工作台",
+    "Mesa de La procedencia de la copia",
+    "Die Herkunft der Kopie · Arbeitsplatz"
+  ],
+  "TR1_T03_GOAL": [
+    "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다.",
+    "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage.",
+    "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。",
+    "用观察支持所需连接，并交付反证、不确定性与下个观察点。",
+    "Respalda la conexión con observaciones y entrega contradicciones, incertidumbre y el siguiente punto.",
+    "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+  ],
+  "TR1_T03_HINT_1": [
+    "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요.",
+    "Separate what current observations establish from what remains unknown.",
+    "現在の観察で示せることと、まだ不明なことを分けてください。",
+    "区分当前观察能证明的内容与仍未知的部分。",
+    "Separa lo que acreditan las observaciones de lo que sigue desconocido.",
+    "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+  ],
+  "TR1_T03_HINT_2": [
+    "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요.",
+    "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name.",
+    "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。",
+    "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。",
+    "Relaciona procedencia, marcas del servidor e intervalos corregidos, no solo IP o nombres.",
+    "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+  ],
+  "TR1_T03_HINT_3": [
+    "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다.",
+    "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis.",
+    "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。",
+    "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。",
+    "Recoge observaciones de campo o independientes. No tienes que aceptar la nota previa ni formular a propósito una hipótesis errónea.",
+    "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+  ],
+  "TR1_T03_LIMIT": [
+    "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다.",
+    "A supported session or transmission link does not establish a person's identity or unseen content.",
+    "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。",
+    "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。",
+    "Un enlace de sesión o transmisión respaldado no identifica a una persona ni acredita contenido invisible.",
+    "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+  ],
+  "TR1_T03_NEXT_SENSOR": [
+    "다음 인계 관찰 지점",
+    "Next Handoff Vantage",
+    "次に引き継ぐ観測地点",
+    "下个交接观察点",
+    "Siguiente punto para el relevo",
+    "Nächster Messpunkt für die Übergabe"
+  ],
+  "TR1_T03_PRINCIPLE": [
+    "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다.",
+    "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name.",
+    "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。",
+    "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。",
+    "El estado de la hipótesis deriva solo de observaciones públicas recogidas, no de un nombre oculto.",
+    "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+  ],
+  "TR1_T03_REPLY": [
+    "보관한 사본의 출처와 원자료가 주장한 내용을 나누어 기록했습니다. 이제 새 관측 하나를 어디서 얻을지 선택해 봅시다.",
+    "You recorded the copy's provenance separately from what its source claimed. Now choose where one new observation would help most.",
+    "コピーの出所と、原資料が主張する内容を分けて記録しました。次は、どこで新しい観察を得るべきか選びましょう。",
+    "你将副本来源与原资料的主张分开记录。接下来请选择哪处新观察最有帮助。",
+    "Registraste por separado la procedencia de la copia y lo que afirmaba su fuente. Ahora elige dónde ayudaría más una observación nueva.",
+    "Du hast die Kopienherkunft getrennt von der Behauptung ihrer Quelle dokumentiert. Wähle nun, wo eine neue Beobachtung am meisten hilft."
+  ],
+  "TR1_T03_SENDER": [
+    "민서",
+    "Minseo",
+    "ミンソ",
+    "敏瑞",
+    "Minseo",
+    "Minseo"
+  ],
+  "TR1_T03_SENSOR_FIELD": [
+    "현장 관측",
+    "Field Observation",
+    "現場の観察",
+    "现场观察",
+    "Observación de campo",
+    "Vor-Ort-Beobachtung"
+  ],
+  "TR1_T03_SENSOR_INDEPENDENT": [
+    "독립 출처 관측",
+    "Independent Source Observation",
+    "独立した出所の観察",
+    "独立来源观察",
+    "Observación de fuente independiente",
+    "Beobachtung aus unabhängiger Quelle"
+  ],
+  "TR1_T03_TITLE": [
+    "복사된 기록의 출처",
+    "The Copy's Provenance",
+    "コピーされた記録の出所",
+    "复制记录的来源",
+    "La procedencia de la copia",
+    "Die Herkunft der Kopie"
+  ],
+  "TR1_T03_TOOL_NAME": [
+    "출처·관측·가설",
+    "Sources, Observations and Hypotheses",
+    "出所・観察・仮説",
+    "来源、观察与假设",
+    "Fuentes, observaciones e hipótesis",
+    "Quellen, Beobachtungen und Hypothesen"
+  ],
+  "TR1_T04_ABSTRACTION": [
+    "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다.",
+    "This is a bounded case with authorized observation windows and a small set of relation types.",
+    "この事件では、許可された観測区間と限られた関係の種類だけを扱います。",
+    "本事件只处理获准观察窗口与少量关系类型。",
+    "Es un caso limitado a ventanas autorizadas y un conjunto pequeño de relaciones.",
+    "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+  ],
+  "TR1_T04_BRIEF": [
+    "이미 가진 기록을 반복해서 읽어도 두 후보 경로는 갈라지지 않습니다. 허가된 관찰 지점을 고르고 가상 관측 구간을 다음으로 옮겨 주세요. 실제 시간을 기다리지는 않습니다.\n\n중계 경계를 볼 수도, 제한된 종단 계측을 볼 수도 있습니다. 새 관측이 어느 설명을 지지하거나 반박하는지 확인하세요.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n",
+    "Rereading the current records will not distinguish the two routes. Choose an authorized sensor and advance its simulated observation window. No real-time waiting is involved.\n\nWatch the relay boundary or a limited endpoint. Determine which explanation the new observation supports or contradicts.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n",
+    "今の記録を読み直しても、二つの候補経路は分かれません。許可された観測地点を選び、仮想の観測区間を次へ進めてください。実時間は待ちません。\n\n中継の境界か、範囲を絞った終端を見られます。新しい観察がどの説明を支持・反証するか確かめてください。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n",
+    "重复阅读现有记录，无法区分两条候选通路。请选择获准观察点，将模拟观察窗口推进一段，无需等待真实时间。\n\n可以观察中继边界，也可观察受限终端。确认新观察支持或反驳哪种解释。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n",
+    "Releer los registros no separa las dos rutas. Elige un sensor autorizado y avanza su ventana simulada. No se espera tiempo real.\n\nObserva el límite del repetidor o un extremo limitado. Determina qué explicación respalda o contradice la nueva observación.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n",
+    "Erneutes Lesen trennt die beiden möglichen Wege nicht. Wähle eine erlaubte Messstelle und schiebe ihr simuliertes Beobachtungsfenster weiter. Echtzeitwarten ist nicht nötig.\n\nBeobachte Relaisgrenze oder begrenzten Endpunkt. Prüfe, welche Erklärung die neue Beobachtung stützt oder widerlegt.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n"
+  ],
+  "TR1_T04_DESK_NAME": [
+    "다음 접속을 기다리는 곳 담당실",
+    "Where to Watch the Next Connection Desk",
+    "次の接続を観察する場所 · 作業端末",
+    "观察下次连接的地方 · 工作台",
+    "Mesa de Dónde observar la siguiente conexión",
+    "Wo die nächste Verbindung zu sehen ist · Arbeitsplatz"
+  ],
+  "TR1_T04_GOAL": [
+    "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다.",
+    "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage.",
+    "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。",
+    "用观察支持所需连接，并交付反证、不确定性与下个观察点。",
+    "Respalda la conexión con observaciones y entrega contradicciones, incertidumbre y el siguiente punto.",
+    "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+  ],
+  "TR1_T04_HINT_1": [
+    "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요.",
+    "Separate what current observations establish from what remains unknown.",
+    "現在の観察で示せることと、まだ不明なことを分けてください。",
+    "区分当前观察能证明的内容与仍未知的部分。",
+    "Separa lo que acreditan las observaciones de lo que sigue desconocido.",
+    "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+  ],
+  "TR1_T04_HINT_2": [
+    "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요.",
+    "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name.",
+    "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。",
+    "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。",
+    "Relaciona procedencia, marcas del servidor e intervalos corregidos, no solo IP o nombres.",
+    "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+  ],
+  "TR1_T04_HINT_3": [
+    "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다.",
+    "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis.",
+    "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。",
+    "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。",
+    "Recoge observaciones de campo o independientes. No tienes que aceptar la nota previa ni formular a propósito una hipótesis errónea.",
+    "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+  ],
+  "TR1_T04_LIMIT": [
+    "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다.",
+    "A supported session or transmission link does not establish a person's identity or unseen content.",
+    "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。",
+    "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。",
+    "Un enlace de sesión o transmisión respaldado no identifica a una persona ni acredita contenido invisible.",
+    "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+  ],
+  "TR1_T04_NEXT_SENSOR": [
+    "다음 인계 관찰 지점",
+    "Next Handoff Vantage",
+    "次に引き継ぐ観測地点",
+    "下个交接观察点",
+    "Siguiente punto para el relevo",
+    "Nächster Messpunkt für die Übergabe"
+  ],
+  "TR1_T04_PRINCIPLE": [
+    "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다.",
+    "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name.",
+    "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。",
+    "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。",
+    "El estado de la hipótesis deriva solo de observaciones públicas recogidas, no de un nombre oculto.",
+    "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+  ],
+  "TR1_T04_REPLY": [
+    "다음 관찰의 위치를 선택한 결과가 연결을 좁혔습니다. 다음 기록에서는 계정 이름과 실제 세션 사용자를 같은 것으로 볼 수 없습니다.",
+    "Your choice of observation point narrowed the connection. In the next record, an account name cannot be equated with the session's physical user.",
+    "観測地点を選んだことで、つながりが絞れました。次の記録では、アカウント名と実際にセッションを使った人を同一視できません。",
+    "选择观察点让连接范围收窄。下份记录中，账号名称不能等同于实际使用会话的人。",
+    "Elegir el punto de observación acotó la conexión. En el próximo registro no puedes equiparar la cuenta con quien usó físicamente la sesión.",
+    "Deine Wahl der Messstelle grenzte die Verbindung ein. In der nächsten Aufzeichnung ist der Kontoname nicht mit dem tatsächlichen Sitzungsnutzer gleichzusetzen."
+  ],
+  "TR1_T04_SENDER": [
+    "민서",
+    "Minseo",
+    "ミンソ",
+    "敏瑞",
+    "Minseo",
+    "Minseo"
+  ],
+  "TR1_T04_SENSOR_FIELD": [
+    "현장 관측",
+    "Field Observation",
+    "現場の観察",
+    "现场观察",
+    "Observación de campo",
+    "Vor-Ort-Beobachtung"
+  ],
+  "TR1_T04_SENSOR_INDEPENDENT": [
+    "독립 출처 관측",
+    "Independent Source Observation",
+    "独立した出所の観察",
+    "独立来源观察",
+    "Observación de fuente independiente",
+    "Beobachtung aus unabhängiger Quelle"
+  ],
+  "TR1_T04_TITLE": [
+    "다음 접속을 기다리는 곳",
+    "Where to Watch the Next Connection",
+    "次の接続を観察する場所",
+    "观察下次连接的地方",
+    "Dónde observar la siguiente conexión",
+    "Wo die nächste Verbindung zu sehen ist"
+  ],
+  "TR1_T04_TOOL_NAME": [
+    "출처·관측·가설",
+    "Sources, Observations and Hypotheses",
+    "出所・観察・仮説",
+    "来源、观察与假设",
+    "Fuentes, observaciones e hipótesis",
+    "Quellen, Beobachtungen und Hypothesen"
+  ],
+  "TR1_T05_ABSTRACTION": [
+    "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다.",
+    "This is a bounded case with authorized observation windows and a small set of relation types.",
+    "この事件では、許可された観測区間と限られた関係の種類だけを扱います。",
+    "本事件只处理获准观察窗口与少量关系类型。",
+    "Es un caso limitado a ventanas autorizadas y un conjunto pequeño de relaciones.",
+    "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+  ],
+  "TR1_T05_BRIEF": [
+    "같은 계정 이름이 두 경로에 나타납니다. 공유 계정, 남은 세션, 탈취 모두 가능한 설명입니다. 이름을 가진 사람을 먼저 지목하면 관측보다 결론이 앞섭니다.\n\n세션 생애와 경로 또는 위임·폐기 기록을 연결해 현재 입증되는 연결을 확인하세요. 누가 직접 키보드를 쳤는지는 알 수 없는 채로 남을 수도 있습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n",
+    "One account name appears on two routes. Sharing, retained sessions and theft remain possible explanations. Naming the person first puts conclusion ahead of evidence.\n\nConnect session lifetime and routes, or delegation and revocation records. Who physically used the keyboard may remain unknown.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n",
+    "同じアカウント名が二つの経路にあります。共有、残ったセッション、窃取はどれも説明の候補です。先に人物を名指しすれば、結論が証拠を追い越します。\n\nセッション寿命と経路、または委任と失効記録を結び、今示せるつながりを調べてください。実際にキーボードを打った人は不明のままかもしれません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n",
+    "同一账号名出现在两条通路上。共享账号、残留会话、盗用都可能。先指认名字所属的人，就是让结论走在证据前面。\n\n关联会话生命周期与通路，或委托和撤销记录，确认当前可证明的连接。究竟谁亲手敲了键盘，可能仍无法得知。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n",
+    "La misma cuenta aparece en dos rutas. Compartirla, conservar sesiones o robarla siguen siendo explicaciones posibles. Señalar primero a la persona adelanta la conclusión a las pruebas.\n\nRelaciona vida de sesión y rutas, o delegación y revocación. Quién tocó físicamente el teclado puede seguir sin saberse.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n",
+    "Ein Kontoname erscheint auf zwei Wegen. Geteilte Konten, verbliebene Sitzungen und Diebstahl sind mögliche Erklärungen. Zuerst eine Person zu benennen zieht die Schlussfolgerung den Belegen vor.\n\nVerbinde Sitzungslebensdauer und Wege oder Delegations- und Widerrufsakten. Wer tatsächlich die Tastatur bediente, kann unbekannt bleiben.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n"
+  ],
+  "TR1_T05_DESK_NAME": [
+    "도난당한 이름 담당실",
+    "A Stolen Name Desk",
+    "盗まれた名前 · 作業端末",
+    "被盗的名字 · 工作台",
+    "Mesa de Un nombre robado",
+    "Ein gestohlener Name · Arbeitsplatz"
+  ],
+  "TR1_T05_GOAL": [
+    "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다.",
+    "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage.",
+    "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。",
+    "用观察支持所需连接，并交付反证、不确定性与下个观察点。",
+    "Respalda la conexión con observaciones y entrega contradicciones, incertidumbre y el siguiente punto.",
+    "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+  ],
+  "TR1_T05_HINT_1": [
+    "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요.",
+    "Separate what current observations establish from what remains unknown.",
+    "現在の観察で示せることと、まだ不明なことを分けてください。",
+    "区分当前观察能证明的内容与仍未知的部分。",
+    "Separa lo que acreditan las observaciones de lo que sigue desconocido.",
+    "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+  ],
+  "TR1_T05_HINT_2": [
+    "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요.",
+    "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name.",
+    "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。",
+    "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。",
+    "Relaciona procedencia, marcas del servidor e intervalos corregidos, no solo IP o nombres.",
+    "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+  ],
+  "TR1_T05_HINT_3": [
+    "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다.",
+    "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis.",
+    "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。",
+    "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。",
+    "Recoge observaciones de campo o independientes. No tienes que aceptar la nota previa ni formular a propósito una hipótesis errónea.",
+    "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+  ],
+  "TR1_T05_LIMIT": [
+    "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다.",
+    "A supported session or transmission link does not establish a person's identity or unseen content.",
+    "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。",
+    "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。",
+    "Un enlace de sesión o transmisión respaldado no identifica a una persona ni acredita contenido invisible.",
+    "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+  ],
+  "TR1_T05_NEXT_SENSOR": [
+    "다음 인계 관찰 지점",
+    "Next Handoff Vantage",
+    "次に引き継ぐ観測地点",
+    "下个交接观察点",
+    "Siguiente punto para el relevo",
+    "Nächster Messpunkt für die Übergabe"
+  ],
+  "TR1_T05_PRINCIPLE": [
+    "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다.",
+    "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name.",
+    "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。",
+    "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。",
+    "El estado de la hipótesis deriva solo de observaciones públicas recogidas, no de un nombre oculto.",
+    "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+  ],
+  "TR1_T05_REPLY": [
+    "계정과 세션의 연결은 확인했고 사람의 정체는 과장하지 않았습니다. 다음 전송에는 내용을 볼 수 없는 구간이 있습니다.",
+    "The account and session connection is established without overstating identity. The next transmission contains a segment whose content is not visible.",
+    "アカウントとセッションの関係を確認し、人物の身元は誇張しませんでした。次の送信には、内容が見えない区間があります。",
+    "账号与会话的联系已确认，没有夸大人的身份。下次传输包含正文不可见的区段。",
+    "Estableciste la conexión entre cuenta y sesión sin exagerar la identidad. La siguiente transmisión tiene un tramo de contenido invisible.",
+    "Die Konto-Sitzungs-Verbindung ist belegt, ohne die Identität zu überdehnen. Die nächste Übertragung enthält eine Strecke ohne sichtbaren Inhalt."
+  ],
+  "TR1_T05_SENDER": [
+    "민서",
+    "Minseo",
+    "ミンソ",
+    "敏瑞",
+    "Minseo",
+    "Minseo"
+  ],
+  "TR1_T05_SENSOR_FIELD": [
+    "현장 관측",
+    "Field Observation",
+    "現場の観察",
+    "现场观察",
+    "Observación de campo",
+    "Vor-Ort-Beobachtung"
+  ],
+  "TR1_T05_SENSOR_INDEPENDENT": [
+    "독립 출처 관측",
+    "Independent Source Observation",
+    "独立した出所の観察",
+    "独立来源观察",
+    "Observación de fuente independiente",
+    "Beobachtung aus unabhängiger Quelle"
+  ],
+  "TR1_T05_TITLE": [
+    "도난당한 이름",
+    "A Stolen Name",
+    "盗まれた名前",
+    "被盗的名字",
+    "Un nombre robado",
+    "Ein gestohlener Name"
+  ],
+  "TR1_T05_TOOL_NAME": [
+    "출처·관측·가설",
+    "Sources, Observations and Hypotheses",
+    "出所・観察・仮説",
+    "来源、观察与假设",
+    "Fuentes, observaciones e hipótesis",
+    "Quellen, Beobachtungen und Hypothesen"
+  ],
+  "TR1_T06_ABSTRACTION": [
+    "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다.",
+    "This is a bounded case with authorized observation windows and a small set of relation types.",
+    "この事件では、許可された観測区間と限られた関係の種類だけを扱います。",
+    "本事件只处理获准观察窗口与少量关系类型。",
+    "Es un caso limitado a ventanas autorizadas y un conjunto pequeño de relaciones.",
+    "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+  ],
+  "TR1_T06_BRIEF": [
+    "암호화된 구간을 사이에 두고 기록이 끊겼습니다. 본문을 임의로 복호화하는 도구는 없습니다. 하지만 허가된 메타데이터와 종단 기록으로 제한된 연결을 확인할 수 있어요.\n\n어느 지점이 무엇을 볼 수 있었는지 남기고, 다른 사람의 내용을 수집하지 않는 방법으로 다음 목표를 좁혀 주세요.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n",
+    "The record crosses an encrypted segment. There is no button that arbitrarily decrypts its body. Authorized metadata and endpoint records can still support a bounded connection.\n\nRecord who could see what and narrow the next target without collecting unrelated people's content.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n",
+    "記録は暗号化区間を越えています。本文を勝手に復号するボタンはありません。それでも、許可されたメタデータと終端記録で限定的なつながりを示せます。\n\n誰が何を見られたかを記録し、無関係な人の内容を集めずに次の対象を絞ってください。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n",
+    "记录经过加密区段，没有随意解密正文的按钮。获准元数据与终端记录仍能支持有限的连接。\n\n记录哪一方能看见什么，在不收集无关人员内容的前提下缩小下个目标。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n",
+    "El registro cruza un tramo cifrado. No hay botón para descifrar su cuerpo arbitrariamente. Los metadatos autorizados y registros del extremo aún respaldan una conexión limitada.\n\nAnota quién podía ver qué y acota el siguiente destino sin recopilar contenido de personas ajenas.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n",
+    "Die Aufzeichnung durchquert eine verschlüsselte Strecke. Es gibt keine Taste zum beliebigen Entschlüsseln ihres Inhalts. Erlaubte Metadaten und Endpunktakten können dennoch eine begrenzte Verbindung stützen.\n\nHalte fest, wer was sehen konnte, und grenze das nächste Ziel ohne fremde Inhalte ein.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n"
+  ],
+  "TR1_T06_DESK_NAME": [
+    "보이지 않는 구간 담당실",
+    "The Unseen Segment Desk",
+    "見えない区間 · 作業端末",
+    "不可见的区段 · 工作台",
+    "Mesa de El tramo invisible",
+    "Die unsichtbare Strecke · Arbeitsplatz"
+  ],
+  "TR1_T06_GOAL": [
+    "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다.",
+    "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage.",
+    "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。",
+    "用观察支持所需连接，并交付反证、不确定性与下个观察点。",
+    "Respalda la conexión con observaciones y entrega contradicciones, incertidumbre y el siguiente punto.",
+    "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+  ],
+  "TR1_T06_HINT_1": [
+    "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요.",
+    "Separate what current observations establish from what remains unknown.",
+    "現在の観察で示せることと、まだ不明なことを分けてください。",
+    "区分当前观察能证明的内容与仍未知的部分。",
+    "Separa lo que acreditan las observaciones de lo que sigue desconocido.",
+    "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+  ],
+  "TR1_T06_HINT_2": [
+    "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요.",
+    "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name.",
+    "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。",
+    "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。",
+    "Relaciona procedencia, marcas del servidor e intervalos corregidos, no solo IP o nombres.",
+    "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+  ],
+  "TR1_T06_HINT_3": [
+    "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다.",
+    "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis.",
+    "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。",
+    "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。",
+    "Recoge observaciones de campo o independientes. No tienes que aceptar la nota previa ni formular a propósito una hipótesis errónea.",
+    "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+  ],
+  "TR1_T06_LIMIT": [
+    "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다.",
+    "A supported session or transmission link does not establish a person's identity or unseen content.",
+    "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。",
+    "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。",
+    "Un enlace de sesión o transmisión respaldado no identifica a una persona ni acredita contenido invisible.",
+    "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+  ],
+  "TR1_T06_NEXT_SENSOR": [
+    "다음 인계 관찰 지점",
+    "Next Handoff Vantage",
+    "次に引き継ぐ観測地点",
+    "下个交接观察点",
+    "Siguiente punto para el relevo",
+    "Nächster Messpunkt für die Übergabe"
+  ],
+  "TR1_T06_PRINCIPLE": [
+    "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다.",
+    "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name.",
+    "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。",
+    "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。",
+    "El estado de la hipótesis deriva solo de observaciones públicas recogidas, no de un nombre oculto.",
+    "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+  ],
+  "TR1_T06_REPLY": [
+    "보이지 않는 내용을 만들어 내지 않고도 이동 연결을 확인했습니다. 그런데 새 자료 하나가 이전의 유력한 설명과 맞지 않습니다.",
+    "You established the movement without inventing unseen content. A new record now conflicts with a previously plausible explanation.",
+    "見えない内容を作らずに、移動を確認できました。しかし新しい記録が、以前は有力だった説明と合いません。",
+    "没有虚构看不见的内容，也确认了流转连接。但新记录与此前看似合理的解释发生冲突。",
+    "Estableciste el recorrido sin inventar contenido invisible. Ahora un registro nuevo contradice una explicación antes plausible.",
+    "Du hast den Weg belegt, ohne unsichtbaren Inhalt zu erfinden. Nun widerspricht ein neuer Beleg einer bisher plausiblen Erklärung."
+  ],
+  "TR1_T06_SENDER": [
+    "민서",
+    "Minseo",
+    "ミンソ",
+    "敏瑞",
+    "Minseo",
+    "Minseo"
+  ],
+  "TR1_T06_SENSOR_FIELD": [
+    "현장 관측",
+    "Field Observation",
+    "現場の観察",
+    "现场观察",
+    "Observación de campo",
+    "Vor-Ort-Beobachtung"
+  ],
+  "TR1_T06_SENSOR_INDEPENDENT": [
+    "독립 출처 관측",
+    "Independent Source Observation",
+    "独立した出所の観察",
+    "独立来源观察",
+    "Observación de fuente independiente",
+    "Beobachtung aus unabhängiger Quelle"
+  ],
+  "TR1_T06_TITLE": [
+    "보이지 않는 구간",
+    "The Unseen Segment",
+    "見えない区間",
+    "不可见的区段",
+    "El tramo invisible",
+    "Die unsichtbare Strecke"
+  ],
+  "TR1_T06_TOOL_NAME": [
+    "출처·관측·가설",
+    "Sources, Observations and Hypotheses",
+    "出所・観察・仮説",
+    "来源、观察与假设",
+    "Fuentes, observaciones e hipótesis",
+    "Quellen, Beobachtungen und Hypothesen"
+  ],
+  "TR1_T07_ABSTRACTION": [
+    "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다.",
+    "This is a bounded case with authorized observation windows and a small set of relation types.",
+    "この事件では、許可された観測区間と限られた関係の種類だけを扱います。",
+    "本事件只处理获准观察窗口与少量关系类型。",
+    "Es un caso limitado a ventanas autorizadas y un conjunto pequeño de relaciones.",
+    "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+  ],
+  "TR1_T07_BRIEF": [
+    "앞 조사자의 메모는 같은 세션이라고 추정했습니다. 그것을 당신의 믿음으로 받아들일 필요는 없습니다. 새 관측을 먼저 확인하고 곧바로 더 나은 연결을 만들 수도 있어요.\n\n기준 이벤트나 경쟁 설명이 예측한 다음 관측을 확보하세요. 이전 가설을 세웠다면 이력과 반증을 남겨 정정하고, 그렇지 않다면 지지되는 관계로 바로 인계할 수 있습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n",
+    "A prior investigator's note suggested one session. You need not adopt it as your belief. Inspect new observations first and go directly to a better-supported connection.\n\nCollect an anchor event or the next observation predicted by competing explanations. Revise a prior hypothesis with its history if you made one; otherwise hand off the supported relation directly.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n",
+    "前の調査者は同じセッションだと推測しました。それを自分の考えとして受け入れる必要はありません。新しい観察から、よりよく支持される関係へ直接進めます。\n\n基準イベントか、競合する説明が予測する次の観察を収集してください。すでに仮説を立てたなら履歴と反証を残して訂正し、まだなら支持される関係を直接引き継げます。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n",
+    "前位调查者认为是同一会话，你不必将其当成自己的判断。先检查新观察，也可直接建立证据更充分的连接。\n\n取得基准事件，或竞争解释所预测的后续观察。若已提出假设，就保留历史和反证后修正；若尚未提出，可直接交付得到支持的关系。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n",
+    "La nota de otro investigador proponía una sola sesión. No tienes que asumir esa creencia. Examina las observaciones nuevas y ve directamente a una conexión mejor respaldada.\n\nRecoge un evento de referencia o la observación que predigan explicaciones rivales. Si ya formulaste una hipótesis, revísala conservando historial y refutación; si no, entrega directamente la relación respaldada.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n",
+    "Die Notiz einer früheren Ermittlung vermutete dieselbe Sitzung. Du musst diese Vermutung nicht übernehmen. Prüfe neue Beobachtungen und gehe direkt zur besser gestützten Verbindung.\n\nErhebe ein Bezugsereignis oder die nächste von konkurrierenden Erklärungen vorhergesagte Beobachtung. Berichtige eine eigene frühere Hypothese mit Verlauf und Gegenbeleg; sonst kannst du die gestützte Beziehung direkt übergeben.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n"
+  ],
+  "TR1_T07_DESK_NAME": [
+    "맞는 가설을 버릴 때 담당실",
+    "When a Plausible Hypothesis Must Go Desk",
+    "有力な仮説を手放すとき · 作業端末",
+    "放下合理假设的时候 · 工作台",
+    "Mesa de Cuándo abandonar una hipótesis plausible",
+    "Wenn eine plausible Hypothese weichen muss · Arbeitsplatz"
+  ],
+  "TR1_T07_GOAL": [
+    "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다.",
+    "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage.",
+    "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。",
+    "用观察支持所需连接，并交付反证、不确定性与下个观察点。",
+    "Respalda la conexión con observaciones y entrega contradicciones, incertidumbre y el siguiente punto.",
+    "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+  ],
+  "TR1_T07_HINT_1": [
+    "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요.",
+    "Separate what current observations establish from what remains unknown.",
+    "現在の観察で示せることと、まだ不明なことを分けてください。",
+    "区分当前观察能证明的内容与仍未知的部分。",
+    "Separa lo que acreditan las observaciones de lo que sigue desconocido.",
+    "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+  ],
+  "TR1_T07_HINT_2": [
+    "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요.",
+    "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name.",
+    "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。",
+    "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。",
+    "Relaciona procedencia, marcas del servidor e intervalos corregidos, no solo IP o nombres.",
+    "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+  ],
+  "TR1_T07_HINT_3": [
+    "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다.",
+    "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis.",
+    "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。",
+    "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。",
+    "Recoge observaciones de campo o independientes. No tienes que aceptar la nota previa ni formular a propósito una hipótesis errónea.",
+    "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+  ],
+  "TR1_T07_LIMIT": [
+    "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다.",
+    "A supported session or transmission link does not establish a person's identity or unseen content.",
+    "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。",
+    "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。",
+    "Un enlace de sesión o transmisión respaldado no identifica a una persona ni acredita contenido invisible.",
+    "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+  ],
+  "TR1_T07_NEXT_SENSOR": [
+    "다음 인계 관찰 지점",
+    "Next Handoff Vantage",
+    "次に引き継ぐ観測地点",
+    "下个交接观察点",
+    "Siguiente punto para el relevo",
+    "Nächster Messpunkt für die Übergabe"
+  ],
+  "TR1_T07_PRINCIPLE": [
+    "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다.",
+    "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name.",
+    "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。",
+    "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。",
+    "El estado de la hipótesis deriva solo de observaciones públicas recogidas, no de un nombre oculto.",
+    "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+  ],
+  "TR1_T07_PRIOR": [
+    "앞 조사자의 동일 세션 추측",
+    "Prior Investigator's Same-session Suggestion",
+    "前の調査者による同一セッションの推測",
+    "前位调查者的同一会话推测",
+    "Propuesta previa de una misma sesión",
+    "Frühere Vermutung derselben Sitzung"
+  ],
+  "TR1_T07_REPLY": [
+    "새 관측은 이전 메모의 한계를 드러냈습니다. 틀린 가설을 지우지 않고 정정할 수도, 처음부터 독립된 관측으로 진행할 수도 있었습니다. 마지막에는 무엇까지 입증했는지 정리합시다.",
+    "The new observation exposed the prior note's limit. You could revise without erasing history, or proceed directly from independent evidence. For the final handoff, state exactly what was established.",
+    "新しい観察で、以前のメモの限界が見えました。履歴を消さず訂正しても、最初から独立証拠で進んでも構いませんでした。最後の引き継ぎでは、何を示せたかを正確にまとめましょう。",
+    "新观察揭示了旧便条的局限。你既能保留历史后修正，也能从一开始就依据独立证据前进。最终交接时，要准确写明证明了什么。",
+    "La observación reveló el límite de la nota anterior. Pudiste revisar sin borrar el historial o avanzar directamente con pruebas independientes. En la entrega final, precisa qué quedó establecido.",
+    "Die neue Beobachtung zeigte die Grenze der alten Notiz. Du konntest ohne Löschen berichtigen oder direkt mit unabhängigen Belegen vorgehen. Halte bei der letzten Übergabe genau fest, was belegt wurde."
+  ],
+  "TR1_T07_SENDER": [
+    "민서",
+    "Minseo",
+    "ミンソ",
+    "敏瑞",
+    "Minseo",
+    "Minseo"
+  ],
+  "TR1_T07_SENSOR_FIELD": [
+    "현장 관측",
+    "Field Observation",
+    "現場の観察",
+    "现场观察",
+    "Observación de campo",
+    "Vor-Ort-Beobachtung"
+  ],
+  "TR1_T07_SENSOR_INDEPENDENT": [
+    "독립 출처 관측",
+    "Independent Source Observation",
+    "独立した出所の観察",
+    "独立来源观察",
+    "Observación de fuente independiente",
+    "Beobachtung aus unabhängiger Quelle"
+  ],
+  "TR1_T07_TITLE": [
+    "맞는 가설을 버릴 때",
+    "When a Plausible Hypothesis Must Go",
+    "有力な仮説を手放すとき",
+    "放下合理假设的时候",
+    "Cuándo abandonar una hipótesis plausible",
+    "Wenn eine plausible Hypothese weichen muss"
+  ],
+  "TR1_T07_TOOL_NAME": [
+    "출처·관측·가설",
+    "Sources, Observations and Hypotheses",
+    "出所・観察・仮説",
+    "来源、观察与假设",
+    "Fuentes, observaciones e hipótesis",
+    "Quellen, Beobachtungen und Hypothesen"
+  ],
+  "TR1_T08_ABSTRACTION": [
+    "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다.",
+    "This is a bounded case with authorized observation windows and a small set of relation types.",
+    "この事件では、許可された観測区間と限られた関係の種類だけを扱います。",
+    "本事件只处理获准观察窗口与少量关系类型。",
+    "Es un caso limitado a ventanas autorizadas y un conjunto pequeño de relaciones.",
+    "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+  ],
+  "TR1_T08_BRIEF": [
+    "마지막 인계입니다. 서로 다른 관찰 지점과 출처로 연결된 최소 경로를 확인해 주세요. 모든 후보의 실명을 알아야 끝나는 사건은 아닙니다.\n\n어느 전송이 어느 경계를 지났고, 어떤 주장이 반박됐으며, 어디에는 아직 관측이 없는지를 구분합니다. 요구된 연결과 후속 관찰을 생략한 채 전부 모른다고 적는 것도 충분하지 않습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n",
+    "This is the final handoff. Establish the minimal route connected by independent viewpoints and sources. The case does not require every candidate's real name.\n\nSeparate which transmission crossed which boundary, which claim was contradicted, and where no observation exists. Writing 'unknown' everywhere without the required links and follow-up is not sufficient.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n",
+    "最後の引き継ぎです。独立した観測地点と出所を結ぶ最小の経路を示してください。全候補の本名を知る必要はありません。\n\nどの送信がどの境界を越え、どの主張が反証され、どこに観察がないかを分けます。必要なつながりと後続観察を省き、全部不明と書くだけでは足りません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n",
+    "这是最后的交接。请用独立观察点和来源确认最小连接通路，不要求知道每个候选者的真实姓名。\n\n区分哪次传输经过哪条边界、什么主张被反驳、哪里还没有观察。省略必要连接与后续观察，只写全部未知也不足够。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n",
+    "Es la entrega final. Establece la ruta mínima enlazada por puntos y fuentes independientes. No exige conocer el nombre real de cada candidato.\n\nDistingue qué transmisión cruzó qué límite, qué afirmación fue contradicha y dónde falta observar. No basta con escribir «desconocido» en todo y omitir enlaces y seguimiento exigidos.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n",
+    "Die letzte Übergabe. Belege den kleinsten durch unabhängige Blickpunkte und Quellen verbundenen Weg. Du brauchst nicht jeden echten Namen.\n\nTrenne Übertragungswege, widerlegte Behauptungen und Stellen ohne Beobachtung. Überall „unbekannt“ einzutragen und nötige Verbindungen sowie Folgebeobachtungen wegzulassen genügt nicht.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n"
+  ],
+  "TR1_T08_DESK_NAME": [
+    "마지막 연결의 범위 담당실",
+    "The Limit of the Final Connection Desk",
+    "最後のつながりの限界 · 作業端末",
+    "最后连接的边界 · 工作台",
+    "Mesa de El límite de la última conexión",
+    "Die Grenze der letzten Verbindung · Arbeitsplatz"
+  ],
+  "TR1_T08_GOAL": [
+    "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다.",
+    "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage.",
+    "必要なつながりを観察で支え、反証・不確実性・次の観測地点も引き継ぐ。",
+    "用观察支持所需连接，并交付反证、不确定性与下个观察点。",
+    "Respalda la conexión con observaciones y entrega contradicciones, incertidumbre y el siguiente punto.",
+    "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+  ],
+  "TR1_T08_HINT_1": [
+    "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요.",
+    "Separate what current observations establish from what remains unknown.",
+    "現在の観察で示せることと、まだ不明なことを分けてください。",
+    "区分当前观察能证明的内容与仍未知的部分。",
+    "Separa lo que acreditan las observaciones de lo que sigue desconocido.",
+    "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+  ],
+  "TR1_T08_HINT_2": [
+    "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요.",
+    "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name.",
+    "IP や名前だけでなく、出所・サーバー発行標識・補正後の時間区間を結び付けてください。",
+    "关联来源、服务器签发标记与校正时间区间，不要仅依据 IP 或姓名。",
+    "Relaciona procedencia, marcas del servidor e intervalos corregidos, no solo IP o nombres.",
+    "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+  ],
+  "TR1_T08_HINT_3": [
+    "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다.",
+    "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis.",
+    "現場か独立した出所で新しい観察を集めてください。以前のメモを信じたり、わざと誤った仮説を立てたりする必要はありません。",
+    "采集新的现场或独立观察，无须接受旧便条，也无须故意提出错误假设。",
+    "Recoge observaciones de campo o independientes. No tienes que aceptar la nota previa ni formular a propósito una hipótesis errónea.",
+    "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+  ],
+  "TR1_T08_LIMIT": [
+    "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다.",
+    "A supported session or transmission link does not establish a person's identity or unseen content.",
+    "支持されたセッション・転送関係だけでは、人物の身元や見えない内容までは示せません。",
+    "获得支持的会话或传输连接，不等于证明人的身份或不可见内容。",
+    "Un enlace de sesión o transmisión respaldado no identifica a una persona ni acredita contenido invisible.",
+    "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+  ],
+  "TR1_T08_NEXT_SENSOR": [
+    "다음 인계 관찰 지점",
+    "Next Handoff Vantage",
+    "次に引き継ぐ観測地点",
+    "下个交接观察点",
+    "Siguiente punto para el relevo",
+    "Nächster Messpunkt für die Übergabe"
+  ],
+  "TR1_T08_PRINCIPLE": [
+    "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다.",
+    "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name.",
+    "仮説の状態は収集した公開観察だけから判断し、隠れた犯人名とは照合しません。",
+    "假设状态仅依据已采集的公开观察，不与隐藏犯人姓名对照。",
+    "El estado de la hipótesis deriva solo de observaciones públicas recogidas, no de un nombre oculto.",
+    "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+  ],
+  "TR1_T08_REPLY": [
+    "관찰이 지지하는 연결은 남고 알 수 없는 정체는 꾸며지지 않았습니다. 다음 팀은 출처와 반증, 아직 필요한 관찰을 함께 받습니다. 추적은 정답 이름의 공개가 아니라 검증 가능한 인계로 끝납니다.",
+    "Supported connections remain; unknown identities are not invented. The next team receives provenance, contradictions and the observations still needed. The pursuit ends with a verifiable handoff, not a revealed answer name.",
+    "観察が支持する関係は残り、不明な身元を作りませんでした。次のチームは出所、反証、必要な次の観察を受け取ります。追跡は正解の名前ではなく、検証可能な引き継ぎで終わります。",
+    "得到观察支持的连接留下了，未知身份没有被编造。下一组会同时收到来源、反证与仍需采集的观察。追踪以可核验的交接结束，而非揭晓答案姓名。",
+    "Quedan las conexiones respaldadas, sin inventar identidades desconocidas. El siguiente equipo recibe procedencia, contradicciones y observaciones pendientes. La búsqueda termina con una entrega verificable, no con un nombre revelado.",
+    "Gestützte Verbindungen bleiben, unbekannte Identitäten werden nicht erfunden. Das nächste Team erhält Herkunft, Gegenbelege und noch nötige Beobachtungen. Die Ermittlung endet mit prüfbarer Übergabe, nicht mit einem enthüllten Lösungsnamen."
+  ],
+  "TR1_T08_SENDER": [
+    "민서",
+    "Minseo",
+    "ミンソ",
+    "敏瑞",
+    "Minseo",
+    "Minseo"
+  ],
+  "TR1_T08_SENSOR_FIELD": [
+    "현장 관측",
+    "Field Observation",
+    "現場の観察",
+    "现场观察",
+    "Observación de campo",
+    "Vor-Ort-Beobachtung"
+  ],
+  "TR1_T08_SENSOR_INDEPENDENT": [
+    "독립 출처 관측",
+    "Independent Source Observation",
+    "独立した出所の観察",
+    "独立来源观察",
+    "Observación de fuente independiente",
+    "Beobachtung aus unabhängiger Quelle"
+  ],
+  "TR1_T08_TITLE": [
+    "마지막 연결의 범위",
+    "The Limit of the Final Connection",
+    "最後のつながりの限界",
+    "最后连接的边界",
+    "El límite de la última conexión",
+    "Die Grenze der letzten Verbindung"
+  ],
+  "TR1_T08_TOOL_NAME": [
+    "출처·관측·가설",
+    "Sources, Observations and Hypotheses",
+    "出所・観察・仮説",
+    "来源、观察与假设",
+    "Fuentes, observaciones e hipótesis",
+    "Quellen, Beobachtungen und Hypothesen"
+  ]
+}

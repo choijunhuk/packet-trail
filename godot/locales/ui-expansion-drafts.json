@@ -1,0 +1,944 @@
+{
+  "CAMPAIGN_SAVE_ATTENTION": [
+    "セーブ状態の確認や、使用できるバックアップの復旧ができます。",
+    "可检查存档状态，或恢复可用备份。",
+    "Puedes comprobar el guardado o recuperar una copia disponible.",
+    "Prüfe den Speicherzustand oder stelle eine verfügbare Sicherung wieder her."
+  ],
+  "CAMPAIGN_IMPORT_CONFIRM": [
+    "旧版 M01 を旧版キャンペーンへ取り込みます。既存の旧版スロットはバックアップ後に置き換え、新しいキャンペーンのセーブは保持します。",
+    "将旧版 M01 导入旧版战役。如已有旧版槽，将先备份后替换；新战役存档会保留。",
+    "Se importa M01 en la campaña de la edición anterior. Si ya tiene un guardado, se copia y sustituye; las campañas nuevas se conservan.",
+    "Altes M01 wird in die frühere Kampagne importiert. Ein vorhandener alter Speicherplatz wird gesichert und ersetzt; neue Kampagnenstände bleiben erhalten."
+  ],
+  "UI_MODEL_FORM_NOTE": [
+    "現在の権限と観察で公開された選択肢です。操作・仮説・入力を選んで実行してください。",
+    "选项依据当前权限与观察公开。请选择操作、主张或输入后执行。",
+    "Estas opciones proceden de los permisos y observaciones actuales. Elige acción, afirmación o entrada y ejecútala.",
+    "Diese Auswahl folgt aus aktuellen Rechten und Beobachtungen. Wähle Aktion, Behauptung oder Eingabe und führe sie aus."
+  ],
+  "UI_MODEL_NO_ACTIONS": [
+    "現在使える操作はありません。権限と観察を確認してください。",
+    "当前没有可用操作，请检查权限与观察。",
+    "No hay acciones disponibles. Revisa acceso y observaciones.",
+    "Derzeit keine Aktionen verfügbar. Prüfe Zugang und Beobachtungen."
+  ],
+  "UI_MODEL_NO_OBSERVATIONS": [
+    "表示できる観察はまだありません。",
+    "尚无可显示的观察。",
+    "Todavía no hay observaciones que mostrar.",
+    "Noch keine Beobachtungen anzuzeigen."
+  ],
+  "UI_VALUE_TRUE": [
+    "はい",
+    "是",
+    "Sí",
+    "Ja"
+  ],
+  "UI_VALUE_FALSE": [
+    "いいえ",
+    "否",
+    "No",
+    "Nein"
+  ],
+  "UI_MODEL_SUPPORTED": [
+    "根拠が支持",
+    "证据支持",
+    "Respaldada",
+    "Gestützt"
+  ],
+  "UI_MODEL_REFUTED": [
+    "反証あり",
+    "已反驳",
+    "Refutada",
+    "Widerlegt"
+  ],
+  "UI_MODEL_UNDETERMINED": [
+    "根拠不足・判断保留",
+    "证据不足／暂不判断",
+    "Indeterminada por falta de pruebas",
+    "Unbestimmt / Belege fehlen"
+  ],
+  "UI_MODEL_NORMAL": [
+    "正規の業務",
+    "正常业务",
+    "Trabajo legítimo",
+    "Reguläre Arbeit"
+  ],
+  "UI_MODEL_THREAT": [
+    "脅威となる要求",
+    "威胁请求",
+    "Petición de amenaza",
+    "Bedrohliche Anfrage"
+  ],
+  "UI_MODEL_ALLOW": [
+    "許可",
+    "允许",
+    "Permitir",
+    "Zulassen"
+  ],
+  "UI_MODEL_DENY": [
+    "遮断",
+    "阻止",
+    "Bloquear",
+    "Sperren"
+  ],
+  "UI_MODEL_AUTHORIZED": [
+    "許可された範囲",
+    "获准范围",
+    "Ámbito autorizado",
+    "Genehmigter Bereich"
+  ],
+  "UI_MODEL_EXCLUDED": [
+    "範囲外",
+    "范围外",
+    "Fuera de ámbito",
+    "Außerhalb des Bereichs"
+  ],
+  "UI_RESPONSE_CONTROLS": [
+    "現在の対応策",
+    "当前应对措施",
+    "Controles actuales",
+    "Aktuelle Abwehrmaßnahmen"
+  ],
+  "UI_RESPONSE_MATRIX": [
+    "正規業務と脅威要求の比較",
+    "正常业务与威胁请求对比",
+    "Comparación de trabajo legítimo y amenazas",
+    "Vergleich regulärer und bedrohlicher Anfragen"
+  ],
+  "UI_RESPONSE_CHECKPOINTS": [
+    "部分的に戻す保存点",
+    "局部回滚检查点",
+    "Puntos de reversión limitada",
+    "Begrenzte Rücknahmepunkte"
+  ],
+  "UI_RESPONSE_HISTORY": [
+    "要求の観察履歴",
+    "请求观察历史",
+    "Historial de peticiones observadas",
+    "Verlauf beobachteter Anfragen"
+  ],
+  "UI_OBSERVATION_SENSORS": [
+    "観測地点と収集範囲",
+    "观察点与采集范围",
+    "Puntos de observación y alcance",
+    "Beobachtungspunkte und Erhebungsumfang"
+  ],
+  "UI_OBSERVATION_EVIDENCE": [
+    "収集した観察と出所",
+    "已采集观察与来源",
+    "Observaciones recogidas y procedencia",
+    "Erhobene Beobachtungen und Herkunft"
+  ],
+  "UI_OBSERVATION_HYPOTHESES": [
+    "仮説と現在の根拠",
+    "假设与当前证据",
+    "Hipótesis y pruebas actuales",
+    "Hypothesen und aktuelle Belege"
+  ],
+  "UI_OBSERVATION_HISTORY": [
+    "仮説の訂正履歴",
+    "假设修正历史",
+    "Historial de revisión de hipótesis",
+    "Verlauf der Hypothesenberichtigungen"
+  ],
+  "UI_VM_LISTING": [
+    "プログラムの分岐",
+    "程序分支",
+    "Listado del programa",
+    "Programmverzweigungen"
+  ],
+  "UI_VM_CALL_GRAPH": [
+    "関数の呼び出し関係",
+    "函数调用关系",
+    "Relaciones de llamadas",
+    "Funktionsaufrufbeziehungen"
+  ],
+  "UI_VM_TRACE": [
+    "実行した分岐・呼び出しの記録",
+    "已执行分支与调用轨迹",
+    "Rastro de ramas y llamadas ejecutadas",
+    "Spur ausgeführter Zweige und Aufrufe"
+  ],
+  "UI_VM_OUTPUTS": [
+    "実際の出力",
+    "实际输出",
+    "Salidas reales",
+    "Tatsächliche Ausgaben"
+  ],
+  "UI_TOOLKIND_RESPONSE_LAB_MODEL": [
+    "許可済みの要求を同じ仮想サービスへ送り、正規業務と脅威の結果を比べます。対応策は他のツールと共通の方針・セッションを変えます。",
+    "向相同虚拟服务发送获准请求，对比正常业务与威胁结果。措施会改变其他工具共用的策略与会话。",
+    "Envía peticiones aprobadas a los mismos servicios virtuales para comparar trabajo y amenazas. Los controles cambian políticas y sesiones compartidas con otras herramientas.",
+    "Sende erlaubte Anfragen an dieselben virtuellen Dienste und vergleiche reguläre Arbeit mit Bedrohungen. Maßnahmen ändern die mit anderen Werkzeugen geteilten Richtlinien und Sitzungen."
+  ],
+  "UI_TOOLKIND_RESPONSE_LAB_LIMIT": [
+    "すべてを遮断しても成功とは限りません。保存点で戻せるのは指定方針グループだけです。失効した資格情報や収集記録は巻き戻しません。",
+    "阻止一切不代表成功。检查点仅还原指定策略组，不回滚已撤销凭据或采集记录。",
+    "Bloquear todo no es éxito. Los puntos solo restauran su grupo de políticas; no revierten credenciales revocadas ni registros recogidos.",
+    "Alles zu sperren ist kein Erfolg. Prüfpunkte stellen nur ihre Richtliniengruppe wieder her; widerrufene Zugangsdaten und erhobene Aufzeichnungen werden nicht zurückgedreht."
+  ],
+  "UI_TOOLKIND_OBSERVATION_CASE_MODEL": [
+    "許可された区間と地点で観察を集め、収集コピーだけを使って主張を支持・反証・未確定に分けます。",
+    "在获准窗口与位置采集观察，仅依据采集副本将主张分为支持、反驳或未定。",
+    "Recoge observaciones en ventanas y puntos autorizados y clasifica afirmaciones según sus copias: respaldadas, refutadas o indeterminadas.",
+    "Erhebe Beobachtungen in erlaubten Fenstern und Positionen. Ordne Behauptungen anhand dieser Kopien als gestützt, widerlegt oder unbestimmt ein."
+  ],
+  "UI_TOOLKIND_OBSERVATION_CASE_LIMIT": [
+    "同じ IP だけで同じ人物とは判断しません。時計誤差・標本の欠落・標識の出所が結論を制限します。隠れた犯人と照合しません。",
+    "同一 IP 不证明同一个人。时钟误差、采样遗漏与标记来源限制结论，不与隐藏犯人答案对照。",
+    "Compartir IP no demuestra identidad. Errores de reloj, muestreo y procedencia limitan las conclusiones; no se compara con un culpable oculto.",
+    "Eine gemeinsame IP belegt keine Identität. Uhrfehler, Stichproben und Markierungsherkunft begrenzen Schlüsse; ein verborgener Täter dient nicht als Vergleich."
+  ],
+  "UI_TOOLKIND_BRANCH_VM_MODEL": [
+    "決められた仮想命令の分岐・関数呼び出し・戻り・出力を、小さな入力ケースで実行し、記録を比較します。",
+    "以小型输入样例执行固定虚拟指令的分支、调用、返回与输出，并对比执行轨迹。",
+    "Ejecuta casos pequeños mediante ramas, llamadas, retornos y salidas virtuales limitadas y compara sus trazas.",
+    "Führe kleine Eingabefälle durch begrenzte virtuelle Verzweigungen, Aufrufe, Rückgaben und Ausgaben und vergleiche ihre Spuren."
+  ],
+  "UI_TOOLKIND_BRANCH_VM_LIMIT": [
+    "実際の CPU・バイナリー・シェルは実行しません。プログラムと予算は事件から与えられ、ボタンを決まった回数押すことは目標ではありません。",
+    "不执行真实 CPU、二进制程序或 shell。程序和预算由事件提供，按钮次数不作为通关条件。",
+    "No ejecuta CPU, binarios ni shells reales. El caso proporciona programa y límites; pulsar un número fijado de veces no es un objetivo.",
+    "Führt keine echten CPU, Binärprogramme oder Shells aus. Der Fall gibt Programm und Grenzen vor; eine festgelegte Zahl an Tastendrücken ist kein Ziel."
+  ],
+  "UI_TOOL_FIELD_LABEL": [
+    "名前",
+    "名称",
+    "Nombre",
+    "Name"
+  ],
+  "UI_TOOL_FIELD_CLASS": [
+    "分類",
+    "分类",
+    "Clase",
+    "Klasse"
+  ],
+  "UI_TOOL_FIELD_CASE_ID": [
+    "要求・入力ケース",
+    "请求或输入样例",
+    "Caso de petición o entrada",
+    "Anfrage- oder Eingabefall"
+  ],
+  "UI_TOOL_FIELD_ROUTE_ID": [
+    "要求経路",
+    "请求通路",
+    "Ruta de petición",
+    "Anfrageweg"
+  ],
+  "UI_TOOL_FIELD_CONTROL_ID": [
+    "対応策",
+    "应对措施",
+    "Control",
+    "Abwehrmaßnahme"
+  ],
+  "UI_TOOL_FIELD_VALUES": [
+    "入力値",
+    "输入值",
+    "Valores de entrada",
+    "Eingabewerte"
+  ],
+  "UI_TOOL_FIELD_CURRENT": [
+    "現在の値",
+    "当前值",
+    "Valor actual",
+    "Aktueller Wert"
+  ],
+  "UI_TOOL_FIELD_GROUP": [
+    "方針グループ",
+    "策略组",
+    "Grupo de políticas",
+    "Richtliniengruppe"
+  ],
+  "UI_TOOL_FIELD_CHECKPOINT_ID": [
+    "戻す保存点",
+    "回滚检查点",
+    "Punto de reversión",
+    "Rücknahmepunkt"
+  ],
+  "UI_TOOL_FIELD_TOKEN_REF": [
+    "失効させるセッション",
+    "要撤销的会话",
+    "Sesión que revocar",
+    "Zu widerrufende Sitzung"
+  ],
+  "UI_TOOL_FIELD_SENSOR_ID": [
+    "観測地点",
+    "观察点",
+    "Punto de observación",
+    "Beobachtungspunkt"
+  ],
+  "UI_TOOL_FIELD_HYPOTHESIS_ID": [
+    "仮説名",
+    "假设名称",
+    "Nombre de hipótesis",
+    "Hypothesenname"
+  ],
+  "UI_TOOL_FIELD_CLAIM": [
+    "主張",
+    "主张",
+    "Afirmación",
+    "Behauptung"
+  ],
+  "UI_TOOL_FIELD_KIND": [
+    "関係の種類",
+    "连接类型",
+    "Relación",
+    "Beziehung"
+  ],
+  "UI_TOOL_FIELD_OBSERVATION_IDS": [
+    "根拠とする観察",
+    "支持观察",
+    "Observaciones de apoyo",
+    "Beobachtungsbelege"
+  ],
+  "UI_TOOL_FIELD_REPLACEMENT_CLAIM": [
+    "訂正した主張",
+    "修正主张",
+    "Afirmación revisada",
+    "Berichtigte Behauptung"
+  ],
+  "UI_TOOL_FIELD_REASON_OBSERVATION_IDS": [
+    "訂正の根拠",
+    "修正依据",
+    "Pruebas de revisión",
+    "Berichtigungsbelege"
+  ],
+  "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS": [
+    "支持された仮説",
+    "得到支持的假设",
+    "Hipótesis respaldadas",
+    "Gestützte Hypothesen"
+  ],
+  "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS": [
+    "反証された仮説",
+    "被反驳的假设",
+    "Hipótesis refutadas",
+    "Widerlegte Hypothesen"
+  ],
+  "UI_TOOL_FIELD_UNKNOWN_EDGES": [
+    "未確定のつながり",
+    "未确定连接",
+    "Conexiones sin resolver",
+    "Ungeklärte Verbindungen"
+  ],
+  "UI_TOOL_FIELD_NEXT_SENSOR_ID": [
+    "次の観測地点",
+    "下个观察点",
+    "Siguiente punto de observación",
+    "Nächster Beobachtungspunkt"
+  ],
+  "UI_TOOL_FIELD_COUNT": [
+    "実行するステップ数",
+    "执行步数",
+    "Número de pasos",
+    "Schrittzahl"
+  ],
+  "UI_TOOL_FIELD_SECTION": [
+    "表示内容",
+    "查看部分",
+    "Sección",
+    "Abschnitt"
+  ],
+  "UI_TOOL_FIELD_FORMAT_OK": [
+    "形式の確認",
+    "格式检查",
+    "Comprobación de formato",
+    "Formatprüfung"
+  ],
+  "UI_TOOL_FIELD_SIGNATURE_OK": [
+    "署名の確認",
+    "签名检查",
+    "Comprobación de firma",
+    "Signaturprüfung"
+  ],
+  "UI_TOOL_FIELD_RETENTION_SCOPE": [
+    "保存範囲",
+    "保留范围",
+    "Ámbito de conservación",
+    "Aufbewahrungsumfang"
+  ],
+  "UI_TOOL_FIELD_INTENDED": [
+    "必要な結果",
+    "所需结果",
+    "Resultado necesario",
+    "Gefordertes Ergebnis"
+  ],
+  "UI_TOOL_FIELD_OBSERVED": [
+    "観察した結果",
+    "观察结果",
+    "Resultado observado",
+    "Beobachtetes Ergebnis"
+  ],
+  "UI_TOOL_FIELD_STATUS": [
+    "状態",
+    "状态",
+    "Estado",
+    "Status"
+  ],
+  "UI_TOOL_FIELD_AVAILABLE": [
+    "収集可能",
+    "可采集",
+    "Disponible",
+    "Verfügbar"
+  ],
+  "UI_TOOL_FIELD_COVERAGE": [
+    "観測範囲",
+    "观察覆盖范围",
+    "Cobertura",
+    "Abdeckung"
+  ],
+  "UI_TOOL_FIELD_SAMPLING": [
+    "標本の方式",
+    "采样方式",
+    "Muestreo",
+    "Stichprobenverfahren"
+  ],
+  "UI_TOOL_FIELD_WINDOW": [
+    "観測区間",
+    "观察窗口",
+    "Ventana de observación",
+    "Beobachtungsfenster"
+  ],
+  "UI_TOOL_FIELD_VISIBILITY": [
+    "見える情報",
+    "可见信息",
+    "Información visible",
+    "Sichtbare Informationen"
+  ],
+  "UI_TOOL_FIELD_VANTAGE": [
+    "収集した位置",
+    "采集位置",
+    "Posición de recogida",
+    "Erhebungsposition"
+  ],
+  "UI_TOOL_FIELD_SOURCE_ID": [
+    "出所 ID",
+    "来源 ID",
+    "ID de origen",
+    "Quellen-ID"
+  ],
+  "UI_TOOL_FIELD_COLLECTOR": [
+    "収集者",
+    "采集者",
+    "Recopilador",
+    "Erhebende Stelle"
+  ],
+  "UI_TOOL_FIELD_ACQUISITION": [
+    "収集方法",
+    "采集方式",
+    "Método de adquisición",
+    "Erhebungsmethode"
+  ],
+  "UI_TOOL_FIELD_PROVENANCE": [
+    "出所と収集根拠",
+    "来源与采集依据",
+    "Procedencia",
+    "Herkunft und Erhebungsbeleg"
+  ],
+  "UI_TOOL_FIELD_OBSERVED_AT": [
+    "観測時刻の区間",
+    "观察时间区间",
+    "Intervalo temporal observado",
+    "Beobachtetes Zeitintervall"
+  ],
+  "UI_TOOL_FIELD_CLOCK_OFFSET": [
+    "時計のずれ",
+    "时钟偏差",
+    "Desfase del reloj",
+    "Uhrabweichung"
+  ],
+  "UI_TOOL_FIELD_EVENT_ID": [
+    "イベント ID",
+    "事件 ID",
+    "ID de evento",
+    "Ereignis-ID"
+  ],
+  "UI_TOOL_FIELD_PUBLIC": [
+    "公開された観察",
+    "公开观察",
+    "Observación pública",
+    "Öffentliche Beobachtung"
+  ],
+  "UI_TOOL_FIELD_VERDICT": [
+    "根拠による判定",
+    "证据判定",
+    "Valoración de pruebas",
+    "Belegurteil"
+  ],
+  "UI_TOOL_FIELD_FUNCTION": [
+    "関数",
+    "函数",
+    "Función",
+    "Funktion"
+  ],
+  "UI_TOOL_FIELD_OP": [
+    "命令",
+    "指令",
+    "Instrucción",
+    "Anweisung"
+  ],
+  "UI_TOOL_FIELD_PC": [
+    "命令の位置",
+    "指令位置",
+    "Posición de instrucción",
+    "Befehlsposition"
+  ],
+  "UI_TOOL_FIELD_OUTPUT": [
+    "出力",
+    "输出",
+    "Salida",
+    "Ausgabe"
+  ],
+  "UI_TOOL_FIELD_OUTPUTS": [
+    "出力値",
+    "输出值",
+    "Valores de salida",
+    "Ausgabewerte"
+  ],
+  "UI_TOOL_FIELD_REGISTERS": [
+    "仮想レジスター",
+    "虚拟寄存器",
+    "Registros virtuales",
+    "Virtuelle Register"
+  ],
+  "UI_TOOL_FIELD_CALL_STACK": [
+    "呼び出しスタック",
+    "调用栈",
+    "Pila de llamadas",
+    "Aufrufstapel"
+  ],
+  "UI_TOOL_FIELD_STEPS_USED": [
+    "使ったステップ",
+    "已用步数",
+    "Pasos usados",
+    "Verwendete Schritte"
+  ],
+  "UI_TOOL_FIELD_TRACE": [
+    "実行記録",
+    "执行轨迹",
+    "Traza de ejecución",
+    "Ausführungsspur"
+  ],
+  "UI_MODEL_ACTION_INSPECT": [
+    "現在の状態を見る",
+    "查看当前状态",
+    "Examinar el estado actual",
+    "Aktuellen Zustand prüfen"
+  ],
+  "UI_MODEL_ACTION_SET_CONTROL": [
+    "精密な対応策を適用",
+    "应用精确措施",
+    "Aplicar un control limitado",
+    "Gezielte Maßnahme anwenden"
+  ],
+  "UI_MODEL_ACTION_PROBE": [
+    "要求と正規業務を検証",
+    "验证请求与正常业务",
+    "Probar peticiones y trabajo legítimo",
+    "Anfragen und reguläre Arbeit prüfen"
+  ],
+  "UI_MODEL_ACTION_CHECKPOINT": [
+    "方針グループを保存",
+    "保存策略检查点",
+    "Guardar un punto de políticas",
+    "Richtlinienprüfpunkt speichern"
+  ],
+  "UI_MODEL_ACTION_ROLLBACK": [
+    "選んだ方針だけを戻す",
+    "仅回滚所选策略组",
+    "Revertir el grupo seleccionado",
+    "Gewählte Richtliniengruppe zurücknehmen"
+  ],
+  "UI_MODEL_ACTION_REVOKE": [
+    "セッションを失効",
+    "撤销会话",
+    "Revocar sesión",
+    "Sitzung widerrufen"
+  ],
+  "UI_MODEL_ACTION_COLLECT": [
+    "この地点の観察を収集",
+    "采集此位置的观察",
+    "Recoger desde este punto",
+    "An diesem Punkt erheben"
+  ],
+  "UI_MODEL_ACTION_ADVANCE_WATCH": [
+    "次の観測区間へ",
+    "推进到下个观察窗口",
+    "Avanzar la ventana de observación",
+    "Zum nächsten Beobachtungsfenster"
+  ],
+  "UI_MODEL_ACTION_HYPOTHESIZE": [
+    "仮説を立てる",
+    "提出假设",
+    "Crear una hipótesis",
+    "Hypothese aufstellen"
+  ],
+  "UI_MODEL_ACTION_TEST": [
+    "収集した根拠で検証",
+    "依据采集证据检验",
+    "Contrastar con pruebas recogidas",
+    "An erhobenen Belegen prüfen"
+  ],
+  "UI_MODEL_ACTION_REVISE": [
+    "根拠を残して仮説を訂正",
+    "保留依据并修正假设",
+    "Revisar conservando pruebas",
+    "Mit Belegspur berichtigen"
+  ],
+  "UI_MODEL_ACTION_HANDOFF": [
+    "示せた関係と限界を引き継ぐ",
+    "交付已支持连接及局限",
+    "Entregar conexiones y límites respaldados",
+    "Gestützte Verbindungen und Grenzen übergeben"
+  ],
+  "UI_MODEL_ACTION_SET_INPUT": [
+    "入力ケースを用意",
+    "准备输入样例",
+    "Preparar un caso de entrada",
+    "Eingabefall vorbereiten"
+  ],
+  "UI_MODEL_ACTION_STEP": [
+    "分岐を一段ずつ確認",
+    "逐步查看执行",
+    "Avanzar paso a paso",
+    "Ausführung schrittweise ansehen"
+  ],
+  "UI_MODEL_ACTION_RUN": [
+    "プログラムを実行",
+    "运行程序",
+    "Ejecutar programa",
+    "Programm ausführen"
+  ],
+  "UI_MODEL_ACTION_RESET": [
+    "現在の実行を初期化",
+    "重置当前执行",
+    "Reiniciar la ejecución actual",
+    "Aktuelle Ausführung zurücksetzen"
+  ],
+  "UI_MODEL_REL_SAME_SESSION": [
+    "同じセッションか",
+    "是否同一会话",
+    "¿Misma sesión?",
+    "Dieselbe Sitzung?"
+  ],
+  "UI_MODEL_REL_FORWARDED_TO": [
+    "次のノードへ渡ったか",
+    "是否转发到下个节点",
+    "¿Se remitió al siguiente nodo?",
+    "Zum nächsten Knoten weitergeleitet?"
+  ],
+  "UI_MODEL_REL_BEFORE": [
+    "先に起きたか",
+    "是否更早发生",
+    "¿Ocurrió antes?",
+    "Früher aufgetreten?"
+  ],
+  "UI_MODEL_SERVER_ISSUED": [
+    "サーバーが発行した標識",
+    "服务器签发的标记",
+    "Marca emitida por el servidor",
+    "Vom Server ausgestellte Markierung"
+  ],
+  "UI_MODEL_CLIENT_SUPPLIED": [
+    "クライアントが渡した標識",
+    "客户端提供的标记",
+    "Marca aportada por el cliente",
+    "Vom Client gelieferte Markierung"
+  ],
+  "UI_MODEL_COMPLETE_WINDOW": [
+    "この区間を全件観測",
+    "完整观察此窗口",
+    "Cobertura completa de esta ventana",
+    "Vollständige Beobachtung dieses Fensters"
+  ],
+  "UI_MODEL_SAMPLED_WINDOW": [
+    "標本として一部のみ観測",
+    "仅抽样观察",
+    "Solo observaciones por muestreo",
+    "Nur Stichprobenbeobachtungen"
+  ],
+  "UI_MODEL_METADATA_ONLY": [
+    "メタデータのみ",
+    "仅元数据",
+    "Solo metadatos",
+    "Nur Metadaten"
+  ],
+  "UI_MODEL_PERMITTED_PLAINTEXT": [
+    "許可された平文",
+    "获准明文",
+    "Texto en claro autorizado",
+    "Genehmigter Klartext"
+  ],
+  "UI_TOOL_FIELD_MARKER_AUTHORITY": [
+    "標識の由来",
+    "标记来源",
+    "Procedencia de la marca",
+    "Herkunft der Markierung"
+  ],
+  "UI_TOOL_FIELD_SESSION_TAG": [
+    "セッション標識",
+    "会话标记",
+    "Marca de sesión",
+    "Sitzungsmarkierung"
+  ],
+  "UI_TOOL_FIELD_REQUEST_TAG": [
+    "要求標識",
+    "请求标记",
+    "Marca de petición",
+    "Anfragemarkierung"
+  ],
+  "UI_TOOL_FIELD_FROM_NODE": [
+    "観測した送信元ノード",
+    "观察到的起点节点",
+    "Nodo de origen observado",
+    "Beobachteter Quellknoten"
+  ],
+  "UI_TOOL_FIELD_TO_NODE": [
+    "観測した宛先ノード",
+    "观察到的终点节点",
+    "Nodo de destino observado",
+    "Beobachteter Zielknoten"
+  ],
+  "UI_TOOL_FIELD_SHARED_ADDRESS": [
+    "共有され得るアドレス",
+    "可能共享的地址",
+    "Dirección potencialmente compartida",
+    "Möglicherweise gemeinsame Adresse"
+  ],
+  "UI_TOOL_FIELD_CURSOR": [
+    "現在の観測区間",
+    "当前观察窗口",
+    "Ventana actual de observación",
+    "Aktuelles Beobachtungsfenster"
+  ],
+  "UI_TOOL_FIELD_INPUTS": [
+    "入力ケース",
+    "输入样例",
+    "Casos de entrada",
+    "Eingabefälle"
+  ],
+  "UI_TOOL_FIELD_DST": [
+    "結果を入れるレジスター",
+    "目标寄存器",
+    "Registro de destino",
+    "Zielregister"
+  ],
+  "UI_TOOL_FIELD_REG": [
+    "読むレジスター",
+    "源寄存器",
+    "Registro de origen",
+    "Quellregister"
+  ],
+  "UI_TOOL_FIELD_THEN": [
+    "真の場合の分岐",
+    "真分支",
+    "Rama verdadera",
+    "Wahr-Zweig"
+  ],
+  "UI_TOOL_FIELD_ELSE": [
+    "偽の場合の分岐",
+    "假分支",
+    "Rama falsa",
+    "Falsch-Zweig"
+  ],
+  "UI_TOOL_FIELD_BUSINESS_KEY": [
+    "業務項目",
+    "业务项目",
+    "Elemento de trabajo",
+    "Geschäftsvorgang"
+  ],
+  "UI_TOOL_FIELD_BUSINESS_VALUE": [
+    "業務への反映結果",
+    "业务作用结果",
+    "Efecto sobre el trabajo",
+    "Auswirkung auf den Vorgang"
+  ],
+  "LEGACY_SOURCE_UNSUPPORTED": [
+    "旧版セーブは見つかりましたが、現在の検証に通りませんでした。原本は保持し、新しいキャンペーンには適用しません。理由: {code}",
+    "找到旧版存档，但未通过当前验证。原件会保留，不会应用到新战役。原因：{code}",
+    "Se encontró un guardado anterior, pero no superó la validación. Se conserva el original y no se aplica a campañas nuevas. Motivo: {code}",
+    "Ein alter Spielstand wurde gefunden, bestand aber die Prüfung nicht. Das Original bleibt erhalten und wird nicht auf neue Kampagnen angewendet. Grund: {code}"
+  ],
+  "UI_VM_LIMITS": [
+    "仮想実行の予算",
+    "虚拟执行预算",
+    "Límites de ejecución virtual",
+    "Grenzen der virtuellen Ausführung"
+  ],
+  "UI_TOOL_FIELD_OWNER_FUNCTION": [
+    "命令が属する関数",
+    "指令所属函数",
+    "Función que contiene la instrucción",
+    "Funktion der Anweisung"
+  ],
+  "UI_TOOL_FIELD_FROM": [
+    "呼び出し元の関数",
+    "调用方函数",
+    "Función llamante",
+    "Aufrufende Funktion"
+  ],
+  "UI_TOOL_FIELD_TO": [
+    "呼び出し先",
+    "调用目标",
+    "Destino de la llamada",
+    "Aufrufziel"
+  ],
+  "UI_MODEL_IDLE": [
+    "入力ケース待ち",
+    "等待输入样例",
+    "Esperando un caso de entrada",
+    "Warten auf Eingabefall"
+  ],
+  "UI_MODEL_RUNNING": [
+    "実行中",
+    "执行中",
+    "En ejecución",
+    "Läuft"
+  ],
+  "UI_MODEL_HALTED": [
+    "実行終了",
+    "程序已结束",
+    "Finalizado",
+    "Beendet"
+  ],
+  "UI_VM_STATE_LINE": [
+    "仮想実行: {state} · 使用ステップ {steps}",
+    "虚拟执行：{state} · 已用步数 {steps}",
+    "Ejecución virtual: {state} · Pasos usados: {steps}",
+    "Virtuelle Ausführung: {state} · Verwendete Schritte: {steps}"
+  ],
+  "UI_VM_LIMITS_LINE": [
+    "ケース別予算: {steps} ステップ · 呼び出し深さ {stack} · 仮想メモリー {memory}",
+    "每个样例预算：{steps} 步 · 调用深度 {stack} · 虚拟内存 {memory}",
+    "Por caso: pasos {steps} · Profundidad de llamadas {stack} · Memoria virtual {memory}",
+    "Je Fall: Schritte {steps} · Aufruftiefe {stack} · Virtueller Speicher {memory}"
+  ],
+  "UI_VM_CASES": [
+    "用意した入力ケース",
+    "已准备输入样例",
+    "Casos de entrada preparados",
+    "Vorbereitete Eingabefälle"
+  ],
+  "UI_MODEL_ACTION_ADVANCE": [
+    "次の業務処理ステップへ",
+    "推进排队业务",
+    "Avanzar tareas en cola",
+    "Wartende Aufträge weiterverarbeiten"
+  ],
+  "UI_OBSERVATION_ENTITIES": [
+    "収集した観察に現れる対象",
+    "采集观察中出现的对象",
+    "Elementos presentes en las observaciones recogidas",
+    "In erhobenen Beobachtungen vorkommende Objekte"
+  ],
+  "UI_OBSERVATION_INITIAL_CLAIMS": [
+    "渡された仮説 · まだ未検証",
+    "收到的假设 · 尚未验证",
+    "Hipótesis recibidas · aún sin comprobar",
+    "Erhaltene Behauptungen · noch ungeprüft"
+  ],
+  "UI_TOOL_FIELD_ENTITY_REF": [
+    "観察に現れた対象",
+    "观察到的对象",
+    "Elemento observado",
+    "Beobachtetes Objekt"
+  ],
+  "UI_RESPONSE_BUSINESS_OBJECTS": [
+    "業務結果と保存オブジェクト",
+    "业务结果与存储对象",
+    "Resultados y objetos guardados",
+    "Arbeitsergebnisse und gespeicherte Objekte"
+  ],
+  "UI_TOOL_FIELD_STORED_AS": [
+    "保存参照",
+    "存储引用",
+    "Referencia almacenada",
+    "Speicherreferenz"
+  ],
+  "UI_TOOL_FIELD_EXECUTION_ALLOWED": [
+    "現在の実行許可",
+    "当前执行许可",
+    "Ejecución permitida actualmente",
+    "Ausführung derzeit erlaubt"
+  ],
+  "UI_RESPONSE_ARTIFACTS": [
+    "観察された保存済みアップロード",
+    "已观察的上传存储对象",
+    "Subidas almacenadas observadas",
+    "Beobachtete gespeicherte Uploads"
+  ],
+  "UI_RESPONSE_ARTIFACT_EVENTS": [
+    "アップロードと隔離の履歴",
+    "上传与隔离历史",
+    "Historial de subidas y cuarentena",
+    "Verlauf von Uploads und Quarantäne"
+  ],
+  "UI_MODEL_ACTION_QUARANTINE": [
+    "保存オブジェクトの隔離状態を変更",
+    "更改存储对象隔离状态",
+    "Cambiar la cuarentena del objeto guardado",
+    "Quarantäne des gespeicherten Objekts ändern"
+  ],
+  "UI_TOOL_FIELD_ARTIFACT_ID": [
+    "保存オブジェクト",
+    "存储对象",
+    "Objeto guardado",
+    "Gespeichertes Objekt"
+  ],
+  "UI_TOOL_FIELD_QUARANTINED": [
+    "隔離状態",
+    "隔离状态",
+    "En cuarentena",
+    "In Quarantäne"
+  ],
+  "UI_TOOL_FIELD_SIGNATURE_VALID": [
+    "ファイル形式の検証を通過",
+    "文件格式校验通过",
+    "Validación del formato superada",
+    "Dateiformatprüfung bestanden"
+  ],
+  "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD": [
+    "受理時の実行許可",
+    "接收上传时允许执行",
+    "Ejecución permitida al aceptar la subida",
+    "Ausführung bei Annahme des Uploads erlaubt"
+  ],
+  "UI_TOOL_FIELD_ACCEPTED_TICK": [
+    "アップロード受理ステップ",
+    "上传接收步骤",
+    "Paso de aceptación de la subida",
+    "Annahmeschritt des Uploads"
+  ],
+  "UI_TOOL_FIELD_ENDPOINT_ID": [
+    "受理サービス",
+    "接收服务",
+    "Servicio receptor",
+    "Annehmender Dienst"
+  ],
+  "UI_TOOL_FIELD_EVENT": [
+    "観察履歴の種類",
+    "观察历史类型",
+    "Tipo de evento observado",
+    "Art des beobachteten Ereignisses"
+  ],
+  "UI_TOOL_FIELD_TICK": [
+    "発生ステップ",
+    "发生步骤",
+    "Paso del evento",
+    "Ereignisschritt"
+  ],
+  "UI_MODEL_EVENT_ACCEPTED": [
+    "アップロードを受理",
+    "上传已接收",
+    "Subida aceptada",
+    "Upload angenommen"
+  ],
+  "UI_MODEL_EVENT_QUARANTINE_CHANGED": [
+    "隔離状態の変更",
+    "隔离状态变更",
+    "Cuarentena modificada",
+    "Quarantänezustand geändert"
+  ]
+}

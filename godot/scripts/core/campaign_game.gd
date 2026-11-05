@@ -4,7 +4,8 @@ const Loader = preload("res://scripts/core/campaign_loader.gd")
 const Runtime = preload("res://scripts/core/campaign_runtime.gd")
 const Store = preload("res://scripts/core/save_store.gd")
 const Legacy = preload("res://scripts/core/game.gd")
-const DEFAULT_PATH := "user://saves/campaign_01.json"
+const Catalog = preload("res://scripts/core/campaign_catalog.gd")
+const DEFAULT_PATH := "user://saves/legacy_continue_01.json"
 const SAVE_KEYS := ["save_version", "campaign_id", "content_version", "current_mission", "current_world", "completed", "mission_states", "decisions", "ending"]
 const CONTACTS := {"C01": {"met": "M01", "gate": "M12", "choice": true}, "C02": {"met": "M02", "gate": "M02", "choice": false}, "C03": {"met": "M09", "gate": "M16", "choice": true}, "C04": {"met": "M15", "gate": "M20", "choice": false}}
 
@@ -20,11 +21,20 @@ var _ending := ""
 var _hint_level := 0
 var _save_path := DEFAULT_PATH
 var _store = Store.new()
+var _pack_id := "legacy_intruder"
 
 
-func _init(save_path: String = DEFAULT_PATH) -> void:
-	_save_path = save_path
-	var loaded: Dictionary = Loader.load_campaign()
+func _init(save_path: String = "", pack_id: String = "legacy_intruder") -> void:
+	_pack_id = pack_id
+	var entry: Dictionary = Catalog.get_pack(pack_id)
+	if entry.is_empty():
+		_error = "Unknown campaign pack."
+		return
+	_save_path = save_path if not save_path.is_empty() else Catalog.default_slot(pack_id)
+	if _save_path == Catalog.LEGACY_SOURCE or _save_path == Store.DEFAULT_PATH:
+		_error = "Original legacy save paths are read-only."
+		return
+	var loaded: Dictionary = Loader.load_campaign(pack_id)
 	_ready = loaded.ok
 	if not _ready:
 		_error = "\n".join(loaded.errors)
@@ -38,17 +48,15 @@ func _init(save_path: String = DEFAULT_PATH) -> void:
 func execute(line: String, terminal_id: int = 0) -> Dictionary:
 	if not _ready:
 		return _result(false, "INVALID_CONTENT", _error)
-	var result: Dictionary = _runtime.run_command(line, terminal_id)
-	_sync()
-	return result
+	var before: Dictionary = _runtime.checkpoint()
+	return _finish_action(_runtime.run_command(line, terminal_id), before)
 
 
 func submit_password(password: String, terminal_id: int = 0) -> Dictionary:
 	if not _ready:
 		return _result(false, "INVALID_CONTENT", _error)
-	var result: Dictionary = _runtime.authenticate(password, terminal_id)
-	_sync()
-	return result
+	var before: Dictionary = _runtime.checkpoint()
+	return _finish_action(_runtime.authenticate(password, terminal_id), before)
 
 
 func cancel_authentication(terminal_id: int = 0) -> Dictionary:
@@ -73,16 +81,14 @@ func request(method: String, url: String, body: Dictionary = {}, headers: Dictio
 	var result: Dictionary = _runtime.request_page(method, url, body, headers)
 	if not result.ok and not result.get("changed", false):
 		_runtime.rollback(before)
-	_sync()
-	return result
+	return _finish_action(result, before)
 
 
 func collect_web(url: String) -> Dictionary:
 	if not _ready:
 		return _result(false, "INVALID_CONTENT", _error)
-	var result: Dictionary = _runtime.collect_page(url)
-	_sync()
-	return result
+	var before: Dictionary = _runtime.checkpoint()
+	return _finish_action(_runtime.collect_page(url), before)
 
 
 func use_tool(tool_id: String, params: Dictionary = {}) -> Dictionary:
@@ -112,8 +118,7 @@ func use_tool(tool_id: String, params: Dictionary = {}) -> Dictionary:
 		result = _result(false, "UNKNOWN_TOOL", "Unknown tool or challenge.")
 	if not result.ok and not result.get("changed", false):
 		_runtime.rollback(before)
-	_sync()
-	return result
+	return _finish_action(result, before)
 
 
 func choose_mission(id: String) -> Dictionary:
@@ -129,6 +134,8 @@ func choose_mission(id: String) -> Dictionary:
 		if not checked.ok:
 			return _result(false, "INVALID_CHECKPOINT", checked.text)
 		candidate.apply_world(checked.world)
+	if not _snapshot_fits(candidate.snapshot_world(), id, _decisions, _ending):
+		return _result(false, "STATE_BUDGET", "The selected case would exceed the safe save budget.")
 	_runtime = candidate
 	_current = id
 	_hint_level = 0
@@ -159,8 +166,11 @@ func choose_ending(choice: String) -> Dictionary:
 			for fact in ending.requires_facts:
 				if not _all_facts().has(fact):
 					return _result(false, "ENDING_LOCKED", "This ending needs additional evidence.")
+			var decisions: Dictionary = _decisions.duplicate(true)
+			decisions["ending"] = choice
+			if not _snapshot_fits(_runtime.snapshot_world(), _current, decisions, choice): return _result(false, "STATE_BUDGET", "The ending choice would exceed the safe save budget.")
 			_ending = choice
-			_decisions["ending"] = choice
+			_decisions = decisions
 			return _result(true, "ENDING_CHOSEN", _tr(ending.text), true)
 	return _result(false, "UNKNOWN_ENDING", "Unknown ending.")
 
@@ -179,9 +189,12 @@ func get_hint(level: int = 0) -> Dictionary:
 
 
 func reveal_contact(id: String) -> Dictionary:
-	if not _ready or not CONTACTS.has(id) or not CONTACTS[id].choice or not _completed.has(CONTACTS[id].gate):
+	if not _ready or not _contact_definitions().has(id) or not _contact_definitions()[id].face_gate.get("explicit", false) or not _contact_ready(id, _completed, _states, _current):
 		return _result(false, "CONTACT_LOCKED", "This contact has not offered a face reveal yet.")
-	_decisions["reveal:" + id] = true
+	var decisions: Dictionary = _decisions.duplicate(true)
+	decisions["reveal:" + id] = true
+	if not _snapshot_fits(_runtime.snapshot_world(), _current, decisions, _ending): return _result(false, "STATE_BUDGET", "The contact choice would exceed the safe save budget.")
+	_decisions = decisions
 	return _result(true, "CONTACT_REVEALED", _tr(id + "_NAME"), true)
 
 
@@ -219,6 +232,9 @@ func get_view(terminal_id: int = 0) -> Dictionary:
 	view["completion_recorded"] = _completed.has(_current)
 	view["current_goals_met"] = _runtime._world.completed
 	view["characters"] = _characters()
+	var pack: Dictionary = Catalog.get_pack(_pack_id)
+	view["campaign"] = {"id": _pack_id, "title": _tr(pack.title_key), "role": pack.role}
+	view["campaign_progress"] = {"completed": _completed.size(), "total": _definition.missions.size(), "ending_chosen": not _ending.is_empty()}
 	return view.duplicate(true)
 
 
@@ -231,6 +247,43 @@ func autocomplete(input: String, terminal_id: int = 0) -> PackedStringArray:
 func export_snapshot() -> Dictionary:
 	_sync()
 	return {"save_version": 2, "campaign_id": _definition.get("campaign_id", ""), "content_version": _definition.get("content_version", 1), "current_mission": _current, "current_world": _runtime.snapshot_world() if _ready else {}, "completed": _completed.duplicate(), "mission_states": _states.duplicate(true), "decisions": _decisions.duplicate(true), "ending": _ending}
+
+
+func _snapshot_fits(world: Dictionary, current: String, decisions: Dictionary, ending: String) -> bool:
+	var states: Dictionary = _states.duplicate(true)
+	var completed: Array = _completed.duplicate()
+	if world.completed and not completed.has(current): completed.append(current)
+	if not completed.has(current) or world.completed: states[current] = world
+	var snapshot: Dictionary = {"save_version": 2, "campaign_id": _definition.campaign_id, "content_version": _definition.content_version, "current_mission": current, "current_world": world, "completed": completed, "mission_states": states, "decisions": decisions, "ending": ending}
+	return _runtime._json_value(snapshot) and JSON.stringify(snapshot, "", true, true).to_utf8_buffer().size() <= Store.MAX_BYTES
+
+
+func _finish_action(result: Dictionary, before: Dictionary) -> Dictionary:
+	var world: Dictionary = _runtime.snapshot_world()
+	if world != before.world:
+		var candidate = Runtime.new()
+		candidate.configure(_definition.missions[_current])
+		var checked: Dictionary = candidate.validate_world(world)
+		var states: Dictionary = _states.duplicate(true)
+		var completed: Array = _completed.duplicate()
+		if world.completed and not completed.has(_current):
+			completed.append(_current)
+		if not completed.has(_current) or world.completed:
+			states[_current] = world
+		var snapshot: Dictionary = {"save_version": 2, "campaign_id": _definition.campaign_id, "content_version": _definition.content_version, "current_mission": _current, "current_world": world, "completed": completed, "mission_states": states, "decisions": _decisions, "ending": _ending}
+		if not checked.ok or JSON.stringify(snapshot, "", true, true).to_utf8_buffer().size() > Store.MAX_BYTES:
+			_runtime.rollback(before)
+			var rejected: Dictionary = _result(false, "STATE_BUDGET", "This action was not applied because its resulting state cannot be safely saved.")
+			if result.has("status"):
+				rejected["status"] = 507
+				rejected["body"] = rejected.text
+				rejected["title"] = "STATE_BUDGET"
+				rejected["url"] = result.get("url", "")
+				rejected["links"] = []
+				rejected["can_archive"] = false
+			return rejected
+	_sync()
+	return result
 
 
 func restore_snapshot(raw: Variant) -> Dictionary:
@@ -246,6 +299,8 @@ func _validate_snapshot(raw: Variant) -> Dictionary:
 		return {"ok": false, "text": "Campaign snapshot shape mismatch."}
 	if not _runtime._json_value(raw):
 		return {"ok": false, "text": "Campaign snapshots require bounded JSON values."}
+	if JSON.stringify(raw, "", true, true).to_utf8_buffer().size() > Store.MAX_BYTES:
+		return {"ok": false, "text": "Campaign snapshot exceeds the safe save budget."}
 	if not typeof(raw.save_version) in [TYPE_INT, TYPE_FLOAT] or raw.save_version != 2 or not raw.current_mission is String or raw.campaign_id != _definition.campaign_id or not typeof(raw.content_version) in [TYPE_INT, TYPE_FLOAT] or raw.content_version != _definition.content_version or not _definition.missions.has(raw.current_mission) or not raw.mission_states is Dictionary or not raw.completed is Array or not raw.decisions is Dictionary or not raw.ending is String:
 		return {"ok": false, "text": "Campaign version/ID/reference mismatch. Legacy M01 requires explicit import."}
 	if raw.completed.size() > _definition.missions.size() or raw.mission_states.size() > _definition.missions.size():
@@ -283,9 +338,9 @@ func _validate_snapshot(raw: Variant) -> Dictionary:
 		if key == "ending":
 			if raw.ending.is_empty() or raw.decisions[key] != raw.ending:
 				return {"ok": false, "text": "Invalid ending decision."}
-		elif key in ["reveal:C01", "reveal:C03"]:
+		elif key is String and key.begins_with("reveal:"):
 			var id: String = str(key).trim_prefix("reveal:")
-			if not raw.decisions[key] is bool or raw.decisions[key] != true or not raw.completed.has(CONTACTS[id].gate):
+			if not _contact_definitions().has(id) or not _contact_definitions()[id].face_gate.get("explicit", false) or not raw.decisions[key] is bool or raw.decisions[key] != true or not _contact_ready(id, raw.completed, raw.mission_states, raw.current_mission):
 				return {"ok": false, "text": "Contact reveal prerequisites not met."}
 		else:
 			return {"ok": false, "text": "Unknown story decision."}
@@ -307,6 +362,8 @@ func _validate_snapshot(raw: Variant) -> Dictionary:
 
 
 func save_game() -> Dictionary:
+	var identity: Dictionary = _slot_identity_guard()
+	if not identity.ok: return identity
 	return _store_result(_store.save(export_snapshot(), Callable(self, "_validate_snapshot"), _save_path))
 
 
@@ -318,6 +375,8 @@ func load_game() -> Dictionary:
 
 
 func recover_save() -> Dictionary:
+	var identity: Dictionary = _slot_identity_guard()
+	if not identity.ok: return identity
 	var result: Dictionary = _store.recover_backup(Callable(self, "_validate_snapshot"), _save_path)
 	if result.ok:
 		_apply(result.snapshot)
@@ -325,10 +384,29 @@ func recover_save() -> Dictionary:
 
 
 func start_new_save() -> Dictionary:
+	var identity: Dictionary = _slot_identity_guard()
+	if not identity.ok: return identity
 	return _store_result(_store.start_new(export_snapshot(), Callable(self, "_validate_snapshot"), _save_path))
 
 
+func _slot_identity_guard() -> Dictionary:
+	if not _ready: return _result(false, "INVALID_CONTENT", _error)
+	var guard: Dictionary = _store._guard(_save_path, Callable(self, "_validate_snapshot"))
+	if not guard.ok: return guard
+	for candidate in [_save_path, _save_path + ".bak", _save_path + ".tmp", _save_path + ".bak.tmp"]:
+		var identity: Dictionary = _store._read_snapshot(candidate, Callable(self, "_different_identity"))
+		if identity.ok: return _result(false, "SAVE_DIFFERENT_CAMPAIGN", candidate)
+	return {"ok": true}
+
+
+func _different_identity(raw: Variant) -> Dictionary:
+	if raw is Dictionary and raw.get("campaign_id") is String and typeof(raw.get("content_version")) in [TYPE_INT, TYPE_FLOAT] and (raw.campaign_id != _definition.campaign_id or raw.content_version != _definition.content_version):
+		return {"ok": true, "snapshot": raw}
+	return {"ok": false, "text": "No different campaign identity."}
+
+
 func import_m01(raw: Variant) -> Dictionary:
+	if _pack_id != "legacy_intruder": return _result(false, "INCOMPATIBLE_M01", "Import M01 only into the preserved legacy campaign.")
 	if not _ready or not _definition.missions.has("M01"):
 		return _result(false, "INVALID_CONTENT", _error)
 	var old = Legacy.new()
@@ -364,6 +442,8 @@ func import_legacy_save() -> Dictionary:
 
 func _read_legacy_save() -> Dictionary:
 	const LEGACY_PATH := "user://saves/slot_01.json"
+	var links: Dictionary = _store._check_links(LEGACY_PATH)
+	if not links.ok: return _store_result(links)
 	var file := FileAccess.open(LEGACY_PATH, FileAccess.READ)
 	if file == null:
 		return _result(false, "LEGACY_NOT_FOUND", "Legacy M01 save could not be read.")
@@ -382,13 +462,77 @@ func _read_legacy_save() -> Dictionary:
 	return {"ok": true, "snapshot": legacy.export_snapshot(), "code": "LEGACY_VALIDATED", "text": "Legacy save validated."}
 
 
-func get_save_status() -> Dictionary:
+func get_save_status(include_legacy_sources: bool = false, legacy_source_override: String = "") -> Dictionary:
 	var guard: Dictionary = _store._guard(_save_path, Callable(self, "_validate_snapshot"))
 	if not _ready or not guard.ok:
-		return {"exists": false, "backup_available": false, "legacy_available": false}
+		return {"exists": false, "valid": false, "backup_available": false, "legacy_available": false, "legacy_source_available": false, "legacy_sources_checked": false, "pack_id": _pack_id, "reason_code": "INVALID_SLOT"}
 	var loaded: Dictionary = _store.load_save(Callable(self, "_validate_snapshot"), _save_path)
 	var backup: Dictionary = _store._read_snapshot(_save_path + ".bak", Callable(self, "_validate_snapshot"))
-	return {"exists": FileAccess.file_exists(_save_path), "valid": loaded.ok, "backup_available": backup.ok, "legacy_available": _read_legacy_save().ok}
+	var source: Dictionary = {"ok": false}
+	var v1: Dictionary = {"ok": false}
+	if include_legacy_sources:
+		source = _read_legacy_source(legacy_source_override)
+		if legacy_source_override.is_empty() and not _save_path.begins_with("user://tests/"):
+			v1 = _read_legacy_save()
+	return {"exists": _store.path_status(_save_path, Callable(self, "_validate_snapshot")).get("exists", false), "valid": loaded.ok, "backup_available": backup.ok, "legacy_available": v1.ok, "legacy_source_available": source.ok, "legacy_source_exists": source.get("source_exists", false), "legacy_source_reason": source.get("source_reason", source.get("code", "NOT_CHECKED")), "legacy_sources_checked": include_legacy_sources, "pack_id": _pack_id, "reason_code": loaded.get("code", "UNKNOWN")}
+
+
+func load_continuation() -> Dictionary:
+	if _pack_id != "legacy_intruder":
+		return load_game()
+	var guard: Dictionary = _store._guard(_save_path, Callable(self, "_validate_snapshot"))
+	if not guard.ok:
+		return _store_result(guard)
+	if _store.path_status(_save_path, Callable(self, "_validate_snapshot")).get("exists", false) or _store.path_status(_save_path, Callable(self, "_validate_snapshot")).get("backup_exists", false):
+		return load_game()
+	return continue_legacy_source()
+
+
+func continue_legacy_source(source_override: String = "") -> Dictionary:
+	var identity: Dictionary = _slot_identity_guard()
+	if not identity.ok: return identity
+	if not _ready or _pack_id != "legacy_intruder":
+		return _result(false, "WRONG_PACK", "Legacy continuation belongs to the preserved edition only.")
+	var guard: Dictionary = _store._guard(_save_path, Callable(self, "_validate_snapshot"))
+	if not guard.ok:
+		return _store_result(guard)
+	if _store.path_status(_save_path, Callable(self, "_validate_snapshot")).get("exists", false) or _store.path_status(_save_path, Callable(self, "_validate_snapshot")).get("backup_exists", false):
+		return _result(false, "CONTINUATION_EXISTS", "Load or explicitly recover the continuation; its source is not an automatic fallback.")
+	var loaded: Dictionary = _read_legacy_source(source_override)
+	if not loaded.ok:
+		return loaded
+	var saved: Dictionary = _store.save(loaded.snapshot, Callable(self, "_validate_snapshot"), _save_path)
+	if not saved.ok:
+		return _store_result(saved)
+	_apply(loaded.snapshot)
+	return _result(true, "LEGACY_CONTINUED", "The original was preserved and a verified continuation copy was created.", true)
+
+
+func _read_legacy_source(source_override: String = "") -> Dictionary:
+	var source_path: String = Catalog.LEGACY_SOURCE
+	if not source_override.is_empty():
+		if not _save_path.begins_with("user://tests/") or not source_override.begins_with("user://tests/"):
+			return _result(false, "INVALID_LEGACY_SOURCE", "Source overrides are restricted to isolated test slots.")
+		source_path = source_override
+	if source_path == _save_path:
+		return _result(false, "INVALID_LEGACY_SOURCE", "Source and continuation must be different files.")
+	var guard: Dictionary = _store._guard(source_path, Callable(self, "_validate_legacy_source"))
+	if not guard.ok:
+		return _store_result(guard)
+	var loaded: Dictionary = _store.load_save(Callable(self, "_validate_legacy_source"), source_path)
+	loaded["source_exists"] = _store.path_status(source_path, Callable(self, "_validate_legacy_source")).get("exists", false)
+	loaded["source_reason"] = loaded.get("code", "UNKNOWN")
+	loaded.erase("backup_available")
+	if not loaded.ok:
+		loaded.code = "LEGACY_SOURCE_INVALID"
+	return loaded
+
+
+func _validate_legacy_source(raw: Variant) -> Dictionary:
+	if _pack_id == "legacy_intruder":
+		return _validate_snapshot(raw)
+	var legacy = get_script().new("user://tests/legacy_source_validation.json", "legacy_intruder")
+	return legacy._validate_snapshot(raw)
 
 
 func _apply(snapshot: Dictionary) -> void:
@@ -428,22 +572,39 @@ func _all_facts() -> Array:
 	return facts
 
 
+func _contact_definitions() -> Dictionary:
+	if _definition.has("contacts"): return _definition.contacts
+	var contacts: Dictionary = {}
+	for id in CONTACTS:
+		contacts[id] = {"name_key": id + "_NAME", "introduced_by": [CONTACTS[id].met], "face_gate": {"when": "introduced" if id == "C02" else "completed", "mission_id": CONTACTS[id].gate, "explicit": CONTACTS[id].choice}}
+	return contacts
+
+
+func _contact_met(id: String, completed: Array, states: Dictionary, current: String) -> bool:
+	for mission in _contact_definitions().get(id, {}).get("introduced_by", []):
+		if mission == current or states.has(mission) or completed.has(mission): return true
+	return false
+
+
+func _contact_ready(id: String, completed: Array, states: Dictionary, current: String) -> bool:
+	if not _contact_met(id, completed, states, current): return false
+	var gate: Dictionary = _contact_definitions()[id].face_gate
+	return gate.get("when", "") == "introduced" or completed.has(gate.get("mission_id", ""))
+
+
 func _characters() -> Array:
 	var result: Array = []
-	for id in CONTACTS:
-		var contact: Dictionary = CONTACTS[id]
-		if _current != contact.met and not _states.has(contact.met) and not _completed.has(contact.met):
-			continue
-		var reached: bool = _completed.has(contact.gate)
-		var revealed: bool = _decisions.get("reveal:" + id, false) if contact.choice else (reached or (id == "C02" and _current == "M02"))
-		if id == "C02":
-			revealed = _current == "M02" or _states.has("M02") or _completed.has("M02")
-		var portrait_expression := "guarded" if not revealed else "focused"
-		if revealed and _completed.has("M24"):
-			portrait_expression = "relieved"
-		if id == "C02" and not _completed.has("M24"):
-			portrait_expression = "neutral"
-		result.append({"id": id, "name": _tr(id + "_NAME"), "face_revealed": revealed, "can_reveal": contact.choice and reached and not revealed, "expression": portrait_expression})
+	var finished := true
+	for mission in _definition.missions.values():
+		if not mission.optional and not _completed.has(mission.mission_id): finished = false
+	for id in _contact_definitions():
+		if not _contact_met(id, _completed, _states, _current): continue
+		var contact: Dictionary = _contact_definitions()[id]
+		var reached: bool = _contact_ready(id, _completed, _states, _current)
+		var revealed: bool = _decisions.get("reveal:" + id, false) if contact.face_gate.explicit else reached
+		var portrait_expression := "relieved" if revealed and finished else "focused" if revealed else "guarded"
+		if id == "C02" and not finished: portrait_expression = "neutral"
+		result.append({"id": id, "name": _tr(contact.name_key), "face_revealed": revealed, "can_reveal": contact.face_gate.explicit and reached and not revealed, "expression": portrait_expression})
 	return result
 
 

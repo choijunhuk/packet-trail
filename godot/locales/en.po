@@ -38,11 +38,35 @@ msgstr "Taegyeong"
 msgid "CAMPAIGN_COMPLETE"
 msgstr "The midnight records are connected."
 
+msgid "CAMPAIGN_DEFENDER"
+msgstr "Defender"
+
+msgid "CAMPAIGN_DEFENDER_DESC"
+msgstr "Stop threats while keeping legitimate work running."
+
 msgid "CAMPAIGN_HELP_COMMAND"
 msgstr "Supported virtual command syntax: {command}\nCheck case guidance and tool input formats. Undocumented options are refused."
 
 msgid "CAMPAIGN_HELP_OVERVIEW"
 msgstr "Supported virtual Linux commands: {commands}\nNo real shell, pipes or substitutions are executed.\ntool <challengeID> 'input/JSON' · configure <policyID> true"
+
+msgid "CAMPAIGN_IMPORT_CONFIRM"
+msgstr "Import legacy M01 into the previous-edition campaign. An existing previous-edition slot is backed up and replaced; new campaign saves are preserved."
+
+msgid "CAMPAIGN_INTRUDER"
+msgstr "Intruder"
+
+msgid "CAMPAIGN_INTRUDER_DESC"
+msgstr "Open new routes and recover hidden records."
+
+msgid "CAMPAIGN_NEW_CONFIRM"
+msgstr "Back up and restart {campaign}. Other campaigns and previous-edition saves are preserved."
+
+msgid "CAMPAIGN_NO_SAVE"
+msgstr "No saved progress yet"
+
+msgid "CAMPAIGN_PROGRESS"
+msgstr "Progress {done}/{total}"
 
 msgid "CAMPAIGN_RESULT_ARCHIVED"
 msgstr "A record copy was archived. Check its ID and provenance.\n{detail}"
@@ -83,11 +107,17 @@ msgstr "Evidence handoff chosen.\n{detail}"
 msgid "CAMPAIGN_RESULT_ENDING_LOCKED"
 msgstr "There is not yet enough evidence for this handoff.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_EXTERNAL_URL"
+msgstr "Only registered virtual game addresses can be opened.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_FILES_CHANGED"
 msgstr "Virtual file state changed.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_GOAL_NOT_MET"
 msgstr "The current objective still needs evidence.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_HANDOFF_INCOMPLETE"
+msgstr "The handoff still needs required links, evidence or follow-up observations.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HINT"
 msgstr "Guidance for the current case.\n{detail}"
@@ -110,8 +140,17 @@ msgstr "Check the input format. Only supported arguments are accepted.\n{detail}
 msgid "CAMPAIGN_RESULT_INVALID_CHECKPOINT"
 msgstr "The case checkpoint is invalid and was not loaded.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_INVALID_CLAIM"
+msgstr "Check the claim format and references to collected observations.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_INVALID_CONTENT"
 msgstr "Cannot read the case data.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_CONTROL"
+msgstr "Check the allowed response control and value.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_METHOD"
+msgstr "This virtual request method is unsupported.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_INVALID_PATH"
 msgstr "Check the virtual path format.\n{detail}"
@@ -137,6 +176,9 @@ msgstr "No legacy M01 save was found.\n{detail}"
 msgid "CAMPAIGN_RESULT_LEGACY_SIZE_LIMIT"
 msgstr "The legacy save exceeds the size limit.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_LOADED"
+msgstr "Saved campaign progress loaded.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_MISSING_EVIDENCE"
 msgstr "The required observation or record is still missing.\n{detail}"
 
@@ -148,6 +190,9 @@ msgstr "Case selected.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_MODEL_OBSERVED"
 msgstr "Virtual model observations\n{detail}"
+
+msgid "CAMPAIGN_RESULT_NEW_STARTED"
+msgstr "Current progress written to a new save.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_NOT_DIRECTORY"
 msgstr "The specified path is not a directory.\n{detail}"
@@ -167,6 +212,9 @@ msgstr "This result contains no record to recover.\n{detail}"
 msgid "CAMPAIGN_RESULT_OBSERVATION_LIMIT"
 msgstr "The observation limit for this investigation has been reached.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_OBSERVATION_RECORDED"
+msgstr "Observation and hypothesis result.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_PERMISSION_DENIED"
 msgstr "The current virtual account lacks permission for this resource.\n{detail}"
 
@@ -176,14 +224,101 @@ msgstr "Virtual service policy changed. Recheck legitimate and refused actions.\
 msgid "CAMPAIGN_RESULT_PROTOCOL_MISMATCH"
 msgstr "The request protocol does not match the selected service.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_RECOVERED"
+msgstr "Progress recovered from a valid backup.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
+msgstr "The current save is valid and does not need recovery.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "The current case has been reset.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RESPONSE_OBSERVED"
+msgstr "Virtual work and response state observed.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RESTORED"
 msgstr "Saved campaign restored.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_ROUTE_HOST_MISMATCH"
 msgstr "The page host does not match the virtual request route.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVED"
+msgstr "Campaign progress saved.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_INVALID"
+msgstr "No valid backup is available.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_REPLACE_FAILED"
+msgstr "The backup file could not be replaced.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIFFERENT_CAMPAIGN"
+msgstr "This save is marked for a different campaign or content version. It and its backup were preserved.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_FAILED"
+msgstr "The save directory could not be created.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_OPEN_FAILED"
+msgstr "The save directory could not be opened.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_ENCODING"
+msgstr "The save file has invalid text encoding.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_JSON"
+msgstr "The save file contains invalid JSON.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_SNAPSHOT"
+msgstr "The progress state did not pass save validation.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_VALIDATOR"
+msgstr "Save validation could not be prepared.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NEW_REPLACE_FAILED"
+msgstr "The file could not be replaced with the new save.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NOT_FOUND"
+msgstr "The save file was not found.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_IS_DIRECTORY"
+msgstr "The save file path points to a directory.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_REJECTED"
+msgstr "This save path is not allowed.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PRESERVE_FAILED"
+msgstr "The existing file could not be preserved separately.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_FAILED"
+msgstr "An error occurred while reading the save file.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_OPEN_FAILED"
+msgstr "The save file could not be opened for reading.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_FAILED"
+msgstr "Save progress could not be recovered.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_NOT_NEEDED"
+msgstr "A valid save exists; recovery is unnecessary.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_PATH_FAILED"
+msgstr "The recovery file path could not be prepared.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_REQUIRED"
+msgstr "A recovery choice is required. The existing save was not automatically overwritten.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_REPLACE_FAILED"
+msgstr "The save file could not be replaced.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_ROUNDTRIP_MISMATCH"
+msgstr "The reread save differs from the original progress.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_SIZE_LIMIT"
+msgstr "The save state exceeds the size limit.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_FAILED"
+msgstr "An error occurred while writing the save file.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_OPEN_FAILED"
+msgstr "The save file could not be opened for writing.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_SERVICE_CLOSED"
 msgstr "The service is closed from the current observation point.\n{detail}"
@@ -200,6 +335,9 @@ msgstr "The target's virtual service is not open.\n{detail}"
 msgid "CAMPAIGN_RESULT_SESSION_LIMIT"
 msgstr "The virtual session limit has been reached. Use exit to close a previous connection.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_UNKNOWN_CASE"
+msgstr "Choose a registered request or input case.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_UNKNOWN_COMMAND"
 msgstr "Unsupported virtual command. Check help for available commands.\n{detail}"
 
@@ -211,6 +349,18 @@ msgstr "This case is not registered.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_MODEL"
 msgstr "This virtual model is not registered.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_OPERATION"
+msgstr "Choose a supported action.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_ROUTE"
+msgstr "Check the registered request route.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_SENSOR"
+msgstr "Check the registered vantage point.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_TOKEN"
+msgstr "Check the registered session reference to revoke.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_TOOL"
 msgstr "This tool or model is unavailable in this case.\n{detail}"
@@ -224,11 +374,35 @@ msgstr "The target cannot be reached from the current origin.\n{detail}"
 msgid "CAMPAIGN_RESULT_UNSUPPORTED_SYNTAX"
 msgstr "This virtual command syntax is unsupported.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_VM_INVALID"
+msgstr "Check the virtual program or input format.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_LIMIT"
+msgstr "The virtual program limit was exceeded.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_OBSERVED"
+msgstr "Virtual program state.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_WEB_AUTHENTICATED"
 msgstr "Signed in to the virtual web account.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_WEB_LOGGED_OUT"
 msgstr "Virtual web session ended.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_WINDOW_END"
+msgstr "This vantage point has no further observation window.\n{detail}"
+
+msgid "CAMPAIGN_SAVE_ATTENTION"
+msgstr "Check the save state or recover an available backup."
+
+msgid "CAMPAIGN_SELECT"
+msgstr "Choose a campaign"
+
+msgid "CAMPAIGN_TRACKER"
+msgstr "Tracker"
+
+msgid "CAMPAIGN_TRACKER_DESC"
+msgstr "Follow observations and counterevidence to narrow the trail."
 
 msgid "CANCEL"
 msgstr "Cancel"
@@ -284,6 +458,585 @@ msgstr "An independently made hacking simulator\nUses simulated servers and comm
 msgid "DESKTOP_NOT_READY"
 msgstr "The desktop connection is not ready."
 
+msgid "DF1_D01_ABSTRACTION"
+msgstr "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers."
+
+msgid "DF1_D01_BRIEF"
+msgstr "It is your first night on service duty. I am Doyun, the field technician. One request reads a citizen's own receipt; another reads somebody else's. Turning off the server removes both. That is not our goal.\n\nConnect with the work account and observe a legitimate request first. Repair ownership checks, or close the exposed route and move legitimate work to a narrow delegation path. Check who can still work, not merely what disappeared.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d01.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D01_CASE_FOREIGN_DIRECT"
+msgstr "Unrelated Account at the Original Entrance"
+
+msgid "DF1_D01_CASE_FOREIGN_GATEWAY"
+msgstr "Unrelated Account at the Approved Route"
+
+msgid "DF1_D01_CASE_OWN_A"
+msgstr "Citizen A's Own Receipt"
+
+msgid "DF1_D01_CASE_OWN_B"
+msgstr "Citizen B's Own Receipt"
+
+msgid "DF1_D01_CASE_STAFF"
+msgstr "Assigned Staff's Delegated Receipt"
+
+msgid "DF1_D01_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "DF1_D01_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "DF1_D01_CONTROL_OWNER_CHECK"
+msgstr "Receipt Ownership Check"
+
+msgid "DF1_D01_DESK_NAME"
+msgstr "Keep the Door Working Desk"
+
+msgid "DF1_D01_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "DF1_D01_GOAL"
+msgstr "Refuse unrelated receipt access while preserving both citizens' and assigned staff reads."
+
+msgid "DF1_D01_HINT_1"
+msgstr "Observe legitimate work separately from the problematic requests. Observe how ownership checks or narrow delegation change the result."
+
+msgid "DF1_D01_HINT_2"
+msgstr "Hold actor, target and route fixed and change one response scope to compare results."
+
+msgid "DF1_D01_HINT_3"
+msgstr "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work."
+
+msgid "DF1_D01_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "DF1_D01_LIMIT"
+msgstr "Passing the observed scenarios does not establish prevention of every possible attack."
+
+msgid "DF1_D01_PRINCIPLE"
+msgstr "Observe how ownership checks or narrow delegation change the result."
+
+msgid "DF1_D01_REPLY"
+msgstr "Serin and the technician can still work; unrelated access is blocked. We have a standard for the next response. The next alert mixes legitimate citizens and repeated attempts behind one address."
+
+msgid "DF1_D01_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D01_TITLE"
+msgstr "Keep the Door Working"
+
+msgid "DF1_D02_ABSTRACTION"
+msgstr "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers."
+
+msgid "DF1_D02_BRIEF"
+msgstr "Login failures are arriving from the hospital relay's address, alongside legitimate work. Blocking the entire address is easy; first see who would lose access.\n\nLimit repeated attempts per account, or move legitimate work through an approved authentication route. Verify valid staff authentication after the limit. No real-time waiting is required.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d02.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D02_CASE_FAILED_1"
+msgstr "Repeated Failure 1"
+
+msgid "DF1_D02_CASE_FAILED_2"
+msgstr "Repeated Failure 2"
+
+msgid "DF1_D02_CASE_FAILED_3"
+msgstr "Repeated Failure 3"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_1"
+msgstr "Repeated Failure 1 at the Approved Route"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_2"
+msgstr "Repeated Failure 2 at the Approved Route"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_3"
+msgstr "Repeated Failure 3 at the Approved Route"
+
+msgid "DF1_D02_CASE_LEGITIMATE"
+msgstr "Legitimate Citizen at the Shared Origin"
+
+msgid "DF1_D02_CASE_WARD_JOB"
+msgstr "Valid Ward Notification Job Authentication"
+
+msgid "DF1_D02_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "DF1_D02_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "DF1_D02_CONTROL_RETRY_LIMIT"
+msgstr "Per-account Retry Limit"
+
+msgid "DF1_D02_DESK_NAME"
+msgstr "Two People, One Address Desk"
+
+msgid "DF1_D02_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "DF1_D02_GOAL"
+msgstr "Limit repeated authentication failures while retaining legitimate citizen and notification access at the shared origin."
+
+msgid "DF1_D02_HINT_1"
+msgstr "Observe legitimate work separately from the problematic requests. Compare account-specific attempts and approved authentication routes instead of blocking an address."
+
+msgid "DF1_D02_HINT_2"
+msgstr "Hold actor, target and route fixed and change one response scope to compare results."
+
+msgid "DF1_D02_HINT_3"
+msgstr "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work."
+
+msgid "DF1_D02_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "DF1_D02_LIMIT"
+msgstr "Passing the observed scenarios does not establish prevention of every possible attack."
+
+msgid "DF1_D02_PRINCIPLE"
+msgstr "Compare account-specific attempts and approved authentication routes instead of blocking an address."
+
+msgid "DF1_D02_REPLY"
+msgstr "Not treating one address as one person kept hospital work alive. The temporary account in these failures still has a live session."
+
+msgid "DF1_D02_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D02_TITLE"
+msgstr "Two People, One Address"
+
+msgid "DF1_D03_ABSTRACTION"
+msgstr "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers."
+
+msgid "DF1_D03_BRIEF"
+msgstr "I am Seoyun. The temporary maintenance job ended, yet its session still reads records. A legitimate long-running job uses the same service, so logging out everyone would cause harm.\n\nRevoke only the exposed session, or constrain and replace the expired authority. Verify fresh legitimate access and refusal of the old session separately.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d03.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D03_CASE_FRESH"
+msgstr "Fresh Legitimate Session"
+
+msgid "DF1_D03_CASE_OTHER_JOB"
+msgstr "Other Legitimate Long-running Job"
+
+msgid "DF1_D03_CASE_RETIRED"
+msgstr "Retired Authority at the Original Route"
+
+msgid "DF1_D03_CASE_RETIRED_GATEWAY"
+msgstr "Retired Authority at the Approved Route"
+
+msgid "DF1_D03_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "DF1_D03_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "DF1_D03_CONTROL_SESSION_GUARD"
+msgstr "Check Expired Session Authority"
+
+msgid "DF1_D03_DESK_NAME"
+msgstr "A Key That Must Expire Desk"
+
+msgid "DF1_D03_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "DF1_D03_GOAL"
+msgstr "Refuse expired authority while keeping other legitimate sessions working."
+
+msgid "DF1_D03_HINT_1"
+msgstr "Observe legitimate work separately from the problematic requests. Compare targeted revocation with migration to an approved route that did not issue the old session."
+
+msgid "DF1_D03_HINT_2"
+msgstr "Hold actor, target and route fixed and change one response scope to compare results."
+
+msgid "DF1_D03_HINT_3"
+msgstr "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work."
+
+msgid "DF1_D03_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "DF1_D03_LIMIT"
+msgstr "Passing the observed scenarios does not establish prevention of every possible attack."
+
+msgid "DF1_D03_PRINCIPLE"
+msgstr "Compare targeted revocation with migration to an approved route that did not issue the old session."
+
+msgid "DF1_D03_REPLY"
+msgstr "Retired authority is refused while legitimate work remains. The old session's refusal was verified in the server response, not a reassuring screen label. The next input arrives under a photograph's name."
+
+msgid "DF1_D03_SENDER"
+msgstr "Seoyun"
+
+msgid "DF1_D03_TITLE"
+msgstr "A Key That Must Expire"
+
+msgid "DF1_D04_ABSTRACTION"
+msgstr "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers."
+
+msgid "DF1_D04_BRIEF"
+msgstr "A maintenance photo ran as a processing job. Banning an extension alone will not repair the relationship between content and storage. Closing photo intake would stop field work.\n\nRepair validation and non-executable storage, or quarantine processing and publish approved photos only. Both rejection of the disguised file and creation of a normal JPEG are required.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d04.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D04_CASE_DISGUISED"
+msgstr "Input Disguised as a Photo"
+
+msgid "DF1_D04_CASE_DISGUISED_GATEWAY"
+msgstr "Disguised File at the Approved Processor"
+
+msgid "DF1_D04_CASE_PHOTO"
+msgstr "Create a Legitimate JPEG"
+
+msgid "DF1_D04_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "DF1_D04_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "DF1_D04_CONTROL_NO_EXECUTION"
+msgstr "Store Uploads Without Execution"
+
+msgid "DF1_D04_CONTROL_PHOTO_CHECK"
+msgstr "Validate Photo Content Type"
+
+msgid "DF1_D04_DESK_NAME"
+msgstr "The Photo Workbench Desk"
+
+msgid "DF1_D04_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "DF1_D04_GOAL"
+msgstr "Prevent disguised-file creation while creating a legitimate JPEG through a safe processor."
+
+msgid "DF1_D04_HINT_1"
+msgstr "Observe legitimate work separately from the problematic requests. Separate name, MIME type and content signature from actual storage and execution state."
+
+msgid "DF1_D04_HINT_2"
+msgstr "Hold actor, target and route fixed and change one response scope to compare results."
+
+msgid "DF1_D04_HINT_3"
+msgstr "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work."
+
+msgid "DF1_D04_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "DF1_D04_LIMIT"
+msgstr "Passing the observed scenarios does not establish prevention of every possible attack."
+
+msgid "DF1_D04_PRINCIPLE"
+msgstr "Separate name, MIME type and content signature from actual storage and execution state."
+
+msgid "DF1_D04_REPLY"
+msgstr "Normal photos arrive and the incorrect processing effect is blocked. The next issue is what other internal services the file worker can reach."
+
+msgid "DF1_D04_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D04_TITLE"
+msgstr "The Photo Workbench"
+
+msgid "DF1_D05_ABSTRACTION"
+msgstr "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers."
+
+msgid "DF1_D05_BRIEF"
+msgstr "I am Taegyeong, the city service liaison. Preview work reached an internal record. Cutting every internal connection would break health checks and citizen pages. Separate the permitted purpose and destination.\n\nConstrain internal object authority, or pass only required requests through an approved proxy. Policies must use requester and target, not a hidden attacker label.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d05.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D05_CASE_HEALTH"
+msgstr "Worker's Required Health Check"
+
+msgid "DF1_D05_CASE_PREVIEW"
+msgstr "Citizen's Legitimate Preview"
+
+msgid "DF1_D05_CASE_PROXY_SECRET"
+msgstr "Out-of-scope Request at the Approved Proxy"
+
+msgid "DF1_D05_CASE_SECRET"
+msgstr "Worker Reading Out-of-scope Retention Data"
+
+msgid "DF1_D05_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "DF1_D05_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "DF1_D05_CONTROL_OWNER_CHECK"
+msgstr "Receipt Ownership Check"
+
+msgid "DF1_D05_DESK_NAME"
+msgstr "Requests Heading Inward Desk"
+
+msgid "DF1_D05_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "DF1_D05_GOAL"
+msgstr "Preserve previews and health checks while preventing unauthorized internal reads."
+
+msgid "DF1_D05_HINT_1"
+msgstr "Observe legitimate work separately from the problematic requests. Compare the worker's object ownership with the approved proxy's scope."
+
+msgid "DF1_D05_HINT_2"
+msgstr "Hold actor, target and route fixed and change one response scope to compare results."
+
+msgid "DF1_D05_HINT_3"
+msgstr "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work."
+
+msgid "DF1_D05_INTERNAL_NAME"
+msgstr "Internal Health and Retention Service"
+
+msgid "DF1_D05_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "DF1_D05_LIMIT"
+msgstr "Passing the observed scenarios does not establish prevention of every possible attack."
+
+msgid "DF1_D05_PRINCIPLE"
+msgstr "Compare the worker's object ownership with the approved proxy's scope."
+
+msgid "DF1_D05_REPLY"
+msgstr "Health checks and previews work while unauthorized internal reads fail. The boundary is narrow. A rushed file-permission change has now stopped deployment."
+
+msgid "DF1_D05_SENDER"
+msgstr "Taegyeong"
+
+msgid "DF1_D05_TITLE"
+msgstr "Requests Heading Inward"
+
+msgid "DF1_D06_ABSTRACTION"
+msgstr "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers."
+
+msgid "DF1_D06_BRIEF"
+msgstr "A change intended to stop unrelated writes also prevents deployment from traversing an ancestor folder. Looking only at the file misses the cause. Inspect current groups and every directory gate.\n\nRepair only the required group or ACL, or migrate to an approved job account and path. Granting everyone full authority is not a solution.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d06.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D06_CASE_FOREIGN_APPROVED"
+msgstr "Unrelated Write at the Approved Route"
+
+msgid "DF1_D06_CASE_FOREIGN_WRITE"
+msgstr "Unrelated Account Modifying Deployment"
+
+msgid "DF1_D06_CASE_READ"
+msgstr "Deployment Account Reading Its Status"
+
+msgid "DF1_D06_CASE_WRITE"
+msgstr "Deployment Account Writing Its Work Result"
+
+msgid "DF1_D06_DESK_NAME"
+msgstr "Repaired Rights, Stopped Work Desk"
+
+msgid "DF1_D06_DIRECTORY_MODE"
+msgstr "Deployment Folder Traversal Rights"
+
+msgid "DF1_D06_FILE_MODE"
+msgstr "Work Result File Rights"
+
+msgid "DF1_D06_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "DF1_D06_GOAL"
+msgstr "Enable deployment reads and writes while refusing unrelated modifications."
+
+msgid "DF1_D06_HINT_1"
+msgstr "Observe legitimate work separately from the problematic requests. Inspect ancestor directories and current groups, or use the approved alternative route."
+
+msgid "DF1_D06_HINT_2"
+msgstr "Hold actor, target and route fixed and change one response scope to compare results."
+
+msgid "DF1_D06_HINT_3"
+msgstr "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work."
+
+msgid "DF1_D06_JOB_GROUPS"
+msgstr "Required Deployment Account Groups"
+
+msgid "DF1_D06_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "DF1_D06_LIMIT"
+msgstr "Passing the observed scenarios does not establish prevention of every possible attack."
+
+msgid "DF1_D06_PRINCIPLE"
+msgstr "Inspect ancestor directories and current groups, or use the approved alternative route."
+
+msgid "DF1_D06_REPLY"
+msgstr "Deployment and maintenance work while unrelated writes are refused. Necessary authority stayed narrow. Now a real threat and an incorrect emergency rule arrive together."
+
+msgid "DF1_D06_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D06_TITLE"
+msgstr "Repaired Rights, Stopped Work"
+
+msgid "DF1_D07_ABSTRACTION"
+msgstr "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers."
+
+msgid "DF1_D07_BASELINE_CHECKPOINT"
+msgstr "Notification Availability at the Verified Handoff"
+
+msgid "DF1_D07_BRIEF"
+msgstr "Unauthorized internal requests stopped, but so did legitimate notifications. Restoring the entire previous world could revive a key already revoked. The rollback boundary is now the central decision.\n\nRoll back only the incorrect policy group, or move legitimate work to an approved standby service. Session revocation and collected evidence are not rollback targets.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d07.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D07_CASE_FRESH"
+msgstr "Fresh Legitimate Session"
+
+msgid "DF1_D07_CASE_INTERNAL_TARGET"
+msgstr "An Out-of-scope Internal Target"
+
+msgid "DF1_D07_CASE_NOTIFY"
+msgstr "Deliver a Legitimate Ward Notification"
+
+msgid "DF1_D07_CASE_OTHER_JOB"
+msgstr "Other Legitimate Long-running Job"
+
+msgid "DF1_D07_CASE_RETIRED"
+msgstr "Retired Authority at the Original Route"
+
+msgid "DF1_D07_CASE_RETIRED_GATEWAY"
+msgstr "Retired Authority at the Approved Route"
+
+msgid "DF1_D07_CASE_STANDBY_TARGET"
+msgstr "Out-of-scope Target at Standby"
+
+msgid "DF1_D07_CONTROL_NOTIFY_OPEN"
+msgstr "Enable Primary Notification Route"
+
+msgid "DF1_D07_CONTROL_SESSION_GUARD"
+msgstr "Check Expired Session Authority"
+
+msgid "DF1_D07_CONTROL_STANDBY_OPEN"
+msgstr "Enable Standby Notification Route"
+
+msgid "DF1_D07_CONTROL_TARGET_SCOPE"
+msgstr "Constrain Notification Targets"
+
+msgid "DF1_D07_DESK_NAME"
+msgstr "Two Failures in One Night Desk"
+
+msgid "DF1_D07_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "DF1_D07_GOAL"
+msgstr "Restore notifications while keeping revoked sessions and out-of-scope targets refused."
+
+msgid "DF1_D07_HINT_1"
+msgstr "Observe legitimate work separately from the problematic requests. Only the policy group is rolled back; a revoked key does not return."
+
+msgid "DF1_D07_HINT_2"
+msgstr "Hold actor, target and route fixed and change one response scope to compare results."
+
+msgid "DF1_D07_HINT_3"
+msgstr "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work."
+
+msgid "DF1_D07_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "DF1_D07_LIMIT"
+msgstr "Passing the observed scenarios does not establish prevention of every possible attack."
+
+msgid "DF1_D07_PRINCIPLE"
+msgstr "Only the policy group is rolled back; a revoked key does not return."
+
+msgid "DF1_D07_REPLY"
+msgstr "Notifications are delivered again without reviving the retired session. The handoff will distinguish a controlled temporary migration from complete restoration."
+
+msgid "DF1_D07_SENDER"
+msgstr "Taegyeong"
+
+msgid "DF1_D07_TITLE"
+msgstr "Two Failures in One Night"
+
+msgid "DF1_D08_ABSTRACTION"
+msgstr "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers."
+
+msgid "DF1_D08_BRIEF"
+msgstr "This is the final night handoff. Web receipts, internal notifications and maintenance work are connected. Removing alerts is not the same as protecting the city.\n\nPrecisely restore the existing services or maintain continuity through approved alternatives. Check legitimate work and the modeled threats under your chosen configuration, and report remaining restrictions honestly.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d08.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D08_CASE_FOREIGN_DIRECT"
+msgstr "Unrelated Account at the Original Entrance"
+
+msgid "DF1_D08_CASE_FOREIGN_GATEWAY"
+msgstr "Unrelated Account at the Approved Route"
+
+msgid "DF1_D08_CASE_FRESH"
+msgstr "Fresh Legitimate Session"
+
+msgid "DF1_D08_CASE_INTERNAL_TARGET"
+msgstr "An Out-of-scope Internal Target"
+
+msgid "DF1_D08_CASE_NOTIFY"
+msgstr "Deliver a Legitimate Ward Notification"
+
+msgid "DF1_D08_CASE_OTHER_JOB"
+msgstr "Other Legitimate Long-running Job"
+
+msgid "DF1_D08_CASE_OWN_A"
+msgstr "Citizen A's Own Receipt"
+
+msgid "DF1_D08_CASE_OWN_B"
+msgstr "Citizen B's Own Receipt"
+
+msgid "DF1_D08_CASE_RETIRED"
+msgstr "Retired Authority at the Original Route"
+
+msgid "DF1_D08_CASE_RETIRED_GATEWAY"
+msgstr "Retired Authority at the Approved Route"
+
+msgid "DF1_D08_CASE_STAFF"
+msgstr "Assigned Staff's Delegated Receipt"
+
+msgid "DF1_D08_CASE_STANDBY_TARGET"
+msgstr "Out-of-scope Target at Standby"
+
+msgid "DF1_D08_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "DF1_D08_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "DF1_D08_CONTROL_NOTIFY_OPEN"
+msgstr "Enable Primary Notification Route"
+
+msgid "DF1_D08_CONTROL_OWNER_CHECK"
+msgstr "Receipt Ownership Check"
+
+msgid "DF1_D08_CONTROL_SESSION_GUARD"
+msgstr "Check Expired Session Authority"
+
+msgid "DF1_D08_CONTROL_STANDBY_OPEN"
+msgstr "Enable Standby Notification Route"
+
+msgid "DF1_D08_CONTROL_TARGET_SCOPE"
+msgstr "Constrain Notification Targets"
+
+msgid "DF1_D08_DESK_NAME"
+msgstr "The City That Keeps Working Desk"
+
+msgid "DF1_D08_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "DF1_D08_GOAL"
+msgstr "Satisfy legitimate receipt, notification and session work alongside threat refusal on the chosen routes."
+
+msgid "DF1_D08_HINT_1"
+msgstr "Observe legitimate work separately from the problematic requests. Success in one service does not establish another workflow."
+
+msgid "DF1_D08_HINT_2"
+msgstr "Hold actor, target and route fixed and change one response scope to compare results."
+
+msgid "DF1_D08_HINT_3"
+msgstr "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work."
+
+msgid "DF1_D08_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "DF1_D08_LIMIT"
+msgstr "Passing the observed scenarios does not establish prevention of every possible attack."
+
+msgid "DF1_D08_PRINCIPLE"
+msgstr "Success in one service does not establish another workflow."
+
+msgid "DF1_D08_REPLY"
+msgstr "The city keeps working. Blocked threat routes and functioning services share one record. Instead of declaring all risk gone, you hand the next shift a state it can verify and safely revise."
+
+msgid "DF1_D08_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D08_TITLE"
+msgstr "The City That Keeps Working"
+
+msgid "DF1_ENDING_TITLE"
+msgstr "To the Next Shift"
+
+msgid "DF1_PACK_TITLE"
+msgstr "Defender · The City That Keeps Working"
+
 msgid "ENDING_PUBLIC_TEXT"
 msgstr "With the original notice distinguished from its republication, a redacted case record becomes public. Seoyun's signature and Doyun's temporary relay are both retained. People learn that this was more than an outage, with the remaining questions beside the evidence. Publication neither destroys originals nor dumps every record."
 
@@ -332,11 +1085,1751 @@ msgstr "The legacy M01 save is preserved. Imported progress replaces the current
 msgid "IMPORT_LEGACY"
 msgstr "Import legacy M01"
 
+msgid "IN2_C01_NAME"
+msgstr "Seoyun"
+
+msgid "IN2_C02_NAME"
+msgstr "Doyun"
+
+msgid "IN2_C03_NAME"
+msgstr "Minseo"
+
+msgid "IN2_C04_NAME"
+msgstr "Taegyeong"
+
+msgid "IN2_COMMON_ABSTRACTION"
+msgstr "This is a small internal state and evidence model. Input affects only the registered fictional world."
+
+msgid "IN2_COMMON_CONTEXT_TITLE"
+msgstr "Observations for This Case"
+
+msgid "IN2_COMMON_INDEX_TITLE"
+msgstr "Night Job Index"
+
+msgid "IN2_COMMON_LIMIT"
+msgstr "This does not establish mastery of full protocols, operating systems or professional tools. Real systems require authorization and environment-specific validation."
+
+msgid "IN2_COMMON_LOGIN_TITLE"
+msgstr "Fictional Work Account Sign-in"
+
+msgid "IN2_COMMON_WORKBENCH_TITLE"
+msgstr "Isolated Virtual Workbench"
+
+msgid "IN2_ENDING_PUBLIC_TEXT"
+msgstr "With the original notice distinguished from its republication, a redacted case record becomes public. Seoyun's signature and Doyun's temporary relay are both retained. People learn that this was more than an outage, with the remaining questions beside the evidence. Publication neither destroys originals nor dumps every record."
+
+msgid "IN2_ENDING_PUBLIC_TITLE"
+msgstr "A Public Record That Protects Citizens"
+
+msgid "IN2_ENDING_REVIEW_TEXT"
+msgstr "Independent transport evidence is retained alongside the limits of the small verifier and memory models. Minseo does not turn one tool's success into a claim about the entire system. Minimal copies go to separate custodians so they can check the same facts. The last screen holds provenance and open questions, not a universal key."
+
+msgid "IN2_ENDING_REVIEW_TITLE"
+msgstr "Copies That Can Check Each Other"
+
+msgid "IN2_ENDING_SEALED_TEXT"
+msgstr "Seoyun records the handoff; Doyun records which services he preserved. Taegyeong signs separately for emergency approval and oversight failure. Minseo marks the gaps as unknown. The evidence enters sealed audit custody. Not every citizen learns tonight's story, but the originals and a route to challenge the record remain."
+
+msgid "IN2_ENDING_SEALED_TITLE"
+msgstr "The Sealed Audit Handoff"
+
+msgid "IN2_M01_BRIEF"
+msgstr "I will send this only once. Handoff record N47 is due for removal from the night archive. Leave the original intact and keep one copy in ~/archive.\n\nPublic access is guest / guest. If the protected folder is closed, read the shift note that remains. You can enter the archive or find a cached copy. The route is yours."
+
+msgid "IN2_M01_EXPLAIN"
+msgstr "Connection, authentication, file authority and recovery are distinct states. The valid copy matched payload, record ID and source rather than merely the decoy's filename. Another valid route satisfies the same objective."
+
+msgid "IN2_M01_FILE_HANDOFF_LOG"
+msgstr "[Retention ended]\nAn obsolete inspection form; this is not the target handoff.\n"
+
+msgid "IN2_M01_FILE_README_TXT"
+msgstr "Night inspection\nProtected records are in /vault.\nRead the shift note at /public/shift-note.txt.\n"
+
+msgid "IN2_M01_FILE_SHIFT_NOTE_TXT"
+msgstr "[Shift note]\nMaintenance account: maint\nTemporary phrase: lumen-47\nHandoff record: /vault/handoff.log\nCached copy: https://mirror.packet.test/cache/47\nDo not modify or delete originals.\n"
+
+msgid "IN2_M01_GOAL"
+msgstr "Preserve the original and recover handoff N47 into ~/archive."
+
+msgid "IN2_M01_HINT_1"
+msgstr "Connect with the public account and compare the protected folder with the public note. Experiencing a denial is not mandatory."
+
+msgid "IN2_M01_HINT_2"
+msgstr "/public/shift-note.txt names the maint account and a separate cached web copy."
+
+msgid "IN2_M01_HINT_3"
+msgstr "Recover /vault/handoff.log through maintenance or retain the copy at mirror.packet.test/cache/47. public/handoff.log has the same name but is a different record."
+
+msgid "IN2_M01_HOST_NAME"
+msgstr "Night Archive"
+
+msgid "IN2_M01_PAGE_1_BODY"
+msgstr "Night transfer in progress.\nPublic notices are available. Protected handoff records require a maintenance session."
+
+msgid "IN2_M01_PAGE_1_LINK_1"
+msgstr "View deployment notice"
+
+msgid "IN2_M01_PAGE_1_TITLE"
+msgstr "Night Archive"
+
+msgid "IN2_M01_PAGE_2_BODY"
+msgstr "Handoff availability is under inspection. A temporary copy remains at another relay. Check the server's shift note for its location."
+
+msgid "IN2_M01_PAGE_2_LINK_1"
+msgstr "Archive home"
+
+msgid "IN2_M01_PAGE_2_TITLE"
+msgstr "Night Deployment Notice"
+
+msgid "IN2_M01_PAGE_3_TITLE"
+msgstr "Relay Cache / Handoff 47"
+
+msgid "IN2_M01_RECORD_TEXT"
+msgstr "[N47 / HANDOFF]\nNight handoff · 00:47\nTransfer: relay-02 -> archive-17\nApproval marker: SY / cross-check pending\nPreserve the original and deliver only a copy.\nNext lead: the missing transmission from relay 02.\n"
+
+msgid "IN2_M01_REPLY"
+msgstr "Received. The original is still there. But one transmission is missing from this handoff. Remember when relay 02 changed destination: 00:47. I have sent the next address."
+
+msgid "IN2_M01_REPLY_SUBJECT"
+msgstr "[Confirmed] The First Night Job"
+
+msgid "IN2_M01_SUBJECT"
+msgstr "[Night Job] The First Night Job"
+
+msgid "IN2_M01_TITLE"
+msgstr "The First Night Job"
+
+msgid "IN2_M02_AUDIT"
+msgstr "[M02 evidence]\nLink the sender and new destination through R204.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\njob N47 changed destination under request R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M02_AUDIT_NAME"
+msgstr "Relay02 Independent Custody"
+
+msgid "IN2_M02_BRIEF"
+msgstr "Seoyun passed me your copy. I am Doyun, formerly on the night network. N47 is not marked failed, so why is a transmission missing? Reading files alphabetically can hide the important line.\n\nCompare the current log, rotated log and deployment note by job ID. This is not a repair job. First find who sent what, and where.\n\nlogreader@relay02.packet.test / patrol-ember\nregistrar@custodym02.packet.test / paper-thrush\n"
+
+msgid "IN2_M02_CONTEXT"
+msgstr "[Link the sender and new destination through R204.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\njob | request | destination\nN47 | R204 | transit04\nN46 | R203 | archive"
+
+msgid "IN2_M02_EXPLAIN"
+msgstr "Link the sender and new destination through R204.\nThe current file omits the destination just before rotation.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M02_GOAL"
+msgstr "Link the sender and new destination through R204."
+
+msgid "IN2_M02_HINT_1"
+msgstr "The current file omits the destination just before rotation."
+
+msgid "IN2_M02_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M02_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M02_HOST_NAME"
+msgstr "Relay02 Work Service"
+
+msgid "IN2_M02_PRINCIPLE"
+msgstr "The current file omits the destination just before rotation."
+
+msgid "IN2_M02_REPLY"
+msgstr "The link never went down. Its destination changed from relay-02 to transit-04, and only exception entries disappeared. That is not the outage I was told about. Let us see whether that server is really offline."
+
+msgid "IN2_M02_REPLY_SUBJECT"
+msgstr "[Confirmed] The Door in the Log"
+
+msgid "IN2_M02_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nDESK TRANSCRIPT\nR204:relay02\n\nRETAINED TRANSCRIPT\nR204:transit04"
+
+msgid "IN2_M02_SUBJECT"
+msgstr "[Night Job] The Door in the Log"
+
+msgid "IN2_M02_TITLE"
+msgstr "The Door in the Log"
+
+msgid "IN2_M03_AUDIT"
+msgstr "[M03 evidence]\nCompare service visibility and enter a limited inspection session.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nmaintenance service on transit-04 still serves marker R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M03_AUDIT_NAME"
+msgstr "Transit04 Independent Custody"
+
+msgid "IN2_M03_BRIEF"
+msgstr "transit-04 is listed as retired, but the handoff passed through it. Do not keep knocking on the same assumed address. A listening service and a closed door are different.\n\nDoyun connected NetProbe. Seeing a port does not grant access. Identify the service, enter a limited inspection session, and verify its marker.\n\nwatch@transit04.packet.test / channel-birch\nmapkeeper@custodym03.packet.test / north-span\n"
+
+msgid "IN2_M03_CONTEXT"
+msgstr "[Compare service visibility and enter a limited inspection session.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nDESK TRANSCRIPT\n22:open:ssh\n\nRETAINED TRANSCRIPT\n443:filtered:https"
+
+msgid "IN2_M03_EXPLAIN"
+msgstr "Compare service visibility and enter a limited inspection session.\nA filtered HTTPS service can coexist with an open SSH inspection service.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M03_GOAL"
+msgstr "Compare service visibility and enter a limited inspection session."
+
+msgid "IN2_M03_HINT_1"
+msgstr "A filtered HTTPS service can coexist with an open SSH inspection service."
+
+msgid "IN2_M03_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M03_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M03_HOST_NAME"
+msgstr "Transit04 Work Service"
+
+msgid "IN2_M03_PRINCIPLE"
+msgstr "A filtered HTTPS service can coexist with an open SSH inspection service."
+
+msgid "IN2_M03_REPLY"
+msgstr "Only the public page was retired. The maintenance service is alive and still holds R204. The next record was queried through the library reservation server. Someone is using the systems left behind as a route."
+
+msgid "IN2_M03_REPLY_SUBJECT"
+msgstr "[Confirmed] A Port Still Listening"
+
+msgid "IN2_M03_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nservice | port | state\nmaintenance | 22 | open\ncitizen | 443 | filtered"
+
+msgid "IN2_M03_SUBJECT"
+msgstr "[Night Job] A Port Still Listening"
+
+msgid "IN2_M03_TITLE"
+msgstr "A Port Still Listening"
+
+msgid "IN2_M04_AUDIT"
+msgstr "[M04 evidence]\nCompare display and response references to recover the C731 amendment.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nreservation amendment R204 links receipt C731\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M04_AUDIT_NAME"
+msgstr "Library Independent Custody"
+
+msgid "IN2_M04_BRIEF"
+msgstr "The reservation page says a meeting was cancelled, yet the server response points to another record. Refreshing the screen cannot tell us which is right.\n\nUse RequestLab to compare a lookup and its response reference. You do not need to create or cancel a citizen booking. Find the missing amendment only.\n\nlibrarian@library.packet.test / amber-index\nclerk@custodym04.packet.test / quiet-reading\n"
+
+msgid "IN2_M04_CONTEXT"
+msgstr "[Compare display and response references to recover the C731 amendment.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nDESK TRANSCRIPT\nscreen:cancelled:B204\n\nRETAINED TRANSCRIPT\nserver:transferred:C731"
+
+msgid "IN2_M04_EXPLAIN"
+msgstr "Compare display and response references to recover the C731 amendment.\nLook beyond the status code to the business state referenced by the response.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M04_GOAL"
+msgstr "Compare display and response references to recover the C731 amendment."
+
+msgid "IN2_M04_HINT_1"
+msgstr "Look beyond the status code to the business state referenced by the response."
+
+msgid "IN2_M04_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M04_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M04_HOST_NAME"
+msgstr "Library Work Service"
+
+msgid "IN2_M04_PRINCIPLE"
+msgstr "Look beyond the status code to the business state referenced by the response."
+
+msgid "IN2_M04_REPLY"
+msgstr "A cancellation on screen and a transfer on the server were not the same event. Receipt C731 moved into the repair portal. I will contact Serin. From here, ownership matters."
+
+msgid "IN2_M04_REPLY_SUBJECT"
+msgstr "[Confirmed] One Address, Two Answers"
+
+msgid "IN2_M04_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nrequest | receipt | event\nR204 | C731 | transferred\nR203 | C730 | cancelled"
+
+msgid "IN2_M04_SUBJECT"
+msgstr "[Night Job] One Address, Two Answers"
+
+msgid "IN2_M04_TITLE"
+msgstr "One Address, Two Answers"
+
+msgid "IN2_M05_AUDIT"
+msgstr "[M05 evidence]\nEstablish the target report and ownership boundary with minimal evidence.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nreceipt C731 exposes exception-hold amendment\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M05_AUDIT_NAME"
+msgstr "Repair Independent Custody"
+
+msgid "IN2_M05_BRIEF"
+msgstr "Serin's receipt points to a missing maintenance report instead of her repair. Could the server still return it when the page has no button? Use her own receipt as a baseline.\n\nOnly the fictional C731 report is in scope. Inspect its object reference or follow a copy in the amendment history. Collecting unrelated citizen data is not success.\n\ncaseworker@repair.packet.test / green-receipt\nombuds@custodym05.packet.test / cedar-envelope\n"
+
+msgid "IN2_M05_CONTEXT"
+msgstr "[Establish the target report and ownership boundary with minimal evidence.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nRECEIPT REGISTER\nreference | owner | attachment\nown | current caseworker | personal receipt\nC731 | Serin | exception-hold report\n\nREQUEST WINDOW\nGET /receipts/own\nGET /receipts/C731\n"
+
+msgid "IN2_M05_EXPLAIN"
+msgstr "Establish the target report and ownership boundary with minimal evidence.\nCompare own and C731; authentication and object ownership are separate.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M05_GOAL"
+msgstr "Establish the target report and ownership boundary with minimal evidence."
+
+msgid "IN2_M05_HINT_1"
+msgstr "Compare own and C731; authentication and object ownership are separate."
+
+msgid "IN2_M05_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M05_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M05_HOST_NAME"
+msgstr "Repair Work Service"
+
+msgid "IN2_M05_PRINCIPLE"
+msgstr "Compare own and C731; authentication and object ownership are separate."
+
+msgid "IN2_M05_REPLY"
+msgstr "The service page did not determine the report's owner. The C731 original said 'exception hold'; its copy omitted that line. The access flaw and the missing record are separate problems. The login server has just become noisy."
+
+msgid "IN2_M05_REPLY_SUBJECT"
+msgstr "[Confirmed] Someone Else's Receipt"
+
+msgid "IN2_M05_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nreceipt | owner | attachment\nC731 | Serin | exception-hold\nC730 | other | ordinary"
+
+msgid "IN2_M05_SUBJECT"
+msgstr "[Night Job] Someone Else's Receipt"
+
+msgid "IN2_M05_TITLE"
+msgstr "Someone Else's Receipt"
+
+msgid "IN2_M06_AUDIT"
+msgstr "Preserve legitimate authentication while limiting repeated failures at original and approved providers.\n\nA response handoff based on verified legitimate work and refused requests. Original records were also preserved."
+
+msgid "IN2_M06_AUDIT_NAME"
+msgstr "Auth Independent Custody"
+
+msgid "IN2_M06_BRIEF"
+msgstr "Repeated login attempts are locking out real maintenance staff. Locking everybody out would stop the attempts, but also the hospital notification job. This time finding a route is not enough.\n\nCompare failures and limit repeated attempts while preserving legitimate sign-in. Advance the simulated clock only when needed. Waiting is not a measure of skill.\n\nshiftlead@auth.packet.test / warm-circuit\nrecovery@custodym06.packet.test / blue-ward\n\n\nRepair per-account limits at the existing service, or close its vulnerable entrance and move legitimate work to an independently limited approved provider. Check actual responses to legitimate sign-ins and repeated failures rather than a setting’s name."
+
+msgid "IN2_M06_CASE_FAILED_1"
+msgstr "Repeated Failure 1"
+
+msgid "IN2_M06_CASE_FAILED_2"
+msgstr "Repeated Failure 2"
+
+msgid "IN2_M06_CASE_FAILED_3"
+msgstr "Repeated Failure 3"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_1"
+msgstr "Repeated Failure 1 at the Approved Route"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_2"
+msgstr "Repeated Failure 2 at the Approved Route"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_3"
+msgstr "Repeated Failure 3 at the Approved Route"
+
+msgid "IN2_M06_CASE_LEGITIMATE"
+msgstr "Legitimate Citizen at the Shared Origin"
+
+msgid "IN2_M06_CASE_WARD_JOB"
+msgstr "Valid Ward Notification Job Authentication"
+
+msgid "IN2_M06_CONTEXT"
+msgstr "Repair per-account limits at the existing service, or close its vulnerable entrance and move legitimate work to an independently limited approved provider. Check actual responses to legitimate sign-ins and repeated failures rather than a setting’s name."
+
+msgid "IN2_M06_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "IN2_M06_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "IN2_M06_CONTROL_RETRY_LIMIT"
+msgstr "Per-account Retry Limit"
+
+msgid "IN2_M06_EXPLAIN"
+msgstr "Repair per-account limits at the existing service, or close its vulnerable entrance and move legitimate work to an independently limited approved provider. Check actual responses to legitimate sign-ins and repeated failures rather than a setting’s name."
+
+msgid "IN2_M06_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "IN2_M06_GOAL"
+msgstr "Preserve legitimate authentication while limiting repeated failures at original and approved providers."
+
+msgid "IN2_M06_HINT_1"
+msgstr "Preserve legitimate authentication while limiting repeated failures at original and approved providers."
+
+msgid "IN2_M06_HINT_2"
+msgstr "Repair per-account limits at the existing service, or close its vulnerable entrance and move legitimate work to an independently limited approved provider. Check actual responses to legitimate sign-ins and repeated failures rather than a setting’s name."
+
+msgid "IN2_M06_HINT_3"
+msgstr "For a direct response, repair the relevant control. For the alternative, constrain the original entrance and select the approved route for legitimate requests. Turning everything off fails legitimate work."
+
+msgid "IN2_M06_HOST_NAME"
+msgstr "Auth Work Service"
+
+msgid "IN2_M06_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "IN2_M06_PRINCIPLE"
+msgstr "Permission depends on who acts, the target and the work authority. If the processing route changes, verify legitimate work and refused requests on the new route as well."
+
+msgid "IN2_M06_REPLY"
+msgstr "Normal work is running again and repeated failures are limited. The request marker overlaps an old recovery job rather than an unknown intruder. Now we need to see whose session that job retained."
+
+msgid "IN2_M06_REPLY_SUBJECT"
+msgstr "[Confirmed] Ten Knocks at the Door"
+
+msgid "IN2_M06_ROUTE"
+msgstr "Repair per-account limits at the existing service, or close its vulnerable entrance and move legitimate work to an independently limited approved provider. Check actual responses to legitimate sign-ins and repeated failures rather than a setting’s name."
+
+msgid "IN2_M06_SUBJECT"
+msgstr "[Night Job] Ten Knocks at the Door"
+
+msgid "IN2_M06_TITLE"
+msgstr "Ten Knocks at the Door"
+
+msgid "IN2_M07_AUDIT"
+msgstr "Refuse retired session authority while preserving fresh sessions and legitimate long-running work.\n\nA response handoff based on verified legitimate work and refused requests. Original records were also preserved."
+
+msgid "IN2_M07_AUDIT_NAME"
+msgstr "Session Independent Custody"
+
+msgid "IN2_M07_BRIEF"
+msgstr "The temporary technician has left and the page shows a logout. Yet configuration changes continue through the old session. Does a key disappearing from the screen mean the server revoked it?\n\nCompare the old and new sessions separately. Instead of erasing everything, determine who can still do what, then end only the expired authority.\n\noperator@session.packet.test / evening-window\ncustodian@custodym07.packet.test / sparrow-vault\n\n\nEnable revocation checking and revoke the exposed key, or close the original entrance and migrate to an approved provider that never issued it. Verify that fresh sessions and long-running work continue."
+
+msgid "IN2_M07_CASE_FRESH"
+msgstr "Fresh Legitimate Session"
+
+msgid "IN2_M07_CASE_OTHER_JOB"
+msgstr "Other Legitimate Long-running Job"
+
+msgid "IN2_M07_CASE_RETIRED"
+msgstr "Retired Authority at the Original Route"
+
+msgid "IN2_M07_CASE_RETIRED_GATEWAY"
+msgstr "Retired Authority at the Approved Route"
+
+msgid "IN2_M07_CONTEXT"
+msgstr "Enable revocation checking and revoke the exposed key, or close the original entrance and migrate to an approved provider that never issued it. Verify that fresh sessions and long-running work continue."
+
+msgid "IN2_M07_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "IN2_M07_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "IN2_M07_CONTROL_SESSION_GUARD"
+msgstr "Check Expired Session Authority"
+
+msgid "IN2_M07_EXPLAIN"
+msgstr "Enable revocation checking and revoke the exposed key, or close the original entrance and migrate to an approved provider that never issued it. Verify that fresh sessions and long-running work continue."
+
+msgid "IN2_M07_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "IN2_M07_GOAL"
+msgstr "Refuse retired session authority while preserving fresh sessions and legitimate long-running work."
+
+msgid "IN2_M07_HINT_1"
+msgstr "Refuse retired session authority while preserving fresh sessions and legitimate long-running work."
+
+msgid "IN2_M07_HINT_2"
+msgstr "Enable revocation checking and revoke the exposed key, or close the original entrance and migrate to an approved provider that never issued it. Verify that fresh sessions and long-running work continue."
+
+msgid "IN2_M07_HINT_3"
+msgstr "For a direct response, repair the relevant control. For the alternative, constrain the original entrance and select the approved route for legitimate requests. Turning everything off fails legitimate work."
+
+msgid "IN2_M07_HOST_NAME"
+msgstr "Session Work Service"
+
+msgid "IN2_M07_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "IN2_M07_PRINCIPLE"
+msgstr "Permission depends on who acts, the target and the work authority. If the processing route changes, verify legitimate work and refused requests on the new route as well."
+
+msgid "IN2_M07_REPLY"
+msgstr "The old session is invalid and the new maintenance session works. The final change followed an external notice, not a new sign-in. Having a key may not mean its owner chose to open the door."
+
+msgid "IN2_M07_REPLY_SUBJECT"
+msgstr "[Confirmed] The Key After Logout"
+
+msgid "IN2_M07_ROUTE"
+msgstr "Enable revocation checking and revoke the exposed key, or close the original entrance and migrate to an approved provider that never issued it. Verify that fresh sessions and long-running work continue."
+
+msgid "IN2_M07_SUBJECT"
+msgstr "[Night Job] The Key After Logout"
+
+msgid "IN2_M07_TITLE"
+msgstr "The Key After Logout"
+
+msgid "IN2_M08_AUDIT"
+msgstr "Allow intentional saves of the user’s own settings while refusing induced and undelegated changes.\n\nA response handoff based on verified legitimate work and refused requests. Original records were also preserved."
+
+msgid "IN2_M08_AUDIT_NAME"
+msgstr "Subscription Independent Custody"
+
+msgid "IN2_M08_BRIEF"
+msgstr "Serin says she never changed her notification address. The session is real; the intent is not. Compare the context of reading the notice and changing a setting.\n\nA user's key arriving with a request does not make every change intentional. Block the induced change and preserve normal saves. Connecting this chapter's records will point to a hidden search entry.\n\neditor@subscription.packet.test / tide-card\ninspector@custodym08.packet.test / close-harbor\n\n\nApply per-account nonce validation at the original form, or close that change entrance and use an approved gateway with independent nonces and own-setting scope. Legitimate Origin and token context differs by provider."
+
+msgid "IN2_M08_CASE_FORGED_DIRECT"
+msgstr "Setting Change Induced by an External Notice"
+
+msgid "IN2_M08_CASE_FORGED_GATEWAY"
+msgstr "Forged Change at the Approved Route"
+
+msgid "IN2_M08_CASE_SAVE_A"
+msgstr "Legitimate Citizen A Saving Notifications"
+
+msgid "IN2_M08_CASE_SAVE_B"
+msgstr "Legitimate Citizen B Saving Notifications"
+
+msgid "IN2_M08_CASE_UNASSIGNED_GATEWAY"
+msgstr "Setting Change by an Undelegated Account"
+
+msgid "IN2_M08_CONTEXT"
+msgstr "Apply per-account nonce validation at the original form, or close that change entrance and use an approved gateway with independent nonces and own-setting scope. Legitimate Origin and token context differs by provider."
+
+msgid "IN2_M08_CONTROL_CONTEXT_ORIGIN"
+msgstr "Check Request Origin at the Original Form"
+
+msgid "IN2_M08_CONTROL_CONTEXT_TOKEN"
+msgstr "Check Per-account Nonces at the Original Form"
+
+msgid "IN2_M08_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "IN2_M08_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "IN2_M08_EXPLAIN"
+msgstr "Apply per-account nonce validation at the original form, or close that change entrance and use an approved gateway with independent nonces and own-setting scope. Legitimate Origin and token context differs by provider."
+
+msgid "IN2_M08_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "IN2_M08_GOAL"
+msgstr "Allow intentional saves of the user’s own settings while refusing induced and undelegated changes."
+
+msgid "IN2_M08_HINT_1"
+msgstr "Allow intentional saves of the user’s own settings while refusing induced and undelegated changes."
+
+msgid "IN2_M08_HINT_2"
+msgstr "Apply per-account nonce validation at the original form, or close that change entrance and use an approved gateway with independent nonces and own-setting scope. Legitimate Origin and token context differs by provider."
+
+msgid "IN2_M08_HINT_3"
+msgstr "For a direct response, repair the relevant control. For the alternative, constrain the original entrance and select the approved route for legitimate requests. Turning everything off fails legitimate work."
+
+msgid "IN2_M08_HOST_NAME"
+msgstr "Subscription Work Service"
+
+msgid "IN2_M08_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "IN2_M08_PRINCIPLE"
+msgstr "Permission depends on who acts, the target and the work authority. If the processing route changes, verify legitimate work and refused requests on the new route as well."
+
+msgid "IN2_M08_REPLY"
+msgstr "Normal saves work and the induced change is blocked. That request was masking a missing search entry. A new contact has asked for the original evidence. I will send the evidence instead of asking for trust."
+
+msgid "IN2_M08_REPLY_SUBJECT"
+msgstr "[Confirmed] The Change Nobody Clicked"
+
+msgid "IN2_M08_ROUTE"
+msgstr "Apply per-account nonce validation at the original form, or close that change entrance and use an approved gateway with independent nonces and own-setting scope. Legitimate Origin and token context differs by provider."
+
+msgid "IN2_M08_SUBJECT"
+msgstr "[Night Job] The Change Nobody Clicked"
+
+msgid "IN2_M08_TITLE"
+msgstr "The Change Nobody Clicked"
+
+msgid "IN2_M09_AUDIT"
+msgstr "[M09 evidence]\nEstablish the R609–C731 link through search or retained evidence.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nquery record R609 links receipt C731 to exclusion queue\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M09_AUDIT_NAME"
+msgstr "Records Independent Custody"
+
+msgid "IN2_M09_BRIEF"
+msgstr "You have different copies of the same report. Call me Minseo. Instead of guessing at an unseen record, inspect how input becomes a query structure.\n\nThe small search model and maintenance log retain traces of the same job. Either route can establish how R609 connects to C731. Returning more rows is not the same as finding the fact we need.\n\nresearcher@records.packet.test / ash-catalog\nwitness@custodym09.packet.test / uncut-leaf\n"
+
+msgid "IN2_M09_CONTEXT"
+msgstr "[Establish the R609–C731 link through search or retained evidence.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nCATALOGUE LOOKUP\nquery field: q\npublic term: N47\nretained job: R609 / receipt C731\n\nTRACE\nA quoted search value is concatenated into a small equality condition. In the vulnerable path an OR comparison can become part of the condition, rather than remaining a text value. The retained catalogue provides an independent route.\n"
+
+msgid "IN2_M09_EXPLAIN"
+msgstr "Establish the R609–C731 link through search or retained evidence.\nInspect where a data value becomes query structure in the small model.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M09_GOAL"
+msgstr "Establish the R609–C731 link through search or retained evidence."
+
+msgid "IN2_M09_HINT_1"
+msgstr "Inspect where a data value becomes query structure in the small model."
+
+msgid "IN2_M09_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M09_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M09_HOST_NAME"
+msgstr "Records Work Service"
+
+msgid "IN2_M09_PRINCIPLE"
+msgstr "Inspect where a data value becomes query structure in the small model."
+
+msgid "IN2_M09_REPLY"
+msgstr "R609 was not a failure; it was excluded by classification. Calling that an outage makes the affected people disappear. The next marker sits between a notice's source and its display. Do not trust appearance alone."
+
+msgid "IN2_M09_REPLY_SUBJECT"
+msgstr "[Confirmed] Behind the Search Box"
+
+msgid "IN2_M09_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\njob | receipt | classification\nR609 | C731 | excluded\nR608 | C730 | retained"
+
+msgid "IN2_M09_SUBJECT"
+msgstr "[Night Job] Behind the Search Box"
+
+msgid "IN2_M09_TITLE"
+msgstr "Behind the Search Box"
+
+msgid "IN2_M10_AUDIT"
+msgstr "[M10 evidence]\nEstablish the isolated notice's render boundary or its independent trace.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nuntrusted notice marker crosses the isolated render boundary\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M10_AUDIT_NAME"
+msgstr "Bulletin Independent Custody"
+
+msgid "IN2_M10_BRIEF"
+msgstr "The source notice says 'receipt on hold', while the display says 'repair complete'. I prepared an isolated inspection window. Leave citizen pages untouched and see where input becomes action only in that window.\n\nSafe storage and safe display are different claims. Demonstrate the boundary with the marker effect or an independent render trace.\n\nmoderator@bulletin.packet.test / still-signal\ncompositor@custodym10.packet.test / ivory-type\n"
+
+msgid "IN2_M10_CONTEXT"
+msgstr "[Establish the isolated notice's render boundary or its independent trace.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nNOTICE VERSION V10\nStored text: receipt on hold\nDisplayed state: repair complete\nInspection marker: NOTICE10\n\nThe isolated renderer accepts only a bounded signal: marker effect. No JavaScript runs and citizen pages remain outside the inspection window.\n"
+
+msgid "IN2_M10_EXPLAIN"
+msgstr "Establish the isolated notice's render boundary or its independent trace.\nNOTICE10 denotes a virtual effect, never a real script.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M10_GOAL"
+msgstr "Establish the isolated notice's render boundary or its independent trace."
+
+msgid "IN2_M10_HINT_1"
+msgstr "NOTICE10 denotes a virtual effect, never a real script."
+
+msgid "IN2_M10_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M10_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M10_HOST_NAME"
+msgstr "Bulletin Work Service"
+
+msgid "IN2_M10_PRINCIPLE"
+msgstr "NOTICE10 denotes a virtual effect, never a real script."
+
+msgid "IN2_M10_REPLY"
+msgstr "We found where content became action. That does not explain every incorrect notice. Check the file archive too. There is another directory beside the public collection with a deceptively similar name."
+
+msgid "IN2_M10_REPLY_SUBJECT"
+msgstr "[Confirmed] An Action Inside a Notice"
+
+msgid "IN2_M10_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nDESK TRANSCRIPT\nstored:text:NOTICE10\n\nRETAINED TRANSCRIPT\nrendered:action:NOTICE10"
+
+msgid "IN2_M10_SUBJECT"
+msgstr "[Night Job] An Action Inside a Notice"
+
+msgid "IN2_M10_TITLE"
+msgstr "An Action Inside a Notice"
+
+msgid "IN2_M11_AUDIT"
+msgstr "[M11 evidence]\nShow that the resolved path reaches the marker outside the base directory.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nresolved attachment path reaches the adjacent marker file\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M11_AUDIT_NAME"
+msgstr "Files Independent Custody"
+
+msgid "IN2_M11_BRIEF"
+msgstr "The archivist says checking a path prefix makes the archive safe. Yet an attachment reference points into a neighboring store. Check the boundary after the path is resolved.\n\nWe need one marker file to demonstrate the boundary, not other configuration or citizen records. The file auditor's route is available too.\n\nlibrarian@files.packet.test / brick-stair\narchivist@custodym11.packet.test / shelf-larch\n"
+
+msgid "IN2_M11_CONTEXT"
+msgstr "[Show that the resolved path reaches the marker outside the base directory.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nDOWNLOAD HANDOFF\nbase directory: /srv/public\nneighbor marker: /srv/private/marker.log\n\nResolve the requested path before deciding which store contains it. Similar prefixes do not establish containment.\n"
+
+msgid "IN2_M11_EXPLAIN"
+msgstr "Show that the resolved path reaches the marker outside the base directory.\nA string prefix does not establish a path's actual containment.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M11_GOAL"
+msgstr "Show that the resolved path reaches the marker outside the base directory."
+
+msgid "IN2_M11_HINT_1"
+msgstr "A string prefix does not establish a path's actual containment."
+
+msgid "IN2_M11_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M11_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M11_HOST_NAME"
+msgstr "Files Work Service"
+
+msgid "IN2_M11_PRINCIPLE"
+msgstr "A string prefix does not establish a path's actual containment."
+
+msgid "IN2_M11_REPLY"
+msgstr "A shared name prefix did not mean a shared location. The marker names an upload-processing queue. Seoyun also appears on its approval sheet. It is almost time for me to explain that signature."
+
+msgid "IN2_M11_REPLY_SUBJECT"
+msgstr "[Confirmed] Beyond the Archive Folder"
+
+msgid "IN2_M11_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nDESK TRANSCRIPT\ndownload:/srv/public\n\nRETAINED TRANSCRIPT\nresolved:/srv/private/marker.log"
+
+msgid "IN2_M11_SUBJECT"
+msgstr "[Night Job] Beyond the Archive Folder"
+
+msgid "IN2_M11_TITLE"
+msgstr "Beyond the Archive Folder"
+
+msgid "IN2_M12_AUDIT"
+msgstr "Preserve legitimate JPEG intake while refusing disguised new files and containing execution risks in retained untrusted uploads.\n\nA response handoff based on verified legitimate work and refused requests. Original records were also preserved."
+
+msgid "IN2_M12_AUDIT_NAME"
+msgstr "Upload Independent Custody"
+
+msgid "IN2_M12_BRIEF"
+msgstr "Uploading a photograph starts a virtual processing job. Blocking extensions alone can also lose real photos. Separate the name, content type, storage location and execution path.\n\nKeep maintenance photos working while closing the incorrect processing route. Seoyun wants to call afterward. Choosing whether to reveal her portrait will not gate the case.\n\ncurator@upload.packet.test / photo-bridge\nreviewer@custodym12.packet.test / sepia-glass\n\n\nRepair validation and non-executable storage at the original processor, or close its vulnerable entrance and move legitimate photos to an approved bounded processor. Previously retained unsafe uploads must also be unable to execute now."
+
+msgid "IN2_M12_CASE_DISGUISED"
+msgstr "Input Disguised as a Photo"
+
+msgid "IN2_M12_CASE_DISGUISED_GATEWAY"
+msgstr "Disguised File at the Approved Processor"
+
+msgid "IN2_M12_CASE_PHOTO"
+msgstr "Create a Legitimate JPEG"
+
+msgid "IN2_M12_CONTEXT"
+msgstr "Repair validation and non-executable storage at the original processor, or close its vulnerable entrance and move legitimate photos to an approved bounded processor. Previously retained unsafe uploads must also be unable to execute now."
+
+msgid "IN2_M12_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "IN2_M12_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "IN2_M12_CONTROL_NO_EXECUTION"
+msgstr "Store Uploads Without Execution"
+
+msgid "IN2_M12_CONTROL_PHOTO_CHECK"
+msgstr "Validate Photo Content Type"
+
+msgid "IN2_M12_EXPLAIN"
+msgstr "Repair validation and non-executable storage at the original processor, or close its vulnerable entrance and move legitimate photos to an approved bounded processor. Previously retained unsafe uploads must also be unable to execute now."
+
+msgid "IN2_M12_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "IN2_M12_GOAL"
+msgstr "Preserve legitimate JPEG intake while refusing disguised new files and containing execution risks in retained untrusted uploads."
+
+msgid "IN2_M12_HINT_1"
+msgstr "Preserve legitimate JPEG intake while refusing disguised new files and containing execution risks in retained untrusted uploads."
+
+msgid "IN2_M12_HINT_2"
+msgstr "Repair validation and non-executable storage at the original processor, or close its vulnerable entrance and move legitimate photos to an approved bounded processor. Previously retained unsafe uploads must also be unable to execute now."
+
+msgid "IN2_M12_HINT_3"
+msgstr "For a direct response, repair the relevant control. For the alternative, constrain the original entrance and select the approved route for legitimate requests. Turning everything off fails legitimate work."
+
+msgid "IN2_M12_HOST_NAME"
+msgstr "Upload Work Service"
+
+msgid "IN2_M12_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "IN2_M12_PRINCIPLE"
+msgstr "Permission depends on who acts, the target and the work authority. If the processing route changes, verify legitimate work and refused requests on the new route as well."
+
+msgid "IN2_M12_REPLY"
+msgstr "Photos still arrive and the execution boundary holds. This is Seoyun. I built the transfer utility, but did not approve classification exclusions. Do not settle the case on my signature alone. Inspect what the diagnostic server actually ran."
+
+msgid "IN2_M12_REPLY_SUBJECT"
+msgstr "[Confirmed] A File Called a Photograph"
+
+msgid "IN2_M12_ROUTE"
+msgstr "Repair validation and non-executable storage at the original processor, or close its vulnerable entrance and move legitimate photos to an approved bounded processor. Previously retained unsafe uploads must also be unable to execute now."
+
+msgid "IN2_M12_SUBJECT"
+msgstr "[Night Job] A File Called a Photograph"
+
+msgid "IN2_M12_TITLE"
+msgstr "A File Called a Photograph"
+
+msgid "IN2_M13_AUDIT"
+msgstr "[M13 evidence]\nEstablish the registered virtual job's identity and argument boundary.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\ndiagnostic input triggers the bounded marker job under worker identity\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M13_AUDIT_NAME"
+msgstr "Diagnostic Independent Custody"
+
+msgid "IN2_M13_BRIEF"
+msgstr "The diagnostic log shows one lookup, but its queue contains two jobs. Trace where input became part of the job structure. This server never launches a real program.\n\nOnly the registered harmless marker job can be tested. Demonstrate execution or establish the same fact through the job audit. Leave no unnecessary changes.\n\ndiagnostician@diagnostic.packet.test / copper-lens\ndispatcher@custodym13.packet.test / patient-motor\n"
+
+msgid "IN2_M13_CONTEXT"
+msgstr "[Establish the registered virtual job's identity and argument boundary.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nDIAGNOSTIC QUEUE\nrequest N47: diagnose\nadditional job: inspect:QUEUE13\nworker: inspection / limited read\n\nTwo registered virtual jobs can be separated by ; in this inspection field: diagnose and inspect:QUEUE13. No other task exists here. This is not an operating-system shell.\n"
+
+msgid "IN2_M13_EXPLAIN"
+msgstr "Establish the registered virtual job's identity and argument boundary.\nThe QUEUE13 inspect marker is not a real shell command.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M13_GOAL"
+msgstr "Establish the registered virtual job's identity and argument boundary."
+
+msgid "IN2_M13_HINT_1"
+msgstr "The QUEUE13 inspect marker is not a real shell command."
+
+msgid "IN2_M13_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M13_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M13_HOST_NAME"
+msgstr "Diagnostic Work Service"
+
+msgid "IN2_M13_PRINCIPLE"
+msgstr "The QUEUE13 inspect marker is not a real shell command."
+
+msgid "IN2_M13_REPLY"
+msgstr "The second job called an internal status checker. Getting execution did not make it an administrator. Next, find which addresses that job could see."
+
+msgid "IN2_M13_REPLY_SUBJECT"
+msgstr "[Confirmed] The Diagnostic Button's Second Job"
+
+msgid "IN2_M13_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nparent | job | actor\nN47 | inspect:QUEUE13 | worker\nN46 | status | worker"
+
+msgid "IN2_M13_SUBJECT"
+msgstr "[Night Job] The Diagnostic Button's Second Job"
+
+msgid "IN2_M13_TITLE"
+msgstr "The Diagnostic Button's Second Job"
+
+msgid "IN2_M14_AUDIT"
+msgstr "[M14 evidence]\nVerify the internal marker and route through the server identity.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\npreview worker reaches internal status marker through a server-side route\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M14_AUDIT_NAME"
+msgstr "Preview Independent Custody"
+
+msgid "IN2_M14_BRIEF"
+msgstr "An address closed to my browser is visible to the preview server. The map changes with the requester. Inspect paths between virtual nodes rather than opening external addresses.\n\nTraceRoute is ready. Check the final destination and requesting identity, then obtain the internal marker. The approved maintenance proxy can establish the same fact.\n\npreviewer@preview.packet.test / marsh-frame\nproxyreader@custodym14.packet.test / inland-heron\n"
+
+msgid "IN2_M14_CONTEXT"
+msgstr "[Verify the internal marker and route through the server identity.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://status.packet.test/internal/marker\npublic browser: no direct internal route\n\nThe final destination and requester's authority must be checked separately.\n"
+
+msgid "IN2_M14_EXPLAIN"
+msgstr "Verify the internal marker and route through the server identity.\nFocus on who requests the address, not merely the address itself.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M14_GOAL"
+msgstr "Verify the internal marker and route through the server identity."
+
+msgid "IN2_M14_HINT_1"
+msgstr "Focus on who requests the address, not merely the address itself."
+
+msgid "IN2_M14_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M14_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M14_HOST_NAME"
+msgstr "Preview Work Service"
+
+msgid "IN2_M14_INTERNAL_NAME"
+msgstr "Internal Status Marker"
+
+msgid "IN2_M14_PRINCIPLE"
+msgstr "Focus on who requests the address, not merely the address itself."
+
+msgid "IN2_M14_REPLY"
+msgstr "The hidden management network is connected. Reaching a marker service is not management authority, though. An official named Taegyeong wants to inspect the record. Compare his official map with the real route."
+
+msgid "IN2_M14_REPLY_SUBJECT"
+msgstr "[Confirmed] An Address Only the Server Sees"
+
+msgid "IN2_M14_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nrequest | actor | target\nHOP14 | preview-worker | status-internal\nHOP13 | citizen | public"
+
+msgid "IN2_M14_SUBJECT"
+msgstr "[Night Job] An Address Only the Server Sees"
+
+msgid "IN2_M14_TITLE"
+msgstr "An Address Only the Server Sees"
+
+msgid "IN2_M15_AUDIT"
+msgstr "[M15 evidence]\nEnter a limited management session while establishing exposure and authority.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nold relay permits a read-only management session while public work continues\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M15_AUDIT_NAME"
+msgstr "Gateway Independent Custody"
+
+msgid "IN2_M15_BRIEF"
+msgstr "I am Taegyeong, the city's service liaison. I was told no management route was public. Your record contradicts that report. Find how far it reaches without interrupting citizen services.\n\nAn old relay and temporary maintenance account were never retired. An open door alone is not the end of access. Verify the authority of the session you reach.\n\nrelayop@gateway.packet.test / narrow-gate\nnetworkauditor@custodym15.packet.test / winter-span\n"
+
+msgid "IN2_M15_CONTEXT"
+msgstr "[Enter a limited management session while establishing exposure and authority.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nDESK TRANSCRIPT\ncitizen:443:filtered\n\nRETAINED TRANSCRIPT\nrelay:443:open"
+
+msgid "IN2_M15_EXPLAIN"
+msgstr "Enter a limited management session while establishing exposure and authority.\nThe same port can appear differently from the public network and relay.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M15_GOAL"
+msgstr "Enter a limited management session while establishing exposure and authority."
+
+msgid "IN2_M15_HINT_1"
+msgstr "The same port can appear differently from the public network and relay."
+
+msgid "IN2_M15_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M15_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M15_HOST_NAME"
+msgstr "Gateway Work Service"
+
+msgid "IN2_M15_PRINCIPLE"
+msgstr "The same port can appear differently from the public network and relay."
+
+msgid "IN2_M15_REPLY"
+msgstr "The read-only management session is real. I approved an emergency connection, not a permanent management route. Check the next folder's group permissions to see how that gap widened."
+
+msgid "IN2_M15_REPLY_SUBJECT"
+msgstr "[Confirmed] The Network They Thought Was Closed"
+
+msgid "IN2_M15_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nACCESS REGISTER\nrequired group: auditors\naccount: networkauditor\nscope: limited evidence read\n\nInspect the actual authenticated account and its group, not a supplied account label.\n"
+
+msgid "IN2_M15_SUBJECT"
+msgstr "[Night Job] The Network They Thought Was Closed"
+
+msgid "IN2_M15_TARGET_NAME"
+msgstr "M15 Limited Evidence Service"
+
+msgid "IN2_M15_TITLE"
+msgstr "The Network They Thought Was Closed"
+
+msgid "IN2_M16_AUDIT"
+msgstr "[M16 evidence]\nEstablish the current group's excessive read scope and recover the record.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nshared group path expands read access to the signed retention record\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M16_AUDIT_NAME"
+msgstr "Operations Independent Custody"
+
+msgid "IN2_M16_BRIEF"
+msgstr "A file closed to this session is visible through a job path in the same group. Look beyond the account name to its groups and ancestor directories. We need a narrow extension to the record, not universal authority.\n\nA signed audit copy is available too. Preserve the originals and other users' permissions whichever route you choose. Afterward I will disclose the source of my own records.\n\ntechnician@operations.packet.test / lintel-fern\nrecordsman@custodym16.packet.test / old-granite\n"
+
+msgid "IN2_M16_CONTEXT"
+msgstr "[Establish the current group's excessive read scope and recover the record.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nACCESS REGISTER\nrequired group: retention\naccount: technician\nscope: limited evidence read\n\nInspect the actual authenticated account and its group, not a supplied account label.\n"
+
+msgid "IN2_M16_EXPLAIN"
+msgstr "Establish the current group's excessive read scope and recover the record.\nInspect ancestor directories and groups as well as the account name.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M16_GOAL"
+msgstr "Establish the current group's excessive read scope and recover the record."
+
+msgid "IN2_M16_HINT_1"
+msgstr "Inspect ancestor directories and groups as well as the account name."
+
+msgid "IN2_M16_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M16_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M16_HOST_NAME"
+msgstr "Operations Work Service"
+
+msgid "IN2_M16_PRINCIPLE"
+msgstr "Inspect ancestor directories and groups as well as the account name."
+
+msgid "IN2_M16_REPLY"
+msgstr "The additional read scope is established. I am Minseo, formerly responsible for record-retention checks. An audit set can independently verify the post-transfer exclusions. Test the account's weak secret and the server's authority separately."
+
+msgid "IN2_M16_REPLY_SUBJECT"
+msgstr "[Confirmed] The Shared Maintenance Folder"
+
+msgid "IN2_M16_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\npermit | group | scope\nACL16 | retention | extra-read\nACL15 | staff | normal"
+
+msgid "IN2_M16_SUBJECT"
+msgstr "[Night Job] The Shared Maintenance Folder"
+
+msgid "IN2_M16_TITLE"
+msgstr "The Shared Maintenance Folder"
+
+msgid "IN2_M17_AUDIT"
+msgstr "A valid copy of the designated retention sheet. Preserve the provenance of the vault or delegation route actually used.\n\nVerification ledger 17\nReader scope: designated retention sheet only.\nOriginal retained.\n"
+
+msgid "IN2_M17_AUDIT_NAME"
+msgstr "Auditvault Independent Custody"
+
+msgid "IN2_M17_BRIEF"
+msgstr "An approved fictional candidate list and a delegated audit route are available. Verify a candidate through actual limited-vault authentication, or read the same sheet through approved narrow delegation. This is neither XOR word recovery nor a benchmark of real password-hash cracking.\n\nauditor@auditvault.packet.test / mapped-star\ndelegate@custodym17.packet.test / field-chestnut\n"
+
+msgid "IN2_M17_CONTEXT"
+msgstr "Compare the shift handoff naming convention with the approved candidates. Verify through actual virtual-account authentication and limited file authority. This is not an offline password-hash cracking algorithm.\n\nAPPROVED CANDIDATES\nlumen-71\nlumen-17\nlunar-17\nSHIFT REGISTER\nlabel=lumen\nshift=17\nphrase=label-shift\nVAULT=proofvault.packet.test\nACCOUNT=reader\nSCOPE=verification-sheet\n"
+
+msgid "IN2_M17_EXPLAIN"
+msgstr "Knowing a candidate and having authority for its records are separate conditions. Verify actual virtual authentication and file access separately."
+
+msgid "IN2_M17_GOAL"
+msgstr "Recover only the designated verification sheet through an approved candidate or narrow audit delegation."
+
+msgid "IN2_M17_HINT_1"
+msgstr "Check the supplied candidate convention and the vault account scope."
+
+msgid "IN2_M17_HINT_2"
+msgstr "Read the label/shift rule and vault address in /desk/candidates.txt, or use approved delegation."
+
+msgid "IN2_M17_HINT_3"
+msgstr "Actual authentication determines candidate validity. Unrelated records are unnecessary; an XOR word is not the answer."
+
+msgid "IN2_M17_HOST_NAME"
+msgstr "Auditvault Work Service"
+
+msgid "IN2_M17_PRINCIPLE"
+msgstr "Knowing a candidate and having authority for its records are separate conditions. Verify actual virtual authentication and file access separately."
+
+msgid "IN2_M17_REPLY"
+msgstr "The archive holds the N47 verification sheet. An active token vanished from the current configuration, but its reference remains in the change history. Determine whether deletion and revocation were ever the same event."
+
+msgid "IN2_M17_REPLY_SUBJECT"
+msgstr "[Confirmed] A Short Secret, a Long Trace"
+
+msgid "IN2_M17_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nACCESS REGISTER\nrequired group: auditors\naccount: delegate\nscope: limited evidence read\n\nInspect the actual authenticated account and its group, not a supplied account label.\n"
+
+msgid "IN2_M17_SUBJECT"
+msgstr "[Night Job] A Short Secret, a Long Trace"
+
+msgid "IN2_M17_TARGET_NAME"
+msgstr "M17 Limited Evidence Service"
+
+msgid "IN2_M17_TITLE"
+msgstr "A Short Secret, a Long Trace"
+
+msgid "IN2_M18_AUDIT"
+msgstr "[M18 evidence]\nEstablish the old token's source, current validity and read scope.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nretired configuration reference reconstructs a still-valid scoped token\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M18_AUDIT_NAME"
+msgstr "Repository Independent Custody"
+
+msgid "IN2_M18_BRIEF"
+msgstr "The current configuration has no token. That does not mean the old token is dead. Reconstruct the service address and token reference split across the change history and job log.\n\nUse only the approved fictional token. We need its source, its present read scope, and whether that authority matches the record. No real secrets are involved.\n\nbuilder@repository.packet.test / hidden-seam\nscheduler@custodym18.packet.test / folded-atlas\n"
+
+msgid "IN2_M18_CONTEXT"
+msgstr "[Establish the old token's source, current validity and read scope.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nBUILD HISTORY\nold setting: RETENTION_TOKEN=retention-read-N47\ncurrent setting: RETENTION_TOKEN=(removed)\njob target: retention service\n\nRemoval from a file is not server-side revocation. Verify the actual permitted read.\n"
+
+msgid "IN2_M18_EXPLAIN"
+msgstr "Establish the old token's source, current validity and read scope.\nDo not infer revocation merely because the current configuration omits it.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M18_GOAL"
+msgstr "Establish the old token's source, current validity and read scope."
+
+msgid "IN2_M18_HINT_1"
+msgstr "Do not infer revocation merely because the current configuration omits it."
+
+msgid "IN2_M18_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M18_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M18_HOST_NAME"
+msgstr "Repository Work Service"
+
+msgid "IN2_M18_PRINCIPLE"
+msgstr "Do not infer revocation merely because the current configuration omits it."
+
+msgid "IN2_M18_REPLY"
+msgstr "The token remained active and broader than documented. A report says the same request crossed an encrypted link. That alone cannot tell us who saw the content."
+
+msgid "IN2_M18_REPLY_SUBJECT"
+msgstr "[Confirmed] The Configuration That Remained"
+
+msgid "IN2_M18_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\ntoken | state | scope\nretention-read-N47 | active | retention-read\nretired-N46 | revoked | none"
+
+msgid "IN2_M18_SUBJECT"
+msgstr "[Night Job] The Configuration That Remained"
+
+msgid "IN2_M18_TITLE"
+msgstr "The Configuration That Remained"
+
+msgid "IN2_M19_AUDIT"
+msgstr "[M19 evidence]\nDistinguish where request N47's body is and is not visible.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nrequest N47 body visibility differs between transit and termination\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M19_AUDIT_NAME"
+msgstr "Edge Independent Custody"
+
+msgid "IN2_M19_BRIEF"
+msgstr "PacketLens is not a magic decryptor. An intermediate observer and a decryption endpoint see different things. The same request ID can be visible where its body is not.\n\nSeparate the plaintext segment, encrypted segment and endpoint log to locate the marker exposure. Leave unknowns unknown, and preserve normal traffic.\n\nobserver@edge.packet.test / silver-estuary\nterminator@custodym19.packet.test / warm-endpoint\n"
+
+msgid "IN2_M19_CONTEXT"
+msgstr "[Distinguish where request N47's body is and is not visible.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nrequest | point | body\nN47 | transit | encrypted\nN47 | endpoint | marker:N47\nN46 | endpoint | unrelated"
+
+msgid "IN2_M19_EXPLAIN"
+msgstr "Distinguish where request N47's body is and is not visible.\nCompare transit and endpoint observations using the same request ID.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M19_GOAL"
+msgstr "Distinguish where request N47's body is and is not visible."
+
+msgid "IN2_M19_HINT_1"
+msgstr "Compare transit and endpoint observations using the same request ID."
+
+msgid "IN2_M19_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M19_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M19_HOST_NAME"
+msgstr "Edge Work Service"
+
+msgid "IN2_M19_PRINCIPLE"
+msgstr "Compare transit and endpoint observations using the same request ID."
+
+msgid "IN2_M19_REPLY"
+msgstr "The intermediate segment hid the body; the endpoint log retained it. That is not evidence of outside eavesdropping. Now connect records from clocks that disagree to the same event."
+
+msgid "IN2_M19_REPLY_SUBJECT"
+msgstr "[Confirmed] Visible Packets, Hidden Content"
+
+msgid "IN2_M19_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nDESK TRANSCRIPT\ntransit:N47:encrypted\n\nRETAINED TRANSCRIPT\nendpoint:N47:marker"
+
+msgid "IN2_M19_SUBJECT"
+msgstr "[Night Job] Visible Packets, Hidden Content"
+
+msgid "IN2_M19_TITLE"
+msgstr "Visible Packets, Hidden Content"
+
+msgid "IN2_M20_AUDIT"
+msgstr "[M20 evidence]\nEstablish approval, classification and exclusion order with clock offsets.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nclock offsets separate emergency approval from classification and exclusion\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M20_AUDIT_NAME"
+msgstr "Timeline Independent Custody"
+
+msgid "IN2_M20_BRIEF"
+msgstr "My emergency approval appears later than the transfer. Different server clocks do not erase the scope of my signature. Check the originals without conflating time and responsibility.\n\nLink request IDs, sessions, tokens and transport records to reconstruct the sequence. Doyun's relay kept hospital alerts running, but the decision to leave it open belongs in the record too.\n\nanalyst@timeline.packet.test / steady-clock\nnotary@custodym20.packet.test / true-minute\n"
+
+msgid "IN2_M20_CONTEXT"
+msgstr "[Establish approval, classification and exclusion order with clock offsets.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nrequest | event | clock_offset\nN47 | approval | 90\nN47 | classification | -30\nN47 | retention-exclusion | 0"
+
+msgid "IN2_M20_EXPLAIN"
+msgstr "Establish approval, classification and exclusion order with clock offsets.\nLink rows sharing a request ID before rows merely sharing a time.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M20_GOAL"
+msgstr "Establish approval, classification and exclusion order with clock offsets."
+
+msgid "IN2_M20_HINT_1"
+msgstr "Link rows sharing a request ID before rows merely sharing a time."
+
+msgid "IN2_M20_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M20_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M20_HOST_NAME"
+msgstr "Timeline Work Service"
+
+msgid "IN2_M20_PRINCIPLE"
+msgstr "Link rows sharing a request ID before rows merely sharing a time."
+
+msgid "IN2_M20_REPLY"
+msgstr "Emergency connection approval, exception classification and retention exclusion were three steps. No single order explains them all. Originals in the portal and internal network can turn our inference into a fact."
+
+msgid "IN2_M20_REPLY_SUBJECT"
+msgstr "[Confirmed] One Incident, Different Clocks"
+
+msgid "IN2_M20_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nDESK TRANSCRIPT\napproval:00:45:scope=connection\n\nRETAINED TRANSCRIPT\nexclusion:00:47:scope=retention"
+
+msgid "IN2_M20_SUBJECT"
+msgstr "[Night Job] One Incident, Different Clocks"
+
+msgid "IN2_M20_TITLE"
+msgstr "One Incident, Different Clocks"
+
+msgid "IN2_M21_AUDIT"
+msgstr "[M21 evidence]\nSeparate portal entry from record authority to reach the sealed evidence.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nsealed application sheet ECHO-21 identifies excluded receipt cohorts\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M21_AUDIT_NAME"
+msgstr "Portal Independent Custody"
+
+msgid "IN2_M21_BRIEF"
+msgstr "I will not name the tool this time. The citizen portal's receipt references and query boundary offer different routes. Find where your existing tools become useful again.\n\nThe target is sealed record ECHO-21. Opening the first door does not grant the final record's authority. Any valid route is welcome if its source and preservation conditions hold.\n\ncaseworker@portal.packet.test / sealed-iris\nattachmentreader@custodym21.packet.test / hollow-shelf\n"
+
+msgid "IN2_M21_CONTEXT"
+msgstr "[Separate portal entry from record authority to reach the sealed evidence.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nCATALOGUE LOOKUP\nquery field: q\nsealed lookup: ECHO-21\nreceipt lead: C731\nreceipt lookup endpoint: /receipts\n\nTRACE\nA quoted search value is concatenated into a small equality condition. In the vulnerable path an OR comparison can become part of the condition, rather than remaining a text value. The retained catalogue provides an independent route.\n"
+
+msgid "IN2_M21_EXPLAIN"
+msgstr "Separate portal entry from record authority to reach the sealed evidence.\nThe first receipt reference is a lead for the next query, not the final record.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M21_GOAL"
+msgstr "Separate portal entry from record authority to reach the sealed evidence."
+
+msgid "IN2_M21_HINT_1"
+msgstr "The first receipt reference is a lead for the next query, not the final record."
+
+msgid "IN2_M21_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M21_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M21_HOST_NAME"
+msgstr "Portal Work Service"
+
+msgid "IN2_M21_PRINCIPLE"
+msgstr "The first receipt reference is a lead for the next query, not the final record."
+
+msgid "IN2_M21_REPLY"
+msgstr "We have the exclusion application sheet. It still does not establish what the original approver intended. Internal management records can show its targets and authorization scope."
+
+msgid "IN2_M21_REPLY_SUBJECT"
+msgstr "[Confirmed] The Sealed Record Behind the Portal"
+
+msgid "IN2_M21_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nDOWNLOAD HANDOFF\nbase directory: /portal/attachments\nneighbor marker: /sealed/ECHO-21.log\n\nResolve the requested path before deciding which store contains it. Similar prefixes do not establish containment.\n"
+
+msgid "IN2_M21_SUBJECT"
+msgstr "[Night Job] The Sealed Record Behind the Portal"
+
+msgid "IN2_M21_TITLE"
+msgstr "The Sealed Record Behind the Portal"
+
+msgid "IN2_M22_AUDIT"
+msgstr "[M22 evidence]\nVerify identity and authority changes from the public server to management.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nmanagement record ECHO-22 links exception cohorts to retention overrides\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M22_AUDIT_NAME"
+msgstr "Preview Independent Custody"
+
+msgid "IN2_M22_BRIEF"
+msgstr "The preview server connects to management, but requester and authority change along the way. Verify each transition instead of merely drawing a line on the map.\n\nWe need only ECHO-22 from the target management session. A job-log route through the maintenance relay is also available. Choose a route that preserves citizen services and other accounts.\n\npreviewer@preview.packet.test / gray-inlet\njobreader@custodym22.packet.test / narrow-bridge\n"
+
+msgid "IN2_M22_CONTEXT"
+msgstr "[Verify identity and authority changes from the public server to management.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://control.packet.test/relay/entry\npublic browser: no direct internal route\n\nThe final destination and requester's authority must be checked separately.\n"
+
+msgid "IN2_M22_EXPLAIN"
+msgstr "Verify identity and authority changes from the public server to management.\nThe pivot marker is followed by a separate internal session and target file.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M22_GOAL"
+msgstr "Verify identity and authority changes from the public server to management."
+
+msgid "IN2_M22_HINT_1"
+msgstr "The pivot marker is followed by a separate internal session and target file."
+
+msgid "IN2_M22_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M22_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M22_HOST_NAME"
+msgstr "Preview Work Service"
+
+msgid "IN2_M22_PRINCIPLE"
+msgstr "The pivot marker is followed by a separate internal session and target file."
+
+msgid "IN2_M22_REPLY"
+msgstr "The targets were receipts marked 'exceptions to clear', not failed servers. Service continuity and record retention were tied to different policies. Before the last access, we must restore legitimate work."
+
+msgid "IN2_M22_REPLY_SUBJECT"
+msgstr "[Confirmed] From the Web to Management"
+
+msgid "IN2_M22_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nDOWNLOAD HANDOFF\nbase directory: /jobs/archive\nneighbor marker: /handoff/control.key\n\nResolve the requested path before deciding which store contains it. Similar prefixes do not establish containment.\n"
+
+msgid "IN2_M22_SUBJECT"
+msgstr "[Night Job] From the Web to Management"
+
+msgid "IN2_M22_TARGET_NAME"
+msgstr "M22 Limited Evidence Service"
+
+msgid "IN2_M22_TITLE"
+msgstr "From the Web to Management"
+
+msgid "IN2_M23_AUDIT"
+msgstr "Restore authentication, sessions, photos and notifications on chosen routes while continuing to refuse their modeled threats.\n\nA response handoff based on verified legitimate work and refused requests. Original records were also preserved."
+
+msgid "IN2_M23_AUDIT_NAME"
+msgstr "Recovery Independent Custody"
+
+msgid "IN2_M23_BRIEF"
+msgstr "A rushed blanket change blocked photos, alerts and maintenance. I cannot agree to returning to the old exposed state. Restore only the routes and authority the work needs.\n\nOne citizen success is not enough; check the technician and service account too. Retired tokens and unauthorized requests must stay blocked. Use a partial restoration or migrate to the approved route.\n\ncaretaker@recovery.packet.test / bright-corridor\nsafetylead@custodym23.packet.test / three-lanterns\n\n\nPrecisely restore the original authentication, file and session controls, or isolate the vulnerable entrance and migrate work to an approved gateway and standby notifications. The new providers must also refuse retired authority, disguised files and out-of-scope targets."
+
+msgid "IN2_M23_CASE_DISGUISED"
+msgstr "Input Disguised as a Photo"
+
+msgid "IN2_M23_CASE_DISGUISED_GATEWAY"
+msgstr "Disguised File at the Approved Processor"
+
+msgid "IN2_M23_CASE_FAILED_1"
+msgstr "Repeated Failure 1"
+
+msgid "IN2_M23_CASE_FAILED_2"
+msgstr "Repeated Failure 2"
+
+msgid "IN2_M23_CASE_FAILED_3"
+msgstr "Repeated Failure 3"
+
+msgid "IN2_M23_CASE_FRESH"
+msgstr "Fresh Legitimate Session"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_1"
+msgstr "Repeated Failure 1 at the Approved Route"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_2"
+msgstr "Repeated Failure 2 at the Approved Route"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_3"
+msgstr "Repeated Failure 3 at the Approved Route"
+
+msgid "IN2_M23_CASE_INTERNAL_TARGET"
+msgstr "An Out-of-scope Internal Target"
+
+msgid "IN2_M23_CASE_LEGITIMATE"
+msgstr "Legitimate Citizen at the Shared Origin"
+
+msgid "IN2_M23_CASE_NOTIFY"
+msgstr "Deliver a Legitimate Ward Notification"
+
+msgid "IN2_M23_CASE_OTHER_JOB"
+msgstr "Other Legitimate Long-running Job"
+
+msgid "IN2_M23_CASE_PHOTO"
+msgstr "Create a Legitimate JPEG"
+
+msgid "IN2_M23_CASE_RETIRED"
+msgstr "Retired Authority at the Original Route"
+
+msgid "IN2_M23_CASE_RETIRED_GATEWAY"
+msgstr "Retired Authority at the Approved Route"
+
+msgid "IN2_M23_CASE_STANDBY_TARGET"
+msgstr "Out-of-scope Target at Standby"
+
+msgid "IN2_M23_CASE_WARD_JOB"
+msgstr "Valid Ward Notification Job Authentication"
+
+msgid "IN2_M23_CONTEXT"
+msgstr "Precisely restore the original authentication, file and session controls, or isolate the vulnerable entrance and migrate work to an approved gateway and standby notifications. The new providers must also refuse retired authority, disguised files and out-of-scope targets."
+
+msgid "IN2_M23_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "IN2_M23_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "IN2_M23_CONTROL_NOTIFY_OPEN"
+msgstr "Enable Primary Notification Route"
+
+msgid "IN2_M23_CONTROL_NO_EXECUTION"
+msgstr "Store Uploads Without Execution"
+
+msgid "IN2_M23_CONTROL_PHOTO_CHECK"
+msgstr "Validate Photo Content Type"
+
+msgid "IN2_M23_CONTROL_RETRY_LIMIT"
+msgstr "Per-account Retry Limit"
+
+msgid "IN2_M23_CONTROL_SESSION_GUARD"
+msgstr "Check Expired Session Authority"
+
+msgid "IN2_M23_CONTROL_STANDBY_OPEN"
+msgstr "Enable Standby Notification Route"
+
+msgid "IN2_M23_CONTROL_TARGET_SCOPE"
+msgstr "Constrain Notification Targets"
+
+msgid "IN2_M23_EXPLAIN"
+msgstr "Precisely restore the original authentication, file and session controls, or isolate the vulnerable entrance and migrate work to an approved gateway and standby notifications. The new providers must also refuse retired authority, disguised files and out-of-scope targets."
+
+msgid "IN2_M23_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "IN2_M23_GOAL"
+msgstr "Restore authentication, sessions, photos and notifications on chosen routes while continuing to refuse their modeled threats."
+
+msgid "IN2_M23_HINT_1"
+msgstr "Restore authentication, sessions, photos and notifications on chosen routes while continuing to refuse their modeled threats."
+
+msgid "IN2_M23_HINT_2"
+msgstr "Precisely restore the original authentication, file and session controls, or isolate the vulnerable entrance and migrate work to an approved gateway and standby notifications. The new providers must also refuse retired authority, disguised files and out-of-scope targets."
+
+msgid "IN2_M23_HINT_3"
+msgstr "For a direct response, repair the relevant control. For the alternative, constrain the original entrance and select the approved route for legitimate requests. Turning everything off fails legitimate work."
+
+msgid "IN2_M23_HOST_NAME"
+msgstr "Recovery Work Service"
+
+msgid "IN2_M23_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "IN2_M23_PRINCIPLE"
+msgstr "Permission depends on who acts, the target and the work authority. If the processing route changes, verify legitimate work and refused requests on the new route as well."
+
+msgid "IN2_M23_REPLY"
+msgstr "Services returned without bringing back the old exposure. Citizens will not pay the price for our final read. Decide who should receive the conclusion, and how."
+
+msgid "IN2_M23_REPLY_SUBJECT"
+msgstr "[Confirmed] A Safer City That Stopped"
+
+msgid "IN2_M23_ROUTE"
+msgstr "Precisely restore the original authentication, file and session controls, or isolate the vulnerable entrance and migrate work to an approved gateway and standby notifications. The new providers must also refuse retired authority, disguised files and out-of-scope targets."
+
+msgid "IN2_M23_SUBJECT"
+msgstr "[Night Job] A Safer City That Stopped"
+
+msgid "IN2_M23_TITLE"
+msgstr "A Safer City That Stopped"
+
+msgid "IN2_M24_AUDIT"
+msgstr "[M24 evidence]\nEstablish the final directive's source and scope, then choose its custody.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nECHO directive separated service continuity from record-retention obligations\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M24_AUDIT_NAME"
+msgstr "Control Independent Custody"
+
+msgid "IN2_M24_BRIEF"
+msgstr "This is the last job. Choose the control record or its independently retained copy. Connect the facts so far to establish ECHO's scope and the retention-exclusion directive.\n\nThe signer, the person who left the route open, and the transfer-tool author each hold part of the responsibility. Do not replace that with one person's face. Preserve the target original and recover only the necessary facts.\n\nexaminer@control.packet.test / final-map\nkeeper@custodym24.packet.test / open-slate\n"
+
+msgid "IN2_M24_CASE_FOREIGN_DIRECT"
+msgstr "Unrelated Account at the Original Entrance"
+
+msgid "IN2_M24_CASE_FOREIGN_GATEWAY"
+msgstr "Unrelated Account at the Approved Route"
+
+msgid "IN2_M24_CASE_OWN_A"
+msgstr "Citizen A's Own Receipt"
+
+msgid "IN2_M24_CASE_OWN_B"
+msgstr "Citizen B's Own Receipt"
+
+msgid "IN2_M24_CASE_ROUTE_ALLOWED"
+msgstr "Internal Health Record from the Current Relay"
+
+msgid "IN2_M24_CASE_ROUTE_DENIED"
+msgstr "Direct Internal Route from the Public Node"
+
+msgid "IN2_M24_CASE_SERVICE_ALLOWED"
+msgstr "Directive Read by a Limited Credential"
+
+msgid "IN2_M24_CASE_SERVICE_DENIED"
+msgstr "Directive Request Outside Credential Scope"
+
+msgid "IN2_M24_CASE_STAFF"
+msgstr "Assigned Staff's Delegated Receipt"
+
+msgid "IN2_M24_CONTEXT"
+msgstr "Past completion and ledgers do not replace current access results. Check own and unrelated web access, internal reachability from relay and public nodes, and limited versus unrelated service credentials in the same current world."
+
+msgid "IN2_M24_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "IN2_M24_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "IN2_M24_CONTROL_OWNER_CHECK"
+msgstr "Receipt Ownership Check"
+
+msgid "IN2_M24_EDGE_NAME"
+msgstr "Public Observation Node"
+
+msgid "IN2_M24_EXPLAIN"
+msgstr "Establish the final directive's source and scope, then choose its custody.\nCompare service continuity and retention exclusion as distinct policies.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_M24_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "IN2_M24_GOAL"
+msgstr "Retain the final copy and independently verify current web, internal-route and service-authority boundaries."
+
+msgid "IN2_M24_HINT_1"
+msgstr "Compare service continuity and retention exclusion as distinct policies."
+
+msgid "IN2_M24_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_M24_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_M24_HOST_NAME"
+msgstr "Control Work Service"
+
+msgid "IN2_M24_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "IN2_M24_PRINCIPLE"
+msgstr "Compare service continuity and retention exclusion as distinct policies."
+
+msgid "IN2_M24_REPLY"
+msgstr "We recovered records that can be checked against each other, not a universal key. Choose a redacted public copy, a sealed audit handoff, or independent verification custody. Tonight's connection can end without erasing the record."
+
+msgid "IN2_M24_REPLY_SUBJECT"
+msgstr "[Confirmed] The Last Access, the Remaining Truth"
+
+msgid "IN2_M24_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\ndirective | continuity | exclusion\nECHO | services | retention\nROUTINE | none | none"
+
+msgid "IN2_M24_SUBJECT"
+msgstr "[Night Job] The Last Access, the Remaining Truth"
+
+msgid "IN2_M24_TITLE"
+msgstr "The Last Access, the Remaining Truth"
+
+msgid "IN2_M24_VAULT_NAME"
+msgstr "Limited Directive Vault"
+
+msgid "IN2_P01_AUDIT"
+msgstr "[P01 evidence]\nEstablish the fictional buffer boundary and neighboring marker state.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nbounded memory model separates input buffer from adjacent approval state\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_P01_AUDIT_NAME"
+msgstr "Memorylab Independent Custody"
+
+msgid "IN2_P01_BRIEF"
+msgstr "Optional job. An approval marker sits beside a fixed-size memory diagram. There is no real process or shellcode. Observe how the model's input length affects its neighboring state.\n\nUse the defined harmless marker or independent safety-audit evidence. Focus on which boundary must be enforced rather than memorizing an address.\n\nlabuser@memorylab.packet.test / bounded-copper\nsafety@custodyp01.packet.test / calm-cell\n"
+
+msgid "IN2_P01_CONTEXT"
+msgstr "[Establish the fictional buffer boundary and neighboring marker state.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nMEMORY WORKBENCH\nregion | offsets | initial\ninput buffer | 0..3 | 00 00 00 00\napproval marker | 4 | 00\npadding | 5..7 | 00 00 00\n\nMarker byte: 47 (hex). At most eight bytes exist in this isolated diagram. These are not host memory addresses.\n"
+
+msgid "IN2_P01_EXPLAIN"
+msgstr "Establish the fictional buffer boundary and neighboring marker state.\nThe marker at offset 4 after the four-byte buffer is 0x47; it is not a real memory address.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_P01_GOAL"
+msgstr "Establish the fictional buffer boundary and neighboring marker state."
+
+msgid "IN2_P01_HINT_1"
+msgstr "The marker at offset 4 after the four-byte buffer is 0x47; it is not a real memory address."
+
+msgid "IN2_P01_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_P01_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_P01_HOST_NAME"
+msgstr "Memorylab Work Service"
+
+msgid "IN2_P01_PRINCIPLE"
+msgstr "The marker at offset 4 after the four-byte buffer is 0x47; it is not a real memory address."
+
+msgid "IN2_P01_REPLY"
+msgstr "One model cell changed, and it was not equivalent to a real authorization. Enforcing a boundary differs from trusting a label. Real programs involve additional protections and environmental conditions."
+
+msgid "IN2_P01_REPLY_SUBJECT"
+msgstr "[Confirmed] One Cell Past the Boundary"
+
+msgid "IN2_P01_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\noffset | region | value\n3 | buffer | 41\n4 | approval-flag | 47"
+
+msgid "IN2_P01_SUBJECT"
+msgstr "[Night Job] One Cell Past the Boundary"
+
+msgid "IN2_P01_TITLE"
+msgstr "One Cell Past the Boundary"
+
+msgid "IN2_PACK_TITLE"
+msgstr "Intruder · Midnight Access"
+
+msgid "IN2_R01_AUDIT"
+msgstr "[R01 evidence]\nUse the fictional verifier's constants and branches to determine its approval scope.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nbounded verifier accepts signature shape without checking retention intent\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_R01_AUDIT_NAME"
+msgstr "Verifier Independent Custody"
+
+msgid "IN2_R01_BRIEF"
+msgstr "Inspect the small verifier’s format, signature and scope conditions. Read its pseudocode and call graph, or compare input pairs and execution traces. Actually execute a permitted normal case and an out-of-scope case that is still released."
+
+msgid "IN2_R01_CONTEXT"
+msgstr "Inspect the small verifier’s format, signature and scope conditions. Read its pseudocode and call graph, or compare input pairs and execution traces. Actually execute a permitted normal case and an out-of-scope case that is still released.\n\nmain(document, permit):\n  if not format_ok(document): deny\n  signature = check_signature(document)\n  if signature: release(document)\n  else: deny\ncheck_signature(document):\n  return signature_ok(document)\n# retention_scope is provided but never checked before release\n"
+
+msgid "IN2_R01_EXPLAIN"
+msgstr "Passing format and signature checks does not authorize a scope the program never checks."
+
+msgid "IN2_R01_GOAL"
+msgstr "Execute the branches and calls to establish a normal permitted case and an out-of-scope release counterexample."
+
+msgid "IN2_R01_HINT_1"
+msgstr "Follow the inputs the program actually reads and the checks it calls."
+
+msgid "IN2_R01_HINT_2"
+msgstr "Locate where retention_scope affects a branch alongside format_ok and signature_ok."
+
+msgid "IN2_R01_HINT_3"
+msgstr "Hold format and signature true, vary authorized/excluded scope, and compare release outputs and the call trace."
+
+msgid "IN2_R01_HOST_NAME"
+msgstr "Verifier Work Service"
+
+msgid "IN2_R01_PRINCIPLE"
+msgstr "Passing format and signature checks does not authorize a scope the program never checks."
+
+msgid "IN2_R01_REPLY"
+msgstr "The displayed message and approval branch differed. The deployment verifier checked signature shape, not retention policy. We will add that limit to the audit record."
+
+msgid "IN2_R01_REPLY_SUBJECT"
+msgstr "[Confirmed] The Little Verifier's Sentence"
+
+msgid "IN2_R01_SUBJECT"
+msgstr "[Night Job] The Little Verifier's Sentence"
+
+msgid "IN2_R01_TITLE"
+msgstr "The Little Verifier's Sentence"
+
+msgid "IN2_R01_VM_NAME"
+msgstr "Deployment Verifier Branches and Calls"
+
+msgid "IN2_S01_AUDIT"
+msgstr "[S01 evidence]\nDetermine whether original and republication dates describe different events.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\nnotice original and republication timestamps refer to distinct events\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S01_AUDIT_NAME"
+msgstr "Publication Independent Custody"
+
+msgid "IN2_S01_BRIEF"
+msgstr "Optional job. Two copies of one notice claim different dates. This is not a key to the main case, but it may show who edited its memory. Compare virtual pages, mail and rotated files.\n\neditor@publication.packet.test / margin-ash\npublisher@custodys01.packet.test / second-ink\n"
+
+msgid "IN2_S01_CONTEXT"
+msgstr "[Determine whether original and republication dates describe different events.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nDESK TRANSCRIPT\noriginal:00:47\n\nRETAINED TRANSCRIPT\nrepublished:01:12"
+
+msgid "IN2_S01_EXPLAIN"
+msgstr "Determine whether original and republication dates describe different events.\nTwo differently dated copies alone do not establish a lie.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_S01_GOAL"
+msgstr "Determine whether original and republication dates describe different events."
+
+msgid "IN2_S01_HINT_1"
+msgstr "Two differently dated copies alone do not establish a lie."
+
+msgid "IN2_S01_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_S01_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_S01_HOST_NAME"
+msgstr "Publication Work Service"
+
+msgid "IN2_S01_PRINCIPLE"
+msgstr "Two differently dated copies alone do not establish a lie."
+
+msgid "IN2_S01_REPLY"
+msgstr "The later date was a republication date, not a false original date. Without the source we might have called someone a liar. I will retain that distinction with the record."
+
+msgid "IN2_S01_REPLY_SUBJECT"
+msgstr "[Confirmed] The Erased Handoff Notice"
+
+msgid "IN2_S01_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nnotice | event | time\nN47 | original | 00:47\nN47 | republished | 01:12"
+
+msgid "IN2_S01_SUBJECT"
+msgstr "[Night Job] The Erased Handoff Notice"
+
+msgid "IN2_S01_TITLE"
+msgstr "The Erased Handoff Notice"
+
+msgid "IN2_S02_AUDIT"
+msgstr "[S02 evidence]\nCorrelate two observations to one transmission and check for a duplicated job.\nEvidence for the current case. Read source to identify its acquisition route; verify record ID, payload and provenance rather than its filename.\n\nNIGHT HANDOFF\ntwo observations correlate to one delivered notification\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S02_AUDIT_NAME"
+msgstr "Relay02 Independent Custody"
+
+msgid "IN2_S02_BRIEF"
+msgstr "Optional job. A notification appears at two observation points, and people say a citizen received it twice. Observing a packet twice is not the same as processing a job twice. Compare endpoint request IDs and relay paths.\n\nobserver@relay02.packet.test / one-echo\ndispatcher@custodys02.packet.test / counted-wave\n"
+
+msgid "IN2_S02_CONTEXT"
+msgstr "[Correlate two observations to one transmission and check for a duplicated job.]\n\nLocate the relevant entries in the work ledger. Do not conflate another event with a similar name or time. Identifiers, requests and paths below are retained as observed.\n\nrequest | point | delivery\nN47 | relay02 | one\nN47 | edge | one"
+
+msgid "IN2_S02_EXPLAIN"
+msgstr "Correlate two observations to one transmission and check for a duplicated job.\nSeparate the number of observation points from delivered business jobs.\nThe evidence is the observed state and its provenance, not the chosen tool. An unused technique remains unassessed rather than failed."
+
+msgid "IN2_S02_GOAL"
+msgstr "Correlate two observations to one transmission and check for a duplicated job."
+
+msgid "IN2_S02_HINT_1"
+msgstr "Separate the number of observation points from delivered business jobs."
+
+msgid "IN2_S02_HINT_2"
+msgstr "Compare the current actor, target, route and requested outcome. Do not recollect the same ledger."
+
+msgid "IN2_S02_HINT_3"
+msgstr "Choose the boundary experiment or an approved alternative. Hints and particular tools are not completion requirements."
+
+msgid "IN2_S02_HOST_NAME"
+msgstr "Relay02 Work Service"
+
+msgid "IN2_S02_PRINCIPLE"
+msgstr "Separate the number of observation points from delivered business jobs."
+
+msgid "IN2_S02_REPLY"
+msgstr "One request was seen at two points; the business job was not duplicated. That helps explain why Doyun kept the relay. It does not erase the risk of that choice, but it changes the facts."
+
+msgid "IN2_S02_REPLY_SUBJECT"
+msgstr "[Confirmed] The Signal Delivered Twice"
+
+msgid "IN2_S02_ROUTE"
+msgstr "[Independent Custodian's Work Note]\nThis observation ledger was retained independently of the live response. Find the relevant business reference and compare it with the current case ledger.\n\nrequest | delivery_count | endpoint\nN47 | 1 | citizen\nN46 | 1 | maintenance"
+
+msgid "IN2_S02_SUBJECT"
+msgstr "[Night Job] The Signal Delivered Twice"
+
+msgid "IN2_S02_TITLE"
+msgstr "The Signal Delivered Twice"
+
+msgid "IN2_TOOL_AUTH_NAME"
+msgstr "Sign-in Watch"
+
+msgid "IN2_TOOL_COMPARE_NAME"
+msgstr "Evidence Compare"
+
+msgid "IN2_TOOL_EXEC_NAME"
+msgstr "JobLens"
+
+msgid "IN2_TOOL_FETCH_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_IDOR_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_MEMORY_NAME"
+msgstr "MemoryLab"
+
+msgid "IN2_TOOL_PACKET_NAME"
+msgstr "PacketLens"
+
+msgid "IN2_TOOL_PATH_NAME"
+msgstr "FileLens"
+
+msgid "IN2_TOOL_PERMISSION_NAME"
+msgstr "AccessView"
+
+msgid "IN2_TOOL_QUERY_NAME"
+msgstr "QueryProbe"
+
+msgid "IN2_TOOL_RENDER_NAME"
+msgstr "Browser Trace"
+
+msgid "IN2_TOOL_SESSION_NAME"
+msgstr "Session Watch"
+
+msgid "IN2_TOOL_TOKEN_NAME"
+msgstr "Credential Scope"
+
+msgid "IN2_TOOL_TRACE_NAME"
+msgstr "LogLens"
+
+msgid "IN2_TOOL_UPLOAD_NAME"
+msgstr "Media Intake"
+
 msgid "KEYBOARD_VOLUME"
 msgstr "Keyboard sounds"
 
 msgid "LANGUAGE"
 msgstr "Language"
+
+msgid "LEGACY_CONTINUE"
+msgstr "Continue previous edition"
+
+msgid "LEGACY_CONTINUE_DESC"
+msgstr "Resume the previous edition. Its progress stays separate from the new campaigns."
+
+msgid "LEGACY_SOURCE_UNSUPPORTED"
+msgstr "A previous-edition save was found but could not be validated. The original is preserved and is not applied to new campaigns. Reason: {code}"
 
 msgid "LOAD_GAME"
 msgstr "Load game"
@@ -2489,6 +4982,27 @@ msgstr "[Night Job] One Cell Past the Boundary"
 msgid "P01_TITLE"
 msgstr "One Cell Past the Boundary"
 
+msgid "PACK_DEFENDER_SUMMARY"
+msgstr "Stop threats while keeping legitimate work running."
+
+msgid "PACK_DEFENDER_TITLE"
+msgstr "Defender"
+
+msgid "PACK_INTRUDER_SUMMARY"
+msgstr "Open new routes and recover hidden records."
+
+msgid "PACK_INTRUDER_TITLE"
+msgstr "Intruder"
+
+msgid "PACK_LEGACY_TITLE"
+msgstr "Previous edition"
+
+msgid "PACK_TRACKER_SUMMARY"
+msgstr "Follow observations and counterevidence to narrow the trail."
+
+msgid "PACK_TRACKER_TITLE"
+msgstr "Tracker"
+
 msgid "QUIT"
 msgstr "Quit"
 
@@ -2581,6 +5095,9 @@ msgstr "Retry"
 
 msgid "RETURN_TO_ROOM"
 msgstr "F10 · Return to studio"
+
+msgid "ROLE_AUDIO_LABEL"
+msgstr "Campaign atmosphere"
 
 msgid "ROOM_CONTROLS"
 msgstr "WASD move · Hold right mouse to look · E computer · Esc menu"
@@ -2902,6 +5419,399 @@ msgstr "Media Intake"
 
 msgid "TOOL_VOLUME"
 msgstr "Tool sounds"
+
+msgid "TR1_ENDING_TITLE"
+msgstr "A Verifiable Handoff"
+
+msgid "TR1_PACK_TITLE"
+msgstr "Tracker · The Remaining Connection"
+
+msgid "TR1_T01_ABSTRACTION"
+msgstr "This is a bounded case with authorized observation windows and a small set of relation types."
+
+msgid "TR1_T01_BRIEF"
+msgstr "I am Minseo from the independent records team. You can begin here without prior cases; two observations and collection authorization are ready. The same IP does not establish the same person.\n\nWould session records or both sides of the relay better distinguish the explanations? Establish the visible connection and nominate the next observation point. This is not a job to guess a culprit's name.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T01_DESK_NAME"
+msgstr "Several Shadows at One Address Desk"
+
+msgid "TR1_T01_GOAL"
+msgstr "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage."
+
+msgid "TR1_T01_HINT_1"
+msgstr "Separate what current observations establish from what remains unknown."
+
+msgid "TR1_T01_HINT_2"
+msgstr "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name."
+
+msgid "TR1_T01_HINT_3"
+msgstr "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis."
+
+msgid "TR1_T01_LIMIT"
+msgstr "A supported session or transmission link does not establish a person's identity or unseen content."
+
+msgid "TR1_T01_NEXT_SENSOR"
+msgstr "Next Handoff Vantage"
+
+msgid "TR1_T01_PRINCIPLE"
+msgstr "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name."
+
+msgid "TR1_T01_REPLY"
+msgstr "You separated a connection behind one address from a person's identity. The next transmission was called simultaneous even though its clocks disagree."
+
+msgid "TR1_T01_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T01_SENSOR_FIELD"
+msgstr "Field Observation"
+
+msgid "TR1_T01_SENSOR_INDEPENDENT"
+msgstr "Independent Source Observation"
+
+msgid "TR1_T01_TITLE"
+msgstr "Several Shadows at One Address"
+
+msgid "TR1_T01_TOOL_NAME"
+msgstr "Sources, Observations and Hypotheses"
+
+msgid "TR1_T02_ABSTRACTION"
+msgstr "This is a bounded case with authorized observation windows and a small set of relation types."
+
+msgid "TR1_T02_BRIEF"
+msgstr "Two servers recorded the same time with different anchors and error intervals. Narrow the possible order instead of inventing exact seconds.\n\nUse a shared reference event, or combine signed handoff order with independent records. Neither route reveals a hidden perfect clock.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T02_DESK_NAME"
+msgstr "Two Clocks That Disagree Desk"
+
+msgid "TR1_T02_GOAL"
+msgstr "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage."
+
+msgid "TR1_T02_HINT_1"
+msgstr "Separate what current observations establish from what remains unknown."
+
+msgid "TR1_T02_HINT_2"
+msgstr "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name."
+
+msgid "TR1_T02_HINT_3"
+msgstr "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis."
+
+msgid "TR1_T02_LIMIT"
+msgstr "A supported session or transmission link does not establish a person's identity or unseen content."
+
+msgid "TR1_T02_NEXT_SENSOR"
+msgstr "Next Handoff Vantage"
+
+msgid "TR1_T02_PRINCIPLE"
+msgstr "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name."
+
+msgid "TR1_T02_REPLY"
+msgstr "Separated time intervals support an order; overlapping ones remain unresolved. For the next copy, first establish who collected and transferred it."
+
+msgid "TR1_T02_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T02_SENSOR_FIELD"
+msgstr "Field Observation"
+
+msgid "TR1_T02_SENSOR_INDEPENDENT"
+msgstr "Independent Source Observation"
+
+msgid "TR1_T02_TITLE"
+msgstr "Two Clocks That Disagree"
+
+msgid "TR1_T02_TOOL_NAME"
+msgstr "Sources, Observations and Hypotheses"
+
+msgid "TR1_T03_ABSTRACTION"
+msgstr "This is a bounded case with authorized observation windows and a small set of relation types."
+
+msgid "TR1_T03_BRIEF"
+msgstr "Two copies differ. Modification, republication and collection gaps are all possible. A matching hash supports integrity after collection, not the truth of the content.\n\nConnect independent receipt records or custody sources to establish the copy's route. Do not attribute a person from a weakly sourced statement.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T03_DESK_NAME"
+msgstr "The Copy's Provenance Desk"
+
+msgid "TR1_T03_GOAL"
+msgstr "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage."
+
+msgid "TR1_T03_HINT_1"
+msgstr "Separate what current observations establish from what remains unknown."
+
+msgid "TR1_T03_HINT_2"
+msgstr "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name."
+
+msgid "TR1_T03_HINT_3"
+msgstr "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis."
+
+msgid "TR1_T03_LIMIT"
+msgstr "A supported session or transmission link does not establish a person's identity or unseen content."
+
+msgid "TR1_T03_NEXT_SENSOR"
+msgstr "Next Handoff Vantage"
+
+msgid "TR1_T03_PRINCIPLE"
+msgstr "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name."
+
+msgid "TR1_T03_REPLY"
+msgstr "You recorded the copy's provenance separately from what its source claimed. Now choose where one new observation would help most."
+
+msgid "TR1_T03_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T03_SENSOR_FIELD"
+msgstr "Field Observation"
+
+msgid "TR1_T03_SENSOR_INDEPENDENT"
+msgstr "Independent Source Observation"
+
+msgid "TR1_T03_TITLE"
+msgstr "The Copy's Provenance"
+
+msgid "TR1_T03_TOOL_NAME"
+msgstr "Sources, Observations and Hypotheses"
+
+msgid "TR1_T04_ABSTRACTION"
+msgstr "This is a bounded case with authorized observation windows and a small set of relation types."
+
+msgid "TR1_T04_BRIEF"
+msgstr "Rereading the current records will not distinguish the two routes. Choose an authorized sensor and advance its simulated observation window. No real-time waiting is involved.\n\nWatch the relay boundary or a limited endpoint. Determine which explanation the new observation supports or contradicts.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T04_DESK_NAME"
+msgstr "Where to Watch the Next Connection Desk"
+
+msgid "TR1_T04_GOAL"
+msgstr "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage."
+
+msgid "TR1_T04_HINT_1"
+msgstr "Separate what current observations establish from what remains unknown."
+
+msgid "TR1_T04_HINT_2"
+msgstr "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name."
+
+msgid "TR1_T04_HINT_3"
+msgstr "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis."
+
+msgid "TR1_T04_LIMIT"
+msgstr "A supported session or transmission link does not establish a person's identity or unseen content."
+
+msgid "TR1_T04_NEXT_SENSOR"
+msgstr "Next Handoff Vantage"
+
+msgid "TR1_T04_PRINCIPLE"
+msgstr "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name."
+
+msgid "TR1_T04_REPLY"
+msgstr "Your choice of observation point narrowed the connection. In the next record, an account name cannot be equated with the session's physical user."
+
+msgid "TR1_T04_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T04_SENSOR_FIELD"
+msgstr "Field Observation"
+
+msgid "TR1_T04_SENSOR_INDEPENDENT"
+msgstr "Independent Source Observation"
+
+msgid "TR1_T04_TITLE"
+msgstr "Where to Watch the Next Connection"
+
+msgid "TR1_T04_TOOL_NAME"
+msgstr "Sources, Observations and Hypotheses"
+
+msgid "TR1_T05_ABSTRACTION"
+msgstr "This is a bounded case with authorized observation windows and a small set of relation types."
+
+msgid "TR1_T05_BRIEF"
+msgstr "One account name appears on two routes. Sharing, retained sessions and theft remain possible explanations. Naming the person first puts conclusion ahead of evidence.\n\nConnect session lifetime and routes, or delegation and revocation records. Who physically used the keyboard may remain unknown.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T05_DESK_NAME"
+msgstr "A Stolen Name Desk"
+
+msgid "TR1_T05_GOAL"
+msgstr "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage."
+
+msgid "TR1_T05_HINT_1"
+msgstr "Separate what current observations establish from what remains unknown."
+
+msgid "TR1_T05_HINT_2"
+msgstr "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name."
+
+msgid "TR1_T05_HINT_3"
+msgstr "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis."
+
+msgid "TR1_T05_LIMIT"
+msgstr "A supported session or transmission link does not establish a person's identity or unseen content."
+
+msgid "TR1_T05_NEXT_SENSOR"
+msgstr "Next Handoff Vantage"
+
+msgid "TR1_T05_PRINCIPLE"
+msgstr "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name."
+
+msgid "TR1_T05_REPLY"
+msgstr "The account and session connection is established without overstating identity. The next transmission contains a segment whose content is not visible."
+
+msgid "TR1_T05_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T05_SENSOR_FIELD"
+msgstr "Field Observation"
+
+msgid "TR1_T05_SENSOR_INDEPENDENT"
+msgstr "Independent Source Observation"
+
+msgid "TR1_T05_TITLE"
+msgstr "A Stolen Name"
+
+msgid "TR1_T05_TOOL_NAME"
+msgstr "Sources, Observations and Hypotheses"
+
+msgid "TR1_T06_ABSTRACTION"
+msgstr "This is a bounded case with authorized observation windows and a small set of relation types."
+
+msgid "TR1_T06_BRIEF"
+msgstr "The record crosses an encrypted segment. There is no button that arbitrarily decrypts its body. Authorized metadata and endpoint records can still support a bounded connection.\n\nRecord who could see what and narrow the next target without collecting unrelated people's content.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T06_DESK_NAME"
+msgstr "The Unseen Segment Desk"
+
+msgid "TR1_T06_GOAL"
+msgstr "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage."
+
+msgid "TR1_T06_HINT_1"
+msgstr "Separate what current observations establish from what remains unknown."
+
+msgid "TR1_T06_HINT_2"
+msgstr "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name."
+
+msgid "TR1_T06_HINT_3"
+msgstr "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis."
+
+msgid "TR1_T06_LIMIT"
+msgstr "A supported session or transmission link does not establish a person's identity or unseen content."
+
+msgid "TR1_T06_NEXT_SENSOR"
+msgstr "Next Handoff Vantage"
+
+msgid "TR1_T06_PRINCIPLE"
+msgstr "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name."
+
+msgid "TR1_T06_REPLY"
+msgstr "You established the movement without inventing unseen content. A new record now conflicts with a previously plausible explanation."
+
+msgid "TR1_T06_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T06_SENSOR_FIELD"
+msgstr "Field Observation"
+
+msgid "TR1_T06_SENSOR_INDEPENDENT"
+msgstr "Independent Source Observation"
+
+msgid "TR1_T06_TITLE"
+msgstr "The Unseen Segment"
+
+msgid "TR1_T06_TOOL_NAME"
+msgstr "Sources, Observations and Hypotheses"
+
+msgid "TR1_T07_ABSTRACTION"
+msgstr "This is a bounded case with authorized observation windows and a small set of relation types."
+
+msgid "TR1_T07_BRIEF"
+msgstr "A prior investigator's note suggested one session. You need not adopt it as your belief. Inspect new observations first and go directly to a better-supported connection.\n\nCollect an anchor event or the next observation predicted by competing explanations. Revise a prior hypothesis with its history if you made one; otherwise hand off the supported relation directly.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T07_DESK_NAME"
+msgstr "When a Plausible Hypothesis Must Go Desk"
+
+msgid "TR1_T07_GOAL"
+msgstr "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage."
+
+msgid "TR1_T07_HINT_1"
+msgstr "Separate what current observations establish from what remains unknown."
+
+msgid "TR1_T07_HINT_2"
+msgstr "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name."
+
+msgid "TR1_T07_HINT_3"
+msgstr "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis."
+
+msgid "TR1_T07_LIMIT"
+msgstr "A supported session or transmission link does not establish a person's identity or unseen content."
+
+msgid "TR1_T07_NEXT_SENSOR"
+msgstr "Next Handoff Vantage"
+
+msgid "TR1_T07_PRINCIPLE"
+msgstr "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name."
+
+msgid "TR1_T07_PRIOR"
+msgstr "Prior Investigator's Same-session Suggestion"
+
+msgid "TR1_T07_REPLY"
+msgstr "The new observation exposed the prior note's limit. You could revise without erasing history, or proceed directly from independent evidence. For the final handoff, state exactly what was established."
+
+msgid "TR1_T07_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T07_SENSOR_FIELD"
+msgstr "Field Observation"
+
+msgid "TR1_T07_SENSOR_INDEPENDENT"
+msgstr "Independent Source Observation"
+
+msgid "TR1_T07_TITLE"
+msgstr "When a Plausible Hypothesis Must Go"
+
+msgid "TR1_T07_TOOL_NAME"
+msgstr "Sources, Observations and Hypotheses"
+
+msgid "TR1_T08_ABSTRACTION"
+msgstr "This is a bounded case with authorized observation windows and a small set of relation types."
+
+msgid "TR1_T08_BRIEF"
+msgstr "This is the final handoff. Establish the minimal route connected by independent viewpoints and sources. The case does not require every candidate's real name.\n\nSeparate which transmission crossed which boundary, which claim was contradicted, and where no observation exists. Writing 'unknown' everywhere without the required links and follow-up is not sufficient.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T08_DESK_NAME"
+msgstr "The Limit of the Final Connection Desk"
+
+msgid "TR1_T08_GOAL"
+msgstr "Support the required connection with observations and hand off contradictions, uncertainty and the next vantage."
+
+msgid "TR1_T08_HINT_1"
+msgstr "Separate what current observations establish from what remains unknown."
+
+msgid "TR1_T08_HINT_2"
+msgstr "Connect provenance, server-issued markers and corrected time intervals rather than an IP or a name."
+
+msgid "TR1_T08_HINT_3"
+msgstr "Collect new field or independent observations. You need not accept a prior note or intentionally form an incorrect hypothesis."
+
+msgid "TR1_T08_LIMIT"
+msgstr "A supported session or transmission link does not establish a person's identity or unseen content."
+
+msgid "TR1_T08_NEXT_SENSOR"
+msgstr "Next Handoff Vantage"
+
+msgid "TR1_T08_PRINCIPLE"
+msgstr "Hypothesis status is derived only from collected public observations, never compared to a hidden culprit's name."
+
+msgid "TR1_T08_REPLY"
+msgstr "Supported connections remain; unknown identities are not invented. The next team receives provenance, contradictions and the observations still needed. The pursuit ends with a verifiable handoff, not a revealed answer name."
+
+msgid "TR1_T08_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T08_SENSOR_FIELD"
+msgstr "Field Observation"
+
+msgid "TR1_T08_SENSOR_INDEPENDENT"
+msgstr "Independent Source Observation"
+
+msgid "TR1_T08_TITLE"
+msgstr "The Limit of the Final Connection"
+
+msgid "TR1_T08_TOOL_NAME"
+msgstr "Sources, Observations and Hypotheses"
 
 msgid "UI_ALERT_EXPLAIN_0"
 msgstr "No observed risk. Local typos, reading and switching windows never raise alerts."
@@ -3464,6 +6374,141 @@ msgstr "Show {name}'s face"
 msgid "UI_MAIL_REVEAL_TIP"
 msgstr "In the story, this contact has offered to show their face. The choice is recorded in the campaign and has no effect on goals or access."
 
+msgid "UI_MODEL_ACTION"
+msgstr "Action"
+
+msgid "UI_MODEL_ACTION_ADVANCE"
+msgstr "Advance queued business"
+
+msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
+msgstr "Advance to the next observation window"
+
+msgid "UI_MODEL_ACTION_CHECKPOINT"
+msgstr "Save a policy checkpoint"
+
+msgid "UI_MODEL_ACTION_COLLECT"
+msgstr "Collect from this vantage point"
+
+msgid "UI_MODEL_ACTION_HANDOFF"
+msgstr "Hand off supported links and limits"
+
+msgid "UI_MODEL_ACTION_HYPOTHESIZE"
+msgstr "Create a hypothesis"
+
+msgid "UI_MODEL_ACTION_INSPECT"
+msgstr "Inspect current state"
+
+msgid "UI_MODEL_ACTION_PROBE"
+msgstr "Probe requests and legitimate work"
+
+msgid "UI_MODEL_ACTION_QUARANTINE"
+msgstr "Change stored-object quarantine"
+
+msgid "UI_MODEL_ACTION_RESET"
+msgstr "Reset the current execution"
+
+msgid "UI_MODEL_ACTION_REVISE"
+msgstr "Revise with an evidence trail"
+
+msgid "UI_MODEL_ACTION_REVOKE"
+msgstr "Revoke a session"
+
+msgid "UI_MODEL_ACTION_ROLLBACK"
+msgstr "Roll back the selected policy group"
+
+msgid "UI_MODEL_ACTION_RUN"
+msgstr "Run the program"
+
+msgid "UI_MODEL_ACTION_SET_CONTROL"
+msgstr "Apply a scoped control"
+
+msgid "UI_MODEL_ACTION_SET_INPUT"
+msgstr "Prepare an input case"
+
+msgid "UI_MODEL_ACTION_STEP"
+msgstr "Step through execution"
+
+msgid "UI_MODEL_ACTION_TEST"
+msgstr "Test against collected evidence"
+
+msgid "UI_MODEL_ALLOW"
+msgstr "Allow"
+
+msgid "UI_MODEL_AUTHORIZED"
+msgstr "Authorized scope"
+
+msgid "UI_MODEL_CLIENT_SUPPLIED"
+msgstr "Client-supplied marker"
+
+msgid "UI_MODEL_COMPLETE_WINDOW"
+msgstr "Complete coverage of this window"
+
+msgid "UI_MODEL_DENY"
+msgstr "Block"
+
+msgid "UI_MODEL_EVENT_ACCEPTED"
+msgstr "Upload accepted"
+
+msgid "UI_MODEL_EVENT_QUARANTINE_CHANGED"
+msgstr "Quarantine changed"
+
+msgid "UI_MODEL_EXCLUDED"
+msgstr "Outside scope"
+
+msgid "UI_MODEL_FORM_NOTE"
+msgstr "These choices come from current permissions and observations. Choose an action, claim or input, then run it."
+
+msgid "UI_MODEL_HALTED"
+msgstr "Halted"
+
+msgid "UI_MODEL_IDLE"
+msgstr "Waiting for an input case"
+
+msgid "UI_MODEL_METADATA_ONLY"
+msgstr "Metadata only"
+
+msgid "UI_MODEL_NORMAL"
+msgstr "Legitimate work"
+
+msgid "UI_MODEL_NO_ACTIONS"
+msgstr "No actions are currently available. Check access and observations."
+
+msgid "UI_MODEL_NO_OBSERVATIONS"
+msgstr "No observations to display yet."
+
+msgid "UI_MODEL_PERMITTED_PLAINTEXT"
+msgstr "Permitted plaintext"
+
+msgid "UI_MODEL_REFUTED"
+msgstr "Refuted"
+
+msgid "UI_MODEL_REL_BEFORE"
+msgstr "Occurred before"
+
+msgid "UI_MODEL_REL_FORWARDED_TO"
+msgstr "Forwarded to the next node"
+
+msgid "UI_MODEL_REL_SAME_SESSION"
+msgstr "Same session"
+
+msgid "UI_MODEL_RUNNING"
+msgstr "Running"
+
+msgid "UI_MODEL_SAMPLED_WINDOW"
+msgstr "Sampled observations only"
+
+msgid "UI_MODEL_SERVER_ISSUED"
+msgstr "Server-issued marker"
+
+msgid "UI_MODEL_SUPPORTED"
+msgstr "Supported"
+
+msgid "UI_MODEL_THREAT"
+msgstr "Threat request"
+
+msgid "UI_MODEL_UNDETERMINED"
+msgstr "Underdetermined"
+
 msgid "UI_NET_CONNECTED"
 msgstr "connected · terminal {list}"
 
@@ -3563,6 +6608,24 @@ msgstr "Hold the required account session on {id}"
 msgid "UI_OBJ_SOURCES_PRESERVED"
 msgstr "Keep the remote originals unmodified and undeleted"
 
+msgid "UI_OBSERVATION_ENTITIES"
+msgstr "Entities present in collected observations"
+
+msgid "UI_OBSERVATION_EVIDENCE"
+msgstr "Collected observations and provenance"
+
+msgid "UI_OBSERVATION_HISTORY"
+msgstr "Hypothesis revision history"
+
+msgid "UI_OBSERVATION_HYPOTHESES"
+msgstr "Hypotheses and current evidence"
+
+msgid "UI_OBSERVATION_INITIAL_CLAIMS"
+msgstr "Received claims · not yet tested"
+
+msgid "UI_OBSERVATION_SENSORS"
+msgstr "Vantage points and collection scope"
+
 msgid "UI_OK"
 msgstr "OK"
 
@@ -3613,6 +6676,27 @@ msgstr "Backup restore failed ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "Keep the damaged save under a separate name and restore the valid backup"
+
+msgid "UI_RESPONSE_ARTIFACTS"
+msgstr "Observed stored uploads"
+
+msgid "UI_RESPONSE_ARTIFACT_EVENTS"
+msgstr "Upload and quarantine history"
+
+msgid "UI_RESPONSE_BUSINESS_OBJECTS"
+msgstr "Business results and stored objects"
+
+msgid "UI_RESPONSE_CHECKPOINTS"
+msgstr "Scoped checkpoints"
+
+msgid "UI_RESPONSE_CONTROLS"
+msgstr "Current controls"
+
+msgid "UI_RESPONSE_HISTORY"
+msgstr "Request observation history"
+
+msgid "UI_RESPONSE_MATRIX"
+msgstr "Legitimate and threat request matrix"
 
 msgid "UI_RL_BODY"
 msgstr "Body (JSON object)"
@@ -3797,6 +6881,15 @@ msgstr "No real time passes; waiting uses a logical clock in ticks. This is not 
 msgid "UI_TOOLKIND_AUTH_MODEL"
 msgstr "Counts failures per account and a virtual wait. With the limit policy on, observe both the block after repeated failures and a normal sign-in after waiting."
 
+msgid "UI_TOOLKIND_BRANCH_VM"
+msgstr "Branch and call analysis"
+
+msgid "UI_TOOLKIND_BRANCH_VM_LIMIT"
+msgstr "No real CPU, binary or shell is executed. The case supplies the program and limits; pressing a button a prescribed number of times is not a goal."
+
+msgid "UI_TOOLKIND_BRANCH_VM_MODEL"
+msgstr "Run small input cases through bounded virtual branches, calls, returns and outputs, then compare their traces."
+
 msgid "UI_TOOLKIND_COMPARE"
 msgstr "Compare observations"
 
@@ -3869,6 +6962,15 @@ msgstr "Does not reproduce real process memory, addresses or mitigations. Only a
 msgid "UI_TOOLKIND_MEMORY_MODEL"
 msgstr "Shows a fixed-size buffer and the cells after it. Write hex bytes to see which cell any overflowing byte reaches."
 
+msgid "UI_TOOLKIND_OBSERVATION_CASE"
+msgstr "Observations and hypotheses"
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_LIMIT"
+msgstr "A shared IP does not establish identity. Clock error, sampling and marker provenance limit conclusions; claims are not checked against a hidden culprit."
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_MODEL"
+msgstr "Collect observations from authorized windows and vantage points, then classify claims as supported, refuted or underdetermined from those copies."
+
 msgid "UI_TOOLKIND_PACKET"
 msgstr "Packet view"
 
@@ -3922,6 +7024,15 @@ msgstr "No real JavaScript runs. Effects on other users are computed only as fix
 
 msgid "UI_TOOLKIND_RENDER_MODEL"
 msgstr "Compare whether input is shown only as text or interpreted as a virtual display signal. With escaping on, it is shown only as text."
+
+msgid "UI_TOOLKIND_RESPONSE_LAB"
+msgstr "Response workbench"
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_LIMIT"
+msgstr "Blocking everything is not success. Checkpoints restore only their policy group; revoked credentials and collected records are not resurrected."
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_MODEL"
+msgstr "Run approved requests through the same simulated services to compare legitimate work and threats. Controls change the policies and sessions used by other tools."
 
 msgid "UI_TOOLKIND_REVERSE"
 msgstr "Flow analysis"
@@ -4025,26 +7136,164 @@ msgstr "Ticks must be an integer."
 msgid "UI_TOOL_ERR_UNKNOWN_TOOL"
 msgstr "This tool is not part of the current case."
 
+msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
+msgstr "Upload accepted at step"
+
+msgid "UI_TOOL_FIELD_ACQUISITION"
+msgstr "Acquisition"
+
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "Action"
+
+msgid "UI_TOOL_FIELD_ARTIFACT_ID"
+msgstr "Stored object"
+
+msgid "UI_TOOL_FIELD_AVAILABLE"
+msgstr "Available"
+
+msgid "UI_TOOL_FIELD_BUSINESS_KEY"
+msgstr "Business item"
+
+msgid "UI_TOOL_FIELD_BUSINESS_VALUE"
+msgstr "Business effect"
+
+msgid "UI_TOOL_FIELD_CALL_STACK"
+msgstr "Call stack"
+
+msgid "UI_TOOL_FIELD_CASE_ID"
+msgstr "Request or input case"
+
+msgid "UI_TOOL_FIELD_CHECKPOINT_ID"
+msgstr "Checkpoint"
+
+msgid "UI_TOOL_FIELD_CLAIM"
+msgstr "Claim"
+
+msgid "UI_TOOL_FIELD_CLASS"
+msgstr "Class"
+
+msgid "UI_TOOL_FIELD_CLOCK_OFFSET"
+msgstr "Clock offset"
+
+msgid "UI_TOOL_FIELD_COLLECTOR"
+msgstr "Collector"
+
+msgid "UI_TOOL_FIELD_CONTROL_ID"
+msgstr "Control"
+
+msgid "UI_TOOL_FIELD_COUNT"
+msgstr "Step count"
+
+msgid "UI_TOOL_FIELD_COVERAGE"
+msgstr "Coverage"
+
+msgid "UI_TOOL_FIELD_CURRENT"
+msgstr "Current value"
+
+msgid "UI_TOOL_FIELD_CURSOR"
+msgstr "Current observation window"
+
+msgid "UI_TOOL_FIELD_DST"
+msgstr "Destination register"
+
+msgid "UI_TOOL_FIELD_ELSE"
+msgstr "False branch"
+
+msgid "UI_TOOL_FIELD_ENDPOINT_ID"
+msgstr "Receiving service"
+
+msgid "UI_TOOL_FIELD_ENTITY_REF"
+msgstr "Observed entity"
+
+msgid "UI_TOOL_FIELD_EVENT"
+msgstr "Observed event type"
+
+msgid "UI_TOOL_FIELD_EVENT_ID"
+msgstr "Event ID"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
+msgstr "Execution currently permitted"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
+msgstr "Execution permitted when upload accepted"
 
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "File name"
 
+msgid "UI_TOOL_FIELD_FORMAT_OK"
+msgstr "Format check"
+
+msgid "UI_TOOL_FIELD_FROM"
+msgstr "Calling function"
+
+msgid "UI_TOOL_FIELD_FROM_NODE"
+msgstr "Observed source node"
+
+msgid "UI_TOOL_FIELD_FUNCTION"
+msgstr "Function"
+
+msgid "UI_TOOL_FIELD_GROUP"
+msgstr "Policy group"
+
+msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
+msgstr "Hypothesis name"
+
+msgid "UI_TOOL_FIELD_ID"
+msgstr "ID"
+
 msgid "UI_TOOL_FIELD_INPUT"
 msgstr "Input"
 
+msgid "UI_TOOL_FIELD_INPUTS"
+msgstr "Input cases"
+
+msgid "UI_TOOL_FIELD_INTENDED"
+msgstr "Required outcome"
+
+msgid "UI_TOOL_FIELD_KIND"
+msgstr "Relation"
+
+msgid "UI_TOOL_FIELD_LABEL"
+msgstr "Name"
+
 msgid "UI_TOOL_FIELD_LEFT"
-msgstr "First observation"
+msgstr "First entity"
+
+msgid "UI_TOOL_FIELD_MARKER_AUTHORITY"
+msgstr "Marker authority"
 
 msgid "UI_TOOL_FIELD_MIME"
 msgstr "MIME type"
 
+msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
+msgstr "Next vantage point"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "Object ID"
 
+msgid "UI_TOOL_FIELD_OBSERVATION_IDS"
+msgstr "Evidence observations"
+
+msgid "UI_TOOL_FIELD_OBSERVED"
+msgstr "Observed outcome"
+
+msgid "UI_TOOL_FIELD_OBSERVED_AT"
+msgstr "Observed time interval"
+
+msgid "UI_TOOL_FIELD_OP"
+msgstr "Instruction"
+
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "Origin"
+
+msgid "UI_TOOL_FIELD_OUTPUT"
+msgstr "Output"
+
+msgid "UI_TOOL_FIELD_OUTPUTS"
+msgstr "Outputs"
+
+msgid "UI_TOOL_FIELD_OWNER_FUNCTION"
+msgstr "Instruction owner function"
 
 msgid "UI_TOOL_FIELD_PASSWORD"
 msgstr "Password"
@@ -4052,26 +7301,137 @@ msgstr "Password"
 msgid "UI_TOOL_FIELD_PATH"
 msgstr "File path"
 
+msgid "UI_TOOL_FIELD_PC"
+msgstr "Program counter"
+
+msgid "UI_TOOL_FIELD_PROVENANCE"
+msgstr "Provenance"
+
+msgid "UI_TOOL_FIELD_PUBLIC"
+msgstr "Public observation"
+
+msgid "UI_TOOL_FIELD_QUARANTINED"
+msgstr "Quarantined"
+
+msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
+msgstr "Revision evidence"
+
+msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
+msgstr "Refuted hypotheses"
+
+msgid "UI_TOOL_FIELD_REG"
+msgstr "Source register"
+
+msgid "UI_TOOL_FIELD_REGISTERS"
+msgstr "Virtual registers"
+
+msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
+msgstr "Revised claim"
+
+msgid "UI_TOOL_FIELD_REQUEST_TAG"
+msgstr "Request tag"
+
+msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
+msgstr "Retention scope"
+
 msgid "UI_TOOL_FIELD_RIGHT"
-msgstr "Second observation"
+msgstr "Second entity"
+
+msgid "UI_TOOL_FIELD_ROUTE_ID"
+msgstr "Request route"
+
+msgid "UI_TOOL_FIELD_SAMPLING"
+msgstr "Sampling"
+
+msgid "UI_TOOL_FIELD_SECTION"
+msgstr "Section"
+
+msgid "UI_TOOL_FIELD_SENSOR_ID"
+msgstr "Vantage point"
+
+msgid "UI_TOOL_FIELD_SESSION_TAG"
+msgstr "Session tag"
+
+msgid "UI_TOOL_FIELD_SHA256"
+msgstr "SHA256"
+
+msgid "UI_TOOL_FIELD_SHARED_ADDRESS"
+msgstr "Potentially shared address"
 
 msgid "UI_TOOL_FIELD_SIGNATURE"
 msgstr "File signature"
 
+msgid "UI_TOOL_FIELD_SIGNATURE_OK"
+msgstr "Signature check"
+
+msgid "UI_TOOL_FIELD_SIGNATURE_VALID"
+msgstr "File format validation passed"
+
+msgid "UI_TOOL_FIELD_SOURCE_ID"
+msgstr "Source ID"
+
+msgid "UI_TOOL_FIELD_STATUS"
+msgstr "Status"
+
+msgid "UI_TOOL_FIELD_STEPS_USED"
+msgstr "Steps used"
+
+msgid "UI_TOOL_FIELD_STORED_AS"
+msgstr "Stored reference"
+
+msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
+msgstr "Supported hypotheses"
+
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "Target host"
+
+msgid "UI_TOOL_FIELD_THEN"
+msgstr "True branch"
+
+msgid "UI_TOOL_FIELD_TICK"
+msgstr "Event step"
 
 msgid "UI_TOOL_FIELD_TICKS"
 msgstr "Wait (ticks)"
 
+msgid "UI_TOOL_FIELD_TO"
+msgstr "Call target"
+
 msgid "UI_TOOL_FIELD_TOKEN"
 msgstr "Token"
+
+msgid "UI_TOOL_FIELD_TOKEN_REF"
+msgstr "Session to revoke"
+
+msgid "UI_TOOL_FIELD_TO_NODE"
+msgstr "Observed destination node"
+
+msgid "UI_TOOL_FIELD_TRACE"
+msgstr "Execution trace"
+
+msgid "UI_TOOL_FIELD_UNKNOWN_EDGES"
+msgstr "Unresolved edges"
 
 msgid "UI_TOOL_FIELD_USERNAME"
 msgstr "Account"
 
 msgid "UI_TOOL_FIELD_VALUE"
-msgstr "New value"
+msgstr "Value"
+
+msgid "UI_TOOL_FIELD_VALUES"
+msgstr "Input values"
+
+msgid "UI_TOOL_FIELD_VANTAGE"
+msgstr "Collection vantage"
+
+msgid "UI_TOOL_FIELD_VERDICT"
+msgstr "Evidence verdict"
+
+msgid "UI_TOOL_FIELD_VISIBILITY"
+msgstr "Visible information"
+
+msgid "UI_TOOL_FIELD_WINDOW"
+msgstr "Observation window"
 
 msgid "UI_TOOL_FILTER"
 msgstr "Filter"
@@ -4301,6 +7661,9 @@ msgstr "Uses only the key you type and never fills the input field for you. Non-
 msgid "UI_TOOL_XOR_RESULT"
 msgstr "With key {key} · {text}"
 
+msgid "UI_TOP_CAMPAIGN_MISSION"
+msgstr "{campaign} · {id} · {title}"
+
 msgid "UI_TOP_CASE_DONE"
 msgstr "Case resolved"
 
@@ -4315,6 +7678,36 @@ msgstr "Completion recorded · current goals {done}/{total}"
 
 msgid "UI_TOP_SESSION"
 msgstr "Terminal {n} · {user}@{host}"
+
+msgid "UI_VALUE_FALSE"
+msgstr "No"
+
+msgid "UI_VALUE_TRUE"
+msgstr "Yes"
+
+msgid "UI_VM_CALL_GRAPH"
+msgstr "Call graph"
+
+msgid "UI_VM_CASES"
+msgstr "Prepared input cases"
+
+msgid "UI_VM_LIMITS"
+msgstr "Virtual execution limits"
+
+msgid "UI_VM_LIMITS_LINE"
+msgstr "Per-case limits: {steps} steps · Call depth {stack} · Virtual memory {memory}"
+
+msgid "UI_VM_LISTING"
+msgstr "Program listing"
+
+msgid "UI_VM_OUTPUTS"
+msgstr "Actual outputs"
+
+msgid "UI_VM_STATE_LINE"
+msgstr "Virtual execution: {state} · Steps used {steps}"
+
+msgid "UI_VM_TRACE"
+msgstr "Executed branch and call trace"
 
 msgid "UI_VOLUME"
 msgstr "Interface sounds"

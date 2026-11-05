@@ -6,7 +6,7 @@ const MUSIC := {
 	"home": "a01_signal_home", "intro": "a02_first_connection",
 	"investigate": "a03_hidden_route", "flow": "a04_packet_flow",
 	"alert": "a05_raised_alert", "reveal": "a06_broken_pattern",
-	"ending": "a07_clear_channel",
+	"ending": "a07_clear_channel_ending",
 }
 const EVENTS := ["click", "key", "hover", "notification", "success", "error",
 	"connect", "disconnect", "alert", "tool", "save", "window"]
@@ -52,7 +52,7 @@ func _ensure_players() -> void:
 		_music.append(player)
 	_ambience = _player("Ambience")
 	_ambience.volume_db = -7.0
-	_ambience.stream = _loop_stream("res://assets/audio/ambience/night_rain_air.ogg")
+	_ambience.stream = _audio_stream("res://assets/audio/ambience/night_rain_air.ogg", true)
 
 
 func _player(bus: String) -> AudioStreamPlayer:
@@ -63,13 +63,13 @@ func _player(bus: String) -> AudioStreamPlayer:
 	return player
 
 
-func _loop_stream(path: String) -> AudioStream:
+func _audio_stream(path: String, looping: bool) -> AudioStream:
 	var stream := load(path) as AudioStreamOggVorbis
 	if stream == null:
 		push_warning("Audio cue unavailable: " + path)
 		return null
 	stream = stream.duplicate() as AudioStreamOggVorbis
-	stream.loop = true
+	stream.loop = looping
 	return stream
 
 
@@ -77,7 +77,7 @@ func set_mood(mood: String) -> void:
 	if not MUSIC.has(mood) or mood == current_mood:
 		return
 	_ensure_players()
-	var stream := _loop_stream("res://assets/audio/music/%s.ogg" % MUSIC[mood])
+	var stream := _audio_stream("res://assets/audio/music/%s.ogg" % MUSIC[mood], mood != "ending")
 	if stream == null:
 		return
 	# Reuse the quieter player when a new state interrupts an existing transition.

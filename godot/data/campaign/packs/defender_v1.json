@@ -1,0 +1,4849 @@
+{
+  "schema_version": 1,
+  "content_version": 1,
+  "campaign_id": "midnight_defender",
+  "title": "DF1_PACK_TITLE",
+  "start_mission": "D01",
+  "mission_order": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08"
+  ],
+  "missions": {
+    "D01": {
+      "schema_version": 1,
+      "mission_id": "D01",
+      "title": "DF1_D01_TITLE",
+      "chapter": 1,
+      "optional": false,
+      "prerequisites": [],
+      "alert_max": 2,
+      "initial_web_url": "https://d01.defender.packet.test",
+      "goal": {
+        "record_id": "df1_d01_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "df1_d01_response",
+          "case_ids": [
+            "own_a",
+            "own_b",
+            "staff",
+            "foreign_direct",
+            "foreign_gateway"
+          ],
+          "label_display": "DF1_D01_GOAL",
+          "target_display": "https://d01.defender.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "df1_d01_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:df1_d01_desk"
+          ]
+        },
+        "df1_d01_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d01_response:C731"
+          ]
+        },
+        "df1_d01_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d01_response:C732"
+          ]
+        },
+        "df1_d01_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d01_response:HEALTH"
+          ]
+        },
+        "df1_d01_secret": {
+          "content": "Receipt SECRET\nCustodian operator\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d01_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "df1_d01_desk": {
+          "name": "DF1_D01_DESK_NAME",
+          "domain": "d01.defender.packet.test",
+          "address": "10.53.52.159",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d01_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        },
+        "df1_d01_gateway": {
+          "name": "DF1_D01_GATEWAY_NAME",
+          "domain": "gateway.d01.defender.packet.test",
+          "address": "10.53.120.250",
+          "via": [
+            "df1_d01_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d01_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://d01.defender.packet.test": {
+          "title": "DF1_D01_TITLE",
+          "body": "DF1_D01_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "DF1_D01_SENDER",
+          "subject": "DF1_D01_TITLE",
+          "body": "DF1_D01_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "DF1_D01_SENDER",
+          "subject": "DF1_D01_TITLE",
+          "body": "DF1_D01_REPLY"
+        }
+      },
+      "policies": {
+        "df1_d01_direct_open": true,
+        "df1_d01_gateway_open": true,
+        "df1_d01_owner_check": false,
+        "df1_d01_retry_limit": false,
+        "df1_d01_session_guard": false,
+        "df1_d01_photo_check": false,
+        "df1_d01_no_execution": true,
+        "df1_d01_target_scope": true,
+        "df1_d01_notify_open": true,
+        "df1_d01_standby_open": false
+      },
+      "challenges": {
+        "df1_d01_response": {
+          "kind": "response_lab",
+          "name": "DF1_D01_LAB_NAME",
+          "host_id": "df1_d01_desk",
+          "requires_session": {
+            "host_id": "df1_d01_desk",
+            "account_id": "operator"
+          },
+          "controls": {
+            "direct_open": {
+              "policy_id": "df1_d01_direct_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D01_CONTROL_DIRECT_OPEN"
+            },
+            "gateway_open": {
+              "policy_id": "df1_d01_gateway_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D01_CONTROL_GATEWAY_OPEN"
+            },
+            "owner_check": {
+              "policy_id": "df1_d01_owner_check",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D01_CONTROL_OWNER_CHECK"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "df1_d01_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "df1_d01_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "df1_d01_health"
+              },
+              "SECRET": {
+                "owner": "operator",
+                "record_id": "df1_d01_secret"
+              }
+            },
+            "endpoints": {
+              "receipts": {
+                "host_id": "df1_d01_desk",
+                "method": "GET",
+                "path_prefix": "/tickets/",
+                "operation": "object_read",
+                "owner_policy": "df1_d01_owner_check"
+              },
+              "delegated": {
+                "host_id": "df1_d01_gateway",
+                "method": "GET",
+                "path_prefix": "/tickets/",
+                "operation": "delegated_read",
+                "scopes": {
+                  "citizen_a": [
+                    "C731"
+                  ],
+                  "citizen_b": [
+                    "C732"
+                  ],
+                  "operator": [
+                    "C731",
+                    "C732",
+                    "SECRET"
+                  ],
+                  "notifier": [
+                    "HEALTH"
+                  ]
+                }
+              }
+            }
+          },
+          "cases": {
+            "own_a": {
+              "label": "DF1_D01_CASE_OWN_A",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d01_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://d01.defender.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C731:read",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "GET",
+                  "url": "https://gateway.d01.defender.packet.test/tickets/C731",
+                  "body": {},
+                  "headers": {}
+                }
+              }
+            },
+            "own_b": {
+              "label": "DF1_D01_CASE_OWN_B",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d01_desk",
+                "account_id": "citizen_b"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://d01.defender.packet.test/tickets/C732",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C732:read",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "GET",
+                  "url": "https://gateway.d01.defender.packet.test/tickets/C732",
+                  "body": {},
+                  "headers": {}
+                }
+              }
+            },
+            "staff": {
+              "label": "DF1_D01_CASE_STAFF",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d01_desk",
+                "account_id": "operator"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://gateway.d01.defender.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C731:read",
+                "value": true
+              }
+            },
+            "foreign_direct": {
+              "label": "DF1_D01_CASE_FOREIGN_DIRECT",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d01_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://d01.defender.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403,
+                  404,
+                  503
+                ],
+                "business_key": "ticket:C731:read",
+                "value": false
+              }
+            },
+            "foreign_gateway": {
+              "label": "DF1_D01_CASE_FOREIGN_GATEWAY",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d01_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://gateway.d01.defender.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403,
+                  404
+                ],
+                "business_key": "ticket:C731:read",
+                "value": false
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "availability": [
+              "direct_open",
+              "gateway_open"
+            ],
+            "security": [
+              "owner_check"
+            ]
+          }
+        }
+      },
+      "milestones": [
+        {
+          "id": "DF1_D01_brief",
+          "title": "DF1_D01_TITLE",
+          "text": "DF1_D01_BRIEF"
+        },
+        {
+          "id": "DF1_D01_checks",
+          "title": "DF1_D01_LAB_NAME",
+          "text": "DF1_D01_GOAL"
+        }
+      ],
+      "goal_text": "DF1_D01_GOAL",
+      "hints": [
+        "DF1_D01_HINT_1",
+        "DF1_D01_HINT_2",
+        "DF1_D01_HINT_3"
+      ],
+      "principle": "DF1_D01_PRINCIPLE",
+      "abstraction": "DF1_D01_ABSTRACTION",
+      "limit": "DF1_D01_LIMIT",
+      "tutorial": "DF1_D01_HINT_1",
+      "explain": "DF1_D01_PRINCIPLE"
+    },
+    "D02": {
+      "schema_version": 1,
+      "mission_id": "D02",
+      "title": "DF1_D02_TITLE",
+      "chapter": 1,
+      "optional": false,
+      "prerequisites": [
+        "D01"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://d02.defender.packet.test",
+      "goal": {
+        "record_id": "df1_d02_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "df1_d02_response",
+          "case_ids": [
+            "failed_1",
+            "gateway_failed_1",
+            "failed_2",
+            "gateway_failed_2",
+            "failed_3",
+            "gateway_failed_3",
+            "legitimate",
+            "ward_job"
+          ],
+          "label_display": "DF1_D02_GOAL",
+          "target_display": "https://d02.defender.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "df1_d02_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:df1_d02_desk"
+          ]
+        },
+        "df1_d02_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d02_response:C731"
+          ]
+        },
+        "df1_d02_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d02_response:C732"
+          ]
+        },
+        "df1_d02_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d02_response:HEALTH"
+          ]
+        },
+        "df1_d02_secret": {
+          "content": "Receipt SECRET\nCustodian operator\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d02_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "df1_d02_desk": {
+          "name": "DF1_D02_DESK_NAME",
+          "domain": "d02.defender.packet.test",
+          "address": "10.53.100.129",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d02_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        },
+        "df1_d02_gateway": {
+          "name": "DF1_D02_GATEWAY_NAME",
+          "domain": "gateway.d02.defender.packet.test",
+          "address": "10.53.227.173",
+          "via": [
+            "df1_d02_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d02_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://d02.defender.packet.test": {
+          "title": "DF1_D02_TITLE",
+          "body": "DF1_D02_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "DF1_D02_SENDER",
+          "subject": "DF1_D02_TITLE",
+          "body": "DF1_D02_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "DF1_D02_SENDER",
+          "subject": "DF1_D02_TITLE",
+          "body": "DF1_D02_REPLY"
+        }
+      },
+      "policies": {
+        "df1_d02_direct_open": true,
+        "df1_d02_gateway_open": true,
+        "df1_d02_owner_check": false,
+        "df1_d02_retry_limit": false,
+        "df1_d02_session_guard": false,
+        "df1_d02_photo_check": false,
+        "df1_d02_no_execution": true,
+        "df1_d02_target_scope": true,
+        "df1_d02_notify_open": true,
+        "df1_d02_standby_open": false,
+        "df1_d02_approved_rate": true
+      },
+      "challenges": {
+        "df1_d02_response": {
+          "kind": "response_lab",
+          "name": "DF1_D02_LAB_NAME",
+          "host_id": "df1_d02_desk",
+          "requires_session": {
+            "host_id": "df1_d02_desk",
+            "account_id": "operator"
+          },
+          "controls": {
+            "direct_open": {
+              "policy_id": "df1_d02_direct_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D02_CONTROL_DIRECT_OPEN"
+            },
+            "gateway_open": {
+              "policy_id": "df1_d02_gateway_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D02_CONTROL_GATEWAY_OPEN"
+            },
+            "retry_limit": {
+              "policy_id": "df1_d02_retry_limit",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D02_CONTROL_RETRY_LIMIT"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "df1_d02_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "df1_d02_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "df1_d02_health"
+              },
+              "SECRET": {
+                "owner": "operator",
+                "record_id": "df1_d02_secret"
+              }
+            },
+            "endpoints": {
+              "login": {
+                "host_id": "df1_d02_desk",
+                "method": "POST",
+                "path_prefix": "/sign-in",
+                "operation": "auth_login",
+                "rate_policy": "df1_d02_retry_limit",
+                "limit": 2,
+                "cooldown": 2
+              },
+              "gateway_login": {
+                "host_id": "df1_d02_gateway",
+                "method": "POST",
+                "path_prefix": "/sign-in",
+                "operation": "auth_login",
+                "rate_policy": "df1_d02_approved_rate",
+                "limit": 2,
+                "cooldown": 2
+              }
+            }
+          },
+          "cases": {
+            "failed_1": {
+              "label": "DF1_D02_CASE_FAILED_1",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d02_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d02.defender.packet.test/sign-in",
+                "body": {
+                  "username": "citizen_a",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  503
+                ],
+                "business_key": "auth:citizen_a:login",
+                "value": false
+              }
+            },
+            "gateway_failed_1": {
+              "label": "DF1_D02_CASE_GATEWAY_FAILED_1",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d02_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d02.defender.packet.test/sign-in",
+                "body": {
+                  "username": "outsider",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401
+                ],
+                "business_key": "auth:outsider:login",
+                "value": false
+              }
+            },
+            "failed_2": {
+              "label": "DF1_D02_CASE_FAILED_2",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d02_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d02.defender.packet.test/sign-in",
+                "body": {
+                  "username": "citizen_a",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  503
+                ],
+                "business_key": "auth:citizen_a:login",
+                "value": false
+              }
+            },
+            "gateway_failed_2": {
+              "label": "DF1_D02_CASE_GATEWAY_FAILED_2",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d02_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d02.defender.packet.test/sign-in",
+                "body": {
+                  "username": "outsider",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401
+                ],
+                "business_key": "auth:outsider:login",
+                "value": false
+              }
+            },
+            "failed_3": {
+              "label": "DF1_D02_CASE_FAILED_3",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d02_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d02.defender.packet.test/sign-in",
+                "body": {
+                  "username": "citizen_a",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  429,
+                  503
+                ],
+                "business_key": "auth:citizen_a:login",
+                "value": false
+              }
+            },
+            "gateway_failed_3": {
+              "label": "DF1_D02_CASE_GATEWAY_FAILED_3",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d02_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d02.defender.packet.test/sign-in",
+                "body": {
+                  "username": "outsider",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  429
+                ],
+                "business_key": "auth:outsider:login",
+                "value": false
+              }
+            },
+            "legitimate": {
+              "label": "DF1_D02_CASE_LEGITIMATE",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d02_desk",
+                "account_id": "citizen_b"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d02.defender.packet.test/sign-in",
+                "body": {
+                  "username": "citizen_b",
+                  "password": "b-sample"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "auth:citizen_b:login",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d02.defender.packet.test/sign-in",
+                  "body": {
+                    "username": "citizen_b",
+                    "password": "b-sample"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "ward_job": {
+              "label": "DF1_D02_CASE_WARD_JOB",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d02_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d02.defender.packet.test/sign-in",
+                "body": {
+                  "username": "notifier",
+                  "password": "ward-sample"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "auth:notifier:login",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d02.defender.packet.test/sign-in",
+                  "body": {
+                    "username": "notifier",
+                    "password": "ward-sample"
+                  },
+                  "headers": {}
+                }
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "availability": [
+              "direct_open",
+              "gateway_open"
+            ],
+            "security": [
+              "retry_limit"
+            ]
+          }
+        }
+      },
+      "milestones": [
+        {
+          "id": "DF1_D02_brief",
+          "title": "DF1_D02_TITLE",
+          "text": "DF1_D02_BRIEF"
+        },
+        {
+          "id": "DF1_D02_checks",
+          "title": "DF1_D02_LAB_NAME",
+          "text": "DF1_D02_GOAL"
+        }
+      ],
+      "goal_text": "DF1_D02_GOAL",
+      "hints": [
+        "DF1_D02_HINT_1",
+        "DF1_D02_HINT_2",
+        "DF1_D02_HINT_3"
+      ],
+      "principle": "DF1_D02_PRINCIPLE",
+      "abstraction": "DF1_D02_ABSTRACTION",
+      "limit": "DF1_D02_LIMIT",
+      "tutorial": "DF1_D02_HINT_1",
+      "explain": "DF1_D02_PRINCIPLE"
+    },
+    "D03": {
+      "schema_version": 1,
+      "mission_id": "D03",
+      "title": "DF1_D03_TITLE",
+      "chapter": 2,
+      "optional": false,
+      "prerequisites": [
+        "D02"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://d03.defender.packet.test",
+      "goal": {
+        "record_id": "df1_d03_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "df1_d03_response",
+          "case_ids": [
+            "fresh",
+            "other_job",
+            "retired",
+            "retired_gateway"
+          ],
+          "label_display": "DF1_D03_GOAL",
+          "target_display": "https://d03.defender.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "df1_d03_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:df1_d03_desk"
+          ]
+        },
+        "df1_d03_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d03_response:C731"
+          ]
+        },
+        "df1_d03_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d03_response:C732"
+          ]
+        },
+        "df1_d03_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d03_response:HEALTH"
+          ]
+        },
+        "df1_d03_secret": {
+          "content": "Receipt SECRET\nCustodian operator\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d03_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "df1_d03_desk": {
+          "name": "DF1_D03_DESK_NAME",
+          "domain": "d03.defender.packet.test",
+          "address": "10.53.144.218",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d03_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        },
+        "df1_d03_gateway": {
+          "name": "DF1_D03_GATEWAY_NAME",
+          "domain": "gateway.d03.defender.packet.test",
+          "address": "10.53.15.229",
+          "via": [
+            "df1_d03_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d03_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://d03.defender.packet.test": {
+          "title": "DF1_D03_TITLE",
+          "body": "DF1_D03_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "DF1_D03_SENDER",
+          "subject": "DF1_D03_TITLE",
+          "body": "DF1_D03_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "DF1_D03_SENDER",
+          "subject": "DF1_D03_TITLE",
+          "body": "DF1_D03_REPLY"
+        }
+      },
+      "policies": {
+        "df1_d03_direct_open": true,
+        "df1_d03_gateway_open": true,
+        "df1_d03_owner_check": false,
+        "df1_d03_retry_limit": false,
+        "df1_d03_session_guard": false,
+        "df1_d03_photo_check": false,
+        "df1_d03_no_execution": true,
+        "df1_d03_target_scope": true,
+        "df1_d03_notify_open": true,
+        "df1_d03_standby_open": false,
+        "df1_d03_approved_session_guard": true
+      },
+      "challenges": {
+        "df1_d03_response": {
+          "kind": "response_lab",
+          "name": "DF1_D03_LAB_NAME",
+          "host_id": "df1_d03_desk",
+          "requires_session": {
+            "host_id": "df1_d03_desk",
+            "account_id": "operator"
+          },
+          "controls": {
+            "direct_open": {
+              "policy_id": "df1_d03_direct_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D03_CONTROL_DIRECT_OPEN"
+            },
+            "gateway_open": {
+              "policy_id": "df1_d03_gateway_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D03_CONTROL_GATEWAY_OPEN"
+            },
+            "session_guard": {
+              "policy_id": "df1_d03_session_guard",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D03_CONTROL_SESSION_GUARD"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "df1_d03_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "df1_d03_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "df1_d03_health"
+              },
+              "SECRET": {
+                "owner": "operator",
+                "record_id": "df1_d03_secret"
+              }
+            },
+            "endpoints": {
+              "session": {
+                "host_id": "df1_d03_desk",
+                "method": "POST",
+                "path_prefix": "/session",
+                "operation": "session_use",
+                "revocation_policy": "df1_d03_session_guard",
+                "initial_tokens": {
+                  "old_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "fresh_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "other_job": {
+                    "account_id": "notifier",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "HEALTH"
+                    ]
+                  }
+                }
+              },
+              "gateway_session": {
+                "host_id": "df1_d03_gateway",
+                "method": "POST",
+                "path_prefix": "/session",
+                "operation": "session_use",
+                "revocation_policy": "df1_d03_approved_session_guard",
+                "initial_tokens": {
+                  "fresh_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "other_job": {
+                    "account_id": "notifier",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "HEALTH"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "cases": {
+            "fresh": {
+              "label": "DF1_D03_CASE_FRESH",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d03_desk",
+                "account_id": "citizen_a",
+                "token_ref": "fresh_shift"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d03.defender.packet.test/session",
+                "body": {
+                  "token_ref": "fresh_shift"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "session:fresh_shift:use",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d03.defender.packet.test/session",
+                  "body": {
+                    "token_ref": "fresh_shift"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "other_job": {
+              "label": "DF1_D03_CASE_OTHER_JOB",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d03_desk",
+                "account_id": "notifier",
+                "token_ref": "other_job"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d03.defender.packet.test/session",
+                "body": {
+                  "token_ref": "other_job"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "session:other_job:use",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d03.defender.packet.test/session",
+                  "body": {
+                    "token_ref": "other_job"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "retired": {
+              "label": "DF1_D03_CASE_RETIRED",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d03_desk",
+                "account_id": "citizen_a",
+                "token_ref": "old_shift"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d03.defender.packet.test/session",
+                "body": {
+                  "token_ref": "old_shift"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403,
+                  503
+                ],
+                "business_key": "session:old_shift:use",
+                "value": false
+              }
+            },
+            "retired_gateway": {
+              "label": "DF1_D03_CASE_RETIRED_GATEWAY",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d03_desk",
+                "account_id": "citizen_a",
+                "token_ref": "old_shift"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d03.defender.packet.test/session",
+                "body": {
+                  "token_ref": "old_shift"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403
+                ],
+                "business_key": "session:old_shift:use",
+                "value": false
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "availability": [
+              "direct_open",
+              "gateway_open"
+            ],
+            "security": [
+              "session_guard"
+            ]
+          }
+        }
+      },
+      "milestones": [
+        {
+          "id": "DF1_D03_brief",
+          "title": "DF1_D03_TITLE",
+          "text": "DF1_D03_BRIEF"
+        },
+        {
+          "id": "DF1_D03_checks",
+          "title": "DF1_D03_LAB_NAME",
+          "text": "DF1_D03_GOAL"
+        }
+      ],
+      "goal_text": "DF1_D03_GOAL",
+      "hints": [
+        "DF1_D03_HINT_1",
+        "DF1_D03_HINT_2",
+        "DF1_D03_HINT_3"
+      ],
+      "principle": "DF1_D03_PRINCIPLE",
+      "abstraction": "DF1_D03_ABSTRACTION",
+      "limit": "DF1_D03_LIMIT",
+      "tutorial": "DF1_D03_HINT_1",
+      "explain": "DF1_D03_PRINCIPLE"
+    },
+    "D04": {
+      "schema_version": 1,
+      "mission_id": "D04",
+      "title": "DF1_D04_TITLE",
+      "chapter": 2,
+      "optional": false,
+      "prerequisites": [
+        "D03"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://d04.defender.packet.test",
+      "goal": {
+        "record_id": "df1_d04_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "df1_d04_response",
+          "case_ids": [
+            "photo",
+            "disguised",
+            "disguised_gateway"
+          ],
+          "label_display": "DF1_D04_GOAL",
+          "target_display": "https://d04.defender.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "df1_d04_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:df1_d04_desk"
+          ]
+        },
+        "df1_d04_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d04_response:C731"
+          ]
+        },
+        "df1_d04_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d04_response:C732"
+          ]
+        },
+        "df1_d04_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d04_response:HEALTH"
+          ]
+        },
+        "df1_d04_secret": {
+          "content": "Receipt SECRET\nCustodian operator\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d04_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "df1_d04_desk": {
+          "name": "DF1_D04_DESK_NAME",
+          "domain": "d04.defender.packet.test",
+          "address": "10.53.217.166",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d04_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        },
+        "df1_d04_gateway": {
+          "name": "DF1_D04_GATEWAY_NAME",
+          "domain": "gateway.d04.defender.packet.test",
+          "address": "10.53.188.185",
+          "via": [
+            "df1_d04_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d04_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://d04.defender.packet.test": {
+          "title": "DF1_D04_TITLE",
+          "body": "DF1_D04_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "DF1_D04_SENDER",
+          "subject": "DF1_D04_TITLE",
+          "body": "DF1_D04_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "DF1_D04_SENDER",
+          "subject": "DF1_D04_TITLE",
+          "body": "DF1_D04_REPLY"
+        }
+      },
+      "policies": {
+        "df1_d04_direct_open": true,
+        "df1_d04_gateway_open": true,
+        "df1_d04_owner_check": false,
+        "df1_d04_retry_limit": false,
+        "df1_d04_session_guard": false,
+        "df1_d04_photo_check": false,
+        "df1_d04_no_execution": false,
+        "df1_d04_target_scope": true,
+        "df1_d04_notify_open": true,
+        "df1_d04_standby_open": false,
+        "df1_d04_approved_photo": true,
+        "df1_d04_approved_no_execution": true
+      },
+      "challenges": {
+        "df1_d04_response": {
+          "kind": "response_lab",
+          "name": "DF1_D04_LAB_NAME",
+          "host_id": "df1_d04_desk",
+          "requires_session": {
+            "host_id": "df1_d04_desk",
+            "account_id": "operator"
+          },
+          "controls": {
+            "direct_open": {
+              "policy_id": "df1_d04_direct_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D04_CONTROL_DIRECT_OPEN"
+            },
+            "gateway_open": {
+              "policy_id": "df1_d04_gateway_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D04_CONTROL_GATEWAY_OPEN"
+            },
+            "photo_check": {
+              "policy_id": "df1_d04_photo_check",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D04_CONTROL_PHOTO_CHECK"
+            },
+            "no_execution": {
+              "policy_id": "df1_d04_no_execution",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D04_CONTROL_NO_EXECUTION"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "df1_d04_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "df1_d04_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "df1_d04_health"
+              },
+              "SECRET": {
+                "owner": "operator",
+                "record_id": "df1_d04_secret"
+              }
+            },
+            "endpoints": {
+              "upload": {
+                "host_id": "df1_d04_desk",
+                "method": "POST",
+                "path_prefix": "/photos",
+                "operation": "upload_create",
+                "validation_policy": "df1_d04_photo_check",
+                "nonexecuting_policy": "df1_d04_no_execution"
+              },
+              "gateway_upload": {
+                "host_id": "df1_d04_gateway",
+                "method": "POST",
+                "path_prefix": "/photos",
+                "operation": "upload_create",
+                "validation_policy": "df1_d04_approved_photo",
+                "nonexecuting_policy": "df1_d04_approved_no_execution"
+              }
+            }
+          },
+          "cases": {
+            "photo": {
+              "label": "DF1_D04_CASE_PHOTO",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d04_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d04.defender.packet.test/photos",
+                "body": {
+                  "filename": "normal.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "JPEG"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  201
+                ],
+                "business_key": "upload:normal.jpg:created",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d04.defender.packet.test/photos",
+                  "body": {
+                    "filename": "normal.jpg",
+                    "mime": "image/jpeg",
+                    "signature": "JPEG"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "disguised": {
+              "label": "DF1_D04_CASE_DISGUISED",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d04_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d04.defender.packet.test/photos",
+                "body": {
+                  "filename": "fake.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "SCRIPT"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  415,
+                  503
+                ],
+                "business_key": "upload:fake.jpg:created",
+                "value": false
+              }
+            },
+            "disguised_gateway": {
+              "label": "DF1_D04_CASE_DISGUISED_GATEWAY",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d04_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d04.defender.packet.test/photos",
+                "body": {
+                  "filename": "fake.jpg",
+                  "mime": "image/jpeg",
+                  "signature": "SCRIPT"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  415
+                ],
+                "business_key": "upload:fake.jpg:created",
+                "value": false
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "availability": [
+              "direct_open",
+              "gateway_open"
+            ],
+            "security": [
+              "photo_check",
+              "no_execution"
+            ]
+          }
+        }
+      },
+      "milestones": [
+        {
+          "id": "DF1_D04_brief",
+          "title": "DF1_D04_TITLE",
+          "text": "DF1_D04_BRIEF"
+        },
+        {
+          "id": "DF1_D04_checks",
+          "title": "DF1_D04_LAB_NAME",
+          "text": "DF1_D04_GOAL"
+        }
+      ],
+      "goal_text": "DF1_D04_GOAL",
+      "hints": [
+        "DF1_D04_HINT_1",
+        "DF1_D04_HINT_2",
+        "DF1_D04_HINT_3"
+      ],
+      "principle": "DF1_D04_PRINCIPLE",
+      "abstraction": "DF1_D04_ABSTRACTION",
+      "limit": "DF1_D04_LIMIT",
+      "tutorial": "DF1_D04_HINT_1",
+      "explain": "DF1_D04_PRINCIPLE"
+    },
+    "D05": {
+      "schema_version": 1,
+      "mission_id": "D05",
+      "title": "DF1_D05_TITLE",
+      "chapter": 3,
+      "optional": false,
+      "prerequisites": [
+        "D04"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://d05.defender.packet.test",
+      "goal": {
+        "record_id": "df1_d05_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "df1_d05_response",
+          "case_ids": [
+            "preview",
+            "health",
+            "secret",
+            "proxy_secret"
+          ],
+          "label_display": "DF1_D05_GOAL",
+          "target_display": "https://d05.defender.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "df1_d05_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:df1_d05_desk"
+          ]
+        },
+        "df1_d05_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d05_response:C731"
+          ]
+        },
+        "df1_d05_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d05_response:C732"
+          ]
+        },
+        "df1_d05_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d05_response:HEALTH"
+          ]
+        },
+        "df1_d05_secret": {
+          "content": "Receipt SECRET\nCustodian operator\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d05_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "df1_d05_desk": {
+          "name": "DF1_D05_DESK_NAME",
+          "domain": "d05.defender.packet.test",
+          "address": "10.53.35.198",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        },
+        "df1_d05_gateway": {
+          "name": "DF1_D05_GATEWAY_NAME",
+          "domain": "gateway.d05.defender.packet.test",
+          "address": "10.53.226.18",
+          "via": [
+            "df1_d05_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d05_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        },
+        "df1_d05_internal": {
+          "name": "DF1_D05_INTERNAL_NAME",
+          "domain": "internal.d05.defender.packet.test",
+          "address": "10.53.140.40",
+          "via": [
+            "df1_d05_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d05_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://d05.defender.packet.test": {
+          "title": "DF1_D05_TITLE",
+          "body": "DF1_D05_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "DF1_D05_SENDER",
+          "subject": "DF1_D05_TITLE",
+          "body": "DF1_D05_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "DF1_D05_SENDER",
+          "subject": "DF1_D05_TITLE",
+          "body": "DF1_D05_REPLY"
+        }
+      },
+      "policies": {
+        "df1_d05_direct_open": true,
+        "df1_d05_gateway_open": true,
+        "df1_d05_owner_check": false,
+        "df1_d05_retry_limit": false,
+        "df1_d05_session_guard": false,
+        "df1_d05_photo_check": false,
+        "df1_d05_no_execution": true,
+        "df1_d05_target_scope": true,
+        "df1_d05_notify_open": true,
+        "df1_d05_standby_open": false,
+        "df1_d05_preview_owned": true
+      },
+      "challenges": {
+        "df1_d05_response": {
+          "kind": "response_lab",
+          "name": "DF1_D05_LAB_NAME",
+          "host_id": "df1_d05_desk",
+          "requires_session": {
+            "host_id": "df1_d05_desk",
+            "account_id": "operator"
+          },
+          "controls": {
+            "direct_open": {
+              "policy_id": "df1_d05_direct_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D05_CONTROL_DIRECT_OPEN"
+            },
+            "gateway_open": {
+              "policy_id": "df1_d05_gateway_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D05_CONTROL_GATEWAY_OPEN"
+            },
+            "owner_check": {
+              "policy_id": "df1_d05_owner_check",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D05_CONTROL_OWNER_CHECK"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "df1_d05_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "df1_d05_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "df1_d05_health"
+              },
+              "SECRET": {
+                "owner": "operator",
+                "record_id": "df1_d05_secret"
+              }
+            },
+            "endpoints": {
+              "preview": {
+                "host_id": "df1_d05_desk",
+                "method": "GET",
+                "path_prefix": "/preview/",
+                "operation": "object_read",
+                "owner_policy": "df1_d05_preview_owned"
+              },
+              "internal": {
+                "host_id": "df1_d05_internal",
+                "method": "GET",
+                "path_prefix": "/state/",
+                "operation": "object_read",
+                "owner_policy": "df1_d05_owner_check"
+              },
+              "proxy": {
+                "host_id": "df1_d05_gateway",
+                "method": "GET",
+                "path_prefix": "/state/",
+                "operation": "delegated_read",
+                "scopes": {
+                  "notifier": [
+                    "HEALTH"
+                  ]
+                }
+              }
+            }
+          },
+          "cases": {
+            "preview": {
+              "label": "DF1_D05_CASE_PREVIEW",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d05_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://d05.defender.packet.test/preview/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C731:read",
+                "value": true
+              }
+            },
+            "health": {
+              "label": "DF1_D05_CASE_HEALTH",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d05_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://internal.d05.defender.packet.test/state/HEALTH",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:HEALTH:read",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "GET",
+                  "url": "https://gateway.d05.defender.packet.test/state/HEALTH",
+                  "body": {},
+                  "headers": {}
+                }
+              }
+            },
+            "secret": {
+              "label": "DF1_D05_CASE_SECRET",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d05_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://internal.d05.defender.packet.test/state/SECRET",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403,
+                  503
+                ],
+                "business_key": "ticket:SECRET:read",
+                "value": false
+              }
+            },
+            "proxy_secret": {
+              "label": "DF1_D05_CASE_PROXY_SECRET",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d05_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://gateway.d05.defender.packet.test/state/SECRET",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403
+                ],
+                "business_key": "ticket:SECRET:read",
+                "value": false
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "availability": [
+              "direct_open",
+              "gateway_open"
+            ],
+            "security": [
+              "owner_check"
+            ]
+          }
+        }
+      },
+      "milestones": [
+        {
+          "id": "DF1_D05_brief",
+          "title": "DF1_D05_TITLE",
+          "text": "DF1_D05_BRIEF"
+        },
+        {
+          "id": "DF1_D05_checks",
+          "title": "DF1_D05_LAB_NAME",
+          "text": "DF1_D05_GOAL"
+        }
+      ],
+      "goal_text": "DF1_D05_GOAL",
+      "hints": [
+        "DF1_D05_HINT_1",
+        "DF1_D05_HINT_2",
+        "DF1_D05_HINT_3"
+      ],
+      "principle": "DF1_D05_PRINCIPLE",
+      "abstraction": "DF1_D05_ABSTRACTION",
+      "limit": "DF1_D05_LIMIT",
+      "tutorial": "DF1_D05_HINT_1",
+      "explain": "DF1_D05_PRINCIPLE"
+    },
+    "D06": {
+      "schema_version": 1,
+      "mission_id": "D06",
+      "title": "DF1_D06_TITLE",
+      "chapter": 3,
+      "optional": false,
+      "prerequisites": [
+        "D05"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://d06.defender.packet.test",
+      "goal": {
+        "record_id": "df1_d06_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "df1_d06_response",
+          "case_ids": [
+            "read",
+            "write",
+            "foreign_write",
+            "foreign_approved"
+          ],
+          "label_display": "DF1_D06_GOAL",
+          "target_display": "https://d06.defender.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "df1_d06_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:df1_d06_desk"
+          ]
+        },
+        "df1_d06_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d06_response:C731"
+          ]
+        },
+        "df1_d06_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d06_response:C732"
+          ]
+        },
+        "df1_d06_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d06_response:HEALTH"
+          ]
+        },
+        "df1_d06_secret": {
+          "content": "Receipt SECRET\nCustodian operator\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d06_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "df1_d06_desk": {
+          "name": "DF1_D06_DESK_NAME",
+          "domain": "d06.defender.packet.test",
+          "address": "10.53.46.74",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d06_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            },
+            "/deploy": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "deploy",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            },
+            "/deploy/status.txt": {
+              "kind": "file",
+              "owner": "operator",
+              "group": "deploy",
+              "mode": "660",
+              "content": "PENDING\n",
+              "record_id": ""
+            }
+          }
+        },
+        "df1_d06_gateway": {
+          "name": "DF1_D06_GATEWAY_NAME",
+          "domain": "gateway.d06.defender.packet.test",
+          "address": "10.53.245.123",
+          "via": [
+            "df1_d06_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d06_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            },
+            "/approved": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "jobs",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            },
+            "/approved/status.txt": {
+              "kind": "file",
+              "owner": "operator",
+              "group": "jobs",
+              "mode": "660",
+              "content": "PENDING\n",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://d06.defender.packet.test": {
+          "title": "DF1_D06_TITLE",
+          "body": "DF1_D06_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "DF1_D06_SENDER",
+          "subject": "DF1_D06_TITLE",
+          "body": "DF1_D06_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "DF1_D06_SENDER",
+          "subject": "DF1_D06_TITLE",
+          "body": "DF1_D06_REPLY"
+        }
+      },
+      "policies": {
+        "df1_d06_direct_open": true,
+        "df1_d06_gateway_open": true,
+        "df1_d06_owner_check": false,
+        "df1_d06_retry_limit": false,
+        "df1_d06_session_guard": false,
+        "df1_d06_photo_check": false,
+        "df1_d06_no_execution": true,
+        "df1_d06_target_scope": true,
+        "df1_d06_notify_open": true,
+        "df1_d06_standby_open": false
+      },
+      "challenges": {
+        "df1_d06_response": {
+          "kind": "response_lab",
+          "name": "DF1_D06_LAB_NAME",
+          "host_id": "df1_d06_desk",
+          "requires_session": {
+            "host_id": "df1_d06_desk",
+            "account_id": "operator"
+          },
+          "controls": {
+            "job_groups": {
+              "kind": "actor_groups",
+              "host_id": "df1_d06_desk",
+              "account_id": "notifier",
+              "values": [
+                [
+                  "jobs"
+                ],
+                [
+                  "jobs",
+                  "deploy"
+                ]
+              ],
+              "group": "permissions",
+              "label": "DF1_D06_JOB_GROUPS"
+            },
+            "directory_mode": {
+              "kind": "vfs_mode",
+              "host_id": "df1_d06_desk",
+              "file_path": "/deploy",
+              "values": [
+                "750",
+                "777"
+              ],
+              "group": "permissions",
+              "label": "DF1_D06_DIRECTORY_MODE"
+            },
+            "file_mode": {
+              "kind": "vfs_mode",
+              "host_id": "df1_d06_desk",
+              "file_path": "/deploy/status.txt",
+              "values": [
+                "660",
+                "666"
+              ],
+              "group": "permissions",
+              "label": "DF1_D06_FILE_MODE"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "df1_d06_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "df1_d06_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "df1_d06_health"
+              },
+              "SECRET": {
+                "owner": "operator",
+                "record_id": "df1_d06_secret"
+              }
+            },
+            "endpoints": {
+              "deployment_read": {
+                "host_id": "df1_d06_desk",
+                "method": "GET",
+                "path_prefix": "/deployment/read",
+                "operation": "vfs_read",
+                "file_path": "/deploy/status.txt"
+              },
+              "deployment_write": {
+                "host_id": "df1_d06_desk",
+                "method": "POST",
+                "path_prefix": "/deployment/write",
+                "operation": "vfs_write",
+                "file_path": "/deploy/status.txt"
+              },
+              "approved_read": {
+                "host_id": "df1_d06_gateway",
+                "method": "GET",
+                "path_prefix": "/deployment/read",
+                "operation": "vfs_read",
+                "file_path": "/approved/status.txt"
+              },
+              "approved_write": {
+                "host_id": "df1_d06_gateway",
+                "method": "POST",
+                "path_prefix": "/deployment/write",
+                "operation": "vfs_write",
+                "file_path": "/approved/status.txt"
+              }
+            },
+            "write_scope": [
+              "/deploy/status.txt",
+              "/approved/status.txt"
+            ]
+          },
+          "cases": {
+            "read": {
+              "label": "DF1_D06_CASE_READ",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d06_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://d06.defender.packet.test/deployment/read",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ]
+              },
+              "routes": {
+                "gateway": {
+                  "method": "GET",
+                  "url": "https://gateway.d06.defender.packet.test/deployment/read",
+                  "body": {},
+                  "headers": {}
+                }
+              }
+            },
+            "write": {
+              "label": "DF1_D06_CASE_WRITE",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d06_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d06.defender.packet.test/deployment/write",
+                "body": {
+                  "content": "DEPLOYMENT READY\n"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200,
+                  201
+                ]
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d06.defender.packet.test/deployment/write",
+                  "body": {
+                    "content": "DEPLOYMENT READY\n"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "foreign_write": {
+              "label": "DF1_D06_CASE_FOREIGN_WRITE",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d06_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d06.defender.packet.test/deployment/write",
+                "body": {
+                  "content": "UNAUTHORIZED\n"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403
+                ]
+              }
+            },
+            "foreign_approved": {
+              "label": "DF1_D06_CASE_FOREIGN_APPROVED",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d06_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d06.defender.packet.test/deployment/write",
+                "body": {
+                  "content": "UNAUTHORIZED\n"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403
+                ]
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "permissions": [
+              "job_groups",
+              "directory_mode",
+              "file_mode"
+            ]
+          }
+        }
+      },
+      "milestones": [
+        {
+          "id": "DF1_D06_brief",
+          "title": "DF1_D06_TITLE",
+          "text": "DF1_D06_BRIEF"
+        },
+        {
+          "id": "DF1_D06_checks",
+          "title": "DF1_D06_LAB_NAME",
+          "text": "DF1_D06_GOAL"
+        }
+      ],
+      "goal_text": "DF1_D06_GOAL",
+      "hints": [
+        "DF1_D06_HINT_1",
+        "DF1_D06_HINT_2",
+        "DF1_D06_HINT_3"
+      ],
+      "principle": "DF1_D06_PRINCIPLE",
+      "abstraction": "DF1_D06_ABSTRACTION",
+      "limit": "DF1_D06_LIMIT",
+      "tutorial": "DF1_D06_HINT_1",
+      "explain": "DF1_D06_PRINCIPLE"
+    },
+    "D07": {
+      "schema_version": 1,
+      "mission_id": "D07",
+      "title": "DF1_D07_TITLE",
+      "chapter": 3,
+      "optional": false,
+      "prerequisites": [
+        "D06"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://d07.defender.packet.test",
+      "goal": {
+        "record_id": "df1_d07_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "df1_d07_response",
+          "case_ids": [
+            "fresh",
+            "other_job",
+            "retired",
+            "retired_gateway",
+            "notify",
+            "internal_target",
+            "standby_target"
+          ],
+          "label_display": "DF1_D07_GOAL",
+          "target_display": "https://d07.defender.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "df1_d07_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:df1_d07_desk"
+          ]
+        },
+        "df1_d07_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d07_response:C731"
+          ]
+        },
+        "df1_d07_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d07_response:C732"
+          ]
+        },
+        "df1_d07_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d07_response:HEALTH"
+          ]
+        },
+        "df1_d07_secret": {
+          "content": "Receipt SECRET\nCustodian operator\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d07_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "df1_d07_desk": {
+          "name": "DF1_D07_DESK_NAME",
+          "domain": "d07.defender.packet.test",
+          "address": "10.53.87.61",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d07_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        },
+        "df1_d07_gateway": {
+          "name": "DF1_D07_GATEWAY_NAME",
+          "domain": "gateway.d07.defender.packet.test",
+          "address": "10.53.32.60",
+          "via": [
+            "df1_d07_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d07_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://d07.defender.packet.test": {
+          "title": "DF1_D07_TITLE",
+          "body": "DF1_D07_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "DF1_D07_SENDER",
+          "subject": "DF1_D07_TITLE",
+          "body": "DF1_D07_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "DF1_D07_SENDER",
+          "subject": "DF1_D07_TITLE",
+          "body": "DF1_D07_REPLY"
+        }
+      },
+      "policies": {
+        "df1_d07_direct_open": true,
+        "df1_d07_gateway_open": true,
+        "df1_d07_owner_check": false,
+        "df1_d07_retry_limit": false,
+        "df1_d07_session_guard": false,
+        "df1_d07_photo_check": false,
+        "df1_d07_no_execution": true,
+        "df1_d07_target_scope": true,
+        "df1_d07_notify_open": false,
+        "df1_d07_standby_open": false,
+        "df1_d07_approved_session_guard": true
+      },
+      "challenges": {
+        "df1_d07_response": {
+          "kind": "response_lab",
+          "name": "DF1_D07_LAB_NAME",
+          "host_id": "df1_d07_desk",
+          "requires_session": {
+            "host_id": "df1_d07_desk",
+            "account_id": "operator"
+          },
+          "controls": {
+            "session_guard": {
+              "policy_id": "df1_d07_session_guard",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D07_CONTROL_SESSION_GUARD"
+            },
+            "target_scope": {
+              "policy_id": "df1_d07_target_scope",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D07_CONTROL_TARGET_SCOPE"
+            },
+            "notify_open": {
+              "policy_id": "df1_d07_notify_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D07_CONTROL_NOTIFY_OPEN"
+            },
+            "standby_open": {
+              "policy_id": "df1_d07_standby_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D07_CONTROL_STANDBY_OPEN"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "df1_d07_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "df1_d07_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "df1_d07_health"
+              },
+              "SECRET": {
+                "owner": "operator",
+                "record_id": "df1_d07_secret"
+              }
+            },
+            "endpoints": {
+              "session": {
+                "host_id": "df1_d07_desk",
+                "method": "POST",
+                "path_prefix": "/session",
+                "operation": "session_use",
+                "revocation_policy": "df1_d07_session_guard",
+                "initial_tokens": {
+                  "old_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "fresh_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "other_job": {
+                    "account_id": "notifier",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "HEALTH"
+                    ]
+                  }
+                }
+              },
+              "gateway_session": {
+                "host_id": "df1_d07_gateway",
+                "method": "POST",
+                "path_prefix": "/session",
+                "operation": "session_use",
+                "revocation_policy": "df1_d07_approved_session_guard",
+                "initial_tokens": {
+                  "old_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "fresh_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "other_job": {
+                    "account_id": "notifier",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "HEALTH"
+                    ]
+                  }
+                }
+              },
+              "notify": {
+                "host_id": "df1_d07_desk",
+                "method": "POST",
+                "path_prefix": "/notify",
+                "operation": "notify_send",
+                "enabled_policy": "df1_d07_notify_open",
+                "allowed_targets": [
+                  "ward"
+                ],
+                "target_policy": "df1_d07_target_scope"
+              },
+              "standby_notify": {
+                "host_id": "df1_d07_gateway",
+                "method": "POST",
+                "path_prefix": "/notify",
+                "operation": "notify_send",
+                "enabled_policy": "df1_d07_standby_open",
+                "allowed_targets": [
+                  "ward"
+                ],
+                "target_policy": "df1_d07_target_scope"
+              }
+            }
+          },
+          "cases": {
+            "fresh": {
+              "label": "DF1_D07_CASE_FRESH",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d07_desk",
+                "account_id": "citizen_a",
+                "token_ref": "fresh_shift"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d07.defender.packet.test/session",
+                "body": {
+                  "token_ref": "fresh_shift"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "session:fresh_shift:use",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d07.defender.packet.test/session",
+                  "body": {
+                    "token_ref": "fresh_shift"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "other_job": {
+              "label": "DF1_D07_CASE_OTHER_JOB",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d07_desk",
+                "account_id": "notifier",
+                "token_ref": "other_job"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d07.defender.packet.test/session",
+                "body": {
+                  "token_ref": "other_job"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "session:other_job:use",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d07.defender.packet.test/session",
+                  "body": {
+                    "token_ref": "other_job"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "retired": {
+              "label": "DF1_D07_CASE_RETIRED",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d07_desk",
+                "account_id": "citizen_a",
+                "token_ref": "old_shift"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d07.defender.packet.test/session",
+                "body": {
+                  "token_ref": "old_shift"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403,
+                  503
+                ],
+                "business_key": "session:old_shift:use",
+                "value": false
+              }
+            },
+            "retired_gateway": {
+              "label": "DF1_D07_CASE_RETIRED_GATEWAY",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d07_desk",
+                "account_id": "citizen_a",
+                "token_ref": "old_shift"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d07.defender.packet.test/session",
+                "body": {
+                  "token_ref": "old_shift"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403
+                ],
+                "business_key": "session:old_shift:use",
+                "value": false
+              }
+            },
+            "notify": {
+              "label": "DF1_D07_CASE_NOTIFY",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d07_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d07.defender.packet.test/notify",
+                "body": {
+                  "target": "ward",
+                  "message": "handoff-ready"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200,
+                  201
+                ],
+                "business_key": "notify:ward:delivered",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d07.defender.packet.test/notify",
+                  "body": {
+                    "target": "ward",
+                    "message": "handoff-ready"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "internal_target": {
+              "label": "DF1_D07_CASE_INTERNAL_TARGET",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d07_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d07.defender.packet.test/notify",
+                "body": {
+                  "target": "control",
+                  "message": "unrelated"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403,
+                  503
+                ],
+                "business_key": "notify:control:delivered",
+                "value": false
+              }
+            },
+            "standby_target": {
+              "label": "DF1_D07_CASE_STANDBY_TARGET",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d07_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d07.defender.packet.test/notify",
+                "body": {
+                  "target": "control",
+                  "message": "unrelated"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403,
+                  503
+                ],
+                "business_key": "notify:control:delivered",
+                "value": false
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "availability": [
+              "notify_open",
+              "standby_open"
+            ],
+            "security": [
+              "session_guard",
+              "target_scope"
+            ]
+          },
+          "initial_checkpoints": {
+            "baseline_availability": {
+              "group": "availability",
+              "values": {
+                "notify_open": true,
+                "standby_open": false
+              },
+              "label": "DF1_D07_BASELINE_CHECKPOINT"
+            }
+          }
+        }
+      },
+      "milestones": [
+        {
+          "id": "DF1_D07_brief",
+          "title": "DF1_D07_TITLE",
+          "text": "DF1_D07_BRIEF"
+        },
+        {
+          "id": "DF1_D07_checks",
+          "title": "DF1_D07_LAB_NAME",
+          "text": "DF1_D07_GOAL"
+        }
+      ],
+      "goal_text": "DF1_D07_GOAL",
+      "hints": [
+        "DF1_D07_HINT_1",
+        "DF1_D07_HINT_2",
+        "DF1_D07_HINT_3"
+      ],
+      "principle": "DF1_D07_PRINCIPLE",
+      "abstraction": "DF1_D07_ABSTRACTION",
+      "limit": "DF1_D07_LIMIT",
+      "tutorial": "DF1_D07_HINT_1",
+      "explain": "DF1_D07_PRINCIPLE"
+    },
+    "D08": {
+      "schema_version": 1,
+      "mission_id": "D08",
+      "title": "DF1_D08_TITLE",
+      "chapter": 4,
+      "optional": false,
+      "prerequisites": [
+        "D07"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://d08.defender.packet.test",
+      "goal": {
+        "record_id": "df1_d08_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "df1_d08_response",
+          "case_ids": [
+            "own_a",
+            "own_b",
+            "staff",
+            "foreign_direct",
+            "foreign_gateway",
+            "fresh",
+            "other_job",
+            "retired",
+            "retired_gateway",
+            "notify",
+            "internal_target",
+            "standby_target"
+          ],
+          "label_display": "DF1_D08_GOAL",
+          "target_display": "https://d08.defender.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "df1_d08_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:df1_d08_desk"
+          ]
+        },
+        "df1_d08_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d08_response:C731"
+          ]
+        },
+        "df1_d08_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d08_response:C732"
+          ]
+        },
+        "df1_d08_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d08_response:HEALTH"
+          ]
+        },
+        "df1_d08_secret": {
+          "content": "Receipt SECRET\nCustodian operator\nService: night duty\n",
+          "allowed_sources": [
+            "service:df1_d08_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "df1_d08_desk": {
+          "name": "DF1_D08_DESK_NAME",
+          "domain": "d08.defender.packet.test",
+          "address": "10.53.38.236",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d08_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        },
+        "df1_d08_gateway": {
+          "name": "DF1_D08_GATEWAY_NAME",
+          "domain": "gateway.d08.defender.packet.test",
+          "address": "10.53.244.44",
+          "via": [
+            "df1_d08_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "df1_d08_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "operator": {
+              "password": "night-duty",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "operator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://d08.defender.packet.test": {
+          "title": "DF1_D08_TITLE",
+          "body": "DF1_D08_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "DF1_D08_SENDER",
+          "subject": "DF1_D08_TITLE",
+          "body": "DF1_D08_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "DF1_D08_SENDER",
+          "subject": "DF1_D08_TITLE",
+          "body": "DF1_D08_REPLY"
+        }
+      },
+      "policies": {
+        "df1_d08_direct_open": true,
+        "df1_d08_gateway_open": true,
+        "df1_d08_owner_check": false,
+        "df1_d08_retry_limit": false,
+        "df1_d08_session_guard": false,
+        "df1_d08_photo_check": false,
+        "df1_d08_no_execution": true,
+        "df1_d08_target_scope": true,
+        "df1_d08_notify_open": true,
+        "df1_d08_standby_open": false,
+        "df1_d08_approved_session_guard": true
+      },
+      "challenges": {
+        "df1_d08_response": {
+          "kind": "response_lab",
+          "name": "DF1_D08_LAB_NAME",
+          "host_id": "df1_d08_desk",
+          "requires_session": {
+            "host_id": "df1_d08_desk",
+            "account_id": "operator"
+          },
+          "controls": {
+            "direct_open": {
+              "policy_id": "df1_d08_direct_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D08_CONTROL_DIRECT_OPEN"
+            },
+            "gateway_open": {
+              "policy_id": "df1_d08_gateway_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D08_CONTROL_GATEWAY_OPEN"
+            },
+            "owner_check": {
+              "policy_id": "df1_d08_owner_check",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D08_CONTROL_OWNER_CHECK"
+            },
+            "session_guard": {
+              "policy_id": "df1_d08_session_guard",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D08_CONTROL_SESSION_GUARD"
+            },
+            "target_scope": {
+              "policy_id": "df1_d08_target_scope",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "DF1_D08_CONTROL_TARGET_SCOPE"
+            },
+            "notify_open": {
+              "policy_id": "df1_d08_notify_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D08_CONTROL_NOTIFY_OPEN"
+            },
+            "standby_open": {
+              "policy_id": "df1_d08_standby_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "DF1_D08_CONTROL_STANDBY_OPEN"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "df1_d08_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "df1_d08_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "df1_d08_health"
+              },
+              "SECRET": {
+                "owner": "operator",
+                "record_id": "df1_d08_secret"
+              }
+            },
+            "endpoints": {
+              "receipts": {
+                "host_id": "df1_d08_desk",
+                "method": "GET",
+                "path_prefix": "/tickets/",
+                "operation": "object_read",
+                "owner_policy": "df1_d08_owner_check"
+              },
+              "delegated": {
+                "host_id": "df1_d08_gateway",
+                "method": "GET",
+                "path_prefix": "/tickets/",
+                "operation": "delegated_read",
+                "scopes": {
+                  "citizen_a": [
+                    "C731"
+                  ],
+                  "citizen_b": [
+                    "C732"
+                  ],
+                  "operator": [
+                    "C731",
+                    "C732",
+                    "SECRET"
+                  ],
+                  "notifier": [
+                    "HEALTH"
+                  ]
+                }
+              },
+              "session": {
+                "host_id": "df1_d08_desk",
+                "method": "POST",
+                "path_prefix": "/session",
+                "operation": "session_use",
+                "revocation_policy": "df1_d08_session_guard",
+                "initial_tokens": {
+                  "old_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "fresh_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "other_job": {
+                    "account_id": "notifier",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "HEALTH"
+                    ]
+                  }
+                }
+              },
+              "gateway_session": {
+                "host_id": "df1_d08_gateway",
+                "method": "POST",
+                "path_prefix": "/session",
+                "operation": "session_use",
+                "revocation_policy": "df1_d08_approved_session_guard",
+                "initial_tokens": {
+                  "old_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "fresh_shift": {
+                    "account_id": "citizen_a",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "C731"
+                    ]
+                  },
+                  "other_job": {
+                    "account_id": "notifier",
+                    "revoked": false,
+                    "expires_tick": 999,
+                    "scope": [
+                      "HEALTH"
+                    ]
+                  }
+                }
+              },
+              "notify": {
+                "host_id": "df1_d08_desk",
+                "method": "POST",
+                "path_prefix": "/notify",
+                "operation": "notify_send",
+                "enabled_policy": "df1_d08_notify_open",
+                "allowed_targets": [
+                  "ward"
+                ],
+                "target_policy": "df1_d08_target_scope"
+              },
+              "standby_notify": {
+                "host_id": "df1_d08_gateway",
+                "method": "POST",
+                "path_prefix": "/notify",
+                "operation": "notify_send",
+                "enabled_policy": "df1_d08_standby_open",
+                "allowed_targets": [
+                  "ward"
+                ],
+                "target_policy": "df1_d08_target_scope"
+              }
+            }
+          },
+          "cases": {
+            "own_a": {
+              "label": "DF1_D08_CASE_OWN_A",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://d08.defender.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C731:read",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "GET",
+                  "url": "https://gateway.d08.defender.packet.test/tickets/C731",
+                  "body": {},
+                  "headers": {}
+                }
+              }
+            },
+            "own_b": {
+              "label": "DF1_D08_CASE_OWN_B",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "citizen_b"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://d08.defender.packet.test/tickets/C732",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C732:read",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "GET",
+                  "url": "https://gateway.d08.defender.packet.test/tickets/C732",
+                  "body": {},
+                  "headers": {}
+                }
+              }
+            },
+            "staff": {
+              "label": "DF1_D08_CASE_STAFF",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "operator"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://gateway.d08.defender.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C731:read",
+                "value": true
+              }
+            },
+            "foreign_direct": {
+              "label": "DF1_D08_CASE_FOREIGN_DIRECT",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://d08.defender.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403,
+                  404,
+                  503
+                ],
+                "business_key": "ticket:C731:read",
+                "value": false
+              }
+            },
+            "foreign_gateway": {
+              "label": "DF1_D08_CASE_FOREIGN_GATEWAY",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://gateway.d08.defender.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403,
+                  404
+                ],
+                "business_key": "ticket:C731:read",
+                "value": false
+              }
+            },
+            "fresh": {
+              "label": "DF1_D08_CASE_FRESH",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "citizen_a",
+                "token_ref": "fresh_shift"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d08.defender.packet.test/session",
+                "body": {
+                  "token_ref": "fresh_shift"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "session:fresh_shift:use",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d08.defender.packet.test/session",
+                  "body": {
+                    "token_ref": "fresh_shift"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "other_job": {
+              "label": "DF1_D08_CASE_OTHER_JOB",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "notifier",
+                "token_ref": "other_job"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d08.defender.packet.test/session",
+                "body": {
+                  "token_ref": "other_job"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "session:other_job:use",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d08.defender.packet.test/session",
+                  "body": {
+                    "token_ref": "other_job"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "retired": {
+              "label": "DF1_D08_CASE_RETIRED",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "citizen_a",
+                "token_ref": "old_shift"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d08.defender.packet.test/session",
+                "body": {
+                  "token_ref": "old_shift"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403,
+                  503
+                ],
+                "business_key": "session:old_shift:use",
+                "value": false
+              }
+            },
+            "retired_gateway": {
+              "label": "DF1_D08_CASE_RETIRED_GATEWAY",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "citizen_a",
+                "token_ref": "old_shift"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d08.defender.packet.test/session",
+                "body": {
+                  "token_ref": "old_shift"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403
+                ],
+                "business_key": "session:old_shift:use",
+                "value": false
+              }
+            },
+            "notify": {
+              "label": "DF1_D08_CASE_NOTIFY",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d08.defender.packet.test/notify",
+                "body": {
+                  "target": "ward",
+                  "message": "handoff-ready"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200,
+                  201
+                ],
+                "business_key": "notify:ward:delivered",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.d08.defender.packet.test/notify",
+                  "body": {
+                    "target": "ward",
+                    "message": "handoff-ready"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "internal_target": {
+              "label": "DF1_D08_CASE_INTERNAL_TARGET",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://d08.defender.packet.test/notify",
+                "body": {
+                  "target": "control",
+                  "message": "unrelated"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403,
+                  503
+                ],
+                "business_key": "notify:control:delivered",
+                "value": false
+              }
+            },
+            "standby_target": {
+              "label": "DF1_D08_CASE_STANDBY_TARGET",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "df1_d08_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.d08.defender.packet.test/notify",
+                "body": {
+                  "target": "control",
+                  "message": "unrelated"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403,
+                  503
+                ],
+                "business_key": "notify:control:delivered",
+                "value": false
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "availability": [
+              "direct_open",
+              "gateway_open",
+              "notify_open",
+              "standby_open"
+            ],
+            "security": [
+              "owner_check",
+              "session_guard",
+              "target_scope"
+            ]
+          }
+        }
+      },
+      "milestones": [
+        {
+          "id": "DF1_D08_brief",
+          "title": "DF1_D08_TITLE",
+          "text": "DF1_D08_BRIEF"
+        },
+        {
+          "id": "DF1_D08_checks",
+          "title": "DF1_D08_LAB_NAME",
+          "text": "DF1_D08_GOAL"
+        }
+      ],
+      "goal_text": "DF1_D08_GOAL",
+      "hints": [
+        "DF1_D08_HINT_1",
+        "DF1_D08_HINT_2",
+        "DF1_D08_HINT_3"
+      ],
+      "principle": "DF1_D08_PRINCIPLE",
+      "abstraction": "DF1_D08_ABSTRACTION",
+      "limit": "DF1_D08_LIMIT",
+      "tutorial": "DF1_D08_HINT_1",
+      "explain": "DF1_D08_PRINCIPLE"
+    }
+  },
+  "endings": [
+    {
+      "id": "df1_handoff",
+      "title": "DF1_ENDING_TITLE",
+      "text": "DF1_D08_REPLY",
+      "requires_facts": []
+    }
+  ],
+  "contacts": {
+    "C02": {
+      "name_key": "DF1_D01_SENDER",
+      "introduced_by": [
+        "D01"
+      ],
+      "face_gate": {
+        "when": "introduced",
+        "mission_id": "D01",
+        "explicit": false
+      }
+    },
+    "C01": {
+      "name_key": "DF1_D03_SENDER",
+      "introduced_by": [
+        "D03"
+      ],
+      "face_gate": {
+        "when": "introduced",
+        "mission_id": "D03",
+        "explicit": true
+      }
+    },
+    "C04": {
+      "name_key": "DF1_D05_SENDER",
+      "introduced_by": [
+        "D05"
+      ],
+      "face_gate": {
+        "when": "introduced",
+        "mission_id": "D05",
+        "explicit": false
+      }
+    }
+  }
+}

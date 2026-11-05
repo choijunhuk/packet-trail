@@ -35,7 +35,15 @@ for required in godot/project.godot godot/scripts/core/game.gd \
     godot/tests/headless/test_presentation.gd godot/scenes/full_game.tscn \
     godot/scenes/campaign_desktop.tscn godot/scripts/apps/campaign_desktop.gd \
     godot/tools/validate_portraits.gd godot/tools/probe_grep_flags.gd \
-    tools/test_shell_commands.py tools/test_check_campaign.py; do
+    tools/test_shell_commands.py tools/test_check_campaign.py \
+    godot/scripts/core/campaign_catalog.gd godot/data/campaign/legacy_v1.json \
+    godot/data/campaign/packs/intruder_v2.json godot/data/campaign/packs/defender_v1.json \
+    godot/data/campaign/packs/tracker_v1.json godot/tests/fixtures/perspectives_solutions.json \
+    godot/tests/headless/test_mutation_limits.gd godot/tests/headless/test_perspectives.gd \
+    godot/tests/headless/test_audio_revision.gd godot/tools/run_audio_revision.gd \
+    godot/tools/inspect_package.gd tools/test_mutation_limits.py tools/test_perspectives.py \
+    tools/build_expansion_content.py godot/tests/headless/test_ui_context.gd \
+    godot/tools/run_ui_context.gd; do
     [[ -f "$required" ]] || fail "missing required file: $required"
 done
 
@@ -86,10 +94,13 @@ run_godot runner first_playable --script res://tests/headless/run_all.gd
 run_godot campaign_content campaign_content --script res://tools/validate_campaign.gd
 run_godot campaign campaign --script res://tests/headless/test_campaign.gd
 run_godot presentation presentation --script res://tools/run_presentation.gd
+run_godot audio_revision audio_revision --script res://tools/run_audio_revision.gd
+run_godot ui_context ui_context --script res://tools/run_ui_context.gd
 run_godot portraits portraits --script res://tools/validate_portraits.gd
 python3 tools/check_docs.py
 python3 tools/check_campaign.py
 python3 tools/check_locales.py
+# Mutation and public-campaign wrappers apply external deadlines to synchronous engine probes.
 python3 -m unittest discover -s tools -p 'test_*.py'
 python3 tools/check_boundaries.py --self-test
 python3 tools/check_boundaries.py

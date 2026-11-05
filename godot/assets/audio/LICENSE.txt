@@ -1,11 +1,16 @@
 MidnightAccess original soundtrack and sound effects
-Production version: 2026-11-05
+Production version: 2026-11-05 rhythmic soundtrack / circular-loop production upgrade
 
 These audio assets and their note scores were produced specifically for the
 Packet Trail / MidnightAccess project using original offline synthesis authored
 by Codex (gpt-6.1-sol, high). No third-party music, samples, recordings or
 generative music services were used. No external sample attribution or music
 service subscription is required by this production pipeline.
+
+The seven rhythmic score arrangements and the A07 ending edit use original
+authored notes, harmonics and synthesized percussion. Looping music and rain use
+circular synthesis with codec-period alignment; the rain is cyclically rotated
+without discarding or fading samples. Twelve existing event sounds are retained.
 
 The assets are supplied to the project owner for use, modification and
 distribution with this project, including commercial game distribution.

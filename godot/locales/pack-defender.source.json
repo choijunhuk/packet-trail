@@ -1,0 +1,1546 @@
+{
+  "DF1_D01_ABSTRACTION": [
+    "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다.",
+    "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers.",
+    "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。",
+    "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。",
+    "Es un modelo limitado con peticiones, cuentas, servicios y políticas registrados. Los resultados proceden del mismo mundo virtual compartido.",
+    "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+  ],
+  "DF1_D01_BRIEF": [
+    "야간 서비스 담당 첫날입니다. 저는 현장 기술자 도윤이에요. 왼쪽에는 시민이 자기 접수증을 읽는 요청, 오른쪽에는 다른 사람의 접수증을 읽는 요청이 있습니다. 서버를 끄면 둘 다 사라집니다. 우리가 원하는 결과는 아니죠.\n\n업무 계정으로 접속한 뒤 정상 요청을 먼저 한 번 보세요. 소유자 검사를 고쳐도 되고, 원래의 노출된 길을 닫고 좁은 위임 경로로 옮겨도 됩니다. 무엇이 막혔는지보다 누가 계속 일할 수 있는지 확인해 주세요.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d01.defender.packet.test\nnight-duty\n",
+    "It is your first night on service duty. I am Doyun, the field technician. One request reads a citizen's own receipt; another reads somebody else's. Turning off the server removes both. That is not our goal.\n\nConnect with the work account and observe a legitimate request first. Repair ownership checks, or close the exposed route and move legitimate work to a narrow delegation path. Check who can still work, not merely what disappeared.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d01.defender.packet.test\nnight-duty\n",
+    "夜間サービス担当の初日ですね。現場技術者のドユンです。市民が自分の受付票を読む要求と、他人の票を読む要求があります。サーバーを止めれば両方消えますが、それが目標ではありません。\n\n業務アカウントで接続し、まず正規の要求を観察してください。所有者確認を直すか、露出した道を閉じて正規業務を狭い委任経路へ移せます。何が消えたかだけでなく、誰が仕事を続けられるかを確かめてください。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d01.defender.packet.test\nnight-duty\n",
+    "这是你值守夜间服务的第一天。我是现场技术员度允。一条请求读取市民自己的受理单，另一条读取别人的。关掉服务器，两者都会消失，但那不是我们的目标。\n\n用业务账号连接，先观察一次正常请求。可以修复所有者检查，也可以关闭暴露通路，将正常业务转到有限的委托路径。别只看什么被挡住，还要确认谁能继续工作。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d01.defender.packet.test\nnight-duty\n",
+    "Es tu primera noche de servicio. Soy Doyun, el técnico de campo. Una petición lee el recibo propio y otra el de otra persona. Apagar el servidor elimina ambas; ese no es el objetivo.\n\nConecta con la cuenta de trabajo y observa primero una petición legítima. Repara la comprobación de propiedad o cierra la ruta expuesta y traslada el trabajo a una delegación limitada. Comprueba quién puede seguir trabajando, no solo qué desapareció.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\noperator@d01.defender.packet.test\nnight-duty\n",
+    "Deine erste Nacht im Dienst. Ich bin Doyun, der Techniker vor Ort. Eine Anfrage liest den eigenen Beleg, eine andere einen fremden. Den Server abzuschalten beseitigt beide. Das ist nicht unser Ziel.\n\nVerbinde dich mit dem Arbeitskonto und beobachte zuerst eine reguläre Anfrage. Repariere die Eigentümerprüfung oder schließe den offenen Weg und verlege reguläre Arbeit auf einen eng begrenzten Delegationsweg. Prüfe, wer weiterarbeiten kann, nicht nur, was verschwand.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d01.defender.packet.test\nnight-duty\n"
+  ],
+  "DF1_D01_CASE_FOREIGN_DIRECT": [
+    "무관한 계정의 원래 입구 요청",
+    "Unrelated Account at the Original Entrance",
+    "元の入口の担当外アカウント",
+    "原入口的无关账号",
+    "Cuenta ajena al trámite en la entrada original",
+    "Unbeteiligtes Konto am ursprünglichen Zugang"
+  ],
+  "DF1_D01_CASE_FOREIGN_GATEWAY": [
+    "무관한 계정의 승인 경로 요청",
+    "Unrelated Account at the Approved Route",
+    "承認済み経路の担当外アカウント",
+    "获批通路的无关账号",
+    "Cuenta ajena al trámite en la ruta aprobada",
+    "Unbeteiligtes Konto am genehmigten Weg"
+  ],
+  "DF1_D01_CASE_OWN_A": [
+    "시민 A의 자기 접수",
+    "Citizen A's Own Receipt",
+    "市民 A 自身の受付票",
+    "市民 A 自己的受理单",
+    "Recibo propio del ciudadano A",
+    "Eigener Beleg von Bürger A"
+  ],
+  "DF1_D01_CASE_OWN_B": [
+    "시민 B의 자기 접수",
+    "Citizen B's Own Receipt",
+    "市民 B 自身の受付票",
+    "市民 B 自己的受理单",
+    "Recibo propio del ciudadano B",
+    "Eigener Beleg von Bürger B"
+  ],
+  "DF1_D01_CASE_STAFF": [
+    "담당자의 위임된 접수",
+    "Assigned Staff's Delegated Receipt",
+    "担当職員に委任された受付票",
+    "委托给指定职员的受理单",
+    "Recibo delegado al personal asignado",
+    "Delegierter Beleg des zuständigen Personals"
+  ],
+  "DF1_D01_CONTROL_DIRECT_OPEN": [
+    "원래 업무 입구 열기",
+    "Enable Original Work Entrance",
+    "元の業務入口を有効化",
+    "启用原业务入口",
+    "Habilitar la entrada original",
+    "Ursprünglichen Arbeitszugang aktivieren"
+  ],
+  "DF1_D01_CONTROL_GATEWAY_OPEN": [
+    "승인 경로 열기",
+    "Enable Approved Route",
+    "承認済み経路を有効化",
+    "启用获批通路",
+    "Habilitar la ruta aprobada",
+    "Genehmigten Weg aktivieren"
+  ],
+  "DF1_D01_CONTROL_OWNER_CHECK": [
+    "접수 소유자 검사",
+    "Receipt Ownership Check",
+    "受付票の所有者確認",
+    "受理单所有者检查",
+    "Comprobar propiedad del recibo",
+    "Belegeigentümer prüfen"
+  ],
+  "DF1_D01_DESK_NAME": [
+    "문을 닫지 않고 막기 담당실",
+    "Keep the Door Working Desk",
+    "扉を閉じずに防ぐ · 作業端末",
+    "不关门，也能挡住威胁 · 工作台",
+    "Mesa de Proteger sin cerrar la puerta",
+    "Die Tür soll offen bleiben · Arbeitsplatz"
+  ],
+  "DF1_D01_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済みの業務経路",
+    "获批业务通路",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "DF1_D01_GOAL": [
+    "타인 접수 열람은 거부하고 두 시민과 담당자의 정상 열람을 유지한다.",
+    "Refuse unrelated receipt access while preserving both citizens' and assigned staff reads.",
+    "担当外の閲覧を拒否し、両市民と担当職員の読み取りを守る。",
+    "拒绝无关读取，保留两位市民与指定职员的读取。",
+    "Rechaza accesos ajenos y conserva lecturas de ambos ciudadanos y del personal asignado.",
+    "Weise unbeteiligte Zugriffe ab und erhalte das Lesen beider Bürger und des zuständigen Personals."
+  ],
+  "DF1_D01_HINT_1": [
+    "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 소유자 검사 또는 좁은 위임 경로가 결과를 어떻게 바꾸는지 보세요.",
+    "Observe legitimate work separately from the problematic requests. Observe how ownership checks or narrow delegation change the result.",
+    "正規の業務と問題のある要求を分けて観察してください。所有者確認か、範囲を絞った委任で結果がどう変わるか観察してください。",
+    "将正常业务与有问题的请求分开观察。观察所有者检查或有限委托如何改变结果。",
+    "Observa por separado el trabajo legítimo y las peticiones problemáticas. Observa cómo cambian el resultado la propiedad o una delegación limitada.",
+    "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Beobachte, wie Eigentümerprüfung oder enge Delegation das Ergebnis verändern."
+  ],
+  "DF1_D01_HINT_2": [
+    "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요.",
+    "Hold actor, target and route fixed and change one response scope to compare results.",
+    "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。",
+    "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。",
+    "Mantén actor, destino y ruta y cambia un solo alcance de respuesta para comparar.",
+    "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+  ],
+  "DF1_D01_HINT_3": [
+    "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다.",
+    "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work.",
+    "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。",
+    "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。",
+    "Elige control preciso de la ruta original o una alternativa aprobada. Apagar todo también impide el trabajo legítimo.",
+    "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+  ],
+  "DF1_D01_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "稼働業務と対応策の検証",
+    "实时业务与应对验证",
+    "Comprobación de trabajo y respuesta",
+    "Prüfung laufender Arbeit und Abwehr"
+  ],
+  "DF1_D01_LIMIT": [
+    "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다.",
+    "Passing the observed scenarios does not establish prevention of every possible attack.",
+    "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。",
+    "通过已观察场景，不代表能阻止所有可能攻击。",
+    "Superar los escenarios observados no demuestra prevenir todos los ataques posibles.",
+    "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+  ],
+  "DF1_D01_PRINCIPLE": [
+    "소유자 검사 또는 좁은 위임 경로가 결과를 어떻게 바꾸는지 보세요.",
+    "Observe how ownership checks or narrow delegation change the result.",
+    "所有者確認か、範囲を絞った委任で結果がどう変わるか観察してください。",
+    "观察所有者检查或有限委托如何改变结果。",
+    "Observa cómo cambian el resultado la propiedad o una delegación limitada.",
+    "Beobachte, wie Eigentümerprüfung oder enge Delegation das Ergebnis verändern."
+  ],
+  "DF1_D01_REPLY": [
+    "서린과 정비사는 자기 일을 계속하고, 무관한 열람은 막혔습니다. 첫 대응의 기준이 생겼군요. 다음 경보에서는 같은 주소에서 정상 시민과 반복 시도가 함께 들어옵니다.",
+    "Serin and the technician can still work; unrelated access is blocked. We have a standard for the next response. The next alert mixes legitimate citizens and repeated attempts behind one address.",
+    "セリンも保守担当者も仕事を続け、無関係な閲覧は防げました。次の対応にも使える基準です。次の警報では、一つのアドレスから正規の市民と繰り返し試行が一緒に届きます。",
+    "瑞琳与维护人员都能继续工作，无关读取已被阻止。这为后续应对立下了标准。下一次警报中，正常市民与重复尝试会从同一地址到来。",
+    "Serin y el técnico siguen trabajando y el acceso ajeno está bloqueado. Ya tenemos un criterio para responder. La siguiente alerta mezcla ciudadanos legítimos e intentos repetidos tras una misma dirección.",
+    "Serin und die Wartungskraft können weiterarbeiten; fremde Zugriffe sind gesperrt. Damit haben wir einen Maßstab. Beim nächsten Alarm kommen reguläre Bürger und wiederholte Versuche von derselben Adresse."
+  ],
+  "DF1_D01_SENDER": [
+    "도윤",
+    "Doyun",
+    "ドユン",
+    "度允",
+    "Doyun",
+    "Doyun"
+  ],
+  "DF1_D01_TITLE": [
+    "문을 닫지 않고 막기",
+    "Keep the Door Working",
+    "扉を閉じずに防ぐ",
+    "不关门，也能挡住威胁",
+    "Proteger sin cerrar la puerta",
+    "Die Tür soll offen bleiben"
+  ],
+  "DF1_D02_ABSTRACTION": [
+    "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다.",
+    "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers.",
+    "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。",
+    "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。",
+    "Es un modelo limitado con peticiones, cuentas, servicios y políticas registrados. Los resultados proceden del mismo mundo virtual compartido.",
+    "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+  ],
+  "DF1_D02_BRIEF": [
+    "병원 중계의 주소에서 로그인 실패가 쏟아집니다. 같은 주소의 정상 작업도 있어요. 그 주소를 통째로 막자는 제안은 쉽지만 누가 피해를 보는지부터 봐야 합니다.\n\n계정별 반복 시도를 제한하거나 정상 업무를 검증된 인증 경로로 분리해 주세요. 제한 후에도 야간 작업자의 정상 인증이 가능한지 확인합니다. 실제 시간을 기다릴 필요는 없습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d02.defender.packet.test\nnight-duty\n",
+    "Login failures are arriving from the hospital relay's address, alongside legitimate work. Blocking the entire address is easy; first see who would lose access.\n\nLimit repeated attempts per account, or move legitimate work through an approved authentication route. Verify valid staff authentication after the limit. No real-time waiting is required.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d02.defender.packet.test\nnight-duty\n",
+    "病院中継のアドレスからログイン失敗が続いています。同じ場所から正規の仕事も来ます。アドレス全体を遮断するのは簡単ですが、先に誰が困るか見てください。\n\nアカウント別の連続試行を制限するか、正規業務を承認済みの認証経路へ分けてください。制限後も夜間担当者が正常に認証できるか確かめます。実時間を待つ必要はありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d02.defender.packet.test\nnight-duty\n",
+    "医院中继地址不断发来登录失败，同一地址也有正常业务。封掉整个地址很容易，先看看谁会因此失去访问。\n\n可以按账号限制重复尝试，也可将正常业务转入获批认证通路。限制后仍须验证夜班人员能正常认证，无需等待真实时间。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d02.defender.packet.test\nnight-duty\n",
+    "Llegan fallos de acceso desde el repetidor hospitalario junto a trabajo legítimo. Bloquear toda la dirección es fácil; mira primero quién perdería acceso.\n\nLimita intentos por cuenta o separa el trabajo legítimo en una ruta de autenticación aprobada. Comprueba que el personal puede acceder después del límite. No hace falta esperar tiempo real.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\noperator@d02.defender.packet.test\nnight-duty\n",
+    "Von der Krankenhausrelaisadresse kommen viele fehlgeschlagene Anmeldungen, aber auch reguläre Aufträge. Die ganze Adresse zu sperren ist einfach. Prüfe zuerst, wem dadurch Zugang fehlt.\n\nBegrenze Wiederholungen je Konto oder verlege reguläre Arbeit auf einen genehmigten Anmeldeweg. Prüfe danach gültige Personalanmeldungen. Echtzeitwarten ist nicht nötig.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d02.defender.packet.test\nnight-duty\n"
+  ],
+  "DF1_D02_CASE_FAILED_1": [
+    "반복 실패 1",
+    "Repeated Failure 1",
+    "繰り返し失敗 1",
+    "重复失败 1",
+    "Fallo repetido 1",
+    "Wiederholter Fehlschlag 1"
+  ],
+  "DF1_D02_CASE_FAILED_2": [
+    "반복 실패 2",
+    "Repeated Failure 2",
+    "繰り返し失敗 2",
+    "重复失败 2",
+    "Fallo repetido 2",
+    "Wiederholter Fehlschlag 2"
+  ],
+  "DF1_D02_CASE_FAILED_3": [
+    "반복 실패 3",
+    "Repeated Failure 3",
+    "繰り返し失敗 3",
+    "重复失败 3",
+    "Fallo repetido 3",
+    "Wiederholter Fehlschlag 3"
+  ],
+  "DF1_D02_CASE_GATEWAY_FAILED_1": [
+    "승인 경로의 반복 실패 1",
+    "Repeated Failure 1 at the Approved Route",
+    "繰り返し失敗 1（承認済み経路）",
+    "重复失败 1（获批通路）",
+    "Fallo repetido 1 en la ruta aprobada",
+    "Wiederholter Fehlschlag 1 am genehmigten Weg"
+  ],
+  "DF1_D02_CASE_GATEWAY_FAILED_2": [
+    "승인 경로의 반복 실패 2",
+    "Repeated Failure 2 at the Approved Route",
+    "繰り返し失敗 2（承認済み経路）",
+    "重复失败 2（获批通路）",
+    "Fallo repetido 2 en la ruta aprobada",
+    "Wiederholter Fehlschlag 2 am genehmigten Weg"
+  ],
+  "DF1_D02_CASE_GATEWAY_FAILED_3": [
+    "승인 경로의 반복 실패 3",
+    "Repeated Failure 3 at the Approved Route",
+    "繰り返し失敗 3（承認済み経路）",
+    "重复失败 3（获批通路）",
+    "Fallo repetido 3 en la ruta aprobada",
+    "Wiederholter Fehlschlag 3 am genehmigten Weg"
+  ],
+  "DF1_D02_CASE_LEGITIMATE": [
+    "같은 출처의 정상 시민",
+    "Legitimate Citizen at the Shared Origin",
+    "共有の出発点からの正規市民要求",
+    "共享起点的正常市民请求",
+    "Ciudadano legítimo desde el origen compartido",
+    "Regulärer Bürger am gemeinsamen Ausgangspunkt"
+  ],
+  "DF1_D02_CASE_WARD_JOB": [
+    "병원 알림 작업의 정상 인증",
+    "Valid Ward Notification Job Authentication",
+    "病院通知ジョブの正規認証",
+    "病区通知任务的有效认证",
+    "Acceso válido del notificador hospitalario",
+    "Gültige Anmeldung des Stationsmeldeauftrags"
+  ],
+  "DF1_D02_CONTROL_DIRECT_OPEN": [
+    "원래 업무 입구 열기",
+    "Enable Original Work Entrance",
+    "元の業務入口を有効化",
+    "启用原业务入口",
+    "Habilitar la entrada original",
+    "Ursprünglichen Arbeitszugang aktivieren"
+  ],
+  "DF1_D02_CONTROL_GATEWAY_OPEN": [
+    "승인 경로 열기",
+    "Enable Approved Route",
+    "承認済み経路を有効化",
+    "启用获批通路",
+    "Habilitar la ruta aprobada",
+    "Genehmigten Weg aktivieren"
+  ],
+  "DF1_D02_CONTROL_RETRY_LIMIT": [
+    "계정별 반복 시도 제한",
+    "Per-account Retry Limit",
+    "アカウント別の再試行制限",
+    "按账号限制重试",
+    "Límite de reintentos por cuenta",
+    "Wiederholungsgrenze je Konto"
+  ],
+  "DF1_D02_DESK_NAME": [
+    "같은 주소의 두 사람 담당실",
+    "Two People, One Address Desk",
+    "一つのアドレス、二人の利用者 · 作業端末",
+    "同一地址的两个人 · 工作台",
+    "Mesa de Dos personas, una dirección",
+    "Zwei Menschen, eine Adresse · Arbeitsplatz"
+  ],
+  "DF1_D02_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済みの業務経路",
+    "获批业务通路",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "DF1_D02_GOAL": [
+    "반복 인증 실패를 제한하되 같은 출처의 정상 시민·알림 작업을 살린다.",
+    "Limit repeated authentication failures while retaining legitimate citizen and notification access at the shared origin.",
+    "共有の出発点で連続認証失敗を制限し、正規の市民と通知のアクセスを残す。",
+    "限制重复认证失败，保留共享起点的正常市民与通知访问。",
+    "Limita fallos repetidos y conserva accesos legítimos de ciudadanos y avisos desde el mismo origen.",
+    "Begrenze wiederholte Anmeldefehler und erhalte reguläre Bürger- und Meldezugriffe am gemeinsamen Ausgangspunkt."
+  ],
+  "DF1_D02_HINT_1": [
+    "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 주소 전체가 아닌 계정별 시도와 승인된 인증 경로를 비교하세요.",
+    "Observe legitimate work separately from the problematic requests. Compare account-specific attempts and approved authentication routes instead of blocking an address.",
+    "正規の業務と問題のある要求を分けて観察してください。アドレス全体を遮断せず、アカウント別の試行と承認済み認証経路を比べてください。",
+    "将正常业务与有问题的请求分开观察。不要整段封锁地址，请比较各账号尝试与获批认证通路。",
+    "Observa por separado el trabajo legítimo y las peticiones problemáticas. Compara intentos por cuenta y rutas de acceso aprobadas en vez de bloquear una dirección.",
+    "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Vergleiche kontobezogene Versuche und genehmigte Anmeldewege, statt eine Adresse zu sperren."
+  ],
+  "DF1_D02_HINT_2": [
+    "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요.",
+    "Hold actor, target and route fixed and change one response scope to compare results.",
+    "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。",
+    "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。",
+    "Mantén actor, destino y ruta y cambia un solo alcance de respuesta para comparar.",
+    "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+  ],
+  "DF1_D02_HINT_3": [
+    "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다.",
+    "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work.",
+    "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。",
+    "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。",
+    "Elige control preciso de la ruta original o una alternativa aprobada. Apagar todo también impide el trabajo legítimo.",
+    "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+  ],
+  "DF1_D02_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "稼働業務と対応策の検証",
+    "实时业务与应对验证",
+    "Comprobación de trabajo y respuesta",
+    "Prüfung laufender Arbeit und Abwehr"
+  ],
+  "DF1_D02_LIMIT": [
+    "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다.",
+    "Passing the observed scenarios does not establish prevention of every possible attack.",
+    "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。",
+    "通过已观察场景，不代表能阻止所有可能攻击。",
+    "Superar los escenarios observados no demuestra prevenir todos los ataques posibles.",
+    "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+  ],
+  "DF1_D02_PRINCIPLE": [
+    "주소 전체가 아닌 계정별 시도와 승인된 인증 경로를 비교하세요.",
+    "Compare account-specific attempts and approved authentication routes instead of blocking an address.",
+    "アドレス全体を遮断せず、アカウント別の試行と承認済み認証経路を比べてください。",
+    "不要整段封锁地址，请比较各账号尝试与获批认证通路。",
+    "Compara intentos por cuenta y rutas de acceso aprobadas en vez de bloquear una dirección.",
+    "Vergleiche kontobezogene Versuche und genehmigte Anmeldewege, statt eine Adresse zu sperren."
+  ],
+  "DF1_D02_REPLY": [
+    "주소 하나로 사람을 묶지 않아서 병원 작업을 살렸습니다. 이번 실패 기록의 임시 계정에는 아직 살아 있는 세션이 남아 있군요.",
+    "Not treating one address as one person kept hospital work alive. The temporary account in these failures still has a live session.",
+    "一つのアドレスを一人と決めつけず、病院の仕事を守れました。この失敗記録に出た臨時アカウントには、有効なセッションが残っています。",
+    "没有把同一地址视为同一个人，医院业务得以保留。这些失败记录中的临时账号仍有一个活跃会话。",
+    "No confundir una dirección con una persona mantuvo el hospital en marcha. La cuenta temporal de estos fallos aún conserva una sesión activa.",
+    "Eine Adresse nicht mit einer Person gleichzusetzen erhielt den Krankenhausbetrieb. Das vorläufige Konto aus diesen Fehlschlägen besitzt noch eine aktive Sitzung."
+  ],
+  "DF1_D02_SENDER": [
+    "도윤",
+    "Doyun",
+    "ドユン",
+    "度允",
+    "Doyun",
+    "Doyun"
+  ],
+  "DF1_D02_TITLE": [
+    "같은 주소의 두 사람",
+    "Two People, One Address",
+    "一つのアドレス、二人の利用者",
+    "同一地址的两个人",
+    "Dos personas, una dirección",
+    "Zwei Menschen, eine Adresse"
+  ],
+  "DF1_D03_ABSTRACTION": [
+    "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다.",
+    "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers.",
+    "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。",
+    "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。",
+    "Es un modelo limitado con peticiones, cuentas, servicios y políticas registrados. Los resultados proceden del mismo mundo virtual compartido.",
+    "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+  ],
+  "DF1_D03_BRIEF": [
+    "서윤입니다. 임시 정비 계정의 작업은 끝났지만 그 세션으로 자료를 읽을 수 있습니다. 정상 장기 작업도 같은 서비스에 붙어 있어 전부 로그아웃시키면 문제가 생겨요.\n\n노출된 세션만 폐기하거나 끝난 권한을 좁혀 교체하세요. 새 정상 세션이 살아 있는지와 옛 세션이 다시 쓰이지 않는지를 따로 확인해야 합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d03.defender.packet.test\nnight-duty\n",
+    "I am Seoyun. The temporary maintenance job ended, yet its session still reads records. A legitimate long-running job uses the same service, so logging out everyone would cause harm.\n\nRevoke only the exposed session, or constrain and replace the expired authority. Verify fresh legitimate access and refusal of the old session separately.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d03.defender.packet.test\nnight-duty\n",
+    "ソユンです。臨時保守の仕事は終わりましたが、そのセッションからまだ資料を読めます。正規の長時間ジョブも同じサービスを使うため、全員をログアウトさせると困ります。\n\n露出したセッションだけを失効させるか、終わった権限を絞って置き換えてください。新しい正規アクセスが生きていることと、古いセッションを拒否することを別々に確かめます。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d03.defender.packet.test\nnight-duty\n",
+    "我是瑞允。临时维护任务虽已结束，会话仍能读取资料。同一服务上还有正常的长期任务，强制所有人退出会造成损害。\n\n仅撤销暴露会话，或收窄并替换已结束的权限。分别验证新的正常访问仍可用，以及旧会话无法复用。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d03.defender.packet.test\nnight-duty\n",
+    "Soy Seoyun. El mantenimiento temporal terminó, pero su sesión aún lee registros. Hay un trabajo legítimo de larga duración en el mismo servicio; cerrar todas las sesiones lo dañaría.\n\nRevoca solo la sesión expuesta o limita y sustituye la autoridad caducada. Comprueba por separado acceso legítimo nuevo y rechazo de la sesión antigua.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\noperator@d03.defender.packet.test\nnight-duty\n",
+    "Hier ist Seoyun. Die vorläufige Wartung ist beendet, ihre Sitzung liest aber noch Daten. Ein regulärer Dauerauftrag nutzt denselben Dienst. Alle abzumelden würde schaden.\n\nWiderrufe nur die offene Sitzung oder begrenze und ersetze die abgelaufene Berechtigung. Prüfe frischen regulären Zugang und Ablehnung der alten Sitzung getrennt.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d03.defender.packet.test\nnight-duty\n"
+  ],
+  "DF1_D03_CASE_FRESH": [
+    "새 정상 세션",
+    "Fresh Legitimate Session",
+    "新しい正規セッション",
+    "新的正常会话",
+    "Sesión legítima nueva",
+    "Neue reguläre Sitzung"
+  ],
+  "DF1_D03_CASE_OTHER_JOB": [
+    "다른 정상 장기 작업",
+    "Other Legitimate Long-running Job",
+    "他の正規の長時間ジョブ",
+    "其他正常长期任务",
+    "Otro trabajo legítimo de larga duración",
+    "Anderer regulärer Dauerauftrag"
+  ],
+  "DF1_D03_CASE_RETIRED": [
+    "원래 경로의 끝난 세션",
+    "Retired Authority at the Original Route",
+    "元の経路での終了済み権限",
+    "原通路上的旧权限",
+    "Autoridad retirada en la ruta original",
+    "Ausgemusterte Berechtigung am ursprünglichen Weg"
+  ],
+  "DF1_D03_CASE_RETIRED_GATEWAY": [
+    "승인 경로의 끝난 세션",
+    "Retired Authority at the Approved Route",
+    "承認済み経路での終了済み権限",
+    "获批通路上的旧权限",
+    "Autoridad retirada en la ruta aprobada",
+    "Ausgemusterte Berechtigung am genehmigten Weg"
+  ],
+  "DF1_D03_CONTROL_DIRECT_OPEN": [
+    "원래 업무 입구 열기",
+    "Enable Original Work Entrance",
+    "元の業務入口を有効化",
+    "启用原业务入口",
+    "Habilitar la entrada original",
+    "Ursprünglichen Arbeitszugang aktivieren"
+  ],
+  "DF1_D03_CONTROL_GATEWAY_OPEN": [
+    "승인 경로 열기",
+    "Enable Approved Route",
+    "承認済み経路を有効化",
+    "启用获批通路",
+    "Habilitar la ruta aprobada",
+    "Genehmigten Weg aktivieren"
+  ],
+  "DF1_D03_CONTROL_SESSION_GUARD": [
+    "끝난 세션 권한 검사",
+    "Check Expired Session Authority",
+    "終了したセッション権限を検査",
+    "检查已结束的会话权限",
+    "Comprobar autoridad de sesiones caducadas",
+    "Abgelaufene Sitzungsrechte prüfen"
+  ],
+  "DF1_D03_DESK_NAME": [
+    "끝나야 할 열쇠 담당실",
+    "A Key That Must Expire Desk",
+    "終わらせるべき鍵 · 作業端末",
+    "该失效的钥匙 · 工作台",
+    "Mesa de La llave que debe caducar",
+    "Ein Schlüssel muss enden · Arbeitsplatz"
+  ],
+  "DF1_D03_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済みの業務経路",
+    "获批业务通路",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "DF1_D03_GOAL": [
+    "끝난 세션은 거부되고 다른 정상 세션은 계속 동작하게 한다.",
+    "Refuse expired authority while keeping other legitimate sessions working.",
+    "終了した権限を拒否し、他の正規セッションを保つ。",
+    "拒绝已结束的权限，同时保留其他正常会话。",
+    "Rechaza autoridad caducada y conserva otras sesiones legítimas.",
+    "Weise abgelaufene Rechte ab und erhalte andere reguläre Sitzungen."
+  ],
+  "DF1_D03_HINT_1": [
+    "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 표적 폐기 또는 옛 세션을 발급하지 않은 승인 경로로의 교체를 비교하세요.",
+    "Observe legitimate work separately from the problematic requests. Compare targeted revocation with migration to an approved route that did not issue the old session.",
+    "正規の業務と問題のある要求を分けて観察してください。限定した失効と、旧セッションを発行していない承認経路への移行を比べてください。",
+    "将正常业务与有问题的请求分开观察。比较定向撤销与迁移到未签发旧会话的获批通路。",
+    "Observa por separado el trabajo legítimo y las peticiones problemáticas. Compara revocación selectiva y migración a una ruta que no emitió la sesión antigua.",
+    "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Vergleiche gezielten Widerruf mit dem Wechsel auf einen genehmigten Weg, der die alte Sitzung nicht ausgestellt hat."
+  ],
+  "DF1_D03_HINT_2": [
+    "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요.",
+    "Hold actor, target and route fixed and change one response scope to compare results.",
+    "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。",
+    "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。",
+    "Mantén actor, destino y ruta y cambia un solo alcance de respuesta para comparar.",
+    "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+  ],
+  "DF1_D03_HINT_3": [
+    "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다.",
+    "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work.",
+    "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。",
+    "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。",
+    "Elige control preciso de la ruta original o una alternativa aprobada. Apagar todo también impide el trabajo legítimo.",
+    "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+  ],
+  "DF1_D03_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "稼働業務と対応策の検証",
+    "实时业务与应对验证",
+    "Comprobación de trabajo y respuesta",
+    "Prüfung laufender Arbeit und Abwehr"
+  ],
+  "DF1_D03_LIMIT": [
+    "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다.",
+    "Passing the observed scenarios does not establish prevention of every possible attack.",
+    "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。",
+    "通过已观察场景，不代表能阻止所有可能攻击。",
+    "Superar los escenarios observados no demuestra prevenir todos los ataques posibles.",
+    "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+  ],
+  "DF1_D03_PRINCIPLE": [
+    "표적 폐기 또는 옛 세션을 발급하지 않은 승인 경로로의 교체를 비교하세요.",
+    "Compare targeted revocation with migration to an approved route that did not issue the old session.",
+    "限定した失効と、旧セッションを発行していない承認経路への移行を比べてください。",
+    "比较定向撤销与迁移到未签发旧会话的获批通路。",
+    "Compara revocación selectiva y migración a una ruta que no emitió la sesión antigua.",
+    "Vergleiche gezielten Widerruf mit dem Wechsel auf einen genehmigten Weg, der die alte Sitzung nicht ausgestellt hat."
+  ],
+  "DF1_D03_REPLY": [
+    "끝난 권한은 거부되고 정상 작업은 남았습니다. 옛 세션의 거부는 화면의 안심 문구가 아니라 서버 응답에서 확인됐습니다. 다음 자료는 사진이라는 이름으로 들어옵니다.",
+    "Retired authority is refused while legitimate work remains. The old session's refusal was verified in the server response, not a reassuring screen label. The next input arrives under a photograph's name.",
+    "終了した権限は拒否され、正規の仕事は残りました。古いセッションが拒否されることを、安心させる表示ではなくサーバー応答で確認しました。次は写真の名前で届く入力です。",
+    "旧权限已被拒绝，正常业务仍在。旧会话被拒已通过服务器响应确认，而非令人安心的画面文字。下一份输入以照片之名到来。",
+    "Se rechaza la autoridad retirada y el trabajo legítimo sigue. El rechazo de la sesión antigua se verificó en la respuesta del servidor, no en una etiqueta tranquilizadora. La siguiente entrada llega con nombre de fotografía.",
+    "Die alte Berechtigung wird abgewiesen, die reguläre Arbeit bleibt. Die Ablehnung der alten Sitzung ist durch die Serverantwort belegt, nicht durch beruhigende Bildschirmworte. Die nächste Eingabe kommt unter einem Fotonamen."
+  ],
+  "DF1_D03_SENDER": [
+    "서윤",
+    "Seoyun",
+    "ソユン",
+    "瑞允",
+    "Seoyun",
+    "Seoyun"
+  ],
+  "DF1_D03_TITLE": [
+    "끝나야 할 열쇠",
+    "A Key That Must Expire",
+    "終わらせるべき鍵",
+    "该失效的钥匙",
+    "La llave que debe caducar",
+    "Ein Schlüssel muss enden"
+  ],
+  "DF1_D04_ABSTRACTION": [
+    "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다.",
+    "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers.",
+    "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。",
+    "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。",
+    "Es un modelo limitado con peticiones, cuentas, servicios y políticas registrados. Los resultados proceden del mismo mundo virtual compartido.",
+    "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+  ],
+  "DF1_D04_BRIEF": [
+    "정비 사진 한 장이 처리 작업으로 실행됐습니다. 확장자를 금지하는 것만으로는 내용과 저장 위치의 관계를 고칠 수 없어요. 그렇다고 사진 접수를 닫으면 현장이 멈춥니다.\n\n형식과 비실행 저장 경계를 고치거나, 파일을 격리 처리해 승인된 사진만 배포하세요. 잘못된 파일의 거부와 정상 JPEG의 생성·열람이 함께 필요합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d04.defender.packet.test\nnight-duty\n",
+    "A maintenance photo ran as a processing job. Banning an extension alone will not repair the relationship between content and storage. Closing photo intake would stop field work.\n\nRepair validation and non-executable storage, or quarantine processing and publish approved photos only. Both rejection of the disguised file and creation of a normal JPEG are required.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d04.defender.packet.test\nnight-duty\n",
+    "保守写真が処理ジョブとして実行されました。拡張子を禁じるだけでは、内容と保存場所の関係は直りません。写真受付を閉じれば現場が止まります。\n\n形式検査と実行できない保存境界を直すか、処理を隔離して承認済みの写真だけを公開してください。偽装ファイルの拒否と正規 JPEG の作成・閲覧が両方必要です。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d04.defender.packet.test\nnight-duty\n",
+    "一张维护照片竟作为处理任务执行了。仅禁止扩展名，修不好内容与存储位置的关系；关闭照片接收又会让现场停摆。\n\n可修复格式校验与不可执行存储边界，或隔离处理，仅发布获批照片。既要拒绝伪装文件，也要允许正常 JPEG 的创建与查看。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d04.defender.packet.test\nnight-duty\n",
+    "Una foto de mantenimiento se ejecutó como tarea. Prohibir una extensión no arregla la relación entre contenido y almacenamiento. Cerrar la recepción paralizaría el trabajo.\n\nRepara validación y almacenamiento no ejecutable o aísla el proceso y publica solo fotos aprobadas. Deben rechazarse archivos disfrazados y poder crearse y verse JPEG legítimos.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\noperator@d04.defender.packet.test\nnight-duty\n",
+    "Ein Wartungsfoto lief als Verarbeitungsauftrag. Dateiendungen zu verbieten repariert das Verhältnis von Inhalt und Speicherort nicht. Die Fotoannahme zu schließen stoppt die Arbeit vor Ort.\n\nRepariere Prüfung und nicht ausführbare Speicherung oder isoliere die Verarbeitung und veröffentliche nur freigegebene Fotos. Tarnungen müssen abgewiesen, reguläre JPEG erzeugt und gelesen werden können.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d04.defender.packet.test\nnight-duty\n"
+  ],
+  "DF1_D04_CASE_DISGUISED": [
+    "사진으로 위장한 입력",
+    "Input Disguised as a Photo",
+    "写真を装った入力",
+    "伪装成照片的输入",
+    "Entrada disfrazada de foto",
+    "Als Foto getarnte Eingabe"
+  ],
+  "DF1_D04_CASE_DISGUISED_GATEWAY": [
+    "승인 처리 경로의 위장 파일",
+    "Disguised File at the Approved Processor",
+    "承認済み処理側の偽装ファイル",
+    "获批处理器中的伪装文件",
+    "Archivo disfrazado en el procesador aprobado",
+    "Getarnte Datei an der genehmigten Verarbeitung"
+  ],
+  "DF1_D04_CASE_PHOTO": [
+    "정상 JPEG 사진 생성",
+    "Create a Legitimate JPEG",
+    "正規 JPEG を作成",
+    "创建正常 JPEG",
+    "Crear un JPEG legítimo",
+    "Reguläres JPEG erzeugen"
+  ],
+  "DF1_D04_CONTROL_DIRECT_OPEN": [
+    "원래 업무 입구 열기",
+    "Enable Original Work Entrance",
+    "元の業務入口を有効化",
+    "启用原业务入口",
+    "Habilitar la entrada original",
+    "Ursprünglichen Arbeitszugang aktivieren"
+  ],
+  "DF1_D04_CONTROL_GATEWAY_OPEN": [
+    "승인 경로 열기",
+    "Enable Approved Route",
+    "承認済み経路を有効化",
+    "启用获批通路",
+    "Habilitar la ruta aprobada",
+    "Genehmigten Weg aktivieren"
+  ],
+  "DF1_D04_CONTROL_NO_EXECUTION": [
+    "업로드 파일 비실행 저장",
+    "Store Uploads Without Execution",
+    "アップロードを実行せず保存",
+    "不执行上传文件，仅存储",
+    "Guardar subidas sin ejecución",
+    "Uploads ohne Ausführung speichern"
+  ],
+  "DF1_D04_CONTROL_PHOTO_CHECK": [
+    "사진 내용 형식 검사",
+    "Validate Photo Content Type",
+    "写真の内容形式を検査",
+    "校验照片内容类型",
+    "Validar el tipo real de la foto",
+    "Fotoinhaltsformat prüfen"
+  ],
+  "DF1_D04_DESK_NAME": [
+    "사진 작업대 담당실",
+    "The Photo Workbench Desk",
+    "写真の作業台 · 作業端末",
+    "照片工作台 · 工作台",
+    "Mesa de El banco de fotografías",
+    "Die Fotowerkbank · Arbeitsplatz"
+  ],
+  "DF1_D04_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済みの業務経路",
+    "获批业务通路",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "DF1_D04_GOAL": [
+    "위장 파일은 만들지 않고 정상 JPEG는 안전한 처리 경로에 생성한다.",
+    "Prevent disguised-file creation while creating a legitimate JPEG through a safe processor.",
+    "偽装ファイルの作成を防ぎ、安全な処理で正規 JPEG を作る。",
+    "阻止伪装文件创建，同时通过安全处理器生成正常 JPEG。",
+    "Impide crear el archivo disfrazado y crea un JPEG legítimo mediante un proceso seguro.",
+    "Verhindere getarnte Dateien und erzeuge ein reguläres JPEG über sichere Verarbeitung."
+  ],
+  "DF1_D04_HINT_1": [
+    "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 이름·MIME·내용 표식과 실제 저장/실행 상태를 분리하세요.",
+    "Observe legitimate work separately from the problematic requests. Separate name, MIME type and content signature from actual storage and execution state.",
+    "正規の業務と問題のある要求を分けて観察してください。名前・MIME・内容シグネチャと、実際の保存・実行状態を分けてください。",
+    "将正常业务与有问题的请求分开观察。将名称、MIME、内容特征与实际存储及执行状态分开检查。",
+    "Observa por separado el trabajo legítimo y las peticiones problemáticas. Distingue nombre, MIME y firma del estado real de almacenamiento y ejecución.",
+    "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Trenne Name, MIME und Inhaltssignatur vom tatsächlichen Speicher- und Ausführungszustand."
+  ],
+  "DF1_D04_HINT_2": [
+    "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요.",
+    "Hold actor, target and route fixed and change one response scope to compare results.",
+    "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。",
+    "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。",
+    "Mantén actor, destino y ruta y cambia un solo alcance de respuesta para comparar.",
+    "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+  ],
+  "DF1_D04_HINT_3": [
+    "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다.",
+    "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work.",
+    "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。",
+    "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。",
+    "Elige control preciso de la ruta original o una alternativa aprobada. Apagar todo también impide el trabajo legítimo.",
+    "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+  ],
+  "DF1_D04_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "稼働業務と対応策の検証",
+    "实时业务与应对验证",
+    "Comprobación de trabajo y respuesta",
+    "Prüfung laufender Arbeit und Abwehr"
+  ],
+  "DF1_D04_LIMIT": [
+    "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다.",
+    "Passing the observed scenarios does not establish prevention of every possible attack.",
+    "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。",
+    "通过已观察场景，不代表能阻止所有可能攻击。",
+    "Superar los escenarios observados no demuestra prevenir todos los ataques posibles.",
+    "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+  ],
+  "DF1_D04_PRINCIPLE": [
+    "이름·MIME·내용 표식과 실제 저장/실행 상태를 분리하세요.",
+    "Separate name, MIME type and content signature from actual storage and execution state.",
+    "名前・MIME・内容シグネチャと、実際の保存・実行状態を分けてください。",
+    "将名称、MIME、内容特征与实际存储及执行状态分开检查。",
+    "Distingue nombre, MIME y firma del estado real de almacenamiento y ejecución.",
+    "Trenne Name, MIME und Inhaltssignatur vom tatsächlichen Speicher- und Ausführungszustand."
+  ],
+  "DF1_D04_REPLY": [
+    "정상 사진은 들어오고 잘못된 처리 효과는 막혔습니다. 파일을 읽는 작업자가 내부의 다른 서비스도 볼 수 있다는 사실이 다음 문제입니다.",
+    "Normal photos arrive and the incorrect processing effect is blocked. The next issue is what other internal services the file worker can reach.",
+    "正規の写真は届き、不正な処理効果は止まりました。次の問題は、ファイル担当ジョブから他の内部サービスへ何が届くかです。",
+    "正常照片仍能接收，错误处理效果已被阻止。下个问题是读取文件的任务还能到达哪些内部服务。",
+    "Llegan fotos normales y el efecto incorrecto está bloqueado. Lo siguiente es averiguar qué otros servicios internos alcanza el proceso que lee archivos.",
+    "Reguläre Fotos kommen an, die falsche Verarbeitung ist gesperrt. Als Nächstes geht es darum, welche internen Dienste der Dateiauftrag außerdem erreicht."
+  ],
+  "DF1_D04_SENDER": [
+    "도윤",
+    "Doyun",
+    "ドユン",
+    "度允",
+    "Doyun",
+    "Doyun"
+  ],
+  "DF1_D04_TITLE": [
+    "사진 작업대",
+    "The Photo Workbench",
+    "写真の作業台",
+    "照片工作台",
+    "El banco de fotografías",
+    "Die Fotowerkbank"
+  ],
+  "DF1_D05_ABSTRACTION": [
+    "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다.",
+    "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers.",
+    "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。",
+    "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。",
+    "Es un modelo limitado con peticiones, cuentas, servicios y políticas registrados. Los resultados proceden del mismo mundo virtual compartido.",
+    "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+  ],
+  "DF1_D05_BRIEF": [
+    "시청 서비스 담당 태경입니다. 미리보기 작업이 내부 자료에 닿았습니다. 내부 연결을 전부 끊으면 건강 확인과 시민 화면도 실패합니다. 허용된 용도와 목적지를 구분해야 합니다.\n\n내부 서비스의 객체 권한을 좁히거나 검증된 프록시로 필요한 요청만 넘기세요. 숨은 공격자 표시가 아니라 실제 요청 주체와 대상이 정책을 결정해야 합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d05.defender.packet.test\nnight-duty\n",
+    "I am Taegyeong, the city service liaison. Preview work reached an internal record. Cutting every internal connection would break health checks and citizen pages. Separate the permitted purpose and destination.\n\nConstrain internal object authority, or pass only required requests through an approved proxy. Policies must use requester and target, not a hidden attacker label.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d05.defender.packet.test\nnight-duty\n",
+    "市のサービス担当テギョンです。プレビュー処理が内部資料に届きました。内部接続をすべて切ると、稼働確認と市民ページも動きません。許可された用途と宛先を分けましょう。\n\n内部オブジェクトの権限を絞るか、承認済みプロキシに必要な要求だけを通してください。方針を決めるのは隠れた攻撃者の印ではなく、実際の主体と対象です。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d05.defender.packet.test\nnight-duty\n",
+    "我是市政服务负责人泰景。预览任务读到了内部资料。切断所有内部连接会破坏健康检查与市民页面，需要区分获准用途和目的地。\n\n可收窄内部对象权限，或通过获批代理仅传递必要请求。策略应依据实际请求身份和目标，而非隐藏的攻击者标签。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d05.defender.packet.test\nnight-duty\n",
+    "Soy Taegyeong, enlace de servicios. La vista previa alcanzó un registro interno. Cortar todas las conexiones rompería comprobaciones de salud y páginas ciudadanas. Separa propósito y destino autorizados.\n\nLimita derechos sobre los objetos internos o transmite solo lo necesario mediante un proxy aprobado. La política debe basarse en solicitante y destino, no en una etiqueta oculta de atacante.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\noperator@d05.defender.packet.test\nnight-duty\n",
+    "Ich bin Taegyeong, zuständig für die städtischen Dienste. Die Vorschau erreichte interne Daten. Alle internen Verbindungen zu kappen würde Zustandsprüfungen und Bürgerseiten stören. Trenne erlaubten Zweck und Ziel.\n\nBegrenze interne Objektrechte oder leite nur benötigte Anfragen durch einen genehmigten Proxy. Tatsächlicher Anfragender und Ziel bestimmen die Richtlinie, kein verborgenes Angreiferetikett.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d05.defender.packet.test\nnight-duty\n"
+  ],
+  "DF1_D05_CASE_HEALTH": [
+    "작업자의 필수 건강 확인",
+    "Worker's Required Health Check",
+    "作業者に必要な稼働確認",
+    "任务所需健康检查",
+    "Comprobación de salud necesaria del proceso",
+    "Benötigte Zustandsprüfung des Arbeitsprozesses"
+  ],
+  "DF1_D05_CASE_PREVIEW": [
+    "시민의 정상 미리보기",
+    "Citizen's Legitimate Preview",
+    "市民の正規プレビュー",
+    "市民正常预览",
+    "Vista previa legítima del ciudadano",
+    "Reguläre Bürgervorschau"
+  ],
+  "DF1_D05_CASE_PROXY_SECRET": [
+    "승인 프록시의 범위 밖 요청",
+    "Out-of-scope Request at the Approved Proxy",
+    "承認済みプロキシでの範囲外要求",
+    "获批代理上的越界请求",
+    "Petición fuera de ámbito en el proxy aprobado",
+    "Anfrage außerhalb des Bereichs am genehmigten Proxy"
+  ],
+  "DF1_D05_CASE_SECRET": [
+    "작업자의 범위 밖 보존 자료",
+    "Worker Reading Out-of-scope Retention Data",
+    "作業者による範囲外保存資料の読み取り",
+    "任务读取范围外保留资料",
+    "Proceso leyendo datos de conservación fuera de ámbito",
+    "Arbeitsprozess liest fremde Aufbewahrungsdaten"
+  ],
+  "DF1_D05_CONTROL_DIRECT_OPEN": [
+    "원래 업무 입구 열기",
+    "Enable Original Work Entrance",
+    "元の業務入口を有効化",
+    "启用原业务入口",
+    "Habilitar la entrada original",
+    "Ursprünglichen Arbeitszugang aktivieren"
+  ],
+  "DF1_D05_CONTROL_GATEWAY_OPEN": [
+    "승인 경로 열기",
+    "Enable Approved Route",
+    "承認済み経路を有効化",
+    "启用获批通路",
+    "Habilitar la ruta aprobada",
+    "Genehmigten Weg aktivieren"
+  ],
+  "DF1_D05_CONTROL_OWNER_CHECK": [
+    "접수 소유자 검사",
+    "Receipt Ownership Check",
+    "受付票の所有者確認",
+    "受理单所有者检查",
+    "Comprobar propiedad del recibo",
+    "Belegeigentümer prüfen"
+  ],
+  "DF1_D05_DESK_NAME": [
+    "안쪽으로 향한 요청 담당실",
+    "Requests Heading Inward Desk",
+    "内側へ向かう要求 · 作業端末",
+    "向内发出的请求 · 工作台",
+    "Mesa de Peticiones hacia el interior",
+    "Anfragen nach innen · Arbeitsplatz"
+  ],
+  "DF1_D05_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済みの業務経路",
+    "获批业务通路",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "DF1_D05_GOAL": [
+    "미리보기·건강 확인을 살리고 내부 자료의 비인가 읽기를 막는다.",
+    "Preserve previews and health checks while preventing unauthorized internal reads.",
+    "プレビューと稼働確認を残し、無許可の内部読み取りを防ぐ。",
+    "保留预览与健康检查，阻止内部未授权读取。",
+    "Conserva vistas previas y comprobaciones y evita lecturas internas no autorizadas.",
+    "Erhalte Vorschau und Zustandsprüfungen und verhindere unberechtigte interne Lesezugriffe."
+  ],
+  "DF1_D05_HINT_1": [
+    "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 작업자가 요청한 객체의 소유권과 승인 프록시의 scope를 비교하세요.",
+    "Observe legitimate work separately from the problematic requests. Compare the worker's object ownership with the approved proxy's scope.",
+    "正規の業務と問題のある要求を分けて観察してください。作業者のオブジェクト所有関係と、承認済みプロキシの範囲を比べてください。",
+    "将正常业务与有问题的请求分开观察。比较任务的对象所有权与获批代理范围。",
+    "Observa por separado el trabajo legítimo y las peticiones problemáticas. Compara la propiedad del proceso con el alcance del proxy aprobado.",
+    "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Vergleiche Objekteigentum des Arbeitsprozesses mit dem Umfang des genehmigten Proxys."
+  ],
+  "DF1_D05_HINT_2": [
+    "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요.",
+    "Hold actor, target and route fixed and change one response scope to compare results.",
+    "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。",
+    "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。",
+    "Mantén actor, destino y ruta y cambia un solo alcance de respuesta para comparar.",
+    "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+  ],
+  "DF1_D05_HINT_3": [
+    "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다.",
+    "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work.",
+    "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。",
+    "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。",
+    "Elige control preciso de la ruta original o una alternativa aprobada. Apagar todo también impide el trabajo legítimo.",
+    "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+  ],
+  "DF1_D05_INTERNAL_NAME": [
+    "내부 건강·보존 서비스",
+    "Internal Health and Retention Service",
+    "内部稼働確認・保存サービス",
+    "内部健康检查与保留服务",
+    "Servicio interno de salud y conservación",
+    "Interner Zustands- und Aufbewahrungsdienst"
+  ],
+  "DF1_D05_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "稼働業務と対応策の検証",
+    "实时业务与应对验证",
+    "Comprobación de trabajo y respuesta",
+    "Prüfung laufender Arbeit und Abwehr"
+  ],
+  "DF1_D05_LIMIT": [
+    "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다.",
+    "Passing the observed scenarios does not establish prevention of every possible attack.",
+    "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。",
+    "通过已观察场景，不代表能阻止所有可能攻击。",
+    "Superar los escenarios observados no demuestra prevenir todos los ataques posibles.",
+    "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+  ],
+  "DF1_D05_PRINCIPLE": [
+    "작업자가 요청한 객체의 소유권과 승인 프록시의 scope를 비교하세요.",
+    "Compare the worker's object ownership with the approved proxy's scope.",
+    "作業者のオブジェクト所有関係と、承認済みプロキシの範囲を比べてください。",
+    "比较任务的对象所有权与获批代理范围。",
+    "Compara la propiedad del proceso con el alcance del proxy aprobado.",
+    "Vergleiche Objekteigentum des Arbeitsprozesses mit dem Umfang des genehmigten Proxys."
+  ],
+  "DF1_D05_REPLY": [
+    "건강 확인과 미리보기는 남고 내부 자료의 비인가 읽기는 막혔습니다. 좁은 경계를 만들었군요. 다만 급히 고친 파일 권한 때문에 배포 작업이 멈췄습니다.",
+    "Health checks and previews work while unauthorized internal reads fail. The boundary is narrow. A rushed file-permission change has now stopped deployment.",
+    "稼働確認とプレビューを残し、無許可の内部読み取りを防げました。狭い境界ができましたね。ただ、急いで変えたファイル権限で配備が止まっています。",
+    "健康检查与预览仍可用，内部未授权读取已被阻止，边界足够精确。但仓促修改文件权限又使部署停了下来。",
+    "Funcionan las comprobaciones y vistas previas mientras fallan las lecturas internas no autorizadas. El límite es preciso. Pero un cambio apresurado de permisos ha detenido el despliegue.",
+    "Zustandsprüfung und Vorschau laufen, unberechtigte interne Lesezugriffe scheitern. Die Grenze ist eng. Doch eine übereilte Dateirechteänderung hat die Bereitstellung gestoppt."
+  ],
+  "DF1_D05_SENDER": [
+    "태경",
+    "Taegyeong",
+    "テギョン",
+    "泰景",
+    "Taegyeong",
+    "Taegyeong"
+  ],
+  "DF1_D05_TITLE": [
+    "안쪽으로 향한 요청",
+    "Requests Heading Inward",
+    "内側へ向かう要求",
+    "向内发出的请求",
+    "Peticiones hacia el interior",
+    "Anfragen nach innen"
+  ],
+  "DF1_D06_ABSTRACTION": [
+    "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다.",
+    "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers.",
+    "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。",
+    "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。",
+    "Es un modelo limitado con peticiones, cuentas, servicios y políticas registrados. Los resultados proceden del mismo mundo virtual compartido.",
+    "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+  ],
+  "DF1_D06_BRIEF": [
+    "비담당 계정의 쓰기를 막으려다 배포 계정도 상위 폴더에 들어가지 못합니다. 파일 한 장의 권한만 보면 원인을 놓쳐요. 현재 그룹과 경로의 각 문을 확인해 주세요.\n\n필요한 그룹·ACL만 고치거나 승인된 작업 계정과 경로로 이관할 수 있습니다. 모두에게 전체 권한을 주는 것은 해결이 아닙니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d06.defender.packet.test\nnight-duty\n",
+    "A change intended to stop unrelated writes also prevents deployment from traversing an ancestor folder. Looking only at the file misses the cause. Inspect current groups and every directory gate.\n\nRepair only the required group or ACL, or migrate to an approved job account and path. Granting everyone full authority is not a solution.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d06.defender.packet.test\nnight-duty\n",
+    "担当外の書き込みを防ぐ変更で、配備アカウントも親フォルダーを通れなくなりました。ファイルだけを見ていては原因を逃します。グループと経路上の門を確かめてください。\n\n必要なグループ・ACL だけを直すか、承認された作業アカウントと経路へ移せます。全員に全権限を与えることは解決ではありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d06.defender.packet.test\nnight-duty\n",
+    "原本为阻止无关账号写入的修改，也挡住了部署账号遍历上级目录。只看文件权限会漏掉原因，请检查当前组和路径上的每道门。\n\n可以只修复必要组或 ACL，也可转到获批的任务账号与路径。给所有人完整权限并不是解决办法。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d06.defender.packet.test\nnight-duty\n",
+    "Un cambio contra escrituras ajenas también impide a despliegue recorrer una carpeta superior. Mirar solo el archivo oculta la causa. Inspecciona grupos y cada puerta del camino.\n\nRepara únicamente grupo o ACL necesarios, o migra a una cuenta y ruta aprobadas. Dar todos los permisos a todo el mundo no resuelve el problema.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\noperator@d06.defender.packet.test\nnight-duty\n",
+    "Eine Änderung gegen fremde Schreibzugriffe hindert auch die Bereitstellung am Durchqueren des übergeordneten Ordners. Nur die Datei anzusehen verfehlt die Ursache. Prüfe Gruppen und jedes Verzeichnistor.\n\nRepariere nur nötige Gruppen oder ACL oder wechsle zu genehmigtem Arbeitskonto und Pfad. Allen sämtliche Rechte zu geben ist keine Lösung.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d06.defender.packet.test\nnight-duty\n"
+  ],
+  "DF1_D06_CASE_FOREIGN_APPROVED": [
+    "승인 경로의 비담당 쓰기",
+    "Unrelated Write at the Approved Route",
+    "承認済み経路での担当外書き込み",
+    "获批通路上的无关写入",
+    "Escritura ajena en la ruta aprobada",
+    "Unbeteiligter Schreibzugriff am genehmigten Weg"
+  ],
+  "DF1_D06_CASE_FOREIGN_WRITE": [
+    "비담당 계정의 배포 파일 변경",
+    "Unrelated Account Modifying Deployment",
+    "担当外アカウントによる配備の変更",
+    "无关账号修改部署",
+    "Cuenta ajena modificando el despliegue",
+    "Unbeteiligtes Konto verändert die Bereitstellung"
+  ],
+  "DF1_D06_CASE_READ": [
+    "배포 계정의 상태 읽기",
+    "Deployment Account Reading Its Status",
+    "配備アカウントが自分の状態を読む",
+    "部署账号读取自身状态",
+    "La cuenta de despliegue lee su estado",
+    "Bereitstellungskonto liest seinen Zustand"
+  ],
+  "DF1_D06_CASE_WRITE": [
+    "배포 계정의 작업 결과 쓰기",
+    "Deployment Account Writing Its Work Result",
+    "配備アカウントが作業結果を書く",
+    "部署账号写入任务结果",
+    "La cuenta de despliegue escribe su resultado",
+    "Bereitstellungskonto schreibt sein Arbeitsergebnis"
+  ],
+  "DF1_D06_DESK_NAME": [
+    "고친 권한, 멈춘 작업 담당실",
+    "Repaired Rights, Stopped Work Desk",
+    "直した権限、止まった仕事 · 作業端末",
+    "修好的权限，停下的任务 · 工作台",
+    "Mesa de Permisos reparados, trabajo detenido",
+    "Rechte repariert, Arbeit gestoppt · Arbeitsplatz"
+  ],
+  "DF1_D06_DIRECTORY_MODE": [
+    "배포 폴더의 탐색 권한",
+    "Deployment Folder Traversal Rights",
+    "配備フォルダーの通過権限",
+    "部署目录遍历权限",
+    "Permiso de recorrido de la carpeta de despliegue",
+    "Durchquerungsrechte des Bereitstellungsordners"
+  ],
+  "DF1_D06_FILE_MODE": [
+    "작업 결과 파일의 권한",
+    "Work Result File Rights",
+    "作業結果ファイルの権限",
+    "任务结果文件权限",
+    "Permisos del archivo de resultados",
+    "Rechte der Arbeitsergebnisdatei"
+  ],
+  "DF1_D06_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済みの業務経路",
+    "获批业务通路",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "DF1_D06_GOAL": [
+    "배포 계정의 읽기·쓰기는 살리고 비담당 파일 변경은 거부한다.",
+    "Enable deployment reads and writes while refusing unrelated modifications.",
+    "配備の読み書きを許可し、担当外の変更は拒否する。",
+    "允许部署读写，拒绝无关修改。",
+    "Permite lectura y escritura de despliegue y rechaza cambios ajenos.",
+    "Ermögliche Lesen und Schreiben der Bereitstellung und weise fremde Änderungen ab."
+  ],
+  "DF1_D06_HINT_1": [
+    "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 상위 폴더와 현재 그룹을 보거나 승인된 대체 경로를 사용하세요.",
+    "Observe legitimate work separately from the problematic requests. Inspect ancestor directories and current groups, or use the approved alternative route.",
+    "正規の業務と問題のある要求を分けて観察してください。親ディレクトリと現在のグループを調べるか、承認済みの代替経路を使ってください。",
+    "将正常业务与有问题的请求分开观察。检查上级目录与当前组，或使用获批替代通路。",
+    "Observa por separado el trabajo legítimo y las peticiones problemáticas. Inspecciona directorios superiores y grupos actuales, o usa la alternativa aprobada.",
+    "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Prüfe übergeordnete Ordner und aktuelle Gruppen oder nutze den genehmigten Alternativweg."
+  ],
+  "DF1_D06_HINT_2": [
+    "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요.",
+    "Hold actor, target and route fixed and change one response scope to compare results.",
+    "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。",
+    "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。",
+    "Mantén actor, destino y ruta y cambia un solo alcance de respuesta para comparar.",
+    "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+  ],
+  "DF1_D06_HINT_3": [
+    "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다.",
+    "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work.",
+    "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。",
+    "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。",
+    "Elige control preciso de la ruta original o una alternativa aprobada. Apagar todo también impide el trabajo legítimo.",
+    "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+  ],
+  "DF1_D06_JOB_GROUPS": [
+    "배포 계정의 필요한 그룹",
+    "Required Deployment Account Groups",
+    "配備アカウントに必要なグループ",
+    "部署账号所需组",
+    "Grupos necesarios de la cuenta de despliegue",
+    "Benötigte Gruppen des Bereitstellungskontos"
+  ],
+  "DF1_D06_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "稼働業務と対応策の検証",
+    "实时业务与应对验证",
+    "Comprobación de trabajo y respuesta",
+    "Prüfung laufender Arbeit und Abwehr"
+  ],
+  "DF1_D06_LIMIT": [
+    "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다.",
+    "Passing the observed scenarios does not establish prevention of every possible attack.",
+    "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。",
+    "通过已观察场景，不代表能阻止所有可能攻击。",
+    "Superar los escenarios observados no demuestra prevenir todos los ataques posibles.",
+    "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+  ],
+  "DF1_D06_PRINCIPLE": [
+    "상위 폴더와 현재 그룹을 보거나 승인된 대체 경로를 사용하세요.",
+    "Inspect ancestor directories and current groups, or use the approved alternative route.",
+    "親ディレクトリと現在のグループを調べるか、承認済みの代替経路を使ってください。",
+    "检查上级目录与当前组，或使用获批替代通路。",
+    "Inspecciona directorios superiores y grupos actuales, o usa la alternativa aprobada.",
+    "Prüfe übergeordnete Ordner und aktuelle Gruppen oder nutze den genehmigten Alternativweg."
+  ],
+  "DF1_D06_REPLY": [
+    "배포와 정비는 동작하고 비담당 쓰기는 거부됩니다. 필요한 권한을 좁히는 기준을 지켰어요. 이제 실제 위협과 잘못된 긴급 규칙이 동시에 들어옵니다.",
+    "Deployment and maintenance work while unrelated writes are refused. Necessary authority stayed narrow. Now a real threat and an incorrect emergency rule arrive together.",
+    "配備と保守が動き、担当外の書き込みは拒否されています。必要な権限を狭く保てました。次は実際の脅威と誤った緊急規則が同時に届きます。",
+    "部署与维护已恢复，无关写入被拒绝，必要权限仍保持有限。接下来，真实威胁与错误紧急规则会同时出现。",
+    "Despliegue y mantenimiento funcionan y las escrituras ajenas se rechazan. La autoridad necesaria sigue limitada. Ahora llegan a la vez una amenaza real y una regla de emergencia incorrecta.",
+    "Bereitstellung und Wartung laufen, fremde Schreibzugriffe werden abgewiesen. Die nötigen Rechte blieben begrenzt. Nun treffen eine echte Bedrohung und eine falsche Notregel zusammen."
+  ],
+  "DF1_D06_SENDER": [
+    "도윤",
+    "Doyun",
+    "ドユン",
+    "度允",
+    "Doyun",
+    "Doyun"
+  ],
+  "DF1_D06_TITLE": [
+    "고친 권한, 멈춘 작업",
+    "Repaired Rights, Stopped Work",
+    "直した権限、止まった仕事",
+    "修好的权限，停下的任务",
+    "Permisos reparados, trabajo detenido",
+    "Rechte repariert, Arbeit gestoppt"
+  ],
+  "DF1_D07_ABSTRACTION": [
+    "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다.",
+    "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers.",
+    "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。",
+    "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。",
+    "Es un modelo limitado con peticiones, cuentas, servicios y políticas registrados. Los resultados proceden del mismo mundo virtual compartido.",
+    "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+  ],
+  "DF1_D07_BRIEF": [
+    "내부 비인가 요청을 막았지만 정상 알림도 끊겼습니다. 직전 상태 전체로 돌아가면 이미 폐기한 열쇠까지 되살릴 수 있어요. 이번에는 되돌리기의 범위가 대응의 핵심입니다.\n\n잘못된 정책 그룹만 부분적으로 되돌리거나, 정상 업무를 승인된 대기 서비스로 옮기세요. 노출 세션의 폐기와 수집한 자료는 rollback 대상이 아닙니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d07.defender.packet.test\nnight-duty\n",
+    "Unauthorized internal requests stopped, but so did legitimate notifications. Restoring the entire previous world could revive a key already revoked. The rollback boundary is now the central decision.\n\nRoll back only the incorrect policy group, or move legitimate work to an approved standby service. Session revocation and collected evidence are not rollback targets.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d07.defender.packet.test\nnight-duty\n",
+    "無許可の内部要求を止めたら、正規の通知も止まりました。世界全体を前の状態に戻すと、失効済みの鍵まで生き返るかもしれません。今回は、戻す範囲が判断の中心です。\n\n誤った方針グループだけを戻すか、正規業務を承認済みの待機サービスへ移してください。セッションの失効と収集資料は、戻す対象ではありません。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d07.defender.packet.test\nnight-duty\n",
+    "内部未授权请求被挡住了，正常通知也断了。恢复整个旧世界，可能会复活已经撤销的钥匙。这次，应对的关键是回滚范围。\n\n仅回滚错误策略组，或将正常业务迁移至获批备用服务。会话撤销与已收集证据不属于回滚对象。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d07.defender.packet.test\nnight-duty\n",
+    "Se detuvieron las peticiones internas no autorizadas, pero también los avisos legítimos. Restaurar todo el mundo anterior podría revivir una llave revocada. La decisión es el alcance de la reversión.\n\nRevierte solo el grupo incorrecto o mueve el trabajo a un servicio de reserva aprobado. La revocación de sesiones y las pruebas recogidas no deben revertirse.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\noperator@d07.defender.packet.test\nnight-duty\n",
+    "Unberechtigte interne Anfragen sind gestoppt, reguläre Meldungen ebenfalls. Die ganze frühere Welt wiederherzustellen könnte einen widerrufenen Schlüssel beleben. Entscheidend ist die Grenze der Rücknahme.\n\nNimm nur die falsche Richtliniengruppe zurück oder verlege reguläre Arbeit auf einen genehmigten Ersatzdienst. Sitzungswiderrufe und gesicherte Belege werden nicht zurückgenommen.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d07.defender.packet.test\nnight-duty\n"
+  ],
+  "DF1_D07_CASE_FRESH": [
+    "새 정상 세션",
+    "Fresh Legitimate Session",
+    "新しい正規セッション",
+    "新的正常会话",
+    "Sesión legítima nueva",
+    "Neue reguläre Sitzung"
+  ],
+  "DF1_D07_CASE_INTERNAL_TARGET": [
+    "허용 밖 내부 목적지",
+    "An Out-of-scope Internal Target",
+    "範囲外の内部対象",
+    "范围外内部目标",
+    "Destino interno fuera de ámbito",
+    "Internes Ziel außerhalb des Bereichs"
+  ],
+  "DF1_D07_CASE_NOTIFY": [
+    "정상 병원 알림 전달",
+    "Deliver a Legitimate Ward Notification",
+    "正規の病院通知を届ける",
+    "送达正常病区通知",
+    "Entregar un aviso hospitalario legítimo",
+    "Reguläre Stationsmeldung zustellen"
+  ],
+  "DF1_D07_CASE_OTHER_JOB": [
+    "다른 정상 장기 작업",
+    "Other Legitimate Long-running Job",
+    "他の正規の長時間ジョブ",
+    "其他正常长期任务",
+    "Otro trabajo legítimo de larga duración",
+    "Anderer regulärer Dauerauftrag"
+  ],
+  "DF1_D07_CASE_RETIRED": [
+    "원래 경로의 끝난 세션",
+    "Retired Authority at the Original Route",
+    "元の経路での終了済み権限",
+    "原通路上的旧权限",
+    "Autoridad retirada en la ruta original",
+    "Ausgemusterte Berechtigung am ursprünglichen Weg"
+  ],
+  "DF1_D07_CASE_RETIRED_GATEWAY": [
+    "승인 경로의 끝난 세션",
+    "Retired Authority at the Approved Route",
+    "承認済み経路での終了済み権限",
+    "获批通路上的旧权限",
+    "Autoridad retirada en la ruta aprobada",
+    "Ausgemusterte Berechtigung am genehmigten Weg"
+  ],
+  "DF1_D07_CASE_STANDBY_TARGET": [
+    "대기 경로의 허용 밖 목적지",
+    "Out-of-scope Target at Standby",
+    "待機サービスでの範囲外対象",
+    "备用服务中的范围外目标",
+    "Destino fuera de ámbito en la reserva",
+    "Unzulässiges Ziel am Ersatzdienst"
+  ],
+  "DF1_D07_CONTROL_NOTIFY_OPEN": [
+    "주 알림 경로 열기",
+    "Enable Primary Notification Route",
+    "主通知経路を有効化",
+    "启用主要通知通路",
+    "Habilitar la ruta principal de avisos",
+    "Hauptmeldeweg aktivieren"
+  ],
+  "DF1_D07_CONTROL_SESSION_GUARD": [
+    "끝난 세션 권한 검사",
+    "Check Expired Session Authority",
+    "終了したセッション権限を検査",
+    "检查已结束的会话权限",
+    "Comprobar autoridad de sesiones caducadas",
+    "Abgelaufene Sitzungsrechte prüfen"
+  ],
+  "DF1_D07_CONTROL_STANDBY_OPEN": [
+    "대기 알림 경로 열기",
+    "Enable Standby Notification Route",
+    "待機通知経路を有効化",
+    "启用备用通知通路",
+    "Habilitar la ruta de avisos de reserva",
+    "Ersatzmeldeweg aktivieren"
+  ],
+  "DF1_D07_CONTROL_TARGET_SCOPE": [
+    "알림 목적지 범위 제한",
+    "Constrain Notification Targets",
+    "通知対象を制限",
+    "限制通知目标",
+    "Limitar destinos de avisos",
+    "Meldeziele begrenzen"
+  ],
+  "DF1_D07_DESK_NAME": [
+    "두 장애의 한밤 담당실",
+    "Two Failures in One Night Desk",
+    "二つの障害の夜 · 作業端末",
+    "双重故障的一夜 · 工作台",
+    "Mesa de Dos fallos en una noche",
+    "Zwei Ausfälle in einer Nacht · Arbeitsplatz"
+  ],
+  "DF1_D07_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済みの業務経路",
+    "获批业务通路",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "DF1_D07_GOAL": [
+    "정상 알림을 복구하고 폐기한 세션과 범위 밖 목적지는 계속 거부한다.",
+    "Restore notifications while keeping revoked sessions and out-of-scope targets refused.",
+    "失効セッションと範囲外対象を拒否したまま、通知を復旧する。",
+    "保持撤销会话与越界目标被拒，同时恢复通知。",
+    "Restaura avisos manteniendo el rechazo de sesiones retiradas y destinos ajenos.",
+    "Stelle Meldungen wieder her und erhalte die Ablehnung widerrufener Sitzungen und unzulässiger Ziele."
+  ],
+  "DF1_D07_HINT_1": [
+    "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 정책 그룹만 되돌릴 수 있고 폐기한 열쇠는 돌아오지 않습니다.",
+    "Observe legitimate work separately from the problematic requests. Only the policy group is rolled back; a revoked key does not return.",
+    "正規の業務と問題のある要求を分けて観察してください。戻すのは方針グループだけです。失効した鍵は戻りません。",
+    "将正常业务与有问题的请求分开观察。仅回滚策略组，已撤销的钥匙不会恢复。",
+    "Observa por separado el trabajo legítimo y las peticiones problemáticas. Solo se revierte el grupo de políticas; la llave revocada no vuelve.",
+    "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Nur die Richtliniengruppe wird zurückgenommen; ein widerrufener Schlüssel kehrt nicht zurück."
+  ],
+  "DF1_D07_HINT_2": [
+    "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요.",
+    "Hold actor, target and route fixed and change one response scope to compare results.",
+    "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。",
+    "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。",
+    "Mantén actor, destino y ruta y cambia un solo alcance de respuesta para comparar.",
+    "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+  ],
+  "DF1_D07_HINT_3": [
+    "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다.",
+    "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work.",
+    "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。",
+    "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。",
+    "Elige control preciso de la ruta original o una alternativa aprobada. Apagar todo también impide el trabajo legítimo.",
+    "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+  ],
+  "DF1_D07_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "稼働業務と対応策の検証",
+    "实时业务与应对验证",
+    "Comprobación de trabajo y respuesta",
+    "Prüfung laufender Arbeit und Abwehr"
+  ],
+  "DF1_D07_LIMIT": [
+    "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다.",
+    "Passing the observed scenarios does not establish prevention of every possible attack.",
+    "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。",
+    "通过已观察场景，不代表能阻止所有可能攻击。",
+    "Superar los escenarios observados no demuestra prevenir todos los ataques posibles.",
+    "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+  ],
+  "DF1_D07_PRINCIPLE": [
+    "정책 그룹만 되돌릴 수 있고 폐기한 열쇠는 돌아오지 않습니다.",
+    "Only the policy group is rolled back; a revoked key does not return.",
+    "戻すのは方針グループだけです。失効した鍵は戻りません。",
+    "仅回滚策略组，已撤销的钥匙不会恢复。",
+    "Solo se revierte el grupo de políticas; la llave revocada no vuelve.",
+    "Nur die Richtliniengruppe wird zurückgenommen; ein widerrufener Schlüssel kehrt nicht zurück."
+  ],
+  "DF1_D07_REPLY": [
+    "알림은 다시 전달되고 폐기 세션은 돌아오지 않았습니다. 임시 이관과 완전 복구를 같은 것으로 부르지 않고 인계하겠습니다.",
+    "Notifications are delivered again without reviving the retired session. The handoff will distinguish a controlled temporary migration from complete restoration.",
+    "通知が再び届き、廃止セッションは戻りませんでした。管理された仮移行と完全復旧を区別して引き継ぎます。",
+    "通知再次送达，旧会话没有复活。我们会明确区分受控临时迁移与完全恢复，再进行交接。",
+    "Los avisos vuelven sin revivir la sesión retirada. La entrega distinguirá una migración temporal controlada de una restauración completa.",
+    "Meldungen werden wieder zugestellt, die alte Sitzung bleibt widerrufen. Die Übergabe unterscheidet kontrollierten Übergangsbetrieb von vollständiger Wiederherstellung."
+  ],
+  "DF1_D07_SENDER": [
+    "태경",
+    "Taegyeong",
+    "テギョン",
+    "泰景",
+    "Taegyeong",
+    "Taegyeong"
+  ],
+  "DF1_D07_TITLE": [
+    "두 장애의 한밤",
+    "Two Failures in One Night",
+    "二つの障害の夜",
+    "双重故障的一夜",
+    "Dos fallos en una noche",
+    "Zwei Ausfälle in einer Nacht"
+  ],
+  "DF1_D08_ABSTRACTION": [
+    "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다.",
+    "This is a bounded work model with registered requests, accounts, services and policies. Actual outcomes come from the shared world handlers.",
+    "登録された要求・アカウント・サービス・方針だけを扱う業務モデルです。結果は他のツールとも共通の仮想世界の動作で決まります。",
+    "这是使用已注册请求、账号、服务与策略的有限业务模型。结果由各工具共用的虚拟世界行为决定。",
+    "Es un modelo limitado con peticiones, cuentas, servicios y políticas registrados. Los resultados proceden del mismo mundo virtual compartido.",
+    "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+  ],
+  "DF1_D08_BRIEF": [
+    "마지막 야간 교대입니다. 웹 접수, 내부 알림, 정비 작업이 서로 얽혀 있습니다. 경보를 없애는 것과 도시를 지키는 것은 같은 일이 아니에요.\n\n기존 서비스를 정밀 복구하거나 승인된 대체 경로로 연속성을 유지하세요. 선택한 조합에서 정상 업무와 모델링한 위협을 모두 확인하고, 아직 제한된 부분을 사실대로 인계합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d08.defender.packet.test\nnight-duty\n",
+    "This is the final night handoff. Web receipts, internal notifications and maintenance work are connected. Removing alerts is not the same as protecting the city.\n\nPrecisely restore the existing services or maintain continuity through approved alternatives. Check legitimate work and the modeled threats under your chosen configuration, and report remaining restrictions honestly.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\noperator@d08.defender.packet.test\nnight-duty\n",
+    "最後の夜間引き継ぎです。ウェブ受付、内部通知、保守作業はつながっています。警報を消すことと、街を守ることは同じではありません。\n\n既存サービスを精密に復旧するか、承認済みの代替経路で継続させてください。選んだ構成で正規業務とモデル内の脅威を両方確かめ、残る制限を正直に伝えましょう。\n以下は許可された業務アカウントです。接続すると、事件のツールで現在の観察と可能な操作を確認できます。\n\noperator@d08.defender.packet.test\nnight-duty\n",
+    "这是最后一次夜间交接。网页受理、内部通知与维护任务相互关联。让警报消失，不等于守住城市。\n\n可精确恢复现有服务，或通过获批替代通路保持连续性。在所选配置下同时核验正常业务与模型中的威胁，如实交代尚存限制。\n以下为获准业务账号。连接后，事件工具会显示当前观察与允许操作。\n\noperator@d08.defender.packet.test\nnight-duty\n",
+    "Es el último relevo nocturno. Recibos web, avisos internos y mantenimiento están conectados. Quitar alertas no equivale a proteger la ciudad.\n\nRestaura con precisión o mantén la continuidad por alternativas aprobadas. Comprueba trabajo legítimo y amenazas modeladas con tu configuración y comunica honestamente las restricciones pendientes.\nDebajo está la cuenta autorizada. Al conectar, la herramienta del caso muestra observaciones y acciones permitidas.\n\noperator@d08.defender.packet.test\nnight-duty\n",
+    "Die letzte Nachtübergabe. Webbelege, interne Meldungen und Wartung hängen zusammen. Alarme zu beseitigen ist nicht dasselbe, wie die Stadt zu schützen.\n\nStelle bestehende Dienste gezielt wieder her oder erhalte sie über genehmigte Alternativen. Prüfe reguläre Arbeit und modellierte Bedrohungen in deiner Konfiguration und übergib verbliebene Einschränkungen ehrlich.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d08.defender.packet.test\nnight-duty\n"
+  ],
+  "DF1_D08_CASE_FOREIGN_DIRECT": [
+    "무관한 계정의 원래 입구 요청",
+    "Unrelated Account at the Original Entrance",
+    "元の入口の担当外アカウント",
+    "原入口的无关账号",
+    "Cuenta ajena al trámite en la entrada original",
+    "Unbeteiligtes Konto am ursprünglichen Zugang"
+  ],
+  "DF1_D08_CASE_FOREIGN_GATEWAY": [
+    "무관한 계정의 승인 경로 요청",
+    "Unrelated Account at the Approved Route",
+    "承認済み経路の担当外アカウント",
+    "获批通路的无关账号",
+    "Cuenta ajena al trámite en la ruta aprobada",
+    "Unbeteiligtes Konto am genehmigten Weg"
+  ],
+  "DF1_D08_CASE_FRESH": [
+    "새 정상 세션",
+    "Fresh Legitimate Session",
+    "新しい正規セッション",
+    "新的正常会话",
+    "Sesión legítima nueva",
+    "Neue reguläre Sitzung"
+  ],
+  "DF1_D08_CASE_INTERNAL_TARGET": [
+    "허용 밖 내부 목적지",
+    "An Out-of-scope Internal Target",
+    "範囲外の内部対象",
+    "范围外内部目标",
+    "Destino interno fuera de ámbito",
+    "Internes Ziel außerhalb des Bereichs"
+  ],
+  "DF1_D08_CASE_NOTIFY": [
+    "정상 병원 알림 전달",
+    "Deliver a Legitimate Ward Notification",
+    "正規の病院通知を届ける",
+    "送达正常病区通知",
+    "Entregar un aviso hospitalario legítimo",
+    "Reguläre Stationsmeldung zustellen"
+  ],
+  "DF1_D08_CASE_OTHER_JOB": [
+    "다른 정상 장기 작업",
+    "Other Legitimate Long-running Job",
+    "他の正規の長時間ジョブ",
+    "其他正常长期任务",
+    "Otro trabajo legítimo de larga duración",
+    "Anderer regulärer Dauerauftrag"
+  ],
+  "DF1_D08_CASE_OWN_A": [
+    "시민 A의 자기 접수",
+    "Citizen A's Own Receipt",
+    "市民 A 自身の受付票",
+    "市民 A 自己的受理单",
+    "Recibo propio del ciudadano A",
+    "Eigener Beleg von Bürger A"
+  ],
+  "DF1_D08_CASE_OWN_B": [
+    "시민 B의 자기 접수",
+    "Citizen B's Own Receipt",
+    "市民 B 自身の受付票",
+    "市民 B 自己的受理单",
+    "Recibo propio del ciudadano B",
+    "Eigener Beleg von Bürger B"
+  ],
+  "DF1_D08_CASE_RETIRED": [
+    "원래 경로의 끝난 세션",
+    "Retired Authority at the Original Route",
+    "元の経路での終了済み権限",
+    "原通路上的旧权限",
+    "Autoridad retirada en la ruta original",
+    "Ausgemusterte Berechtigung am ursprünglichen Weg"
+  ],
+  "DF1_D08_CASE_RETIRED_GATEWAY": [
+    "승인 경로의 끝난 세션",
+    "Retired Authority at the Approved Route",
+    "承認済み経路での終了済み権限",
+    "获批通路上的旧权限",
+    "Autoridad retirada en la ruta aprobada",
+    "Ausgemusterte Berechtigung am genehmigten Weg"
+  ],
+  "DF1_D08_CASE_STAFF": [
+    "담당자의 위임된 접수",
+    "Assigned Staff's Delegated Receipt",
+    "担当職員に委任された受付票",
+    "委托给指定职员的受理单",
+    "Recibo delegado al personal asignado",
+    "Delegierter Beleg des zuständigen Personals"
+  ],
+  "DF1_D08_CASE_STANDBY_TARGET": [
+    "대기 경로의 허용 밖 목적지",
+    "Out-of-scope Target at Standby",
+    "待機サービスでの範囲外対象",
+    "备用服务中的范围外目标",
+    "Destino fuera de ámbito en la reserva",
+    "Unzulässiges Ziel am Ersatzdienst"
+  ],
+  "DF1_D08_CONTROL_DIRECT_OPEN": [
+    "원래 업무 입구 열기",
+    "Enable Original Work Entrance",
+    "元の業務入口を有効化",
+    "启用原业务入口",
+    "Habilitar la entrada original",
+    "Ursprünglichen Arbeitszugang aktivieren"
+  ],
+  "DF1_D08_CONTROL_GATEWAY_OPEN": [
+    "승인 경로 열기",
+    "Enable Approved Route",
+    "承認済み経路を有効化",
+    "启用获批通路",
+    "Habilitar la ruta aprobada",
+    "Genehmigten Weg aktivieren"
+  ],
+  "DF1_D08_CONTROL_NOTIFY_OPEN": [
+    "주 알림 경로 열기",
+    "Enable Primary Notification Route",
+    "主通知経路を有効化",
+    "启用主要通知通路",
+    "Habilitar la ruta principal de avisos",
+    "Hauptmeldeweg aktivieren"
+  ],
+  "DF1_D08_CONTROL_OWNER_CHECK": [
+    "접수 소유자 검사",
+    "Receipt Ownership Check",
+    "受付票の所有者確認",
+    "受理单所有者检查",
+    "Comprobar propiedad del recibo",
+    "Belegeigentümer prüfen"
+  ],
+  "DF1_D08_CONTROL_SESSION_GUARD": [
+    "끝난 세션 권한 검사",
+    "Check Expired Session Authority",
+    "終了したセッション権限を検査",
+    "检查已结束的会话权限",
+    "Comprobar autoridad de sesiones caducadas",
+    "Abgelaufene Sitzungsrechte prüfen"
+  ],
+  "DF1_D08_CONTROL_STANDBY_OPEN": [
+    "대기 알림 경로 열기",
+    "Enable Standby Notification Route",
+    "待機通知経路を有効化",
+    "启用备用通知通路",
+    "Habilitar la ruta de avisos de reserva",
+    "Ersatzmeldeweg aktivieren"
+  ],
+  "DF1_D08_CONTROL_TARGET_SCOPE": [
+    "알림 목적지 범위 제한",
+    "Constrain Notification Targets",
+    "通知対象を制限",
+    "限制通知目标",
+    "Limitar destinos de avisos",
+    "Meldeziele begrenzen"
+  ],
+  "DF1_D08_DESK_NAME": [
+    "계속 돌아가는 도시 담당실",
+    "The City That Keeps Working Desk",
+    "動き続ける街 · 作業端末",
+    "继续运转的城市 · 工作台",
+    "Mesa de La ciudad que sigue funcionando",
+    "Die Stadt arbeitet weiter · Arbeitsplatz"
+  ],
+  "DF1_D08_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済みの業務経路",
+    "获批业务通路",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "DF1_D08_GOAL": [
+    "선택한 경로에서 접수·알림·세션의 정상 업무와 위협 행렬을 모두 만족한다.",
+    "Satisfy legitimate receipt, notification and session work alongside threat refusal on the chosen routes.",
+    "選んだ経路で、脅威の拒否と正規の受付・通知・セッション業務を両立する。",
+    "在所选通路同时满足正常受理、通知、会话业务与威胁阻止。",
+    "Cumple recibos, avisos y sesiones legítimos mientras rechazas amenazas en las rutas elegidas.",
+    "Erfülle reguläre Beleg-, Melde- und Sitzungsarbeit samt Bedrohungsabwehr auf den gewählten Wegen."
+  ],
+  "DF1_D08_HINT_1": [
+    "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 한 서비스의 성공으로 다른 업무를 확인한 것으로 세지 마세요.",
+    "Observe legitimate work separately from the problematic requests. Success in one service does not establish another workflow.",
+    "正規の業務と問題のある要求を分けて観察してください。一つのサービスの成功だけでは、別の業務が動く証拠になりません。",
+    "将正常业务与有问题的请求分开观察。一个服务成功，不代表另一个业务流程也正常。",
+    "Observa por separado el trabajo legítimo y las peticiones problemáticas. El éxito de un servicio no acredita otro proceso.",
+    "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Der Erfolg eines Dienstes belegt keinen anderen Arbeitsablauf."
+  ],
+  "DF1_D08_HINT_2": [
+    "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요.",
+    "Hold actor, target and route fixed and change one response scope to compare results.",
+    "主体・対象・経路を固定し、対応範囲を一つ変えて結果を比べてください。",
+    "固定请求身份、目标与通路，仅改变一项应对范围来对比结果。",
+    "Mantén actor, destino y ruta y cambia un solo alcance de respuesta para comparar.",
+    "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+  ],
+  "DF1_D08_HINT_3": [
+    "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다.",
+    "Choose precise control of the original route or an approved alternative. Turning everything off also fails legitimate work.",
+    "元の経路を精密に制御するか、承認済みの代替を選びます。すべて止めると正規の業務も失敗します。",
+    "选择精确控制原通路或获批替代方案。全部关闭也会破坏正常业务。",
+    "Elige control preciso de la ruta original o una alternativa aprobada. Apagar todo también impide el trabajo legítimo.",
+    "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+  ],
+  "DF1_D08_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "稼働業務と対応策の検証",
+    "实时业务与应对验证",
+    "Comprobación de trabajo y respuesta",
+    "Prüfung laufender Arbeit und Abwehr"
+  ],
+  "DF1_D08_LIMIT": [
+    "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다.",
+    "Passing the observed scenarios does not establish prevention of every possible attack.",
+    "観察したケースを満たしても、あらゆる攻撃を防げる証明にはなりません。",
+    "通过已观察场景，不代表能阻止所有可能攻击。",
+    "Superar los escenarios observados no demuestra prevenir todos los ataques posibles.",
+    "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+  ],
+  "DF1_D08_PRINCIPLE": [
+    "한 서비스의 성공으로 다른 업무를 확인한 것으로 세지 마세요.",
+    "Success in one service does not establish another workflow.",
+    "一つのサービスの成功だけでは、別の業務が動く証拠になりません。",
+    "一个服务成功，不代表另一个业务流程也正常。",
+    "El éxito de un servicio no acredita otro proceso.",
+    "Der Erfolg eines Dienstes belegt keinen anderen Arbeitsablauf."
+  ],
+  "DF1_D08_REPLY": [
+    "도시는 계속 돌아갑니다. 막힌 공격 경로와 살아 있는 업무가 같은 기록에 남았습니다. 모든 위험이 사라졌다고 선언하는 대신, 다음 교대가 확인하고 되돌릴 수 있는 상태를 넘깁니다.",
+    "The city keeps working. Blocked threat routes and functioning services share one record. Instead of declaring all risk gone, you hand the next shift a state it can verify and safely revise.",
+    "街は動き続けています。止めた脅威の道と、生きている業務が同じ記録に残りました。すべての危険が消えたと宣言せず、次の担当者が確認して安全に直せる状態を渡します。",
+    "城市继续运转。被堵住的威胁通路与仍在工作的业务记在同一份记录里。我们不宣称风险尽除，而将可验证、可安全修改的状态交给下一班。",
+    "La ciudad sigue funcionando. Las rutas bloqueadas y los servicios vivos quedan en un mismo registro. En vez de declarar todo riesgo eliminado, entregas un estado que el siguiente turno podrá verificar y corregir con seguridad.",
+    "Die Stadt arbeitet weiter. Gesperrte Bedrohungswege und funktionierende Dienste stehen in derselben Akte. Statt alle Risiken für beendet zu erklären, übergibst du einen Zustand, den die nächste Schicht prüfen und sicher ändern kann."
+  ],
+  "DF1_D08_SENDER": [
+    "도윤",
+    "Doyun",
+    "ドユン",
+    "度允",
+    "Doyun",
+    "Doyun"
+  ],
+  "DF1_D08_TITLE": [
+    "계속 돌아가는 도시",
+    "The City That Keeps Working",
+    "動き続ける街",
+    "继续运转的城市",
+    "La ciudad que sigue funcionando",
+    "Die Stadt arbeitet weiter"
+  ],
+  "DF1_ENDING_TITLE": [
+    "다음 교대로",
+    "To the Next Shift",
+    "次の担当者へ",
+    "交给下一班",
+    "Al siguiente turno",
+    "An die nächste Schicht"
+  ],
+  "DF1_PACK_TITLE": [
+    "방어자 · 계속 돌아가는 도시",
+    "Defender · The City That Keeps Working",
+    "防御者 · 動き続ける街",
+    "防御者 · 继续运转的城市",
+    "Defensor · La ciudad que sigue funcionando",
+    "Verteidiger · Die Stadt arbeitet weiter"
+  ],
+  "DF1_D07_BASELINE_CHECKPOINT": [
+    "정상 인계 시점의 알림 가용성",
+    "Notification Availability at the Verified Handoff",
+    "検証済み引き継ぎ時点の通知可用性",
+    "已核验交接时的通知可用性",
+    "Disponibilidad de avisos en el relevo verificado",
+    "Meldeverfügbarkeit bei der geprüften Übergabe"
+  ]
+}

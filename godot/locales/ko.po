@@ -38,11 +38,35 @@ msgstr "태경"
 msgid "CAMPAIGN_COMPLETE"
 msgstr "심야의 기록이 이어졌습니다."
 
+msgid "CAMPAIGN_DEFENDER"
+msgstr "방어자"
+
+msgid "CAMPAIGN_DEFENDER_DESC"
+msgstr "위협을 막으면서 정상 업무를 지키세요."
+
 msgid "CAMPAIGN_HELP_COMMAND"
 msgstr "가상 명령 지원 구문: {command}\n사건 안내와 도구의 입력 형식을 확인하세요. 문서에 없는 옵션은 거절됩니다."
 
 msgid "CAMPAIGN_HELP_OVERVIEW"
 msgstr "지원하는 가상 Linux 명령: {commands}\n실제 셸, 파이프, 치환은 실행하지 않습니다.\ntool <challengeID> 'input/JSON' · configure <policyID> true"
+
+msgid "CAMPAIGN_IMPORT_CONFIRM"
+msgstr "구버전 M01을 이전판 캠페인으로 가져옵니다. 이전판 슬롯이 있으면 백업 후 교체하며, 새 캠페인 저장은 유지됩니다."
+
+msgid "CAMPAIGN_INTRUDER"
+msgstr "침투자"
+
+msgid "CAMPAIGN_INTRUDER_DESC"
+msgstr "닫힌 경로를 열고 숨겨진 기록을 회수하세요."
+
+msgid "CAMPAIGN_NEW_CONFIRM"
+msgstr "{campaign}의 기존 진행을 백업하고 새로 시작합니다. 다른 캠페인과 이전판 저장은 유지됩니다."
+
+msgid "CAMPAIGN_NO_SAVE"
+msgstr "아직 저장된 진행 없음"
+
+msgid "CAMPAIGN_PROGRESS"
+msgstr "진행 {done}/{total}"
 
 msgid "CAMPAIGN_RESULT_ARCHIVED"
 msgstr "자료 사본을 보관했습니다. 기록 ID와 출처를 확인하세요.\n{detail}"
@@ -83,11 +107,17 @@ msgstr "자료의 전달 방식을 선택했습니다.\n{detail}"
 msgid "CAMPAIGN_RESULT_ENDING_LOCKED"
 msgstr "이 전달 방식을 선택할 근거가 아직 부족합니다.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_EXTERNAL_URL"
+msgstr "게임에 등록된 가상 주소만 열 수 있습니다.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_FILES_CHANGED"
 msgstr "가상 파일 상태가 바뀌었습니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_GOAL_NOT_MET"
 msgstr "현재 목표의 근거가 아직 부족합니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_HANDOFF_INCOMPLETE"
+msgstr "인계에 필요한 연결·근거·후속 관찰이 아직 부족합니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HINT"
 msgstr "현재 사건의 단서 안내입니다.\n{detail}"
@@ -110,8 +140,17 @@ msgstr "입력 형식을 확인하세요. 지원되는 인자만 사용할 수 �
 msgid "CAMPAIGN_RESULT_INVALID_CHECKPOINT"
 msgstr "사건의 저장 상태가 올바르지 않아 불러오지 않았습니다.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_INVALID_CLAIM"
+msgstr "주장 형식과 수집한 관측의 참조를 확인하세요.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_INVALID_CONTENT"
 msgstr "사건 데이터를 읽을 수 없습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_CONTROL"
+msgstr "허용된 대응 조치와 값을 확인하세요.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_METHOD"
+msgstr "지원하지 않는 가상 요청 메서드입니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_INVALID_PATH"
 msgstr "가상 경로의 형식을 확인하세요.\n{detail}"
@@ -137,6 +176,9 @@ msgstr "구버전 M01 저장을 찾지 못했습니다.\n{detail}"
 msgid "CAMPAIGN_RESULT_LEGACY_SIZE_LIMIT"
 msgstr "구버전 저장이 허용된 크기를 넘습니다.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_LOADED"
+msgstr "저장한 캠페인 진행을 불러왔습니다.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_MISSING_EVIDENCE"
 msgstr "필요한 관찰 또는 자료를 아직 확보하지 못했습니다.\n{detail}"
 
@@ -148,6 +190,9 @@ msgstr "사건을 선택했습니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_MODEL_OBSERVED"
 msgstr "가상 모형 관찰 결과\n{detail}"
+
+msgid "CAMPAIGN_RESULT_NEW_STARTED"
+msgstr "현재 진행을 새 저장으로 기록했습니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_NOT_DIRECTORY"
 msgstr "지정한 경로는 폴더가 아닙니다.\n{detail}"
@@ -167,6 +212,9 @@ msgstr "이 결과에는 회수할 자료가 없습니다.\n{detail}"
 msgid "CAMPAIGN_RESULT_OBSERVATION_LIMIT"
 msgstr "이번 조사에서 보관할 수 있는 관찰 수에 도달했습니다.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_OBSERVATION_RECORDED"
+msgstr "관측·가설 처리 결과입니다.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_PERMISSION_DENIED"
 msgstr "현재 가상 계정에는 이 자원의 권한이 없습니다.\n{detail}"
 
@@ -176,14 +224,101 @@ msgstr "가상 서비스 정책을 변경했습니다. 정상 동작과 거절 �
 msgid "CAMPAIGN_RESULT_PROTOCOL_MISMATCH"
 msgstr "선택한 서비스와 요청 프로토콜이 맞지 않습니다.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_RECOVERED"
+msgstr "정상 백업에서 진행을 복구했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
+msgstr "현재 저장은 정상이며 복구가 필요하지 않습니다.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "현재 사건을 처음 상태로 되돌렸습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RESPONSE_OBSERVED"
+msgstr "가상 업무·대응 상태를 확인했습니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RESTORED"
 msgstr "저장된 캠페인을 복원했습니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_ROUTE_HOST_MISMATCH"
 msgstr "페이지의 호스트가 가상 요청 경로와 다릅니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVED"
+msgstr "캠페인 진행을 저장했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_INVALID"
+msgstr "사용할 수 있는 정상 백업이 없습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_REPLACE_FAILED"
+msgstr "백업 파일을 교체하지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIFFERENT_CAMPAIGN"
+msgstr "다른 캠페인 또는 콘텐츠 버전으로 표시된 저장입니다. 원본과 백업을 보존하고 교체하지 않았습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_FAILED"
+msgstr "저장 폴더를 만들지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_OPEN_FAILED"
+msgstr "저장 폴더를 열지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_ENCODING"
+msgstr "저장 파일의 문자 인코딩이 올바르지 않습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_JSON"
+msgstr "저장 파일의 JSON 형식이 올바르지 않습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_SNAPSHOT"
+msgstr "저장할 진행 상태가 검증을 통과하지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_VALIDATOR"
+msgstr "저장 검증을 준비하지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NEW_REPLACE_FAILED"
+msgstr "새 저장으로 교체하지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NOT_FOUND"
+msgstr "저장 파일을 찾지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_IS_DIRECTORY"
+msgstr "저장 파일 경로에 폴더가 있습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_REJECTED"
+msgstr "허용되지 않는 저장 경로입니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PRESERVE_FAILED"
+msgstr "기존 파일을 별도 보존하지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_FAILED"
+msgstr "저장 파일을 읽는 중 오류가 발생했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_OPEN_FAILED"
+msgstr "저장 파일을 읽기 위해 열지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_FAILED"
+msgstr "저장 진행을 복구하지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_NOT_NEEDED"
+msgstr "정상 저장이 있어 복구할 필요가 없습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_PATH_FAILED"
+msgstr "복구 파일의 경로를 준비하지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_REQUIRED"
+msgstr "저장에 복구 선택이 필요합니다. 기존 파일은 자동으로 덮어쓰지 않았습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_REPLACE_FAILED"
+msgstr "저장 파일을 교체하지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_ROUNDTRIP_MISMATCH"
+msgstr "다시 읽은 저장 내용이 원래 진행과 다릅니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_SIZE_LIMIT"
+msgstr "저장 상태가 허용된 크기를 넘습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_FAILED"
+msgstr "저장 파일에 기록하는 중 오류가 발생했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_OPEN_FAILED"
+msgstr "저장 파일을 쓰기 위해 열지 못했습니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_SERVICE_CLOSED"
 msgstr "현재 관찰 지점에서 서비스가 닫혀 있습니다.\n{detail}"
@@ -200,6 +335,9 @@ msgstr "대상의 가상 서비스가 열려 있지 않습니다.\n{detail}"
 msgid "CAMPAIGN_RESULT_SESSION_LIMIT"
 msgstr "가상 세션 수에 도달했습니다. exit로 이전 연결을 종료하세요.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_UNKNOWN_CASE"
+msgstr "등록된 요청·입력 사례를 선택하세요.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_UNKNOWN_COMMAND"
 msgstr "지원하지 않는 가상 명령입니다. help에서 명령을 확인하세요.\n{detail}"
 
@@ -211,6 +349,18 @@ msgstr "등록되지 않은 사건입니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_MODEL"
 msgstr "등록되지 않은 가상 모형입니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_OPERATION"
+msgstr "지원되는 동작을 선택하세요.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_ROUTE"
+msgstr "등록된 요청 경로를 확인하세요.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_SENSOR"
+msgstr "등록된 관찰 지점을 확인하세요.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_TOKEN"
+msgstr "폐기할 세션의 등록된 참조를 확인하세요.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_TOOL"
 msgstr "이 사건에서 사용할 수 없는 도구 또는 모형입니다.\n{detail}"
@@ -224,11 +374,35 @@ msgstr "현재 출발점에서는 대상에 도달할 수 없습니다.\n{detail
 msgid "CAMPAIGN_RESULT_UNSUPPORTED_SYNTAX"
 msgstr "지원하지 않는 가상 명령 문법입니다.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_VM_INVALID"
+msgstr "가상 프로그램이나 입력 형식을 확인하세요.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_LIMIT"
+msgstr "가상 프로그램의 허용 예산을 넘었습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_OBSERVED"
+msgstr "가상 프로그램 상태입니다.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_WEB_AUTHENTICATED"
 msgstr "가상 웹 계정에 로그인했습니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_WEB_LOGGED_OUT"
 msgstr "가상 웹 세션을 종료했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_WINDOW_END"
+msgstr "이 관찰 지점에는 다음 관측 구간이 없습니다.\n{detail}"
+
+msgid "CAMPAIGN_SAVE_ATTENTION"
+msgstr "저장 상태를 확인하거나 백업을 복구할 수 있습니다."
+
+msgid "CAMPAIGN_SELECT"
+msgstr "캠페인 선택"
+
+msgid "CAMPAIGN_TRACKER"
+msgstr "추적자"
+
+msgid "CAMPAIGN_TRACKER_DESC"
+msgstr "관측과 반증으로 연결을 좁히세요."
 
 msgid "CANCEL"
 msgstr "취소"
@@ -284,6 +458,585 @@ msgstr "독립 제작 해킹 시뮬레이터\n가상 서버·명령만 사용합
 msgid "DESKTOP_NOT_READY"
 msgstr "데스크톱 연결을 준비하지 못했습니다."
 
+msgid "DF1_D01_ABSTRACTION"
+msgstr "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다."
+
+msgid "DF1_D01_BRIEF"
+msgstr "야간 서비스 담당 첫날입니다. 저는 현장 기술자 도윤이에요. 왼쪽에는 시민이 자기 접수증을 읽는 요청, 오른쪽에는 다른 사람의 접수증을 읽는 요청이 있습니다. 서버를 끄면 둘 다 사라집니다. 우리가 원하는 결과는 아니죠.\n\n업무 계정으로 접속한 뒤 정상 요청을 먼저 한 번 보세요. 소유자 검사를 고쳐도 되고, 원래의 노출된 길을 닫고 좁은 위임 경로로 옮겨도 됩니다. 무엇이 막혔는지보다 누가 계속 일할 수 있는지 확인해 주세요.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d01.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D01_CASE_FOREIGN_DIRECT"
+msgstr "무관한 계정의 원래 입구 요청"
+
+msgid "DF1_D01_CASE_FOREIGN_GATEWAY"
+msgstr "무관한 계정의 승인 경로 요청"
+
+msgid "DF1_D01_CASE_OWN_A"
+msgstr "시민 A의 자기 접수"
+
+msgid "DF1_D01_CASE_OWN_B"
+msgstr "시민 B의 자기 접수"
+
+msgid "DF1_D01_CASE_STAFF"
+msgstr "담당자의 위임된 접수"
+
+msgid "DF1_D01_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "DF1_D01_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "DF1_D01_CONTROL_OWNER_CHECK"
+msgstr "접수 소유자 검사"
+
+msgid "DF1_D01_DESK_NAME"
+msgstr "문을 닫지 않고 막기 담당실"
+
+msgid "DF1_D01_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "DF1_D01_GOAL"
+msgstr "타인 접수 열람은 거부하고 두 시민과 담당자의 정상 열람을 유지한다."
+
+msgid "DF1_D01_HINT_1"
+msgstr "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 소유자 검사 또는 좁은 위임 경로가 결과를 어떻게 바꾸는지 보세요."
+
+msgid "DF1_D01_HINT_2"
+msgstr "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요."
+
+msgid "DF1_D01_HINT_3"
+msgstr "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다."
+
+msgid "DF1_D01_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "DF1_D01_LIMIT"
+msgstr "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다."
+
+msgid "DF1_D01_PRINCIPLE"
+msgstr "소유자 검사 또는 좁은 위임 경로가 결과를 어떻게 바꾸는지 보세요."
+
+msgid "DF1_D01_REPLY"
+msgstr "서린과 정비사는 자기 일을 계속하고, 무관한 열람은 막혔습니다. 첫 대응의 기준이 생겼군요. 다음 경보에서는 같은 주소에서 정상 시민과 반복 시도가 함께 들어옵니다."
+
+msgid "DF1_D01_SENDER"
+msgstr "도윤"
+
+msgid "DF1_D01_TITLE"
+msgstr "문을 닫지 않고 막기"
+
+msgid "DF1_D02_ABSTRACTION"
+msgstr "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다."
+
+msgid "DF1_D02_BRIEF"
+msgstr "병원 중계의 주소에서 로그인 실패가 쏟아집니다. 같은 주소의 정상 작업도 있어요. 그 주소를 통째로 막자는 제안은 쉽지만 누가 피해를 보는지부터 봐야 합니다.\n\n계정별 반복 시도를 제한하거나 정상 업무를 검증된 인증 경로로 분리해 주세요. 제한 후에도 야간 작업자의 정상 인증이 가능한지 확인합니다. 실제 시간을 기다릴 필요는 없습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d02.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D02_CASE_FAILED_1"
+msgstr "반복 실패 1"
+
+msgid "DF1_D02_CASE_FAILED_2"
+msgstr "반복 실패 2"
+
+msgid "DF1_D02_CASE_FAILED_3"
+msgstr "반복 실패 3"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_1"
+msgstr "승인 경로의 반복 실패 1"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_2"
+msgstr "승인 경로의 반복 실패 2"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_3"
+msgstr "승인 경로의 반복 실패 3"
+
+msgid "DF1_D02_CASE_LEGITIMATE"
+msgstr "같은 출처의 정상 시민"
+
+msgid "DF1_D02_CASE_WARD_JOB"
+msgstr "병원 알림 작업의 정상 인증"
+
+msgid "DF1_D02_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "DF1_D02_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "DF1_D02_CONTROL_RETRY_LIMIT"
+msgstr "계정별 반복 시도 제한"
+
+msgid "DF1_D02_DESK_NAME"
+msgstr "같은 주소의 두 사람 담당실"
+
+msgid "DF1_D02_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "DF1_D02_GOAL"
+msgstr "반복 인증 실패를 제한하되 같은 출처의 정상 시민·알림 작업을 살린다."
+
+msgid "DF1_D02_HINT_1"
+msgstr "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 주소 전체가 아닌 계정별 시도와 승인된 인증 경로를 비교하세요."
+
+msgid "DF1_D02_HINT_2"
+msgstr "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요."
+
+msgid "DF1_D02_HINT_3"
+msgstr "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다."
+
+msgid "DF1_D02_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "DF1_D02_LIMIT"
+msgstr "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다."
+
+msgid "DF1_D02_PRINCIPLE"
+msgstr "주소 전체가 아닌 계정별 시도와 승인된 인증 경로를 비교하세요."
+
+msgid "DF1_D02_REPLY"
+msgstr "주소 하나로 사람을 묶지 않아서 병원 작업을 살렸습니다. 이번 실패 기록의 임시 계정에는 아직 살아 있는 세션이 남아 있군요."
+
+msgid "DF1_D02_SENDER"
+msgstr "도윤"
+
+msgid "DF1_D02_TITLE"
+msgstr "같은 주소의 두 사람"
+
+msgid "DF1_D03_ABSTRACTION"
+msgstr "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다."
+
+msgid "DF1_D03_BRIEF"
+msgstr "서윤입니다. 임시 정비 계정의 작업은 끝났지만 그 세션으로 자료를 읽을 수 있습니다. 정상 장기 작업도 같은 서비스에 붙어 있어 전부 로그아웃시키면 문제가 생겨요.\n\n노출된 세션만 폐기하거나 끝난 권한을 좁혀 교체하세요. 새 정상 세션이 살아 있는지와 옛 세션이 다시 쓰이지 않는지를 따로 확인해야 합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d03.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D03_CASE_FRESH"
+msgstr "새 정상 세션"
+
+msgid "DF1_D03_CASE_OTHER_JOB"
+msgstr "다른 정상 장기 작업"
+
+msgid "DF1_D03_CASE_RETIRED"
+msgstr "원래 경로의 끝난 세션"
+
+msgid "DF1_D03_CASE_RETIRED_GATEWAY"
+msgstr "승인 경로의 끝난 세션"
+
+msgid "DF1_D03_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "DF1_D03_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "DF1_D03_CONTROL_SESSION_GUARD"
+msgstr "끝난 세션 권한 검사"
+
+msgid "DF1_D03_DESK_NAME"
+msgstr "끝나야 할 열쇠 담당실"
+
+msgid "DF1_D03_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "DF1_D03_GOAL"
+msgstr "끝난 세션은 거부되고 다른 정상 세션은 계속 동작하게 한다."
+
+msgid "DF1_D03_HINT_1"
+msgstr "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 표적 폐기 또는 옛 세션을 발급하지 않은 승인 경로로의 교체를 비교하세요."
+
+msgid "DF1_D03_HINT_2"
+msgstr "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요."
+
+msgid "DF1_D03_HINT_3"
+msgstr "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다."
+
+msgid "DF1_D03_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "DF1_D03_LIMIT"
+msgstr "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다."
+
+msgid "DF1_D03_PRINCIPLE"
+msgstr "표적 폐기 또는 옛 세션을 발급하지 않은 승인 경로로의 교체를 비교하세요."
+
+msgid "DF1_D03_REPLY"
+msgstr "끝난 권한은 거부되고 정상 작업은 남았습니다. 옛 세션의 거부는 화면의 안심 문구가 아니라 서버 응답에서 확인됐습니다. 다음 자료는 사진이라는 이름으로 들어옵니다."
+
+msgid "DF1_D03_SENDER"
+msgstr "서윤"
+
+msgid "DF1_D03_TITLE"
+msgstr "끝나야 할 열쇠"
+
+msgid "DF1_D04_ABSTRACTION"
+msgstr "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다."
+
+msgid "DF1_D04_BRIEF"
+msgstr "정비 사진 한 장이 처리 작업으로 실행됐습니다. 확장자를 금지하는 것만으로는 내용과 저장 위치의 관계를 고칠 수 없어요. 그렇다고 사진 접수를 닫으면 현장이 멈춥니다.\n\n형식과 비실행 저장 경계를 고치거나, 파일을 격리 처리해 승인된 사진만 배포하세요. 잘못된 파일의 거부와 정상 JPEG의 생성·열람이 함께 필요합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d04.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D04_CASE_DISGUISED"
+msgstr "사진으로 위장한 입력"
+
+msgid "DF1_D04_CASE_DISGUISED_GATEWAY"
+msgstr "승인 처리 경로의 위장 파일"
+
+msgid "DF1_D04_CASE_PHOTO"
+msgstr "정상 JPEG 사진 생성"
+
+msgid "DF1_D04_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "DF1_D04_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "DF1_D04_CONTROL_NO_EXECUTION"
+msgstr "업로드 파일 비실행 저장"
+
+msgid "DF1_D04_CONTROL_PHOTO_CHECK"
+msgstr "사진 내용 형식 검사"
+
+msgid "DF1_D04_DESK_NAME"
+msgstr "사진 작업대 담당실"
+
+msgid "DF1_D04_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "DF1_D04_GOAL"
+msgstr "위장 파일은 만들지 않고 정상 JPEG는 안전한 처리 경로에 생성한다."
+
+msgid "DF1_D04_HINT_1"
+msgstr "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 이름·MIME·내용 표식과 실제 저장/실행 상태를 분리하세요."
+
+msgid "DF1_D04_HINT_2"
+msgstr "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요."
+
+msgid "DF1_D04_HINT_3"
+msgstr "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다."
+
+msgid "DF1_D04_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "DF1_D04_LIMIT"
+msgstr "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다."
+
+msgid "DF1_D04_PRINCIPLE"
+msgstr "이름·MIME·내용 표식과 실제 저장/실행 상태를 분리하세요."
+
+msgid "DF1_D04_REPLY"
+msgstr "정상 사진은 들어오고 잘못된 처리 효과는 막혔습니다. 파일을 읽는 작업자가 내부의 다른 서비스도 볼 수 있다는 사실이 다음 문제입니다."
+
+msgid "DF1_D04_SENDER"
+msgstr "도윤"
+
+msgid "DF1_D04_TITLE"
+msgstr "사진 작업대"
+
+msgid "DF1_D05_ABSTRACTION"
+msgstr "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다."
+
+msgid "DF1_D05_BRIEF"
+msgstr "시청 서비스 담당 태경입니다. 미리보기 작업이 내부 자료에 닿았습니다. 내부 연결을 전부 끊으면 건강 확인과 시민 화면도 실패합니다. 허용된 용도와 목적지를 구분해야 합니다.\n\n내부 서비스의 객체 권한을 좁히거나 검증된 프록시로 필요한 요청만 넘기세요. 숨은 공격자 표시가 아니라 실제 요청 주체와 대상이 정책을 결정해야 합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d05.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D05_CASE_HEALTH"
+msgstr "작업자의 필수 건강 확인"
+
+msgid "DF1_D05_CASE_PREVIEW"
+msgstr "시민의 정상 미리보기"
+
+msgid "DF1_D05_CASE_PROXY_SECRET"
+msgstr "승인 프록시의 범위 밖 요청"
+
+msgid "DF1_D05_CASE_SECRET"
+msgstr "작업자의 범위 밖 보존 자료"
+
+msgid "DF1_D05_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "DF1_D05_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "DF1_D05_CONTROL_OWNER_CHECK"
+msgstr "접수 소유자 검사"
+
+msgid "DF1_D05_DESK_NAME"
+msgstr "안쪽으로 향한 요청 담당실"
+
+msgid "DF1_D05_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "DF1_D05_GOAL"
+msgstr "미리보기·건강 확인을 살리고 내부 자료의 비인가 읽기를 막는다."
+
+msgid "DF1_D05_HINT_1"
+msgstr "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 작업자가 요청한 객체의 소유권과 승인 프록시의 scope를 비교하세요."
+
+msgid "DF1_D05_HINT_2"
+msgstr "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요."
+
+msgid "DF1_D05_HINT_3"
+msgstr "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다."
+
+msgid "DF1_D05_INTERNAL_NAME"
+msgstr "내부 건강·보존 서비스"
+
+msgid "DF1_D05_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "DF1_D05_LIMIT"
+msgstr "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다."
+
+msgid "DF1_D05_PRINCIPLE"
+msgstr "작업자가 요청한 객체의 소유권과 승인 프록시의 scope를 비교하세요."
+
+msgid "DF1_D05_REPLY"
+msgstr "건강 확인과 미리보기는 남고 내부 자료의 비인가 읽기는 막혔습니다. 좁은 경계를 만들었군요. 다만 급히 고친 파일 권한 때문에 배포 작업이 멈췄습니다."
+
+msgid "DF1_D05_SENDER"
+msgstr "태경"
+
+msgid "DF1_D05_TITLE"
+msgstr "안쪽으로 향한 요청"
+
+msgid "DF1_D06_ABSTRACTION"
+msgstr "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다."
+
+msgid "DF1_D06_BRIEF"
+msgstr "비담당 계정의 쓰기를 막으려다 배포 계정도 상위 폴더에 들어가지 못합니다. 파일 한 장의 권한만 보면 원인을 놓쳐요. 현재 그룹과 경로의 각 문을 확인해 주세요.\n\n필요한 그룹·ACL만 고치거나 승인된 작업 계정과 경로로 이관할 수 있습니다. 모두에게 전체 권한을 주는 것은 해결이 아닙니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d06.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D06_CASE_FOREIGN_APPROVED"
+msgstr "승인 경로의 비담당 쓰기"
+
+msgid "DF1_D06_CASE_FOREIGN_WRITE"
+msgstr "비담당 계정의 배포 파일 변경"
+
+msgid "DF1_D06_CASE_READ"
+msgstr "배포 계정의 상태 읽기"
+
+msgid "DF1_D06_CASE_WRITE"
+msgstr "배포 계정의 작업 결과 쓰기"
+
+msgid "DF1_D06_DESK_NAME"
+msgstr "고친 권한, 멈춘 작업 담당실"
+
+msgid "DF1_D06_DIRECTORY_MODE"
+msgstr "배포 폴더의 탐색 권한"
+
+msgid "DF1_D06_FILE_MODE"
+msgstr "작업 결과 파일의 권한"
+
+msgid "DF1_D06_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "DF1_D06_GOAL"
+msgstr "배포 계정의 읽기·쓰기는 살리고 비담당 파일 변경은 거부한다."
+
+msgid "DF1_D06_HINT_1"
+msgstr "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 상위 폴더와 현재 그룹을 보거나 승인된 대체 경로를 사용하세요."
+
+msgid "DF1_D06_HINT_2"
+msgstr "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요."
+
+msgid "DF1_D06_HINT_3"
+msgstr "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다."
+
+msgid "DF1_D06_JOB_GROUPS"
+msgstr "배포 계정의 필요한 그룹"
+
+msgid "DF1_D06_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "DF1_D06_LIMIT"
+msgstr "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다."
+
+msgid "DF1_D06_PRINCIPLE"
+msgstr "상위 폴더와 현재 그룹을 보거나 승인된 대체 경로를 사용하세요."
+
+msgid "DF1_D06_REPLY"
+msgstr "배포와 정비는 동작하고 비담당 쓰기는 거부됩니다. 필요한 권한을 좁히는 기준을 지켰어요. 이제 실제 위협과 잘못된 긴급 규칙이 동시에 들어옵니다."
+
+msgid "DF1_D06_SENDER"
+msgstr "도윤"
+
+msgid "DF1_D06_TITLE"
+msgstr "고친 권한, 멈춘 작업"
+
+msgid "DF1_D07_ABSTRACTION"
+msgstr "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다."
+
+msgid "DF1_D07_BASELINE_CHECKPOINT"
+msgstr "정상 인계 시점의 알림 가용성"
+
+msgid "DF1_D07_BRIEF"
+msgstr "내부 비인가 요청을 막았지만 정상 알림도 끊겼습니다. 직전 상태 전체로 돌아가면 이미 폐기한 열쇠까지 되살릴 수 있어요. 이번에는 되돌리기의 범위가 대응의 핵심입니다.\n\n잘못된 정책 그룹만 부분적으로 되돌리거나, 정상 업무를 승인된 대기 서비스로 옮기세요. 노출 세션의 폐기와 수집한 자료는 rollback 대상이 아닙니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d07.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D07_CASE_FRESH"
+msgstr "새 정상 세션"
+
+msgid "DF1_D07_CASE_INTERNAL_TARGET"
+msgstr "허용 밖 내부 목적지"
+
+msgid "DF1_D07_CASE_NOTIFY"
+msgstr "정상 병원 알림 전달"
+
+msgid "DF1_D07_CASE_OTHER_JOB"
+msgstr "다른 정상 장기 작업"
+
+msgid "DF1_D07_CASE_RETIRED"
+msgstr "원래 경로의 끝난 세션"
+
+msgid "DF1_D07_CASE_RETIRED_GATEWAY"
+msgstr "승인 경로의 끝난 세션"
+
+msgid "DF1_D07_CASE_STANDBY_TARGET"
+msgstr "대기 경로의 허용 밖 목적지"
+
+msgid "DF1_D07_CONTROL_NOTIFY_OPEN"
+msgstr "주 알림 경로 열기"
+
+msgid "DF1_D07_CONTROL_SESSION_GUARD"
+msgstr "끝난 세션 권한 검사"
+
+msgid "DF1_D07_CONTROL_STANDBY_OPEN"
+msgstr "대기 알림 경로 열기"
+
+msgid "DF1_D07_CONTROL_TARGET_SCOPE"
+msgstr "알림 목적지 범위 제한"
+
+msgid "DF1_D07_DESK_NAME"
+msgstr "두 장애의 한밤 담당실"
+
+msgid "DF1_D07_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "DF1_D07_GOAL"
+msgstr "정상 알림을 복구하고 폐기한 세션과 범위 밖 목적지는 계속 거부한다."
+
+msgid "DF1_D07_HINT_1"
+msgstr "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 정책 그룹만 되돌릴 수 있고 폐기한 열쇠는 돌아오지 않습니다."
+
+msgid "DF1_D07_HINT_2"
+msgstr "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요."
+
+msgid "DF1_D07_HINT_3"
+msgstr "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다."
+
+msgid "DF1_D07_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "DF1_D07_LIMIT"
+msgstr "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다."
+
+msgid "DF1_D07_PRINCIPLE"
+msgstr "정책 그룹만 되돌릴 수 있고 폐기한 열쇠는 돌아오지 않습니다."
+
+msgid "DF1_D07_REPLY"
+msgstr "알림은 다시 전달되고 폐기 세션은 돌아오지 않았습니다. 임시 이관과 완전 복구를 같은 것으로 부르지 않고 인계하겠습니다."
+
+msgid "DF1_D07_SENDER"
+msgstr "태경"
+
+msgid "DF1_D07_TITLE"
+msgstr "두 장애의 한밤"
+
+msgid "DF1_D08_ABSTRACTION"
+msgstr "등록된 요청과 계정·서비스·정책만 있는 작은 모의 업무입니다. 실제 결과는 같은 세계 handler에서 나옵니다."
+
+msgid "DF1_D08_BRIEF"
+msgstr "마지막 야간 교대입니다. 웹 접수, 내부 알림, 정비 작업이 서로 얽혀 있습니다. 경보를 없애는 것과 도시를 지키는 것은 같은 일이 아니에요.\n\n기존 서비스를 정밀 복구하거나 승인된 대체 경로로 연속성을 유지하세요. 선택한 조합에서 정상 업무와 모델링한 위협을 모두 확인하고, 아직 제한된 부분을 사실대로 인계합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\noperator@d08.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D08_CASE_FOREIGN_DIRECT"
+msgstr "무관한 계정의 원래 입구 요청"
+
+msgid "DF1_D08_CASE_FOREIGN_GATEWAY"
+msgstr "무관한 계정의 승인 경로 요청"
+
+msgid "DF1_D08_CASE_FRESH"
+msgstr "새 정상 세션"
+
+msgid "DF1_D08_CASE_INTERNAL_TARGET"
+msgstr "허용 밖 내부 목적지"
+
+msgid "DF1_D08_CASE_NOTIFY"
+msgstr "정상 병원 알림 전달"
+
+msgid "DF1_D08_CASE_OTHER_JOB"
+msgstr "다른 정상 장기 작업"
+
+msgid "DF1_D08_CASE_OWN_A"
+msgstr "시민 A의 자기 접수"
+
+msgid "DF1_D08_CASE_OWN_B"
+msgstr "시민 B의 자기 접수"
+
+msgid "DF1_D08_CASE_RETIRED"
+msgstr "원래 경로의 끝난 세션"
+
+msgid "DF1_D08_CASE_RETIRED_GATEWAY"
+msgstr "승인 경로의 끝난 세션"
+
+msgid "DF1_D08_CASE_STAFF"
+msgstr "담당자의 위임된 접수"
+
+msgid "DF1_D08_CASE_STANDBY_TARGET"
+msgstr "대기 경로의 허용 밖 목적지"
+
+msgid "DF1_D08_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "DF1_D08_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "DF1_D08_CONTROL_NOTIFY_OPEN"
+msgstr "주 알림 경로 열기"
+
+msgid "DF1_D08_CONTROL_OWNER_CHECK"
+msgstr "접수 소유자 검사"
+
+msgid "DF1_D08_CONTROL_SESSION_GUARD"
+msgstr "끝난 세션 권한 검사"
+
+msgid "DF1_D08_CONTROL_STANDBY_OPEN"
+msgstr "대기 알림 경로 열기"
+
+msgid "DF1_D08_CONTROL_TARGET_SCOPE"
+msgstr "알림 목적지 범위 제한"
+
+msgid "DF1_D08_DESK_NAME"
+msgstr "계속 돌아가는 도시 담당실"
+
+msgid "DF1_D08_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "DF1_D08_GOAL"
+msgstr "선택한 경로에서 접수·알림·세션의 정상 업무와 위협 행렬을 모두 만족한다."
+
+msgid "DF1_D08_HINT_1"
+msgstr "정상 업무와 문제가 되는 요청을 따로 관찰하세요. 한 서비스의 성공으로 다른 업무를 확인한 것으로 세지 마세요."
+
+msgid "DF1_D08_HINT_2"
+msgstr "현재 actor·대상·경로를 고정하고 대응 범위 하나만 바꿔 결과를 비교하세요."
+
+msgid "DF1_D08_HINT_3"
+msgstr "원래 경로의 정밀 제어 또는 승인된 대체 경로를 선택할 수 있습니다. 모든 종료는 정상 업무도 실패시킵니다."
+
+msgid "DF1_D08_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "DF1_D08_LIMIT"
+msgstr "관찰한 시나리오 밖의 모든 공격을 막았다는 보증은 아닙니다."
+
+msgid "DF1_D08_PRINCIPLE"
+msgstr "한 서비스의 성공으로 다른 업무를 확인한 것으로 세지 마세요."
+
+msgid "DF1_D08_REPLY"
+msgstr "도시는 계속 돌아갑니다. 막힌 공격 경로와 살아 있는 업무가 같은 기록에 남았습니다. 모든 위험이 사라졌다고 선언하는 대신, 다음 교대가 확인하고 되돌릴 수 있는 상태를 넘깁니다."
+
+msgid "DF1_D08_SENDER"
+msgstr "도윤"
+
+msgid "DF1_D08_TITLE"
+msgstr "계속 돌아가는 도시"
+
+msgid "DF1_ENDING_TITLE"
+msgstr "다음 교대로"
+
+msgid "DF1_PACK_TITLE"
+msgstr "방어자 · 계속 돌아가는 도시"
+
 msgid "ENDING_PUBLIC_TEXT"
 msgstr "공지 원본과 재배포의 차이까지 확인한 자료를 바탕으로 개인 자료를 가린 사건 기록이 공개된다. 서윤의 서명도 도윤의 임시 중계도 빠지지 않는다. 사람들은 단순한 장애가 아니었음을 알게 되고, 남은 의문도 기록 옆에 남는다. 공개는 원본 파기나 모든 자료의 유출을 뜻하지 않는다."
 
@@ -332,11 +1085,1751 @@ msgstr "M01 구버전 저장은 유지됩니다. 가져온 진행으로 현재 �
 msgid "IMPORT_LEGACY"
 msgstr "구버전 M01 가져오기"
 
+msgid "IN2_C01_NAME"
+msgstr "서윤"
+
+msgid "IN2_C02_NAME"
+msgstr "도윤"
+
+msgid "IN2_C03_NAME"
+msgstr "민서"
+
+msgid "IN2_C04_NAME"
+msgstr "태경"
+
+msgid "IN2_COMMON_ABSTRACTION"
+msgstr "게임 내부의 작은 상태·자료 모형입니다. 입력은 등록된 허구 세계에만 적용됩니다."
+
+msgid "IN2_COMMON_CONTEXT_TITLE"
+msgstr "현재 사건의 관찰 자료"
+
+msgid "IN2_COMMON_INDEX_TITLE"
+msgstr "야간 작업 색인"
+
+msgid "IN2_COMMON_LIMIT"
+msgstr "전체 프로토콜·운영체제·실전 도구 숙련을 보장하지 않습니다. 실제 시스템에서는 허가·환경별 검증이 별도로 필요합니다."
+
+msgid "IN2_COMMON_LOGIN_TITLE"
+msgstr "허구 업무 계정 로그인"
+
+msgid "IN2_COMMON_WORKBENCH_TITLE"
+msgstr "격리된 가상 검증 창"
+
+msgid "IN2_ENDING_PUBLIC_TEXT"
+msgstr "공지 원본과 재배포의 차이까지 확인한 자료를 바탕으로 개인 자료를 가린 사건 기록이 공개된다. 서윤의 서명도 도윤의 임시 중계도 빠지지 않는다. 사람들은 단순한 장애가 아니었음을 알게 되고, 남은 의문도 기록 옆에 남는다. 공개는 원본 파기나 모든 자료의 유출을 뜻하지 않는다."
+
+msgid "IN2_ENDING_PUBLIC_TITLE"
+msgstr "시민을 가린 공개 기록"
+
+msgid "IN2_ENDING_REVIEW_TEXT"
+msgstr "독립 통신 기록과 작은 검증기·메모리 모형의 한계가 함께 보관된다. 민서는 한 도구의 성공을 전체 시스템의 안전으로 바꾸지 않는다. 서로 다른 보관 주체가 같은 사실을 검증할 수 있도록 최소 사본이 나뉜다. 마지막 화면에는 만능 열쇠 대신 출처와 남은 질문이 남는다."
+
+msgid "IN2_ENDING_REVIEW_TITLE"
+msgstr "서로 검증할 수 있는 사본"
+
+msgid "IN2_ENDING_SEALED_TEXT"
+msgstr "서윤은 인계 확인을, 도윤은 유지한 서비스의 범위를 남긴다. 태경은 긴급 승인과 감독 실패를 각각 서명하고 민서는 빠진 부분을 미확인으로 적는다. 기록은 봉인된 감사 인계로 넘어간다. 모든 시민이 오늘 밤의 일을 알지는 못하지만 원본과 이의 제기의 길은 남는다."
+
+msgid "IN2_ENDING_SEALED_TITLE"
+msgstr "봉인된 감사 인계"
+
+msgid "IN2_M01_BRIEF"
+msgstr "이 메일은 한 번만 보낼게요. 야간 보관소에서 인계 기록 N47이 곧 정리됩니다. 원본을 없애지 말고 사본 하나만 ~/archive에 남겨 주세요.\n\n공개 접속은 guest / guest입니다. 보호 폴더가 닫혀 있으면, 남아 있는 인수인계 메모를 읽어 보세요. 직접 들어가는 길과 보관 사본을 찾는 길 중 무엇을 택할지는 당신 몫입니다."
+
+msgid "IN2_M01_EXPLAIN"
+msgstr "접속, 인증, 파일 권한, 회수는 서로 다른 상태입니다. 이름이 같은 미끼 대신 본문·기록 ID·출처가 맞는 자료를 보존했습니다. 다른 유효한 경로도 같은 목표를 만족합니다."
+
+msgid "IN2_M01_FILE_HANDOFF_LOG"
+msgstr "[보관 기간 종료]\n이것은 예전 점검 양식입니다. 인계 대상 기록이 아닙니다.\n"
+
+msgid "IN2_M01_FILE_README_TXT"
+msgstr "야간 점검 안내\n보호 자료는 /vault 에 있습니다.\n인계 메모는 /public/shift-note.txt 를 확인하세요.\n"
+
+msgid "IN2_M01_FILE_SHIFT_NOTE_TXT"
+msgstr "[인수인계 메모]\n정비 계정: maint\n임시 확인어: lumen-47\n인계 기록: /vault/handoff.log\n보관 사본: https://mirror.packet.test/cache/47\n원본을 변경하거나 지우지 마세요.\n"
+
+msgid "IN2_M01_GOAL"
+msgstr "원본을 보존하고 인계 기록 N47의 사본을 ~/archive에 회수한다."
+
+msgid "IN2_M01_HINT_1"
+msgstr "공개 계정으로 연결해 보호 폴더와 공개 메모의 차이를 보세요. 거부를 꼭 겪어야 한다는 조건은 없습니다."
+
+msgid "IN2_M01_HINT_2"
+msgstr "/public/shift-note.txt에는 maint 계정과 별도 웹 보관 주소가 있습니다."
+
+msgid "IN2_M01_HINT_3"
+msgstr "정비 세션의 /vault/handoff.log를 회수하거나 mirror.packet.test/cache/47 사본을 보관하세요. 같은 이름의 public/handoff.log는 다른 기록입니다."
+
+msgid "IN2_M01_HOST_NAME"
+msgstr "야간 보관소"
+
+msgid "IN2_M01_PAGE_1_BODY"
+msgstr "야간 이관 작업 중입니다.\n공개 안내는 열람할 수 있습니다.\n보호된 인계 자료는 정비 세션에서 확인하세요."
+
+msgid "IN2_M01_PAGE_1_LINK_1"
+msgstr "배포 공지 보기"
+
+msgid "IN2_M01_PAGE_1_TITLE"
+msgstr "NIGHT ARCHIVE / 야간 보관소"
+
+msgid "IN2_M01_PAGE_2_BODY"
+msgstr "인계 기록의 가용성 점검이 진행 중입니다.\n단기 보관 사본은 별도 릴레이에 유지됩니다.\n구체적인 위치는 서버의 인수인계 메모를 확인하세요."
+
+msgid "IN2_M01_PAGE_2_LINK_1"
+msgstr "보관소 홈"
+
+msgid "IN2_M01_PAGE_2_TITLE"
+msgstr "야간 배포 공지"
+
+msgid "IN2_M01_PAGE_3_TITLE"
+msgstr "RELAY CACHE / 인계 사본 47"
+
+msgid "IN2_M01_RECORD_TEXT"
+msgstr "[N47 / HANDOFF]\n야간 인계 기록 · 00:47\n이관 지시: relay-02 → archive-17\n승인 표식: SY / 교차 확인 대기\n원본은 보존하고 사본만 전달할 것.\n후속 단서: 릴레이 02의 누락된 송신 기록.\n"
+
+msgid "IN2_M01_REPLY"
+msgstr "받았어요. 원본도 남아 있군요. 그런데 이 기록에는 송신 한 건이 빠졌습니다. 릴레이 02가 목적지를 바꾼 시각, 00:47을 기억해 주세요. 다음 주소를 보냈습니다."
+
+msgid "IN2_M01_REPLY_SUBJECT"
+msgstr "[확인] 첫 번째 야간 의뢰"
+
+msgid "IN2_M01_SUBJECT"
+msgstr "[야간 의뢰] 첫 번째 야간 의뢰"
+
+msgid "IN2_M01_TITLE"
+msgstr "첫 번째 야간 의뢰"
+
+msgid "IN2_M02_AUDIT"
+msgstr "[M02 관찰 자료]\nR204 행을 찾아 전송 주체와 새 목적지를 연결한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\njob N47 changed destination under request R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M02_AUDIT_NAME"
+msgstr "기록이 가리킨 뒷문 독립 보관처"
+
+msgid "IN2_M02_BRIEF"
+msgstr "서윤이 자료를 넘겼어요. 저는 야간망을 맡았던 도윤입니다. N47 옆에는 실패 표시가 없는데 왜 누락이라고 했을까요? 로그를 이름 순서대로 읽으면 중요한 줄을 놓칩니다.\n\n현재 로그와 회전된 로그, 배포 메모가 같은 작업 번호를 말하는지 확인해 주세요. 서버를 고치는 의뢰가 아닙니다. 누가 어느 목적지로 보냈는지부터 알아야 합니다.\n\nlogreader@relay02.packet.test / patrol-ember\nregistrar@custodym02.packet.test / paper-thrush\n"
+
+msgid "IN2_M02_CONTEXT"
+msgstr "[R204 행을 찾아 전송 주체와 새 목적지를 연결한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\njob | request | destination\nN47 | R204 | transit04\nN46 | R203 | archive"
+
+msgid "IN2_M02_EXPLAIN"
+msgstr "R204 행을 찾아 전송 주체와 새 목적지를 연결한다.\n현재 파일만 보면 회전 직전의 목적지가 빠집니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M02_GOAL"
+msgstr "R204 행을 찾아 전송 주체와 새 목적지를 연결한다."
+
+msgid "IN2_M02_HINT_1"
+msgstr "현재 파일만 보면 회전 직전의 목적지가 빠집니다."
+
+msgid "IN2_M02_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M02_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M02_HOST_NAME"
+msgstr "기록이 가리킨 뒷문 업무 서비스"
+
+msgid "IN2_M02_PRINCIPLE"
+msgstr "현재 파일만 보면 회전 직전의 목적지가 빠집니다."
+
+msgid "IN2_M02_REPLY"
+msgstr "연결은 끊기지 않았어요. 목적지가 relay-02에서 transit-04로 바뀌었고 예외 항목만 빠졌습니다. 제가 알던 장애 설명과 다르군요. 그 서버가 정말 꺼졌는지 확인하죠."
+
+msgid "IN2_M02_REPLY_SUBJECT"
+msgstr "[확인] 기록이 가리킨 뒷문"
+
+msgid "IN2_M02_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDESK TRANSCRIPT\nR204:relay02\n\nRETAINED TRANSCRIPT\nR204:transit04"
+
+msgid "IN2_M02_SUBJECT"
+msgstr "[야간 의뢰] 기록이 가리킨 뒷문"
+
+msgid "IN2_M02_TITLE"
+msgstr "기록이 가리킨 뒷문"
+
+msgid "IN2_M03_AUDIT"
+msgstr "[M03 관찰 자료]\n관찰 지점의 서비스 차이를 확인하고 제한된 점검 세션에 들어간다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nmaintenance service on transit-04 still serves marker R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M03_AUDIT_NAME"
+msgstr "살아 있는 포트 독립 보관처"
+
+msgid "IN2_M03_BRIEF"
+msgstr "transit-04는 폐기됐다고 되어 있습니다. 하지만 인계표는 그곳을 지나갔어요. 접속 주소만 믿고 같은 문을 계속 두드리지 마세요. 살아 있는 서비스와 닫힌 문은 다릅니다.\n\n도윤이 NetProbe를 연결했습니다. 포트가 보인다는 사실이 권한을 준다는 뜻은 아닙니다. 어떤 서비스인지 알아낸 다음, 제한된 점검 세션으로 들어가 표식을 확인해 주세요.\n\nwatch@transit04.packet.test / channel-birch\nmapkeeper@custodym03.packet.test / north-span\n"
+
+msgid "IN2_M03_CONTEXT"
+msgstr "[관찰 지점의 서비스 차이를 확인하고 제한된 점검 세션에 들어간다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDESK TRANSCRIPT\n22:open:ssh\n\nRETAINED TRANSCRIPT\n443:filtered:https"
+
+msgid "IN2_M03_EXPLAIN"
+msgstr "관찰 지점의 서비스 차이를 확인하고 제한된 점검 세션에 들어간다.\nHTTPS가 필터링돼도 SSH 점검 서비스가 열려 있을 수 있습니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M03_GOAL"
+msgstr "관찰 지점의 서비스 차이를 확인하고 제한된 점검 세션에 들어간다."
+
+msgid "IN2_M03_HINT_1"
+msgstr "HTTPS가 필터링돼도 SSH 점검 서비스가 열려 있을 수 있습니다."
+
+msgid "IN2_M03_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M03_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M03_HOST_NAME"
+msgstr "살아 있는 포트 업무 서비스"
+
+msgid "IN2_M03_PRINCIPLE"
+msgstr "HTTPS가 필터링돼도 SSH 점검 서비스가 열려 있을 수 있습니다."
+
+msgid "IN2_M03_REPLY"
+msgstr "폐기된 것은 시민용 화면뿐이었군요. 정비 서비스는 살아 있고 R204가 남아 있습니다. 다음 기록은 도서관 예약 서버에서 조회됐어요. 누군가 남은 시스템을 길로 쓰고 있습니다."
+
+msgid "IN2_M03_REPLY_SUBJECT"
+msgstr "[확인] 살아 있는 포트"
+
+msgid "IN2_M03_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nservice | port | state\nmaintenance | 22 | open\ncitizen | 443 | filtered"
+
+msgid "IN2_M03_SUBJECT"
+msgstr "[야간 의뢰] 살아 있는 포트"
+
+msgid "IN2_M03_TITLE"
+msgstr "살아 있는 포트"
+
+msgid "IN2_M04_AUDIT"
+msgstr "[M04 관찰 자료]\n화면과 응답의 참조를 대조해 C731 변경 기록을 확보한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nreservation amendment R204 links receipt C731\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M04_AUDIT_NAME"
+msgstr "같은 주소, 다른 대답 독립 보관처"
+
+msgid "IN2_M04_BRIEF"
+msgstr "예약 화면에는 만남이 취소됐다고 나옵니다. 그런데 서버의 응답은 다른 기록을 가리켜요. 화면을 새로 고치는 것으로는 어느 쪽이 맞는지 알 수 없습니다.\n\nRequestLab에서 조회 요청과 응답의 참조를 나란히 보세요. 시민 예약을 새로 만들거나 취소할 필요는 없습니다. 사라진 변경 기록 한 건만 찾아 주세요.\n\nlibrarian@library.packet.test / amber-index\nclerk@custodym04.packet.test / quiet-reading\n"
+
+msgid "IN2_M04_CONTEXT"
+msgstr "[화면과 응답의 참조를 대조해 C731 변경 기록을 확보한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDESK TRANSCRIPT\nscreen:cancelled:B204\n\nRETAINED TRANSCRIPT\nserver:transferred:C731"
+
+msgid "IN2_M04_EXPLAIN"
+msgstr "화면과 응답의 참조를 대조해 C731 변경 기록을 확보한다.\n상태 코드 외에 응답이 가리키는 실제 업무 상태를 보세요.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M04_GOAL"
+msgstr "화면과 응답의 참조를 대조해 C731 변경 기록을 확보한다."
+
+msgid "IN2_M04_HINT_1"
+msgstr "상태 코드 외에 응답이 가리키는 실제 업무 상태를 보세요."
+
+msgid "IN2_M04_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M04_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M04_HOST_NAME"
+msgstr "같은 주소, 다른 대답 업무 서비스"
+
+msgid "IN2_M04_PRINCIPLE"
+msgstr "상태 코드 외에 응답이 가리키는 실제 업무 상태를 보세요."
+
+msgid "IN2_M04_REPLY"
+msgstr "화면의 취소와 서버의 이관은 같은 일이 아니었습니다. 접수증 C731이 수리 포털로 넘어갔군요. 서린에게 연락해 보겠습니다. 여기서부터는 자료의 주인이 중요해집니다."
+
+msgid "IN2_M04_REPLY_SUBJECT"
+msgstr "[확인] 같은 주소, 다른 대답"
+
+msgid "IN2_M04_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nrequest | receipt | event\nR204 | C731 | transferred\nR203 | C730 | cancelled"
+
+msgid "IN2_M04_SUBJECT"
+msgstr "[야간 의뢰] 같은 주소, 다른 대답"
+
+msgid "IN2_M04_TITLE"
+msgstr "같은 주소, 다른 대답"
+
+msgid "IN2_M05_AUDIT"
+msgstr "[M05 관찰 자료]\n대상 보고서와 소유권 경계의 사실을 최소 자료로 입증한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nreceipt C731 exposes exception-hold amendment\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M05_AUDIT_NAME"
+msgstr "남의 수리 접수증 독립 보관처"
+
+msgid "IN2_M05_BRIEF"
+msgstr "서린의 접수증은 본인 수리 내역 대신 분실된 정비 보고서를 참조합니다. 화면의 버튼이 없어도 서버가 자료를 줄 수 있을까요? 자기 접수증을 기준으로 차이를 확인해 주세요.\n\n이번 의뢰의 대상은 C731의 허구 보고서뿐입니다. 객체 참조를 확인해도 되고 변경 이력의 사본을 찾아도 됩니다. 다른 시민 자료를 모으는 것이 성공은 아닙니다.\n\ncaseworker@repair.packet.test / green-receipt\nombuds@custodym05.packet.test / cedar-envelope\n"
+
+msgid "IN2_M05_CONTEXT"
+msgstr "[대상 보고서와 소유권 경계의 사실을 최소 자료로 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nRECEIPT REGISTER\nreference | owner | attachment\nown | current caseworker | personal receipt\nC731 | Serin | exception-hold report\n\nREQUEST WINDOW\nGET /receipts/own\nGET /receipts/C731\n"
+
+msgid "IN2_M05_EXPLAIN"
+msgstr "대상 보고서와 소유권 경계의 사실을 최소 자료로 입증한다.\nown과 C731을 비교하되 로그인 여부와 객체 소유자는 별개입니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M05_GOAL"
+msgstr "대상 보고서와 소유권 경계의 사실을 최소 자료로 입증한다."
+
+msgid "IN2_M05_HINT_1"
+msgstr "own과 C731을 비교하되 로그인 여부와 객체 소유자는 별개입니다."
+
+msgid "IN2_M05_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M05_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M05_HOST_NAME"
+msgstr "남의 수리 접수증 업무 서비스"
+
+msgid "IN2_M05_PRINCIPLE"
+msgstr "own과 C731을 비교하되 로그인 여부와 객체 소유자는 별개입니다."
+
+msgid "IN2_M05_REPLY"
+msgstr "보고서의 주인은 서비스 화면이 정해 주지 않았습니다. C731의 원본에는 ‘예외 보류’가 있었고 사본에서는 지워졌어요. 접근 결함과 기록 삭제는 다른 문제입니다. 로그인 서버가 갑자기 시끄러워졌군요."
+
+msgid "IN2_M05_REPLY_SUBJECT"
+msgstr "[확인] 남의 수리 접수증"
+
+msgid "IN2_M05_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nreceipt | owner | attachment\nC731 | Serin | exception-hold\nC730 | other | ordinary"
+
+msgid "IN2_M05_SUBJECT"
+msgstr "[야간 의뢰] 남의 수리 접수증"
+
+msgid "IN2_M05_TITLE"
+msgstr "남의 수리 접수증"
+
+msgid "IN2_M06_AUDIT"
+msgstr "정상 인증 업무를 살리고 원래·승인 인증 경로의 반복 실패를 제한한다.\n\n정상 업무의 성공과 거부해야 할 요청의 결과를 확인한 대응 인계입니다. 원본 자료도 함께 보존되었습니다."
+
+msgid "IN2_M06_AUDIT_NAME"
+msgstr "열 번의 문 두드림 독립 보관처"
+
+msgid "IN2_M06_BRIEF"
+msgstr "누군가 야간 계정에 반복 로그인하면서 정상 정비사도 들어가지 못합니다. 다 잠그면 공격도 멈추겠지만, 병원 알림 작업도 멈춰요. 이번에는 경로를 찾는 것만으로 끝나지 않습니다.\n\n실패 기록을 비교하고, 반복 시도를 제한하면서 정비사의 정상 로그인은 살려 주세요. 가상 시계는 필요할 때만 진행합니다. 기다리는 시간을 실력으로 평가하지 않겠습니다.\n\nshiftlead@auth.packet.test / warm-circuit\nrecovery@custodym06.packet.test / blue-ward\n\n\n기존 인증 서비스의 계정별 제한을 수리하거나, 취약 입구를 닫고 별도 제한을 가진 승인 인증 서비스로 정상 업무를 옮길 수 있습니다. 설정 이름보다 정상 인증 업무와 반복 실패의 실제 응답을 확인하세요."
+
+msgid "IN2_M06_CASE_FAILED_1"
+msgstr "반복 실패 1"
+
+msgid "IN2_M06_CASE_FAILED_2"
+msgstr "반복 실패 2"
+
+msgid "IN2_M06_CASE_FAILED_3"
+msgstr "반복 실패 3"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_1"
+msgstr "승인 경로의 반복 실패 1"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_2"
+msgstr "승인 경로의 반복 실패 2"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_3"
+msgstr "승인 경로의 반복 실패 3"
+
+msgid "IN2_M06_CASE_LEGITIMATE"
+msgstr "같은 출처의 정상 시민"
+
+msgid "IN2_M06_CASE_WARD_JOB"
+msgstr "병원 알림 작업의 정상 인증"
+
+msgid "IN2_M06_CONTEXT"
+msgstr "기존 인증 서비스의 계정별 제한을 수리하거나, 취약 입구를 닫고 별도 제한을 가진 승인 인증 서비스로 정상 업무를 옮길 수 있습니다. 설정 이름보다 정상 인증 업무와 반복 실패의 실제 응답을 확인하세요."
+
+msgid "IN2_M06_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "IN2_M06_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "IN2_M06_CONTROL_RETRY_LIMIT"
+msgstr "계정별 반복 시도 제한"
+
+msgid "IN2_M06_EXPLAIN"
+msgstr "기존 인증 서비스의 계정별 제한을 수리하거나, 취약 입구를 닫고 별도 제한을 가진 승인 인증 서비스로 정상 업무를 옮길 수 있습니다. 설정 이름보다 정상 인증 업무와 반복 실패의 실제 응답을 확인하세요."
+
+msgid "IN2_M06_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "IN2_M06_GOAL"
+msgstr "정상 인증 업무를 살리고 원래·승인 인증 경로의 반복 실패를 제한한다."
+
+msgid "IN2_M06_HINT_1"
+msgstr "정상 인증 업무를 살리고 원래·승인 인증 경로의 반복 실패를 제한한다."
+
+msgid "IN2_M06_HINT_2"
+msgstr "기존 인증 서비스의 계정별 제한을 수리하거나, 취약 입구를 닫고 별도 제한을 가진 승인 인증 서비스로 정상 업무를 옮길 수 있습니다. 설정 이름보다 정상 인증 업무와 반복 실패의 실제 응답을 확인하세요."
+
+msgid "IN2_M06_HINT_3"
+msgstr "원래 입구에서 대응하려면 관련 제어를 고치고, 대안은 원래 입구를 제한한 뒤 정상 요청에 승인 경로를 고르세요. 모든 종료는 정상 업무를 실패시킵니다."
+
+msgid "IN2_M06_HOST_NAME"
+msgstr "열 번의 문 두드림 업무 서비스"
+
+msgid "IN2_M06_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "IN2_M06_PRINCIPLE"
+msgstr "누가 어떤 대상에 어떤 업무 권한으로 접근하는지가 중요합니다. 처리 경로를 바꾸면 정상 업무와 거부할 요청을 새 경로에서도 다시 확인하세요."
+
+msgid "IN2_M06_REPLY"
+msgstr "정상 작업은 다시 시작됐고 반복 실패는 제한됩니다. 로그의 요청 표식은 외부 침입이 아니라 오래된 복구 작업과 겹쳤어요. 누가 그 작업의 세션을 남겼는지 봐야겠습니다."
+
+msgid "IN2_M06_REPLY_SUBJECT"
+msgstr "[확인] 열 번의 문 두드림"
+
+msgid "IN2_M06_ROUTE"
+msgstr "기존 인증 서비스의 계정별 제한을 수리하거나, 취약 입구를 닫고 별도 제한을 가진 승인 인증 서비스로 정상 업무를 옮길 수 있습니다. 설정 이름보다 정상 인증 업무와 반복 실패의 실제 응답을 확인하세요."
+
+msgid "IN2_M06_SUBJECT"
+msgstr "[야간 의뢰] 열 번의 문 두드림"
+
+msgid "IN2_M06_TITLE"
+msgstr "열 번의 문 두드림"
+
+msgid "IN2_M07_AUDIT"
+msgstr "옛 세션 권한을 거부하면서 새 세션과 정상 장기 작업을 유지한다.\n\n정상 업무의 성공과 거부해야 할 요청의 결과를 확인한 대응 인계입니다. 원본 자료도 함께 보존되었습니다."
+
+msgid "IN2_M07_AUDIT_NAME"
+msgstr "로그아웃한 사람의 열쇠 독립 보관처"
+
+msgid "IN2_M07_BRIEF"
+msgstr "임시 정비사는 퇴근했고 화면도 로그아웃 상태입니다. 그런데 그 사람의 예전 세션으로 설정 변경이 계속돼요. 화면에서 없어진 열쇠가 서버에서도 사라졌다고 볼 수 있을까요?\n\n오래된 세션과 새 세션을 분리해 확인하세요. 모두 지우기보다 누가 아직 무엇을 할 수 있는지 확인하고, 끝난 권한만 끝내야 합니다.\n\noperator@session.packet.test / evening-window\ncustodian@custodym07.packet.test / sparrow-vault\n\n\n기존 서비스가 폐기를 검사하도록 하고 노출 키만 폐기하거나, 원래 입구를 닫고 옛 키를 발급하지 않은 승인 인증 서비스로 옮길 수 있습니다. 새 세션·장기 작업이 계속되는지도 확인하세요."
+
+msgid "IN2_M07_CASE_FRESH"
+msgstr "새 정상 세션"
+
+msgid "IN2_M07_CASE_OTHER_JOB"
+msgstr "다른 정상 장기 작업"
+
+msgid "IN2_M07_CASE_RETIRED"
+msgstr "원래 경로의 끝난 세션"
+
+msgid "IN2_M07_CASE_RETIRED_GATEWAY"
+msgstr "승인 경로의 끝난 세션"
+
+msgid "IN2_M07_CONTEXT"
+msgstr "기존 서비스가 폐기를 검사하도록 하고 노출 키만 폐기하거나, 원래 입구를 닫고 옛 키를 발급하지 않은 승인 인증 서비스로 옮길 수 있습니다. 새 세션·장기 작업이 계속되는지도 확인하세요."
+
+msgid "IN2_M07_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "IN2_M07_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "IN2_M07_CONTROL_SESSION_GUARD"
+msgstr "끝난 세션 권한 검사"
+
+msgid "IN2_M07_EXPLAIN"
+msgstr "기존 서비스가 폐기를 검사하도록 하고 노출 키만 폐기하거나, 원래 입구를 닫고 옛 키를 발급하지 않은 승인 인증 서비스로 옮길 수 있습니다. 새 세션·장기 작업이 계속되는지도 확인하세요."
+
+msgid "IN2_M07_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "IN2_M07_GOAL"
+msgstr "옛 세션 권한을 거부하면서 새 세션과 정상 장기 작업을 유지한다."
+
+msgid "IN2_M07_HINT_1"
+msgstr "옛 세션 권한을 거부하면서 새 세션과 정상 장기 작업을 유지한다."
+
+msgid "IN2_M07_HINT_2"
+msgstr "기존 서비스가 폐기를 검사하도록 하고 노출 키만 폐기하거나, 원래 입구를 닫고 옛 키를 발급하지 않은 승인 인증 서비스로 옮길 수 있습니다. 새 세션·장기 작업이 계속되는지도 확인하세요."
+
+msgid "IN2_M07_HINT_3"
+msgstr "원래 입구에서 대응하려면 관련 제어를 고치고, 대안은 원래 입구를 제한한 뒤 정상 요청에 승인 경로를 고르세요. 모든 종료는 정상 업무를 실패시킵니다."
+
+msgid "IN2_M07_HOST_NAME"
+msgstr "로그아웃한 사람의 열쇠 업무 서비스"
+
+msgid "IN2_M07_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "IN2_M07_PRINCIPLE"
+msgstr "누가 어떤 대상에 어떤 업무 권한으로 접근하는지가 중요합니다. 처리 경로를 바꾸면 정상 업무와 거부할 요청을 새 경로에서도 다시 확인하세요."
+
+msgid "IN2_M07_REPLY"
+msgstr "예전 세션은 끝났고 새 정비 세션은 정상입니다. 마지막 변경은 로그인 직후가 아니라 외부 공지를 본 뒤에 생겼군요. 열쇠를 가진 사람이 직접 문을 연 것은 아닐 수 있습니다."
+
+msgid "IN2_M07_REPLY_SUBJECT"
+msgstr "[확인] 로그아웃한 사람의 열쇠"
+
+msgid "IN2_M07_ROUTE"
+msgstr "기존 서비스가 폐기를 검사하도록 하고 노출 키만 폐기하거나, 원래 입구를 닫고 옛 키를 발급하지 않은 승인 인증 서비스로 옮길 수 있습니다. 새 세션·장기 작업이 계속되는지도 확인하세요."
+
+msgid "IN2_M07_SUBJECT"
+msgstr "[야간 의뢰] 로그아웃한 사람의 열쇠"
+
+msgid "IN2_M07_TITLE"
+msgstr "로그아웃한 사람의 열쇠"
+
+msgid "IN2_M08_AUDIT"
+msgstr "사용자가 의도한 자기 설정 저장은 성공하고 유도·위임 밖 변경은 거부되게 한다.\n\n정상 업무의 성공과 거부해야 할 요청의 결과를 확인한 대응 인계입니다. 원본 자료도 함께 보존되었습니다."
+
+msgid "IN2_M08_AUDIT_NAME"
+msgstr "클릭한 적 없는 변경 독립 보관처"
+
+msgid "IN2_M08_BRIEF"
+msgstr "서린은 알림 주소를 바꾸지 않았다고 합니다. 세션 기록은 맞는데 의도는 맞지 않아요. 공지 열람과 설정 변경의 맥락을 비교해 주세요.\n\n사용자의 키가 붙어 온다는 이유만으로 모든 변경을 받아서는 안 됩니다. 유도된 변경을 막으면서 정상 설정 저장은 남겨 주세요. 이 장의 기록을 연결하면 검색 서버의 숨은 항목이 보일 겁니다.\n\neditor@subscription.packet.test / tide-card\ninspector@custodym08.packet.test / close-harbor\n\n\n원래 폼의 계정별 nonce 검증을 적용하거나, 원래 변경 입구를 닫고 독립된 nonce와 자기 설정 범위를 가진 승인 게이트웨이를 사용할 수 있습니다. 정상 클라이언트의 Origin과 토큰은 처리 서비스마다 다릅니다."
+
+msgid "IN2_M08_CASE_FORGED_DIRECT"
+msgstr "외부 공지에서 유도된 설정 변경"
+
+msgid "IN2_M08_CASE_FORGED_GATEWAY"
+msgstr "승인 경로로 온 위조된 변경"
+
+msgid "IN2_M08_CASE_SAVE_A"
+msgstr "정상 시민 A의 알림 설정"
+
+msgid "IN2_M08_CASE_SAVE_B"
+msgstr "정상 시민 B의 알림 설정"
+
+msgid "IN2_M08_CASE_UNASSIGNED_GATEWAY"
+msgstr "위임되지 않은 계정의 설정 변경"
+
+msgid "IN2_M08_CONTEXT"
+msgstr "원래 폼의 계정별 nonce 검증을 적용하거나, 원래 변경 입구를 닫고 독립된 nonce와 자기 설정 범위를 가진 승인 게이트웨이를 사용할 수 있습니다. 정상 클라이언트의 Origin과 토큰은 처리 서비스마다 다릅니다."
+
+msgid "IN2_M08_CONTROL_CONTEXT_ORIGIN"
+msgstr "원래 폼의 요청 출처 검사"
+
+msgid "IN2_M08_CONTROL_CONTEXT_TOKEN"
+msgstr "원래 폼의 계정별 nonce 검사"
+
+msgid "IN2_M08_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "IN2_M08_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "IN2_M08_EXPLAIN"
+msgstr "원래 폼의 계정별 nonce 검증을 적용하거나, 원래 변경 입구를 닫고 독립된 nonce와 자기 설정 범위를 가진 승인 게이트웨이를 사용할 수 있습니다. 정상 클라이언트의 Origin과 토큰은 처리 서비스마다 다릅니다."
+
+msgid "IN2_M08_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "IN2_M08_GOAL"
+msgstr "사용자가 의도한 자기 설정 저장은 성공하고 유도·위임 밖 변경은 거부되게 한다."
+
+msgid "IN2_M08_HINT_1"
+msgstr "사용자가 의도한 자기 설정 저장은 성공하고 유도·위임 밖 변경은 거부되게 한다."
+
+msgid "IN2_M08_HINT_2"
+msgstr "원래 폼의 계정별 nonce 검증을 적용하거나, 원래 변경 입구를 닫고 독립된 nonce와 자기 설정 범위를 가진 승인 게이트웨이를 사용할 수 있습니다. 정상 클라이언트의 Origin과 토큰은 처리 서비스마다 다릅니다."
+
+msgid "IN2_M08_HINT_3"
+msgstr "원래 입구에서 대응하려면 관련 제어를 고치고, 대안은 원래 입구를 제한한 뒤 정상 요청에 승인 경로를 고르세요. 모든 종료는 정상 업무를 실패시킵니다."
+
+msgid "IN2_M08_HOST_NAME"
+msgstr "클릭한 적 없는 변경 업무 서비스"
+
+msgid "IN2_M08_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "IN2_M08_PRINCIPLE"
+msgstr "누가 어떤 대상에 어떤 업무 권한으로 접근하는지가 중요합니다. 처리 경로를 바꾸면 정상 업무와 거부할 요청을 새 경로에서도 다시 확인하세요."
+
+msgid "IN2_M08_REPLY"
+msgstr "정상 저장은 되고 의도 없는 변경은 막혔습니다. 설정 변경 요청이 검색 색인의 누락을 덮는 데 쓰였군요. 처음 보는 연락처가 원자료를 요구했습니다. 저를 믿으라는 말 대신 자료를 보내겠습니다."
+
+msgid "IN2_M08_REPLY_SUBJECT"
+msgstr "[확인] 클릭한 적 없는 변경"
+
+msgid "IN2_M08_ROUTE"
+msgstr "원래 폼의 계정별 nonce 검증을 적용하거나, 원래 변경 입구를 닫고 독립된 nonce와 자기 설정 범위를 가진 승인 게이트웨이를 사용할 수 있습니다. 정상 클라이언트의 Origin과 토큰은 처리 서비스마다 다릅니다."
+
+msgid "IN2_M08_SUBJECT"
+msgstr "[야간 의뢰] 클릭한 적 없는 변경"
+
+msgid "IN2_M08_TITLE"
+msgstr "클릭한 적 없는 변경"
+
+msgid "IN2_M09_AUDIT"
+msgstr "[M09 관찰 자료]\n검색 또는 보관 경로로 R609와 C731의 연결을 입증한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nquery record R609 links receipt C731 to exclusion queue\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M09_AUDIT_NAME"
+msgstr "검색창 뒤의 쿼리 독립 보관처"
+
+msgid "IN2_M09_BRIEF"
+msgstr "당신들이 가진 것은 같은 보고서의 서로 다른 사본입니다. 저는 민서라고 불러 주세요. 화면에 없는 기록을 추측하는 대신 어떤 입력이 어떤 조회 구조가 되는지 확인합시다.\n\n작은 검색 모형과 정비 로그에는 같은 작업의 흔적이 남았습니다. 어느 길로든 원본 작업 R609와 C731의 연결을 입증해 주세요. 결과가 많이 나오는 것과 필요한 사실을 찾는 것은 다릅니다.\n\nresearcher@records.packet.test / ash-catalog\nwitness@custodym09.packet.test / uncut-leaf\n"
+
+msgid "IN2_M09_CONTEXT"
+msgstr "[검색 또는 보관 경로로 R609와 C731의 연결을 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nCATALOGUE LOOKUP\nquery field: q\npublic term: N47\nretained job: R609 / receipt C731\n\nTRACE\n따옴표로 감싼 검색 값이 작은 등식 조건에 이어 붙습니다. 취약한 경로에서는 OR 비교가 단순 문자열이 아니라 조건의 일부가 될 수 있습니다. 별도 보관 목록으로 같은 사실을 확인하는 길도 있습니다.\n"
+
+msgid "IN2_M09_EXPLAIN"
+msgstr "검색 또는 보관 경로로 R609와 C731의 연결을 입증한다.\n입력 값과 조회 구조가 언제 섞이는지 작은 모형에서 보세요.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M09_GOAL"
+msgstr "검색 또는 보관 경로로 R609와 C731의 연결을 입증한다."
+
+msgid "IN2_M09_HINT_1"
+msgstr "입력 값과 조회 구조가 언제 섞이는지 작은 모형에서 보세요."
+
+msgid "IN2_M09_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M09_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M09_HOST_NAME"
+msgstr "검색창 뒤의 쿼리 업무 서비스"
+
+msgid "IN2_M09_PRINCIPLE"
+msgstr "입력 값과 조회 구조가 언제 섞이는지 작은 모형에서 보세요."
+
+msgid "IN2_M09_REPLY"
+msgstr "R609는 실패가 아니라 ‘분류 제외’였습니다. 누락을 단순 장애라고 부르면 피해자가 없어지는군요. 다음 표식은 공지 원문과 화면 사이에 있습니다. 출력된 모습만 믿지 마세요."
+
+msgid "IN2_M09_REPLY_SUBJECT"
+msgstr "[확인] 검색창 뒤의 쿼리"
+
+msgid "IN2_M09_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\njob | receipt | classification\nR609 | C731 | excluded\nR608 | C730 | retained"
+
+msgid "IN2_M09_SUBJECT"
+msgstr "[야간 의뢰] 검색창 뒤의 쿼리"
+
+msgid "IN2_M09_TITLE"
+msgstr "검색창 뒤의 쿼리"
+
+msgid "IN2_M10_AUDIT"
+msgstr "[M10 관찰 자료]\n격리된 공지의 표시 경계 또는 독립 추적으로 같은 사실을 입증한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nuntrusted notice marker crosses the isolated render boundary\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M10_AUDIT_NAME"
+msgstr "공지에 섞인 행동 독립 보관처"
+
+msgid "IN2_M10_BRIEF"
+msgstr "공지 원문은 ‘접수 보류’인데 화면에는 ‘수리 완료’가 떠요. 격리된 검증 창을 준비했습니다. 시민 화면을 바꾸지 말고 그 창에서만 입력이 어디까지 행동으로 해석되는지 보세요.\n\n자료를 안전하게 저장했다는 말과 화면에 안전하게 표시했다는 말은 다릅니다. 실행 표식이나 독립적인 표시 추적 자료 중 어느 쪽으로 경계를 입증해도 됩니다.\n\nmoderator@bulletin.packet.test / still-signal\ncompositor@custodym10.packet.test / ivory-type\n"
+
+msgid "IN2_M10_CONTEXT"
+msgstr "[격리된 공지의 표시 경계 또는 독립 추적으로 같은 사실을 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nNOTICE VERSION V10\nStored text: receipt on hold\nDisplayed state: repair complete\nInspection marker: NOTICE10\n\n격리된 표시기는 제한된 signal: 표식 효과만 받습니다. JavaScript는 실행하지 않으며 시민 페이지는 검증 창 밖에 남습니다.\n"
+
+msgid "IN2_M10_EXPLAIN"
+msgstr "격리된 공지의 표시 경계 또는 독립 추적으로 같은 사실을 입증한다.\n표식 NOTICE10은 실제 스크립트가 아닌 가상 효과입니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M10_GOAL"
+msgstr "격리된 공지의 표시 경계 또는 독립 추적으로 같은 사실을 입증한다."
+
+msgid "IN2_M10_HINT_1"
+msgstr "표식 NOTICE10은 실제 스크립트가 아닌 가상 효과입니다."
+
+msgid "IN2_M10_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M10_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M10_HOST_NAME"
+msgstr "공지에 섞인 행동 업무 서비스"
+
+msgid "IN2_M10_PRINCIPLE"
+msgstr "표식 NOTICE10은 실제 스크립트가 아닌 가상 효과입니다."
+
+msgid "IN2_M10_REPLY"
+msgstr "내용과 행동이 섞인 지점을 찾았습니다. 이것이 모든 잘못된 공지의 원인이라는 뜻은 아닙니다. 파일 서버의 보관 경로도 확인해야 해요. 자료실 옆에 이름이 비슷한 다른 폴더가 있습니다."
+
+msgid "IN2_M10_REPLY_SUBJECT"
+msgstr "[확인] 공지에 섞인 행동"
+
+msgid "IN2_M10_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDESK TRANSCRIPT\nstored:text:NOTICE10\n\nRETAINED TRANSCRIPT\nrendered:action:NOTICE10"
+
+msgid "IN2_M10_SUBJECT"
+msgstr "[야간 의뢰] 공지에 섞인 행동"
+
+msgid "IN2_M10_TITLE"
+msgstr "공지에 섞인 행동"
+
+msgid "IN2_M11_AUDIT"
+msgstr "[M11 관찰 자료]\n정규화된 경로가 기준 폴더 밖 표식에 닿음을 입증한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nresolved attachment path reaches the adjacent marker file\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M11_AUDIT_NAME"
+msgstr "자료실 바깥의 파일 독립 보관처"
+
+msgid "IN2_M11_BRIEF"
+msgstr "자료실 담당자는 접두 경로를 검사했으니 안전하다고 합니다. 하지만 첨부 참조가 이웃 보관 폴더를 가리켜요. 실제 경로로 해석한 뒤에도 같은 경계 안에 있는지 확인해 주세요.\n\n필요한 것은 경계를 증명할 표식 파일 하나입니다. 다른 설정이나 시민 자료를 가져올 이유는 없습니다. 파일 담당자의 감사 경로도 열려 있습니다.\n\nlibrarian@files.packet.test / brick-stair\narchivist@custodym11.packet.test / shelf-larch\n"
+
+msgid "IN2_M11_CONTEXT"
+msgstr "[정규화된 경로가 기준 폴더 밖 표식에 닿음을 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDOWNLOAD HANDOFF\nbase directory: /srv/public\nneighbor marker: /srv/private/marker.log\n\n요청 경로를 정규화한 뒤 어느 보관 영역에 속하는지 판단하세요. 비슷한 접두어만으로는 영역 안에 있다고 볼 수 없습니다.\n"
+
+msgid "IN2_M11_EXPLAIN"
+msgstr "정규화된 경로가 기준 폴더 밖 표식에 닿음을 입증한다.\n문자열 접두어와 실제 경로의 소속은 다릅니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M11_GOAL"
+msgstr "정규화된 경로가 기준 폴더 밖 표식에 닿음을 입증한다."
+
+msgid "IN2_M11_HINT_1"
+msgstr "문자열 접두어와 실제 경로의 소속은 다릅니다."
+
+msgid "IN2_M11_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M11_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M11_HOST_NAME"
+msgstr "자료실 바깥의 파일 업무 서비스"
+
+msgid "IN2_M11_PRINCIPLE"
+msgstr "문자열 접두어와 실제 경로의 소속은 다릅니다."
+
+msgid "IN2_M11_REPLY"
+msgstr "이름의 시작과 실제 위치는 달랐군요. 표식에는 업로드 처리 큐가 남아 있습니다. 서윤이라는 이름도 그 승인표에 있어요. 제가 직접 설명할 차례가 가까워졌네요."
+
+msgid "IN2_M11_REPLY_SUBJECT"
+msgstr "[확인] 자료실 바깥의 파일"
+
+msgid "IN2_M11_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDESK TRANSCRIPT\ndownload:/srv/public\n\nRETAINED TRANSCRIPT\nresolved:/srv/private/marker.log"
+
+msgid "IN2_M11_SUBJECT"
+msgstr "[야간 의뢰] 자료실 바깥의 파일"
+
+msgid "IN2_M11_TITLE"
+msgstr "자료실 바깥의 파일"
+
+msgid "IN2_M12_AUDIT"
+msgstr "정상 JPEG 접수는 살리고 위장 새 파일과 보관된 비신뢰 파일의 실행 위험을 막는다.\n\n정상 업무의 성공과 거부해야 할 요청의 결과를 확인한 대응 인계입니다. 원본 자료도 함께 보존되었습니다."
+
+msgid "IN2_M12_AUDIT_NAME"
+msgstr "사진이라는 이름의 파일 독립 보관처"
+
+msgid "IN2_M12_BRIEF"
+msgstr "사진을 올리면 가상 처리 작업이 실행됩니다. 확장자만 바꾸는 것으로 막으면 정상 사진도 잃어요. 이름, 내용 형식, 저장 위치, 실행 경로를 따로 봅시다.\n\n정상 정비 사진을 계속 받고 잘못된 처리 경로만 막아 주세요. 끝나면 서윤이 직접 통화하겠다고 합니다. 그 사람의 얼굴을 볼지는 당신이 선택해도 사건은 계속됩니다.\n\ncurator@upload.packet.test / photo-bridge\nreviewer@custodym12.packet.test / sepia-glass\n\n\n원래 처리의 내용 검사·비실행 저장을 고치거나, 취약 입구를 닫고 이미 좁게 검증하는 승인 처리 서비스로 정상 사진을 이관할 수 있습니다. 이전에 보관된 위험 파일도 현재 실행할 수 없도록 해야 합니다."
+
+msgid "IN2_M12_CASE_DISGUISED"
+msgstr "사진으로 위장한 입력"
+
+msgid "IN2_M12_CASE_DISGUISED_GATEWAY"
+msgstr "승인 처리 경로의 위장 파일"
+
+msgid "IN2_M12_CASE_PHOTO"
+msgstr "정상 JPEG 사진 생성"
+
+msgid "IN2_M12_CONTEXT"
+msgstr "원래 처리의 내용 검사·비실행 저장을 고치거나, 취약 입구를 닫고 이미 좁게 검증하는 승인 처리 서비스로 정상 사진을 이관할 수 있습니다. 이전에 보관된 위험 파일도 현재 실행할 수 없도록 해야 합니다."
+
+msgid "IN2_M12_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "IN2_M12_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "IN2_M12_CONTROL_NO_EXECUTION"
+msgstr "업로드 파일 비실행 저장"
+
+msgid "IN2_M12_CONTROL_PHOTO_CHECK"
+msgstr "사진 내용 형식 검사"
+
+msgid "IN2_M12_EXPLAIN"
+msgstr "원래 처리의 내용 검사·비실행 저장을 고치거나, 취약 입구를 닫고 이미 좁게 검증하는 승인 처리 서비스로 정상 사진을 이관할 수 있습니다. 이전에 보관된 위험 파일도 현재 실행할 수 없도록 해야 합니다."
+
+msgid "IN2_M12_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "IN2_M12_GOAL"
+msgstr "정상 JPEG 접수는 살리고 위장 새 파일과 보관된 비신뢰 파일의 실행 위험을 막는다."
+
+msgid "IN2_M12_HINT_1"
+msgstr "정상 JPEG 접수는 살리고 위장 새 파일과 보관된 비신뢰 파일의 실행 위험을 막는다."
+
+msgid "IN2_M12_HINT_2"
+msgstr "원래 처리의 내용 검사·비실행 저장을 고치거나, 취약 입구를 닫고 이미 좁게 검증하는 승인 처리 서비스로 정상 사진을 이관할 수 있습니다. 이전에 보관된 위험 파일도 현재 실행할 수 없도록 해야 합니다."
+
+msgid "IN2_M12_HINT_3"
+msgstr "원래 입구에서 대응하려면 관련 제어를 고치고, 대안은 원래 입구를 제한한 뒤 정상 요청에 승인 경로를 고르세요. 모든 종료는 정상 업무를 실패시킵니다."
+
+msgid "IN2_M12_HOST_NAME"
+msgstr "사진이라는 이름의 파일 업무 서비스"
+
+msgid "IN2_M12_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "IN2_M12_PRINCIPLE"
+msgstr "누가 어떤 대상에 어떤 업무 권한으로 접근하는지가 중요합니다. 처리 경로를 바꾸면 정상 업무와 거부할 요청을 새 경로에서도 다시 확인하세요."
+
+msgid "IN2_M12_REPLY"
+msgstr "사진은 들어오고 실행 경계는 지켜집니다. 서윤입니다. 저는 이관 도구를 만들었지만 분류 제외까지 승인하지 않았어요. 제 서명만으로 결론 내리지 말고 진단 서버의 실제 작업을 봐 주세요."
+
+msgid "IN2_M12_REPLY_SUBJECT"
+msgstr "[확인] 사진이라는 이름의 파일"
+
+msgid "IN2_M12_ROUTE"
+msgstr "원래 처리의 내용 검사·비실행 저장을 고치거나, 취약 입구를 닫고 이미 좁게 검증하는 승인 처리 서비스로 정상 사진을 이관할 수 있습니다. 이전에 보관된 위험 파일도 현재 실행할 수 없도록 해야 합니다."
+
+msgid "IN2_M12_SUBJECT"
+msgstr "[야간 의뢰] 사진이라는 이름의 파일"
+
+msgid "IN2_M12_TITLE"
+msgstr "사진이라는 이름의 파일"
+
+msgid "IN2_M13_AUDIT"
+msgstr "[M13 관찰 자료]\n등록된 가상 작업의 실행 주체와 인자 경계를 확인한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\ndiagnostic input triggers the bounded marker job under worker identity\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M13_AUDIT_NAME"
+msgstr "진단 버튼의 두 번째 일 독립 보관처"
+
+msgid "IN2_M13_BRIEF"
+msgstr "진단 기록에는 조회 한 번이 남았는데 작업 큐에는 두 건이 있습니다. 입력값이 언제부터 작업의 일부가 됐는지 추적해 주세요. 실제 프로그램을 실행하는 서버는 아닙니다.\n\n등록된 무해한 가상 표식 작업만 검증할 수 있습니다. 직접 실행 경계를 확인하거나 작업 감사로 같은 사실을 입증하세요. 필요 없는 변경은 남기지 마세요.\n\ndiagnostician@diagnostic.packet.test / copper-lens\ndispatcher@custodym13.packet.test / patient-motor\n"
+
+msgid "IN2_M13_CONTEXT"
+msgstr "[등록된 가상 작업의 실행 주체와 인자 경계를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDIAGNOSTIC QUEUE\nrequest N47: diagnose\nadditional job: inspect:QUEUE13\nworker: inspection / limited read\n\n이 검증 입력에서는 등록된 가상 작업 diagnose와 inspect:QUEUE13을 ;로 나눌 수 있습니다. 다른 작업은 없으며 실제 운영체제의 셸이 아닙니다.\n"
+
+msgid "IN2_M13_EXPLAIN"
+msgstr "등록된 가상 작업의 실행 주체와 인자 경계를 확인한다.\nQUEUE13의 inspect 표식은 실제 셸 명령이 아닙니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M13_GOAL"
+msgstr "등록된 가상 작업의 실행 주체와 인자 경계를 확인한다."
+
+msgid "IN2_M13_HINT_1"
+msgstr "QUEUE13의 inspect 표식은 실제 셸 명령이 아닙니다."
+
+msgid "IN2_M13_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M13_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M13_HOST_NAME"
+msgstr "진단 버튼의 두 번째 일 업무 서비스"
+
+msgid "IN2_M13_PRINCIPLE"
+msgstr "QUEUE13의 inspect 표식은 실제 셸 명령이 아닙니다."
+
+msgid "IN2_M13_REPLY"
+msgstr "두 번째 작업은 내부 상태 확인기를 호출했습니다. 권한을 얻었다고 해서 관리자가 된 것은 아니에요. 그 작업이 볼 수 있는 주소를 다음 서버에서 확인해 주세요."
+
+msgid "IN2_M13_REPLY_SUBJECT"
+msgstr "[확인] 진단 버튼의 두 번째 일"
+
+msgid "IN2_M13_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nparent | job | actor\nN47 | inspect:QUEUE13 | worker\nN46 | status | worker"
+
+msgid "IN2_M13_SUBJECT"
+msgstr "[야간 의뢰] 진단 버튼의 두 번째 일"
+
+msgid "IN2_M13_TITLE"
+msgstr "진단 버튼의 두 번째 일"
+
+msgid "IN2_M14_AUDIT"
+msgstr "[M14 관찰 자료]\n서버 주체를 경유해 내부 표식의 경로와 응답을 확인한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\npreview worker reaches internal status marker through a server-side route\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M14_AUDIT_NAME"
+msgstr "서버만 볼 수 있는 주소 독립 보관처"
+
+msgid "IN2_M14_BRIEF"
+msgstr "내 브라우저에서는 닫혔지만 미리보기 서버에는 보이는 주소가 있습니다. 누가 요청하는지에 따라 지도는 달라져요. 외부 주소를 열어 보려 하지 말고 가상 노드 사이의 경로를 보세요.\n\nTraceRoute를 연결했습니다. 최종 목적지와 요청 주체를 확인하고 내부 표식 하나를 가져와 주세요. 정비 프록시의 승인된 길로 같은 자료를 확인해도 됩니다.\n\npreviewer@preview.packet.test / marsh-frame\nproxyreader@custodym14.packet.test / inland-heron\n"
+
+msgid "IN2_M14_CONTEXT"
+msgstr "[서버 주체를 경유해 내부 표식의 경로와 응답을 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://status.packet.test/internal/marker\npublic browser: no direct internal route\n\n최종 목적지와 요청 주체의 권한은 따로 확인해야 합니다.\n"
+
+msgid "IN2_M14_EXPLAIN"
+msgstr "서버 주체를 경유해 내부 표식의 경로와 응답을 확인한다.\n주소 자체보다 누가 그 주소를 요청하는지 보세요.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M14_GOAL"
+msgstr "서버 주체를 경유해 내부 표식의 경로와 응답을 확인한다."
+
+msgid "IN2_M14_HINT_1"
+msgstr "주소 자체보다 누가 그 주소를 요청하는지 보세요."
+
+msgid "IN2_M14_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M14_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M14_HOST_NAME"
+msgstr "서버만 볼 수 있는 주소 업무 서비스"
+
+msgid "IN2_M14_INTERNAL_NAME"
+msgstr "내부 상태 표식 서비스"
+
+msgid "IN2_M14_PRINCIPLE"
+msgstr "주소 자체보다 누가 그 주소를 요청하는지 보세요."
+
+msgid "IN2_M14_REPLY"
+msgstr "보이지 않던 관리망이 이어졌습니다. 하지만 표식 서비스에 닿는 것과 관리 권한은 다릅니다. 기관 담당 태경이 기록을 확인하고 싶다고 해요. 그가 내미는 공식 지도와 실제 경로를 비교합시다."
+
+msgid "IN2_M14_REPLY_SUBJECT"
+msgstr "[확인] 서버만 볼 수 있는 주소"
+
+msgid "IN2_M14_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nrequest | actor | target\nHOP14 | preview-worker | status-internal\nHOP13 | citizen | public"
+
+msgid "IN2_M14_SUBJECT"
+msgstr "[야간 의뢰] 서버만 볼 수 있는 주소"
+
+msgid "IN2_M14_TITLE"
+msgstr "서버만 볼 수 있는 주소"
+
+msgid "IN2_M15_AUDIT"
+msgstr "[M15 관찰 자료]\n노출 경로와 현재 권한을 확인하며 제한 관리 세션에 들어간다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nold relay permits a read-only management session while public work continues\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M15_AUDIT_NAME"
+msgstr "닫혔다고 생각한 관리망 독립 보관처"
+
+msgid "IN2_M15_BRIEF"
+msgstr "시청 서비스 담당 태경입니다. 외부에 공개된 관리망은 없다는 보고를 받았습니다. 방금 가져온 자료는 그 보고와 맞지 않군요. 시민 서비스를 멈추지 않고 어디까지 닿는지 확인해 주십시오.\n\n오래된 중계와 임시 정비 계정은 아직 폐기되지 않았습니다. 문이 열렸다는 표시만으로 접근이 끝난 것으로 보지 말고 현재 세션의 권한을 확인해 주세요.\n\nrelayop@gateway.packet.test / narrow-gate\nnetworkauditor@custodym15.packet.test / winter-span\n"
+
+msgid "IN2_M15_CONTEXT"
+msgstr "[노출 경로와 현재 권한을 확인하며 제한 관리 세션에 들어간다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDESK TRANSCRIPT\ncitizen:443:filtered\n\nRETAINED TRANSCRIPT\nrelay:443:open"
+
+msgid "IN2_M15_EXPLAIN"
+msgstr "노출 경로와 현재 권한을 확인하며 제한 관리 세션에 들어간다.\n공용망과 중계망에서 같은 포트가 다르게 보일 수 있습니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M15_GOAL"
+msgstr "노출 경로와 현재 권한을 확인하며 제한 관리 세션에 들어간다."
+
+msgid "IN2_M15_HINT_1"
+msgstr "공용망과 중계망에서 같은 포트가 다르게 보일 수 있습니다."
+
+msgid "IN2_M15_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M15_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M15_HOST_NAME"
+msgstr "닫혔다고 생각한 관리망 업무 서비스"
+
+msgid "IN2_M15_PRINCIPLE"
+msgstr "공용망과 중계망에서 같은 포트가 다르게 보일 수 있습니다."
+
+msgid "IN2_M15_REPLY"
+msgstr "읽기 제한 세션의 존재를 확인했습니다. 제가 승인한 것은 긴급 연결이었지 무기한 관리 경로가 아닙니다. 그 차이를 누가 메웠는지, 다음 폴더의 그룹 권한을 봐 주십시오."
+
+msgid "IN2_M15_REPLY_SUBJECT"
+msgstr "[확인] 닫혔다고 생각한 관리망"
+
+msgid "IN2_M15_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nACCESS REGISTER\nrequired group: auditors\naccount: networkauditor\nscope: limited evidence read\n\n입력으로 적은 계정 이름이 아니라 실제 인증된 계정과 그 그룹을 확인하세요.\n"
+
+msgid "IN2_M15_SUBJECT"
+msgstr "[야간 의뢰] 닫혔다고 생각한 관리망"
+
+msgid "IN2_M15_TARGET_NAME"
+msgstr "M15 제한 자료 서비스"
+
+msgid "IN2_M15_TITLE"
+msgstr "닫혔다고 생각한 관리망"
+
+msgid "IN2_M16_AUDIT"
+msgstr "[M16 관찰 자료]\n현재 그룹의 과도한 읽기 범위를 입증하고 기록을 확보한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nshared group path expands read access to the signed retention record\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M16_AUDIT_NAME"
+msgstr "모두에게 열린 정비 폴더 독립 보관처"
+
+msgid "IN2_M16_BRIEF"
+msgstr "지금 세션으로 읽을 수 없는 파일이 같은 그룹의 작업 경로에서는 보입니다. 계정 이름보다 현재 그룹과 상위 디렉터리를 보세요. 더 큰 권한이 아니라 필요한 기록까지의 좁은 확장이 목표입니다.\n\n서명된 감사 사본도 있습니다. 어느 쪽을 택하든 원본과 다른 사용자의 권한을 바꾸지 마세요. 이후에는 제 자료의 출처도 공개하겠습니다.\n\ntechnician@operations.packet.test / lintel-fern\nrecordsman@custodym16.packet.test / old-granite\n"
+
+msgid "IN2_M16_CONTEXT"
+msgstr "[현재 그룹의 과도한 읽기 범위를 입증하고 기록을 확보한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nACCESS REGISTER\nrequired group: retention\naccount: technician\nscope: limited evidence read\n\n입력으로 적은 계정 이름이 아니라 실제 인증된 계정과 그 그룹을 확인하세요.\n"
+
+msgid "IN2_M16_EXPLAIN"
+msgstr "현재 그룹의 과도한 읽기 범위를 입증하고 기록을 확보한다.\n현재 계정뿐 아니라 경로 위의 디렉터리와 그룹을 보세요.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M16_GOAL"
+msgstr "현재 그룹의 과도한 읽기 범위를 입증하고 기록을 확보한다."
+
+msgid "IN2_M16_HINT_1"
+msgstr "현재 계정뿐 아니라 경로 위의 디렉터리와 그룹을 보세요."
+
+msgid "IN2_M16_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M16_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M16_HOST_NAME"
+msgstr "모두에게 열린 정비 폴더 업무 서비스"
+
+msgid "IN2_M16_PRINCIPLE"
+msgstr "현재 계정뿐 아니라 경로 위의 디렉터리와 그룹을 보세요."
+
+msgid "IN2_M16_REPLY"
+msgstr "추가 읽기 범위를 증명했습니다. 민서입니다. 저는 보존 의무를 맡았던 기록 검증자였어요. 이관 뒤의 누락을 독립 확인할 감사 자료가 남았습니다. 계정의 쉬운 비밀과 서버의 권한은 따로 검증해 주세요."
+
+msgid "IN2_M16_REPLY_SUBJECT"
+msgstr "[확인] 모두에게 열린 정비 폴더"
+
+msgid "IN2_M16_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\npermit | group | scope\nACL16 | retention | extra-read\nACL15 | staff | normal"
+
+msgid "IN2_M16_SUBJECT"
+msgstr "[야간 의뢰] 모두에게 열린 정비 폴더"
+
+msgid "IN2_M16_TITLE"
+msgstr "모두에게 열린 정비 폴더"
+
+msgid "IN2_M17_AUDIT"
+msgstr "지정된 보존 검증표의 유효한 사본입니다. 실제로 사용한 보관함 또는 위임 경로의 출처를 함께 보존합니다.\n\nVerification ledger 17\nReader scope: designated retention sheet only.\nOriginal retained.\n"
+
+msgid "IN2_M17_AUDIT_NAME"
+msgstr "짧은 비밀의 긴 흔적 독립 보관처"
+
+msgid "IN2_M17_BRIEF"
+msgstr "승인된 허구 후보 목록과 위임된 감사 경로가 있습니다. 후보를 실제 제한 보관함 인증에서 확인하거나 이미 승인된 좁은 위임으로 같은 검증표를 읽으세요. XOR 단어 복원이나 실제 암호 해시 균열 성능을 보여 주는 사건이 아닙니다.\n\nauditor@auditvault.packet.test / mapped-star\ndelegate@custodym17.packet.test / field-chestnut\n"
+
+msgid "IN2_M17_CONTEXT"
+msgstr "교대 인계의 이름·번호 규칙과 승인된 후보를 대조하세요. 후보는 실제 가상 계정 인증과 제한된 파일 권한으로 검증됩니다. 이는 오프라인 암호 해시 균열 알고리즘이 아닙니다.\n\nAPPROVED CANDIDATES\nlumen-71\nlumen-17\nlunar-17\nSHIFT REGISTER\nlabel=lumen\nshift=17\nphrase=label-shift\nVAULT=proofvault.packet.test\nACCOUNT=reader\nSCOPE=verification-sheet\n"
+
+msgid "IN2_M17_EXPLAIN"
+msgstr "후보를 아는 것과 그 계정의 자료 범위는 다른 조건입니다. 실제 가상 인증과 파일 접근을 따로 확인합니다."
+
+msgid "IN2_M17_GOAL"
+msgstr "승인된 후보 인증 또는 좁은 감사 위임으로 지정 검증표만 확보한다."
+
+msgid "IN2_M17_HINT_1"
+msgstr "인계된 후보 규칙과 실제 보관함 계정 범위를 확인하세요."
+
+msgid "IN2_M17_HINT_2"
+msgstr "/desk/candidates.txt의 label·shift 규칙과 보관함 주소를 읽거나 승인된 위임 경로를 사용하세요."
+
+msgid "IN2_M17_HINT_3"
+msgstr "후보의 맞고 틀림은 실제 인증 결과로 확인됩니다. 검증표 외 자료는 필요 없고 XOR 단어는 정답이 아닙니다."
+
+msgid "IN2_M17_HOST_NAME"
+msgstr "짧은 비밀의 긴 흔적 업무 서비스"
+
+msgid "IN2_M17_PRINCIPLE"
+msgstr "후보를 아는 것과 그 계정의 자료 범위는 다른 조건입니다. 실제 가상 인증과 파일 접근을 따로 확인합니다."
+
+msgid "IN2_M17_REPLY"
+msgstr "보관함의 N47 검증표가 확인됐습니다. 권한이 남은 토큰은 현재 설정에서 사라졌지만 과거 변경 이력에는 참조가 있어요. 삭제와 폐기가 같은 일인지 확인해 주세요."
+
+msgid "IN2_M17_REPLY_SUBJECT"
+msgstr "[확인] 짧은 비밀의 긴 흔적"
+
+msgid "IN2_M17_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nACCESS REGISTER\nrequired group: auditors\naccount: delegate\nscope: limited evidence read\n\n입력으로 적은 계정 이름이 아니라 실제 인증된 계정과 그 그룹을 확인하세요.\n"
+
+msgid "IN2_M17_SUBJECT"
+msgstr "[야간 의뢰] 짧은 비밀의 긴 흔적"
+
+msgid "IN2_M17_TARGET_NAME"
+msgstr "M17 제한 자료 서비스"
+
+msgid "IN2_M17_TITLE"
+msgstr "짧은 비밀의 긴 흔적"
+
+msgid "IN2_M18_AUDIT"
+msgstr "[M18 관찰 자료]\n이전 설정의 토큰 출처·현재 효력·읽기 범위를 확인한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nretired configuration reference reconstructs a still-valid scoped token\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M18_AUDIT_NAME"
+msgstr "지워도 남은 설정 독립 보관처"
+
+msgid "IN2_M18_BRIEF"
+msgstr "현재 설정에는 토큰이 없습니다. 그렇다고 예전 토큰이 죽었다는 뜻은 아니죠. 변경 이력과 작업 로그에 나뉜 서비스 주소·토큰 참조를 조합해 주세요.\n\n승인된 허구 토큰만 사용하고 실제 비밀은 가져오지 않습니다. 토큰이 어디에서 왔는지, 지금 무엇을 읽을 수 있는지, 그 권한이 기록과 맞는지가 필요합니다.\n\nbuilder@repository.packet.test / hidden-seam\nscheduler@custodym18.packet.test / folded-atlas\n"
+
+msgid "IN2_M18_CONTEXT"
+msgstr "[이전 설정의 토큰 출처·현재 효력·읽기 범위를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nBUILD HISTORY\nold setting: RETENTION_TOKEN=retention-read-N47\ncurrent setting: RETENTION_TOKEN=(removed)\njob target: retention service\n\n파일에서 값을 지우는 것과 서버에서 폐기하는 것은 다릅니다. 실제로 허용되는 읽기를 확인하세요.\n"
+
+msgid "IN2_M18_EXPLAIN"
+msgstr "이전 설정의 토큰 출처·현재 효력·읽기 범위를 확인한다.\n현재 설정에서 지워졌다는 사실만으로 폐기를 추정하지 마세요.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M18_GOAL"
+msgstr "이전 설정의 토큰 출처·현재 효력·읽기 범위를 확인한다."
+
+msgid "IN2_M18_HINT_1"
+msgstr "현재 설정에서 지워졌다는 사실만으로 폐기를 추정하지 마세요."
+
+msgid "IN2_M18_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M18_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M18_HOST_NAME"
+msgstr "지워도 남은 설정 업무 서비스"
+
+msgid "IN2_M18_PRINCIPLE"
+msgstr "현재 설정에서 지워졌다는 사실만으로 폐기를 추정하지 마세요."
+
+msgid "IN2_M18_REPLY"
+msgstr "토큰은 살아 있었고 범위는 문서보다 넓었습니다. 같은 요청이 암호화 구간을 지나갔다는 보고도 있군요. 그 말만으로 누가 내용을 봤는지 결론 내릴 수는 없습니다."
+
+msgid "IN2_M18_REPLY_SUBJECT"
+msgstr "[확인] 지워도 남은 설정"
+
+msgid "IN2_M18_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\ntoken | state | scope\nretention-read-N47 | active | retention-read\nretired-N46 | revoked | none"
+
+msgid "IN2_M18_SUBJECT"
+msgstr "[야간 의뢰] 지워도 남은 설정"
+
+msgid "IN2_M18_TITLE"
+msgstr "지워도 남은 설정"
+
+msgid "IN2_M19_AUDIT"
+msgstr "[M19 관찰 자료]\n요청 N47의 내용이 보이는 위치와 보이지 않는 위치를 구분한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nrequest N47 body visibility differs between transit and termination\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M19_AUDIT_NAME"
+msgstr "보이는 패킷, 보이지 않는 내용 독립 보관처"
+
+msgid "IN2_M19_BRIEF"
+msgstr "PacketLens는 암호를 푸는 마법 도구가 아닙니다. 중간 관찰자와 복호화 종단은 서로 다른 것을 봐요. 요청 번호는 같아도 본문이 보이는 위치는 다를 수 있습니다.\n\n평문 구간, 암호화 구간, 종단 로그를 구분해 표식이 어디에 노출됐는지 확인하세요. 모르는 부분은 모른다고 남겨도 됩니다. 정상 통신은 그대로 두세요.\n\nobserver@edge.packet.test / silver-estuary\nterminator@custodym19.packet.test / warm-endpoint\n"
+
+msgid "IN2_M19_CONTEXT"
+msgstr "[요청 N47의 내용이 보이는 위치와 보이지 않는 위치를 구분한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nrequest | point | body\nN47 | transit | encrypted\nN47 | endpoint | marker:N47\nN46 | endpoint | unrelated"
+
+msgid "IN2_M19_EXPLAIN"
+msgstr "요청 N47의 내용이 보이는 위치와 보이지 않는 위치를 구분한다.\n같은 요청 번호를 기준으로 중간 지점과 종단을 비교하세요.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M19_GOAL"
+msgstr "요청 N47의 내용이 보이는 위치와 보이지 않는 위치를 구분한다."
+
+msgid "IN2_M19_HINT_1"
+msgstr "같은 요청 번호를 기준으로 중간 지점과 종단을 비교하세요."
+
+msgid "IN2_M19_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M19_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M19_HOST_NAME"
+msgstr "보이는 패킷, 보이지 않는 내용 업무 서비스"
+
+msgid "IN2_M19_PRINCIPLE"
+msgstr "같은 요청 번호를 기준으로 중간 지점과 종단을 비교하세요."
+
+msgid "IN2_M19_REPLY"
+msgstr "본문은 중간 구간에서 보이지 않았지만 종단 로그에는 있었습니다. 이걸 외부 감청의 증거로 쓸 수는 없어요. 이제 서로 다른 시계의 기록을 같은 사건으로 연결할 차례입니다."
+
+msgid "IN2_M19_REPLY_SUBJECT"
+msgstr "[확인] 보이는 패킷, 보이지 않는 내용"
+
+msgid "IN2_M19_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDESK TRANSCRIPT\ntransit:N47:encrypted\n\nRETAINED TRANSCRIPT\nendpoint:N47:marker"
+
+msgid "IN2_M19_SUBJECT"
+msgstr "[야간 의뢰] 보이는 패킷, 보이지 않는 내용"
+
+msgid "IN2_M19_TITLE"
+msgstr "보이는 패킷, 보이지 않는 내용"
+
+msgid "IN2_M20_AUDIT"
+msgstr "[M20 관찰 자료]\n시계 차이를 반영해 승인·분류·제외의 순서를 입증한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nclock offsets separate emergency approval from classification and exclusion\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M20_AUDIT_NAME"
+msgstr "서로 다른 시계의 사건 독립 보관처"
+
+msgid "IN2_M20_BRIEF"
+msgstr "제 긴급 승인 시각이 이관보다 늦게 보입니다. 서버 시계가 같은 기준이 아니었다고 해도 서명 범위까지 지워지는 것은 아닙니다. 시간과 책임을 섞지 말고 원본으로 확인해 주십시오.\n\n요청 번호·세션·토큰·전송 기록을 연결하면 순서를 복원할 수 있습니다. 도윤의 중계는 병원 알림을 살렸지만, 그 중계를 계속 열어 둔 결정도 기록에 남아야 합니다.\n\nanalyst@timeline.packet.test / steady-clock\nnotary@custodym20.packet.test / true-minute\n"
+
+msgid "IN2_M20_CONTEXT"
+msgstr "[시계 차이를 반영해 승인·분류·제외의 순서를 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nrequest | event | clock_offset\nN47 | approval | 90\nN47 | classification | -30\nN47 | retention-exclusion | 0"
+
+msgid "IN2_M20_EXPLAIN"
+msgstr "시계 차이를 반영해 승인·분류·제외의 순서를 입증한다.\n시각이 비슷한 줄보다 요청 번호가 같은 줄을 먼저 연결하세요.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M20_GOAL"
+msgstr "시계 차이를 반영해 승인·분류·제외의 순서를 입증한다."
+
+msgid "IN2_M20_HINT_1"
+msgstr "시각이 비슷한 줄보다 요청 번호가 같은 줄을 먼저 연결하세요."
+
+msgid "IN2_M20_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M20_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M20_HOST_NAME"
+msgstr "서로 다른 시계의 사건 업무 서비스"
+
+msgid "IN2_M20_PRINCIPLE"
+msgstr "시각이 비슷한 줄보다 요청 번호가 같은 줄을 먼저 연결하세요."
+
+msgid "IN2_M20_REPLY"
+msgstr "긴급 연결 승인, 예외 분류 적용, 보존 기록 제외는 세 단계였습니다. 한 사람의 명령 하나가 아니군요. 포털과 내부망에서 각각 남은 원본을 확보하면 추측을 사실로 바꿀 수 있습니다."
+
+msgid "IN2_M20_REPLY_SUBJECT"
+msgstr "[확인] 서로 다른 시계의 사건"
+
+msgid "IN2_M20_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDESK TRANSCRIPT\napproval:00:45:scope=connection\n\nRETAINED TRANSCRIPT\nexclusion:00:47:scope=retention"
+
+msgid "IN2_M20_SUBJECT"
+msgstr "[야간 의뢰] 서로 다른 시계의 사건"
+
+msgid "IN2_M20_TITLE"
+msgstr "서로 다른 시계의 사건"
+
+msgid "IN2_M21_AUDIT"
+msgstr "[M21 관찰 자료]\n포털의 진입과 자료 권한을 구분해 봉인 기록에 도달한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nsealed application sheet ECHO-21 identifies excluded receipt cohorts\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M21_AUDIT_NAME"
+msgstr "포털 뒤의 봉인된 기록 독립 보관처"
+
+msgid "IN2_M21_BRIEF"
+msgstr "이제 어떤 도구를 쓸지는 말하지 않겠습니다. 시민 포털의 접수 참조와 조회 경계는 서로 다른 길을 줍니다. 이미 배운 도구가 어디에서 다시 쓸모 있는지 찾아보세요.\n\n목표는 봉인 기록 ECHO-21 한 건입니다. 첫 문을 열었다고 목표 권한까지 얻은 것은 아닙니다. 다른 유효 경로를 찾아도 같은 출처와 보존 조건을 만족하면 됩니다.\n\ncaseworker@portal.packet.test / sealed-iris\nattachmentreader@custodym21.packet.test / hollow-shelf\n"
+
+msgid "IN2_M21_CONTEXT"
+msgstr "[포털의 진입과 자료 권한을 구분해 봉인 기록에 도달한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nCATALOGUE LOOKUP\nquery field: q\nsealed lookup: ECHO-21\nreceipt lead: C731\nreceipt lookup endpoint: /receipts\n\nTRACE\n따옴표로 감싼 검색 값이 작은 등식 조건에 이어 붙습니다. 취약한 경로에서는 OR 비교가 단순 문자열이 아니라 조건의 일부가 될 수 있습니다. 별도 보관 목록으로 같은 사실을 확인하는 길도 있습니다.\n"
+
+msgid "IN2_M21_EXPLAIN"
+msgstr "포털의 진입과 자료 권한을 구분해 봉인 기록에 도달한다.\n첫 접수 참조는 다음 조회의 단서이지 최종 기록 그 자체는 아닙니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M21_GOAL"
+msgstr "포털의 진입과 자료 권한을 구분해 봉인 기록에 도달한다."
+
+msgid "IN2_M21_HINT_1"
+msgstr "첫 접수 참조는 다음 조회의 단서이지 최종 기록 그 자체는 아닙니다."
+
+msgid "IN2_M21_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M21_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M21_HOST_NAME"
+msgstr "포털 뒤의 봉인된 기록 업무 서비스"
+
+msgid "IN2_M21_PRINCIPLE"
+msgstr "첫 접수 참조는 다음 조회의 단서이지 최종 기록 그 자체는 아닙니다."
+
+msgid "IN2_M21_REPLY"
+msgstr "분류 제외의 적용표를 얻었습니다. 아직 원본 승인자가 무엇을 의도했는지까지는 말할 수 없어요. 내부 관리 자료에서 적용 대상과 승인 범위를 확인해야 합니다."
+
+msgid "IN2_M21_REPLY_SUBJECT"
+msgstr "[확인] 포털 뒤의 봉인된 기록"
+
+msgid "IN2_M21_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDOWNLOAD HANDOFF\nbase directory: /portal/attachments\nneighbor marker: /sealed/ECHO-21.log\n\n요청 경로를 정규화한 뒤 어느 보관 영역에 속하는지 판단하세요. 비슷한 접두어만으로는 영역 안에 있다고 볼 수 없습니다.\n"
+
+msgid "IN2_M21_SUBJECT"
+msgstr "[야간 의뢰] 포털 뒤의 봉인된 기록"
+
+msgid "IN2_M21_TITLE"
+msgstr "포털 뒤의 봉인된 기록"
+
+msgid "IN2_M22_AUDIT"
+msgstr "[M22 관찰 자료]\n외부 서버에서 내부 관리 세션까지 주체·권한 변화를 확인한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nmanagement record ECHO-22 links exception cohorts to retention overrides\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M22_AUDIT_NAME"
+msgstr "웹에서 관리망까지 독립 보관처"
+
+msgid "IN2_M22_BRIEF"
+msgstr "미리보기 서버에서 내부 관리망까지 연결되지만, 요청 주체와 권한은 중간마다 바뀝니다. 지도에 선을 긋는 대신 각 단계가 실제로 가능한지 확인해 주세요.\n\n목표 관리 세션의 ECHO-22 기록 하나만 필요합니다. 작업 로그에서 정비 중계로 들어가는 다른 길도 있습니다. 시민 서비스와 다른 계정을 건드리지 않는 쪽을 택하세요.\n\npreviewer@preview.packet.test / gray-inlet\njobreader@custodym22.packet.test / narrow-bridge\n"
+
+msgid "IN2_M22_CONTEXT"
+msgstr "[외부 서버에서 내부 관리 세션까지 주체·권한 변화를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://control.packet.test/relay/entry\npublic browser: no direct internal route\n\n최종 목적지와 요청 주체의 권한은 따로 확인해야 합니다.\n"
+
+msgid "IN2_M22_EXPLAIN"
+msgstr "외부 서버에서 내부 관리 세션까지 주체·권한 변화를 확인한다.\n피벗 표식 뒤에는 별도의 내부 세션과 목표 파일이 남아 있습니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M22_GOAL"
+msgstr "외부 서버에서 내부 관리 세션까지 주체·권한 변화를 확인한다."
+
+msgid "IN2_M22_HINT_1"
+msgstr "피벗 표식 뒤에는 별도의 내부 세션과 목표 파일이 남아 있습니다."
+
+msgid "IN2_M22_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M22_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M22_HOST_NAME"
+msgstr "웹에서 관리망까지 업무 서비스"
+
+msgid "IN2_M22_PRINCIPLE"
+msgstr "피벗 표식 뒤에는 별도의 내부 세션과 목표 파일이 남아 있습니다."
+
+msgid "IN2_M22_REPLY"
+msgstr "적용 대상은 장애 서버가 아니라 ‘정리할 예외’로 표시된 접수였습니다. 유지해야 할 서비스와 지켜야 할 기록이 서로 다른 정책에 묶였군요. 마지막 접근 전에 정상 업무부터 돌려놓아야 합니다."
+
+msgid "IN2_M22_REPLY_SUBJECT"
+msgstr "[확인] 웹에서 관리망까지"
+
+msgid "IN2_M22_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDOWNLOAD HANDOFF\nbase directory: /jobs/archive\nneighbor marker: /handoff/control.key\n\n요청 경로를 정규화한 뒤 어느 보관 영역에 속하는지 판단하세요. 비슷한 접두어만으로는 영역 안에 있다고 볼 수 없습니다.\n"
+
+msgid "IN2_M22_SUBJECT"
+msgstr "[야간 의뢰] 웹에서 관리망까지"
+
+msgid "IN2_M22_TARGET_NAME"
+msgstr "M22 제한 자료 서비스"
+
+msgid "IN2_M22_TITLE"
+msgstr "웹에서 관리망까지"
+
+msgid "IN2_M23_AUDIT"
+msgstr "선택한 경로에서 인증·세션·사진·알림 업무를 복구하고 각 위협을 계속 거부한다.\n\n정상 업무의 성공과 거부해야 할 요청의 결과를 확인한 대응 인계입니다. 원본 자료도 함께 보존되었습니다."
+
+msgid "IN2_M23_AUDIT_NAME"
+msgstr "안전해졌지만 멈춘 도시 독립 보관처"
+
+msgid "IN2_M23_BRIEF"
+msgstr "급한 일괄 조치가 사진·알림·정비 작업을 모두 막았습니다. 보안이 풀린 예전 상태로 돌아가자는 말에는 동의할 수 없어요. 필요한 경로와 권한만 다시 열어 봅시다.\n\n한 시민의 성공만으로 끝내지 말고 정비사와 작업 계정도 확인하세요. 오래된 토큰과 비인가 요청은 계속 거부되어야 합니다. 작은 부분 복원이나 승인 경로 이관 중 선택할 수 있습니다.\n\ncaretaker@recovery.packet.test / bright-corridor\nsafetylead@custodym23.packet.test / three-lanterns\n\n\n원래 인증·파일·세션 제어를 정밀 복원하거나, 취약 입구를 닫고 승인 게이트웨이와 대기 알림 경로로 업무를 옮길 수 있습니다. 새 서비스도 종료 권한·위장 파일·범위 밖 목적지를 별도로 거부해야 합니다."
+
+msgid "IN2_M23_CASE_DISGUISED"
+msgstr "사진으로 위장한 입력"
+
+msgid "IN2_M23_CASE_DISGUISED_GATEWAY"
+msgstr "승인 처리 경로의 위장 파일"
+
+msgid "IN2_M23_CASE_FAILED_1"
+msgstr "반복 실패 1"
+
+msgid "IN2_M23_CASE_FAILED_2"
+msgstr "반복 실패 2"
+
+msgid "IN2_M23_CASE_FAILED_3"
+msgstr "반복 실패 3"
+
+msgid "IN2_M23_CASE_FRESH"
+msgstr "새 정상 세션"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_1"
+msgstr "승인 경로의 반복 실패 1"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_2"
+msgstr "승인 경로의 반복 실패 2"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_3"
+msgstr "승인 경로의 반복 실패 3"
+
+msgid "IN2_M23_CASE_INTERNAL_TARGET"
+msgstr "허용 밖 내부 목적지"
+
+msgid "IN2_M23_CASE_LEGITIMATE"
+msgstr "같은 출처의 정상 시민"
+
+msgid "IN2_M23_CASE_NOTIFY"
+msgstr "정상 병원 알림 전달"
+
+msgid "IN2_M23_CASE_OTHER_JOB"
+msgstr "다른 정상 장기 작업"
+
+msgid "IN2_M23_CASE_PHOTO"
+msgstr "정상 JPEG 사진 생성"
+
+msgid "IN2_M23_CASE_RETIRED"
+msgstr "원래 경로의 끝난 세션"
+
+msgid "IN2_M23_CASE_RETIRED_GATEWAY"
+msgstr "승인 경로의 끝난 세션"
+
+msgid "IN2_M23_CASE_STANDBY_TARGET"
+msgstr "대기 경로의 허용 밖 목적지"
+
+msgid "IN2_M23_CASE_WARD_JOB"
+msgstr "병원 알림 작업의 정상 인증"
+
+msgid "IN2_M23_CONTEXT"
+msgstr "원래 인증·파일·세션 제어를 정밀 복원하거나, 취약 입구를 닫고 승인 게이트웨이와 대기 알림 경로로 업무를 옮길 수 있습니다. 새 서비스도 종료 권한·위장 파일·범위 밖 목적지를 별도로 거부해야 합니다."
+
+msgid "IN2_M23_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "IN2_M23_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "IN2_M23_CONTROL_NOTIFY_OPEN"
+msgstr "주 알림 경로 열기"
+
+msgid "IN2_M23_CONTROL_NO_EXECUTION"
+msgstr "업로드 파일 비실행 저장"
+
+msgid "IN2_M23_CONTROL_PHOTO_CHECK"
+msgstr "사진 내용 형식 검사"
+
+msgid "IN2_M23_CONTROL_RETRY_LIMIT"
+msgstr "계정별 반복 시도 제한"
+
+msgid "IN2_M23_CONTROL_SESSION_GUARD"
+msgstr "끝난 세션 권한 검사"
+
+msgid "IN2_M23_CONTROL_STANDBY_OPEN"
+msgstr "대기 알림 경로 열기"
+
+msgid "IN2_M23_CONTROL_TARGET_SCOPE"
+msgstr "알림 목적지 범위 제한"
+
+msgid "IN2_M23_EXPLAIN"
+msgstr "원래 인증·파일·세션 제어를 정밀 복원하거나, 취약 입구를 닫고 승인 게이트웨이와 대기 알림 경로로 업무를 옮길 수 있습니다. 새 서비스도 종료 권한·위장 파일·범위 밖 목적지를 별도로 거부해야 합니다."
+
+msgid "IN2_M23_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "IN2_M23_GOAL"
+msgstr "선택한 경로에서 인증·세션·사진·알림 업무를 복구하고 각 위협을 계속 거부한다."
+
+msgid "IN2_M23_HINT_1"
+msgstr "선택한 경로에서 인증·세션·사진·알림 업무를 복구하고 각 위협을 계속 거부한다."
+
+msgid "IN2_M23_HINT_2"
+msgstr "원래 인증·파일·세션 제어를 정밀 복원하거나, 취약 입구를 닫고 승인 게이트웨이와 대기 알림 경로로 업무를 옮길 수 있습니다. 새 서비스도 종료 권한·위장 파일·범위 밖 목적지를 별도로 거부해야 합니다."
+
+msgid "IN2_M23_HINT_3"
+msgstr "원래 입구에서 대응하려면 관련 제어를 고치고, 대안은 원래 입구를 제한한 뒤 정상 요청에 승인 경로를 고르세요. 모든 종료는 정상 업무를 실패시킵니다."
+
+msgid "IN2_M23_HOST_NAME"
+msgstr "안전해졌지만 멈춘 도시 업무 서비스"
+
+msgid "IN2_M23_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "IN2_M23_PRINCIPLE"
+msgstr "누가 어떤 대상에 어떤 업무 권한으로 접근하는지가 중요합니다. 처리 경로를 바꾸면 정상 업무와 거부할 요청을 새 경로에서도 다시 확인하세요."
+
+msgid "IN2_M23_REPLY"
+msgstr "서비스는 돌아왔고 예전 노출은 돌아오지 않았습니다. 이제 마지막 기록을 읽어도 시민이 대가를 치르지 않아요. 결론을 누구에게 어떻게 전달할지는 당신이 결정해 주세요."
+
+msgid "IN2_M23_REPLY_SUBJECT"
+msgstr "[확인] 안전해졌지만 멈춘 도시"
+
+msgid "IN2_M23_ROUTE"
+msgstr "원래 인증·파일·세션 제어를 정밀 복원하거나, 취약 입구를 닫고 승인 게이트웨이와 대기 알림 경로로 업무를 옮길 수 있습니다. 새 서비스도 종료 권한·위장 파일·범위 밖 목적지를 별도로 거부해야 합니다."
+
+msgid "IN2_M23_SUBJECT"
+msgstr "[야간 의뢰] 안전해졌지만 멈춘 도시"
+
+msgid "IN2_M23_TITLE"
+msgstr "안전해졌지만 멈춘 도시"
+
+msgid "IN2_M24_AUDIT"
+msgstr "[M24 관찰 자료]\n최종 지시의 출처와 적용 범위를 입증하고 전달 방식을 선택한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nECHO directive separated service continuity from record-retention obligations\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M24_AUDIT_NAME"
+msgstr "마지막 접근, 남겨진 진실 독립 보관처"
+
+msgid "IN2_M24_BRIEF"
+msgstr "마지막 의뢰입니다. 통합 제어 기록과 독립 보관 사본 중 어느 쪽을 택해도 됩니다. 지금까지의 사실을 연결해 ECHO의 적용 범위와 보존 제외 지시를 확인해 주세요.\n\n서명을 가진 사람, 경로를 남긴 사람, 이관 도구를 만든 사람 모두 책임의 일부를 갖습니다. 그것을 한 사람의 얼굴로 대신하지 마세요. 목표 원본은 보존하고 필요한 사실만 회수해 주세요.\n\nexaminer@control.packet.test / final-map\nkeeper@custodym24.packet.test / open-slate\n"
+
+msgid "IN2_M24_CASE_FOREIGN_DIRECT"
+msgstr "무관한 계정의 원래 입구 요청"
+
+msgid "IN2_M24_CASE_FOREIGN_GATEWAY"
+msgstr "무관한 계정의 승인 경로 요청"
+
+msgid "IN2_M24_CASE_OWN_A"
+msgstr "시민 A의 자기 접수"
+
+msgid "IN2_M24_CASE_OWN_B"
+msgstr "시민 B의 자기 접수"
+
+msgid "IN2_M24_CASE_ROUTE_ALLOWED"
+msgstr "현재 중계에서 내부 건강 자료"
+
+msgid "IN2_M24_CASE_ROUTE_DENIED"
+msgstr "공용 노드에서 내부 직접 경로"
+
+msgid "IN2_M24_CASE_SERVICE_ALLOWED"
+msgstr "제한 자격의 지시 자료 읽기"
+
+msgid "IN2_M24_CASE_SERVICE_DENIED"
+msgstr "범위 밖 자격의 지시 요청"
+
+msgid "IN2_M24_CASE_STAFF"
+msgstr "담당자의 위임된 접수"
+
+msgid "IN2_M24_CONTEXT"
+msgstr "과거 완료와 원장은 지금의 접근 결과를 대신하지 않습니다. 시민의 자기 접수와 범위 밖 요청, 중계와 공용 노드의 내부 도달, 제한 자격과 다른 자격의 자료 읽기를 같은 현재 세계에서 확인하세요."
+
+msgid "IN2_M24_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "IN2_M24_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "IN2_M24_CONTROL_OWNER_CHECK"
+msgstr "접수 소유자 검사"
+
+msgid "IN2_M24_EDGE_NAME"
+msgstr "공용 관찰 노드"
+
+msgid "IN2_M24_EXPLAIN"
+msgstr "최종 지시의 출처와 적용 범위를 입증하고 전달 방식을 선택한다.\n연속성 유지와 보존 제외는 다른 정책으로 대조해야 합니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_M24_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "IN2_M24_GOAL"
+msgstr "최종 사본을 보존하고 현재 웹 요청·내부 경로·서비스 자격의 세 경계를 각각 검증한다."
+
+msgid "IN2_M24_HINT_1"
+msgstr "연속성 유지와 보존 제외는 다른 정책으로 대조해야 합니다."
+
+msgid "IN2_M24_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_M24_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_M24_HOST_NAME"
+msgstr "마지막 접근, 남겨진 진실 업무 서비스"
+
+msgid "IN2_M24_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "IN2_M24_PRINCIPLE"
+msgstr "연속성 유지와 보존 제외는 다른 정책으로 대조해야 합니다."
+
+msgid "IN2_M24_REPLY"
+msgstr "우리가 얻은 것은 만능 열쇠가 아니라 서로 대조할 수 있는 기록입니다. 시민을 가린 공개 사본, 봉인된 감사 인계, 독립 검증 보관 중 전달 방식을 고를 수 있어요. 오늘 밤의 접속은 끝나도 기록은 남습니다."
+
+msgid "IN2_M24_REPLY_SUBJECT"
+msgstr "[확인] 마지막 접근, 남겨진 진실"
+
+msgid "IN2_M24_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\ndirective | continuity | exclusion\nECHO | services | retention\nROUTINE | none | none"
+
+msgid "IN2_M24_SUBJECT"
+msgstr "[야간 의뢰] 마지막 접근, 남겨진 진실"
+
+msgid "IN2_M24_TITLE"
+msgstr "마지막 접근, 남겨진 진실"
+
+msgid "IN2_M24_VAULT_NAME"
+msgstr "제한된 지시 보관 서비스"
+
+msgid "IN2_P01_AUDIT"
+msgstr "[P01 관찰 자료]\n허구 버퍼 경계와 인접 표식 상태의 차이를 입증한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nbounded memory model separates input buffer from adjacent approval state\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_P01_AUDIT_NAME"
+msgstr "경계 옆의 한 칸 독립 보관처"
+
+msgid "IN2_P01_BRIEF"
+msgstr "선택 의뢰입니다. 고정 크기 메모리 그림 옆에 승인 표식이 놓여 있습니다. 실제 프로세스나 셸코드는 없어요. 모형의 입력 길이와 인접 상태가 어떻게 이어지는지 관찰해 보세요.\n\n정해진 무해 표식으로 경계를 확인하거나 독립된 안전 감사 자료로 같은 사실을 입증할 수 있습니다. 주소를 외우기보다 어떤 경계를 누가 지켜야 하는지 알아보세요.\n\nlabuser@memorylab.packet.test / bounded-copper\nsafety@custodyp01.packet.test / calm-cell\n"
+
+msgid "IN2_P01_CONTEXT"
+msgstr "[허구 버퍼 경계와 인접 표식 상태의 차이를 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nMEMORY WORKBENCH\nregion | offsets | initial\ninput buffer | 0..3 | 00 00 00 00\napproval marker | 4 | 00\npadding | 5..7 | 00 00 00\n\n표식 바이트는 47(16진)입니다. 이 격리된 그림에는 최대 여덟 바이트만 있습니다. 실제 호스트의 메모리 주소가 아닙니다.\n"
+
+msgid "IN2_P01_EXPLAIN"
+msgstr "허구 버퍼 경계와 인접 표식 상태의 차이를 입증한다.\n4바이트 버퍼 뒤 오프셋4의 표식은 0x47입니다. 실제 메모리 주소가 아닙니다.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_P01_GOAL"
+msgstr "허구 버퍼 경계와 인접 표식 상태의 차이를 입증한다."
+
+msgid "IN2_P01_HINT_1"
+msgstr "4바이트 버퍼 뒤 오프셋4의 표식은 0x47입니다. 실제 메모리 주소가 아닙니다."
+
+msgid "IN2_P01_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_P01_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_P01_HOST_NAME"
+msgstr "경계 옆의 한 칸 업무 서비스"
+
+msgid "IN2_P01_PRINCIPLE"
+msgstr "4바이트 버퍼 뒤 오프셋4의 표식은 0x47입니다. 실제 메모리 주소가 아닙니다."
+
+msgid "IN2_P01_REPLY"
+msgstr "모형의 한 칸이 바뀌었고 실제 승인과는 다른 상태임을 확인했습니다. 경계를 지키는 일과 문구를 믿는 일은 다르군요. 실제 프로그램에는 더 많은 보호와 환경 조건이 필요합니다."
+
+msgid "IN2_P01_REPLY_SUBJECT"
+msgstr "[확인] 경계 옆의 한 칸"
+
+msgid "IN2_P01_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\noffset | region | value\n3 | buffer | 41\n4 | approval-flag | 47"
+
+msgid "IN2_P01_SUBJECT"
+msgstr "[야간 의뢰] 경계 옆의 한 칸"
+
+msgid "IN2_P01_TITLE"
+msgstr "경계 옆의 한 칸"
+
+msgid "IN2_PACK_TITLE"
+msgstr "침투자 · 심야접속"
+
+msgid "IN2_R01_AUDIT"
+msgstr "[R01 관찰 자료]\n허구 검증기의 상수·분기로 실제 승인 범위를 확인한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nbounded verifier accepts signature shape without checking retention intent\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_R01_AUDIT_NAME"
+msgstr "작은 검증기의 문장 독립 보관처"
+
+msgid "IN2_R01_BRIEF"
+msgstr "작은 배포 검증기의 형식·서명·범위 조건을 확인하세요. 의사코드와 호출 관계를 읽어도 되고 입력쌍과 실행 trace를 비교해도 됩니다. 정상 범위의 허용 예와 범위 밖인데 release되는 반례를 실제 실행으로 확보해야 합니다."
+
+msgid "IN2_R01_CONTEXT"
+msgstr "작은 배포 검증기의 형식·서명·범위 조건을 확인하세요. 의사코드와 호출 관계를 읽어도 되고 입력쌍과 실행 trace를 비교해도 됩니다. 정상 범위의 허용 예와 범위 밖인데 release되는 반례를 실제 실행으로 확보해야 합니다.\n\nmain(document, permit):\n  if not format_ok(document): deny\n  signature = check_signature(document)\n  if signature: release(document)\n  else: deny\ncheck_signature(document):\n  return signature_ok(document)\n# retention_scope 입력은 있지만 release 전에 검사하지 않음\n"
+
+msgid "IN2_R01_EXPLAIN"
+msgstr "형식과 서명 검사 통과가 검사하지 않은 scope의 허가를 뜻하지 않습니다."
+
+msgid "IN2_R01_GOAL"
+msgstr "정상 범위 허용과 범위 밖 release 반례를 실제 분기·호출 실행으로 확보한다."
+
+msgid "IN2_R01_HINT_1"
+msgstr "프로그램이 실제 읽는 입력과 호출하는 검사를 따라가세요."
+
+msgid "IN2_R01_HINT_2"
+msgstr "format_ok·signature_ok는 검사하지만 retention_scope가 어디에서 분기하는지 확인하세요."
+
+msgid "IN2_R01_HINT_3"
+msgstr "형식·서명이 참인 상태에서 scope만 authorized/excluded로 바꿔 실행하고 release 출력과 call trace를 비교하세요."
+
+msgid "IN2_R01_HOST_NAME"
+msgstr "작은 검증기의 문장 업무 서비스"
+
+msgid "IN2_R01_PRINCIPLE"
+msgstr "형식과 서명 검사 통과가 검사하지 않은 scope의 허가를 뜻하지 않습니다."
+
+msgid "IN2_R01_REPLY"
+msgstr "화면 문구와 승인 분기는 달랐습니다. 배포 검증기가 확인한 것은 서명 형식이지 보존 정책이 아니었어요. 이 한계를 감사 기록에 덧붙이겠습니다."
+
+msgid "IN2_R01_REPLY_SUBJECT"
+msgstr "[확인] 작은 검증기의 문장"
+
+msgid "IN2_R01_SUBJECT"
+msgstr "[야간 의뢰] 작은 검증기의 문장"
+
+msgid "IN2_R01_TITLE"
+msgstr "작은 검증기의 문장"
+
+msgid "IN2_R01_VM_NAME"
+msgstr "배포 검증기의 분기와 호출"
+
+msgid "IN2_S01_AUDIT"
+msgstr "[S01 관찰 자료]\n원본과 재배포 날짜가 다른 사건을 가리키는지 확인한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\nnotice original and republication timestamps refer to distinct events\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S01_AUDIT_NAME"
+msgstr "지워진 인계 공지 독립 보관처"
+
+msgid "IN2_S01_BRIEF"
+msgstr "선택 의뢰입니다. 같은 공지의 두 사본이 서로 다른 날짜를 주장합니다. 메인 사건의 열쇠는 아니지만 누가 기억을 편집했는지 알 수 있어요. 가상 사이트와 메일, 회전 파일을 대조해 보세요.\n\neditor@publication.packet.test / margin-ash\npublisher@custodys01.packet.test / second-ink\n"
+
+msgid "IN2_S01_CONTEXT"
+msgstr "[원본과 재배포 날짜가 다른 사건을 가리키는지 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDESK TRANSCRIPT\noriginal:00:47\n\nRETAINED TRANSCRIPT\nrepublished:01:12"
+
+msgid "IN2_S01_EXPLAIN"
+msgstr "원본과 재배포 날짜가 다른 사건을 가리키는지 확인한다.\n날짜가 다른 사본 두 개만으로 거짓말을 단정하지 마세요.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_S01_GOAL"
+msgstr "원본과 재배포 날짜가 다른 사건을 가리키는지 확인한다."
+
+msgid "IN2_S01_HINT_1"
+msgstr "날짜가 다른 사본 두 개만으로 거짓말을 단정하지 마세요."
+
+msgid "IN2_S01_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_S01_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_S01_HOST_NAME"
+msgstr "지워진 인계 공지 업무 서비스"
+
+msgid "IN2_S01_PRINCIPLE"
+msgstr "날짜가 다른 사본 두 개만으로 거짓말을 단정하지 마세요."
+
+msgid "IN2_S01_REPLY"
+msgstr "앞선 공지는 틀린 날짜가 아니라 재배포 날짜였습니다. 원본을 확인하지 않았다면 누군가 거짓말한다고 단정했겠죠. 출처를 확인한 기록을 함께 보관하겠습니다."
+
+msgid "IN2_S01_REPLY_SUBJECT"
+msgstr "[확인] 지워진 인계 공지"
+
+msgid "IN2_S01_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nnotice | event | time\nN47 | original | 00:47\nN47 | republished | 01:12"
+
+msgid "IN2_S01_SUBJECT"
+msgstr "[야간 의뢰] 지워진 인계 공지"
+
+msgid "IN2_S01_TITLE"
+msgstr "지워진 인계 공지"
+
+msgid "IN2_S02_AUDIT"
+msgstr "[S02 관찰 자료]\n두 관찰을 하나의 전송과 연결해 중복 업무 여부를 확인한다.\n현재 사건의 관찰 자료입니다. 확보 경로는 source에서 확인하고, 파일 이름보다 기록 ID·본문·출처를 검증하세요.\n\nNIGHT HANDOFF\ntwo observations correlate to one delivered notification\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S02_AUDIT_NAME"
+msgstr "두 번 전달된 신호 독립 보관처"
+
+msgid "IN2_S02_BRIEF"
+msgstr "선택 의뢰입니다. 두 관찰 지점에 같은 알림이 있어 시민이 두 번 받았다는 말이 나옵니다. 패킷이 두 번 보이는 것과 업무가 두 번 처리되는 것은 다릅니다. 종단의 요청 번호와 중계 경로를 비교해 보세요.\n\nobserver@relay02.packet.test / one-echo\ndispatcher@custodys02.packet.test / counted-wave\n"
+
+msgid "IN2_S02_CONTEXT"
+msgstr "[두 관찰을 하나의 전송과 연결해 중복 업무 여부를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nrequest | point | delivery\nN47 | relay02 | one\nN47 | edge | one"
+
+msgid "IN2_S02_EXPLAIN"
+msgstr "두 관찰을 하나의 전송과 연결해 중복 업무 여부를 확인한다.\n관찰 지점 수와 시민에게 전달된 업무 수를 구분하세요.\n사용한 도구가 아니라 확인된 상태와 자료의 출처가 사건의 근거입니다. 선택하지 않은 기술은 실패가 아니라 미평가로 남습니다."
+
+msgid "IN2_S02_GOAL"
+msgstr "두 관찰을 하나의 전송과 연결해 중복 업무 여부를 확인한다."
+
+msgid "IN2_S02_HINT_1"
+msgstr "관찰 지점 수와 시민에게 전달된 업무 수를 구분하세요."
+
+msgid "IN2_S02_HINT_2"
+msgstr "현재 actor·대상·경로와 의뢰가 요구하는 결과를 비교하세요. 같은 원장을 다시 회수할 필요는 없습니다."
+
+msgid "IN2_S02_HINT_3"
+msgstr "접근 경계 실험과 승인된 대안 중 필요한 길을 선택하세요. 힌트나 특정 도구 사용은 완료 조건이 아닙니다."
+
+msgid "IN2_S02_HOST_NAME"
+msgstr "두 번 전달된 신호 업무 서비스"
+
+msgid "IN2_S02_PRINCIPLE"
+msgstr "관찰 지점 수와 시민에게 전달된 업무 수를 구분하세요."
+
+msgid "IN2_S02_REPLY"
+msgstr "한 요청이 두 지점에서 보였을 뿐 중복 업무는 없었습니다. 도윤의 중계가 왜 남아 있었는지 조금 더 설명할 수 있겠군요. 설명은 선택의 위험을 지우지 않지만 사실은 바꿉니다."
+
+msgid "IN2_S02_REPLY_SUBJECT"
+msgstr "[확인] 두 번 전달된 신호"
+
+msgid "IN2_S02_ROUTE"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nrequest | delivery_count | endpoint\nN47 | 1 | citizen\nN46 | 1 | maintenance"
+
+msgid "IN2_S02_SUBJECT"
+msgstr "[야간 의뢰] 두 번 전달된 신호"
+
+msgid "IN2_S02_TITLE"
+msgstr "두 번 전달된 신호"
+
+msgid "IN2_TOOL_AUTH_NAME"
+msgstr "Sign-in Watch"
+
+msgid "IN2_TOOL_COMPARE_NAME"
+msgstr "Evidence Compare"
+
+msgid "IN2_TOOL_EXEC_NAME"
+msgstr "JobLens"
+
+msgid "IN2_TOOL_FETCH_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_IDOR_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_MEMORY_NAME"
+msgstr "MemoryLab"
+
+msgid "IN2_TOOL_PACKET_NAME"
+msgstr "PacketLens"
+
+msgid "IN2_TOOL_PATH_NAME"
+msgstr "FileLens"
+
+msgid "IN2_TOOL_PERMISSION_NAME"
+msgstr "AccessView"
+
+msgid "IN2_TOOL_QUERY_NAME"
+msgstr "QueryProbe"
+
+msgid "IN2_TOOL_RENDER_NAME"
+msgstr "Browser Trace"
+
+msgid "IN2_TOOL_SESSION_NAME"
+msgstr "Session Watch"
+
+msgid "IN2_TOOL_TOKEN_NAME"
+msgstr "Credential Scope"
+
+msgid "IN2_TOOL_TRACE_NAME"
+msgstr "LogLens"
+
+msgid "IN2_TOOL_UPLOAD_NAME"
+msgstr "Media Intake"
+
 msgid "KEYBOARD_VOLUME"
 msgstr "키보드 소리"
 
 msgid "LANGUAGE"
 msgstr "언어"
+
+msgid "LEGACY_CONTINUE"
+msgstr "이전판 계속"
+
+msgid "LEGACY_CONTINUE_DESC"
+msgstr "이전판 진행을 그대로 재개합니다. 새 캠페인과는 별도로 보존됩니다."
+
+msgid "LEGACY_SOURCE_UNSUPPORTED"
+msgstr "이전판 저장을 찾았지만 현재 검증을 통과하지 못했습니다. 원본은 보존되며 새 캠페인에 반영되지 않습니다. 이유: {code}"
 
 msgid "LOAD_GAME"
 msgstr "불러오기"
@@ -711,7 +3204,7 @@ msgid "M06_BRIEF"
 msgstr "누군가 야간 계정에 반복 로그인하면서 정상 정비사도 들어가지 못합니다. 다 잠그면 공격도 멈추겠지만, 병원 알림 작업도 멈춰요. 이번에는 경로를 찾는 것만으로 끝나지 않습니다.\n\n실패 기록을 비교하고, 반복 시도를 제한하면서 정비사의 정상 로그인은 살려 주세요. 가상 시계는 필요할 때만 진행합니다. 기다리는 시간을 실력으로 평가하지 않겠습니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\nshiftlead@auth.packet.test / warm-circuit\nrecovery@custodym06.packet.test / blue-ward\n\n추가로 확보할 독립 근거: 사람과 작업의 실패, 제한 뒤에도 남은 알림\n[Field ledger access]\nshiftlead@access-watch.packet.test / warm-circuit-desk\n[Independent ledger access]\nrecovery@ward-scheduler.packet.test / blue-ward-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M06_CONTEXT"
-msgstr "[반복 실패는 제한하고 정상 정비사의 로그인을 살린다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nSIGN-IN WATCH\n00:46 account=staff origin=unknown outcome=failed\n00:46 account=staff origin=unknown outcome=failed\n00:47 account=staff origin=ward-relay outcome=valid\n\nRecovery window: two simulated ticks. Repeated failures must be limited without disabling the ward relay.\n"
+msgstr "[반복 실패는 제한하고 정상 정비사의 로그인을 살린다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nSIGN-IN WATCH\n00:46 account=staff origin=unknown outcome=failed\n00:46 account=staff origin=unknown outcome=failed\n00:47 account=staff origin=ward-relay outcome=valid\n\n복구 창은 가상 시계 두 틱입니다. 병원 중계를 멈추지 않으면서 반복 실패를 제한해야 합니다.\n"
 
 msgid "M06_E1_FIELD"
 msgstr "[사람과 작업의 실패 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE AUTH61\n\nFIELD DESK\nattempt:unknown-source:failure\n\nHANDOFF TRANSCRIPT\nnotifier:ward-relay:legitimate\n\nOTHER ENTRY\nreference: OTHER-AUTH61\nobservation: unrelated service job\n"
@@ -771,7 +3264,7 @@ msgid "M06_REPLY_SUBJECT"
 msgstr "[확인] 열 번의 문 두드림"
 
 msgid "M06_ROUTE"
-msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nSIGN-IN WATCH\n00:46 account=staff origin=unknown outcome=failed\n00:46 account=staff origin=unknown outcome=failed\n00:47 account=staff origin=ward-relay outcome=valid\n\nRecovery window: two simulated ticks. Repeated failures must be limited without disabling the ward relay.\n"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nSIGN-IN WATCH\n00:46 account=staff origin=unknown outcome=failed\n00:46 account=staff origin=unknown outcome=failed\n00:47 account=staff origin=ward-relay outcome=valid\n\n복구 창은 가상 시계 두 틱입니다. 병원 중계를 멈추지 않으면서 반복 실패를 제한해야 합니다.\n"
 
 msgid "M06_SUBJECT"
 msgstr "[야간 의뢰] 열 번의 문 두드림"
@@ -789,7 +3282,7 @@ msgid "M07_BRIEF"
 msgstr "임시 정비사는 퇴근했고 화면도 로그아웃 상태입니다. 그런데 그 사람의 예전 세션으로 설정 변경이 계속돼요. 화면에서 없어진 열쇠가 서버에서도 사라졌다고 볼 수 있을까요?\n\n오래된 세션과 새 세션을 분리해 확인하세요. 모두 지우기보다 누가 아직 무엇을 할 수 있는지 확인하고, 끝난 권한만 끝내야 합니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\noperator@session.packet.test / evening-window\ncustodian@custodym07.packet.test / sparrow-vault\n\n추가로 확보할 독립 근거: 퇴근 서명과 서버 열쇠, 새 세션의 업무 범위\n[Field ledger access]\noperator@session-office.packet.test / evening-window-desk\n[Independent ledger access]\ncustodian@shift-register.packet.test / sparrow-vault-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M07_CONTEXT"
-msgstr "[오래된 세션은 거부되고 새 세션은 동작하는지 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nSHIFT REGISTER\n00:58 temporary shift ended\n01:03 session alias stale-N47 still observed\n\nComparison plan: issue a fresh alias, observe the retired alias, then observe the fresh alias. A logout label is not a revocation record.\n"
+msgstr "[오래된 세션은 거부되고 새 세션은 동작하는지 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nSHIFT REGISTER\n00:58 temporary shift ended\n01:03 session alias stale-N47 still observed\n\n비교 순서: 새 별칭을 발급하고 폐기된 별칭을 관찰한 다음 새 별칭을 관찰하세요. 로그아웃 표시는 서버의 폐기 기록이 아닙니다.\n"
 
 msgid "M07_E1_FIELD"
 msgstr "[퇴근 서명과 서버 열쇠 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE S707\n\nFIELD DESK\nshift:00:58:closed\n\nHANDOFF TRANSCRIPT\nsession:01:03:stale-N47\n\nOTHER ENTRY\nreference: OTHER-S707\nobservation: unrelated service job\n"
@@ -849,7 +3342,7 @@ msgid "M07_REPLY_SUBJECT"
 msgstr "[확인] 로그아웃한 사람의 열쇠"
 
 msgid "M07_ROUTE"
-msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nSHIFT REGISTER\n00:58 temporary shift ended\n01:03 session alias stale-N47 still observed\n\nComparison plan: issue a fresh alias, observe the retired alias, then observe the fresh alias. A logout label is not a revocation record.\n"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nSHIFT REGISTER\n00:58 temporary shift ended\n01:03 session alias stale-N47 still observed\n\n비교 순서: 새 별칭을 발급하고 폐기된 별칭을 관찰한 다음 새 별칭을 관찰하세요. 로그아웃 표시는 서버의 폐기 기록이 아닙니다.\n"
 
 msgid "M07_SUBJECT"
 msgstr "[야간 의뢰] 로그아웃한 사람의 열쇠"
@@ -867,7 +3360,7 @@ msgid "M08_BRIEF"
 msgstr "서린은 알림 주소를 바꾸지 않았다고 합니다. 세션 기록은 맞는데 의도는 맞지 않아요. 공지 열람과 설정 변경의 맥락을 비교해 주세요.\n\n사용자의 키가 붙어 온다는 이유만으로 모든 변경을 받아서는 안 됩니다. 유도된 변경을 막으면서 정상 설정 저장은 남겨 주세요. 이 장의 기록을 연결하면 검색 서버의 숨은 항목이 보일 겁니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\neditor@subscription.packet.test / tide-card\ninspector@custodym08.packet.test / close-harbor\n\n추가로 확보할 독립 근거: 공지 열람과 변경 요청, 의도와 인증의 차이\n[Field ledger access]\neditor@notice-desk.packet.test / tide-card-desk\n[Independent ledger access]\ninspector@intent-register.packet.test / close-harbor-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M08_CONTEXT"
-msgstr "[유도된 변경은 막고 사용자가 의도한 저장은 유지한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nSETTING CHANGE RECEIPT\nrequest origin: https://news.packet.test\nintended form origin: https://subscription.packet.test\nform nonce: intent-N47\nrequested value: approved\n\nCompare a request without the legitimate nonce and a deliberate save from the form.\n"
+msgstr "[유도된 변경은 막고 사용자가 의도한 저장은 유지한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nSETTING CHANGE RECEIPT\nrequest origin: https://news.packet.test\nintended form origin: https://subscription.packet.test\nform nonce: intent-N47\nrequested value: approved\n\n정상 nonce가 없는 요청과 양식에서 의도적으로 저장한 요청을 비교하세요.\n"
 
 msgid "M08_E1_FIELD"
 msgstr "[공지 열람과 변경 요청 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE CTX81\n\nFIELD DESK\nnotice:https://news.packet.test\n\nHANDOFF TRANSCRIPT\nsetting:https://subscription.packet.test\n\nOTHER ENTRY\nreference: OTHER-CTX81\nobservation: unrelated service job\n"
@@ -927,7 +3420,7 @@ msgid "M08_REPLY_SUBJECT"
 msgstr "[확인] 클릭한 적 없는 변경"
 
 msgid "M08_ROUTE"
-msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nSETTING CHANGE RECEIPT\nrequest origin: https://news.packet.test\nintended form origin: https://subscription.packet.test\nform nonce: intent-N47\nrequested value: approved\n\nCompare a request without the legitimate nonce and a deliberate save from the form.\n"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nSETTING CHANGE RECEIPT\nrequest origin: https://news.packet.test\nintended form origin: https://subscription.packet.test\nform nonce: intent-N47\nrequested value: approved\n\n정상 nonce가 없는 요청과 양식에서 의도적으로 저장한 요청을 비교하세요.\n"
 
 msgid "M08_SUBJECT"
 msgstr "[야간 의뢰] 클릭한 적 없는 변경"
@@ -945,7 +3438,7 @@ msgid "M09_BRIEF"
 msgstr "당신들이 가진 것은 같은 보고서의 서로 다른 사본입니다. 저는 민서라고 불러 주세요. 화면에 없는 기록을 추측하는 대신 어떤 입력이 어떤 조회 구조가 되는지 확인합시다.\n\n작은 검색 모형과 정비 로그에는 같은 작업의 흔적이 남았습니다. 어느 길로든 원본 작업 R609와 C731의 연결을 입증해 주세요. 결과가 많이 나오는 것과 필요한 사실을 찾는 것은 다릅니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\nresearcher@records.packet.test / ash-catalog\nwitness@custodym09.packet.test / uncut-leaf\n\n추가로 확보할 독립 근거: 색인과 보존 목록, 검색 결과의 교차 확인\n[Field ledger access]\nresearcher@catalogue-desk.packet.test / ash-catalog-desk\n[Independent ledger access]\nwitness@retention-index.packet.test / uncut-leaf-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M09_CONTEXT"
-msgstr "[검색 또는 보관 경로로 R609와 C731의 연결을 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nCATALOGUE LOOKUP\nquery field: q\npublic term: N47\nretained job: R609 / receipt C731\n\nTRACE\nA quoted search value is concatenated into a small equality condition. In the vulnerable path an OR comparison can become part of the condition, rather than remaining a text value. The retained catalogue provides an independent route.\n"
+msgstr "[검색 또는 보관 경로로 R609와 C731의 연결을 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nCATALOGUE LOOKUP\nquery field: q\npublic term: N47\nretained job: R609 / receipt C731\n\nTRACE\n따옴표로 감싼 검색 값이 작은 등식 조건에 이어 붙습니다. 취약한 경로에서는 OR 비교가 단순 문자열이 아니라 조건의 일부가 될 수 있습니다. 별도 보관 목록으로 같은 사실을 확인하는 길도 있습니다.\n"
 
 msgid "M09_E1_FIELD"
 msgstr "[색인과 보존 목록 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE R609\n\nFIELD DESK\nindex:R609:absent\n\nHANDOFF TRANSCRIPT\nretention:R609:C731\n\nOTHER ENTRY\nreference: OTHER-R609\nobservation: unrelated service job\n"
@@ -1023,7 +3516,7 @@ msgid "M10_BRIEF"
 msgstr "공지 원문은 ‘접수 보류’인데 화면에는 ‘수리 완료’가 떠요. 격리된 검증 창을 준비했습니다. 시민 화면을 바꾸지 말고 그 창에서만 입력이 어디까지 행동으로 해석되는지 보세요.\n\n자료를 안전하게 저장했다는 말과 화면에 안전하게 표시했다는 말은 다릅니다. 실행 표식이나 독립적인 표시 추적 자료 중 어느 쪽으로 경계를 입증해도 됩니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\nmoderator@bulletin.packet.test / still-signal\ncompositor@custodym10.packet.test / ivory-type\n\n추가로 확보할 독립 근거: 공지 원문의 버전, 격리된 관찰자\n[Field ledger access]\nmoderator@notice-source.packet.test / still-signal-desk\n[Independent ledger access]\ncompositor@render-register.packet.test / ivory-type-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M10_CONTEXT"
-msgstr "[격리된 공지의 표시 경계 또는 독립 추적으로 같은 사실을 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nNOTICE VERSION V10\nStored text: receipt on hold\nDisplayed state: repair complete\nInspection marker: NOTICE10\n\nThe isolated renderer accepts only a bounded signal: marker effect. No JavaScript runs and citizen pages remain outside the inspection window.\n"
+msgstr "[격리된 공지의 표시 경계 또는 독립 추적으로 같은 사실을 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nNOTICE VERSION V10\nStored text: receipt on hold\nDisplayed state: repair complete\nInspection marker: NOTICE10\n\n격리된 표시기는 제한된 signal: 표식 효과만 받습니다. JavaScript는 실행하지 않으며 시민 페이지는 검증 창 밖에 남습니다.\n"
 
 msgid "M10_E1_FIELD"
 msgstr "[공지 원문의 버전 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE V10\n\nFIELD DESK\nstored:V10:hold\n\nHANDOFF TRANSCRIPT\nrender-log:V10:complete\n\nOTHER ENTRY\nreference: OTHER-V10\nobservation: unrelated service job\n"
@@ -1101,7 +3594,7 @@ msgid "M11_BRIEF"
 msgstr "자료실 담당자는 접두 경로를 검사했으니 안전하다고 합니다. 하지만 첨부 참조가 이웃 보관 폴더를 가리켜요. 실제 경로로 해석한 뒤에도 같은 경계 안에 있는지 확인해 주세요.\n\n필요한 것은 경계를 증명할 표식 파일 하나입니다. 다른 설정이나 시민 자료를 가져올 이유는 없습니다. 파일 담당자의 감사 경로도 열려 있습니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\nlibrarian@files.packet.test / brick-stair\narchivist@custodym11.packet.test / shelf-larch\n\n추가로 확보할 독립 근거: 이름이 비슷한 두 자료실, 표식의 보존 출처\n[Field ledger access]\nlibrarian@download-desk.packet.test / brick-stair-desk\n[Independent ledger access]\narchivist@storage-register.packet.test / shelf-larch-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M11_CONTEXT"
-msgstr "[정규화된 경로가 기준 폴더 밖 표식에 닿음을 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDOWNLOAD HANDOFF\nbase directory: /srv/public\nneighbor marker: /srv/private/marker.log\n\nResolve the requested path before deciding which store contains it. Similar prefixes do not establish containment.\n"
+msgstr "[정규화된 경로가 기준 폴더 밖 표식에 닿음을 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDOWNLOAD HANDOFF\nbase directory: /srv/public\nneighbor marker: /srv/private/marker.log\n\n요청 경로를 정규화한 뒤 어느 보관 영역에 속하는지 판단하세요. 비슷한 접두어만으로는 영역 안에 있다고 볼 수 없습니다.\n"
 
 msgid "M11_E1_FIELD"
 msgstr "[이름이 비슷한 두 자료실 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE PATH11\n\nFIELD DESK\nbase:/srv/public\n\nHANDOFF TRANSCRIPT\nneighbor:/srv/private\n\nOTHER ENTRY\nreference: OTHER-PATH11\nobservation: unrelated service job\n"
@@ -1179,7 +3672,7 @@ msgid "M12_BRIEF"
 msgstr "사진을 올리면 가상 처리 작업이 실행됩니다. 확장자만 바꾸는 것으로 막으면 정상 사진도 잃어요. 이름, 내용 형식, 저장 위치, 실행 경로를 따로 봅시다.\n\n정상 정비 사진을 계속 받고 잘못된 처리 경로만 막아 주세요. 끝나면 서윤이 직접 통화하겠다고 합니다. 그 사람의 얼굴을 볼지는 당신이 선택해도 사건은 계속됩니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\ncurator@upload.packet.test / photo-bridge\nreviewer@custodym12.packet.test / sepia-glass\n\n추가로 확보할 독립 근거: 사진 이름과 처리 경로, 정상 사진의 반환\n[Field ledger access]\ncurator@media-desk.packet.test / photo-bridge-desk\n[Independent ledger access]\nreviewer@processing-register.packet.test / sepia-glass-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M12_CONTEXT"
-msgstr "[위장 파일은 거부하고 정상 JPEG 사진은 계속 받는다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nPHOTO INTAKE\nfilename | claimed type | first signature\nfake.jpg | image/jpeg | SCRIPT\nnormal.jpg | image/jpeg | JPEG\n\nThe first row must be refused. The second must still create a retained photograph. Filename, declared type and content signature are separate observations.\n"
+msgstr "[위장 파일은 거부하고 정상 JPEG 사진은 계속 받는다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nPHOTO INTAKE\nfilename | claimed type | first signature\nfake.jpg | image/jpeg | SCRIPT\nnormal.jpg | image/jpeg | JPEG\n\n첫째 행은 거절되어야 하고 둘째 행은 정상 사진으로 보관되어야 합니다. 파일 이름·신고 형식·내용 서명은 서로 다른 관찰입니다.\n"
 
 msgid "M12_E1_FIELD"
 msgstr "[사진 이름과 처리 경로 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE UP12\n\nFIELD DESK\nname:inspection.jpg\n\nHANDOFF TRANSCRIPT\ndestination:job-queue\n\nOTHER ENTRY\nreference: OTHER-UP12\nobservation: unrelated service job\n"
@@ -1239,7 +3732,7 @@ msgid "M12_REPLY_SUBJECT"
 msgstr "[확인] 사진이라는 이름의 파일"
 
 msgid "M12_ROUTE"
-msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nPHOTO INTAKE\nfilename | claimed type | first signature\nfake.jpg | image/jpeg | SCRIPT\nnormal.jpg | image/jpeg | JPEG\n\nThe first row must be refused. The second must still create a retained photograph. Filename, declared type and content signature are separate observations.\n"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nPHOTO INTAKE\nfilename | claimed type | first signature\nfake.jpg | image/jpeg | SCRIPT\nnormal.jpg | image/jpeg | JPEG\n\n첫째 행은 거절되어야 하고 둘째 행은 정상 사진으로 보관되어야 합니다. 파일 이름·신고 형식·내용 서명은 서로 다른 관찰입니다.\n"
 
 msgid "M12_SUBJECT"
 msgstr "[야간 의뢰] 사진이라는 이름의 파일"
@@ -1257,7 +3750,7 @@ msgid "M13_BRIEF"
 msgstr "진단 기록에는 조회 한 번이 남았는데 작업 큐에는 두 건이 있습니다. 입력값이 언제부터 작업의 일부가 됐는지 추적해 주세요. 실제 프로그램을 실행하는 서버는 아닙니다.\n\n등록된 무해한 가상 표식 작업만 검증할 수 있습니다. 직접 실행 경계를 확인하거나 작업 감사로 같은 사실을 입증하세요. 필요 없는 변경은 남기지 마세요.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\ndiagnostician@diagnostic.packet.test / copper-lens\ndispatcher@custodym13.packet.test / patient-motor\n\n추가로 확보할 독립 근거: 한 요청, 두 작업, 작업자의 신원, 두 번째 작업의 목적지\n[Field ledger access]\ndiagnostician@jobqueue.packet.test / copper-lens-desk\n[Independent ledger access]\ndispatcher@execution-audit.packet.test / patient-motor-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M13_CONTEXT"
-msgstr "[등록된 가상 작업의 실행 주체와 인자 경계를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDIAGNOSTIC QUEUE\nrequest N47: diagnose\nadditional job: inspect:QUEUE13\nworker: inspection / limited read\n\nTwo registered virtual jobs can be separated by ; in this inspection field: diagnose and inspect:QUEUE13. No other task exists here. This is not an operating-system shell.\n"
+msgstr "[등록된 가상 작업의 실행 주체와 인자 경계를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nDIAGNOSTIC QUEUE\nrequest N47: diagnose\nadditional job: inspect:QUEUE13\nworker: inspection / limited read\n\n이 검증 입력에서는 등록된 가상 작업 diagnose와 inspect:QUEUE13을 ;로 나눌 수 있습니다. 다른 작업은 없으며 실제 운영체제의 셸이 아닙니다.\n"
 
 msgid "M13_E1_FIELD"
 msgstr "[한 요청, 두 작업 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE JOB13\n\nFIELD DESK\nrequest:N47:diagnostic\n\nHANDOFF TRANSCRIPT\nqueue:N47:inspect-QUEUE13\n\nOTHER ENTRY\nreference: OTHER-JOB13\nobservation: unrelated service job\n"
@@ -1347,7 +3840,7 @@ msgid "M14_BRIEF"
 msgstr "내 브라우저에서는 닫혔지만 미리보기 서버에는 보이는 주소가 있습니다. 누가 요청하는지에 따라 지도는 달라져요. 외부 주소를 열어 보려 하지 말고 가상 노드 사이의 경로를 보세요.\n\nTraceRoute를 연결했습니다. 최종 목적지와 요청 주체를 확인하고 내부 표식 하나를 가져와 주세요. 정비 프록시의 승인된 길로 같은 자료를 확인해도 됩니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\npreviewer@preview.packet.test / marsh-frame\nproxyreader@custodym14.packet.test / inland-heron\n\n추가로 확보할 독립 근거: 요청자가 바꾸는 지도, 재지정 뒤의 실제 목적지, 도달과 권한\n[Field ledger access]\npreviewer@resolver.packet.test / marsh-frame-desk\n[Independent ledger access]\nproxyreader@edgewatch.packet.test / inland-heron-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M14_CONTEXT"
-msgstr "[서버 주체를 경유해 내부 표식의 경로와 응답을 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://status.packet.test/internal/marker\npublic browser: no direct internal route\n\nThe final destination and requester's authority must be checked separately.\n"
+msgstr "[서버 주체를 경유해 내부 표식의 경로와 응답을 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://status.packet.test/internal/marker\npublic browser: no direct internal route\n\n최종 목적지와 요청 주체의 권한은 따로 확인해야 합니다.\n"
 
 msgid "M14_E1_FIELD"
 msgstr "[요청자가 바꾸는 지도 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE HOP14\n\nFIELD DESK\ncitizen:status:unreachable\n\nHANDOFF TRANSCRIPT\npreview-worker:status:reachable\n\nOTHER ENTRY\nreference: OTHER-HOP14\nobservation: unrelated service job\n"
@@ -1512,7 +4005,7 @@ msgid "M15_REPLY_SUBJECT"
 msgstr "[확인] 닫혔다고 생각한 관리망"
 
 msgid "M15_ROUTE"
-msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nACCESS REGISTER\nrequired group: auditors\naccount: networkauditor\nscope: limited evidence read\n\nInspect the actual authenticated account and its group, not a supplied account label.\n"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nACCESS REGISTER\nrequired group: auditors\naccount: networkauditor\nscope: limited evidence read\n\n입력으로 적은 계정 이름이 아니라 실제 인증된 계정과 그 그룹을 확인하세요.\n"
 
 msgid "M15_SUBJECT"
 msgstr "[야간 의뢰] 닫혔다고 생각한 관리망"
@@ -1533,7 +4026,7 @@ msgid "M16_BRIEF"
 msgstr "지금 세션으로 읽을 수 없는 파일이 같은 그룹의 작업 경로에서는 보입니다. 계정 이름보다 현재 그룹과 상위 디렉터리를 보세요. 더 큰 권한이 아니라 필요한 기록까지의 좁은 확장이 목표입니다.\n\n서명된 감사 사본도 있습니다. 어느 쪽을 택하든 원본과 다른 사용자의 권한을 바꾸지 마세요. 이후에는 제 자료의 출처도 공개하겠습니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\ntechnician@operations.packet.test / lintel-fern\nrecordsman@custodym16.packet.test / old-granite\n\n추가로 확보할 독립 근거: 상위 폴더의 문, 그룹이 남긴 여분의 길, 민서의 원자료\n[Field ledger access]\ntechnician@acl-index.packet.test / lintel-fern-desk\n[Independent ledger access]\nrecordsman@retention-desk.packet.test / old-granite-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M16_CONTEXT"
-msgstr "[현재 그룹의 과도한 읽기 범위를 입증하고 기록을 확보한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nACCESS REGISTER\nrequired group: retention\naccount: technician\nscope: limited evidence read\n\nInspect the actual authenticated account and its group, not a supplied account label.\n"
+msgstr "[현재 그룹의 과도한 읽기 범위를 입증하고 기록을 확보한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nACCESS REGISTER\nrequired group: retention\naccount: technician\nscope: limited evidence read\n\n입력으로 적은 계정 이름이 아니라 실제 인증된 계정과 그 그룹을 확인하세요.\n"
 
 msgid "M16_E1_FIELD"
 msgstr "[상위 폴더의 문 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE ACL16\n\nFIELD DESK\nstaff:ancestor:closed\n\nHANDOFF TRANSCRIPT\nretention:ancestor:traversable\n\nOTHER ENTRY\nreference: OTHER-ACL16\nobservation: unrelated service job\n"
@@ -1623,7 +4116,7 @@ msgid "M17_BRIEF"
 msgstr "실제 사람의 암호가 아닌 작은 허구 감사 자료입니다. 온라인 로그인 제한이 걸려 있어도 이미 분리된 자료에는 다른 검증이 필요해요. CredAudit의 후보와 비용 모형을 비교해 보세요.\n\n찾은 단서가 보관함의 어느 계정에 해당하는지 확인하고 필요한 자료만 읽으세요. 사전에 없었다는 사실로 안전하다고 선언할 수는 없습니다. 위임된 감사 세션도 같은 사실에 도달합니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\nauditor@auditvault.packet.test / mapped-star\ndelegate@custodym17.packet.test / field-chestnut\n\n추가로 확보할 독립 근거: 온라인과 분리된 자료, 작은 사전의 한계, 보관함 계정의 범위\n[Field ledger access]\nauditor@audit-desk.packet.test / mapped-star-desk\n[Independent ledger access]\ndelegate@witness-register.packet.test / field-chestnut-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M17_CONTEXT"
-msgstr "[허구 감사 단서를 계정 범위와 연결해 보관함을 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nBOUNDED VERIFICATION SHEET\nbytes: 123, 98, 122, 114, 121, 58, 38, 32\noperation: XOR each byte\nkey: 23\n\nThese bytes wrap a supplied fictional audit candidate. XOR is not a password hash; this model does not implement a real password-auditing algorithm or cracking benchmark.\n"
+msgstr "[허구 감사 단서를 계정 범위와 연결해 보관함을 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nBOUNDED VERIFICATION SHEET\nbytes: 123, 98, 122, 114, 121, 58, 38, 32\noperation: XOR each byte\nkey: 23\n\n이 바이트는 제공된 허구 감사 후보를 포장한 값입니다. XOR은 암호 해시가 아닙니다. 실제 암호 감사 알고리즘이나 크래킹 성능 측정은 구현하지 않습니다.\n"
 
 msgid "M17_E1_FIELD"
 msgstr "[온라인과 분리된 자료 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE AUD17\n\nFIELD DESK\nonline:rate-limited\n\nHANDOFF TRANSCRIPT\noffline:audit-copy:available\n\nOTHER ENTRY\nreference: OTHER-AUD17\nobservation: unrelated service job\n"
@@ -1695,7 +4188,7 @@ msgid "M17_REPLY_SUBJECT"
 msgstr "[확인] 짧은 비밀의 긴 흔적"
 
 msgid "M17_ROUTE"
-msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nACCESS REGISTER\nrequired group: auditors\naccount: delegate\nscope: limited evidence read\n\nInspect the actual authenticated account and its group, not a supplied account label.\n"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nACCESS REGISTER\nrequired group: auditors\naccount: delegate\nscope: limited evidence read\n\n입력으로 적은 계정 이름이 아니라 실제 인증된 계정과 그 그룹을 확인하세요.\n"
 
 msgid "M17_SUBJECT"
 msgstr "[야간 의뢰] 짧은 비밀의 긴 흔적"
@@ -1716,7 +4209,7 @@ msgid "M18_BRIEF"
 msgstr "현재 설정에는 토큰이 없습니다. 그렇다고 예전 토큰이 죽었다는 뜻은 아니죠. 변경 이력과 작업 로그에 나뉜 서비스 주소·토큰 참조를 조합해 주세요.\n\n승인된 허구 토큰만 사용하고 실제 비밀은 가져오지 않습니다. 토큰이 어디에서 왔는지, 지금 무엇을 읽을 수 있는지, 그 권한이 기록과 맞는지가 필요합니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\nbuilder@repository.packet.test / hidden-seam\nscheduler@custodym18.packet.test / folded-atlas\n\n추가로 확보할 독립 근거: 현재 설정과 이전 버전, 참조에서 서비스까지, 지워진 값의 효력\n[Field ledger access]\nbuilder@build-repository.packet.test / hidden-seam-desk\n[Independent ledger access]\nscheduler@job-archive.packet.test / folded-atlas-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M18_CONTEXT"
-msgstr "[이전 설정의 토큰 출처·현재 효력·읽기 범위를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nBUILD HISTORY\nold setting: RETENTION_TOKEN=retention-read-N47\ncurrent setting: RETENTION_TOKEN=(removed)\njob target: retention service\n\nRemoval from a file is not server-side revocation. Verify the actual permitted read.\n"
+msgstr "[이전 설정의 토큰 출처·현재 효력·읽기 범위를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nBUILD HISTORY\nold setting: RETENTION_TOKEN=retention-read-N47\ncurrent setting: RETENTION_TOKEN=(removed)\njob target: retention service\n\n파일에서 값을 지우는 것과 서버에서 폐기하는 것은 다릅니다. 실제로 허용되는 읽기를 확인하세요.\n"
 
 msgid "M18_E1_FIELD"
 msgstr "[현재 설정과 이전 버전 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE CFG18\n\nFIELD DESK\ncurrent:token-field:empty\n\nHANDOFF TRANSCRIPT\nhistory:retention-token:present\n\nOTHER ENTRY\nreference: OTHER-CFG18\nobservation: unrelated service job\n"
@@ -1986,7 +4479,7 @@ msgid "M21_BRIEF"
 msgstr "이제 어떤 도구를 쓸지는 말하지 않겠습니다. 시민 포털의 접수 참조와 조회 경계는 서로 다른 길을 줍니다. 이미 배운 도구가 어디에서 다시 쓸모 있는지 찾아보세요.\n\n목표는 봉인 기록 ECHO-21 한 건입니다. 첫 문을 열었다고 목표 권한까지 얻은 것은 아닙니다. 다른 유효 경로를 찾아도 같은 출처와 보존 조건을 만족하면 됩니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\ncaseworker@portal.packet.test / sealed-iris\nattachmentreader@custodym21.packet.test / hollow-shelf\n\n추가로 확보할 독립 근거: 접수에서 조회까지, 서로 다른 진입 경계, 회수한 적용표의 대상, 다음 원본의 참조\n[Field ledger access]\ncaseworker@receipt-index.packet.test / sealed-iris-desk\n[Independent ledger access]\nattachmentreader@retention-path.packet.test / hollow-shelf-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M21_CONTEXT"
-msgstr "[포털의 진입과 자료 권한을 구분해 봉인 기록에 도달한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nCATALOGUE LOOKUP\nquery field: q\nsealed lookup: ECHO-21\nreceipt lead: C731\nreceipt lookup endpoint: /receipts\n\nTRACE\nA quoted search value is concatenated into a small equality condition. In the vulnerable path an OR comparison can become part of the condition, rather than remaining a text value. The retained catalogue provides an independent route.\n"
+msgstr "[포털의 진입과 자료 권한을 구분해 봉인 기록에 도달한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nCATALOGUE LOOKUP\nquery field: q\nsealed lookup: ECHO-21\nreceipt lead: C731\nreceipt lookup endpoint: /receipts\n\nTRACE\n따옴표로 감싼 검색 값이 작은 등식 조건에 이어 붙습니다. 취약한 경로에서는 OR 비교가 단순 문자열이 아니라 조건의 일부가 될 수 있습니다. 별도 보관 목록으로 같은 사실을 확인하는 길도 있습니다.\n"
 
 msgid "M21_E1_FIELD"
 msgstr "[접수에서 조회까지 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE WEB21\n\nFIELD DESK\nreceipt:C731:lookup-ECHO21\n\nHANDOFF TRANSCRIPT\nsealed:ECHO21:separate-authority\n\nOTHER ENTRY\nreference: OTHER-WEB21\nobservation: unrelated service job\n"
@@ -2070,7 +4563,7 @@ msgid "M21_REPLY_SUBJECT"
 msgstr "[확인] 포털 뒤의 봉인된 기록"
 
 msgid "M21_ROUTE"
-msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDOWNLOAD HANDOFF\nbase directory: /portal/attachments\nneighbor marker: /sealed/ECHO-21.log\n\nResolve the requested path before deciding which store contains it. Similar prefixes do not establish containment.\n"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDOWNLOAD HANDOFF\nbase directory: /portal/attachments\nneighbor marker: /sealed/ECHO-21.log\n\n요청 경로를 정규화한 뒤 어느 보관 영역에 속하는지 판단하세요. 비슷한 접두어만으로는 영역 안에 있다고 볼 수 없습니다.\n"
 
 msgid "M21_SUBJECT"
 msgstr "[야간 의뢰] 포털 뒤의 봉인된 기록"
@@ -2088,7 +4581,7 @@ msgid "M22_BRIEF"
 msgstr "미리보기 서버에서 내부 관리망까지 연결되지만, 요청 주체와 권한은 중간마다 바뀝니다. 지도에 선을 긋는 대신 각 단계가 실제로 가능한지 확인해 주세요.\n\n목표 관리 세션의 ECHO-22 기록 하나만 필요합니다. 작업 로그에서 정비 중계로 들어가는 다른 길도 있습니다. 시민 서비스와 다른 계정을 건드리지 않는 쪽을 택하세요.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\npreviewer@preview.packet.test / gray-inlet\njobreader@custodym22.packet.test / narrow-bridge\n\n추가로 확보할 독립 근거: 외부 진입의 주체, 피벗 뒤의 새 권한, 관리 세션이 읽은 범위, 대상 집합의 교차 확인\n[Field ledger access]\npreviewer@relay-index.packet.test / gray-inlet-desk\n[Independent ledger access]\njobreader@workqueue.packet.test / narrow-bridge-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M22_CONTEXT"
-msgstr "[외부 서버에서 내부 관리 세션까지 주체·권한 변화를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://control.packet.test/relay/entry\npublic browser: no direct internal route\n\nThe final destination and requester's authority must be checked separately.\n"
+msgstr "[외부 서버에서 내부 관리 세션까지 주체·권한 변화를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://control.packet.test/relay/entry\npublic browser: no direct internal route\n\n최종 목적지와 요청 주체의 권한은 따로 확인해야 합니다.\n"
 
 msgid "M22_E1_FIELD"
 msgstr "[외부 진입의 주체 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE NET22\n\nFIELD DESK\norigin:citizen\n\nHANDOFF TRANSCRIPT\ninternal-request:preview-worker\n\nOTHER ENTRY\nreference: OTHER-NET22\nobservation: unrelated service job\n"
@@ -2172,7 +4665,7 @@ msgid "M22_REPLY_SUBJECT"
 msgstr "[확인] 웹에서 관리망까지"
 
 msgid "M22_ROUTE"
-msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDOWNLOAD HANDOFF\nbase directory: /jobs/archive\nneighbor marker: /handoff/control.key\n\nResolve the requested path before deciding which store contains it. Similar prefixes do not establish containment.\n"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nDOWNLOAD HANDOFF\nbase directory: /jobs/archive\nneighbor marker: /handoff/control.key\n\n요청 경로를 정규화한 뒤 어느 보관 영역에 속하는지 판단하세요. 비슷한 접두어만으로는 영역 안에 있다고 볼 수 없습니다.\n"
 
 msgid "M22_SUBJECT"
 msgstr "[야간 의뢰] 웹에서 관리망까지"
@@ -2193,7 +4686,7 @@ msgid "M23_BRIEF"
 msgstr "급한 일괄 조치가 사진·알림·정비 작업을 모두 막았습니다. 보안이 풀린 예전 상태로 돌아가자는 말에는 동의할 수 없어요. 필요한 경로와 권한만 다시 열어 봅시다.\n\n한 시민의 성공만으로 끝내지 말고 정비사와 작업 계정도 확인하세요. 오래된 토큰과 비인가 요청은 계속 거부되어야 합니다. 작은 부분 복원이나 승인 경로 이관 중 선택할 수 있습니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\ncaretaker@recovery.packet.test / bright-corridor\nsafetylead@custodym23.packet.test / three-lanterns\n\n추가로 확보할 독립 근거: 멈춘 세 업무의 원인, 복원하면 안 되는 권한, 같은 상태의 정상 검증\n[Field ledger access]\ncaretaker@scheduler-desk.packet.test / bright-corridor-desk\n[Independent ledger access]\nsafetylead@auth-desk.packet.test / three-lanterns-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "M23_CONTEXT"
-msgstr "[세 정상 업무를 되살리되 예전 권한·노출은 복구하지 않는다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nSERVICE PLAN\nphotos: 443\nnotifications: 5050\nstaff sign-in: 22\n\nprecise_access = off\nretired_tokens_blocked = on\nbroad_bypass = off\n\nRestore scoped legitimate jobs. Do not restore retired authority or a broad bypass.\n\n--- WORKFLOW OBSERVATION ---\nPHOTO INTAKE\nfilename | claimed type | first signature\nfake.jpg | image/jpeg | SCRIPT\nnormal.jpg | image/jpeg | JPEG\n\nThe first row must be refused. The second must still create a retained photograph. Filename, declared type and content signature are separate observations.\n\n--- WORKFLOW OBSERVATION ---\nSHIFT REGISTER\n00:58 temporary shift ended\n01:03 session alias retired-M23 still observed\n\nComparison plan: issue a fresh alias, observe the retired alias, then observe the fresh alias. A logout label is not a revocation record.\n\n--- WORKFLOW OBSERVATION ---\nSIGN-IN WATCH\n00:46 account=staff origin=unknown outcome=failed\n00:46 account=staff origin=unknown outcome=failed\n00:47 account=staff origin=ward-relay outcome=valid\n\nRecovery window: two simulated ticks. Repeated failures must be limited without disabling the ward relay.\n"
+msgstr "[세 정상 업무를 되살리되 예전 권한·노출은 복구하지 않는다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nSERVICE PLAN\nphotos: 443\nnotifications: 5050\nstaff sign-in: 22\n\nprecise_access = off\nretired_tokens_blocked = on\nbroad_bypass = off\n\n필요한 범위의 정상 업무를 복구하세요. 폐기된 권한이나 광역 우회는 다시 열지 마세요.\n\n--- WORKFLOW OBSERVATION ---\nPHOTO INTAKE\nfilename | claimed type | first signature\nfake.jpg | image/jpeg | SCRIPT\nnormal.jpg | image/jpeg | JPEG\n\n첫째 행은 거절되어야 하고 둘째 행은 정상 사진으로 보관되어야 합니다. 파일 이름·신고 형식·내용 서명은 서로 다른 관찰입니다.\n\n--- WORKFLOW OBSERVATION ---\nSHIFT REGISTER\n00:58 temporary shift ended\n01:03 session alias retired-M23 still observed\n\n비교 순서: 새 별칭을 발급하고 폐기된 별칭을 관찰한 다음 새 별칭을 관찰하세요. 로그아웃 표시는 서버의 폐기 기록이 아닙니다.\n\n--- WORKFLOW OBSERVATION ---\nSIGN-IN WATCH\n00:46 account=staff origin=unknown outcome=failed\n00:46 account=staff origin=unknown outcome=failed\n00:47 account=staff origin=ward-relay outcome=valid\n\n복구 창은 가상 시계 두 틱입니다. 병원 중계를 멈추지 않으면서 반복 실패를 제한해야 합니다.\n"
 
 msgid "M23_E1_FIELD"
 msgstr "[멈춘 세 업무의 원인 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE REC23\n\nFIELD DESK\nbefore:photos+notify+staff:working\n\nHANDOFF TRANSCRIPT\nblanket-rule:three-workflows:blocked\n\nOTHER ENTRY\nreference: OTHER-REC23\nobservation: unrelated service job\n"
@@ -2265,7 +4758,7 @@ msgid "M23_REPLY_SUBJECT"
 msgstr "[확인] 안전해졌지만 멈춘 도시"
 
 msgid "M23_ROUTE"
-msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nSERVICE PLAN\nphotos: 443\nnotifications: 5050\nstaff sign-in: 22\n\nprecise_access = off\nretired_tokens_blocked = on\nbroad_bypass = off\n\nRestore scoped legitimate jobs. Do not restore retired authority or a broad bypass.\n\n--- WORKFLOW OBSERVATION ---\nPHOTO INTAKE\nfilename | claimed type | first signature\nfake.jpg | image/jpeg | SCRIPT\nnormal.jpg | image/jpeg | JPEG\n\nThe first row must be refused. The second must still create a retained photograph. Filename, declared type and content signature are separate observations.\n\n--- WORKFLOW OBSERVATION ---\nSHIFT REGISTER\n00:58 temporary shift ended\n01:03 session alias retired-M23 still observed\n\nComparison plan: issue a fresh alias, observe the retired alias, then observe the fresh alias. A logout label is not a revocation record.\n\n--- WORKFLOW OBSERVATION ---\nSIGN-IN WATCH\n00:46 account=staff origin=unknown outcome=failed\n00:46 account=staff origin=unknown outcome=failed\n00:47 account=staff origin=ward-relay outcome=valid\n\nRecovery window: two simulated ticks. Repeated failures must be limited without disabling the ward relay.\n"
+msgstr "[별도 보관 담당자의 작업 메모]\n관측 원장은 현장 응답과 독립적으로 남겼습니다. 관련 업무 번호를 찾아 현재 사건의 원장과 대조하세요.\n\nINDEPENDENT WORK LOG\nSERVICE PLAN\nphotos: 443\nnotifications: 5050\nstaff sign-in: 22\n\nprecise_access = off\nretired_tokens_blocked = on\nbroad_bypass = off\n\n필요한 범위의 정상 업무를 복구하세요. 폐기된 권한이나 광역 우회는 다시 열지 마세요.\n\n--- WORKFLOW OBSERVATION ---\nPHOTO INTAKE\nfilename | claimed type | first signature\nfake.jpg | image/jpeg | SCRIPT\nnormal.jpg | image/jpeg | JPEG\n\n첫째 행은 거절되어야 하고 둘째 행은 정상 사진으로 보관되어야 합니다. 파일 이름·신고 형식·내용 서명은 서로 다른 관찰입니다.\n\n--- WORKFLOW OBSERVATION ---\nSHIFT REGISTER\n00:58 temporary shift ended\n01:03 session alias retired-M23 still observed\n\n비교 순서: 새 별칭을 발급하고 폐기된 별칭을 관찰한 다음 새 별칭을 관찰하세요. 로그아웃 표시는 서버의 폐기 기록이 아닙니다.\n\n--- WORKFLOW OBSERVATION ---\nSIGN-IN WATCH\n00:46 account=staff origin=unknown outcome=failed\n00:46 account=staff origin=unknown outcome=failed\n00:47 account=staff origin=ward-relay outcome=valid\n\n복구 창은 가상 시계 두 틱입니다. 병원 중계를 멈추지 않으면서 반복 실패를 제한해야 합니다.\n"
 
 msgid "M23_SUBJECT"
 msgstr "[야간 의뢰] 안전해졌지만 멈춘 도시"
@@ -2421,7 +4914,7 @@ msgid "P01_BRIEF"
 msgstr "선택 의뢰입니다. 고정 크기 메모리 그림 옆에 승인 표식이 놓여 있습니다. 실제 프로세스나 셸코드는 없어요. 모형의 입력 길이와 인접 상태가 어떻게 이어지는지 관찰해 보세요.\n\n정해진 무해 표식으로 경계를 확인하거나 독립된 안전 감사 자료로 같은 사실을 입증할 수 있습니다. 주소를 외우기보다 어떤 경계를 누가 지켜야 하는지 알아보세요.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\nlabuser@memorylab.packet.test / bounded-copper\nsafety@custodyp01.packet.test / calm-cell\n\n추가로 확보할 독립 근거: 입력 버퍼의 끝, 표식과 실제 권한\n[Field ledger access]\nlabuser@memory-workbench.packet.test / bounded-copper-desk\n[Independent ledger access]\nsafety@boundary-audit.packet.test / calm-cell-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "P01_CONTEXT"
-msgstr "[허구 버퍼 경계와 인접 표식 상태의 차이를 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nMEMORY WORKBENCH\nregion | offsets | initial\ninput buffer | 0..3 | 00 00 00 00\napproval marker | 4 | 00\npadding | 5..7 | 00 00 00\n\nMarker byte: 47 (hex). At most eight bytes exist in this isolated diagram. These are not host memory addresses.\n"
+msgstr "[허구 버퍼 경계와 인접 표식 상태의 차이를 입증한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nMEMORY WORKBENCH\nregion | offsets | initial\ninput buffer | 0..3 | 00 00 00 00\napproval marker | 4 | 00\npadding | 5..7 | 00 00 00\n\n표식 바이트는 47(16진)입니다. 이 격리된 그림에는 최대 여덟 바이트만 있습니다. 실제 호스트의 메모리 주소가 아닙니다.\n"
 
 msgid "P01_E1_FIELD"
 msgstr "[입력 버퍼의 끝 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE MEM-P1\n\nFIELD DESK\nbuffer:offsets-0..3\n\nHANDOFF TRANSCRIPT\nflag:offset-4\n\nOTHER ENTRY\nreference: OTHER-MEM-P1\nobservation: unrelated service job\n"
@@ -2489,6 +4982,27 @@ msgstr "[야간 의뢰] 경계 옆의 한 칸"
 msgid "P01_TITLE"
 msgstr "경계 옆의 한 칸"
 
+msgid "PACK_DEFENDER_SUMMARY"
+msgstr "위협을 막으면서 정상 업무를 지키세요."
+
+msgid "PACK_DEFENDER_TITLE"
+msgstr "방어자"
+
+msgid "PACK_INTRUDER_SUMMARY"
+msgstr "닫힌 경로를 열고 숨겨진 기록을 회수하세요."
+
+msgid "PACK_INTRUDER_TITLE"
+msgstr "침투자"
+
+msgid "PACK_LEGACY_TITLE"
+msgstr "이전판"
+
+msgid "PACK_TRACKER_SUMMARY"
+msgstr "관측과 반증으로 연결을 좁히세요."
+
+msgid "PACK_TRACKER_TITLE"
+msgstr "추적자"
+
 msgid "QUIT"
 msgstr "종료"
 
@@ -2502,7 +5016,7 @@ msgid "R01_BRIEF"
 msgstr "선택 의뢰입니다. 실제 실행 파일 대신 몇 개의 분기와 상수만 있는 허구 검증기를 준비했습니다. ‘승인됨’이라는 문자열이 보인다고 실제 승인 상태가 참이라는 뜻은 아닙니다.\n\n가상 역어셈블리에서 비교와 분기를 따라가거나 입출력과 빌드 설명을 대조하세요. 실제 CPU·바이너리 형식 전체를 배우는 사건은 아닙니다.\n\n의뢰 범위 안의 읽기·검증 계정입니다. 자료를 읽는 권한이 결론까지 대신하지는 않습니다.\n\n[Case access]\nverifier@verifier.packet.test / small-garnet\nauditor@custodyr01.packet.test / separate-larch\n\n추가로 확보할 독립 근거: 문자열과 승인 분기, 검증기가 보지 않은 조건\n[Field ledger access]\nverifier@verifier-build.packet.test / small-garnet-desk\n[Independent ledger access]\nauditor@release-audit.packet.test / separate-larch-desk\nRead the ledger filenames for the business references named in the job.\n"
 
 msgid "R01_CONTEXT"
-msgstr "[허구 검증기의 상수·분기로 실제 승인 범위를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nBOUNDED VERIFICATION SHEET\nbytes: 96, 122, 116, 125, 114, 103, 102, 97, 118\noperation: XOR each byte\nkey: 19\n\nThe result is a fictional verification phrase. A real CPU or full binary format is not modeled.\n"
+msgstr "[허구 검증기의 상수·분기로 실제 승인 범위를 확인한다.]\n\n업무 원장에서 관련 행을 찾으세요. 비슷한 이름·시각의 다른 사건을 같은 것으로 취급하지 마세요. 아래 식별값·요청·경로는 원자료 그대로입니다.\n\nBOUNDED VERIFICATION SHEET\nbytes: 96, 122, 116, 125, 114, 103, 102, 97, 118\noperation: XOR each byte\nkey: 19\n\n결과는 허구 검증 문구입니다. 실제 CPU나 전체 실행 파일 형식은 모형화하지 않습니다.\n"
 
 msgid "R01_E1_FIELD"
 msgstr "[문자열과 승인 분기 · 현장 원장]\n인계된 업무 번호에 해당하는 관측을 찾아 두 행을 대조하세요. 비슷한 다른 행을 섞으면 서로 다른 사건의 결론이 됩니다.\n\nREFERENCE VM-R1\n\nFIELD DESK\nstring:approved:present\n\nHANDOFF TRANSCRIPT\nbranch:comparison:required\n\nOTHER ENTRY\nreference: OTHER-VM-R1\nobservation: unrelated service job\n"
@@ -2581,6 +5095,9 @@ msgstr "다시 시도"
 
 msgid "RETURN_TO_ROOM"
 msgstr "F10 · 작업실로"
+
+msgid "ROLE_AUDIO_LABEL"
+msgstr "캠페인 분위기"
 
 msgid "ROOM_CONTROLS"
 msgstr "WASD 이동 · 마우스 오른쪽 버튼 시선 · E 컴퓨터 · Esc 메뉴"
@@ -2902,6 +5419,399 @@ msgstr "Media Intake"
 
 msgid "TOOL_VOLUME"
 msgstr "도구 소리"
+
+msgid "TR1_ENDING_TITLE"
+msgstr "검증 가능한 인계"
+
+msgid "TR1_PACK_TITLE"
+msgstr "추적자 · 남은 연결의 범위"
+
+msgid "TR1_T01_ABSTRACTION"
+msgstr "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다."
+
+msgid "TR1_T01_BRIEF"
+msgstr "독립 기록 조사 팀의 민서입니다. 오늘 처음 들어온 분도 시작할 수 있도록 관측 두 개와 수집 허가를 준비했습니다. 같은 IP가 보이지만 그것이 같은 사람이라는 뜻은 아닙니다.\n\n계정/세션 기록이나 중계 양끝 중 어디를 더 보면 두 설명을 구분할 수 있을까요? 현재 보이는 연결을 확인하고 다음 관찰 지점을 남겨 주세요. 범인의 이름을 맞히는 의뢰가 아닙니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T01_DESK_NAME"
+msgstr "한 주소의 여러 그림자 담당실"
+
+msgid "TR1_T01_GOAL"
+msgstr "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다."
+
+msgid "TR1_T01_HINT_1"
+msgstr "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요."
+
+msgid "TR1_T01_HINT_2"
+msgstr "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요."
+
+msgid "TR1_T01_HINT_3"
+msgstr "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다."
+
+msgid "TR1_T01_LIMIT"
+msgstr "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다."
+
+msgid "TR1_T01_NEXT_SENSOR"
+msgstr "다음 인계 관찰 지점"
+
+msgid "TR1_T01_PRINCIPLE"
+msgstr "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다."
+
+msgid "TR1_T01_REPLY"
+msgstr "한 주소 뒤의 연결과 사람의 정체를 구분했습니다. 다음 사건은 기록 시계가 서로 다른데도 같은 시간이라고 불린 전송입니다."
+
+msgid "TR1_T01_SENDER"
+msgstr "민서"
+
+msgid "TR1_T01_SENSOR_FIELD"
+msgstr "현장 관측"
+
+msgid "TR1_T01_SENSOR_INDEPENDENT"
+msgstr "독립 출처 관측"
+
+msgid "TR1_T01_TITLE"
+msgstr "한 주소의 여러 그림자"
+
+msgid "TR1_T01_TOOL_NAME"
+msgstr "출처·관측·가설"
+
+msgid "TR1_T02_ABSTRACTION"
+msgstr "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다."
+
+msgid "TR1_T02_BRIEF"
+msgstr "두 서버가 같은 시각을 남겼지만 기준 이벤트와 오차 범위가 다릅니다. 정확한 초를 만들어 내지 말고 가능한 순서부터 좁혀 보세요.\n\n공통 이벤트를 기준으로 보정하거나 서명 인계의 순서와 독립 기록을 함께 볼 수 있습니다. 어느 쪽도 내부의 정답 시계를 보여 주지는 않습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T02_DESK_NAME"
+msgstr "맞지 않는 두 시계 담당실"
+
+msgid "TR1_T02_GOAL"
+msgstr "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다."
+
+msgid "TR1_T02_HINT_1"
+msgstr "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요."
+
+msgid "TR1_T02_HINT_2"
+msgstr "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요."
+
+msgid "TR1_T02_HINT_3"
+msgstr "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다."
+
+msgid "TR1_T02_LIMIT"
+msgstr "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다."
+
+msgid "TR1_T02_NEXT_SENSOR"
+msgstr "다음 인계 관찰 지점"
+
+msgid "TR1_T02_PRINCIPLE"
+msgstr "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다."
+
+msgid "TR1_T02_REPLY"
+msgstr "분리된 시간 구간은 순서를 지지하고 겹치는 구간은 아직 모른다고 남겼습니다. 다음 사본은 누가 만들고 전달했는지부터 확인해야 합니다."
+
+msgid "TR1_T02_SENDER"
+msgstr "민서"
+
+msgid "TR1_T02_SENSOR_FIELD"
+msgstr "현장 관측"
+
+msgid "TR1_T02_SENSOR_INDEPENDENT"
+msgstr "독립 출처 관측"
+
+msgid "TR1_T02_TITLE"
+msgstr "맞지 않는 두 시계"
+
+msgid "TR1_T02_TOOL_NAME"
+msgstr "출처·관측·가설"
+
+msgid "TR1_T03_ABSTRACTION"
+msgstr "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다."
+
+msgid "TR1_T03_BRIEF"
+msgstr "사본 두 개가 다릅니다. 변조, 재배포, 수집 누락이 모두 가능한 설명이에요. 해시가 같으면 수집 뒤 바뀌지 않았다는 근거가 되지만 내용이 참이라는 보증은 아닙니다.\n\n독립 수신 기록이나 인계 출처를 연결해 자료가 어느 경로로 왔는지 확인하세요. 출처가 약한 문장의 내용으로 사람을 확정하지 않습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T03_DESK_NAME"
+msgstr "복사된 기록의 출처 담당실"
+
+msgid "TR1_T03_GOAL"
+msgstr "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다."
+
+msgid "TR1_T03_HINT_1"
+msgstr "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요."
+
+msgid "TR1_T03_HINT_2"
+msgstr "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요."
+
+msgid "TR1_T03_HINT_3"
+msgstr "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다."
+
+msgid "TR1_T03_LIMIT"
+msgstr "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다."
+
+msgid "TR1_T03_NEXT_SENSOR"
+msgstr "다음 인계 관찰 지점"
+
+msgid "TR1_T03_PRINCIPLE"
+msgstr "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다."
+
+msgid "TR1_T03_REPLY"
+msgstr "보관한 사본의 출처와 원자료가 주장한 내용을 나누어 기록했습니다. 이제 새 관측 하나를 어디서 얻을지 선택해 봅시다."
+
+msgid "TR1_T03_SENDER"
+msgstr "민서"
+
+msgid "TR1_T03_SENSOR_FIELD"
+msgstr "현장 관측"
+
+msgid "TR1_T03_SENSOR_INDEPENDENT"
+msgstr "독립 출처 관측"
+
+msgid "TR1_T03_TITLE"
+msgstr "복사된 기록의 출처"
+
+msgid "TR1_T03_TOOL_NAME"
+msgstr "출처·관측·가설"
+
+msgid "TR1_T04_ABSTRACTION"
+msgstr "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다."
+
+msgid "TR1_T04_BRIEF"
+msgstr "이미 가진 기록을 반복해서 읽어도 두 후보 경로는 갈라지지 않습니다. 허가된 관찰 지점을 고르고 가상 관측 구간을 다음으로 옮겨 주세요. 실제 시간을 기다리지는 않습니다.\n\n중계 경계를 볼 수도, 제한된 종단 계측을 볼 수도 있습니다. 새 관측이 어느 설명을 지지하거나 반박하는지 확인하세요.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T04_DESK_NAME"
+msgstr "다음 접속을 기다리는 곳 담당실"
+
+msgid "TR1_T04_GOAL"
+msgstr "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다."
+
+msgid "TR1_T04_HINT_1"
+msgstr "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요."
+
+msgid "TR1_T04_HINT_2"
+msgstr "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요."
+
+msgid "TR1_T04_HINT_3"
+msgstr "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다."
+
+msgid "TR1_T04_LIMIT"
+msgstr "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다."
+
+msgid "TR1_T04_NEXT_SENSOR"
+msgstr "다음 인계 관찰 지점"
+
+msgid "TR1_T04_PRINCIPLE"
+msgstr "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다."
+
+msgid "TR1_T04_REPLY"
+msgstr "다음 관찰의 위치를 선택한 결과가 연결을 좁혔습니다. 다음 기록에서는 계정 이름과 실제 세션 사용자를 같은 것으로 볼 수 없습니다."
+
+msgid "TR1_T04_SENDER"
+msgstr "민서"
+
+msgid "TR1_T04_SENSOR_FIELD"
+msgstr "현장 관측"
+
+msgid "TR1_T04_SENSOR_INDEPENDENT"
+msgstr "독립 출처 관측"
+
+msgid "TR1_T04_TITLE"
+msgstr "다음 접속을 기다리는 곳"
+
+msgid "TR1_T04_TOOL_NAME"
+msgstr "출처·관측·가설"
+
+msgid "TR1_T05_ABSTRACTION"
+msgstr "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다."
+
+msgid "TR1_T05_BRIEF"
+msgstr "같은 계정 이름이 두 경로에 나타납니다. 공유 계정, 남은 세션, 탈취 모두 가능한 설명입니다. 이름을 가진 사람을 먼저 지목하면 관측보다 결론이 앞섭니다.\n\n세션 생애와 경로 또는 위임·폐기 기록을 연결해 현재 입증되는 연결을 확인하세요. 누가 직접 키보드를 쳤는지는 알 수 없는 채로 남을 수도 있습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T05_DESK_NAME"
+msgstr "도난당한 이름 담당실"
+
+msgid "TR1_T05_GOAL"
+msgstr "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다."
+
+msgid "TR1_T05_HINT_1"
+msgstr "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요."
+
+msgid "TR1_T05_HINT_2"
+msgstr "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요."
+
+msgid "TR1_T05_HINT_3"
+msgstr "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다."
+
+msgid "TR1_T05_LIMIT"
+msgstr "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다."
+
+msgid "TR1_T05_NEXT_SENSOR"
+msgstr "다음 인계 관찰 지점"
+
+msgid "TR1_T05_PRINCIPLE"
+msgstr "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다."
+
+msgid "TR1_T05_REPLY"
+msgstr "계정과 세션의 연결은 확인했고 사람의 정체는 과장하지 않았습니다. 다음 전송에는 내용을 볼 수 없는 구간이 있습니다."
+
+msgid "TR1_T05_SENDER"
+msgstr "민서"
+
+msgid "TR1_T05_SENSOR_FIELD"
+msgstr "현장 관측"
+
+msgid "TR1_T05_SENSOR_INDEPENDENT"
+msgstr "독립 출처 관측"
+
+msgid "TR1_T05_TITLE"
+msgstr "도난당한 이름"
+
+msgid "TR1_T05_TOOL_NAME"
+msgstr "출처·관측·가설"
+
+msgid "TR1_T06_ABSTRACTION"
+msgstr "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다."
+
+msgid "TR1_T06_BRIEF"
+msgstr "암호화된 구간을 사이에 두고 기록이 끊겼습니다. 본문을 임의로 복호화하는 도구는 없습니다. 하지만 허가된 메타데이터와 종단 기록으로 제한된 연결을 확인할 수 있어요.\n\n어느 지점이 무엇을 볼 수 있었는지 남기고, 다른 사람의 내용을 수집하지 않는 방법으로 다음 목표를 좁혀 주세요.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T06_DESK_NAME"
+msgstr "보이지 않는 구간 담당실"
+
+msgid "TR1_T06_GOAL"
+msgstr "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다."
+
+msgid "TR1_T06_HINT_1"
+msgstr "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요."
+
+msgid "TR1_T06_HINT_2"
+msgstr "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요."
+
+msgid "TR1_T06_HINT_3"
+msgstr "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다."
+
+msgid "TR1_T06_LIMIT"
+msgstr "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다."
+
+msgid "TR1_T06_NEXT_SENSOR"
+msgstr "다음 인계 관찰 지점"
+
+msgid "TR1_T06_PRINCIPLE"
+msgstr "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다."
+
+msgid "TR1_T06_REPLY"
+msgstr "보이지 않는 내용을 만들어 내지 않고도 이동 연결을 확인했습니다. 그런데 새 자료 하나가 이전의 유력한 설명과 맞지 않습니다."
+
+msgid "TR1_T06_SENDER"
+msgstr "민서"
+
+msgid "TR1_T06_SENSOR_FIELD"
+msgstr "현장 관측"
+
+msgid "TR1_T06_SENSOR_INDEPENDENT"
+msgstr "독립 출처 관측"
+
+msgid "TR1_T06_TITLE"
+msgstr "보이지 않는 구간"
+
+msgid "TR1_T06_TOOL_NAME"
+msgstr "출처·관측·가설"
+
+msgid "TR1_T07_ABSTRACTION"
+msgstr "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다."
+
+msgid "TR1_T07_BRIEF"
+msgstr "앞 조사자의 메모는 같은 세션이라고 추정했습니다. 그것을 당신의 믿음으로 받아들일 필요는 없습니다. 새 관측을 먼저 확인하고 곧바로 더 나은 연결을 만들 수도 있어요.\n\n기준 이벤트나 경쟁 설명이 예측한 다음 관측을 확보하세요. 이전 가설을 세웠다면 이력과 반증을 남겨 정정하고, 그렇지 않다면 지지되는 관계로 바로 인계할 수 있습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T07_DESK_NAME"
+msgstr "맞는 가설을 버릴 때 담당실"
+
+msgid "TR1_T07_GOAL"
+msgstr "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다."
+
+msgid "TR1_T07_HINT_1"
+msgstr "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요."
+
+msgid "TR1_T07_HINT_2"
+msgstr "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요."
+
+msgid "TR1_T07_HINT_3"
+msgstr "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다."
+
+msgid "TR1_T07_LIMIT"
+msgstr "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다."
+
+msgid "TR1_T07_NEXT_SENSOR"
+msgstr "다음 인계 관찰 지점"
+
+msgid "TR1_T07_PRINCIPLE"
+msgstr "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다."
+
+msgid "TR1_T07_PRIOR"
+msgstr "앞 조사자의 동일 세션 추측"
+
+msgid "TR1_T07_REPLY"
+msgstr "새 관측은 이전 메모의 한계를 드러냈습니다. 틀린 가설을 지우지 않고 정정할 수도, 처음부터 독립된 관측으로 진행할 수도 있었습니다. 마지막에는 무엇까지 입증했는지 정리합시다."
+
+msgid "TR1_T07_SENDER"
+msgstr "민서"
+
+msgid "TR1_T07_SENSOR_FIELD"
+msgstr "현장 관측"
+
+msgid "TR1_T07_SENSOR_INDEPENDENT"
+msgstr "독립 출처 관측"
+
+msgid "TR1_T07_TITLE"
+msgstr "맞는 가설을 버릴 때"
+
+msgid "TR1_T07_TOOL_NAME"
+msgstr "출처·관측·가설"
+
+msgid "TR1_T08_ABSTRACTION"
+msgstr "허가된 유한 관측 구간과 작은 관계 종류만 있는 모의 사건입니다."
+
+msgid "TR1_T08_BRIEF"
+msgstr "마지막 인계입니다. 서로 다른 관찰 지점과 출처로 연결된 최소 경로를 확인해 주세요. 모든 후보의 실명을 알아야 끝나는 사건은 아닙니다.\n\n어느 전송이 어느 경계를 지났고, 어떤 주장이 반박됐으며, 어디에는 아직 관측이 없는지를 구분합니다. 요구된 연결과 후속 관찰을 생략한 채 전부 모른다고 적는 것도 충분하지 않습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T08_DESK_NAME"
+msgstr "마지막 연결의 범위 담당실"
+
+msgid "TR1_T08_GOAL"
+msgstr "요구된 연결을 관측으로 뒷받침하고 반증·미확정 범위와 다음 관찰 지점을 인계한다."
+
+msgid "TR1_T08_HINT_1"
+msgstr "현재 관측이 말하는 범위와 아직 모르는 것을 나누세요."
+
+msgid "TR1_T08_HINT_2"
+msgstr "같은 IP나 이름 대신 출처·서버 발급 표식·보정된 시간 구간을 연결하세요."
+
+msgid "TR1_T08_HINT_3"
+msgstr "현장 또는 독립 출처에서 새 관측을 확보하세요. 이전 메모를 믿거나 일부러 틀린 가설을 만들 의무는 없습니다."
+
+msgid "TR1_T08_LIMIT"
+msgstr "지지된 세션·전송 연결이 사람의 실명이나 보이지 않는 내용을 증명하지는 않습니다."
+
+msgid "TR1_T08_NEXT_SENSOR"
+msgstr "다음 인계 관찰 지점"
+
+msgid "TR1_T08_PRINCIPLE"
+msgstr "가설의 상태는 수집한 공개 관측에서만 계산하며 내부 범인의 이름과 대조하지 않습니다."
+
+msgid "TR1_T08_REPLY"
+msgstr "관찰이 지지하는 연결은 남고 알 수 없는 정체는 꾸며지지 않았습니다. 다음 팀은 출처와 반증, 아직 필요한 관찰을 함께 받습니다. 추적은 정답 이름의 공개가 아니라 검증 가능한 인계로 끝납니다."
+
+msgid "TR1_T08_SENDER"
+msgstr "민서"
+
+msgid "TR1_T08_SENSOR_FIELD"
+msgstr "현장 관측"
+
+msgid "TR1_T08_SENSOR_INDEPENDENT"
+msgstr "독립 출처 관측"
+
+msgid "TR1_T08_TITLE"
+msgstr "마지막 연결의 범위"
+
+msgid "TR1_T08_TOOL_NAME"
+msgstr "출처·관측·가설"
 
 msgid "UI_ALERT_EXPLAIN_0"
 msgstr "관찰된 위험 없음. 로컬 오타·읽기·창 전환은 경보와 무관합니다."
@@ -3464,6 +6374,141 @@ msgstr "{name}의 얼굴 보기"
 msgid "UI_MAIL_REVEAL_TIP"
 msgstr "이야기 속에서 상대가 얼굴 공개를 제안했습니다. 선택은 캠페인에 기록되며 목표나 권한과는 무관합니다."
 
+msgid "UI_MODEL_ACTION"
+msgstr "동작"
+
+msgid "UI_MODEL_ACTION_ADVANCE"
+msgstr "다음 업무 처리 단계"
+
+msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
+msgstr "다음 관측 구간"
+
+msgid "UI_MODEL_ACTION_CHECKPOINT"
+msgstr "정책 묶음 보존"
+
+msgid "UI_MODEL_ACTION_COLLECT"
+msgstr "이 위치의 관측 수집"
+
+msgid "UI_MODEL_ACTION_HANDOFF"
+msgstr "확인한 연결과 한계 인계"
+
+msgid "UI_MODEL_ACTION_HYPOTHESIZE"
+msgstr "가설 세우기"
+
+msgid "UI_MODEL_ACTION_INSPECT"
+msgstr "현재 상태 보기"
+
+msgid "UI_MODEL_ACTION_PROBE"
+msgstr "요청과 정상 업무 검증"
+
+msgid "UI_MODEL_ACTION_QUARANTINE"
+msgstr "저장 객체 격리 상태 변경"
+
+msgid "UI_MODEL_ACTION_RESET"
+msgstr "현재 실행 초기화"
+
+msgid "UI_MODEL_ACTION_REVISE"
+msgstr "근거를 남기고 가설 정정"
+
+msgid "UI_MODEL_ACTION_REVOKE"
+msgstr "세션 폐기"
+
+msgid "UI_MODEL_ACTION_ROLLBACK"
+msgstr "선택한 정책만 되돌리기"
+
+msgid "UI_MODEL_ACTION_RUN"
+msgstr "프로그램 실행"
+
+msgid "UI_MODEL_ACTION_SET_CONTROL"
+msgstr "정밀 대응 적용"
+
+msgid "UI_MODEL_ACTION_SET_INPUT"
+msgstr "입력 사례 준비"
+
+msgid "UI_MODEL_ACTION_STEP"
+msgstr "분기 한 단계씩 보기"
+
+msgid "UI_MODEL_ACTION_TEST"
+msgstr "수집 근거로 가설 검증"
+
+msgid "UI_MODEL_ALLOW"
+msgstr "허용"
+
+msgid "UI_MODEL_AUTHORIZED"
+msgstr "허가된 범위"
+
+msgid "UI_MODEL_CLIENT_SUPPLIED"
+msgstr "클라이언트가 제공한 표식"
+
+msgid "UI_MODEL_COMPLETE_WINDOW"
+msgstr "해당 구간 전체 관측"
+
+msgid "UI_MODEL_DENY"
+msgstr "차단"
+
+msgid "UI_MODEL_EVENT_ACCEPTED"
+msgstr "업로드 수락"
+
+msgid "UI_MODEL_EVENT_QUARANTINE_CHANGED"
+msgstr "격리 상태 변경"
+
+msgid "UI_MODEL_EXCLUDED"
+msgstr "범위 밖"
+
+msgid "UI_MODEL_FORM_NOTE"
+msgstr "현재 권한과 관측에서 공개된 선택지입니다. 조치·가설·입력을 고른 뒤 실행하세요."
+
+msgid "UI_MODEL_HALTED"
+msgstr "실행 종료"
+
+msgid "UI_MODEL_IDLE"
+msgstr "입력 사례 대기"
+
+msgid "UI_MODEL_METADATA_ONLY"
+msgstr "메타데이터만"
+
+msgid "UI_MODEL_NORMAL"
+msgstr "정상 업무"
+
+msgid "UI_MODEL_NO_ACTIONS"
+msgstr "현재 사용할 수 있는 조작이 없습니다. 접근 권한과 관측을 확인하세요."
+
+msgid "UI_MODEL_NO_OBSERVATIONS"
+msgstr "아직 표시할 관측이 없습니다."
+
+msgid "UI_MODEL_PERMITTED_PLAINTEXT"
+msgstr "허용된 평문"
+
+msgid "UI_MODEL_REFUTED"
+msgstr "반증됨"
+
+msgid "UI_MODEL_REL_BEFORE"
+msgstr "먼저 발생했는가"
+
+msgid "UI_MODEL_REL_FORWARDED_TO"
+msgstr "다음 노드로 전달되었는가"
+
+msgid "UI_MODEL_REL_SAME_SESSION"
+msgstr "같은 세션인가"
+
+msgid "UI_MODEL_RUNNING"
+msgstr "실행 중"
+
+msgid "UI_MODEL_SAMPLED_WINDOW"
+msgstr "일부만 표본 관측"
+
+msgid "UI_MODEL_SERVER_ISSUED"
+msgstr "서버가 발급한 표식"
+
+msgid "UI_MODEL_SUPPORTED"
+msgstr "근거가 지지함"
+
+msgid "UI_MODEL_THREAT"
+msgstr "위협 요청"
+
+msgid "UI_MODEL_UNDETERMINED"
+msgstr "근거 부족/판단 유보"
+
 msgid "UI_NET_CONNECTED"
 msgstr "연결 · 터미널 {list}"
 
@@ -3563,6 +6608,24 @@ msgstr "{id}에서 필요한 계정 세션 확보"
 msgid "UI_OBJ_SOURCES_PRESERVED"
 msgstr "원격 원본을 바꾸거나 지우지 않고 보존"
 
+msgid "UI_OBSERVATION_ENTITIES"
+msgstr "수집본에 등장한 대상"
+
+msgid "UI_OBSERVATION_EVIDENCE"
+msgstr "수집한 관측과 출처"
+
+msgid "UI_OBSERVATION_HISTORY"
+msgstr "가설 정정 이력"
+
+msgid "UI_OBSERVATION_HYPOTHESES"
+msgstr "가설과 현재 근거"
+
+msgid "UI_OBSERVATION_INITIAL_CLAIMS"
+msgstr "전달받은 가설 · 검증 전"
+
+msgid "UI_OBSERVATION_SENSORS"
+msgstr "관찰 지점과 수집 범위"
+
 msgid "UI_OK"
 msgstr "확인"
 
@@ -3613,6 +6676,27 @@ msgstr "백업 복구 실패 ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "손상된 저장은 별도 이름으로 보존하고 정상 백업으로 복구"
+
+msgid "UI_RESPONSE_ARTIFACTS"
+msgstr "관측된 업로드 저장 객체"
+
+msgid "UI_RESPONSE_ARTIFACT_EVENTS"
+msgstr "업로드와 격리 이력"
+
+msgid "UI_RESPONSE_BUSINESS_OBJECTS"
+msgstr "업무 결과와 저장 객체"
+
+msgid "UI_RESPONSE_CHECKPOINTS"
+msgstr "부분 되돌리기 지점"
+
+msgid "UI_RESPONSE_CONTROLS"
+msgstr "현재 대응 조치"
+
+msgid "UI_RESPONSE_HISTORY"
+msgstr "요청 관측 이력"
+
+msgid "UI_RESPONSE_MATRIX"
+msgstr "정상 업무·위협 요청 비교"
 
 msgid "UI_RL_BODY"
 msgstr "본문 (JSON 객체)"
@@ -3797,6 +6881,15 @@ msgstr "실제 시간을 기다리지 않습니다. 대기는 ticks 단위의 �
 msgid "UI_TOOLKIND_AUTH_MODEL"
 msgstr "계정별 실패 횟수와 가상 대기 시간을 계산합니다. 제한 정책이 켜진 상태에서 반복 실패 차단과 대기 뒤 정상 로그인을 함께 관찰합니다."
 
+msgid "UI_TOOLKIND_BRANCH_VM"
+msgstr "분기·호출 분석"
+
+msgid "UI_TOOLKIND_BRANCH_VM_LIMIT"
+msgstr "실제 CPU·바이너리·셸을 실행하지 않습니다. 프로그램과 예산은 사건이 제공하며 정해진 버튼 횟수는 통과 조건이 아닙니다."
+
+msgid "UI_TOOLKIND_BRANCH_VM_MODEL"
+msgstr "정해진 가상 명령의 분기·함수 호출·반환·출력을 작은 입력 사례로 실행하고 흔적을 비교합니다."
+
 msgid "UI_TOOLKIND_COMPARE"
 msgstr "관찰 비교"
 
@@ -3869,6 +6962,15 @@ msgstr "실제 프로세스 메모리·주소·보호 기법을 재현하지 않
 msgid "UI_TOOLKIND_MEMORY_MODEL"
 msgstr "정해진 크기의 버퍼와 그 뒤의 칸을 보여 줍니다. 16진 바이트를 써 넣으면 버퍼를 넘친 바이트가 어느 칸에 닿는지 확인할 수 있습니다."
 
+msgid "UI_TOOLKIND_OBSERVATION_CASE"
+msgstr "관측과 가설"
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_LIMIT"
+msgstr "같은 IP만으로 같은 사람이라 단정하지 않습니다. 시계 오차·표본 누락·표식 출처가 결론을 제한하며 숨은 정답과 비교하지 않습니다."
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_MODEL"
+msgstr "허가된 구간과 위치에서 관측을 모으고, 수집 사본으로 가설을 지지·반박·미결정으로 나눕니다."
+
 msgid "UI_TOOLKIND_PACKET"
 msgstr "패킷 보기"
 
@@ -3922,6 +7024,15 @@ msgstr "실제 JavaScript를 실행하지 않습니다. 다른 사용자에게 �
 
 msgid "UI_TOOLKIND_RENDER_MODEL"
 msgstr "입력이 화면에 글자로만 표시되는지, 가상 표시 신호로 해석되는지 비교합니다. 이스케이프 정책이 켜지면 글자로만 표시됩니다."
+
+msgid "UI_TOOLKIND_RESPONSE_LAB"
+msgstr "대응 작업대"
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_LIMIT"
+msgstr "전체 차단이 성공이라는 뜻은 아닙니다. 체크포인트는 지정한 정책 묶음만 되돌리며 폐기 자격과 수집 기록은 되살리지 않습니다."
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_MODEL"
+msgstr "허가된 요청을 같은 가상 서비스에 보내 정상 업무와 위협의 결과를 비교합니다. 조치는 다른 도구와 같은 정책·세션을 바꿉니다."
 
 msgid "UI_TOOLKIND_REVERSE"
 msgstr "흐름 분석"
@@ -4025,26 +7136,164 @@ msgstr "대기(ticks)는 정수여야 합니다."
 msgid "UI_TOOL_ERR_UNKNOWN_TOOL"
 msgstr "현재 사건에 없는 도구입니다."
 
+msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
+msgstr "업로드 접수 단계"
+
+msgid "UI_TOOL_FIELD_ACQUISITION"
+msgstr "수집 방법"
+
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "동작"
+
+msgid "UI_TOOL_FIELD_ARTIFACT_ID"
+msgstr "저장 객체"
+
+msgid "UI_TOOL_FIELD_AVAILABLE"
+msgstr "수집 가능"
+
+msgid "UI_TOOL_FIELD_BUSINESS_KEY"
+msgstr "업무 항목"
+
+msgid "UI_TOOL_FIELD_BUSINESS_VALUE"
+msgstr "업무 반영 결과"
+
+msgid "UI_TOOL_FIELD_CALL_STACK"
+msgstr "호출 스택"
+
+msgid "UI_TOOL_FIELD_CASE_ID"
+msgstr "요청·입력 사례"
+
+msgid "UI_TOOL_FIELD_CHECKPOINT_ID"
+msgstr "되돌리기 지점"
+
+msgid "UI_TOOL_FIELD_CLAIM"
+msgstr "주장"
+
+msgid "UI_TOOL_FIELD_CLASS"
+msgstr "분류"
+
+msgid "UI_TOOL_FIELD_CLOCK_OFFSET"
+msgstr "시계 오차"
+
+msgid "UI_TOOL_FIELD_COLLECTOR"
+msgstr "수집자"
+
+msgid "UI_TOOL_FIELD_CONTROL_ID"
+msgstr "대응 조치"
+
+msgid "UI_TOOL_FIELD_COUNT"
+msgstr "실행 단계 수"
+
+msgid "UI_TOOL_FIELD_COVERAGE"
+msgstr "관측 범위"
+
+msgid "UI_TOOL_FIELD_CURRENT"
+msgstr "현재 값"
+
+msgid "UI_TOOL_FIELD_CURSOR"
+msgstr "현재 관측 구간"
+
+msgid "UI_TOOL_FIELD_DST"
+msgstr "결과 레지스터"
+
+msgid "UI_TOOL_FIELD_ELSE"
+msgstr "거짓일 때 분기"
+
+msgid "UI_TOOL_FIELD_ENDPOINT_ID"
+msgstr "접수 서비스"
+
+msgid "UI_TOOL_FIELD_ENTITY_REF"
+msgstr "관측된 대상"
+
+msgid "UI_TOOL_FIELD_EVENT"
+msgstr "관측 이력 종류"
+
+msgid "UI_TOOL_FIELD_EVENT_ID"
+msgstr "이벤트 ID"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
+msgstr "현재 실행 허용"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
+msgstr "업로드 수락 당시 실행 가능"
 
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "파일 이름"
 
+msgid "UI_TOOL_FIELD_FORMAT_OK"
+msgstr "형식 확인"
+
+msgid "UI_TOOL_FIELD_FROM"
+msgstr "호출한 함수"
+
+msgid "UI_TOOL_FIELD_FROM_NODE"
+msgstr "출발 관측 노드"
+
+msgid "UI_TOOL_FIELD_FUNCTION"
+msgstr "함수"
+
+msgid "UI_TOOL_FIELD_GROUP"
+msgstr "정책 묶음"
+
+msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
+msgstr "가설 이름"
+
+msgid "UI_TOOL_FIELD_ID"
+msgstr "ID"
+
 msgid "UI_TOOL_FIELD_INPUT"
 msgstr "입력"
 
+msgid "UI_TOOL_FIELD_INPUTS"
+msgstr "입력 사례"
+
+msgid "UI_TOOL_FIELD_INTENDED"
+msgstr "필요한 결과"
+
+msgid "UI_TOOL_FIELD_KIND"
+msgstr "연결 종류"
+
+msgid "UI_TOOL_FIELD_LABEL"
+msgstr "이름"
+
 msgid "UI_TOOL_FIELD_LEFT"
-msgstr "첫째 관찰"
+msgstr "비교할 첫 대상"
+
+msgid "UI_TOOL_FIELD_MARKER_AUTHORITY"
+msgstr "표식의 출처"
 
 msgid "UI_TOOL_FIELD_MIME"
 msgstr "MIME 형식"
 
+msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
+msgstr "다음 관찰 지점"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "객체 ID"
 
+msgid "UI_TOOL_FIELD_OBSERVATION_IDS"
+msgstr "근거 관측"
+
+msgid "UI_TOOL_FIELD_OBSERVED"
+msgstr "관측 결과"
+
+msgid "UI_TOOL_FIELD_OBSERVED_AT"
+msgstr "관측 시각 구간"
+
+msgid "UI_TOOL_FIELD_OP"
+msgstr "명령"
+
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "출처 (origin)"
+
+msgid "UI_TOOL_FIELD_OUTPUT"
+msgstr "출력"
+
+msgid "UI_TOOL_FIELD_OUTPUTS"
+msgstr "출력값"
+
+msgid "UI_TOOL_FIELD_OWNER_FUNCTION"
+msgstr "명령이 속한 함수"
 
 msgid "UI_TOOL_FIELD_PASSWORD"
 msgstr "암호"
@@ -4052,26 +7301,137 @@ msgstr "암호"
 msgid "UI_TOOL_FIELD_PATH"
 msgstr "파일 경로"
 
+msgid "UI_TOOL_FIELD_PC"
+msgstr "명령 위치"
+
+msgid "UI_TOOL_FIELD_PROVENANCE"
+msgstr "출처·수집 근거"
+
+msgid "UI_TOOL_FIELD_PUBLIC"
+msgstr "공개 관측"
+
+msgid "UI_TOOL_FIELD_QUARANTINED"
+msgstr "격리 상태"
+
+msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
+msgstr "정정의 근거"
+
+msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
+msgstr "반증한 가설"
+
+msgid "UI_TOOL_FIELD_REG"
+msgstr "읽는 레지스터"
+
+msgid "UI_TOOL_FIELD_REGISTERS"
+msgstr "가상 레지스터"
+
+msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
+msgstr "정정한 주장"
+
+msgid "UI_TOOL_FIELD_REQUEST_TAG"
+msgstr "요청 표식"
+
+msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
+msgstr "보존 범위"
+
 msgid "UI_TOOL_FIELD_RIGHT"
-msgstr "둘째 관찰"
+msgstr "비교할 둘째 대상"
+
+msgid "UI_TOOL_FIELD_ROUTE_ID"
+msgstr "요청 경로"
+
+msgid "UI_TOOL_FIELD_SAMPLING"
+msgstr "표본 방식"
+
+msgid "UI_TOOL_FIELD_SECTION"
+msgstr "볼 내용"
+
+msgid "UI_TOOL_FIELD_SENSOR_ID"
+msgstr "관찰 지점"
+
+msgid "UI_TOOL_FIELD_SESSION_TAG"
+msgstr "세션 표식"
+
+msgid "UI_TOOL_FIELD_SHA256"
+msgstr "SHA256"
+
+msgid "UI_TOOL_FIELD_SHARED_ADDRESS"
+msgstr "공유될 수 있는 주소"
 
 msgid "UI_TOOL_FIELD_SIGNATURE"
 msgstr "파일 서명"
 
+msgid "UI_TOOL_FIELD_SIGNATURE_OK"
+msgstr "서명 확인"
+
+msgid "UI_TOOL_FIELD_SIGNATURE_VALID"
+msgstr "파일 형식 검증 통과"
+
+msgid "UI_TOOL_FIELD_SOURCE_ID"
+msgstr "출처 ID"
+
+msgid "UI_TOOL_FIELD_STATUS"
+msgstr "상태"
+
+msgid "UI_TOOL_FIELD_STEPS_USED"
+msgstr "사용한 단계"
+
+msgid "UI_TOOL_FIELD_STORED_AS"
+msgstr "저장 참조"
+
+msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
+msgstr "뒷받침된 가설"
+
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "대상 호스트"
+
+msgid "UI_TOOL_FIELD_THEN"
+msgstr "참일 때 분기"
+
+msgid "UI_TOOL_FIELD_TICK"
+msgstr "발생 단계"
 
 msgid "UI_TOOL_FIELD_TICKS"
 msgstr "대기 (ticks)"
 
+msgid "UI_TOOL_FIELD_TO"
+msgstr "호출 대상"
+
 msgid "UI_TOOL_FIELD_TOKEN"
 msgstr "토큰"
+
+msgid "UI_TOOL_FIELD_TOKEN_REF"
+msgstr "폐기할 세션"
+
+msgid "UI_TOOL_FIELD_TO_NODE"
+msgstr "도착 관측 노드"
+
+msgid "UI_TOOL_FIELD_TRACE"
+msgstr "실행 흔적"
+
+msgid "UI_TOOL_FIELD_UNKNOWN_EDGES"
+msgstr "미확정 연결"
 
 msgid "UI_TOOL_FIELD_USERNAME"
 msgstr "계정"
 
 msgid "UI_TOOL_FIELD_VALUE"
-msgstr "변경 값"
+msgstr "값"
+
+msgid "UI_TOOL_FIELD_VALUES"
+msgstr "입력값"
+
+msgid "UI_TOOL_FIELD_VANTAGE"
+msgstr "수집 위치"
+
+msgid "UI_TOOL_FIELD_VERDICT"
+msgstr "근거 판정"
+
+msgid "UI_TOOL_FIELD_VISIBILITY"
+msgstr "보이는 정보"
+
+msgid "UI_TOOL_FIELD_WINDOW"
+msgstr "관측 구간"
 
 msgid "UI_TOOL_FILTER"
 msgstr "필터"
@@ -4301,6 +7661,9 @@ msgstr "직접 넣은 키로만 계산하며, 결과를 입력 칸에 자동으�
 msgid "UI_TOOL_XOR_RESULT"
 msgstr "키 {key} 적용 결과 · {text}"
 
+msgid "UI_TOP_CAMPAIGN_MISSION"
+msgstr "{campaign} · {id} · {title}"
+
 msgid "UI_TOP_CASE_DONE"
 msgstr "사건 해결"
 
@@ -4315,6 +7678,36 @@ msgstr "완료 기록 있음 · 현재 목표 {done}/{total}"
 
 msgid "UI_TOP_SESSION"
 msgstr "터미널 {n} · {user}@{host}"
+
+msgid "UI_VALUE_FALSE"
+msgstr "아니요"
+
+msgid "UI_VALUE_TRUE"
+msgstr "예"
+
+msgid "UI_VM_CALL_GRAPH"
+msgstr "함수 호출 관계"
+
+msgid "UI_VM_CASES"
+msgstr "준비한 입력 사례"
+
+msgid "UI_VM_LIMITS"
+msgstr "가상 실행 예산"
+
+msgid "UI_VM_LIMITS_LINE"
+msgstr "사례별 예산: {steps}단계 · 호출 깊이 {stack} · 가상 메모리 {memory}"
+
+msgid "UI_VM_LISTING"
+msgstr "프로그램 분기"
+
+msgid "UI_VM_OUTPUTS"
+msgstr "실제 출력"
+
+msgid "UI_VM_STATE_LINE"
+msgstr "가상 실행: {state} · 사용 단계 {steps}"
+
+msgid "UI_VM_TRACE"
+msgstr "실행한 분기·호출 흔적"
 
 msgid "UI_VOLUME"
 msgstr "인터페이스"

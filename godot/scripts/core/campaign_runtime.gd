@@ -1,7 +1,9 @@
 extends "res://scripts/core/game.gd"
 
 const Models = preload("res://scripts/core/tool_runtime.gd")
-const EXTRA_COMMANDS := ["man", "whoami", "id", "grep", "find", "mkdir", "cp", "mv", "rm", "nmap", "scan", "dig", "ping", "traceroute", "route", "pivot", "curl", "wget", "sudo", "strings", "xxd", "decode", "configure", "tool"]
+const ModelView = preload("res://scripts/core/campaign_model_view.gd")
+const EXTRA_COMMANDS := ["man", "whoami", "id", "grep", "find", "mkdir", "rmdir", "cp", "mv", "rm", "nmap", "scan", "dig", "ping", "traceroute", "route", "pivot", "curl", "wget", "sudo", "strings", "xxd", "decode", "configure", "tool"]
+const MAX_LOCAL_ENTRIES := 512
 var _terminal := 0
 var _authentication: Dictionary = {}
 
@@ -105,12 +107,37 @@ func _ssh(args: Array) -> Dictionary:
 
 
 func _archive(source: Dictionary, name: String, destination: String) -> Dictionary:
+	var missing: int = _missing_records()
+	if _record_valid(source) and _record_needed(source.record_id) and (destination == "/home/player/archive" or destination.begins_with("/home/player/archive/")):
+		missing = maxi(0, missing - 1)
+	if _world.local_files.size() + 1 + missing > MAX_LOCAL_ENTRIES:
+		return _result(false, "ARCHIVE_LIMIT", "Local storage is full or reserved for the required case evidence.")
 	var result: Dictionary = super._archive(source, name, destination)
 	if result.ok:
-		result.text = "ARCHIVED / " + name
+		var detail: String = "ARCHIVED / " + name
 		if _world.completed:
-			result.text += "\n" + _definition.mission_id + " COMPLETE / " + _tr(_definition.title)
+			detail += "\n" + _definition.mission_id + " COMPLETE / " + _tr(_definition.title)
+		return _result(true, result.code, detail, result.get("changed", true), result.get("event", ""))
 	return result
+
+
+func _archive_limit() -> int:
+	return MAX_LOCAL_ENTRIES
+
+
+func _record_needed(id: String) -> bool:
+	for goal in _definition.goals:
+		if goal.kind == "record_acquired" and goal.record_id == id and not _goal(goal):
+			return true
+	return false
+
+
+func _missing_records() -> int:
+	var ids: Array = []
+	for goal in _definition.goals:
+		if goal.kind == "record_acquired" and not ids.has(goal.record_id) and not _goal(goal):
+			ids.append(goal.record_id)
+	return ids.size()
 
 
 func _cat(args: Array) -> Dictionary:
@@ -120,7 +147,7 @@ func _cat(args: Array) -> Dictionary:
 		var entry: Dictionary = _files().get(path.get("path", ""), {})
 		if entry.has("display_content_key"):
 			result.text = _tr(entry.display_content_key)
-		elif _definition.records.has(entry.get("record_id", "")) and _definition.records[entry.record_id].has("display_content_key"):
+		elif _record_valid(entry) and _definition.records[entry.record_id].has("display_content_key"):
 			result.text = _tr(_definition.records[entry.record_id].display_content_key)
 		for id in _definition.hosts:
 			if str(entry.get("content", "")).contains(_definition.hosts[id].domain) and not _world.discovered.has(id):
@@ -179,6 +206,23 @@ func _goal(goal: Dictionary) -> bool:
 			return _has_session(goal.host_id, goal.account_id)
 		"service":
 			return _service(goal.host_id, str(goal.port), "local").get("state", "") == goal.state
+		"response_matrix":
+			var id: String = goal.get("challenge_id", "")
+			return _definition.challenges.has(id) and Models.ResponseLab.goal_met(_definition.challenges[id], _world.model_states.get(id, {}), _model_context(), goal.get("case_ids", []))
+		"observation_handoff":
+			var id: String = goal.get("challenge_id", "")
+			return _definition.challenges.has(id) and Models.ObservationCase.goal_met(_definition.challenges[id], _world.model_states.get(id, {}))
+		"vm_cases":
+			var id: String = goal.get("challenge_id", "")
+			return _definition.challenges.has(id) and Models.BranchVM.goal_met(_definition.challenges[id], _world.model_states.get(id, {}), goal.get("requirements", []))
+		"current_boundaries":
+			for boundary in ["web", "route", "service"]:
+				if goal.get("cases", {}).get(boundary, []).is_empty(): return false
+				for ref in goal.cases[boundary]:
+					if not ref is Dictionary or not _definition.challenges.has(ref.get("challenge_id", "")): return false
+					var challenge: Dictionary = _definition.challenges[ref.challenge_id]
+					if challenge.kind != "response_lab" or not Models.ResponseLab.goal_met(challenge, _world.model_states.get(ref.challenge_id, {}), _model_context(), [ref.get("case_id", "")]): return false
+			return true
 	return false
 
 
@@ -212,11 +256,39 @@ func _record_valid(entry: Dictionary) -> bool:
 
 
 func _known_source(entry: Dictionary) -> bool:
-	return _record_valid(entry) or super._known_source(entry)
+	if _record_valid(entry) or super._known_source(entry):
+		return true
+	for id in _world.get("model_states", {}):
+		if _definition.challenges.get(id, {}).get("kind", "") == "response_lab":
+			for version in _world.model_states[id].get("file_versions", []):
+				if entry.get("source", "") == version.get("source", "") and entry.get("content", "") == version.get("content", "") and entry.get("record_id", "") == version.get("record_id", ""):
+					return true
+	return false
+
+
+func _effective_host_files(host_id: String) -> Dictionary:
+	var files: Dictionary = _world.remote_files.get(host_id, {}).duplicate(true)
+	for id in _world.get("model_states", {}):
+		if _definition.challenges.get(id, {}).get("kind", "") == "response_lab":
+			for path in _world.model_states[id].get("file_overrides", {}).get(host_id, {}):
+				files[path] = _world.model_states[id].file_overrides[host_id][path].duplicate(true)
+	return files
+
+
+func _files() -> Dictionary:
+	return _world.local_files if _session().host_id == "local" else _effective_host_files(_session().host_id)
+
+
+func _account_groups(host_id: String, account: String) -> Array:
+	var groups: Array = _definition.hosts.get(host_id, {}).get("accounts", {}).get(account, {}).get("groups", []).duplicate()
+	for id in _world.get("model_states", {}):
+		if _definition.challenges.get(id, {}).get("kind", "") == "response_lab" and _world.model_states[id].get("group_overrides", {}).has(host_id + ":" + account):
+			groups = _world.model_states[id].group_overrides[host_id + ":" + account].duplicate()
+	return groups
 
 
 func _groups() -> Array:
-	var groups: Array = super._groups().duplicate()
+	var groups: Array = ["player"] if _session().host_id == "local" else _account_groups(_session().host_id, _session().account_id)
 	for group in _world.get("permission_grants", {}).get(_session().host_id + ":" + _session().account_id, []):
 		if not groups.has(group):
 			groups.append(group)
@@ -278,7 +350,10 @@ func _web_identity(host_id: String) -> Dictionary:
 		return {}
 	var id: String = _managed_session_id(host_id, str(session.get("account_id", "")))
 	if id.is_empty():
-		return session
+		if session.get("token", "") == "session-" + str(session.get("account_id", "")): return session
+		var token_state: Dictionary = _response_web_token(host_id, session.account_id, session.get("token", ""))
+		return session if token_state.get("valid", false) else {}
+
 	var challenge: Dictionary = _definition.challenges[id]
 	var state: Dictionary = _world.model_states.get(id, {})
 	var token: String = str(session.get("token", ""))
@@ -289,6 +364,21 @@ func _web_identity(host_id: String) -> Dictionary:
 	if strict and (tokens[token].get("revoked", false) or int(tokens[token].get("expires_at", 0)) <= int(state.get("tick", 0)) or token == challenge.get("stale_token", "")):
 		return {}
 	return session
+
+
+func _response_web_token(host_id: String, account: String, ref: String) -> Dictionary:
+	for id in _definition.challenges:
+		var challenge: Dictionary = _definition.challenges[id]
+		if challenge.kind != "response_lab": continue
+		var state: Dictionary = _world.model_states.get(id, {})
+		var token: Dictionary = state.get("tokens", {}).get(ref, {})
+		if token.get("account_id", "") != account: continue
+		for endpoint_id in challenge.bindings.endpoints:
+			var endpoint: Dictionary = challenge.bindings.endpoints[endpoint_id]
+			if endpoint.host_id != host_id or (not endpoint.get("initial_tokens", {}).has(ref) and not ref.begins_with("lab-session:" + endpoint_id + ":")): continue
+			var strict: bool = _world.policies.get(endpoint.get("revocation_policy", ""), true) == true
+			return {"known": true, "valid": not strict or (not token.get("revoked", false) and int(token.get("expires_tick", 1000000)) > int(state.get("tick", 0)))}
+	return {"known": false, "valid": false}
 
 
 func _requirements(definition: Dictionary) -> Dictionary:
@@ -346,19 +436,18 @@ func use_challenge(id: String, input: Variant, account: String = "") -> Dictiona
 	if challenge.kind == "auth":
 		observed = _auth_model(challenge, input, before)
 	else:
-		observed = Models.apply_challenge(_model_definition(challenge), input, _world.policies, before, identity)
+		observed = Models.apply_challenge(_model_definition(challenge), input, _world.policies, before, identity, _model_context())
 	return _commit_model(id, input, identity, observed)
 
 
-func _commit_model(id: String, input: Variant, identity: String, observed: Dictionary) -> Dictionary:
-	if not observed.ok:
-		return _result(false, observed.code, observed.text)
+func _commit_model(id: String, input: Variant, identity: String, observed: Dictionary, wire_context: Dictionary = {}) -> Dictionary:
 	var challenge: Dictionary = _definition.challenges[id]
+	if not observed.ok:
+		return _result(false, observed.code, "" if Models.STATEFUL_KINDS.has(challenge.kind) else observed.text)
 	var before: Dictionary = _world.model_states.get(id, {})
 	var subject_host: String = str(challenge.get("host_id", challenge.get("requires_session", {}).get("host_id", "")))
 	if _world.model_actions.get(id, []).size() >= 128:
 		return _result(false, "OBSERVATION_LIMIT", "Restart this case to clear its experiment history.")
-	observed.state["solved"] = bool(before.get("solved", false)) or bool(observed.solved)
 	_world.model_states[id] = observed.state
 	if challenge.kind == "session" and input is Dictionary and not subject_host.is_empty():
 		var action: String = str(input.get("action", ""))
@@ -370,6 +459,7 @@ func _commit_model(id: String, input: Variant, identity: String, observed: Dicti
 	if not _world.model_actions.has(id):
 		_world.model_actions[id] = []
 	var receipt: Variant = _normalize_numbers(input)
+	if challenge.kind == "response_lab": receipt = Models.ResponseLab.sanitize_input(challenge, receipt, _model_context())
 	if challenge.kind == "auth" and receipt is Dictionary and receipt.get("action", "login") == "login":
 		var username: String = str(receipt.get("username", ""))
 		var accounts: Dictionary = _definition.hosts[subject_host].accounts
@@ -378,16 +468,35 @@ func _commit_model(id: String, input: Variant, identity: String, observed: Dicti
 			while accounts.has(username) and invalid_password == accounts[username].password:
 				invalid_password += "_"
 			receipt["password"] = invalid_password
-	_world.model_actions[id].append({"input": receipt, "account": identity, "policies": _world.policies.duplicate(true)})
 	if challenge.kind == "auth" and input is Dictionary and input.get("action", "login") == "login" and observed.get("status", 401) == 200:
 		var opened: Dictionary = _open_web_identity(subject_host, str(input.get("username", "")))
 		if not opened.ok:
 			return opened
+	if challenge.kind == "response_lab" and observed.get("feedback", {}).has("new_session"):
+		var issued: Dictionary = observed.feedback.new_session
+		_world.web_sessions[issued.host_id] = {"account_id": issued.account_id, "token": issued.token}
+	var assessment: Dictionary = _assessment_context(challenge)
+	_grade_response(challenge, before, observed, assessment.eligible)
+	observed.state["solved"] = bool(before.get("solved", false)) or (bool(observed.solved) and assessment.eligible)
+	if challenge.kind == "auth":
+		observed.state["transport_solved"] = bool(observed.solved)
+	_world.model_states[id] = observed.state
+	var action_receipt: Dictionary = {"input": receipt, "account": identity, "policies": _world.policies.duplicate(true), "assessment": assessment}
+	if Models.STATEFUL_KINDS.has(challenge.kind):
+		action_receipt["context"] = _model_wire_context() if wire_context.is_empty() else wire_context.duplicate(true)
+	_world.model_actions[id].append(action_receipt)
+	for policy in observed.get("effects", {}).get("policy_updates", {}):
+		_world.policies[policy] = observed.effects.policy_updates[policy]
+	for ref in observed.get("effects", {}).get("revoke_tokens", []):
+		for managed_id in _definition.challenges:
+			if _definition.challenges[managed_id].kind == "session" and _world.model_states.get(managed_id, {}).get("tokens", {}).has(ref):
+				var revoked: Dictionary = use_challenge(managed_id, {"action": "revoke", "token": ref}, str(_definition.challenges[managed_id].get("account_id", "")))
+				if not revoked.ok: return revoked
 	if challenge.kind == "policy" and observed.solved:
 		_world.policies[challenge.policy_id] = observed.state.policy_value
 	if challenge.kind == "permission" and observed.solved:
 		_world.permission_grants[challenge.host_id + ":" + challenge.account_id] = [challenge.group]
-	if observed.solved:
+	if observed.solved and assessment.eligible and challenge.has("record_id"):
 		var record: Dictionary = _definition.records[challenge.record_id]
 		var entry: Dictionary = _entry("file", "600", record.content)
 		entry.record_id = challenge.record_id
@@ -399,10 +508,77 @@ func _commit_model(id: String, input: Variant, identity: String, observed: Dicti
 		if not already_archived:
 			_archive(entry, challenge.record_id + ".txt", "/home/player/archive")
 	_evaluate_completion()
-	var result: Dictionary = _result(true, observed.code, observed.text, true, "tool_observed")
+	var detail: String = JSON.stringify(observed.get("feedback", {}), "  ") if Models.STATEFUL_KINDS.has(challenge.kind) else observed.text
+	var result: Dictionary = _result(true, observed.code, detail, true, "tool_observed")
+	for field in ["feedback", "observations", "checkpoint_id"]:
+		if observed.has(field): result[field] = observed[field].duplicate(true) if observed[field] is Dictionary or observed[field] is Array else observed[field]
 	result["status"] = observed.get("status", 200)
-	result["solved"] = observed.solved
+	result["solved"] = observed.solved and assessment.eligible
+	result["assessment_eligible"] = assessment.eligible
 	return result
+
+
+func _grade_response(challenge: Dictionary, previous: Dictionary, result: Dictionary, eligible: bool) -> void:
+	if challenge.kind != "response_lab": return
+	for id in result.state.get("probe_receipts", {}):
+		if result.state.probe_receipts[id] != previous.get("probe_receipts", {}).get(id, {}):
+			result.state.probe_receipts[id]["assessment_eligible"] = eligible
+	var context: Dictionary = _model_context()
+	for policy in result.get("effects", {}).get("policy_updates", {}): context.policies[policy] = result.effects.policy_updates[policy]
+	result.solved = Models.ResponseLab.goal_met(challenge, result.state, context)
+
+
+func _model_wire_context() -> Dictionary:
+	var authorized: Array = []
+	for challenge in _definition.challenges.values():
+		if challenge.kind == "observation_case":
+			for id in challenge.sensors:
+				if _requirements(challenge.sensors[id]).ok: authorized.append(id)
+	var actor: Dictionary = {"host_id": _session().host_id, "account_id": _session().account_id}
+	return {"origin": str(_session().host_id), "actor": actor, "authorized_sensors": authorized}
+
+
+func _model_context(wire: Dictionary = {}) -> Dictionary:
+	var data: Dictionary = _model_wire_context() if wire.is_empty() else wire.duplicate(true)
+	data["policies"] = _world.policies.duplicate(true)
+	data["hosts"] = _definition.hosts
+	data["files"] = _world.remote_files
+	data["records"] = _definition.records
+	data["service_check"] = Callable(self, "_service")
+	var tokens: Dictionary = {}
+	for id in _definition.challenges:
+		if _definition.challenges[id].kind == "session":
+			for token in _world.model_states.get(id, {}).get("tokens", {}): tokens[token] = id
+	data["managed_tokens"] = tokens
+	return data
+
+
+func _wire_context_valid(raw: Variant) -> bool:
+	if not raw is Dictionary or raw.size() != 3 or not raw.has_all(["origin", "actor", "authorized_sensors"]) or not raw.actor is Dictionary or not raw.authorized_sensors is Array: return false
+	if raw.origin != "local" and not _definition.hosts.has(raw.origin): return false
+	if raw.actor.size() != 2 or not raw.actor.has_all(["host_id", "account_id"]) or not raw.actor.account_id is String: return false
+	if raw.actor.account_id.is_empty(): return raw.authorized_sensors.is_empty() and _definition.hosts.has(raw.actor.host_id)
+	if raw.actor.host_id == "local":
+		if raw.actor.account_id != "player": return false
+	elif not _definition.hosts.has(raw.actor.host_id) or not _definition.hosts[raw.actor.host_id].accounts.has(raw.actor.account_id): return false
+	var known: Array = []
+	for challenge in _definition.challenges.values():
+		if challenge.kind == "observation_case": known.append_array(challenge.sensors.keys())
+	for id in raw.authorized_sensors:
+		if not id is String or not known.has(id): return false
+	return true
+
+
+func _assessment_context(challenge: Dictionary) -> Dictionary:
+	var facts: Array = _world.facts.duplicate()
+	var expected: Dictionary = challenge.get("requires_session", {})
+	var scope: Dictionary = {}
+	if not expected.is_empty() and _has_session(expected.host_id, expected.account_id):
+		scope = expected.duplicate(true)
+	var eligible: bool = expected.is_empty() or scope == expected
+	for fact in challenge.get("requires_facts", []):
+		eligible = eligible and facts.has(fact)
+	return {"facts": facts, "scope": scope, "eligible": eligible}
 
 
 func _open_web_identity(host_id: String, account: String) -> Dictionary:
@@ -491,6 +667,8 @@ func request_page(method: String, url: String, body: Dictionary = {}, headers: D
 		if base.get_slice("://", 1).get_slice("/", 0) == _definition.hosts[id].domain:
 			host_id = id
 	if not host_id.is_empty():
+		var business: Dictionary = _response_request(method, normalized.url, body, headers, host_id, transport_origin, browser_context)
+		if not business.is_empty(): return business
 		var reachable: Dictionary = _service(host_id, "443" if base.begins_with("https:") else "80", transport_origin)
 		if not reachable.ok:
 			return _web_error(reachable.code, reachable.text, 503, url)
@@ -607,6 +785,38 @@ func request_page(method: String, url: String, body: Dictionary = {}, headers: D
 	return response
 
 
+func _response_request(method: String, url: String, body: Dictionary, headers: Dictionary, host_id: String, origin: String, browser_context: bool) -> Dictionary:
+	var request: Dictionary = {"method": method.to_upper(), "url": url, "body": _normalize_numbers(body), "headers": _normalize_numbers(headers)}
+	for id in _definition.challenges:
+		var challenge: Dictionary = _definition.challenges[id]
+		if challenge.kind != "response_lab" or Models.ResponseLab.match_endpoint(challenge, request, _model_context()).is_empty(): continue
+		var actor: Dictionary = {"host_id": host_id, "account_id": ""}
+		if not browser_context and _session().host_id == host_id:
+			actor = {"host_id": host_id, "account_id": _session().account_id}
+		else:
+			var web: Dictionary = _web_identity(host_id)
+			actor.account_id = web.get("account_id", "")
+		var wire: Dictionary = {"origin": origin, "actor": actor, "authorized_sensors": []}
+		var input: Dictionary = {"action": "request", "request": request}
+		var observed: Dictionary = Models.apply_challenge(challenge, input, _world.policies, _world.model_states.get(id, {}), str(actor.account_id), _model_context(wire))
+		var committed: Dictionary = _commit_model(id, input, actor.account_id, observed, wire)
+		if not committed.ok: return _web_error(committed.code, committed.text, 400, url)
+		var feedback: Dictionary = observed.get("feedback", {})
+		var status: int = int(feedback.get("status", 400))
+		var response: Dictionary = _web_error(committed.code, "", status, url)
+		response.text = committed.text
+		response.body = feedback.get("body", "") if not str(feedback.get("body", "")).is_empty() else committed.text
+		response.title = _tr(challenge.get("name", id))
+		response["text_key"] = committed.get("text_key", "")
+		response["text_vars"] = committed.get("text_vars", {})
+		response.merge({"actor": feedback.get("actor", "anonymous"), "actor_context": "web" if browser_context else "terminal", "source_origin": headers.get("Origin", "https://local.packet.test"), "route": [origin, host_id], "trace": feedback.get("trace", []), "business": feedback.get("business", {}), "feedback": feedback, "changed": true}, true)
+		if feedback.has("new_session"):
+			response.cookie_preview = feedback.new_session.token
+			response.headers = {"Set-Cookie": "packet_session=" + str(response.cookie_preview)}
+		return response
+	return {}
+
+
 func collect_page(url: String) -> Dictionary:
 	var response: Dictionary = request_page("GET", url, {}, {"X-Packet-Context": "browser"})
 	if not response.ok or response.status != 200:
@@ -721,7 +931,7 @@ func _extra(command: String, args: Array) -> Dictionary:
 			if input is String and (input.begins_with("{") or input.begins_with("[")):
 				input = JSON.parse_string(input)
 			return use_challenge(args[0], input)
-		"grep", "strings", "xxd", "decode", "find", "cp", "mv", "mkdir", "rm":
+		"grep", "strings", "xxd", "decode", "find", "cp", "mv", "mkdir", "rmdir", "rm":
 			return _file_command(command, args)
 	return _result(false, "UNKNOWN_COMMAND", "Unsupported command. help lists the Linux subset.")
 
@@ -746,7 +956,7 @@ func _file_command(command: String, args: Array) -> Dictionary:
 	var resolved: Dictionary = FS.normalize(path_arg, _session().cwd, _home())
 	if not resolved.ok:
 		return _result(false, resolved.code, resolved.text)
-	if command in ["mkdir", "rm", "mv"]:
+	if command in ["mkdir", "rmdir", "rm", "mv"]:
 		if _session().host_id != "local":
 			return _result(false, "PERMISSION_DENIED", "Remote originals must be preserved.")
 		if not resolved.path.begins_with("/home/player/"):
@@ -757,7 +967,19 @@ func _file_command(command: String, args: Array) -> Dictionary:
 		if command == "mkdir":
 			if args.size() != 1 or files.has(resolved.path):
 				return _usage("mkdir new-path")
+			if files.size() + 1 + _missing_records() > MAX_LOCAL_ENTRIES:
+				return _result(false, "ARCHIVE_LIMIT", "Local storage is full or reserved for required evidence.")
 			files[resolved.path] = _entry("dir", "700")
+		elif command == "rmdir":
+			if args.size() != 1 or not files.has(resolved.path) or files[resolved.path].kind != "dir" or _initial_local_files().has(resolved.path):
+				return _result(false, "PERMISSION_DENIED", "Only a new empty local directory can be removed.")
+			if not FS.children(files, resolved.path).is_empty():
+				return _result(false, "NOT_EMPTY", "The virtual directory is not empty.")
+			for stack in _world.terminals.values():
+				for session in stack:
+					if session.host_id == "local" and session.cwd == resolved.path:
+						return _result(false, "DIRECTORY_BUSY", "A terminal is using this directory.")
+			files.erase(resolved.path)
 		elif not files.has(resolved.path) or files[resolved.path].kind != "file":
 			return _result(false, "NOT_FOUND", "Specify an existing local file.")
 		elif command == "rm":
@@ -818,7 +1040,7 @@ func _help(args: Array) -> Dictionary:
 		return _usage("help [registered-command]")
 	var syntax: Dictionary = {
 		"help": "help [command]", "man": "man [command]", "ssh": "ssh account@host", "exit": "exit", "ls": "ls [-l] [path]", "cd": "cd [path]", "pwd": "pwd", "cat": "cat path", "scp": "scp source [local-destination]",
-		"whoami": "whoami", "id": "id", "sudo": "sudo -l", "grep": "grep [-n|-i|-F] literal file", "find": "find path [-name pattern]", "mkdir": "mkdir path", "cp": "cp source local-destination", "mv": "mv local-source local-destination", "rm": "rm local-file",
+		"whoami": "whoami", "id": "id", "sudo": "sudo -l", "grep": "grep [-n|-i|-F] literal file", "find": "find path [-name pattern]", "mkdir": "mkdir path", "rmdir": "rmdir empty-local-directory", "cp": "cp source local-destination", "mv": "mv local-source local-destination", "rm": "rm local-file",
 		"nmap": "nmap [-sV] host", "scan": "scan [-sV] host", "dig": "dig host", "ping": "ping host", "traceroute": "traceroute host", "route": "route host", "pivot": "pivot host", "curl": "curl [-i] [-X METHOD] [-d JSON] URL", "wget": "wget URL",
 		"strings": "strings file", "xxd": "xxd file", "decode": "decode base64-file", "configure": "configure policyID value", "tool": "tool challengeID 'input or JSON'",
 	}
@@ -890,8 +1112,14 @@ func validate_world(raw: Variant) -> Dictionary:
 			return _invalid("Invalid world list: " + key)
 	if not world.completed is bool or not _integer(world.alert_level, 0, _definition.alert_max):
 		return _invalid("Invalid progress/alert type.")
-	if not world.terminals.has("0") or not world.terminals["0"] is Array or world.terminals["0"].is_empty():
-		return _invalid("Missing local terminal base.")
+	if not world.terminals.has("0") or world.terminals.size() > 4:
+		return _invalid("Invalid terminal count.")
+	for id in world.terminals:
+		if not id in ["0", "1", "2", "3"] or not world.terminals[id] is Array or world.terminals[id].is_empty() or world.terminals[id].size() > 16:
+			return _invalid("Invalid terminal stack.")
+		for session in world.terminals[id]:
+			if not session is Dictionary or session.size() != 3 or not session.has_all(["host_id", "account_id", "cwd"]):
+				return _invalid("Invalid session fields.")
 	for host in world.remote_files:
 		if not _definition.hosts.has(host) or not world.remote_files[host] is Dictionary:
 			return _invalid("Unknown/invalid remote host.")
@@ -952,10 +1180,31 @@ func validate_world(raw: Variant) -> Dictionary:
 				if not _policy_allowed(policy, action.policies[policy]):
 					return _invalid("Invalid observed policy.")
 			_world.policies = action.policies.duplicate(true)
-			var result: Dictionary = _auth_model(challenge, action.input, state) if challenge.kind == "auth" else Models.apply_challenge(_model_definition(challenge), action.input, action.policies, state, action.account)
+			if Models.STATEFUL_KINDS.has(challenge.kind) and not _wire_context_valid(action.get("context")):
+				return _invalid("Invalid model actor/observation context.")
+			var result: Dictionary = _auth_model(challenge, action.input, state) if challenge.kind == "auth" else Models.apply_challenge(_model_definition(challenge), action.input, action.policies, state, action.account, _model_context(action.get("context", {})))
 			if not result.ok:
 				return _invalid("Impossible model observation.")
-			result.state["solved"] = state.get("solved", false) or result.solved
+			var eligible := true
+			if action.has("assessment"):
+				var assessment: Variant = action.assessment
+				if not assessment is Dictionary or assessment.size() != 3 or not assessment.has_all(["facts", "scope", "eligible"]) or not assessment.facts is Array or not assessment.scope is Dictionary or not assessment.eligible is bool:
+					return _invalid("Invalid assessment context.")
+				for fact in assessment.facts:
+					if not fact is String or not world.facts.has(fact):
+						return _invalid("Assessment cites unsupported evidence.")
+				var expected: Dictionary = challenge.get("requires_session", {})
+				if not assessment.scope.is_empty() and assessment.scope != expected:
+					return _invalid("Assessment scope differs from the declared subject.")
+				eligible = expected.is_empty() or assessment.scope == expected
+				for fact in challenge.get("requires_facts", []):
+					eligible = eligible and assessment.facts.has(fact)
+				if eligible != assessment.eligible:
+					return _invalid("Assessment eligibility is not supported by its context.")
+				if challenge.kind == "auth":
+					result.state["transport_solved"] = bool(result.solved)
+			_grade_response(challenge, state, result, eligible)
+			result.state["solved"] = state.get("solved", false) or (result.solved and eligible)
 			state = result.state
 		if not state.recursive_equal(world.model_states[id], 0):
 			return _invalid("Computed model state differs from receipts.")
@@ -968,16 +1217,10 @@ func validate_world(raw: Variant) -> Dictionary:
 			grants[challenge.host_id + ":" + challenge.account_id] = [challenge.group]
 	if grants != world.permission_grants:
 		return _invalid("Permission grants have no valid proof.")
-	if not world.terminals.has("0") or world.terminals.size() > 4:
-		return _invalid("Invalid terminal count.")
 	for id in world.terminals:
-		if not id in ["0", "1", "2", "3"] or not world.terminals[id] is Array or world.terminals[id].is_empty() or world.terminals[id].size() > 16:
-			return _invalid("Invalid terminal stack.")
 		var stack: Array = world.terminals[id]
 		for index in range(stack.size()):
-			var session: Variant = stack[index]
-			if not session is Dictionary or session.size() != 3 or not session.has_all(["host_id", "account_id", "cwd"]):
-				return _invalid("Invalid session fields.")
+			var session: Dictionary = stack[index]
 			var files: Dictionary = world.local_files
 			var groups: Array = ["player"]
 			if index == 0:
@@ -986,8 +1229,8 @@ func validate_world(raw: Variant) -> Dictionary:
 			else:
 				if not _definition.hosts.has(session.host_id) or not _definition.hosts[session.host_id].accounts.has(session.account_id) or not _service(session.host_id, "22", stack[index - 1].host_id).ok:
 					return _invalid("Unknown/unreachable authenticated session.")
-				files = world.remote_files[session.host_id]
-				groups = _definition.hosts[session.host_id].accounts[session.account_id].groups.duplicate()
+				files = _effective_host_files(session.host_id)
+				groups = _account_groups(session.host_id, session.account_id)
 				groups.append_array(grants.get(session.host_id + ":" + session.account_id, []))
 			var path: Dictionary = FS.normalize(str(session.cwd))
 			if not path.ok or path.path != session.cwd or not files.has(session.cwd) or files[session.cwd].kind != "dir" or not FS.access(files, session.cwd, session.account_id, groups, "enter").ok:
@@ -1001,7 +1244,7 @@ func validate_world(raw: Variant) -> Dictionary:
 			if not world.model_states.get(managed, {}).get("tokens", {}).has(session.token):
 				return _invalid("Web token has no issuance observation.")
 		elif session.token != "session-" + str(session.account_id):
-			return _invalid("Unknown web authentication token.")
+			if not _response_web_token(id, session.account_id, session.token).get("known", false): return _invalid("Unknown web authentication token.")
 	for id in world.discovered:
 		if not _definition.hosts.has(id):
 			return _invalid("Unknown discovered host.")
@@ -1066,7 +1309,7 @@ func view(terminal_id: int = 0) -> Dictionary:
 		var entry: Dictionary = _world.local_files[path]
 		if entry.kind == "file" and str(path).begins_with("/home/player/archive/"):
 			var record: Dictionary = _definition.records.get(entry.record_id, {})
-			archive.append({"name": str(path).get_file(), "path": path, "content": _tr(record.display_content_key) if record.has("display_content_key") else entry.content, "record_id": entry.record_id, "source": entry.source})
+			archive.append({"name": str(path).get_file(), "path": path, "content": _tr(record.display_content_key) if _record_valid(entry) and record.has("display_content_key") else entry.content, "record_id": entry.record_id, "source": entry.source})
 	var messages: Array = [_definition.mail.intro.duplicate(true)]
 	if _world.completed:
 		messages.append(_definition.mail.complete.duplicate(true))
@@ -1085,12 +1328,15 @@ func view(terminal_id: int = 0) -> Dictionary:
 		var required_session: Dictionary = challenge.get("requires_session", {})
 		if not required_session.is_empty():
 			description += "\n" + _tr(_definition.hosts[required_session.host_id].name) + " / " + str(required_session.account_id)
-		tools.append({"id": id, "name": _tr(challenge.get("name", str(challenge.kind).to_upper())), "description": description, "kind": challenge.kind, "data": data, "input_schema": _input_schema(challenge.kind), "usage": _tr(challenge.get("usage", "")), "requirements": challenge.get("requires_facts", []), "required_session": required_session})
+		var spec: Dictionary = {"id": id, "name": _tr(challenge.get("name", str(challenge.kind).to_upper())), "description": description, "kind": challenge.kind, "data": data, "input_schema": _input_schema(challenge.kind), "usage": _tr(challenge.get("usage", "")), "requirements": challenge.get("requires_facts", []), "required_session": required_session}
+		if Models.STATEFUL_KINDS.has(challenge.kind):
+			spec.merge(ModelView.project(challenge, _world.model_states.get(id, {}), _model_context()), true)
+		tools.append(spec)
 	for spec in [{"id": "netprobe", "key": "NETPROBE", "kind": "scan", "field": "target"}, {"id": "traceroute", "key": "TRACEROUTE", "kind": "route", "field": "target"}, {"id": "filelens", "key": "FILELENS", "kind": "file", "field": "path"}, {"id": "loglens", "key": "LOGLENS", "kind": "log", "field": "path"}]:
 		tools.append({"id": spec.id, "name": _tr("TOOL_" + spec.key + "_NAME"), "description": _tr("TOOL_" + spec.key + "_DESCRIPTION"), "kind": spec.kind, "data": {"targets": network} if spec.field == "target" else {"files": listing}, "input_schema": [spec.field], "usage": _tr("TOOL_" + spec.key + "_USAGE"), "requirements": []})
 	var objectives: Array = []
 	for goal in _definition.goals:
-		var raw_id: String = str(goal.get("record_id", goal.get("id", goal.get("host_id", ""))))
+		var raw_id: String = str(goal.get("record_id", goal.get("id", goal.get("host_id", goal.get("challenge_id", "")))))
 		objectives.append({"kind": goal.kind, "id": raw_id, "completed": _goal(goal), "display_name": _tr(goal.get("label_display", raw_id)), "target_display": str(goal.get("target_display", ""))})
 	var milestones: Array = []
 	for milestone in _definition.get("milestones", []):

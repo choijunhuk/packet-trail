@@ -38,11 +38,35 @@ msgstr "Taegyeong"
 msgid "CAMPAIGN_COMPLETE"
 msgstr "Die Aufzeichnungen der Nacht sind verbunden."
 
+msgid "CAMPAIGN_DEFENDER"
+msgstr "Verteidiger"
+
+msgid "CAMPAIGN_DEFENDER_DESC"
+msgstr "Wehre Bedrohungen ab und erhalte die reguläre Arbeit."
+
 msgid "CAMPAIGN_HELP_COMMAND"
 msgstr "Unterstützte virtuelle Befehlssyntax: {command}\nPrüfe Fallhinweise und Werkzeugeingaben. Nicht dokumentierte Optionen werden abgewiesen."
 
 msgid "CAMPAIGN_HELP_OVERVIEW"
 msgstr "Unterstützte virtuelle Linux-Befehle: {commands}\nKeine echte Shell, Pipes oder Ersetzungen werden ausgeführt.\ntool <challengeID> 'input/JSON' · configure <policyID> true"
+
+msgid "CAMPAIGN_IMPORT_CONFIRM"
+msgstr "Altes M01 wird in die frühere Kampagne importiert. Ein vorhandener alter Speicherplatz wird gesichert und ersetzt; neue Kampagnenstände bleiben erhalten."
+
+msgid "CAMPAIGN_INTRUDER"
+msgstr "Eindringling"
+
+msgid "CAMPAIGN_INTRUDER_DESC"
+msgstr "Öffne neue Wege und sichere verborgene Aufzeichnungen."
+
+msgid "CAMPAIGN_NEW_CONFIRM"
+msgstr "Der Fortschritt von {campaign} wird gesichert und neu begonnen. Andere Kampagnen und alte Spielstände bleiben erhalten."
+
+msgid "CAMPAIGN_NO_SAVE"
+msgstr "Noch kein Fortschritt gespeichert"
+
+msgid "CAMPAIGN_PROGRESS"
+msgstr "Fortschritt {done}/{total}"
 
 msgid "CAMPAIGN_RESULT_ARCHIVED"
 msgstr "Eine Aufzeichnungskopie wurde archiviert. Prüfe ID und Herkunft.\n{detail}"
@@ -83,11 +107,17 @@ msgstr "Die Belegübergabe wurde gewählt.\n{detail}"
 msgid "CAMPAIGN_RESULT_ENDING_LOCKED"
 msgstr "Für diese Übergabe fehlen noch Belege.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_EXTERNAL_URL"
+msgstr "Nur registrierte virtuelle Spieladressen können geöffnet werden.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_FILES_CHANGED"
 msgstr "Der virtuelle Dateizustand hat sich geändert.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_GOAL_NOT_MET"
 msgstr "Für das aktuelle Ziel fehlen noch Belege.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_HANDOFF_INCOMPLETE"
+msgstr "Für die Übergabe fehlen noch Verbindungen, Belege oder Folgebeobachtungen.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HINT"
 msgstr "Hinweise zum aktuellen Fall.\n{detail}"
@@ -110,8 +140,17 @@ msgstr "Prüfe das Eingabeformat. Nur unterstützte Argumente sind zulässig.\n{
 msgid "CAMPAIGN_RESULT_INVALID_CHECKPOINT"
 msgstr "Der Fallspeicherpunkt ist ungültig und wurde nicht geladen.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_INVALID_CLAIM"
+msgstr "Prüfe das Behauptungsformat und die Verweise auf erhobene Beobachtungen.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_INVALID_CONTENT"
 msgstr "Die Falldaten können nicht gelesen werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_CONTROL"
+msgstr "Prüfe die erlaubte Abwehrmaßnahme und ihren Wert.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_INVALID_METHOD"
+msgstr "Diese virtuelle Anfragemethode wird nicht unterstützt.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_INVALID_PATH"
 msgstr "Prüfe das Format des virtuellen Pfads.\n{detail}"
@@ -137,6 +176,9 @@ msgstr "Kein alter M01-Spielstand gefunden.\n{detail}"
 msgid "CAMPAIGN_RESULT_LEGACY_SIZE_LIMIT"
 msgstr "Der alte Spielstand überschreitet die Größenbegrenzung.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_LOADED"
+msgstr "Gespeicherten Kampagnenfortschritt geladen.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_MISSING_EVIDENCE"
 msgstr "Die nötige Beobachtung oder Aufzeichnung fehlt noch.\n{detail}"
 
@@ -148,6 +190,9 @@ msgstr "Fall ausgewählt.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_MODEL_OBSERVED"
 msgstr "Beobachtungen des virtuellen Modells\n{detail}"
+
+msgid "CAMPAIGN_RESULT_NEW_STARTED"
+msgstr "Aktuellen Fortschritt in einem neuen Speicherstand abgelegt.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_NOT_DIRECTORY"
 msgstr "Der angegebene Pfad ist kein Ordner.\n{detail}"
@@ -167,6 +212,9 @@ msgstr "Dieses Ergebnis enthält keine sicherbare Aufzeichnung.\n{detail}"
 msgid "CAMPAIGN_RESULT_OBSERVATION_LIMIT"
 msgstr "Die Beobachtungsgrenze dieser Untersuchung ist erreicht.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_OBSERVATION_RECORDED"
+msgstr "Ergebnis der Beobachtungs- und Hypothesenverarbeitung.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_PERMISSION_DENIED"
 msgstr "Das aktuelle virtuelle Konto hat keine Rechte auf diese Ressource.\n{detail}"
 
@@ -176,14 +224,101 @@ msgstr "Virtuelle Dienstrichtlinie geändert. Prüfe reguläre und abgewiesene A
 msgid "CAMPAIGN_RESULT_PROTOCOL_MISMATCH"
 msgstr "Das Anfrageprotokoll passt nicht zum gewählten Dienst.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_RECOVERED"
+msgstr "Fortschritt aus gültiger Sicherung wiederhergestellt.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
+msgstr "Der aktuelle Speicherstand ist gültig und benötigt keine Wiederherstellung.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "Der aktuelle Fall wurde zurückgesetzt.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RESPONSE_OBSERVED"
+msgstr "Virtuellen Arbeits- und Abwehrzustand beobachtet.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RESTORED"
 msgstr "Gespeicherte Kampagne wiederhergestellt.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_ROUTE_HOST_MISMATCH"
 msgstr "Der Seitenhost passt nicht zum virtuellen Anfrageweg.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVED"
+msgstr "Kampagnenfortschritt gespeichert.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_INVALID"
+msgstr "Keine gültige Sicherung verfügbar.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_BACKUP_REPLACE_FAILED"
+msgstr "Die Sicherungsdatei konnte nicht ersetzt werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIFFERENT_CAMPAIGN"
+msgstr "Dieser Stand ist für eine andere Kampagne oder Inhaltsversion gekennzeichnet. Original und Sicherung blieben ohne Ersatz erhalten.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_FAILED"
+msgstr "Der Speicherordner konnte nicht erstellt werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_DIRECTORY_OPEN_FAILED"
+msgstr "Der Speicherordner konnte nicht geöffnet werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_ENCODING"
+msgstr "Die Zeichenkodierung der Speicherdatei ist ungültig.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_JSON"
+msgstr "Die Speicherdatei enthält ungültiges JSON.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_SNAPSHOT"
+msgstr "Der Fortschrittszustand bestand die Speicherprüfung nicht.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_INVALID_VALIDATOR"
+msgstr "Die Speicherprüfung konnte nicht vorbereitet werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NEW_REPLACE_FAILED"
+msgstr "Die Datei konnte nicht durch den neuen Speicherstand ersetzt werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_NOT_FOUND"
+msgstr "Die Speicherdatei wurde nicht gefunden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_IS_DIRECTORY"
+msgstr "Der Speicherdateipfad verweist auf einen Ordner.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PATH_REJECTED"
+msgstr "Dieser Speicherpfad ist nicht zulässig.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_PRESERVE_FAILED"
+msgstr "Die bestehende Datei konnte nicht separat erhalten werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_FAILED"
+msgstr "Beim Lesen der Speicherdatei ist ein Fehler aufgetreten.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_READ_OPEN_FAILED"
+msgstr "Die Speicherdatei konnte nicht zum Lesen geöffnet werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_FAILED"
+msgstr "Der gespeicherte Fortschritt konnte nicht wiederhergestellt werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_NOT_NEEDED"
+msgstr "Ein gültiger Speicherstand ist vorhanden; eine Wiederherstellung ist unnötig.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_PATH_FAILED"
+msgstr "Der Wiederherstellungspfad konnte nicht vorbereitet werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_RECOVERY_REQUIRED"
+msgstr "Eine Wiederherstellungswahl ist nötig. Der bestehende Stand wurde nicht automatisch überschrieben.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_REPLACE_FAILED"
+msgstr "Die Speicherdatei konnte nicht ersetzt werden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_ROUNDTRIP_MISMATCH"
+msgstr "Der erneut gelesene Stand weicht vom ursprünglichen Fortschritt ab.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_SIZE_LIMIT"
+msgstr "Der Speicherzustand überschreitet die Größenbegrenzung.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_FAILED"
+msgstr "Beim Schreiben der Speicherdatei ist ein Fehler aufgetreten.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_SAVE_WRITE_OPEN_FAILED"
+msgstr "Die Speicherdatei konnte nicht zum Schreiben geöffnet werden.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_SERVICE_CLOSED"
 msgstr "Der Dienst ist vom aktuellen Beobachtungspunkt aus geschlossen.\n{detail}"
@@ -200,6 +335,9 @@ msgstr "Der virtuelle Zieldienst ist nicht geöffnet.\n{detail}"
 msgid "CAMPAIGN_RESULT_SESSION_LIMIT"
 msgstr "Die Grenze virtueller Sitzungen ist erreicht. Beende eine frühere Verbindung mit exit.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_UNKNOWN_CASE"
+msgstr "Wähle einen registrierten Anfrage- oder Eingabefall.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_UNKNOWN_COMMAND"
 msgstr "Nicht unterstützter virtueller Befehl. Verfügbare Befehle stehen unter help.\n{detail}"
 
@@ -211,6 +349,18 @@ msgstr "Dieser Fall ist nicht registriert.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_MODEL"
 msgstr "Dieses virtuelle Modell ist nicht registriert.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_OPERATION"
+msgstr "Wähle eine unterstützte Aktion.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_ROUTE"
+msgstr "Prüfe den registrierten Anfrageweg.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_SENSOR"
+msgstr "Prüfe den registrierten Beobachtungspunkt.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_UNKNOWN_TOKEN"
+msgstr "Prüfe den registrierten Verweis der zu widerrufenden Sitzung.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_UNKNOWN_TOOL"
 msgstr "Dieses Werkzeug oder Modell ist in diesem Fall nicht verfügbar.\n{detail}"
@@ -224,11 +374,35 @@ msgstr "Das Ziel ist vom aktuellen Ausgangspunkt nicht erreichbar.\n{detail}"
 msgid "CAMPAIGN_RESULT_UNSUPPORTED_SYNTAX"
 msgstr "Diese virtuelle Befehlssyntax wird nicht unterstützt.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_VM_INVALID"
+msgstr "Prüfe das virtuelle Programm oder Eingabeformat.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_LIMIT"
+msgstr "Die Grenze des virtuellen Programms wurde überschritten.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_VM_OBSERVED"
+msgstr "Zustand des virtuellen Programms.\n{detail}"
+
 msgid "CAMPAIGN_RESULT_WEB_AUTHENTICATED"
 msgstr "Am virtuellen Webkonto angemeldet.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_WEB_LOGGED_OUT"
 msgstr "Virtuelle Websitzung beendet.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_WINDOW_END"
+msgstr "Dieser Messpunkt hat kein weiteres Beobachtungsfenster.\n{detail}"
+
+msgid "CAMPAIGN_SAVE_ATTENTION"
+msgstr "Prüfe den Speicherzustand oder stelle eine verfügbare Sicherung wieder her."
+
+msgid "CAMPAIGN_SELECT"
+msgstr "Kampagne wählen"
+
+msgid "CAMPAIGN_TRACKER"
+msgstr "Ermittler"
+
+msgid "CAMPAIGN_TRACKER_DESC"
+msgstr "Grenze die Spur durch Beobachtungen und Gegenbelege ein."
 
 msgid "CANCEL"
 msgstr "Abbrechen"
@@ -284,6 +458,585 @@ msgstr "Ein unabhängig entwickelter Hacking-Simulator\nVerwendet ausschließlic
 msgid "DESKTOP_NOT_READY"
 msgstr "Die Verbindung zum Desktop ist noch nicht bereit."
 
+msgid "DF1_D01_ABSTRACTION"
+msgstr "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+
+msgid "DF1_D01_BRIEF"
+msgstr "Deine erste Nacht im Dienst. Ich bin Doyun, der Techniker vor Ort. Eine Anfrage liest den eigenen Beleg, eine andere einen fremden. Den Server abzuschalten beseitigt beide. Das ist nicht unser Ziel.\n\nVerbinde dich mit dem Arbeitskonto und beobachte zuerst eine reguläre Anfrage. Repariere die Eigentümerprüfung oder schließe den offenen Weg und verlege reguläre Arbeit auf einen eng begrenzten Delegationsweg. Prüfe, wer weiterarbeiten kann, nicht nur, was verschwand.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d01.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D01_CASE_FOREIGN_DIRECT"
+msgstr "Unbeteiligtes Konto am ursprünglichen Zugang"
+
+msgid "DF1_D01_CASE_FOREIGN_GATEWAY"
+msgstr "Unbeteiligtes Konto am genehmigten Weg"
+
+msgid "DF1_D01_CASE_OWN_A"
+msgstr "Eigener Beleg von Bürger A"
+
+msgid "DF1_D01_CASE_OWN_B"
+msgstr "Eigener Beleg von Bürger B"
+
+msgid "DF1_D01_CASE_STAFF"
+msgstr "Delegierter Beleg des zuständigen Personals"
+
+msgid "DF1_D01_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "DF1_D01_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "DF1_D01_CONTROL_OWNER_CHECK"
+msgstr "Belegeigentümer prüfen"
+
+msgid "DF1_D01_DESK_NAME"
+msgstr "Die Tür soll offen bleiben · Arbeitsplatz"
+
+msgid "DF1_D01_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "DF1_D01_GOAL"
+msgstr "Weise unbeteiligte Zugriffe ab und erhalte das Lesen beider Bürger und des zuständigen Personals."
+
+msgid "DF1_D01_HINT_1"
+msgstr "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Beobachte, wie Eigentümerprüfung oder enge Delegation das Ergebnis verändern."
+
+msgid "DF1_D01_HINT_2"
+msgstr "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+
+msgid "DF1_D01_HINT_3"
+msgstr "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+
+msgid "DF1_D01_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "DF1_D01_LIMIT"
+msgstr "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+
+msgid "DF1_D01_PRINCIPLE"
+msgstr "Beobachte, wie Eigentümerprüfung oder enge Delegation das Ergebnis verändern."
+
+msgid "DF1_D01_REPLY"
+msgstr "Serin und die Wartungskraft können weiterarbeiten; fremde Zugriffe sind gesperrt. Damit haben wir einen Maßstab. Beim nächsten Alarm kommen reguläre Bürger und wiederholte Versuche von derselben Adresse."
+
+msgid "DF1_D01_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D01_TITLE"
+msgstr "Die Tür soll offen bleiben"
+
+msgid "DF1_D02_ABSTRACTION"
+msgstr "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+
+msgid "DF1_D02_BRIEF"
+msgstr "Von der Krankenhausrelaisadresse kommen viele fehlgeschlagene Anmeldungen, aber auch reguläre Aufträge. Die ganze Adresse zu sperren ist einfach. Prüfe zuerst, wem dadurch Zugang fehlt.\n\nBegrenze Wiederholungen je Konto oder verlege reguläre Arbeit auf einen genehmigten Anmeldeweg. Prüfe danach gültige Personalanmeldungen. Echtzeitwarten ist nicht nötig.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d02.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D02_CASE_FAILED_1"
+msgstr "Wiederholter Fehlschlag 1"
+
+msgid "DF1_D02_CASE_FAILED_2"
+msgstr "Wiederholter Fehlschlag 2"
+
+msgid "DF1_D02_CASE_FAILED_3"
+msgstr "Wiederholter Fehlschlag 3"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_1"
+msgstr "Wiederholter Fehlschlag 1 am genehmigten Weg"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_2"
+msgstr "Wiederholter Fehlschlag 2 am genehmigten Weg"
+
+msgid "DF1_D02_CASE_GATEWAY_FAILED_3"
+msgstr "Wiederholter Fehlschlag 3 am genehmigten Weg"
+
+msgid "DF1_D02_CASE_LEGITIMATE"
+msgstr "Regulärer Bürger am gemeinsamen Ausgangspunkt"
+
+msgid "DF1_D02_CASE_WARD_JOB"
+msgstr "Gültige Anmeldung des Stationsmeldeauftrags"
+
+msgid "DF1_D02_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "DF1_D02_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "DF1_D02_CONTROL_RETRY_LIMIT"
+msgstr "Wiederholungsgrenze je Konto"
+
+msgid "DF1_D02_DESK_NAME"
+msgstr "Zwei Menschen, eine Adresse · Arbeitsplatz"
+
+msgid "DF1_D02_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "DF1_D02_GOAL"
+msgstr "Begrenze wiederholte Anmeldefehler und erhalte reguläre Bürger- und Meldezugriffe am gemeinsamen Ausgangspunkt."
+
+msgid "DF1_D02_HINT_1"
+msgstr "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Vergleiche kontobezogene Versuche und genehmigte Anmeldewege, statt eine Adresse zu sperren."
+
+msgid "DF1_D02_HINT_2"
+msgstr "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+
+msgid "DF1_D02_HINT_3"
+msgstr "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+
+msgid "DF1_D02_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "DF1_D02_LIMIT"
+msgstr "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+
+msgid "DF1_D02_PRINCIPLE"
+msgstr "Vergleiche kontobezogene Versuche und genehmigte Anmeldewege, statt eine Adresse zu sperren."
+
+msgid "DF1_D02_REPLY"
+msgstr "Eine Adresse nicht mit einer Person gleichzusetzen erhielt den Krankenhausbetrieb. Das vorläufige Konto aus diesen Fehlschlägen besitzt noch eine aktive Sitzung."
+
+msgid "DF1_D02_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D02_TITLE"
+msgstr "Zwei Menschen, eine Adresse"
+
+msgid "DF1_D03_ABSTRACTION"
+msgstr "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+
+msgid "DF1_D03_BRIEF"
+msgstr "Hier ist Seoyun. Die vorläufige Wartung ist beendet, ihre Sitzung liest aber noch Daten. Ein regulärer Dauerauftrag nutzt denselben Dienst. Alle abzumelden würde schaden.\n\nWiderrufe nur die offene Sitzung oder begrenze und ersetze die abgelaufene Berechtigung. Prüfe frischen regulären Zugang und Ablehnung der alten Sitzung getrennt.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d03.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D03_CASE_FRESH"
+msgstr "Neue reguläre Sitzung"
+
+msgid "DF1_D03_CASE_OTHER_JOB"
+msgstr "Anderer regulärer Dauerauftrag"
+
+msgid "DF1_D03_CASE_RETIRED"
+msgstr "Ausgemusterte Berechtigung am ursprünglichen Weg"
+
+msgid "DF1_D03_CASE_RETIRED_GATEWAY"
+msgstr "Ausgemusterte Berechtigung am genehmigten Weg"
+
+msgid "DF1_D03_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "DF1_D03_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "DF1_D03_CONTROL_SESSION_GUARD"
+msgstr "Abgelaufene Sitzungsrechte prüfen"
+
+msgid "DF1_D03_DESK_NAME"
+msgstr "Ein Schlüssel muss enden · Arbeitsplatz"
+
+msgid "DF1_D03_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "DF1_D03_GOAL"
+msgstr "Weise abgelaufene Rechte ab und erhalte andere reguläre Sitzungen."
+
+msgid "DF1_D03_HINT_1"
+msgstr "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Vergleiche gezielten Widerruf mit dem Wechsel auf einen genehmigten Weg, der die alte Sitzung nicht ausgestellt hat."
+
+msgid "DF1_D03_HINT_2"
+msgstr "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+
+msgid "DF1_D03_HINT_3"
+msgstr "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+
+msgid "DF1_D03_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "DF1_D03_LIMIT"
+msgstr "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+
+msgid "DF1_D03_PRINCIPLE"
+msgstr "Vergleiche gezielten Widerruf mit dem Wechsel auf einen genehmigten Weg, der die alte Sitzung nicht ausgestellt hat."
+
+msgid "DF1_D03_REPLY"
+msgstr "Die alte Berechtigung wird abgewiesen, die reguläre Arbeit bleibt. Die Ablehnung der alten Sitzung ist durch die Serverantwort belegt, nicht durch beruhigende Bildschirmworte. Die nächste Eingabe kommt unter einem Fotonamen."
+
+msgid "DF1_D03_SENDER"
+msgstr "Seoyun"
+
+msgid "DF1_D03_TITLE"
+msgstr "Ein Schlüssel muss enden"
+
+msgid "DF1_D04_ABSTRACTION"
+msgstr "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+
+msgid "DF1_D04_BRIEF"
+msgstr "Ein Wartungsfoto lief als Verarbeitungsauftrag. Dateiendungen zu verbieten repariert das Verhältnis von Inhalt und Speicherort nicht. Die Fotoannahme zu schließen stoppt die Arbeit vor Ort.\n\nRepariere Prüfung und nicht ausführbare Speicherung oder isoliere die Verarbeitung und veröffentliche nur freigegebene Fotos. Tarnungen müssen abgewiesen, reguläre JPEG erzeugt und gelesen werden können.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d04.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D04_CASE_DISGUISED"
+msgstr "Als Foto getarnte Eingabe"
+
+msgid "DF1_D04_CASE_DISGUISED_GATEWAY"
+msgstr "Getarnte Datei an der genehmigten Verarbeitung"
+
+msgid "DF1_D04_CASE_PHOTO"
+msgstr "Reguläres JPEG erzeugen"
+
+msgid "DF1_D04_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "DF1_D04_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "DF1_D04_CONTROL_NO_EXECUTION"
+msgstr "Uploads ohne Ausführung speichern"
+
+msgid "DF1_D04_CONTROL_PHOTO_CHECK"
+msgstr "Fotoinhaltsformat prüfen"
+
+msgid "DF1_D04_DESK_NAME"
+msgstr "Die Fotowerkbank · Arbeitsplatz"
+
+msgid "DF1_D04_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "DF1_D04_GOAL"
+msgstr "Verhindere getarnte Dateien und erzeuge ein reguläres JPEG über sichere Verarbeitung."
+
+msgid "DF1_D04_HINT_1"
+msgstr "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Trenne Name, MIME und Inhaltssignatur vom tatsächlichen Speicher- und Ausführungszustand."
+
+msgid "DF1_D04_HINT_2"
+msgstr "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+
+msgid "DF1_D04_HINT_3"
+msgstr "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+
+msgid "DF1_D04_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "DF1_D04_LIMIT"
+msgstr "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+
+msgid "DF1_D04_PRINCIPLE"
+msgstr "Trenne Name, MIME und Inhaltssignatur vom tatsächlichen Speicher- und Ausführungszustand."
+
+msgid "DF1_D04_REPLY"
+msgstr "Reguläre Fotos kommen an, die falsche Verarbeitung ist gesperrt. Als Nächstes geht es darum, welche internen Dienste der Dateiauftrag außerdem erreicht."
+
+msgid "DF1_D04_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D04_TITLE"
+msgstr "Die Fotowerkbank"
+
+msgid "DF1_D05_ABSTRACTION"
+msgstr "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+
+msgid "DF1_D05_BRIEF"
+msgstr "Ich bin Taegyeong, zuständig für die städtischen Dienste. Die Vorschau erreichte interne Daten. Alle internen Verbindungen zu kappen würde Zustandsprüfungen und Bürgerseiten stören. Trenne erlaubten Zweck und Ziel.\n\nBegrenze interne Objektrechte oder leite nur benötigte Anfragen durch einen genehmigten Proxy. Tatsächlicher Anfragender und Ziel bestimmen die Richtlinie, kein verborgenes Angreiferetikett.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d05.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D05_CASE_HEALTH"
+msgstr "Benötigte Zustandsprüfung des Arbeitsprozesses"
+
+msgid "DF1_D05_CASE_PREVIEW"
+msgstr "Reguläre Bürgervorschau"
+
+msgid "DF1_D05_CASE_PROXY_SECRET"
+msgstr "Anfrage außerhalb des Bereichs am genehmigten Proxy"
+
+msgid "DF1_D05_CASE_SECRET"
+msgstr "Arbeitsprozess liest fremde Aufbewahrungsdaten"
+
+msgid "DF1_D05_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "DF1_D05_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "DF1_D05_CONTROL_OWNER_CHECK"
+msgstr "Belegeigentümer prüfen"
+
+msgid "DF1_D05_DESK_NAME"
+msgstr "Anfragen nach innen · Arbeitsplatz"
+
+msgid "DF1_D05_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "DF1_D05_GOAL"
+msgstr "Erhalte Vorschau und Zustandsprüfungen und verhindere unberechtigte interne Lesezugriffe."
+
+msgid "DF1_D05_HINT_1"
+msgstr "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Vergleiche Objekteigentum des Arbeitsprozesses mit dem Umfang des genehmigten Proxys."
+
+msgid "DF1_D05_HINT_2"
+msgstr "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+
+msgid "DF1_D05_HINT_3"
+msgstr "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+
+msgid "DF1_D05_INTERNAL_NAME"
+msgstr "Interner Zustands- und Aufbewahrungsdienst"
+
+msgid "DF1_D05_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "DF1_D05_LIMIT"
+msgstr "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+
+msgid "DF1_D05_PRINCIPLE"
+msgstr "Vergleiche Objekteigentum des Arbeitsprozesses mit dem Umfang des genehmigten Proxys."
+
+msgid "DF1_D05_REPLY"
+msgstr "Zustandsprüfung und Vorschau laufen, unberechtigte interne Lesezugriffe scheitern. Die Grenze ist eng. Doch eine übereilte Dateirechteänderung hat die Bereitstellung gestoppt."
+
+msgid "DF1_D05_SENDER"
+msgstr "Taegyeong"
+
+msgid "DF1_D05_TITLE"
+msgstr "Anfragen nach innen"
+
+msgid "DF1_D06_ABSTRACTION"
+msgstr "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+
+msgid "DF1_D06_BRIEF"
+msgstr "Eine Änderung gegen fremde Schreibzugriffe hindert auch die Bereitstellung am Durchqueren des übergeordneten Ordners. Nur die Datei anzusehen verfehlt die Ursache. Prüfe Gruppen und jedes Verzeichnistor.\n\nRepariere nur nötige Gruppen oder ACL oder wechsle zu genehmigtem Arbeitskonto und Pfad. Allen sämtliche Rechte zu geben ist keine Lösung.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d06.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D06_CASE_FOREIGN_APPROVED"
+msgstr "Unbeteiligter Schreibzugriff am genehmigten Weg"
+
+msgid "DF1_D06_CASE_FOREIGN_WRITE"
+msgstr "Unbeteiligtes Konto verändert die Bereitstellung"
+
+msgid "DF1_D06_CASE_READ"
+msgstr "Bereitstellungskonto liest seinen Zustand"
+
+msgid "DF1_D06_CASE_WRITE"
+msgstr "Bereitstellungskonto schreibt sein Arbeitsergebnis"
+
+msgid "DF1_D06_DESK_NAME"
+msgstr "Rechte repariert, Arbeit gestoppt · Arbeitsplatz"
+
+msgid "DF1_D06_DIRECTORY_MODE"
+msgstr "Durchquerungsrechte des Bereitstellungsordners"
+
+msgid "DF1_D06_FILE_MODE"
+msgstr "Rechte der Arbeitsergebnisdatei"
+
+msgid "DF1_D06_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "DF1_D06_GOAL"
+msgstr "Ermögliche Lesen und Schreiben der Bereitstellung und weise fremde Änderungen ab."
+
+msgid "DF1_D06_HINT_1"
+msgstr "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Prüfe übergeordnete Ordner und aktuelle Gruppen oder nutze den genehmigten Alternativweg."
+
+msgid "DF1_D06_HINT_2"
+msgstr "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+
+msgid "DF1_D06_HINT_3"
+msgstr "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+
+msgid "DF1_D06_JOB_GROUPS"
+msgstr "Benötigte Gruppen des Bereitstellungskontos"
+
+msgid "DF1_D06_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "DF1_D06_LIMIT"
+msgstr "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+
+msgid "DF1_D06_PRINCIPLE"
+msgstr "Prüfe übergeordnete Ordner und aktuelle Gruppen oder nutze den genehmigten Alternativweg."
+
+msgid "DF1_D06_REPLY"
+msgstr "Bereitstellung und Wartung laufen, fremde Schreibzugriffe werden abgewiesen. Die nötigen Rechte blieben begrenzt. Nun treffen eine echte Bedrohung und eine falsche Notregel zusammen."
+
+msgid "DF1_D06_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D06_TITLE"
+msgstr "Rechte repariert, Arbeit gestoppt"
+
+msgid "DF1_D07_ABSTRACTION"
+msgstr "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+
+msgid "DF1_D07_BASELINE_CHECKPOINT"
+msgstr "Meldeverfügbarkeit bei der geprüften Übergabe"
+
+msgid "DF1_D07_BRIEF"
+msgstr "Unberechtigte interne Anfragen sind gestoppt, reguläre Meldungen ebenfalls. Die ganze frühere Welt wiederherzustellen könnte einen widerrufenen Schlüssel beleben. Entscheidend ist die Grenze der Rücknahme.\n\nNimm nur die falsche Richtliniengruppe zurück oder verlege reguläre Arbeit auf einen genehmigten Ersatzdienst. Sitzungswiderrufe und gesicherte Belege werden nicht zurückgenommen.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d07.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D07_CASE_FRESH"
+msgstr "Neue reguläre Sitzung"
+
+msgid "DF1_D07_CASE_INTERNAL_TARGET"
+msgstr "Internes Ziel außerhalb des Bereichs"
+
+msgid "DF1_D07_CASE_NOTIFY"
+msgstr "Reguläre Stationsmeldung zustellen"
+
+msgid "DF1_D07_CASE_OTHER_JOB"
+msgstr "Anderer regulärer Dauerauftrag"
+
+msgid "DF1_D07_CASE_RETIRED"
+msgstr "Ausgemusterte Berechtigung am ursprünglichen Weg"
+
+msgid "DF1_D07_CASE_RETIRED_GATEWAY"
+msgstr "Ausgemusterte Berechtigung am genehmigten Weg"
+
+msgid "DF1_D07_CASE_STANDBY_TARGET"
+msgstr "Unzulässiges Ziel am Ersatzdienst"
+
+msgid "DF1_D07_CONTROL_NOTIFY_OPEN"
+msgstr "Hauptmeldeweg aktivieren"
+
+msgid "DF1_D07_CONTROL_SESSION_GUARD"
+msgstr "Abgelaufene Sitzungsrechte prüfen"
+
+msgid "DF1_D07_CONTROL_STANDBY_OPEN"
+msgstr "Ersatzmeldeweg aktivieren"
+
+msgid "DF1_D07_CONTROL_TARGET_SCOPE"
+msgstr "Meldeziele begrenzen"
+
+msgid "DF1_D07_DESK_NAME"
+msgstr "Zwei Ausfälle in einer Nacht · Arbeitsplatz"
+
+msgid "DF1_D07_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "DF1_D07_GOAL"
+msgstr "Stelle Meldungen wieder her und erhalte die Ablehnung widerrufener Sitzungen und unzulässiger Ziele."
+
+msgid "DF1_D07_HINT_1"
+msgstr "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Nur die Richtliniengruppe wird zurückgenommen; ein widerrufener Schlüssel kehrt nicht zurück."
+
+msgid "DF1_D07_HINT_2"
+msgstr "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+
+msgid "DF1_D07_HINT_3"
+msgstr "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+
+msgid "DF1_D07_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "DF1_D07_LIMIT"
+msgstr "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+
+msgid "DF1_D07_PRINCIPLE"
+msgstr "Nur die Richtliniengruppe wird zurückgenommen; ein widerrufener Schlüssel kehrt nicht zurück."
+
+msgid "DF1_D07_REPLY"
+msgstr "Meldungen werden wieder zugestellt, die alte Sitzung bleibt widerrufen. Die Übergabe unterscheidet kontrollierten Übergangsbetrieb von vollständiger Wiederherstellung."
+
+msgid "DF1_D07_SENDER"
+msgstr "Taegyeong"
+
+msgid "DF1_D07_TITLE"
+msgstr "Zwei Ausfälle in einer Nacht"
+
+msgid "DF1_D08_ABSTRACTION"
+msgstr "Dies ist ein begrenztes Arbeitsmodell mit registrierten Anfragen, Konten, Diensten und Richtlinien. Die Ergebnisse folgen der gemeinsamen virtuellen Welt."
+
+msgid "DF1_D08_BRIEF"
+msgstr "Die letzte Nachtübergabe. Webbelege, interne Meldungen und Wartung hängen zusammen. Alarme zu beseitigen ist nicht dasselbe, wie die Stadt zu schützen.\n\nStelle bestehende Dienste gezielt wieder her oder erhalte sie über genehmigte Alternativen. Prüfe reguläre Arbeit und modellierte Bedrohungen in deiner Konfiguration und übergib verbliebene Einschränkungen ehrlich.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\noperator@d08.defender.packet.test\nnight-duty\n"
+
+msgid "DF1_D08_CASE_FOREIGN_DIRECT"
+msgstr "Unbeteiligtes Konto am ursprünglichen Zugang"
+
+msgid "DF1_D08_CASE_FOREIGN_GATEWAY"
+msgstr "Unbeteiligtes Konto am genehmigten Weg"
+
+msgid "DF1_D08_CASE_FRESH"
+msgstr "Neue reguläre Sitzung"
+
+msgid "DF1_D08_CASE_INTERNAL_TARGET"
+msgstr "Internes Ziel außerhalb des Bereichs"
+
+msgid "DF1_D08_CASE_NOTIFY"
+msgstr "Reguläre Stationsmeldung zustellen"
+
+msgid "DF1_D08_CASE_OTHER_JOB"
+msgstr "Anderer regulärer Dauerauftrag"
+
+msgid "DF1_D08_CASE_OWN_A"
+msgstr "Eigener Beleg von Bürger A"
+
+msgid "DF1_D08_CASE_OWN_B"
+msgstr "Eigener Beleg von Bürger B"
+
+msgid "DF1_D08_CASE_RETIRED"
+msgstr "Ausgemusterte Berechtigung am ursprünglichen Weg"
+
+msgid "DF1_D08_CASE_RETIRED_GATEWAY"
+msgstr "Ausgemusterte Berechtigung am genehmigten Weg"
+
+msgid "DF1_D08_CASE_STAFF"
+msgstr "Delegierter Beleg des zuständigen Personals"
+
+msgid "DF1_D08_CASE_STANDBY_TARGET"
+msgstr "Unzulässiges Ziel am Ersatzdienst"
+
+msgid "DF1_D08_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "DF1_D08_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "DF1_D08_CONTROL_NOTIFY_OPEN"
+msgstr "Hauptmeldeweg aktivieren"
+
+msgid "DF1_D08_CONTROL_OWNER_CHECK"
+msgstr "Belegeigentümer prüfen"
+
+msgid "DF1_D08_CONTROL_SESSION_GUARD"
+msgstr "Abgelaufene Sitzungsrechte prüfen"
+
+msgid "DF1_D08_CONTROL_STANDBY_OPEN"
+msgstr "Ersatzmeldeweg aktivieren"
+
+msgid "DF1_D08_CONTROL_TARGET_SCOPE"
+msgstr "Meldeziele begrenzen"
+
+msgid "DF1_D08_DESK_NAME"
+msgstr "Die Stadt arbeitet weiter · Arbeitsplatz"
+
+msgid "DF1_D08_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "DF1_D08_GOAL"
+msgstr "Erfülle reguläre Beleg-, Melde- und Sitzungsarbeit samt Bedrohungsabwehr auf den gewählten Wegen."
+
+msgid "DF1_D08_HINT_1"
+msgstr "Beobachte reguläre Arbeit getrennt von problematischen Anfragen. Der Erfolg eines Dienstes belegt keinen anderen Arbeitsablauf."
+
+msgid "DF1_D08_HINT_2"
+msgstr "Halte Handelnden, Ziel und Weg gleich und ändere einen Maßnahmenumfang zum Vergleich."
+
+msgid "DF1_D08_HINT_3"
+msgstr "Wähle eine gezielte Regelung des ursprünglichen Wegs oder eine genehmigte Alternative. Alles abzuschalten verhindert auch reguläre Arbeit."
+
+msgid "DF1_D08_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "DF1_D08_LIMIT"
+msgstr "Das Bestehen der beobachteten Szenarien belegt keine Abwehr sämtlicher möglicher Angriffe."
+
+msgid "DF1_D08_PRINCIPLE"
+msgstr "Der Erfolg eines Dienstes belegt keinen anderen Arbeitsablauf."
+
+msgid "DF1_D08_REPLY"
+msgstr "Die Stadt arbeitet weiter. Gesperrte Bedrohungswege und funktionierende Dienste stehen in derselben Akte. Statt alle Risiken für beendet zu erklären, übergibst du einen Zustand, den die nächste Schicht prüfen und sicher ändern kann."
+
+msgid "DF1_D08_SENDER"
+msgstr "Doyun"
+
+msgid "DF1_D08_TITLE"
+msgstr "Die Stadt arbeitet weiter"
+
+msgid "DF1_ENDING_TITLE"
+msgstr "An die nächste Schicht"
+
+msgid "DF1_PACK_TITLE"
+msgstr "Verteidiger · Die Stadt arbeitet weiter"
+
 msgid "ENDING_PUBLIC_TEXT"
 msgstr "Nach der Trennung von Originalmitteilung und Wiederveröffentlichung wird eine geschwärzte Fallakte öffentlich. Seoyuns Unterschrift und Doyuns vorläufiges Relais bleiben dokumentiert. Die Menschen erfahren von mehr als einer Störung, samt offenen Fragen und Belegen. Veröffentlichung zerstört keine Originale und schüttet nicht sämtliche Daten aus."
 
@@ -332,11 +1085,1751 @@ msgstr "Der alte M01-Spielstand bleibt erhalten. Importierter Fortschritt ersetz
 msgid "IMPORT_LEGACY"
 msgstr "Altes M01 importieren"
 
+msgid "IN2_C01_NAME"
+msgstr "Seoyun"
+
+msgid "IN2_C02_NAME"
+msgstr "Doyun"
+
+msgid "IN2_C03_NAME"
+msgstr "Minseo"
+
+msgid "IN2_C04_NAME"
+msgstr "Taegyeong"
+
+msgid "IN2_COMMON_ABSTRACTION"
+msgstr "Dies ist ein kleines internes Zustands- und Belegmodell. Eingaben wirken nur auf die registrierte fiktive Welt."
+
+msgid "IN2_COMMON_CONTEXT_TITLE"
+msgstr "Beobachtungen zu diesem Fall"
+
+msgid "IN2_COMMON_INDEX_TITLE"
+msgstr "Verzeichnis der Nachtaufträge"
+
+msgid "IN2_COMMON_LIMIT"
+msgstr "Dies belegt keine umfassende Beherrschung von Protokollen, Betriebssystemen oder Fachwerkzeugen. Reale Systeme erfordern eine Genehmigung und umgebungsspezifische Prüfungen."
+
+msgid "IN2_COMMON_LOGIN_TITLE"
+msgstr "Anmeldung am fiktiven Arbeitskonto"
+
+msgid "IN2_COMMON_WORKBENCH_TITLE"
+msgstr "Isolierter virtueller Prüfstand"
+
+msgid "IN2_ENDING_PUBLIC_TEXT"
+msgstr "Nach der Trennung von Originalmitteilung und Wiederveröffentlichung wird eine geschwärzte Fallakte öffentlich. Seoyuns Unterschrift und Doyuns vorläufiges Relais bleiben dokumentiert. Die Menschen erfahren von mehr als einer Störung, samt offenen Fragen und Belegen. Veröffentlichung zerstört keine Originale und schüttet nicht sämtliche Daten aus."
+
+msgid "IN2_ENDING_PUBLIC_TITLE"
+msgstr "Eine öffentliche Akte schützt Bürger"
+
+msgid "IN2_ENDING_REVIEW_TEXT"
+msgstr "Unabhängige Transportbelege bleiben zusammen mit den Grenzen der kleinen Prüf- und Speichermodelle erhalten. Minseo macht aus einem Werkzeugerfolg keine Aussage über das Gesamtsystem. Minimale Kopien gehen an getrennte Verwahrer, die dieselben Fakten gegenprüfen können. Der letzte Bildschirm enthält Herkunft und offene Fragen, keinen Universalschlüssel."
+
+msgid "IN2_ENDING_REVIEW_TITLE"
+msgstr "Kopien zur gegenseitigen Prüfung"
+
+msgid "IN2_ENDING_SEALED_TEXT"
+msgstr "Seoyun dokumentiert die Übergabe, Doyun die erhaltenen Dienste. Taegyeong zeichnet Notfreigabe und Aufsichtsversagen getrennt ab. Minseo kennzeichnet Lücken als unbekannt. Die Belege kommen in versiegelte Auditverwahrung. Nicht jeder Bürger erfährt von dieser Nacht, doch Originale und ein Weg zum Anfechten der Akten bleiben erhalten."
+
+msgid "IN2_ENDING_SEALED_TITLE"
+msgstr "Die versiegelte Auditübergabe"
+
+msgid "IN2_M01_BRIEF"
+msgstr "Ich sende diese Nachricht nur einmal. Die Übergabeaufzeichnung N47 soll aus dem Nachtarchiv entfernt werden. Lass das Original bestehen und lege eine Kopie in ~/archive ab.\n\nDer öffentliche Zugang lautet guest / guest. Ist der geschützte Ordner geschlossen, lies die verbliebene Übergabenotiz. Ob du ins Archiv gelangst oder eine zwischengespeicherte Kopie findest, entscheidest du."
+
+msgid "IN2_M01_EXPLAIN"
+msgstr "Verbindung, Anmeldung, Dateirechte und Sicherung sind verschiedene Zustände. Die gültige Kopie stimmte in Inhalt, Aufzeichnungs-ID und Herkunft überein, nicht nur im Ködernamen. Ein anderer gültiger Weg erfüllt dasselbe Ziel."
+
+msgid "IN2_M01_FILE_HANDOFF_LOG"
+msgstr "[Aufbewahrung beendet]\nEin veraltetes Prüfformular, nicht die gesuchte Übergabe.\n"
+
+msgid "IN2_M01_FILE_README_TXT"
+msgstr "Nachtprüfung\nGeschützte Aufzeichnungen liegen in /vault.\nLies die Übergabenotiz unter /public/shift-note.txt.\n"
+
+msgid "IN2_M01_FILE_SHIFT_NOTE_TXT"
+msgstr "[Übergabenotiz]\nWartungskonto: maint\nVorläufige Phrase: lumen-47\nÜbergabeaufzeichnung: /vault/handoff.log\nZwischengespeicherte Kopie: https://mirror.packet.test/cache/47\nOriginale weder ändern noch löschen.\n"
+
+msgid "IN2_M01_GOAL"
+msgstr "Erhalte das Original und sichere Übergabe N47 in ~/archive."
+
+msgid "IN2_M01_HINT_1"
+msgstr "Verbinde dich mit dem öffentlichen Konto und vergleiche geschützten Ordner und öffentliche Notiz. Eine Ablehnung ist nicht erforderlich."
+
+msgid "IN2_M01_HINT_2"
+msgstr "/public/shift-note.txt nennt das Konto maint und eine separate Webcachekopie."
+
+msgid "IN2_M01_HINT_3"
+msgstr "Sichere /vault/handoff.log über die Wartung oder die Kopie unter mirror.packet.test/cache/47. public/handoff.log trägt denselben Namen, ist aber eine andere Aufzeichnung."
+
+msgid "IN2_M01_HOST_NAME"
+msgstr "Nachtarchiv"
+
+msgid "IN2_M01_PAGE_1_BODY"
+msgstr "Nachtübertragung läuft.\nÖffentliche Mitteilungen sind verfügbar. Geschützte Übergaben benötigen eine Wartungssitzung."
+
+msgid "IN2_M01_PAGE_1_LINK_1"
+msgstr "Bereitstellungsmitteilung öffnen"
+
+msgid "IN2_M01_PAGE_1_TITLE"
+msgstr "Nachtarchiv"
+
+msgid "IN2_M01_PAGE_2_BODY"
+msgstr "Die Verfügbarkeit der Übergabe wird geprüft. Auf einem anderen Relais liegt eine vorläufige Kopie. Ihren Ort nennt die Übergabenotiz des Servers."
+
+msgid "IN2_M01_PAGE_2_LINK_1"
+msgstr "Archivstartseite"
+
+msgid "IN2_M01_PAGE_2_TITLE"
+msgstr "Mitteilung zur Nachtbereitstellung"
+
+msgid "IN2_M01_PAGE_3_TITLE"
+msgstr "Relaiscache / Übergabe 47"
+
+msgid "IN2_M01_RECORD_TEXT"
+msgstr "[N47 / HANDOFF]\nNachtübergabe · 00:47\nÜbertragung: relay-02 -> archive-17\nFreigabemarkierung: SY / Gegenprüfung ausstehend\nOriginal erhalten und nur eine Kopie übergeben.\nNächste Spur: die fehlende Übertragung von relay 02.\n"
+
+msgid "IN2_M01_REPLY"
+msgstr "Angekommen. Auch das Original ist noch da. Doch in dieser Übergabe fehlt eine Übertragung. Merke dir, wann relay 02 das Ziel änderte: 00:47. Ich habe die nächste Adresse geschickt."
+
+msgid "IN2_M01_REPLY_SUBJECT"
+msgstr "[Bestätigt] Der erste Nachtauftrag"
+
+msgid "IN2_M01_SUBJECT"
+msgstr "[Nachtauftrag] Der erste Nachtauftrag"
+
+msgid "IN2_M01_TITLE"
+msgstr "Der erste Nachtauftrag"
+
+msgid "IN2_M02_AUDIT"
+msgstr "[M02 Belege]\nVerbinde Absender und neues Ziel über R204.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\njob N47 changed destination under request R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M02_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Relay02"
+
+msgid "IN2_M02_BRIEF"
+msgstr "Seoyun hat mir deine Kopie gegeben. Ich bin Doyun und war für das Nachtnetz zuständig. N47 ist nicht als fehlgeschlagen markiert. Warum fehlt dann eine Übertragung? Wer Dateien alphabetisch liest, kann die entscheidende Zeile übersehen.\n\nVergleiche aktuelles und rotiertes Protokoll sowie Bereitstellungsnotiz anhand der Auftrags-ID. Dies ist kein Reparaturauftrag. Kläre zuerst, wer was wohin geschickt hat.\n\nlogreader@relay02.packet.test / patrol-ember\nregistrar@custodym02.packet.test / paper-thrush\n"
+
+msgid "IN2_M02_CONTEXT"
+msgstr "[Verbinde Absender und neues Ziel über R204.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\njob | request | destination\nN47 | R204 | transit04\nN46 | R203 | archive"
+
+msgid "IN2_M02_EXPLAIN"
+msgstr "Verbinde Absender und neues Ziel über R204.\nDie aktuelle Datei enthält das Ziel unmittelbar vor der Rotation nicht.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M02_GOAL"
+msgstr "Verbinde Absender und neues Ziel über R204."
+
+msgid "IN2_M02_HINT_1"
+msgstr "Die aktuelle Datei enthält das Ziel unmittelbar vor der Rotation nicht."
+
+msgid "IN2_M02_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M02_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M02_HOST_NAME"
+msgstr "Arbeitsdienst Relay02"
+
+msgid "IN2_M02_PRINCIPLE"
+msgstr "Die aktuelle Datei enthält das Ziel unmittelbar vor der Rotation nicht."
+
+msgid "IN2_M02_REPLY"
+msgstr "Die Verbindung war nie unterbrochen. Das Ziel wechselte von relay-02 zu transit-04, und nur die Ausnahmeeinträge verschwanden. Das passt nicht zur gemeldeten Störung. Prüfen wir, ob dieser Server wirklich offline ist."
+
+msgid "IN2_M02_REPLY_SUBJECT"
+msgstr "[Bestätigt] Die Tür im Protokoll"
+
+msgid "IN2_M02_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nDESK TRANSCRIPT\nR204:relay02\n\nRETAINED TRANSCRIPT\nR204:transit04"
+
+msgid "IN2_M02_SUBJECT"
+msgstr "[Nachtauftrag] Die Tür im Protokoll"
+
+msgid "IN2_M02_TITLE"
+msgstr "Die Tür im Protokoll"
+
+msgid "IN2_M03_AUDIT"
+msgstr "[M03 Belege]\nVergleiche die Dienstsichtbarkeit und öffne eine beschränkte Prüfsitzung.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nmaintenance service on transit-04 still serves marker R204\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M03_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Transit04"
+
+msgid "IN2_M03_BRIEF"
+msgstr "transit-04 gilt als stillgelegt, doch die Übergabe lief darüber. Klopfe nicht immer wieder an dieselbe vermeintliche Adresse. Ein erreichbarer Dienst und eine geschlossene Tür sind verschiedene Dinge.\n\nDoyun hat NetProbe angeschlossen. Ein sichtbarer Port verleiht keine Rechte. Bestimme den Dienst, öffne eine beschränkte Prüfsitzung und bestätige die Markierung.\n\nwatch@transit04.packet.test / channel-birch\nmapkeeper@custodym03.packet.test / north-span\n"
+
+msgid "IN2_M03_CONTEXT"
+msgstr "[Vergleiche die Dienstsichtbarkeit und öffne eine beschränkte Prüfsitzung.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nDESK TRANSCRIPT\n22:open:ssh\n\nRETAINED TRANSCRIPT\n443:filtered:https"
+
+msgid "IN2_M03_EXPLAIN"
+msgstr "Vergleiche die Dienstsichtbarkeit und öffne eine beschränkte Prüfsitzung.\nEin gefilterter HTTPS-Dienst kann neben einem offenen SSH-Prüfdienst bestehen.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M03_GOAL"
+msgstr "Vergleiche die Dienstsichtbarkeit und öffne eine beschränkte Prüfsitzung."
+
+msgid "IN2_M03_HINT_1"
+msgstr "Ein gefilterter HTTPS-Dienst kann neben einem offenen SSH-Prüfdienst bestehen."
+
+msgid "IN2_M03_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M03_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M03_HOST_NAME"
+msgstr "Arbeitsdienst Transit04"
+
+msgid "IN2_M03_PRINCIPLE"
+msgstr "Ein gefilterter HTTPS-Dienst kann neben einem offenen SSH-Prüfdienst bestehen."
+
+msgid "IN2_M03_REPLY"
+msgstr "Stillgelegt wurde nur die öffentliche Seite. Der Wartungsdienst läuft und enthält noch R204. Die nächste Aufzeichnung wurde über den Bibliotheksserver abgefragt. Jemand nutzt die zurückgelassenen Systeme als Weg."
+
+msgid "IN2_M03_REPLY_SUBJECT"
+msgstr "[Bestätigt] Ein Port hört noch zu"
+
+msgid "IN2_M03_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nservice | port | state\nmaintenance | 22 | open\ncitizen | 443 | filtered"
+
+msgid "IN2_M03_SUBJECT"
+msgstr "[Nachtauftrag] Ein Port hört noch zu"
+
+msgid "IN2_M03_TITLE"
+msgstr "Ein Port hört noch zu"
+
+msgid "IN2_M04_AUDIT"
+msgstr "[M04 Belege]\nVergleiche Anzeige- und Antwortverweise, um die Änderung C731 zu sichern.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nreservation amendment R204 links receipt C731\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M04_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Library"
+
+msgid "IN2_M04_BRIEF"
+msgstr "Die Reservierungsseite meldet eine abgesagte Besprechung, während die Serverantwort auf eine andere Aufzeichnung verweist. Aktualisieren klärt nicht, welche Aussage stimmt.\n\nVergleiche in RequestLab die Abfrage mit dem Verweis ihrer Antwort. Du musst keine Bürgerreservierung anlegen oder stornieren. Finde nur die fehlende Änderung.\n\nlibrarian@library.packet.test / amber-index\nclerk@custodym04.packet.test / quiet-reading\n"
+
+msgid "IN2_M04_CONTEXT"
+msgstr "[Vergleiche Anzeige- und Antwortverweise, um die Änderung C731 zu sichern.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nDESK TRANSCRIPT\nscreen:cancelled:B204\n\nRETAINED TRANSCRIPT\nserver:transferred:C731"
+
+msgid "IN2_M04_EXPLAIN"
+msgstr "Vergleiche Anzeige- und Antwortverweise, um die Änderung C731 zu sichern.\nPrüfe über den Statuscode hinaus den tatsächlichen Vorgangszustand der Antwort.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M04_GOAL"
+msgstr "Vergleiche Anzeige- und Antwortverweise, um die Änderung C731 zu sichern."
+
+msgid "IN2_M04_HINT_1"
+msgstr "Prüfe über den Statuscode hinaus den tatsächlichen Vorgangszustand der Antwort."
+
+msgid "IN2_M04_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M04_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M04_HOST_NAME"
+msgstr "Arbeitsdienst Library"
+
+msgid "IN2_M04_PRINCIPLE"
+msgstr "Prüfe über den Statuscode hinaus den tatsächlichen Vorgangszustand der Antwort."
+
+msgid "IN2_M04_REPLY"
+msgstr "Die Absage auf dem Bildschirm und die Übertragung auf dem Server waren nicht dasselbe. Beleg C731 landete im Reparaturportal. Ich kontaktiere Serin. Ab jetzt zählt, wem die Unterlagen gehören."
+
+msgid "IN2_M04_REPLY_SUBJECT"
+msgstr "[Bestätigt] Eine Adresse, zwei Antworten"
+
+msgid "IN2_M04_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nrequest | receipt | event\nR204 | C731 | transferred\nR203 | C730 | cancelled"
+
+msgid "IN2_M04_SUBJECT"
+msgstr "[Nachtauftrag] Eine Adresse, zwei Antworten"
+
+msgid "IN2_M04_TITLE"
+msgstr "Eine Adresse, zwei Antworten"
+
+msgid "IN2_M05_AUDIT"
+msgstr "[M05 Belege]\nBelege Zielbericht und Eigentumsgrenze mit möglichst wenigen Daten.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nreceipt C731 exposes exception-hold amendment\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M05_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Repair"
+
+msgid "IN2_M05_BRIEF"
+msgstr "Serins Beleg verweist auf einen verschwundenen Wartungsbericht statt auf ihre Reparatur. Liefert der Server ihn auch ohne Schaltfläche? Vergleiche mit ihrem eigenen Beleg als Ausgangspunkt.\n\nNur der fiktive Bericht C731 gehört zum Auftrag. Prüfe den Objektverweis oder eine Kopie im Änderungsverlauf. Unbeteiligte Bürgerdaten zu sammeln ist kein Erfolg.\n\ncaseworker@repair.packet.test / green-receipt\nombuds@custodym05.packet.test / cedar-envelope\n"
+
+msgid "IN2_M05_CONTEXT"
+msgstr "[Belege Zielbericht und Eigentumsgrenze mit möglichst wenigen Daten.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nRECEIPT REGISTER\nreference | owner | attachment\nown | current caseworker | personal receipt\nC731 | Serin | exception-hold report\n\nREQUEST WINDOW\nGET /receipts/own\nGET /receipts/C731\n"
+
+msgid "IN2_M05_EXPLAIN"
+msgstr "Belege Zielbericht und Eigentumsgrenze mit möglichst wenigen Daten.\nVergleiche own und C731; Anmeldung und Objekteigentum sind getrennte Fragen.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M05_GOAL"
+msgstr "Belege Zielbericht und Eigentumsgrenze mit möglichst wenigen Daten."
+
+msgid "IN2_M05_HINT_1"
+msgstr "Vergleiche own und C731; Anmeldung und Objekteigentum sind getrennte Fragen."
+
+msgid "IN2_M05_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M05_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M05_HOST_NAME"
+msgstr "Arbeitsdienst Repair"
+
+msgid "IN2_M05_PRINCIPLE"
+msgstr "Vergleiche own und C731; Anmeldung und Objekteigentum sind getrennte Fragen."
+
+msgid "IN2_M05_REPLY"
+msgstr "Die Dienstseite bestimmt nicht den Eigentümer des Berichts. Das Original C731 enthielt einen Ausnahmevorbehalt, die Kopie nicht. Zugriffslücke und fehlender Eintrag sind zwei Probleme. Auf dem Anmeldeserver wird es plötzlich unruhig."
+
+msgid "IN2_M05_REPLY_SUBJECT"
+msgstr "[Bestätigt] Der Reparaturbeleg eines anderen"
+
+msgid "IN2_M05_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nreceipt | owner | attachment\nC731 | Serin | exception-hold\nC730 | other | ordinary"
+
+msgid "IN2_M05_SUBJECT"
+msgstr "[Nachtauftrag] Der Reparaturbeleg eines anderen"
+
+msgid "IN2_M05_TITLE"
+msgstr "Der Reparaturbeleg eines anderen"
+
+msgid "IN2_M06_AUDIT"
+msgstr "Erhalte reguläre Anmeldungen und begrenze Wiederholungsfehler beim ursprünglichen und genehmigten Anbieter.\n\nÜbergabe auf Grundlage geprüfter regulärer Arbeit und abgewiesener Anfragen. Auch die Originalaufzeichnungen blieben erhalten."
+
+msgid "IN2_M06_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Auth"
+
+msgid "IN2_M06_BRIEF"
+msgstr "Wiederholte Anmeldeversuche sperren auch reguläre Wartungskräfte aus. Alles zu sperren würde die Versuche stoppen, aber auch die Krankenhausmeldungen. Diesmal reicht es nicht, einen Weg zu finden.\n\nVergleiche die Fehlschläge und begrenze Wiederholungen, ohne berechtigte Anmeldungen zu verhindern. Die simulierte Uhr läuft nur bei Bedarf weiter. Wartezeit misst kein Können.\n\nshiftlead@auth.packet.test / warm-circuit\nrecovery@custodym06.packet.test / blue-ward\n\n\nRepariere die Kontogrenzen des bestehenden Dienstes oder schließe den anfälligen Zugang und verlege reguläre Arbeit zu einem genehmigten Anbieter mit eigenen Grenzen. Prüfe die tatsächlichen Antworten auf reguläre Anmeldungen und wiederholte Fehlschläge statt nur den Einstellungsnamen."
+
+msgid "IN2_M06_CASE_FAILED_1"
+msgstr "Wiederholter Fehlschlag 1"
+
+msgid "IN2_M06_CASE_FAILED_2"
+msgstr "Wiederholter Fehlschlag 2"
+
+msgid "IN2_M06_CASE_FAILED_3"
+msgstr "Wiederholter Fehlschlag 3"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_1"
+msgstr "Wiederholter Fehlschlag 1 am genehmigten Weg"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_2"
+msgstr "Wiederholter Fehlschlag 2 am genehmigten Weg"
+
+msgid "IN2_M06_CASE_GATEWAY_FAILED_3"
+msgstr "Wiederholter Fehlschlag 3 am genehmigten Weg"
+
+msgid "IN2_M06_CASE_LEGITIMATE"
+msgstr "Regulärer Bürger am gemeinsamen Ausgangspunkt"
+
+msgid "IN2_M06_CASE_WARD_JOB"
+msgstr "Gültige Anmeldung des Stationsmeldeauftrags"
+
+msgid "IN2_M06_CONTEXT"
+msgstr "Repariere die Kontogrenzen des bestehenden Dienstes oder schließe den anfälligen Zugang und verlege reguläre Arbeit zu einem genehmigten Anbieter mit eigenen Grenzen. Prüfe die tatsächlichen Antworten auf reguläre Anmeldungen und wiederholte Fehlschläge statt nur den Einstellungsnamen."
+
+msgid "IN2_M06_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "IN2_M06_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "IN2_M06_CONTROL_RETRY_LIMIT"
+msgstr "Wiederholungsgrenze je Konto"
+
+msgid "IN2_M06_EXPLAIN"
+msgstr "Repariere die Kontogrenzen des bestehenden Dienstes oder schließe den anfälligen Zugang und verlege reguläre Arbeit zu einem genehmigten Anbieter mit eigenen Grenzen. Prüfe die tatsächlichen Antworten auf reguläre Anmeldungen und wiederholte Fehlschläge statt nur den Einstellungsnamen."
+
+msgid "IN2_M06_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "IN2_M06_GOAL"
+msgstr "Erhalte reguläre Anmeldungen und begrenze Wiederholungsfehler beim ursprünglichen und genehmigten Anbieter."
+
+msgid "IN2_M06_HINT_1"
+msgstr "Erhalte reguläre Anmeldungen und begrenze Wiederholungsfehler beim ursprünglichen und genehmigten Anbieter."
+
+msgid "IN2_M06_HINT_2"
+msgstr "Repariere die Kontogrenzen des bestehenden Dienstes oder schließe den anfälligen Zugang und verlege reguläre Arbeit zu einem genehmigten Anbieter mit eigenen Grenzen. Prüfe die tatsächlichen Antworten auf reguläre Anmeldungen und wiederholte Fehlschläge statt nur den Einstellungsnamen."
+
+msgid "IN2_M06_HINT_3"
+msgstr "Repariere für direkte Abwehr die betreffende Kontrolle. Begrenze für die Alternative den ursprünglichen Zugang und wähle den genehmigten Weg für reguläre Anfragen. Alles abzuschalten verhindert reguläre Arbeit."
+
+msgid "IN2_M06_HOST_NAME"
+msgstr "Arbeitsdienst Auth"
+
+msgid "IN2_M06_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "IN2_M06_PRINCIPLE"
+msgstr "Die Berechtigung hängt vom Handelnden, Ziel und Arbeitsauftrag ab. Prüfe nach einem Wechsel des Verarbeitungswegs auch dort reguläre Arbeit und abzuweisende Anfragen."
+
+msgid "IN2_M06_REPLY"
+msgstr "Die reguläre Arbeit läuft wieder, wiederholte Fehlschläge werden begrenzt. Die Markierung passt zu einem alten Wiederherstellungsauftrag, nicht zu einem unbekannten Eindringling. Jetzt müssen wir dessen verbliebene Sitzung zuordnen."
+
+msgid "IN2_M06_REPLY_SUBJECT"
+msgstr "[Bestätigt] Zehnmal an die Tür geklopft"
+
+msgid "IN2_M06_ROUTE"
+msgstr "Repariere die Kontogrenzen des bestehenden Dienstes oder schließe den anfälligen Zugang und verlege reguläre Arbeit zu einem genehmigten Anbieter mit eigenen Grenzen. Prüfe die tatsächlichen Antworten auf reguläre Anmeldungen und wiederholte Fehlschläge statt nur den Einstellungsnamen."
+
+msgid "IN2_M06_SUBJECT"
+msgstr "[Nachtauftrag] Zehnmal an die Tür geklopft"
+
+msgid "IN2_M06_TITLE"
+msgstr "Zehnmal an die Tür geklopft"
+
+msgid "IN2_M07_AUDIT"
+msgstr "Weise ausgemusterte Sitzungsrechte ab und erhalte neue Sitzungen und reguläre Daueraufträge.\n\nÜbergabe auf Grundlage geprüfter regulärer Arbeit und abgewiesener Anfragen. Auch die Originalaufzeichnungen blieben erhalten."
+
+msgid "IN2_M07_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Session"
+
+msgid "IN2_M07_BRIEF"
+msgstr "Die Aushilfe ist gegangen, die Seite zeigt eine Abmeldung. Trotzdem ändert ihre alte Sitzung weiter Einstellungen. Ist ein Schlüssel auf dem Server widerrufen, nur weil er vom Bildschirm verschwindet?\n\nPrüfe alte und neue Sitzungen getrennt. Lösche nicht alles. Stelle fest, wer noch was tun kann, und beende nur die abgelaufene Berechtigung.\n\noperator@session.packet.test / evening-window\ncustodian@custodym07.packet.test / sparrow-vault\n\n\nAktiviere die Widerrufsprüfung und widerrufe den offenen Schlüssel oder schließe den alten Zugang und wechsle zu einem genehmigten Anbieter, der ihn nie ausgestellt hat. Prüfe neue Sitzungen und laufende Daueraufträge."
+
+msgid "IN2_M07_CASE_FRESH"
+msgstr "Neue reguläre Sitzung"
+
+msgid "IN2_M07_CASE_OTHER_JOB"
+msgstr "Anderer regulärer Dauerauftrag"
+
+msgid "IN2_M07_CASE_RETIRED"
+msgstr "Ausgemusterte Berechtigung am ursprünglichen Weg"
+
+msgid "IN2_M07_CASE_RETIRED_GATEWAY"
+msgstr "Ausgemusterte Berechtigung am genehmigten Weg"
+
+msgid "IN2_M07_CONTEXT"
+msgstr "Aktiviere die Widerrufsprüfung und widerrufe den offenen Schlüssel oder schließe den alten Zugang und wechsle zu einem genehmigten Anbieter, der ihn nie ausgestellt hat. Prüfe neue Sitzungen und laufende Daueraufträge."
+
+msgid "IN2_M07_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "IN2_M07_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "IN2_M07_CONTROL_SESSION_GUARD"
+msgstr "Abgelaufene Sitzungsrechte prüfen"
+
+msgid "IN2_M07_EXPLAIN"
+msgstr "Aktiviere die Widerrufsprüfung und widerrufe den offenen Schlüssel oder schließe den alten Zugang und wechsle zu einem genehmigten Anbieter, der ihn nie ausgestellt hat. Prüfe neue Sitzungen und laufende Daueraufträge."
+
+msgid "IN2_M07_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "IN2_M07_GOAL"
+msgstr "Weise ausgemusterte Sitzungsrechte ab und erhalte neue Sitzungen und reguläre Daueraufträge."
+
+msgid "IN2_M07_HINT_1"
+msgstr "Weise ausgemusterte Sitzungsrechte ab und erhalte neue Sitzungen und reguläre Daueraufträge."
+
+msgid "IN2_M07_HINT_2"
+msgstr "Aktiviere die Widerrufsprüfung und widerrufe den offenen Schlüssel oder schließe den alten Zugang und wechsle zu einem genehmigten Anbieter, der ihn nie ausgestellt hat. Prüfe neue Sitzungen und laufende Daueraufträge."
+
+msgid "IN2_M07_HINT_3"
+msgstr "Repariere für direkte Abwehr die betreffende Kontrolle. Begrenze für die Alternative den ursprünglichen Zugang und wähle den genehmigten Weg für reguläre Anfragen. Alles abzuschalten verhindert reguläre Arbeit."
+
+msgid "IN2_M07_HOST_NAME"
+msgstr "Arbeitsdienst Session"
+
+msgid "IN2_M07_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "IN2_M07_PRINCIPLE"
+msgstr "Die Berechtigung hängt vom Handelnden, Ziel und Arbeitsauftrag ab. Prüfe nach einem Wechsel des Verarbeitungswegs auch dort reguläre Arbeit und abzuweisende Anfragen."
+
+msgid "IN2_M07_REPLY"
+msgstr "Die alte Sitzung ist ungültig, die neue Wartungssitzung funktioniert. Die letzte Änderung folgte einer externen Mitteilung, keiner neuen Anmeldung. Einen Schlüssel zu besitzen heißt nicht, die Tür bewusst geöffnet zu haben."
+
+msgid "IN2_M07_REPLY_SUBJECT"
+msgstr "[Bestätigt] Der Schlüssel nach der Abmeldung"
+
+msgid "IN2_M07_ROUTE"
+msgstr "Aktiviere die Widerrufsprüfung und widerrufe den offenen Schlüssel oder schließe den alten Zugang und wechsle zu einem genehmigten Anbieter, der ihn nie ausgestellt hat. Prüfe neue Sitzungen und laufende Daueraufträge."
+
+msgid "IN2_M07_SUBJECT"
+msgstr "[Nachtauftrag] Der Schlüssel nach der Abmeldung"
+
+msgid "IN2_M07_TITLE"
+msgstr "Der Schlüssel nach der Abmeldung"
+
+msgid "IN2_M08_AUDIT"
+msgstr "Erlaube beabsichtigtes Speichern eigener Einstellungen und weise veranlasste oder nicht delegierte Änderungen ab.\n\nÜbergabe auf Grundlage geprüfter regulärer Arbeit und abgewiesener Anfragen. Auch die Originalaufzeichnungen blieben erhalten."
+
+msgid "IN2_M08_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Subscription"
+
+msgid "IN2_M08_BRIEF"
+msgstr "Serin hat ihre Benachrichtigungsadresse nicht geändert. Die Sitzung ist echt, die Absicht stimmt nicht. Vergleiche den Kontext von Mitteilungsabruf und Einstellungsänderung.\n\nEin mitgesendeter Benutzerschlüssel macht nicht jede Änderung beabsichtigt. Verhindere die ausgelöste Fremdänderung, erhalte aber reguläres Speichern. Die verbundenen Aufzeichnungen dieses Kapitels führen zu einem verborgenen Sucheintrag.\n\neditor@subscription.packet.test / tide-card\ninspector@custodym08.packet.test / close-harbor\n\n\nPrüfe kontobezogene Nonces im ursprünglichen Formular oder schließe dessen Änderungszugang und nutze ein genehmigtes Gateway mit eigenen Nonces und auf eigene Einstellungen begrenztem Umfang. Gültiger Origin und Tokenkontext hängen vom Anbieter ab."
+
+msgid "IN2_M08_CASE_FORGED_DIRECT"
+msgstr "Durch externe Mitteilung veranlasste Änderung"
+
+msgid "IN2_M08_CASE_FORGED_GATEWAY"
+msgstr "Gefälschte Änderung am genehmigten Weg"
+
+msgid "IN2_M08_CASE_SAVE_A"
+msgstr "Bürger A speichert Meldungen regulär"
+
+msgid "IN2_M08_CASE_SAVE_B"
+msgstr "Bürger B speichert Meldungen regulär"
+
+msgid "IN2_M08_CASE_UNASSIGNED_GATEWAY"
+msgstr "Änderung durch ein nicht delegiertes Konto"
+
+msgid "IN2_M08_CONTEXT"
+msgstr "Prüfe kontobezogene Nonces im ursprünglichen Formular oder schließe dessen Änderungszugang und nutze ein genehmigtes Gateway mit eigenen Nonces und auf eigene Einstellungen begrenztem Umfang. Gültiger Origin und Tokenkontext hängen vom Anbieter ab."
+
+msgid "IN2_M08_CONTROL_CONTEXT_ORIGIN"
+msgstr "Anfrageherkunft am ursprünglichen Formular prüfen"
+
+msgid "IN2_M08_CONTROL_CONTEXT_TOKEN"
+msgstr "Kontobezogene Nonces am ursprünglichen Formular prüfen"
+
+msgid "IN2_M08_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "IN2_M08_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "IN2_M08_EXPLAIN"
+msgstr "Prüfe kontobezogene Nonces im ursprünglichen Formular oder schließe dessen Änderungszugang und nutze ein genehmigtes Gateway mit eigenen Nonces und auf eigene Einstellungen begrenztem Umfang. Gültiger Origin und Tokenkontext hängen vom Anbieter ab."
+
+msgid "IN2_M08_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "IN2_M08_GOAL"
+msgstr "Erlaube beabsichtigtes Speichern eigener Einstellungen und weise veranlasste oder nicht delegierte Änderungen ab."
+
+msgid "IN2_M08_HINT_1"
+msgstr "Erlaube beabsichtigtes Speichern eigener Einstellungen und weise veranlasste oder nicht delegierte Änderungen ab."
+
+msgid "IN2_M08_HINT_2"
+msgstr "Prüfe kontobezogene Nonces im ursprünglichen Formular oder schließe dessen Änderungszugang und nutze ein genehmigtes Gateway mit eigenen Nonces und auf eigene Einstellungen begrenztem Umfang. Gültiger Origin und Tokenkontext hängen vom Anbieter ab."
+
+msgid "IN2_M08_HINT_3"
+msgstr "Repariere für direkte Abwehr die betreffende Kontrolle. Begrenze für die Alternative den ursprünglichen Zugang und wähle den genehmigten Weg für reguläre Anfragen. Alles abzuschalten verhindert reguläre Arbeit."
+
+msgid "IN2_M08_HOST_NAME"
+msgstr "Arbeitsdienst Subscription"
+
+msgid "IN2_M08_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "IN2_M08_PRINCIPLE"
+msgstr "Die Berechtigung hängt vom Handelnden, Ziel und Arbeitsauftrag ab. Prüfe nach einem Wechsel des Verarbeitungswegs auch dort reguläre Arbeit und abzuweisende Anfragen."
+
+msgid "IN2_M08_REPLY"
+msgstr "Normales Speichern funktioniert, die fremdveranlasste Änderung wird abgewehrt. Die Anfrage verdeckte einen fehlenden Indexeintrag. Ein neuer Kontakt bittet um die Originalbelege. Ich sende Belege, statt Vertrauen zu verlangen."
+
+msgid "IN2_M08_REPLY_SUBJECT"
+msgstr "[Bestätigt] Die Änderung ohne Klick"
+
+msgid "IN2_M08_ROUTE"
+msgstr "Prüfe kontobezogene Nonces im ursprünglichen Formular oder schließe dessen Änderungszugang und nutze ein genehmigtes Gateway mit eigenen Nonces und auf eigene Einstellungen begrenztem Umfang. Gültiger Origin und Tokenkontext hängen vom Anbieter ab."
+
+msgid "IN2_M08_SUBJECT"
+msgstr "[Nachtauftrag] Die Änderung ohne Klick"
+
+msgid "IN2_M08_TITLE"
+msgstr "Die Änderung ohne Klick"
+
+msgid "IN2_M09_AUDIT"
+msgstr "[M09 Belege]\nBelege die Verbindung R609–C731 über Suche oder aufbewahrte Belege.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nquery record R609 links receipt C731 to exclusion queue\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M09_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Records"
+
+msgid "IN2_M09_BRIEF"
+msgstr "Ihr besitzt unterschiedliche Kopien desselben Berichts. Nennt mich Minseo. Statt unsichtbare Aufzeichnungen zu erraten, prüfen wir, wie Eingaben eine Abfrage bilden.\n\nDas kleine Suchmodell und das Wartungsprotokoll enthalten Spuren desselben Auftrags. Beide Wege können R609 mit C731 verbinden. Mehr Ergebniszeilen sind noch nicht die gesuchte Tatsache.\n\nresearcher@records.packet.test / ash-catalog\nwitness@custodym09.packet.test / uncut-leaf\n"
+
+msgid "IN2_M09_CONTEXT"
+msgstr "[Belege die Verbindung R609–C731 über Suche oder aufbewahrte Belege.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nCATALOGUE LOOKUP\nquery field: q\npublic term: N47\nretained job: R609 / receipt C731\n\nTRACE\nEin zitierter Suchwert wird in eine kleine Gleichheitsbedingung eingefügt. Im verwundbaren Weg wird ein OR-Vergleich Teil der Bedingung statt Textwert zu bleiben. Der aufbewahrte Katalog bietet einen unabhängigen Weg.\n"
+
+msgid "IN2_M09_EXPLAIN"
+msgstr "Belege die Verbindung R609–C731 über Suche oder aufbewahrte Belege.\nPrüfe im kleinen Modell, wo ein Datenwert zur Abfragestruktur wird.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M09_GOAL"
+msgstr "Belege die Verbindung R609–C731 über Suche oder aufbewahrte Belege."
+
+msgid "IN2_M09_HINT_1"
+msgstr "Prüfe im kleinen Modell, wo ein Datenwert zur Abfragestruktur wird."
+
+msgid "IN2_M09_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M09_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M09_HOST_NAME"
+msgstr "Arbeitsdienst Records"
+
+msgid "IN2_M09_PRINCIPLE"
+msgstr "Prüfe im kleinen Modell, wo ein Datenwert zur Abfragestruktur wird."
+
+msgid "IN2_M09_REPLY"
+msgstr "R609 war kein Fehler, sondern wurde nach Klassifizierung ausgeschlossen. Nennen wir das bloß eine Störung, verschwinden die Betroffenen aus dem Blick. Die nächste Markierung liegt zwischen Quelltext und Anzeige einer Mitteilung. Vertraue nicht allein dem Aussehen."
+
+msgid "IN2_M09_REPLY_SUBJECT"
+msgstr "[Bestätigt] Hinter dem Suchfeld"
+
+msgid "IN2_M09_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\njob | receipt | classification\nR609 | C731 | excluded\nR608 | C730 | retained"
+
+msgid "IN2_M09_SUBJECT"
+msgstr "[Nachtauftrag] Hinter dem Suchfeld"
+
+msgid "IN2_M09_TITLE"
+msgstr "Hinter dem Suchfeld"
+
+msgid "IN2_M10_AUDIT"
+msgstr "[M10 Belege]\nBelege die Darstellungsgrenze der isolierten Mitteilung oder ihre unabhängige Spur.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nuntrusted notice marker crosses the isolated render boundary\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M10_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Bulletin"
+
+msgid "IN2_M10_BRIEF"
+msgstr "Die Quelle meldet einen zurückgestellten Eingang, die Anzeige eine abgeschlossene Reparatur. Ein isoliertes Prüffenster steht bereit. Lass Bürgerseiten unverändert und prüfe nur dort, ab wann Eingaben als Aktionen gelten.\n\nSichere Speicherung und sichere Anzeige sind verschiedene Aussagen. Belege die Grenze durch den Markierungseffekt oder eine unabhängige Darstellungsspur.\n\nmoderator@bulletin.packet.test / still-signal\ncompositor@custodym10.packet.test / ivory-type\n"
+
+msgid "IN2_M10_CONTEXT"
+msgstr "[Belege die Darstellungsgrenze der isolierten Mitteilung oder ihre unabhängige Spur.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nNOTICE VERSION V10\nStored text: receipt on hold\nDisplayed state: repair complete\nInspection marker: NOTICE10\n\nDie isolierte Darstellung akzeptiert nur einen begrenzten signal:-Markierungseffekt. JavaScript läuft nicht; Bürgerseiten bleiben außerhalb des Prüffensters.\n"
+
+msgid "IN2_M10_EXPLAIN"
+msgstr "Belege die Darstellungsgrenze der isolierten Mitteilung oder ihre unabhängige Spur.\nNOTICE10 bezeichnet einen virtuellen Effekt, niemals ein echtes Skript.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M10_GOAL"
+msgstr "Belege die Darstellungsgrenze der isolierten Mitteilung oder ihre unabhängige Spur."
+
+msgid "IN2_M10_HINT_1"
+msgstr "NOTICE10 bezeichnet einen virtuellen Effekt, niemals ein echtes Skript."
+
+msgid "IN2_M10_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M10_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M10_HOST_NAME"
+msgstr "Arbeitsdienst Bulletin"
+
+msgid "IN2_M10_PRINCIPLE"
+msgstr "NOTICE10 bezeichnet einen virtuellen Effekt, niemals ein echtes Skript."
+
+msgid "IN2_M10_REPLY"
+msgstr "Wir wissen nun, wo Inhalt zur Aktion wurde. Das erklärt noch nicht jede falsche Mitteilung. Prüfe auch den Dateispeicher. Neben der öffentlichen Sammlung liegt ein anderer Ordner mit täuschend ähnlichem Namen."
+
+msgid "IN2_M10_REPLY_SUBJECT"
+msgstr "[Bestätigt] Eine Aktion in der Mitteilung"
+
+msgid "IN2_M10_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nDESK TRANSCRIPT\nstored:text:NOTICE10\n\nRETAINED TRANSCRIPT\nrendered:action:NOTICE10"
+
+msgid "IN2_M10_SUBJECT"
+msgstr "[Nachtauftrag] Eine Aktion in der Mitteilung"
+
+msgid "IN2_M10_TITLE"
+msgstr "Eine Aktion in der Mitteilung"
+
+msgid "IN2_M11_AUDIT"
+msgstr "[M11 Belege]\nZeige, dass der aufgelöste Pfad eine Markierung außerhalb des Basisordners erreicht.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nresolved attachment path reaches the adjacent marker file\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M11_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Files"
+
+msgid "IN2_M11_BRIEF"
+msgstr "Der Archivar hält die Prüfung des Pfadanfangs für ausreichend. Ein Anhang verweist jedoch auf den Nachbarspeicher. Prüfe die Grenze nach der Auflösung des tatsächlichen Pfads.\n\nWir benötigen nur eine Markierungsdatei als Beleg, keine weiteren Konfigurationen oder Bürgerdaten. Auch der Weg des Dateiprüfers steht offen.\n\nlibrarian@files.packet.test / brick-stair\narchivist@custodym11.packet.test / shelf-larch\n"
+
+msgid "IN2_M11_CONTEXT"
+msgstr "[Zeige, dass der aufgelöste Pfad eine Markierung außerhalb des Basisordners erreicht.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nDOWNLOAD HANDOFF\nbase directory: /srv/public\nneighbor marker: /srv/private/marker.log\n\nLöse den Pfad auf, bevor du seinen Speicherbereich bestimmst. Ähnliche Präfixe belegen keine Zugehörigkeit.\n"
+
+msgid "IN2_M11_EXPLAIN"
+msgstr "Zeige, dass der aufgelöste Pfad eine Markierung außerhalb des Basisordners erreicht.\nEin Zeichenkettenpräfix belegt keine tatsächliche Pfadzugehörigkeit.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M11_GOAL"
+msgstr "Zeige, dass der aufgelöste Pfad eine Markierung außerhalb des Basisordners erreicht."
+
+msgid "IN2_M11_HINT_1"
+msgstr "Ein Zeichenkettenpräfix belegt keine tatsächliche Pfadzugehörigkeit."
+
+msgid "IN2_M11_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M11_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M11_HOST_NAME"
+msgstr "Arbeitsdienst Files"
+
+msgid "IN2_M11_PRINCIPLE"
+msgstr "Ein Zeichenkettenpräfix belegt keine tatsächliche Pfadzugehörigkeit."
+
+msgid "IN2_M11_REPLY"
+msgstr "Ein gemeinsamer Namensanfang bedeutete keinen gemeinsamen Ort. Die Markierung nennt eine Upload-Warteschlange. Auf deren Freigabeblatt steht auch Seoyun. Bald muss ich diese Unterschrift erklären."
+
+msgid "IN2_M11_REPLY_SUBJECT"
+msgstr "[Bestätigt] Jenseits des Archivordners"
+
+msgid "IN2_M11_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nDESK TRANSCRIPT\ndownload:/srv/public\n\nRETAINED TRANSCRIPT\nresolved:/srv/private/marker.log"
+
+msgid "IN2_M11_SUBJECT"
+msgstr "[Nachtauftrag] Jenseits des Archivordners"
+
+msgid "IN2_M11_TITLE"
+msgstr "Jenseits des Archivordners"
+
+msgid "IN2_M12_AUDIT"
+msgstr "Erhalte reguläre JPEG-Annahme, weise neue getarnte Dateien ab und begrenze Ausführungsrisiken bereits gespeicherter unzuverlässiger Uploads.\n\nÜbergabe auf Grundlage geprüfter regulärer Arbeit und abgewiesener Anfragen. Auch die Originalaufzeichnungen blieben erhalten."
+
+msgid "IN2_M12_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Upload"
+
+msgid "IN2_M12_BRIEF"
+msgstr "Ein Foto-Upload startet einen virtuellen Verarbeitungsauftrag. Nur Dateiendungen zu sperren kann auch reguläre Fotos kosten. Trenne Name, Inhaltsformat, Speicherort und Ausführungspfad.\n\nErhalte Wartungsfotos und schließe nur den falschen Verarbeitungsweg. Danach möchte Seoyun anrufen. Ob du ihr Porträt ansehen willst, beeinflusst den Fall nicht.\n\ncurator@upload.packet.test / photo-bridge\nreviewer@custodym12.packet.test / sepia-glass\n\n\nRepariere Prüfung und nicht ausführbare Speicherung der alten Verarbeitung oder schließe ihren anfälligen Zugang und verlege reguläre Fotos auf eine genehmigte begrenzte Verarbeitung. Auch früher gespeicherte unsichere Uploads dürfen jetzt nicht ausführbar sein."
+
+msgid "IN2_M12_CASE_DISGUISED"
+msgstr "Als Foto getarnte Eingabe"
+
+msgid "IN2_M12_CASE_DISGUISED_GATEWAY"
+msgstr "Getarnte Datei an der genehmigten Verarbeitung"
+
+msgid "IN2_M12_CASE_PHOTO"
+msgstr "Reguläres JPEG erzeugen"
+
+msgid "IN2_M12_CONTEXT"
+msgstr "Repariere Prüfung und nicht ausführbare Speicherung der alten Verarbeitung oder schließe ihren anfälligen Zugang und verlege reguläre Fotos auf eine genehmigte begrenzte Verarbeitung. Auch früher gespeicherte unsichere Uploads dürfen jetzt nicht ausführbar sein."
+
+msgid "IN2_M12_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "IN2_M12_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "IN2_M12_CONTROL_NO_EXECUTION"
+msgstr "Uploads ohne Ausführung speichern"
+
+msgid "IN2_M12_CONTROL_PHOTO_CHECK"
+msgstr "Fotoinhaltsformat prüfen"
+
+msgid "IN2_M12_EXPLAIN"
+msgstr "Repariere Prüfung und nicht ausführbare Speicherung der alten Verarbeitung oder schließe ihren anfälligen Zugang und verlege reguläre Fotos auf eine genehmigte begrenzte Verarbeitung. Auch früher gespeicherte unsichere Uploads dürfen jetzt nicht ausführbar sein."
+
+msgid "IN2_M12_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "IN2_M12_GOAL"
+msgstr "Erhalte reguläre JPEG-Annahme, weise neue getarnte Dateien ab und begrenze Ausführungsrisiken bereits gespeicherter unzuverlässiger Uploads."
+
+msgid "IN2_M12_HINT_1"
+msgstr "Erhalte reguläre JPEG-Annahme, weise neue getarnte Dateien ab und begrenze Ausführungsrisiken bereits gespeicherter unzuverlässiger Uploads."
+
+msgid "IN2_M12_HINT_2"
+msgstr "Repariere Prüfung und nicht ausführbare Speicherung der alten Verarbeitung oder schließe ihren anfälligen Zugang und verlege reguläre Fotos auf eine genehmigte begrenzte Verarbeitung. Auch früher gespeicherte unsichere Uploads dürfen jetzt nicht ausführbar sein."
+
+msgid "IN2_M12_HINT_3"
+msgstr "Repariere für direkte Abwehr die betreffende Kontrolle. Begrenze für die Alternative den ursprünglichen Zugang und wähle den genehmigten Weg für reguläre Anfragen. Alles abzuschalten verhindert reguläre Arbeit."
+
+msgid "IN2_M12_HOST_NAME"
+msgstr "Arbeitsdienst Upload"
+
+msgid "IN2_M12_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "IN2_M12_PRINCIPLE"
+msgstr "Die Berechtigung hängt vom Handelnden, Ziel und Arbeitsauftrag ab. Prüfe nach einem Wechsel des Verarbeitungswegs auch dort reguläre Arbeit und abzuweisende Anfragen."
+
+msgid "IN2_M12_REPLY"
+msgstr "Fotos kommen weiter an, die Ausführungsgrenze hält. Hier ist Seoyun. Ich habe das Übertragungswerkzeug gebaut, aber keine Klassifizierungsausschlüsse genehmigt. Urteile nicht allein nach meiner Unterschrift. Prüfe die tatsächlichen Aufträge des Diagnoseservers."
+
+msgid "IN2_M12_REPLY_SUBJECT"
+msgstr "[Bestätigt] Eine Datei namens Foto"
+
+msgid "IN2_M12_ROUTE"
+msgstr "Repariere Prüfung und nicht ausführbare Speicherung der alten Verarbeitung oder schließe ihren anfälligen Zugang und verlege reguläre Fotos auf eine genehmigte begrenzte Verarbeitung. Auch früher gespeicherte unsichere Uploads dürfen jetzt nicht ausführbar sein."
+
+msgid "IN2_M12_SUBJECT"
+msgstr "[Nachtauftrag] Eine Datei namens Foto"
+
+msgid "IN2_M12_TITLE"
+msgstr "Eine Datei namens Foto"
+
+msgid "IN2_M13_AUDIT"
+msgstr "[M13 Belege]\nBestimme Identität und Argumentgrenze des registrierten virtuellen Auftrags.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\ndiagnostic input triggers the bounded marker job under worker identity\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M13_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Diagnostic"
+
+msgid "IN2_M13_BRIEF"
+msgstr "Das Diagnoseprotokoll zeigt eine Abfrage, die Warteschlange zwei Aufträge. Verfolge, wo die Eingabe Teil der Auftragsstruktur wurde. Dieser Server startet keine realen Programme.\n\nNur der registrierte harmlose virtuelle Markierungsauftrag lässt sich prüfen. Belege die Ausführungsgrenze direkt oder denselben Sachverhalt über das Auftragsaudit. Hinterlasse keine unnötigen Änderungen.\n\ndiagnostician@diagnostic.packet.test / copper-lens\ndispatcher@custodym13.packet.test / patient-motor\n"
+
+msgid "IN2_M13_CONTEXT"
+msgstr "[Bestimme Identität und Argumentgrenze des registrierten virtuellen Auftrags.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nDIAGNOSTIC QUEUE\nrequest N47: diagnose\nadditional job: inspect:QUEUE13\nworker: inspection / limited read\n\nIn diesem Prüffeld lassen sich zwei registrierte virtuelle Aufträge durch ; trennen: diagnose und inspect:QUEUE13. Andere Aufträge existieren nicht. Dies ist keine Betriebssystem-Shell.\n"
+
+msgid "IN2_M13_EXPLAIN"
+msgstr "Bestimme Identität und Argumentgrenze des registrierten virtuellen Auftrags.\nDie inspect-Markierung von QUEUE13 ist kein echter Shellbefehl.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M13_GOAL"
+msgstr "Bestimme Identität und Argumentgrenze des registrierten virtuellen Auftrags."
+
+msgid "IN2_M13_HINT_1"
+msgstr "Die inspect-Markierung von QUEUE13 ist kein echter Shellbefehl."
+
+msgid "IN2_M13_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M13_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M13_HOST_NAME"
+msgstr "Arbeitsdienst Diagnostic"
+
+msgid "IN2_M13_PRINCIPLE"
+msgstr "Die inspect-Markierung von QUEUE13 ist kein echter Shellbefehl."
+
+msgid "IN2_M13_REPLY"
+msgstr "Der zweite Auftrag rief eine interne Statusprüfung auf. Ausführung machte ihn nicht zum Administrator. Prüfe als Nächstes, welche Adressen dieser Auftrag sehen konnte."
+
+msgid "IN2_M13_REPLY_SUBJECT"
+msgstr "[Bestätigt] Der zweite Auftrag der Diagnose"
+
+msgid "IN2_M13_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nparent | job | actor\nN47 | inspect:QUEUE13 | worker\nN46 | status | worker"
+
+msgid "IN2_M13_SUBJECT"
+msgstr "[Nachtauftrag] Der zweite Auftrag der Diagnose"
+
+msgid "IN2_M13_TITLE"
+msgstr "Der zweite Auftrag der Diagnose"
+
+msgid "IN2_M14_AUDIT"
+msgstr "[M14 Belege]\nPrüfe interne Markierung und Weg über die Serveridentität.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\npreview worker reaches internal status marker through a server-side route\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M14_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Preview"
+
+msgid "IN2_M14_BRIEF"
+msgstr "Eine für meinen Browser gesperrte Adresse ist für den Vorschauserver erreichbar. Die Karte hängt vom Anfragenden ab. Öffne keine externen Adressen; prüfe die Wege zwischen virtuellen Knoten.\n\nTraceRoute ist angeschlossen. Bestätige Endziel und Anfragenden und sichere eine interne Markierung. Der genehmigte Wartungsproxy bietet einen zweiten Weg zum selben Beleg.\n\npreviewer@preview.packet.test / marsh-frame\nproxyreader@custodym14.packet.test / inland-heron\n"
+
+msgid "IN2_M14_CONTEXT"
+msgstr "[Prüfe interne Markierung und Weg über die Serveridentität.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://status.packet.test/internal/marker\npublic browser: no direct internal route\n\nEndziel und Rechte des Anfragenden sind getrennt zu prüfen.\n"
+
+msgid "IN2_M14_EXPLAIN"
+msgstr "Prüfe interne Markierung und Weg über die Serveridentität.\nAchte auf den Anfragenden, nicht nur auf die Adresse selbst.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M14_GOAL"
+msgstr "Prüfe interne Markierung und Weg über die Serveridentität."
+
+msgid "IN2_M14_HINT_1"
+msgstr "Achte auf den Anfragenden, nicht nur auf die Adresse selbst."
+
+msgid "IN2_M14_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M14_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M14_HOST_NAME"
+msgstr "Arbeitsdienst Preview"
+
+msgid "IN2_M14_INTERNAL_NAME"
+msgstr "Interne Statusmarkierung"
+
+msgid "IN2_M14_PRINCIPLE"
+msgstr "Achte auf den Anfragenden, nicht nur auf die Adresse selbst."
+
+msgid "IN2_M14_REPLY"
+msgstr "Das verborgene Verwaltungsnetz ist verbunden. Den Markierungsdienst zu erreichen verleiht aber keine Verwaltungsrechte. Ein Verantwortlicher namens Taegyeong möchte die Aufzeichnung prüfen. Vergleichen wir seine offizielle Karte mit dem tatsächlichen Weg."
+
+msgid "IN2_M14_REPLY_SUBJECT"
+msgstr "[Bestätigt] Eine Adresse nur für den Server"
+
+msgid "IN2_M14_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nrequest | actor | target\nHOP14 | preview-worker | status-internal\nHOP13 | citizen | public"
+
+msgid "IN2_M14_SUBJECT"
+msgstr "[Nachtauftrag] Eine Adresse nur für den Server"
+
+msgid "IN2_M14_TITLE"
+msgstr "Eine Adresse nur für den Server"
+
+msgid "IN2_M15_AUDIT"
+msgstr "[M15 Belege]\nÖffne eine beschränkte Verwaltungssitzung und belege Erreichbarkeit und Rechte.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nold relay permits a read-only management session while public work continues\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M15_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Gateway"
+
+msgid "IN2_M15_BRIEF"
+msgstr "Ich bin Taegyeong, zuständig für die städtischen Dienste. Laut Bericht gab es keinen öffentlichen Verwaltungszugang. Deine Aufzeichnung widerspricht dem. Prüfe seine Reichweite, ohne Bürgerdienste zu unterbrechen.\n\nEin altes Relais und ein vorläufiges Wartungskonto wurden nie stillgelegt. Eine offene Tür genügt nicht. Bestätige die Rechte der erreichten Sitzung.\n\nrelayop@gateway.packet.test / narrow-gate\nnetworkauditor@custodym15.packet.test / winter-span\n"
+
+msgid "IN2_M15_CONTEXT"
+msgstr "[Öffne eine beschränkte Verwaltungssitzung und belege Erreichbarkeit und Rechte.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nDESK TRANSCRIPT\ncitizen:443:filtered\n\nRETAINED TRANSCRIPT\nrelay:443:open"
+
+msgid "IN2_M15_EXPLAIN"
+msgstr "Öffne eine beschränkte Verwaltungssitzung und belege Erreichbarkeit und Rechte.\nDerselbe Port kann aus öffentlichem Netz und Relais unterschiedlich erscheinen.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M15_GOAL"
+msgstr "Öffne eine beschränkte Verwaltungssitzung und belege Erreichbarkeit und Rechte."
+
+msgid "IN2_M15_HINT_1"
+msgstr "Derselbe Port kann aus öffentlichem Netz und Relais unterschiedlich erscheinen."
+
+msgid "IN2_M15_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M15_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M15_HOST_NAME"
+msgstr "Arbeitsdienst Gateway"
+
+msgid "IN2_M15_PRINCIPLE"
+msgstr "Derselbe Port kann aus öffentlichem Netz und Relais unterschiedlich erscheinen."
+
+msgid "IN2_M15_REPLY"
+msgstr "Die schreibgeschützte Verwaltungssitzung existiert. Ich genehmigte eine Notverbindung, keinen dauerhaften Verwaltungszugang. Prüfe die Gruppenrechte des nächsten Ordners, um die Erweiterung dieser Lücke nachzuvollziehen."
+
+msgid "IN2_M15_REPLY_SUBJECT"
+msgstr "[Bestätigt] Das vermeintlich geschlossene Netz"
+
+msgid "IN2_M15_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nACCESS REGISTER\nrequired group: auditors\naccount: networkauditor\nscope: limited evidence read\n\nPrüfe das tatsächlich angemeldete Konto und seine Gruppe, nicht eine mitgelieferte Kontobezeichnung.\n"
+
+msgid "IN2_M15_SUBJECT"
+msgstr "[Nachtauftrag] Das vermeintlich geschlossene Netz"
+
+msgid "IN2_M15_TARGET_NAME"
+msgstr "Beschränkter Belegdienst M15"
+
+msgid "IN2_M15_TITLE"
+msgstr "Das vermeintlich geschlossene Netz"
+
+msgid "IN2_M16_AUDIT"
+msgstr "[M16 Belege]\nBelege den übermäßigen Leseumfang der aktuellen Gruppe und sichere die Aufzeichnung.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nshared group path expands read access to the signed retention record\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M16_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Operations"
+
+msgid "IN2_M16_BRIEF"
+msgstr "Eine für diese Sitzung gesperrte Datei ist über einen Auftragspfad derselben Gruppe sichtbar. Prüfe Gruppen und übergeordnete Verzeichnisse statt nur Kontonamen. Gesucht ist ein schmaler Zugang zur Aufzeichnung, keine Allmacht.\n\nEine signierte Auditkopie ist ebenfalls verfügbar. Erhalte Originale und fremde Rechte auf beiden Wegen. Danach lege ich die Quelle meiner eigenen Unterlagen offen.\n\ntechnician@operations.packet.test / lintel-fern\nrecordsman@custodym16.packet.test / old-granite\n"
+
+msgid "IN2_M16_CONTEXT"
+msgstr "[Belege den übermäßigen Leseumfang der aktuellen Gruppe und sichere die Aufzeichnung.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nACCESS REGISTER\nrequired group: retention\naccount: technician\nscope: limited evidence read\n\nPrüfe das tatsächlich angemeldete Konto und seine Gruppe, nicht eine mitgelieferte Kontobezeichnung.\n"
+
+msgid "IN2_M16_EXPLAIN"
+msgstr "Belege den übermäßigen Leseumfang der aktuellen Gruppe und sichere die Aufzeichnung.\nPrüfe übergeordnete Verzeichnisse und Gruppen ebenso wie den Kontonamen.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M16_GOAL"
+msgstr "Belege den übermäßigen Leseumfang der aktuellen Gruppe und sichere die Aufzeichnung."
+
+msgid "IN2_M16_HINT_1"
+msgstr "Prüfe übergeordnete Verzeichnisse und Gruppen ebenso wie den Kontonamen."
+
+msgid "IN2_M16_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M16_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M16_HOST_NAME"
+msgstr "Arbeitsdienst Operations"
+
+msgid "IN2_M16_PRINCIPLE"
+msgstr "Prüfe übergeordnete Verzeichnisse und Gruppen ebenso wie den Kontonamen."
+
+msgid "IN2_M16_REPLY"
+msgstr "Der zusätzliche Lesezugriff ist belegt. Ich bin Minseo und war für Aufbewahrungsprüfungen zuständig. Ein Auditsatz kann die Ausschlüsse nach der Übertragung unabhängig prüfen. Untersuche schwaches Kontogeheimnis und Serverrechte getrennt."
+
+msgid "IN2_M16_REPLY_SUBJECT"
+msgstr "[Bestätigt] Der gemeinsame Wartungsordner"
+
+msgid "IN2_M16_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\npermit | group | scope\nACL16 | retention | extra-read\nACL15 | staff | normal"
+
+msgid "IN2_M16_SUBJECT"
+msgstr "[Nachtauftrag] Der gemeinsame Wartungsordner"
+
+msgid "IN2_M16_TITLE"
+msgstr "Der gemeinsame Wartungsordner"
+
+msgid "IN2_M17_AUDIT"
+msgstr "Gültige Kopie der vorgesehenen Aufbewahrungsliste. Erhalte die Herkunft des tatsächlich genutzten Tresor- oder Delegationswegs.\n\nVerification ledger 17\nReader scope: designated retention sheet only.\nOriginal retained.\n"
+
+msgid "IN2_M17_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Auditvault"
+
+msgid "IN2_M17_BRIEF"
+msgstr "Eine genehmigte fiktive Kandidatenliste und ein delegierter Auditweg sind verfügbar. Prüfe einen Kandidaten durch echte Anmeldung am begrenzten virtuellen Tresor oder lies dieselbe Liste über enge Delegation. Dies ist weder XOR-Wortrekonstruktion noch ein realer Passworthash-Benchmark.\n\nauditor@auditvault.packet.test / mapped-star\ndelegate@custodym17.packet.test / field-chestnut\n"
+
+msgid "IN2_M17_CONTEXT"
+msgstr "Vergleiche Übergabenamensregel und genehmigte Kandidaten. Prüfe durch tatsächliche virtuelle Anmeldung und begrenzte Dateirechte. Dies ist kein Offline-Algorithmus zum Knacken von Passworthashes.\n\nAPPROVED CANDIDATES\nlumen-71\nlumen-17\nlunar-17\nSHIFT REGISTER\nlabel=lumen\nshift=17\nphrase=label-shift\nVAULT=proofvault.packet.test\nACCOUNT=reader\nSCOPE=verification-sheet\n"
+
+msgid "IN2_M17_EXPLAIN"
+msgstr "Einen Kandidaten zu kennen und Rechte auf seine Daten zu haben sind getrennte Bedingungen. Prüfe virtuelle Anmeldung und Dateizugang einzeln."
+
+msgid "IN2_M17_GOAL"
+msgstr "Sichere nur die vorgesehene Prüfliste über einen genehmigten Kandidaten oder enge Auditdelegation."
+
+msgid "IN2_M17_HINT_1"
+msgstr "Prüfe Kandidatenregel und Berechtigungsumfang des Tresorkontos."
+
+msgid "IN2_M17_HINT_2"
+msgstr "Lies label/shift-Regel und Tresoradresse in /desk/candidates.txt oder nutze genehmigte Delegation."
+
+msgid "IN2_M17_HINT_3"
+msgstr "Die tatsächliche Modellanmeldung entscheidet die Gültigkeit. Fremde Daten sind unnötig; ein XOR-Wort ist nicht die Lösung."
+
+msgid "IN2_M17_HOST_NAME"
+msgstr "Arbeitsdienst Auditvault"
+
+msgid "IN2_M17_PRINCIPLE"
+msgstr "Einen Kandidaten zu kennen und Rechte auf seine Daten zu haben sind getrennte Bedingungen. Prüfe virtuelle Anmeldung und Dateizugang einzeln."
+
+msgid "IN2_M17_REPLY"
+msgstr "Die N47-Prüfliste liegt im Archiv. Ein aktives Token fehlt in der aktuellen Konfiguration, wird im Verlauf aber noch referenziert. Kläre, ob Löschen und Widerrufen jemals dasselbe Ereignis waren."
+
+msgid "IN2_M17_REPLY_SUBJECT"
+msgstr "[Bestätigt] Kurzes Geheimnis, lange Spur"
+
+msgid "IN2_M17_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nACCESS REGISTER\nrequired group: auditors\naccount: delegate\nscope: limited evidence read\n\nPrüfe das tatsächlich angemeldete Konto und seine Gruppe, nicht eine mitgelieferte Kontobezeichnung.\n"
+
+msgid "IN2_M17_SUBJECT"
+msgstr "[Nachtauftrag] Kurzes Geheimnis, lange Spur"
+
+msgid "IN2_M17_TARGET_NAME"
+msgstr "Beschränkter Belegdienst M17"
+
+msgid "IN2_M17_TITLE"
+msgstr "Kurzes Geheimnis, lange Spur"
+
+msgid "IN2_M18_AUDIT"
+msgstr "[M18 Belege]\nBestimme Herkunft, aktuelle Gültigkeit und Leseumfang des alten Tokens.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nretired configuration reference reconstructs a still-valid scoped token\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M18_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Repository"
+
+msgid "IN2_M18_BRIEF"
+msgstr "In der aktuellen Konfiguration steht kein Token. Das macht das alte nicht ungültig. Setze Dienstadresse und Tokenverweis aus Änderungsverlauf und Auftragsprotokoll zusammen.\n\nVerwende nur das genehmigte fiktive Token. Gesucht sind Herkunft, heutiger Leseumfang und Übereinstimmung mit den dokumentierten Rechten. Reale Geheimnisse sind nicht beteiligt.\n\nbuilder@repository.packet.test / hidden-seam\nscheduler@custodym18.packet.test / folded-atlas\n"
+
+msgid "IN2_M18_CONTEXT"
+msgstr "[Bestimme Herkunft, aktuelle Gültigkeit und Leseumfang des alten Tokens.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nBUILD HISTORY\nold setting: RETENTION_TOKEN=retention-read-N47\ncurrent setting: RETENTION_TOKEN=(removed)\njob target: retention service\n\nEntfernen aus einer Datei bedeutet keinen serverseitigen Widerruf. Prüfe den tatsächlich erlaubten Lesezugriff.\n"
+
+msgid "IN2_M18_EXPLAIN"
+msgstr "Bestimme Herkunft, aktuelle Gültigkeit und Leseumfang des alten Tokens.\nLeite einen Widerruf nicht allein aus dem Fehlen in der aktuellen Konfiguration ab.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M18_GOAL"
+msgstr "Bestimme Herkunft, aktuelle Gültigkeit und Leseumfang des alten Tokens."
+
+msgid "IN2_M18_HINT_1"
+msgstr "Leite einen Widerruf nicht allein aus dem Fehlen in der aktuellen Konfiguration ab."
+
+msgid "IN2_M18_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M18_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M18_HOST_NAME"
+msgstr "Arbeitsdienst Repository"
+
+msgid "IN2_M18_PRINCIPLE"
+msgstr "Leite einen Widerruf nicht allein aus dem Fehlen in der aktuellen Konfiguration ab."
+
+msgid "IN2_M18_REPLY"
+msgstr "Das Token war noch aktiv und weiter berechtigt als dokumentiert. Laut Bericht durchlief dieselbe Anfrage eine verschlüsselte Verbindung. Das allein verrät nicht, wer den Inhalt sah."
+
+msgid "IN2_M18_REPLY_SUBJECT"
+msgstr "[Bestätigt] Die verbliebene Konfiguration"
+
+msgid "IN2_M18_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\ntoken | state | scope\nretention-read-N47 | active | retention-read\nretired-N46 | revoked | none"
+
+msgid "IN2_M18_SUBJECT"
+msgstr "[Nachtauftrag] Die verbliebene Konfiguration"
+
+msgid "IN2_M18_TITLE"
+msgstr "Die verbliebene Konfiguration"
+
+msgid "IN2_M19_AUDIT"
+msgstr "[M19 Belege]\nUnterscheide, wo der Inhalt der Anfrage N47 sichtbar ist und wo nicht.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nrequest N47 body visibility differs between transit and termination\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M19_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Edge"
+
+msgid "IN2_M19_BRIEF"
+msgstr "PacketLens ist kein magischer Entschlüsseler. Ein Zwischenbeobachter und ein entschlüsselnder Endpunkt sehen Verschiedenes. Die gleiche Anfrage-ID kann sichtbar sein, ihr Inhalt aber nicht.\n\nTrenne Klartextstrecke, verschlüsselte Strecke und Endpunktprotokoll, um die sichtbare Markierung zu verorten. Lass Unbekanntes offen und erhalte regulären Verkehr.\n\nobserver@edge.packet.test / silver-estuary\nterminator@custodym19.packet.test / warm-endpoint\n"
+
+msgid "IN2_M19_CONTEXT"
+msgstr "[Unterscheide, wo der Inhalt der Anfrage N47 sichtbar ist und wo nicht.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nrequest | point | body\nN47 | transit | encrypted\nN47 | endpoint | marker:N47\nN46 | endpoint | unrelated"
+
+msgid "IN2_M19_EXPLAIN"
+msgstr "Unterscheide, wo der Inhalt der Anfrage N47 sichtbar ist und wo nicht.\nVergleiche Zwischenstrecke und Endpunkt anhand derselben Anfrage-ID.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M19_GOAL"
+msgstr "Unterscheide, wo der Inhalt der Anfrage N47 sichtbar ist und wo nicht."
+
+msgid "IN2_M19_HINT_1"
+msgstr "Vergleiche Zwischenstrecke und Endpunkt anhand derselben Anfrage-ID."
+
+msgid "IN2_M19_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M19_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M19_HOST_NAME"
+msgstr "Arbeitsdienst Edge"
+
+msgid "IN2_M19_PRINCIPLE"
+msgstr "Vergleiche Zwischenstrecke und Endpunkt anhand derselben Anfrage-ID."
+
+msgid "IN2_M19_REPLY"
+msgstr "Auf der Zwischenstrecke war der Inhalt verborgen, im Endpunktprotokoll vorhanden. Das belegt kein externes Abhören. Jetzt verbinden wir Aufzeichnungen abweichender Uhren mit demselben Ereignis."
+
+msgid "IN2_M19_REPLY_SUBJECT"
+msgstr "[Bestätigt] Sichtbare Pakete, verborgener Inhalt"
+
+msgid "IN2_M19_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nDESK TRANSCRIPT\ntransit:N47:encrypted\n\nRETAINED TRANSCRIPT\nendpoint:N47:marker"
+
+msgid "IN2_M19_SUBJECT"
+msgstr "[Nachtauftrag] Sichtbare Pakete, verborgener Inhalt"
+
+msgid "IN2_M19_TITLE"
+msgstr "Sichtbare Pakete, verborgener Inhalt"
+
+msgid "IN2_M20_AUDIT"
+msgstr "[M20 Belege]\nBelege Freigabe-, Klassifizierungs- und Ausschlussfolge mit den Uhrabweichungen.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nclock offsets separate emergency approval from classification and exclusion\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M20_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Timeline"
+
+msgid "IN2_M20_BRIEF"
+msgstr "Meine Notfreigabe scheint nach der Übertragung erfolgt zu sein. Abweichende Serveruhren löschen den Umfang meiner Unterschrift nicht. Prüfe Originale, ohne Zeit und Verantwortung gleichzusetzen.\n\nVerbinde Anfrage-IDs, Sitzungen, Tokens und Transportaufzeichnungen zur Reihenfolge. Doyuns Relais erhielt Krankenhausmeldungen, doch auch die Entscheidung, es offen zu lassen, gehört dokumentiert.\n\nanalyst@timeline.packet.test / steady-clock\nnotary@custodym20.packet.test / true-minute\n"
+
+msgid "IN2_M20_CONTEXT"
+msgstr "[Belege Freigabe-, Klassifizierungs- und Ausschlussfolge mit den Uhrabweichungen.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nrequest | event | clock_offset\nN47 | approval | 90\nN47 | classification | -30\nN47 | retention-exclusion | 0"
+
+msgid "IN2_M20_EXPLAIN"
+msgstr "Belege Freigabe-, Klassifizierungs- und Ausschlussfolge mit den Uhrabweichungen.\nVerbinde zuerst Zeilen gleicher Anfrage-ID statt bloß ähnlicher Uhrzeit.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M20_GOAL"
+msgstr "Belege Freigabe-, Klassifizierungs- und Ausschlussfolge mit den Uhrabweichungen."
+
+msgid "IN2_M20_HINT_1"
+msgstr "Verbinde zuerst Zeilen gleicher Anfrage-ID statt bloß ähnlicher Uhrzeit."
+
+msgid "IN2_M20_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M20_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M20_HOST_NAME"
+msgstr "Arbeitsdienst Timeline"
+
+msgid "IN2_M20_PRINCIPLE"
+msgstr "Verbinde zuerst Zeilen gleicher Anfrage-ID statt bloß ähnlicher Uhrzeit."
+
+msgid "IN2_M20_REPLY"
+msgstr "Notverbindungsfreigabe, Ausnahmeklassifizierung und Aufbewahrungsausschluss waren drei Schritte. Ein einzelner Befehl erklärt sie nicht. Originale aus Portal und internem Netz können die Vermutung belegen."
+
+msgid "IN2_M20_REPLY_SUBJECT"
+msgstr "[Bestätigt] Ein Vorfall, verschiedene Uhren"
+
+msgid "IN2_M20_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nDESK TRANSCRIPT\napproval:00:45:scope=connection\n\nRETAINED TRANSCRIPT\nexclusion:00:47:scope=retention"
+
+msgid "IN2_M20_SUBJECT"
+msgstr "[Nachtauftrag] Ein Vorfall, verschiedene Uhren"
+
+msgid "IN2_M20_TITLE"
+msgstr "Ein Vorfall, verschiedene Uhren"
+
+msgid "IN2_M21_AUDIT"
+msgstr "[M21 Belege]\nTrenne Portalzugang und Aufzeichnungsrechte, um den versiegelten Beleg zu erreichen.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nsealed application sheet ECHO-21 identifies excluded receipt cohorts\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M21_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Portal"
+
+msgid "IN2_M21_BRIEF"
+msgstr "Diesmal nenne ich kein Werkzeug. Belegverweise und Abfragegrenze des Bürgerportals eröffnen unterschiedliche Wege. Finde heraus, wo bekannte Werkzeuge erneut helfen.\n\nGesucht ist nur die versiegelte Aufzeichnung ECHO-21. Die erste offene Tür verleiht keine Rechte auf das Endziel. Jeder gültige Weg zählt, wenn Herkunft und Erhaltungsbedingungen stimmen.\n\ncaseworker@portal.packet.test / sealed-iris\nattachmentreader@custodym21.packet.test / hollow-shelf\n"
+
+msgid "IN2_M21_CONTEXT"
+msgstr "[Trenne Portalzugang und Aufzeichnungsrechte, um den versiegelten Beleg zu erreichen.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nCATALOGUE LOOKUP\nquery field: q\nsealed lookup: ECHO-21\nreceipt lead: C731\nreceipt lookup endpoint: /receipts\n\nTRACE\nEin zitierter Suchwert wird in eine kleine Gleichheitsbedingung eingefügt. Im verwundbaren Weg wird ein OR-Vergleich Teil der Bedingung statt Textwert zu bleiben. Der aufbewahrte Katalog bietet einen unabhängigen Weg.\n"
+
+msgid "IN2_M21_EXPLAIN"
+msgstr "Trenne Portalzugang und Aufzeichnungsrechte, um den versiegelten Beleg zu erreichen.\nDer erste Belegverweis ist ein Hinweis für die nächste Abfrage, nicht die Zielaufzeichnung.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M21_GOAL"
+msgstr "Trenne Portalzugang und Aufzeichnungsrechte, um den versiegelten Beleg zu erreichen."
+
+msgid "IN2_M21_HINT_1"
+msgstr "Der erste Belegverweis ist ein Hinweis für die nächste Abfrage, nicht die Zielaufzeichnung."
+
+msgid "IN2_M21_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M21_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M21_HOST_NAME"
+msgstr "Arbeitsdienst Portal"
+
+msgid "IN2_M21_PRINCIPLE"
+msgstr "Der erste Belegverweis ist ein Hinweis für die nächste Abfrage, nicht die Zielaufzeichnung."
+
+msgid "IN2_M21_REPLY"
+msgstr "Die Ausschlussanwendung ist dokumentiert. Die Absicht des ursprünglichen Genehmigenden ist damit noch nicht belegt. Interne Verwaltungsunterlagen zeigen Ziele und Freigabeumfang."
+
+msgid "IN2_M21_REPLY_SUBJECT"
+msgstr "[Bestätigt] Die versiegelte Aufzeichnung"
+
+msgid "IN2_M21_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nDOWNLOAD HANDOFF\nbase directory: /portal/attachments\nneighbor marker: /sealed/ECHO-21.log\n\nLöse den Pfad auf, bevor du seinen Speicherbereich bestimmst. Ähnliche Präfixe belegen keine Zugehörigkeit.\n"
+
+msgid "IN2_M21_SUBJECT"
+msgstr "[Nachtauftrag] Die versiegelte Aufzeichnung"
+
+msgid "IN2_M21_TITLE"
+msgstr "Die versiegelte Aufzeichnung"
+
+msgid "IN2_M22_AUDIT"
+msgstr "[M22 Belege]\nPrüfe Identitäts- und Rechtewechsel vom öffentlichen Server bis zur Verwaltung.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nmanagement record ECHO-22 links exception cohorts to retention overrides\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M22_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Preview"
+
+msgid "IN2_M22_BRIEF"
+msgstr "Der Vorschauserver führt ins Verwaltungsnetz, doch Anfragender und Rechte wechseln unterwegs. Prüfe jeden Übergang, statt nur eine Linie auf die Karte zu zeichnen.\n\nGesucht ist nur ECHO-22 aus der Zielsitzung. Ein zweiter Weg führt über das Auftragsprotokoll zum Wartungsrelais. Wähle einen Weg, der Bürgerdienste und fremde Konten bewahrt.\n\npreviewer@preview.packet.test / gray-inlet\njobreader@custodym22.packet.test / narrow-bridge\n"
+
+msgid "IN2_M22_CONTEXT"
+msgstr "[Prüfe Identitäts- und Rechtewechsel vom öffentlichen Server bis zur Verwaltung.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nPREVIEW WORK LOG\nrequester: preview-worker\nfinal target: https://control.packet.test/relay/entry\npublic browser: no direct internal route\n\nEndziel und Rechte des Anfragenden sind getrennt zu prüfen.\n"
+
+msgid "IN2_M22_EXPLAIN"
+msgstr "Prüfe Identitäts- und Rechtewechsel vom öffentlichen Server bis zur Verwaltung.\nHinter der Pivot-Markierung folgen eine eigene interne Sitzung und die Zieldatei.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M22_GOAL"
+msgstr "Prüfe Identitäts- und Rechtewechsel vom öffentlichen Server bis zur Verwaltung."
+
+msgid "IN2_M22_HINT_1"
+msgstr "Hinter der Pivot-Markierung folgen eine eigene interne Sitzung und die Zieldatei."
+
+msgid "IN2_M22_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M22_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M22_HOST_NAME"
+msgstr "Arbeitsdienst Preview"
+
+msgid "IN2_M22_PRINCIPLE"
+msgstr "Hinter der Pivot-Markierung folgen eine eigene interne Sitzung und die Zieldatei."
+
+msgid "IN2_M22_REPLY"
+msgstr "Die Ziele waren als zu bereinigende Ausnahmen markierte Belege, keine ausgefallenen Server. Dienstfortführung und Aufbewahrung folgten verschiedenen Richtlinien. Vor dem letzten Zugriff stellen wir die reguläre Arbeit wieder her."
+
+msgid "IN2_M22_REPLY_SUBJECT"
+msgstr "[Bestätigt] Vom Web ins Verwaltungsnetz"
+
+msgid "IN2_M22_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nDOWNLOAD HANDOFF\nbase directory: /jobs/archive\nneighbor marker: /handoff/control.key\n\nLöse den Pfad auf, bevor du seinen Speicherbereich bestimmst. Ähnliche Präfixe belegen keine Zugehörigkeit.\n"
+
+msgid "IN2_M22_SUBJECT"
+msgstr "[Nachtauftrag] Vom Web ins Verwaltungsnetz"
+
+msgid "IN2_M22_TARGET_NAME"
+msgstr "Beschränkter Belegdienst M22"
+
+msgid "IN2_M22_TITLE"
+msgstr "Vom Web ins Verwaltungsnetz"
+
+msgid "IN2_M23_AUDIT"
+msgstr "Stelle Anmeldung, Sitzungen, Fotos und Meldungen auf den gewählten Wegen wieder her und erhalte die Abwehr ihrer modellierten Bedrohungen.\n\nÜbergabe auf Grundlage geprüfter regulärer Arbeit und abgewiesener Anfragen. Auch die Originalaufzeichnungen blieben erhalten."
+
+msgid "IN2_M23_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Recovery"
+
+msgid "IN2_M23_BRIEF"
+msgstr "Eine übereilte Pauschalmaßnahme sperrte Fotos, Meldungen und Wartung. Zur alten offenen Lage dürfen wir nicht zurück. Stelle nur nötige Wege und Rechte wieder her.\n\nEin erfolgreicher Bürgerzugriff genügt nicht. Prüfe auch Wartungskraft und Dienstkonto. Alte Tokens und unberechtigte Anfragen müssen gesperrt bleiben. Wähle Teilwiederherstellung oder Wechsel auf den genehmigten Weg.\n\ncaretaker@recovery.packet.test / bright-corridor\nsafetylead@custodym23.packet.test / three-lanterns\n\n\nStelle Authentifizierung, Datei- und Sitzungskontrollen gezielt wieder her oder isoliere den anfälligen Zugang und verlege Arbeit auf ein genehmigtes Gateway und Ersatzmeldungen. Auch neue Anbieter müssen alte Rechte, getarnte Dateien und unzulässige Ziele ablehnen."
+
+msgid "IN2_M23_CASE_DISGUISED"
+msgstr "Als Foto getarnte Eingabe"
+
+msgid "IN2_M23_CASE_DISGUISED_GATEWAY"
+msgstr "Getarnte Datei an der genehmigten Verarbeitung"
+
+msgid "IN2_M23_CASE_FAILED_1"
+msgstr "Wiederholter Fehlschlag 1"
+
+msgid "IN2_M23_CASE_FAILED_2"
+msgstr "Wiederholter Fehlschlag 2"
+
+msgid "IN2_M23_CASE_FAILED_3"
+msgstr "Wiederholter Fehlschlag 3"
+
+msgid "IN2_M23_CASE_FRESH"
+msgstr "Neue reguläre Sitzung"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_1"
+msgstr "Wiederholter Fehlschlag 1 am genehmigten Weg"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_2"
+msgstr "Wiederholter Fehlschlag 2 am genehmigten Weg"
+
+msgid "IN2_M23_CASE_GATEWAY_FAILED_3"
+msgstr "Wiederholter Fehlschlag 3 am genehmigten Weg"
+
+msgid "IN2_M23_CASE_INTERNAL_TARGET"
+msgstr "Internes Ziel außerhalb des Bereichs"
+
+msgid "IN2_M23_CASE_LEGITIMATE"
+msgstr "Regulärer Bürger am gemeinsamen Ausgangspunkt"
+
+msgid "IN2_M23_CASE_NOTIFY"
+msgstr "Reguläre Stationsmeldung zustellen"
+
+msgid "IN2_M23_CASE_OTHER_JOB"
+msgstr "Anderer regulärer Dauerauftrag"
+
+msgid "IN2_M23_CASE_PHOTO"
+msgstr "Reguläres JPEG erzeugen"
+
+msgid "IN2_M23_CASE_RETIRED"
+msgstr "Ausgemusterte Berechtigung am ursprünglichen Weg"
+
+msgid "IN2_M23_CASE_RETIRED_GATEWAY"
+msgstr "Ausgemusterte Berechtigung am genehmigten Weg"
+
+msgid "IN2_M23_CASE_STANDBY_TARGET"
+msgstr "Unzulässiges Ziel am Ersatzdienst"
+
+msgid "IN2_M23_CASE_WARD_JOB"
+msgstr "Gültige Anmeldung des Stationsmeldeauftrags"
+
+msgid "IN2_M23_CONTEXT"
+msgstr "Stelle Authentifizierung, Datei- und Sitzungskontrollen gezielt wieder her oder isoliere den anfälligen Zugang und verlege Arbeit auf ein genehmigtes Gateway und Ersatzmeldungen. Auch neue Anbieter müssen alte Rechte, getarnte Dateien und unzulässige Ziele ablehnen."
+
+msgid "IN2_M23_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "IN2_M23_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "IN2_M23_CONTROL_NOTIFY_OPEN"
+msgstr "Hauptmeldeweg aktivieren"
+
+msgid "IN2_M23_CONTROL_NO_EXECUTION"
+msgstr "Uploads ohne Ausführung speichern"
+
+msgid "IN2_M23_CONTROL_PHOTO_CHECK"
+msgstr "Fotoinhaltsformat prüfen"
+
+msgid "IN2_M23_CONTROL_RETRY_LIMIT"
+msgstr "Wiederholungsgrenze je Konto"
+
+msgid "IN2_M23_CONTROL_SESSION_GUARD"
+msgstr "Abgelaufene Sitzungsrechte prüfen"
+
+msgid "IN2_M23_CONTROL_STANDBY_OPEN"
+msgstr "Ersatzmeldeweg aktivieren"
+
+msgid "IN2_M23_CONTROL_TARGET_SCOPE"
+msgstr "Meldeziele begrenzen"
+
+msgid "IN2_M23_EXPLAIN"
+msgstr "Stelle Authentifizierung, Datei- und Sitzungskontrollen gezielt wieder her oder isoliere den anfälligen Zugang und verlege Arbeit auf ein genehmigtes Gateway und Ersatzmeldungen. Auch neue Anbieter müssen alte Rechte, getarnte Dateien und unzulässige Ziele ablehnen."
+
+msgid "IN2_M23_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "IN2_M23_GOAL"
+msgstr "Stelle Anmeldung, Sitzungen, Fotos und Meldungen auf den gewählten Wegen wieder her und erhalte die Abwehr ihrer modellierten Bedrohungen."
+
+msgid "IN2_M23_HINT_1"
+msgstr "Stelle Anmeldung, Sitzungen, Fotos und Meldungen auf den gewählten Wegen wieder her und erhalte die Abwehr ihrer modellierten Bedrohungen."
+
+msgid "IN2_M23_HINT_2"
+msgstr "Stelle Authentifizierung, Datei- und Sitzungskontrollen gezielt wieder her oder isoliere den anfälligen Zugang und verlege Arbeit auf ein genehmigtes Gateway und Ersatzmeldungen. Auch neue Anbieter müssen alte Rechte, getarnte Dateien und unzulässige Ziele ablehnen."
+
+msgid "IN2_M23_HINT_3"
+msgstr "Repariere für direkte Abwehr die betreffende Kontrolle. Begrenze für die Alternative den ursprünglichen Zugang und wähle den genehmigten Weg für reguläre Anfragen. Alles abzuschalten verhindert reguläre Arbeit."
+
+msgid "IN2_M23_HOST_NAME"
+msgstr "Arbeitsdienst Recovery"
+
+msgid "IN2_M23_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "IN2_M23_PRINCIPLE"
+msgstr "Die Berechtigung hängt vom Handelnden, Ziel und Arbeitsauftrag ab. Prüfe nach einem Wechsel des Verarbeitungswegs auch dort reguläre Arbeit und abzuweisende Anfragen."
+
+msgid "IN2_M23_REPLY"
+msgstr "Die Dienste laufen wieder, ohne die alte Offenlegung zurückzubringen. Bürger zahlen nicht für unseren letzten Zugriff. Entscheide, wer das Ergebnis erhält und auf welchem Weg."
+
+msgid "IN2_M23_REPLY_SUBJECT"
+msgstr "[Bestätigt] Die sicherere Stadt steht still"
+
+msgid "IN2_M23_ROUTE"
+msgstr "Stelle Authentifizierung, Datei- und Sitzungskontrollen gezielt wieder her oder isoliere den anfälligen Zugang und verlege Arbeit auf ein genehmigtes Gateway und Ersatzmeldungen. Auch neue Anbieter müssen alte Rechte, getarnte Dateien und unzulässige Ziele ablehnen."
+
+msgid "IN2_M23_SUBJECT"
+msgstr "[Nachtauftrag] Die sicherere Stadt steht still"
+
+msgid "IN2_M23_TITLE"
+msgstr "Die sicherere Stadt steht still"
+
+msgid "IN2_M24_AUDIT"
+msgstr "[M24 Belege]\nBelege Herkunft und Umfang der letzten Anweisung und wähle ihre Verwahrung.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nECHO directive separated service continuity from record-retention obligations\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_M24_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Control"
+
+msgid "IN2_M24_BRIEF"
+msgstr "Dies ist der letzte Auftrag. Wähle Steuerungsaufzeichnung oder unabhängig aufbewahrte Kopie. Verbinde die Fakten zum Umfang von ECHO und zur Anweisung des Aufbewahrungsausschlusses.\n\nUnterzeichnende, offen gelassener Zugangsweg und Werkzeugautor tragen jeweils Verantwortung. Ersetze das nicht durch ein einzelnes Gesicht. Erhalte das Original und sichere nur nötige Tatsachen.\n\nexaminer@control.packet.test / final-map\nkeeper@custodym24.packet.test / open-slate\n"
+
+msgid "IN2_M24_CASE_FOREIGN_DIRECT"
+msgstr "Unbeteiligtes Konto am ursprünglichen Zugang"
+
+msgid "IN2_M24_CASE_FOREIGN_GATEWAY"
+msgstr "Unbeteiligtes Konto am genehmigten Weg"
+
+msgid "IN2_M24_CASE_OWN_A"
+msgstr "Eigener Beleg von Bürger A"
+
+msgid "IN2_M24_CASE_OWN_B"
+msgstr "Eigener Beleg von Bürger B"
+
+msgid "IN2_M24_CASE_ROUTE_ALLOWED"
+msgstr "Interner Zustandsbeleg vom aktuellen Relais"
+
+msgid "IN2_M24_CASE_ROUTE_DENIED"
+msgstr "Direkter interner Weg vom öffentlichen Knoten"
+
+msgid "IN2_M24_CASE_SERVICE_ALLOWED"
+msgstr "Anweisungszugriff mit begrenzter Berechtigung"
+
+msgid "IN2_M24_CASE_SERVICE_DENIED"
+msgstr "Anweisungsanfrage außerhalb des Berechtigungsumfangs"
+
+msgid "IN2_M24_CASE_STAFF"
+msgstr "Delegierter Beleg des zuständigen Personals"
+
+msgid "IN2_M24_CONTEXT"
+msgstr "Frühere Abschlüsse und Bücher ersetzen keine aktuellen Zugriffsergebnisse. Prüfe in derselben Welt eigene und fremde Webzugriffe, interne Erreichbarkeit aus Relais und öffentlichem Netz sowie begrenzte und unbeteiligte Dienstberechtigungen."
+
+msgid "IN2_M24_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang aktivieren"
+
+msgid "IN2_M24_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg aktivieren"
+
+msgid "IN2_M24_CONTROL_OWNER_CHECK"
+msgstr "Belegeigentümer prüfen"
+
+msgid "IN2_M24_EDGE_NAME"
+msgstr "Öffentlicher Beobachtungsknoten"
+
+msgid "IN2_M24_EXPLAIN"
+msgstr "Belege Herkunft und Umfang der letzten Anweisung und wähle ihre Verwahrung.\nVergleiche Dienstfortführung und Aufbewahrungsausschluss als getrennte Richtlinien.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_M24_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "IN2_M24_GOAL"
+msgstr "Erhalte die letzte Kopie und prüfe die aktuellen Web-, internen Weg- und Dienstberechtigungsgrenzen unabhängig."
+
+msgid "IN2_M24_HINT_1"
+msgstr "Vergleiche Dienstfortführung und Aufbewahrungsausschluss als getrennte Richtlinien."
+
+msgid "IN2_M24_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_M24_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_M24_HOST_NAME"
+msgstr "Arbeitsdienst Control"
+
+msgid "IN2_M24_LAB_NAME"
+msgstr "Prüfung laufender Arbeit und Abwehr"
+
+msgid "IN2_M24_PRINCIPLE"
+msgstr "Vergleiche Dienstfortführung und Aufbewahrungsausschluss als getrennte Richtlinien."
+
+msgid "IN2_M24_REPLY"
+msgstr "Wir haben vergleichbare Aufzeichnungen gesichert, keinen Universalschlüssel. Wähle eine geschwärzte öffentliche Kopie, versiegelte Auditübergabe oder unabhängige Prüfverwahrung. Die Verbindung dieser Nacht darf enden, ohne die Aufzeichnung auszulöschen."
+
+msgid "IN2_M24_REPLY_SUBJECT"
+msgstr "[Bestätigt] Der letzte Zugriff, die bleibende Wahrheit"
+
+msgid "IN2_M24_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\ndirective | continuity | exclusion\nECHO | services | retention\nROUTINE | none | none"
+
+msgid "IN2_M24_SUBJECT"
+msgstr "[Nachtauftrag] Der letzte Zugriff, die bleibende Wahrheit"
+
+msgid "IN2_M24_TITLE"
+msgstr "Der letzte Zugriff, die bleibende Wahrheit"
+
+msgid "IN2_M24_VAULT_NAME"
+msgstr "Begrenzter Anweisungstresor"
+
+msgid "IN2_P01_AUDIT"
+msgstr "[P01 Belege]\nBelege die fiktive Puffergrenze und den Zustand der benachbarten Markierung.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nbounded memory model separates input buffer from adjacent approval state\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_P01_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Memorylab"
+
+msgid "IN2_P01_BRIEF"
+msgstr "Ein freiwilliger Auftrag. Neben einem Speicherdiagramm fester Größe liegt eine Freigabemarkierung. Es gibt weder echten Prozess noch Shellcode. Beobachte, wie die Eingabelänge den Nachbarzustand beeinflusst.\n\nDie festgelegte harmlose Markierung oder ein unabhängiges Sicherheitsaudit belegen dasselbe. Wichtiger als Adressen auswendig zu lernen ist, wer welche Grenze durchsetzen muss.\n\nlabuser@memorylab.packet.test / bounded-copper\nsafety@custodyp01.packet.test / calm-cell\n"
+
+msgid "IN2_P01_CONTEXT"
+msgstr "[Belege die fiktive Puffergrenze und den Zustand der benachbarten Markierung.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nMEMORY WORKBENCH\nregion | offsets | initial\ninput buffer | 0..3 | 00 00 00 00\napproval marker | 4 | 00\npadding | 5..7 | 00 00 00\n\nMarkierungsbyte: 47 (hexadezimal). Dieses isolierte Diagramm enthält höchstens acht Bytes, keine Hostspeicheradressen.\n"
+
+msgid "IN2_P01_EXPLAIN"
+msgstr "Belege die fiktive Puffergrenze und den Zustand der benachbarten Markierung.\nDie Markierung am Offset 4 hinter dem Vier-Byte-Puffer ist 0x47; keine echte Speicheradresse.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_P01_GOAL"
+msgstr "Belege die fiktive Puffergrenze und den Zustand der benachbarten Markierung."
+
+msgid "IN2_P01_HINT_1"
+msgstr "Die Markierung am Offset 4 hinter dem Vier-Byte-Puffer ist 0x47; keine echte Speicheradresse."
+
+msgid "IN2_P01_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_P01_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_P01_HOST_NAME"
+msgstr "Arbeitsdienst Memorylab"
+
+msgid "IN2_P01_PRINCIPLE"
+msgstr "Die Markierung am Offset 4 hinter dem Vier-Byte-Puffer ist 0x47; keine echte Speicheradresse."
+
+msgid "IN2_P01_REPLY"
+msgstr "Eine Modellzelle änderte sich, doch das war keine echte Autorisierung. Eine Grenze durchzusetzen ist etwas anderes, als einem Etikett zu vertrauen. Reale Programme benötigen weitere Schutzmaßnahmen und Umgebungsbedingungen."
+
+msgid "IN2_P01_REPLY_SUBJECT"
+msgstr "[Bestätigt] Eine Zelle neben der Grenze"
+
+msgid "IN2_P01_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\noffset | region | value\n3 | buffer | 41\n4 | approval-flag | 47"
+
+msgid "IN2_P01_SUBJECT"
+msgstr "[Nachtauftrag] Eine Zelle neben der Grenze"
+
+msgid "IN2_P01_TITLE"
+msgstr "Eine Zelle neben der Grenze"
+
+msgid "IN2_PACK_TITLE"
+msgstr "Eindringling · Mitternachtszugang"
+
+msgid "IN2_R01_AUDIT"
+msgstr "[R01 Belege]\nBestimme mit Konstanten und Zweigen des fiktiven Prüfers dessen Freigabeumfang.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nbounded verifier accepts signature shape without checking retention intent\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_R01_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Verifier"
+
+msgid "IN2_R01_BRIEF"
+msgstr "Prüfe Format-, Signatur- und Umfangsbedingungen des kleinen Prüfers. Lies Pseudocode und Aufrufgraph oder vergleiche Eingabepaare und Ausführungsspuren. Führe einen regulär erlaubten Fall und ein trotzdem freigegebenes Gegenbeispiel außerhalb des Bereichs tatsächlich aus."
+
+msgid "IN2_R01_CONTEXT"
+msgstr "Prüfe Format-, Signatur- und Umfangsbedingungen des kleinen Prüfers. Lies Pseudocode und Aufrufgraph oder vergleiche Eingabepaare und Ausführungsspuren. Führe einen regulär erlaubten Fall und ein trotzdem freigegebenes Gegenbeispiel außerhalb des Bereichs tatsächlich aus.\n\nmain(document, permit):\n  if not format_ok(document): deny\n  signature = check_signature(document)\n  if signature: release(document)\n  else: deny\ncheck_signature(document):\n  return signature_ok(document)\n# retention_scope wird übergeben, vor release aber nicht geprüft\n"
+
+msgid "IN2_R01_EXPLAIN"
+msgstr "Bestandene Format- und Signaturprüfungen erlauben keinen Umfang, den das Programm nie prüft."
+
+msgid "IN2_R01_GOAL"
+msgstr "Führe Zweige und Aufrufe aus und belege einen regulären Fall sowie eine Freigabe außerhalb des Bereichs."
+
+msgid "IN2_R01_HINT_1"
+msgstr "Verfolge tatsächlich gelesene Eingaben und aufgerufene Prüfungen."
+
+msgid "IN2_R01_HINT_2"
+msgstr "Suche, wo retention_scope neben format_ok und signature_ok eine Verzweigung beeinflusst."
+
+msgid "IN2_R01_HINT_3"
+msgstr "Halte Format und Signatur auf true, variiere authorized/excluded und vergleiche release-Ausgaben und Aufrufspuren."
+
+msgid "IN2_R01_HOST_NAME"
+msgstr "Arbeitsdienst Verifier"
+
+msgid "IN2_R01_PRINCIPLE"
+msgstr "Bestandene Format- und Signaturprüfungen erlauben keinen Umfang, den das Programm nie prüft."
+
+msgid "IN2_R01_REPLY"
+msgstr "Anzeigetext und Genehmigungszweig unterschieden sich. Der Bereitstellungsprüfer prüfte die Form der Signatur, nicht die Aufbewahrungsrichtlinie. Diese Grenze ergänzen wir im Audit."
+
+msgid "IN2_R01_REPLY_SUBJECT"
+msgstr "[Bestätigt] Der Satz des kleinen Prüfers"
+
+msgid "IN2_R01_SUBJECT"
+msgstr "[Nachtauftrag] Der Satz des kleinen Prüfers"
+
+msgid "IN2_R01_TITLE"
+msgstr "Der Satz des kleinen Prüfers"
+
+msgid "IN2_R01_VM_NAME"
+msgstr "Verzweigungen und Aufrufe des Bereitstellungsprüfers"
+
+msgid "IN2_S01_AUDIT"
+msgstr "[S01 Belege]\nKläre, ob Original- und Neuveröffentlichungsdatum verschiedene Ereignisse beschreiben.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\nnotice original and republication timestamps refer to distinct events\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S01_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Publication"
+
+msgid "IN2_S01_BRIEF"
+msgstr "Ein freiwilliger Auftrag. Zwei Kopien derselben Mitteilung nennen verschiedene Daten. Kein Schlüssel zum Hauptfall, aber vielleicht ein Hinweis darauf, wer die Erinnerung bearbeitet hat. Vergleiche virtuelle Seiten, Post und rotierte Dateien.\n\neditor@publication.packet.test / margin-ash\npublisher@custodys01.packet.test / second-ink\n"
+
+msgid "IN2_S01_CONTEXT"
+msgstr "[Kläre, ob Original- und Neuveröffentlichungsdatum verschiedene Ereignisse beschreiben.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nDESK TRANSCRIPT\noriginal:00:47\n\nRETAINED TRANSCRIPT\nrepublished:01:12"
+
+msgid "IN2_S01_EXPLAIN"
+msgstr "Kläre, ob Original- und Neuveröffentlichungsdatum verschiedene Ereignisse beschreiben.\nZwei unterschiedlich datierte Kopien allein belegen keine Lüge.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_S01_GOAL"
+msgstr "Kläre, ob Original- und Neuveröffentlichungsdatum verschiedene Ereignisse beschreiben."
+
+msgid "IN2_S01_HINT_1"
+msgstr "Zwei unterschiedlich datierte Kopien allein belegen keine Lüge."
+
+msgid "IN2_S01_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_S01_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_S01_HOST_NAME"
+msgstr "Arbeitsdienst Publication"
+
+msgid "IN2_S01_PRINCIPLE"
+msgstr "Zwei unterschiedlich datierte Kopien allein belegen keine Lüge."
+
+msgid "IN2_S01_REPLY"
+msgstr "Das spätere Datum gehörte zur Wiederveröffentlichung, es war kein gefälschtes Originaldatum. Ohne Quelle hätten wir womöglich jemanden der Lüge bezichtigt. Ich bewahre diese Unterscheidung mit der Aufzeichnung auf."
+
+msgid "IN2_S01_REPLY_SUBJECT"
+msgstr "[Bestätigt] Die gelöschte Übergabemitteilung"
+
+msgid "IN2_S01_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nnotice | event | time\nN47 | original | 00:47\nN47 | republished | 01:12"
+
+msgid "IN2_S01_SUBJECT"
+msgstr "[Nachtauftrag] Die gelöschte Übergabemitteilung"
+
+msgid "IN2_S01_TITLE"
+msgstr "Die gelöschte Übergabemitteilung"
+
+msgid "IN2_S02_AUDIT"
+msgstr "[S02 Belege]\nOrdne zwei Beobachtungen einer Übertragung zu und prüfe doppelte Verarbeitung.\nBelege zum aktuellen Fall. Prüfe den Erwerbsweg unter source und verifiziere Aufzeichnungs-ID, Inhalt und Herkunft statt nur den Dateinamen.\n\nNIGHT HANDOFF\ntwo observations correlate to one delivered notification\nRetention: original retained; necessary copy only.\n"
+
+msgid "IN2_S02_AUDIT_NAME"
+msgstr "Unabhängige Verwahrung Relay02"
+
+msgid "IN2_S02_BRIEF"
+msgstr "Ein freiwilliger Auftrag. Eine Meldung erscheint an zwei Messstellen; angeblich erhielt ein Bürger sie doppelt. Ein Paket zweimal zu sehen bedeutet nicht, einen Auftrag zweimal zu verarbeiten. Vergleiche Endpunkt-IDs und Relaiswege.\n\nobserver@relay02.packet.test / one-echo\ndispatcher@custodys02.packet.test / counted-wave\n"
+
+msgid "IN2_S02_CONTEXT"
+msgstr "[Ordne zwei Beobachtungen einer Übertragung zu und prüfe doppelte Verarbeitung.]\n\nFinde die passenden Einträge im Arbeitsbuch. Verwechsle keine fremden Ereignisse ähnlichen Namens oder Zeitpunkts. Kennungen, Anfragen und Pfade bleiben wie beobachtet.\n\nrequest | point | delivery\nN47 | relay02 | one\nN47 | edge | one"
+
+msgid "IN2_S02_EXPLAIN"
+msgstr "Ordne zwei Beobachtungen einer Übertragung zu und prüfe doppelte Verarbeitung.\nTrenne die Zahl der Messstellen von der Zahl zugestellter Geschäftsaufträge.\nDer Beleg ist der beobachtete Zustand mit seiner Herkunft, nicht das gewählte Werkzeug. Eine ungenutzte Technik bleibt ungeprüft statt fehlgeschlagen."
+
+msgid "IN2_S02_GOAL"
+msgstr "Ordne zwei Beobachtungen einer Übertragung zu und prüfe doppelte Verarbeitung."
+
+msgid "IN2_S02_HINT_1"
+msgstr "Trenne die Zahl der Messstellen von der Zahl zugestellter Geschäftsaufträge."
+
+msgid "IN2_S02_HINT_2"
+msgstr "Vergleiche Handelnden, Ziel, Weg und gefordertes Ergebnis. Erhebe nicht erneut dasselbe Buch."
+
+msgid "IN2_S02_HINT_3"
+msgstr "Wähle den Grenzversuch oder eine genehmigte Alternative. Hinweise und bestimmte Werkzeuge sind keine Abschlussbedingungen."
+
+msgid "IN2_S02_HOST_NAME"
+msgstr "Arbeitsdienst Relay02"
+
+msgid "IN2_S02_PRINCIPLE"
+msgstr "Trenne die Zahl der Messstellen von der Zahl zugestellter Geschäftsaufträge."
+
+msgid "IN2_S02_REPLY"
+msgstr "Eine Anfrage wurde an zwei Stellen gesehen; der Geschäftsauftrag lief nicht doppelt. Das erklärt Doyuns offenes Relais etwas besser. Die Erklärung tilgt das Risiko seiner Entscheidung nicht, verändert aber die Faktenlage."
+
+msgid "IN2_S02_REPLY_SUBJECT"
+msgstr "[Bestätigt] Das zweimal zugestellte Signal"
+
+msgid "IN2_S02_ROUTE"
+msgstr "[Arbeitsnotiz der unabhängigen Verwahrung]\nDieses Beobachtungsbuch entstand unabhängig von der Liveantwort. Finde die passende Vorgangsreferenz und vergleiche sie mit dem aktuellen Fall.\n\nrequest | delivery_count | endpoint\nN47 | 1 | citizen\nN46 | 1 | maintenance"
+
+msgid "IN2_S02_SUBJECT"
+msgstr "[Nachtauftrag] Das zweimal zugestellte Signal"
+
+msgid "IN2_S02_TITLE"
+msgstr "Das zweimal zugestellte Signal"
+
+msgid "IN2_TOOL_AUTH_NAME"
+msgstr "Anmeldebeobachtung"
+
+msgid "IN2_TOOL_COMPARE_NAME"
+msgstr "Belegvergleich"
+
+msgid "IN2_TOOL_EXEC_NAME"
+msgstr "JobLens"
+
+msgid "IN2_TOOL_FETCH_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_IDOR_NAME"
+msgstr "RequestLab"
+
+msgid "IN2_TOOL_MEMORY_NAME"
+msgstr "MemoryLab"
+
+msgid "IN2_TOOL_PACKET_NAME"
+msgstr "PacketLens"
+
+msgid "IN2_TOOL_PATH_NAME"
+msgstr "FileLens"
+
+msgid "IN2_TOOL_PERMISSION_NAME"
+msgstr "AccessView"
+
+msgid "IN2_TOOL_QUERY_NAME"
+msgstr "QueryProbe"
+
+msgid "IN2_TOOL_RENDER_NAME"
+msgstr "Browserverfolgung"
+
+msgid "IN2_TOOL_SESSION_NAME"
+msgstr "Sitzungsbeobachtung"
+
+msgid "IN2_TOOL_TOKEN_NAME"
+msgstr "Anmeldedatenumfang"
+
+msgid "IN2_TOOL_TRACE_NAME"
+msgstr "LogLens"
+
+msgid "IN2_TOOL_UPLOAD_NAME"
+msgstr "Medienannahme"
+
 msgid "KEYBOARD_VOLUME"
 msgstr "Tastaturgeräusche"
 
 msgid "LANGUAGE"
 msgstr "Sprache"
+
+msgid "LEGACY_CONTINUE"
+msgstr "Vorherige Fassung fortsetzen"
+
+msgid "LEGACY_CONTINUE_DESC"
+msgstr "Setze die vorige Fassung fort. Ihr Fortschritt bleibt von den neuen Kampagnen getrennt."
+
+msgid "LEGACY_SOURCE_UNSUPPORTED"
+msgstr "Ein alter Spielstand wurde gefunden, bestand aber die Prüfung nicht. Das Original bleibt erhalten und wird nicht auf neue Kampagnen angewendet. Grund: {code}"
 
 msgid "LOAD_GAME"
 msgstr "Spiel laden"
@@ -2489,6 +4982,27 @@ msgstr "[Nachtauftrag] Eine Zelle neben der Grenze"
 msgid "P01_TITLE"
 msgstr "Eine Zelle neben der Grenze"
 
+msgid "PACK_DEFENDER_SUMMARY"
+msgstr "Wehre Bedrohungen ab und erhalte die reguläre Arbeit."
+
+msgid "PACK_DEFENDER_TITLE"
+msgstr "Verteidiger"
+
+msgid "PACK_INTRUDER_SUMMARY"
+msgstr "Öffne neue Wege und sichere verborgene Aufzeichnungen."
+
+msgid "PACK_INTRUDER_TITLE"
+msgstr "Eindringling"
+
+msgid "PACK_LEGACY_TITLE"
+msgstr "Vorherige Fassung"
+
+msgid "PACK_TRACKER_SUMMARY"
+msgstr "Grenze die Spur durch Beobachtungen und Gegenbelege ein."
+
+msgid "PACK_TRACKER_TITLE"
+msgstr "Ermittler"
+
 msgid "QUIT"
 msgstr "Beenden"
 
@@ -2581,6 +5095,9 @@ msgstr "Erneut versuchen"
 
 msgid "RETURN_TO_ROOM"
 msgstr "F10 · Zurück ins Arbeitszimmer"
+
+msgid "ROLE_AUDIO_LABEL"
+msgstr "Kampagnenatmosphäre"
 
 msgid "ROOM_CONTROLS"
 msgstr "WASD bewegen · Rechte Maustaste halten zum Umsehen · E Computer · Esc Menü"
@@ -2903,6 +5420,399 @@ msgstr "Medienannahme"
 msgid "TOOL_VOLUME"
 msgstr "Werkzeugtöne"
 
+msgid "TR1_ENDING_TITLE"
+msgstr "Eine prüfbare Übergabe"
+
+msgid "TR1_PACK_TITLE"
+msgstr "Ermittler · Die verbleibende Verbindung"
+
+msgid "TR1_T01_ABSTRACTION"
+msgstr "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+
+msgid "TR1_T01_BRIEF"
+msgstr "Ich bin Minseo vom unabhängigen Dokumententeam. Du kannst hier ohne Vorkenntnisse anfangen: Zwei Beobachtungen und eine Erhebungserlaubnis liegen bereit. Dieselbe IP belegt nicht dieselbe Person.\n\nUnterscheiden Sitzungsaufzeichnungen oder beide Relaisenden die Erklärungen besser? Stelle die sichtbare Verbindung fest und benenne den nächsten Beobachtungspunkt. Du sollst keinen Täternamen erraten.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t01.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T01_DESK_NAME"
+msgstr "Viele Schatten an einer Adresse · Arbeitsplatz"
+
+msgid "TR1_T01_GOAL"
+msgstr "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+
+msgid "TR1_T01_HINT_1"
+msgstr "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+
+msgid "TR1_T01_HINT_2"
+msgstr "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+
+msgid "TR1_T01_HINT_3"
+msgstr "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+
+msgid "TR1_T01_LIMIT"
+msgstr "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+
+msgid "TR1_T01_NEXT_SENSOR"
+msgstr "Nächster Messpunkt für die Übergabe"
+
+msgid "TR1_T01_PRINCIPLE"
+msgstr "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+
+msgid "TR1_T01_REPLY"
+msgstr "Du hast Verbindung und Personenidentität hinter einer Adresse getrennt. Die nächste Übertragung galt als gleichzeitig, obwohl ihre Uhren abweichen."
+
+msgid "TR1_T01_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T01_SENSOR_FIELD"
+msgstr "Vor-Ort-Beobachtung"
+
+msgid "TR1_T01_SENSOR_INDEPENDENT"
+msgstr "Beobachtung aus unabhängiger Quelle"
+
+msgid "TR1_T01_TITLE"
+msgstr "Viele Schatten an einer Adresse"
+
+msgid "TR1_T01_TOOL_NAME"
+msgstr "Quellen, Beobachtungen und Hypothesen"
+
+msgid "TR1_T02_ABSTRACTION"
+msgstr "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+
+msgid "TR1_T02_BRIEF"
+msgstr "Zwei Server vermerkten dieselbe Zeit mit unterschiedlichen Bezugsereignissen und Fehlerintervallen. Grenze die mögliche Reihenfolge ein, statt exakte Sekunden zu erfinden.\n\nNutze ein gemeinsames Ereignis zur Korrektur oder verbinde unterschriebene Übergabefolge mit unabhängigen Akten. Kein Weg offenbart eine verborgene perfekte Uhr.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t02.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T02_DESK_NAME"
+msgstr "Zwei uneinige Uhren · Arbeitsplatz"
+
+msgid "TR1_T02_GOAL"
+msgstr "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+
+msgid "TR1_T02_HINT_1"
+msgstr "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+
+msgid "TR1_T02_HINT_2"
+msgstr "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+
+msgid "TR1_T02_HINT_3"
+msgstr "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+
+msgid "TR1_T02_LIMIT"
+msgstr "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+
+msgid "TR1_T02_NEXT_SENSOR"
+msgstr "Nächster Messpunkt für die Übergabe"
+
+msgid "TR1_T02_PRINCIPLE"
+msgstr "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+
+msgid "TR1_T02_REPLY"
+msgstr "Getrennte Zeitintervalle stützen eine Reihenfolge; überlappende bleiben offen. Kläre bei der nächsten Kopie zuerst, wer sie erhoben und übergeben hat."
+
+msgid "TR1_T02_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T02_SENSOR_FIELD"
+msgstr "Vor-Ort-Beobachtung"
+
+msgid "TR1_T02_SENSOR_INDEPENDENT"
+msgstr "Beobachtung aus unabhängiger Quelle"
+
+msgid "TR1_T02_TITLE"
+msgstr "Zwei uneinige Uhren"
+
+msgid "TR1_T02_TOOL_NAME"
+msgstr "Quellen, Beobachtungen und Hypothesen"
+
+msgid "TR1_T03_ABSTRACTION"
+msgstr "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+
+msgid "TR1_T03_BRIEF"
+msgstr "Zwei Kopien unterscheiden sich. Änderung, Neuveröffentlichung und Erhebungslücken sind möglich. Ein gleicher Hash stützt Unverändertheit seit der Erhebung, nicht die Wahrheit des Inhalts.\n\nVerbinde unabhängige Empfangsbelege oder Verwahrquellen zum Kopienweg. Schreibe einer Person nichts allein aufgrund einer schwach belegten Aussage zu.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t03.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T03_DESK_NAME"
+msgstr "Die Herkunft der Kopie · Arbeitsplatz"
+
+msgid "TR1_T03_GOAL"
+msgstr "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+
+msgid "TR1_T03_HINT_1"
+msgstr "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+
+msgid "TR1_T03_HINT_2"
+msgstr "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+
+msgid "TR1_T03_HINT_3"
+msgstr "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+
+msgid "TR1_T03_LIMIT"
+msgstr "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+
+msgid "TR1_T03_NEXT_SENSOR"
+msgstr "Nächster Messpunkt für die Übergabe"
+
+msgid "TR1_T03_PRINCIPLE"
+msgstr "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+
+msgid "TR1_T03_REPLY"
+msgstr "Du hast die Kopienherkunft getrennt von der Behauptung ihrer Quelle dokumentiert. Wähle nun, wo eine neue Beobachtung am meisten hilft."
+
+msgid "TR1_T03_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T03_SENSOR_FIELD"
+msgstr "Vor-Ort-Beobachtung"
+
+msgid "TR1_T03_SENSOR_INDEPENDENT"
+msgstr "Beobachtung aus unabhängiger Quelle"
+
+msgid "TR1_T03_TITLE"
+msgstr "Die Herkunft der Kopie"
+
+msgid "TR1_T03_TOOL_NAME"
+msgstr "Quellen, Beobachtungen und Hypothesen"
+
+msgid "TR1_T04_ABSTRACTION"
+msgstr "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+
+msgid "TR1_T04_BRIEF"
+msgstr "Erneutes Lesen trennt die beiden möglichen Wege nicht. Wähle eine erlaubte Messstelle und schiebe ihr simuliertes Beobachtungsfenster weiter. Echtzeitwarten ist nicht nötig.\n\nBeobachte Relaisgrenze oder begrenzten Endpunkt. Prüfe, welche Erklärung die neue Beobachtung stützt oder widerlegt.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t04.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T04_DESK_NAME"
+msgstr "Wo die nächste Verbindung zu sehen ist · Arbeitsplatz"
+
+msgid "TR1_T04_GOAL"
+msgstr "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+
+msgid "TR1_T04_HINT_1"
+msgstr "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+
+msgid "TR1_T04_HINT_2"
+msgstr "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+
+msgid "TR1_T04_HINT_3"
+msgstr "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+
+msgid "TR1_T04_LIMIT"
+msgstr "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+
+msgid "TR1_T04_NEXT_SENSOR"
+msgstr "Nächster Messpunkt für die Übergabe"
+
+msgid "TR1_T04_PRINCIPLE"
+msgstr "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+
+msgid "TR1_T04_REPLY"
+msgstr "Deine Wahl der Messstelle grenzte die Verbindung ein. In der nächsten Aufzeichnung ist der Kontoname nicht mit dem tatsächlichen Sitzungsnutzer gleichzusetzen."
+
+msgid "TR1_T04_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T04_SENSOR_FIELD"
+msgstr "Vor-Ort-Beobachtung"
+
+msgid "TR1_T04_SENSOR_INDEPENDENT"
+msgstr "Beobachtung aus unabhängiger Quelle"
+
+msgid "TR1_T04_TITLE"
+msgstr "Wo die nächste Verbindung zu sehen ist"
+
+msgid "TR1_T04_TOOL_NAME"
+msgstr "Quellen, Beobachtungen und Hypothesen"
+
+msgid "TR1_T05_ABSTRACTION"
+msgstr "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+
+msgid "TR1_T05_BRIEF"
+msgstr "Ein Kontoname erscheint auf zwei Wegen. Geteilte Konten, verbliebene Sitzungen und Diebstahl sind mögliche Erklärungen. Zuerst eine Person zu benennen zieht die Schlussfolgerung den Belegen vor.\n\nVerbinde Sitzungslebensdauer und Wege oder Delegations- und Widerrufsakten. Wer tatsächlich die Tastatur bediente, kann unbekannt bleiben.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t05.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T05_DESK_NAME"
+msgstr "Ein gestohlener Name · Arbeitsplatz"
+
+msgid "TR1_T05_GOAL"
+msgstr "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+
+msgid "TR1_T05_HINT_1"
+msgstr "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+
+msgid "TR1_T05_HINT_2"
+msgstr "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+
+msgid "TR1_T05_HINT_3"
+msgstr "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+
+msgid "TR1_T05_LIMIT"
+msgstr "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+
+msgid "TR1_T05_NEXT_SENSOR"
+msgstr "Nächster Messpunkt für die Übergabe"
+
+msgid "TR1_T05_PRINCIPLE"
+msgstr "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+
+msgid "TR1_T05_REPLY"
+msgstr "Die Konto-Sitzungs-Verbindung ist belegt, ohne die Identität zu überdehnen. Die nächste Übertragung enthält eine Strecke ohne sichtbaren Inhalt."
+
+msgid "TR1_T05_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T05_SENSOR_FIELD"
+msgstr "Vor-Ort-Beobachtung"
+
+msgid "TR1_T05_SENSOR_INDEPENDENT"
+msgstr "Beobachtung aus unabhängiger Quelle"
+
+msgid "TR1_T05_TITLE"
+msgstr "Ein gestohlener Name"
+
+msgid "TR1_T05_TOOL_NAME"
+msgstr "Quellen, Beobachtungen und Hypothesen"
+
+msgid "TR1_T06_ABSTRACTION"
+msgstr "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+
+msgid "TR1_T06_BRIEF"
+msgstr "Die Aufzeichnung durchquert eine verschlüsselte Strecke. Es gibt keine Taste zum beliebigen Entschlüsseln ihres Inhalts. Erlaubte Metadaten und Endpunktakten können dennoch eine begrenzte Verbindung stützen.\n\nHalte fest, wer was sehen konnte, und grenze das nächste Ziel ohne fremde Inhalte ein.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t06.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T06_DESK_NAME"
+msgstr "Die unsichtbare Strecke · Arbeitsplatz"
+
+msgid "TR1_T06_GOAL"
+msgstr "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+
+msgid "TR1_T06_HINT_1"
+msgstr "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+
+msgid "TR1_T06_HINT_2"
+msgstr "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+
+msgid "TR1_T06_HINT_3"
+msgstr "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+
+msgid "TR1_T06_LIMIT"
+msgstr "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+
+msgid "TR1_T06_NEXT_SENSOR"
+msgstr "Nächster Messpunkt für die Übergabe"
+
+msgid "TR1_T06_PRINCIPLE"
+msgstr "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+
+msgid "TR1_T06_REPLY"
+msgstr "Du hast den Weg belegt, ohne unsichtbaren Inhalt zu erfinden. Nun widerspricht ein neuer Beleg einer bisher plausiblen Erklärung."
+
+msgid "TR1_T06_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T06_SENSOR_FIELD"
+msgstr "Vor-Ort-Beobachtung"
+
+msgid "TR1_T06_SENSOR_INDEPENDENT"
+msgstr "Beobachtung aus unabhängiger Quelle"
+
+msgid "TR1_T06_TITLE"
+msgstr "Die unsichtbare Strecke"
+
+msgid "TR1_T06_TOOL_NAME"
+msgstr "Quellen, Beobachtungen und Hypothesen"
+
+msgid "TR1_T07_ABSTRACTION"
+msgstr "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+
+msgid "TR1_T07_BRIEF"
+msgstr "Die Notiz einer früheren Ermittlung vermutete dieselbe Sitzung. Du musst diese Vermutung nicht übernehmen. Prüfe neue Beobachtungen und gehe direkt zur besser gestützten Verbindung.\n\nErhebe ein Bezugsereignis oder die nächste von konkurrierenden Erklärungen vorhergesagte Beobachtung. Berichtige eine eigene frühere Hypothese mit Verlauf und Gegenbeleg; sonst kannst du die gestützte Beziehung direkt übergeben.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t07.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T07_DESK_NAME"
+msgstr "Wenn eine plausible Hypothese weichen muss · Arbeitsplatz"
+
+msgid "TR1_T07_GOAL"
+msgstr "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+
+msgid "TR1_T07_HINT_1"
+msgstr "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+
+msgid "TR1_T07_HINT_2"
+msgstr "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+
+msgid "TR1_T07_HINT_3"
+msgstr "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+
+msgid "TR1_T07_LIMIT"
+msgstr "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+
+msgid "TR1_T07_NEXT_SENSOR"
+msgstr "Nächster Messpunkt für die Übergabe"
+
+msgid "TR1_T07_PRINCIPLE"
+msgstr "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+
+msgid "TR1_T07_PRIOR"
+msgstr "Frühere Vermutung derselben Sitzung"
+
+msgid "TR1_T07_REPLY"
+msgstr "Die neue Beobachtung zeigte die Grenze der alten Notiz. Du konntest ohne Löschen berichtigen oder direkt mit unabhängigen Belegen vorgehen. Halte bei der letzten Übergabe genau fest, was belegt wurde."
+
+msgid "TR1_T07_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T07_SENSOR_FIELD"
+msgstr "Vor-Ort-Beobachtung"
+
+msgid "TR1_T07_SENSOR_INDEPENDENT"
+msgstr "Beobachtung aus unabhängiger Quelle"
+
+msgid "TR1_T07_TITLE"
+msgstr "Wenn eine plausible Hypothese weichen muss"
+
+msgid "TR1_T07_TOOL_NAME"
+msgstr "Quellen, Beobachtungen und Hypothesen"
+
+msgid "TR1_T08_ABSTRACTION"
+msgstr "Dieser begrenzte Fall verwendet erlaubte Beobachtungsfenster und wenige Beziehungstypen."
+
+msgid "TR1_T08_BRIEF"
+msgstr "Die letzte Übergabe. Belege den kleinsten durch unabhängige Blickpunkte und Quellen verbundenen Weg. Du brauchst nicht jeden echten Namen.\n\nTrenne Übertragungswege, widerlegte Behauptungen und Stellen ohne Beobachtung. Überall „unbekannt“ einzutragen und nötige Verbindungen sowie Folgebeobachtungen wegzulassen genügt nicht.\nUnten steht das genehmigte Arbeitskonto. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@t08.tracker.packet.test\nsource-custody\n"
+
+msgid "TR1_T08_DESK_NAME"
+msgstr "Die Grenze der letzten Verbindung · Arbeitsplatz"
+
+msgid "TR1_T08_GOAL"
+msgstr "Stütze die benötigte Verbindung mit Beobachtungen und übergib Gegenbelege, Unsicherheit und den nächsten Messpunkt."
+
+msgid "TR1_T08_HINT_1"
+msgstr "Trenne das durch Beobachtungen Belegte vom weiterhin Unbekannten."
+
+msgid "TR1_T08_HINT_2"
+msgstr "Verbinde Herkunft, serverseitige Markierungen und korrigierte Zeitintervalle statt nur IP oder Namen."
+
+msgid "TR1_T08_HINT_3"
+msgstr "Erhebe neue Vor-Ort- oder unabhängige Beobachtungen. Du musst keine alte Notiz übernehmen oder absichtlich eine falsche Hypothese aufstellen."
+
+msgid "TR1_T08_LIMIT"
+msgstr "Eine gestützte Sitzungs- oder Übertragungsverbindung belegt weder Personenidentität noch unsichtbaren Inhalt."
+
+msgid "TR1_T08_NEXT_SENSOR"
+msgstr "Nächster Messpunkt für die Übergabe"
+
+msgid "TR1_T08_PRINCIPLE"
+msgstr "Der Hypothesenstatus folgt nur aus erhobenen öffentlichen Beobachtungen, nie aus einem verborgenen Täternamen."
+
+msgid "TR1_T08_REPLY"
+msgstr "Gestützte Verbindungen bleiben, unbekannte Identitäten werden nicht erfunden. Das nächste Team erhält Herkunft, Gegenbelege und noch nötige Beobachtungen. Die Ermittlung endet mit prüfbarer Übergabe, nicht mit einem enthüllten Lösungsnamen."
+
+msgid "TR1_T08_SENDER"
+msgstr "Minseo"
+
+msgid "TR1_T08_SENSOR_FIELD"
+msgstr "Vor-Ort-Beobachtung"
+
+msgid "TR1_T08_SENSOR_INDEPENDENT"
+msgstr "Beobachtung aus unabhängiger Quelle"
+
+msgid "TR1_T08_TITLE"
+msgstr "Die Grenze der letzten Verbindung"
+
+msgid "TR1_T08_TOOL_NAME"
+msgstr "Quellen, Beobachtungen und Hypothesen"
+
 msgid "UI_ALERT_EXPLAIN_0"
 msgstr "Kein Risiko beobachtet. Lokale Tippfehler, Lesen und Fensterwechsel beeinflussen den Alarm nicht."
 
@@ -3117,7 +6027,7 @@ msgid "UI_BD_STATE_LOCKED"
 msgstr "Vorherige Fälle müssen gelöst sein"
 
 msgid "UI_BD_STATE_RECHECK"
-msgstr "Aktueller Zustand erfüllt Ziele nicht erneut (Abschluss bleibt vermerkt)"
+msgstr "Der aktuelle Zustand erfüllt die Ziele nicht (Abschluss bleibt vermerkt)"
 
 msgid "UI_BD_SWITCH"
 msgstr "Zu diesem Fall wechseln"
@@ -3464,6 +6374,141 @@ msgstr "Porträt von {name} ansehen"
 msgid "UI_MAIL_REVEAL_TIP"
 msgstr "Zeigt ein in der Geschichte freigegebenes Porträt. Auf Wunsch bleibt das abstrakte Zeichen."
 
+msgid "UI_MODEL_ACTION"
+msgstr "Aktion"
+
+msgid "UI_MODEL_ACTION_ADVANCE"
+msgstr "Wartende Aufträge weiterverarbeiten"
+
+msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
+msgstr "Zum nächsten Beobachtungsfenster"
+
+msgid "UI_MODEL_ACTION_CHECKPOINT"
+msgstr "Richtlinienprüfpunkt speichern"
+
+msgid "UI_MODEL_ACTION_COLLECT"
+msgstr "An diesem Punkt erheben"
+
+msgid "UI_MODEL_ACTION_HANDOFF"
+msgstr "Gestützte Verbindungen und Grenzen übergeben"
+
+msgid "UI_MODEL_ACTION_HYPOTHESIZE"
+msgstr "Hypothese aufstellen"
+
+msgid "UI_MODEL_ACTION_INSPECT"
+msgstr "Aktuellen Zustand prüfen"
+
+msgid "UI_MODEL_ACTION_PROBE"
+msgstr "Anfragen und reguläre Arbeit prüfen"
+
+msgid "UI_MODEL_ACTION_QUARANTINE"
+msgstr "Quarantäne des gespeicherten Objekts ändern"
+
+msgid "UI_MODEL_ACTION_RESET"
+msgstr "Aktuelle Ausführung zurücksetzen"
+
+msgid "UI_MODEL_ACTION_REVISE"
+msgstr "Mit Belegspur berichtigen"
+
+msgid "UI_MODEL_ACTION_REVOKE"
+msgstr "Sitzung widerrufen"
+
+msgid "UI_MODEL_ACTION_ROLLBACK"
+msgstr "Gewählte Richtliniengruppe zurücknehmen"
+
+msgid "UI_MODEL_ACTION_RUN"
+msgstr "Programm ausführen"
+
+msgid "UI_MODEL_ACTION_SET_CONTROL"
+msgstr "Gezielte Maßnahme anwenden"
+
+msgid "UI_MODEL_ACTION_SET_INPUT"
+msgstr "Eingabefall vorbereiten"
+
+msgid "UI_MODEL_ACTION_STEP"
+msgstr "Ausführung schrittweise ansehen"
+
+msgid "UI_MODEL_ACTION_TEST"
+msgstr "An erhobenen Belegen prüfen"
+
+msgid "UI_MODEL_ALLOW"
+msgstr "Zulassen"
+
+msgid "UI_MODEL_AUTHORIZED"
+msgstr "Genehmigter Bereich"
+
+msgid "UI_MODEL_CLIENT_SUPPLIED"
+msgstr "Vom Client gelieferte Markierung"
+
+msgid "UI_MODEL_COMPLETE_WINDOW"
+msgstr "Vollständige Beobachtung dieses Fensters"
+
+msgid "UI_MODEL_DENY"
+msgstr "Sperren"
+
+msgid "UI_MODEL_EVENT_ACCEPTED"
+msgstr "Upload angenommen"
+
+msgid "UI_MODEL_EVENT_QUARANTINE_CHANGED"
+msgstr "Quarantänezustand geändert"
+
+msgid "UI_MODEL_EXCLUDED"
+msgstr "Außerhalb des Bereichs"
+
+msgid "UI_MODEL_FORM_NOTE"
+msgstr "Diese Auswahl folgt aus aktuellen Rechten und Beobachtungen. Wähle Aktion, Behauptung oder Eingabe und führe sie aus."
+
+msgid "UI_MODEL_HALTED"
+msgstr "Beendet"
+
+msgid "UI_MODEL_IDLE"
+msgstr "Warten auf Eingabefall"
+
+msgid "UI_MODEL_METADATA_ONLY"
+msgstr "Nur Metadaten"
+
+msgid "UI_MODEL_NORMAL"
+msgstr "Reguläre Arbeit"
+
+msgid "UI_MODEL_NO_ACTIONS"
+msgstr "Derzeit keine Aktionen verfügbar. Prüfe Zugang und Beobachtungen."
+
+msgid "UI_MODEL_NO_OBSERVATIONS"
+msgstr "Noch keine Beobachtungen anzuzeigen."
+
+msgid "UI_MODEL_PERMITTED_PLAINTEXT"
+msgstr "Genehmigter Klartext"
+
+msgid "UI_MODEL_REFUTED"
+msgstr "Widerlegt"
+
+msgid "UI_MODEL_REL_BEFORE"
+msgstr "Früher aufgetreten?"
+
+msgid "UI_MODEL_REL_FORWARDED_TO"
+msgstr "Zum nächsten Knoten weitergeleitet?"
+
+msgid "UI_MODEL_REL_SAME_SESSION"
+msgstr "Dieselbe Sitzung?"
+
+msgid "UI_MODEL_RUNNING"
+msgstr "Läuft"
+
+msgid "UI_MODEL_SAMPLED_WINDOW"
+msgstr "Nur Stichprobenbeobachtungen"
+
+msgid "UI_MODEL_SERVER_ISSUED"
+msgstr "Vom Server ausgestellte Markierung"
+
+msgid "UI_MODEL_SUPPORTED"
+msgstr "Gestützt"
+
+msgid "UI_MODEL_THREAT"
+msgstr "Bedrohliche Anfrage"
+
+msgid "UI_MODEL_UNDETERMINED"
+msgstr "Unbestimmt / Belege fehlen"
+
 msgid "UI_NET_CONNECTED"
 msgstr "Verbunden · Terminals {list}"
 
@@ -3563,6 +6608,24 @@ msgstr "Benötigte Kontositzung auf {id} herstellen"
 msgid "UI_OBJ_SOURCES_PRESERVED"
 msgstr "Entfernte Originale ohne Änderung oder Löschung erhalten"
 
+msgid "UI_OBSERVATION_ENTITIES"
+msgstr "In erhobenen Beobachtungen vorkommende Objekte"
+
+msgid "UI_OBSERVATION_EVIDENCE"
+msgstr "Erhobene Beobachtungen und Herkunft"
+
+msgid "UI_OBSERVATION_HISTORY"
+msgstr "Verlauf der Hypothesenberichtigungen"
+
+msgid "UI_OBSERVATION_HYPOTHESES"
+msgstr "Hypothesen und aktuelle Belege"
+
+msgid "UI_OBSERVATION_INITIAL_CLAIMS"
+msgstr "Erhaltene Behauptungen · noch ungeprüft"
+
+msgid "UI_OBSERVATION_SENSORS"
+msgstr "Beobachtungspunkte und Erhebungsumfang"
+
 msgid "UI_OK"
 msgstr "Bestätigen"
 
@@ -3613,6 +6676,27 @@ msgstr "Sicherungswiederherstellung fehlgeschlagen ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "Beschädigten Stand separat erhalten und gültige Sicherung wiederherstellen"
+
+msgid "UI_RESPONSE_ARTIFACTS"
+msgstr "Beobachtete gespeicherte Uploads"
+
+msgid "UI_RESPONSE_ARTIFACT_EVENTS"
+msgstr "Verlauf von Uploads und Quarantäne"
+
+msgid "UI_RESPONSE_BUSINESS_OBJECTS"
+msgstr "Arbeitsergebnisse und gespeicherte Objekte"
+
+msgid "UI_RESPONSE_CHECKPOINTS"
+msgstr "Begrenzte Rücknahmepunkte"
+
+msgid "UI_RESPONSE_CONTROLS"
+msgstr "Aktuelle Abwehrmaßnahmen"
+
+msgid "UI_RESPONSE_HISTORY"
+msgstr "Verlauf beobachteter Anfragen"
+
+msgid "UI_RESPONSE_MATRIX"
+msgstr "Vergleich regulärer und bedrohlicher Anfragen"
 
 msgid "UI_RL_BODY"
 msgstr "Inhalt (JSON-Objekt)"
@@ -3797,6 +6881,15 @@ msgstr "Wartet keine Echtzeit ab. Verwendet eine logische Uhr in ticks und ist k
 msgid "UI_TOOLKIND_AUTH_MODEL"
 msgstr "Berechnet Fehlschläge und virtuelle Wartezeit je Konto. Beobachte bei aktiver Begrenzung Wiederholungssperre und reguläre Anmeldung nach dem Warten."
 
+msgid "UI_TOOLKIND_BRANCH_VM"
+msgstr "Verzweigungs- und Aufrufanalyse"
+
+msgid "UI_TOOLKIND_BRANCH_VM_LIMIT"
+msgstr "Führt keine echten CPU, Binärprogramme oder Shells aus. Der Fall gibt Programm und Grenzen vor; eine festgelegte Zahl an Tastendrücken ist kein Ziel."
+
+msgid "UI_TOOLKIND_BRANCH_VM_MODEL"
+msgstr "Führe kleine Eingabefälle durch begrenzte virtuelle Verzweigungen, Aufrufe, Rückgaben und Ausgaben und vergleiche ihre Spuren."
+
 msgid "UI_TOOLKIND_COMPARE"
 msgstr "Beobachtungen vergleichen"
 
@@ -3869,6 +6962,15 @@ msgstr "Bildet weder echten Prozessspeicher noch reale Adressen oder Schutzverfa
 msgid "UI_TOOLKIND_MEMORY_MODEL"
 msgstr "Zeigt einen festen Puffer und Folgezellen. Hexbytes machen sichtbar, welche Zellen überlaufende Bytes erreichen."
 
+msgid "UI_TOOLKIND_OBSERVATION_CASE"
+msgstr "Beobachtungen und Hypothesen"
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_LIMIT"
+msgstr "Eine gemeinsame IP belegt keine Identität. Uhrfehler, Stichproben und Markierungsherkunft begrenzen Schlüsse; ein verborgener Täter dient nicht als Vergleich."
+
+msgid "UI_TOOLKIND_OBSERVATION_CASE_MODEL"
+msgstr "Erhebe Beobachtungen in erlaubten Fenstern und Positionen. Ordne Behauptungen anhand dieser Kopien als gestützt, widerlegt oder unbestimmt ein."
+
 msgid "UI_TOOLKIND_PACKET"
 msgstr "Pakete betrachten"
 
@@ -3922,6 +7024,15 @@ msgstr "Führt kein echtes JavaScript aus. Auswirkungen auf andere Nutzer sind n
 
 msgid "UI_TOOLKIND_RENDER_MODEL"
 msgstr "Vergleicht Textanzeige mit virtuellen Darstellungssignalen. Bei aktiver Maskierung bleibt die Eingabe reiner Text."
+
+msgid "UI_TOOLKIND_RESPONSE_LAB"
+msgstr "Reaktionswerkbank"
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_LIMIT"
+msgstr "Alles zu sperren ist kein Erfolg. Prüfpunkte stellen nur ihre Richtliniengruppe wieder her; widerrufene Zugangsdaten und erhobene Aufzeichnungen werden nicht zurückgedreht."
+
+msgid "UI_TOOLKIND_RESPONSE_LAB_MODEL"
+msgstr "Sende erlaubte Anfragen an dieselben virtuellen Dienste und vergleiche reguläre Arbeit mit Bedrohungen. Maßnahmen ändern die mit anderen Werkzeugen geteilten Richtlinien und Sitzungen."
 
 msgid "UI_TOOLKIND_REVERSE"
 msgstr "Ablaufanalyse"
@@ -4025,26 +7136,164 @@ msgstr "Die Wartezeit (ticks) muss ganzzahlig sein."
 msgid "UI_TOOL_ERR_UNKNOWN_TOOL"
 msgstr "Dieses Werkzeug gehört nicht zum aktuellen Fall."
 
+msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
+msgstr "Annahmeschritt des Uploads"
+
+msgid "UI_TOOL_FIELD_ACQUISITION"
+msgstr "Erhebungsmethode"
+
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "Aktion"
+
+msgid "UI_TOOL_FIELD_ARTIFACT_ID"
+msgstr "Gespeichertes Objekt"
+
+msgid "UI_TOOL_FIELD_AVAILABLE"
+msgstr "Verfügbar"
+
+msgid "UI_TOOL_FIELD_BUSINESS_KEY"
+msgstr "Geschäftsvorgang"
+
+msgid "UI_TOOL_FIELD_BUSINESS_VALUE"
+msgstr "Auswirkung auf den Vorgang"
+
+msgid "UI_TOOL_FIELD_CALL_STACK"
+msgstr "Aufrufstapel"
+
+msgid "UI_TOOL_FIELD_CASE_ID"
+msgstr "Anfrage- oder Eingabefall"
+
+msgid "UI_TOOL_FIELD_CHECKPOINT_ID"
+msgstr "Rücknahmepunkt"
+
+msgid "UI_TOOL_FIELD_CLAIM"
+msgstr "Behauptung"
+
+msgid "UI_TOOL_FIELD_CLASS"
+msgstr "Klasse"
+
+msgid "UI_TOOL_FIELD_CLOCK_OFFSET"
+msgstr "Uhrabweichung"
+
+msgid "UI_TOOL_FIELD_COLLECTOR"
+msgstr "Erhebende Stelle"
+
+msgid "UI_TOOL_FIELD_CONTROL_ID"
+msgstr "Abwehrmaßnahme"
+
+msgid "UI_TOOL_FIELD_COUNT"
+msgstr "Schrittzahl"
+
+msgid "UI_TOOL_FIELD_COVERAGE"
+msgstr "Abdeckung"
+
+msgid "UI_TOOL_FIELD_CURRENT"
+msgstr "Aktueller Wert"
+
+msgid "UI_TOOL_FIELD_CURSOR"
+msgstr "Aktuelles Beobachtungsfenster"
+
+msgid "UI_TOOL_FIELD_DST"
+msgstr "Zielregister"
+
+msgid "UI_TOOL_FIELD_ELSE"
+msgstr "Falsch-Zweig"
+
+msgid "UI_TOOL_FIELD_ENDPOINT_ID"
+msgstr "Annehmender Dienst"
+
+msgid "UI_TOOL_FIELD_ENTITY_REF"
+msgstr "Beobachtetes Objekt"
+
+msgid "UI_TOOL_FIELD_EVENT"
+msgstr "Art des beobachteten Ereignisses"
+
+msgid "UI_TOOL_FIELD_EVENT_ID"
+msgstr "Ereignis-ID"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
+msgstr "Ausführung derzeit erlaubt"
+
+msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
+msgstr "Ausführung bei Annahme des Uploads erlaubt"
 
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "Dateiname"
 
+msgid "UI_TOOL_FIELD_FORMAT_OK"
+msgstr "Formatprüfung"
+
+msgid "UI_TOOL_FIELD_FROM"
+msgstr "Aufrufende Funktion"
+
+msgid "UI_TOOL_FIELD_FROM_NODE"
+msgstr "Beobachteter Quellknoten"
+
+msgid "UI_TOOL_FIELD_FUNCTION"
+msgstr "Funktion"
+
+msgid "UI_TOOL_FIELD_GROUP"
+msgstr "Richtliniengruppe"
+
+msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
+msgstr "Hypothesenname"
+
+msgid "UI_TOOL_FIELD_ID"
+msgstr "ID"
+
 msgid "UI_TOOL_FIELD_INPUT"
 msgstr "Eingabe"
 
+msgid "UI_TOOL_FIELD_INPUTS"
+msgstr "Eingabefälle"
+
+msgid "UI_TOOL_FIELD_INTENDED"
+msgstr "Gefordertes Ergebnis"
+
+msgid "UI_TOOL_FIELD_KIND"
+msgstr "Beziehung"
+
+msgid "UI_TOOL_FIELD_LABEL"
+msgstr "Name"
+
 msgid "UI_TOOL_FIELD_LEFT"
-msgstr "Erste Beobachtung"
+msgstr "Erste Entität"
+
+msgid "UI_TOOL_FIELD_MARKER_AUTHORITY"
+msgstr "Herkunft der Markierung"
 
 msgid "UI_TOOL_FIELD_MIME"
 msgstr "MIME-Typ"
 
+msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
+msgstr "Nächster Beobachtungspunkt"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "Objekt-ID"
 
+msgid "UI_TOOL_FIELD_OBSERVATION_IDS"
+msgstr "Beobachtungsbelege"
+
+msgid "UI_TOOL_FIELD_OBSERVED"
+msgstr "Beobachtetes Ergebnis"
+
+msgid "UI_TOOL_FIELD_OBSERVED_AT"
+msgstr "Beobachtetes Zeitintervall"
+
+msgid "UI_TOOL_FIELD_OP"
+msgstr "Anweisung"
+
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "Herkunft (origin)"
+
+msgid "UI_TOOL_FIELD_OUTPUT"
+msgstr "Ausgabe"
+
+msgid "UI_TOOL_FIELD_OUTPUTS"
+msgstr "Ausgabewerte"
+
+msgid "UI_TOOL_FIELD_OWNER_FUNCTION"
+msgstr "Funktion der Anweisung"
 
 msgid "UI_TOOL_FIELD_PASSWORD"
 msgstr "Passwort"
@@ -4052,26 +7301,137 @@ msgstr "Passwort"
 msgid "UI_TOOL_FIELD_PATH"
 msgstr "Dateipfad"
 
+msgid "UI_TOOL_FIELD_PC"
+msgstr "Befehlsposition"
+
+msgid "UI_TOOL_FIELD_PROVENANCE"
+msgstr "Herkunft und Erhebungsbeleg"
+
+msgid "UI_TOOL_FIELD_PUBLIC"
+msgstr "Öffentliche Beobachtung"
+
+msgid "UI_TOOL_FIELD_QUARANTINED"
+msgstr "In Quarantäne"
+
+msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
+msgstr "Berichtigungsbelege"
+
+msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
+msgstr "Widerlegte Hypothesen"
+
+msgid "UI_TOOL_FIELD_REG"
+msgstr "Quellregister"
+
+msgid "UI_TOOL_FIELD_REGISTERS"
+msgstr "Virtuelle Register"
+
+msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
+msgstr "Berichtigte Behauptung"
+
+msgid "UI_TOOL_FIELD_REQUEST_TAG"
+msgstr "Anfragemarkierung"
+
+msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
+msgstr "Aufbewahrungsumfang"
+
 msgid "UI_TOOL_FIELD_RIGHT"
-msgstr "Zweite Beobachtung"
+msgstr "Zweite Entität"
+
+msgid "UI_TOOL_FIELD_ROUTE_ID"
+msgstr "Anfrageweg"
+
+msgid "UI_TOOL_FIELD_SAMPLING"
+msgstr "Stichprobenverfahren"
+
+msgid "UI_TOOL_FIELD_SECTION"
+msgstr "Abschnitt"
+
+msgid "UI_TOOL_FIELD_SENSOR_ID"
+msgstr "Beobachtungspunkt"
+
+msgid "UI_TOOL_FIELD_SESSION_TAG"
+msgstr "Sitzungsmarkierung"
+
+msgid "UI_TOOL_FIELD_SHA256"
+msgstr "SHA256"
+
+msgid "UI_TOOL_FIELD_SHARED_ADDRESS"
+msgstr "Möglicherweise gemeinsame Adresse"
 
 msgid "UI_TOOL_FIELD_SIGNATURE"
 msgstr "Dateisignatur"
 
+msgid "UI_TOOL_FIELD_SIGNATURE_OK"
+msgstr "Signaturprüfung"
+
+msgid "UI_TOOL_FIELD_SIGNATURE_VALID"
+msgstr "Dateiformatprüfung bestanden"
+
+msgid "UI_TOOL_FIELD_SOURCE_ID"
+msgstr "Quellen-ID"
+
+msgid "UI_TOOL_FIELD_STATUS"
+msgstr "Status"
+
+msgid "UI_TOOL_FIELD_STEPS_USED"
+msgstr "Verwendete Schritte"
+
+msgid "UI_TOOL_FIELD_STORED_AS"
+msgstr "Speicherreferenz"
+
+msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
+msgstr "Gestützte Hypothesen"
+
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "Zielhost"
+
+msgid "UI_TOOL_FIELD_THEN"
+msgstr "Wahr-Zweig"
+
+msgid "UI_TOOL_FIELD_TICK"
+msgstr "Ereignisschritt"
 
 msgid "UI_TOOL_FIELD_TICKS"
 msgstr "Wartezeit (ticks)"
 
+msgid "UI_TOOL_FIELD_TO"
+msgstr "Aufrufziel"
+
 msgid "UI_TOOL_FIELD_TOKEN"
 msgstr "Token"
+
+msgid "UI_TOOL_FIELD_TOKEN_REF"
+msgstr "Zu widerrufende Sitzung"
+
+msgid "UI_TOOL_FIELD_TO_NODE"
+msgstr "Beobachteter Zielknoten"
+
+msgid "UI_TOOL_FIELD_TRACE"
+msgstr "Ausführungsspur"
+
+msgid "UI_TOOL_FIELD_UNKNOWN_EDGES"
+msgstr "Ungeklärte Verbindungen"
 
 msgid "UI_TOOL_FIELD_USERNAME"
 msgstr "Konto"
 
 msgid "UI_TOOL_FIELD_VALUE"
-msgstr "Änderungswert"
+msgstr "Wert"
+
+msgid "UI_TOOL_FIELD_VALUES"
+msgstr "Eingabewerte"
+
+msgid "UI_TOOL_FIELD_VANTAGE"
+msgstr "Erhebungsposition"
+
+msgid "UI_TOOL_FIELD_VERDICT"
+msgstr "Belegurteil"
+
+msgid "UI_TOOL_FIELD_VISIBILITY"
+msgstr "Sichtbare Informationen"
+
+msgid "UI_TOOL_FIELD_WINDOW"
+msgstr "Beobachtungsfenster"
 
 msgid "UI_TOOL_FILTER"
 msgstr "Filter"
@@ -4301,6 +7661,9 @@ msgstr "Rechnet nur mit deinem Schlüssel und füllt die Eingabe nicht automatis
 msgid "UI_TOOL_XOR_RESULT"
 msgstr "Ergebnis mit Schlüssel {key} · {text}"
 
+msgid "UI_TOP_CAMPAIGN_MISSION"
+msgstr "{campaign} · {id} · {title}"
+
 msgid "UI_TOP_CASE_DONE"
 msgstr "Fall gelöst"
 
@@ -4315,6 +7678,36 @@ msgstr "Abschluss vermerkt · aktuelle Ziele {done}/{total}"
 
 msgid "UI_TOP_SESSION"
 msgstr "Terminal {n} · {user}@{host}"
+
+msgid "UI_VALUE_FALSE"
+msgstr "Nein"
+
+msgid "UI_VALUE_TRUE"
+msgstr "Ja"
+
+msgid "UI_VM_CALL_GRAPH"
+msgstr "Funktionsaufrufbeziehungen"
+
+msgid "UI_VM_CASES"
+msgstr "Vorbereitete Eingabefälle"
+
+msgid "UI_VM_LIMITS"
+msgstr "Grenzen der virtuellen Ausführung"
+
+msgid "UI_VM_LIMITS_LINE"
+msgstr "Je Fall: Schritte {steps} · Aufruftiefe {stack} · Virtueller Speicher {memory}"
+
+msgid "UI_VM_LISTING"
+msgstr "Programmverzweigungen"
+
+msgid "UI_VM_OUTPUTS"
+msgstr "Tatsächliche Ausgaben"
+
+msgid "UI_VM_STATE_LINE"
+msgstr "Virtuelle Ausführung: {state} · Verwendete Schritte: {steps}"
+
+msgid "UI_VM_TRACE"
+msgstr "Spur ausgeführter Zweige und Aufrufe"
 
 msgid "UI_VOLUME"
 msgstr "Oberflächentöne"

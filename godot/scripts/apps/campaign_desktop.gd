@@ -13,8 +13,10 @@ signal campaign_finished(ending: Dictionary)
 signal pause_changed(paused: bool)
 signal action_performed(result: Dictionary)
 signal settings_requested
+signal presentation_context_changed(app_id: String)
 
 const CampaignGame = preload("res://scripts/core/campaign_game.gd")
+const Catalog = preload("res://scripts/core/campaign_catalog.gd")
 const Localization = preload("res://scripts/presentation/localization.gd")
 
 const C_BG := Color(0.034, 0.050, 0.062)
@@ -45,7 +47,21 @@ const FACE_GATES := {"C01": "M12", "C02": "", "C03": "M16", "C04": "M20"}
 # 이 화면이 전용 설명(UI_TOOLKIND_*)을 가진 모델 종류. 그 밖의 종류는 일반 설명과 JSON/단일 입력으로 표시한다.
 const TOOL_KINDS := ["query", "render", "path", "exec", "fetch", "permission", "audit", "reverse", "memory",
 		"packet", "trace", "compare", "token", "policy", "idor", "auth", "session", "csrf", "upload",
-		"scan", "route", "file", "log"]
+		"scan", "route", "file", "log", "response_lab", "observation_case", "branch_vm"]
+const STRUCTURED_KINDS := ["response_lab", "observation_case", "branch_vm"]
+const MODEL_VALUE_KEYS := {
+	"supported": "UI_MODEL_SUPPORTED", "refuted": "UI_MODEL_REFUTED", "underdetermined": "UI_MODEL_UNDETERMINED",
+	"normal": "UI_MODEL_NORMAL", "threat": "UI_MODEL_THREAT", "allow": "UI_MODEL_ALLOW", "deny": "UI_MODEL_DENY",
+	"authorized": "UI_MODEL_AUTHORIZED", "excluded": "UI_MODEL_EXCLUDED",
+	"same_session": "UI_MODEL_REL_SAME_SESSION", "forwarded_to": "UI_MODEL_REL_FORWARDED_TO", "before": "UI_MODEL_REL_BEFORE",
+	"listing": "UI_VM_LISTING", "call_graph": "UI_VM_CALL_GRAPH", "trace": "UI_VM_TRACE",
+	"server_issued": "UI_MODEL_SERVER_ISSUED", "client_supplied": "UI_MODEL_CLIENT_SUPPLIED",
+	"complete": "UI_MODEL_COMPLETE_WINDOW", "sampled": "UI_MODEL_SAMPLED_WINDOW",
+	"metadata": "UI_MODEL_METADATA_ONLY", "plaintext": "UI_MODEL_PERMITTED_PLAINTEXT",
+	"idle": "UI_MODEL_IDLE", "running": "UI_MODEL_RUNNING", "halted": "UI_MODEL_HALTED",
+	"accepted": "UI_MODEL_EVENT_ACCEPTED", "quarantine_changed": "UI_MODEL_EVENT_QUARANTINE_CHANGED",
+}
+const MODEL_ENUM_FIELDS := ["status", "verdict", "class", "intended", "visibility", "sampling", "marker_authority", "kind", "section", "retention_scope", "event"]
 
 # 데스크톱 크기 대비 기본 위치/크기
 const APP_RECTS := {
@@ -73,7 +89,8 @@ const TASK_APPS := ["mail", "browser", "requestlab", "tools", "files", "archive"
 # Ctrl/Cmd+1..9
 const SHORTCUTS := ["terminal", "mail", "browser", "requestlab", "tools", "files", "archive", "board", "status"]
 
-@export var save_slot_path: String = "user://saves/campaign_01.json"
+@export var save_slot_path: String = ""
+@export var pack_id: String = "intruder"
 
 var game = null
 var session_active := false
@@ -131,6 +148,8 @@ var toast_label: Label
 var toast_tween: Tween
 var confirm: ConfirmationDialog
 var confirm_action := Callable()
+var session_generation := 0
+var _confirm_generation := -1
 var pause_overlay: Control
 var pause_resume_btn: Button
 var recovery_overlay: Control
@@ -227,6 +246,7 @@ var tool_inputs := {}
 var tool_selected := ""
 var tool_ids_sig := ""
 var tool_observation_sig := ""
+var tool_actions_sig := ""
 var tool_drafts := {}
 var tool_tree: Tree
 var tool_row_keys: Array = []
@@ -308,7 +328,9 @@ func _ready() -> void:
 	_relocalize()
 	visibility_changed.connect(_on_visibility_changed)
 	# 코어만 만든다. 디스크 읽기/쓰기는 Room이 start_session을 호출할 때만 한다.
-	game = CampaignGame.new(save_slot_path)
+	if save_slot_path.is_empty():
+		save_slot_path = Catalog.default_slot(pack_id)
+	game = CampaignGame.new(save_slot_path, pack_id)
 	if not _game_ready(game):
 		_show_fatal(_s(_d(game.get_view()), "error", _t("UI_ERR_NO_VIEW")))
 
@@ -337,7 +359,7 @@ func start_session(action: String) -> Dictionary:
 func can_continue() -> bool:
 	if session_active and _game_ready(game):
 		return true
-	var probe = CampaignGame.new(save_slot_path)
+	var probe = CampaignGame.new(save_slot_path, pack_id)
 	var r := _d(probe.load_game())
 	return _b(r, "ok") or _b(r, "backup_available") or _s(r, "code") != "SAVE_NOT_FOUND"
 
@@ -589,6 +611,11 @@ func _build_theme() -> void:
 
 
 func _size(c: Control, delta: int, term: bool = false) -> void:
+	for index in range(sized.size()):
+		if is_instance_valid(sized[index][0]) and sized[index][0] == c:
+			sized[index] = [c, delta, term]
+			_apply_size(c, delta, term)
+			return
 	sized.append([c, delta, term])
 	_apply_size(c, delta, term)
 
@@ -742,6 +769,11 @@ func _pulse(c: CanvasItem, color: Color) -> void:
 
 
 func _clear_children(n: Node) -> void:
+	# Unregister before detaching: ancestry is lost after remove_child(), before queue_free() completes.
+	sized = sized.filter(func(entry):
+		return is_instance_valid(entry[0]) and not n.is_ancestor_of(entry[0]))
+	_i18n = _i18n.filter(func(entry):
+		return is_instance_valid(entry[0]) and (not entry[0] is Node or not n.is_ancestor_of(entry[0])))
 	for c in n.get_children():
 		n.remove_child(c)
 		c.queue_free()
@@ -885,6 +917,7 @@ func _build_overlays() -> void:
 	confirm.theme = ui_theme
 	confirm.confirmed.connect(_on_confirmed)
 	confirm.visibility_changed.connect(_on_confirm_visibility)
+	confirm.canceled.connect(_invalidate_confirmation)
 	add_child(confirm)
 
 	pause_overlay = _overlay_panel(Color(0.015, 0.025, 0.03, 0.86))
@@ -971,6 +1004,7 @@ func _ask(text: String, action: Callable) -> void:
 	confirm.cancel_button_text = _t("UI_CANCEL")
 	confirm.dialog_text = text
 	confirm_action = action
+	_confirm_generation = session_generation
 	confirm.popup_centered(Vector2i(mini(600, int(size.x) - 40), 0))
 
 
@@ -988,9 +1022,18 @@ func _on_confirm_visibility() -> void:
 
 func _on_confirmed() -> void:
 	var a := confirm_action
+	var current := _confirm_generation == session_generation
 	confirm_action = Callable()
-	if a.is_valid():
+	_confirm_generation = -1
+	if current and a.is_valid():
 		a.call()
+
+
+func _invalidate_confirmation() -> void:
+	confirm_action = Callable()
+	_confirm_generation = -1
+	if confirm != null:
+		confirm.hide()
 
 
 # ── 일시정지·방 복귀·설정 ─────────────────────────────────────
@@ -1279,6 +1322,7 @@ func _activate(id: String, grab: bool) -> void:
 	if grab:
 		_focus_default(id)
 	_update_taskbar()
+	presentation_context_changed.emit(id)
 
 
 func _focus_default(id: String) -> void:
@@ -1326,6 +1370,7 @@ func _hide_window(id: String, state: String) -> void:
 			if c != null and c.visible:
 				_activate(str(c.get_meta("app_id")), true)
 				return
+		presentation_context_changed.emit(active_id)
 	_update_taskbar()
 
 
@@ -1376,14 +1421,14 @@ func _arrange() -> void:
 
 func _cycle_window(dir: int) -> void:
 	var open: Array = []
-	for i in layer.get_child_count():
-		var c := layer.get_child(i) as Control
-		if c != null and c.visible:
-			open.append(str(c.get_meta("app_id")))
+	# Activation changes z-order; registered window order stays stable in both directions.
+	for id in wins:
+		if wins[id]["state"] == "open" and wins[id]["win"].visible:
+			open.append(id)
 	if open.size() < 2:
 		return
-	# 맨 앞(마지막) 창을 기준으로 다음/이전 창을 맨 앞으로 가져온다.
-	var target: String = open[0] if dir > 0 else open[open.size() - 2]
+	var index := open.find(active_id)
+	var target: String = open[posmod(index + dir, open.size())] if index >= 0 else (open[0] if dir > 0 else open.back())
 	_activate(target, true)
 
 
@@ -2802,6 +2847,9 @@ func _refresh_tools(v: Dictionary) -> void:
 		_tool_show(tool, true)
 	elif JSON.stringify(_d(tool.get("data", {}))) != tool_observation_sig:
 		_tool_build_obs(tool)
+	if _s(tool, "kind") in STRUCTURED_KINDS and JSON.stringify(_a(tool, "actions")) != tool_actions_sig:
+		_tool_save_draft()
+		_tool_build_inputs(tool)
 	_tool_update_context(tool, v)
 
 
@@ -2883,6 +2931,32 @@ func _tool_build_obs(tool: Dictionary) -> void:
 	var data := _d(tool.get("data", {}))
 	var kind := _s(tool, "kind")
 	var any := false
+	if kind in STRUCTURED_KINDS:
+		if kind == "branch_vm" and data.has("status"):
+			tool_obs_box.add_child(_label(_t("UI_VM_STATE_LINE", {"state": _model_value(data["status"], "status"), "steps": data.get("steps_used", 0)}), C_TEAL_DIM, -2, true))
+			any = true
+		if kind == "branch_vm" and data.has("limits"):
+			var limits := _d(data["limits"])
+			tool_obs_box.add_child(_label(_t("UI_VM_LIMITS_LINE", {"steps": limits.get("steps", 0), "stack": limits.get("stack", 0), "memory": limits.get("memory", 0)}), C_FAINT, -3, true))
+		var sections: Dictionary = {
+			"response_lab": {"controls": "UI_RESPONSE_CONTROLS", "matrix": "UI_RESPONSE_MATRIX", "checkpoints": "UI_RESPONSE_CHECKPOINTS", "probe_receipts": "UI_RESPONSE_HISTORY", "business_objects": "UI_RESPONSE_BUSINESS_OBJECTS", "artifacts": "UI_RESPONSE_ARTIFACTS", "artifact_events": "UI_RESPONSE_ARTIFACT_EVENTS"},
+			"observation_case": {"sensors": "UI_OBSERVATION_SENSORS", "observations": "UI_OBSERVATION_EVIDENCE", "entities": "UI_OBSERVATION_ENTITIES", "initial_claims": "UI_OBSERVATION_INITIAL_CLAIMS", "hypotheses": "UI_OBSERVATION_HYPOTHESES", "history": "UI_OBSERVATION_HISTORY", "hypothesis_history": "UI_OBSERVATION_HISTORY"},
+			"branch_vm": {"cases": "UI_VM_CASES", "listing": "UI_VM_LISTING", "call_graph": "UI_VM_CALL_GRAPH", "trace": "UI_VM_TRACE", "outputs": "UI_VM_OUTPUTS"},
+		}[kind]
+		for field in sections:
+			if data.has(field):
+				var rows := _model_rows(data[field], "case_id" if field == "cases" else ("entity_ref" if field == "entities" else "value"))
+				if field == "initial_claims":
+					var public_claims: Array = []
+					for row in rows:
+						var public_claim := {}
+						for key in ["id", "label", "claim", "source_id"]:
+							if row.has(key):
+								public_claim[key] = row[key]
+						public_claims.append(public_claim)
+					rows = public_claims
+				_model_table(sections[field], rows)
+				any = true
 	if data.has("rows"):
 		_obs_rows(_a(data, "rows"))
 		any = true
@@ -2915,6 +2989,86 @@ func _tool_build_obs(tool: Dictionary) -> void:
 		any = true
 	if not any:
 		tool_obs_box.add_child(_label(_t("UI_TOOL_NO_DATA"), C_FAINT, -3, true))
+
+
+func _model_rows(value: Variant, scalar_field := "value") -> Array:
+	if value is Array:
+		var rows: Array = []
+		for item in value:
+			rows.append(item if item is Dictionary else {scalar_field: item})
+		return rows
+	if value is Dictionary:
+		var rows: Array = []
+		for key in value:
+			var row: Dictionary = value[key].duplicate(true) if value[key] is Dictionary else {"value": value[key]}
+			if not row.has("id"):
+				row["id"] = str(key)
+			rows.append(row)
+		return rows
+	return []
+
+
+func _model_value(value: Variant, field_id := "") -> String:
+	if value is bool:
+		return _t("UI_VALUE_TRUE") if value else _t("UI_VALUE_FALSE")
+	if value is Array:
+		var parts := PackedStringArray()
+		for item in value:
+			parts.append(_model_value(item, field_id))
+		return ", ".join(parts)
+	if value is Dictionary:
+		var parts := PackedStringArray()
+		for key in value:
+			parts.append(_field_name(str(key)) + ": " + _model_value(value[key], str(key)))
+		return " · ".join(parts)
+	if value is String:
+		if field_id in MODEL_ENUM_FIELDS:
+			return _t(MODEL_VALUE_KEYS.get(value, value))
+		if field_id in ["label", "name", "description", "text", "summary", "message"]:
+			return _t(value)
+		return value
+	return "—" if value == null else str(value)
+
+
+func _model_table(title_key: String, rows: Array) -> void:
+	tool_obs_box.add_child(_section(title_key))
+	if rows.is_empty():
+		tool_obs_box.add_child(_klabel("UI_MODEL_NO_OBSERVATIONS", C_FAINT, -3, true))
+		return
+	var columns: Array[String] = []
+	for row in rows:
+		for key in row:
+			if not columns.has(str(key)):
+				columns.append(str(key))
+	var table := Tree.new()
+	table.columns = columns.size()
+	table.hide_root = true
+	table.column_titles_visible = true
+	table.select_mode = Tree.SELECT_ROW
+	table.custom_minimum_size = Vector2(0, clampf(float(rows.size() + 1) * (ui_size + 12), 100, 250))
+	for index in columns.size():
+		table.set_column_title(index, _field_name(columns[index]))
+		table.set_column_clip_content(index, true)
+	var root := table.create_item()
+	for row in rows.slice(0, MAX_TABLE_ROWS):
+		var item := table.create_item(root)
+		item.set_metadata(0, row)
+		for index in columns.size():
+			var value := _model_value(row.get(columns[index]), columns[index])
+			item.set_text(index, value)
+			item.set_tooltip_text(index, value)
+	_size(table, -3)
+	tool_obs_box.add_child(table)
+	var detail := _label("", C_DIM, -3, true)
+	tool_obs_box.add_child(detail)
+	table.item_selected.connect(func():
+		var selected := table.get_selected()
+		if selected != null:
+			var record: Dictionary = selected.get_metadata(0)
+			var lines := PackedStringArray()
+			for key in record:
+				lines.append(_field_name(str(key)) + ": " + _model_value(record[key], str(key)))
+			detail.text = "\n".join(lines))
 
 
 func _obs_rows(rows: Array) -> void:
@@ -3094,6 +3248,9 @@ func _field_name(f: String) -> String:
 
 
 func _tool_build_inputs(tool: Dictionary) -> void:
+	if _s(tool, "kind") in STRUCTURED_KINDS:
+		_model_build_inputs(tool)
+		return
 	_clear_children(tool_input_box)
 	tool_inputs = {}
 	var kind := _s(tool, "kind")
@@ -3174,15 +3331,158 @@ func _tool_build_inputs(tool: Dictionary) -> void:
 	tool_input_box.add_child(_label(_t("UI_TOOL_INPUT_NOTE"), C_FAINT, -4, true))
 
 
+func _model_build_inputs(tool: Dictionary) -> void:
+	var focused_key := ""
+	var previous_focus := get_viewport().gui_get_focus_owner()
+	for key in tool_inputs:
+		var previous = tool_inputs[key]
+		if previous_focus != null and is_instance_valid(previous) and (previous == previous_focus or previous.is_ancestor_of(previous_focus)):
+			focused_key = key
+	_clear_children(tool_input_box)
+	tool_inputs = {}
+	var actions := _a(tool, "actions")
+	tool_actions_sig = JSON.stringify(actions)
+	if actions.is_empty():
+		tool_input_box.add_child(_klabel("UI_MODEL_NO_ACTIONS", C_FAINT, -3, true))
+		return
+	var draft := _d(tool_drafts.get(tool_selected, {}))
+	var picker := OptionButton.new()
+	picker.accessibility_name = _t("UI_MODEL_ACTION")
+	picker.set_meta("typed_field", true)
+	var selected_index := 0
+	for index in actions.size():
+		var action := _d(actions[index])
+		var action_key := "UI_MODEL_ACTION_" + _s(action, "id").to_upper()
+		var action_label := _t_opt(action_key)
+		picker.add_item(action_label if not action_label.is_empty() else _t(_s(action, "label", _s(action, "id"))))
+		picker.set_item_metadata(index, action.get("id", ""))
+		if action.get("id", "") == draft.get("action", ""):
+			selected_index = index
+	picker.select(selected_index)
+	_size(picker, -1)
+	tool_input_box.add_child(picker)
+	tool_inputs["action"] = picker
+	var grid := GridContainer.new()
+	grid.columns = 2
+	grid.add_theme_constant_override("h_separation", 10)
+	grid.add_theme_constant_override("v_separation", 8)
+	tool_input_box.add_child(grid)
+	_model_build_fields(_a(_d(actions[selected_index]), "fields"), [], grid, draft)
+	picker.item_selected.connect(func(_index: int):
+		_tool_save_draft()
+		_model_build_inputs(_tool_current()))
+	tool_input_box.add_child(_klabel("UI_MODEL_FORM_NOTE", C_FAINT, -4, true))
+	if tool_inputs.has(focused_key):
+		tool_inputs[focused_key].grab_focus()
+
+
+func _model_build_fields(fields: Array, prefix: Array, grid: GridContainer, draft: Dictionary) -> void:
+	for definition in fields:
+		var field := _d(definition)
+		var id := _s(field, "id")
+		if id.is_empty():
+			continue
+		var path := prefix.duplicate()
+		path.append(id)
+		var key := ".".join(PackedStringArray(path))
+		var kind := _s(field, "type", "string")
+		if kind == "object":
+			_model_build_fields(_a(field, "fields"), path, grid, draft)
+			continue
+		var label_text := _t(_s(field, "label")) if not _s(field, "label").is_empty() else _field_name(id)
+		var label := _label(label_text, C_DIM, -3, true)
+		label.custom_minimum_size.x = 100
+		grid.add_child(label)
+		var control: Control
+		var options := _a(field, "options")
+		if kind == "bool":
+			var check := CheckBox.new()
+			check.button_pressed = bool(draft.get(key, field.get("default", false)))
+			control = check
+		elif kind in ["int", "integer"]:
+			var count := SpinBox.new()
+			count.min_value = float(field.get("min", 0))
+			count.max_value = float(field.get("max", 256))
+			count.step = 1
+			count.value = float(draft.get(key, count.min_value))
+			control = count
+		elif kind in ["array", "multi_enum"]:
+			var list := ItemList.new()
+			list.select_mode = ItemList.SELECT_MULTI
+			list.custom_minimum_size.y = 90
+			for option in options:
+				var item := list.add_item(_model_option_text(option, id))
+				var value: Variant = option.get("id", "") if option is Dictionary else option
+				list.set_item_metadata(item, value)
+				if value in draft.get(key, []):
+					list.select(item, false)
+			control = list
+		elif kind == "enum" or not options.is_empty():
+			var selector := OptionButton.new()
+			selector.add_item(_t("UI_TOOL_PICK_FIELD"))
+			selector.set_meta("placeholder", true)
+			for option in options:
+				var value: Variant = option.get("id", "") if option is Dictionary else option
+				selector.add_item(_model_option_text(option, id))
+				selector.set_item_metadata(selector.item_count - 1, value)
+				if draft.has(key) and draft[key] == value:
+					selector.select(selector.item_count - 1)
+			control = selector
+		else:
+			var input := _line_edit("", -2)
+			input.text = str(draft.get(key, ""))
+			input.secret = bool(field.get("secret", false))
+			input.context_menu_enabled = not input.secret
+			input.text_submitted.connect(_on_tool_submit)
+			control = input
+		control.set_meta("typed_field", true)
+		control.set_meta("param_path", path)
+		control.set_meta("secret", bool(field.get("secret", false)))
+		control.accessibility_name = label.text
+		control.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		_size(control, -2)
+		grid.add_child(control)
+		tool_inputs[key] = control
+
+
+func _model_option_text(option: Variant, field_id: String) -> String:
+	if not option is Dictionary:
+		return _model_value(option, field_id)
+	var value: Variant = option.get("id", "")
+	var label := _s(option, "label")
+	if label.is_empty() or label == str(value):
+		return _model_value(value, field_id)
+	return _t(label)
+
+
+func _model_field_value(control: Control) -> Variant:
+	if control is OptionButton:
+		if control.selected < 0 or (control.has_meta("placeholder") and control.selected == 0):
+			return null
+		return control.get_item_metadata(control.selected)
+	if control is CheckBox:
+		return control.button_pressed
+	if control is SpinBox:
+		return int(control.value)
+	if control is ItemList:
+		var selected: Array = []
+		for index in control.get_selected_items():
+			selected.append(control.get_item_metadata(index))
+		return selected
+	return control.text if control is LineEdit else null
+
+
 func _tool_save_draft() -> void:
 	if tool_selected.is_empty() or tool_inputs.is_empty():
 		return
 	var d := {}
 	for f in tool_inputs:
 		var ctl = tool_inputs[f]
-		if not is_instance_valid(ctl) or f == "password":
+		if not is_instance_valid(ctl) or f == "password" or ctl.get_meta("secret", false):
 			continue
-		if ctl is LineEdit:
+		if ctl.has_meta("typed_field"):
+			d[f] = _model_field_value(ctl)
+		elif ctl is LineEdit:
 			d[f] = ctl.text
 		elif ctl is OptionButton:
 			d[f] = ctl.selected
@@ -3203,6 +3503,21 @@ func _input_value(f: String) -> String:
 func _tool_params() -> Dictionary:
 	var tool := _tool_current()
 	var kind := _s(tool, "kind")
+	if kind in STRUCTURED_KINDS:
+		var params := {}
+		for key in tool_inputs:
+			var control: Control = tool_inputs[key]
+			var value: Variant = _model_field_value(control)
+			if value == null or (value is String and value.strip_edges().is_empty()):
+				continue
+			var path: Array = control.get_meta("param_path", [key])
+			var parent := params
+			for index in range(path.size() - 1):
+				if not parent.has(path[index]):
+					parent[path[index]] = {}
+				parent = parent[path[index]]
+			parent[path.back()] = value
+		return params
 	if tool_inputs.has("__field"):
 		var field := _input_value("__field")
 		var value := _input_value("__value").strip_edges()
@@ -3250,9 +3565,9 @@ func _tool_run() -> void:
 		return
 	params["terminal_id"] = active_term
 	_tool_exec(tool, params)
-	var pw = tool_inputs.get("password")
-	if pw is LineEdit:
-		pw.clear()
+	for control in tool_inputs.values():
+		if control is LineEdit and control.secret:
+			control.clear()
 
 
 func _tool_local_error(text: String) -> void:
@@ -3280,7 +3595,8 @@ func _tool_exec(tool: Dictionary, params: Dictionary) -> void:
 		lines.append(_t("UI_TOOL_RESULT_RECOVERED"))
 	tool_result_status.text = "\n".join(PackedStringArray(lines))
 	tool_result_status.add_theme_color_override("font_color", C_TEAL if grew else (C_TEXT if ok else C_AMBER))
-	_set_plain(tool_result, _s(r, "text"))
+	var result_text := _s(r, "text")
+	_set_plain(tool_result, _t(result_text) if _s(tool, "kind") in STRUCTURED_KINDS else result_text)
 
 
 func _on_tool_adv_toggled(on: bool) -> void:
@@ -4149,7 +4465,10 @@ func _refresh_all() -> void:
 
 
 func _refresh_top(v: Dictionary) -> void:
-	top_mission.text = _t("UI_TOP_MISSION", {"id": _s(v, "mission_id"), "title": _s(v, "mission_title")})
+	var current_pack := _s(_d(v.get("campaign", {})), "id", pack_id)
+	var campaign_name := _t("LEGACY_CONTINUE" if current_pack == "legacy_intruder" else "CAMPAIGN_" + current_pack.to_upper())
+	top_mission.text = _t("UI_TOP_CAMPAIGN_MISSION", {"campaign": campaign_name, "id": _s(v, "mission_id"), "title": _s(v, "mission_title")})
+	top_mission.set_meta("pack_id", current_pack)
 	top_mission.tooltip_text = _s(v, "mission_goal")
 	var objs := _a(v, "objectives")
 	var done := 0
@@ -4291,6 +4610,9 @@ func _reset_world_caches() -> void:
 # ── 세션 수명·저장 ────────────────────────────────────────────
 
 func _install_game(candidate, banner_key: String) -> void:
+	session_generation += 1
+	_invalidate_confirmation()
+	presentation_context_changed.emit("")
 	game = candidate
 	session_active = true
 	_hide_fatal()
@@ -4323,12 +4645,14 @@ func _resume() -> void:
 
 
 func _load_from_disk() -> Dictionary:
-	var candidate = game if (session_active and game != null) else CampaignGame.new(save_slot_path)
+	var candidate = game if (session_active and game != null) else CampaignGame.new(save_slot_path, pack_id)
 	if not _game_ready(candidate):
 		var err := _s(_d(candidate.get_view()), "error", _t("UI_ERR_NO_VIEW"))
 		_show_fatal(err)
 		return {"ok": false, "code": "INVALID_CONTENT", "text": err}
 	var r := _d(candidate.load_game())
+	if pack_id == "legacy_intruder" and not save_slot_path.begins_with("user://tests/") and _s(r, "code") == "SAVE_NOT_FOUND" and not _b(r, "backup_available"):
+		r = _d(candidate.continue_legacy_source())
 	if _b(r, "ok"):
 		autosave_suspended = false
 		recovery_overlay.visible = false
@@ -4351,7 +4675,7 @@ func _load_from_disk() -> Dictionary:
 
 
 func _begin_new() -> Dictionary:
-	var candidate = CampaignGame.new(save_slot_path)
+	var candidate = CampaignGame.new(save_slot_path, pack_id)
 	if not _game_ready(candidate):
 		var err := _s(_d(candidate.get_view()), "error", _t("UI_ERR_NO_VIEW"))
 		_show_fatal(err)
@@ -4371,7 +4695,9 @@ func _begin_new() -> Dictionary:
 
 
 func _begin_import() -> Dictionary:
-	var candidate = CampaignGame.new(save_slot_path)
+	if pack_id != "legacy_intruder":
+		return {"ok": false, "code": "UI_IMPORT_UNAVAILABLE", "text": _t("UI_IMPORT_UNAVAILABLE")}
+	var candidate = CampaignGame.new(save_slot_path, pack_id)
 	if not _game_ready(candidate):
 		var err := _s(_d(candidate.get_view()), "error", _t("UI_ERR_NO_VIEW"))
 		return {"ok": false, "code": "INVALID_CONTENT", "text": err}
@@ -4516,7 +4842,7 @@ func _hide_fatal() -> void:
 
 
 func _retry_core() -> void:
-	var candidate = CampaignGame.new(save_slot_path)
+	var candidate = CampaignGame.new(save_slot_path, pack_id)
 	if not _game_ready(candidate):
 		_show_fatal(_s(_d(candidate.get_view()), "error", _t("UI_ERR_NO_VIEW")))
 		return

@@ -2,12 +2,17 @@ extends RefCounted
 
 const BaseLoader = preload("res://scripts/core/content_loader.gd")
 const Models = preload("res://scripts/core/tool_runtime.gd")
-const GOALS := ["record_acquired", "sources_preserved", "fact", "policy", "session", "service"]
+const Catalog = preload("res://scripts/core/campaign_catalog.gd")
+const ModelSchema = preload("res://scripts/core/campaign_model_schema.gd")
+const GOALS := ["record_acquired", "sources_preserved", "fact", "policy", "session", "service", "response_matrix", "observation_handoff", "vm_cases", "current_boundaries"]
 const PATH := "res://data/campaign/campaign.json"
 
 
-static func load_campaign() -> Dictionary:
-	var file := FileAccess.open(PATH, FileAccess.READ)
+static func load_campaign(pack_id: String = "legacy_intruder") -> Dictionary:
+	var entry: Dictionary = Catalog.get_pack(pack_id)
+	if entry.is_empty():
+		return {"ok": false, "errors": ["Unknown campaign pack."], "definition": {}}
+	var file := FileAccess.open(entry.resource, FileAccess.READ)
 	if file == null:
 		return {"ok": false, "errors": ["Campaign content unavailable."], "definition": {}}
 	if file.get_length() > 16777216:
@@ -17,10 +22,10 @@ static func load_campaign() -> Dictionary:
 	file.close()
 	if error != OK:
 		return {"ok": false, "errors": [parser.get_error_message()], "definition": {}}
-	return validate(parser.data)
+	return validate(parser.data, pack_id)
 
 
-static func validate(raw: Variant) -> Dictionary:
+static func validate(raw: Variant, expected_pack_id: String = "") -> Dictionary:
 	var errors: Array[String] = []
 	if not raw is Dictionary or not raw.has_all(["schema_version", "content_version", "campaign_id", "start_mission", "mission_order", "missions", "endings"]):
 		return {"ok": false, "errors": ["Missing campaign fields."], "definition": {}}
@@ -31,6 +36,10 @@ static func validate(raw: Variant) -> Dictionary:
 		return {"ok": false, "errors": ["Invalid content version."], "definition": {}}
 	data.schema_version = 1
 	data.content_version = int(data.content_version)
+	if not expected_pack_id.is_empty():
+		var entry: Dictionary = Catalog.get_pack(expected_pack_id)
+		if entry.is_empty() or data.campaign_id != entry.campaign_id or data.content_version != entry.content_version:
+			return {"ok": false, "errors": ["Campaign pack identity/version mismatch."], "definition": {}}
 	var seen: Array = []
 	for id in data.mission_order:
 		if not id is String or seen.has(id) or not data.missions.has(id):
@@ -98,11 +107,11 @@ static func validate(raw: Variant) -> Dictionary:
 			if not goal is Dictionary or not GOALS.has(goal.get("kind")):
 				errors.append(str(id) + ": unknown goal")
 				continue
-			var required_fields: Array = {"record_acquired": ["kind", "record_id"], "sources_preserved": ["kind"], "fact": ["kind", "id"], "policy": ["kind", "id", "value"], "session": ["kind", "host_id", "account_id"], "service": ["kind", "host_id", "port", "state"]}[goal.kind]
+			var required_fields: Array = {"record_acquired": ["kind", "record_id"], "sources_preserved": ["kind"], "fact": ["kind", "id"], "policy": ["kind", "id", "value"], "session": ["kind", "host_id", "account_id"], "service": ["kind", "host_id", "port", "state"], "response_matrix": ["kind", "challenge_id", "case_ids"], "observation_handoff": ["kind", "challenge_id"], "vm_cases": ["kind", "challenge_id", "requirements"], "current_boundaries": ["kind", "cases"]}[goal.kind]
 			if not goal.has_all(required_fields):
 				errors.append(str(id) + ": missing goal fields")
 				continue
-			for field in ["record_id", "id", "host_id", "account_id", "state"]:
+			for field in ["record_id", "id", "host_id", "account_id", "state", "challenge_id"]:
 				if goal.has(field) and not goal[field] is String:
 					errors.append(str(id) + ": invalid goal reference type")
 			for field in ["label_display", "target_display"]:
@@ -124,12 +133,14 @@ static func validate(raw: Variant) -> Dictionary:
 						errors.append(str(id) + ": missing goal account")
 					elif goal.kind == "service" and (not mission.hosts[goal.host_id].services.has(str(goal.get("port", ""))) or not ["open", "closed", "filtered"].has(goal.get("state"))):
 						errors.append(str(id) + ": invalid service goal")
+			for message in _model_goal_errors(goal, mission):
+				errors.append(str(id) + ": " + message)
 		for challenge_id in mission.challenges:
 			var challenge: Variant = mission.challenges[challenge_id]
-			if not challenge is Dictionary or not (Models.KINDS + ["auth"]).has(challenge.get("kind")) or not mission.records.has(challenge.get("record_id", "")):
+			if not challenge is Dictionary or not (Models.KINDS + ["auth"]).has(challenge.get("kind")) or (not Models.STATEFUL_KINDS.has(challenge.get("kind")) and not mission.records.has(challenge.get("record_id", ""))):
 				errors.append(str(id) + ": invalid challenge")
 				continue
-			if not mission.records[challenge.record_id].allowed_sources.has(challenge.get("source", "")):
+			if challenge.has("record_id") and (not mission.records.has(challenge.record_id) or not mission.records[challenge.record_id].allowed_sources.has(challenge.get("source", ""))):
 				errors.append(str(id) + ": challenge source mismatch")
 			if challenge.has("policy_id") and not mission.policies.has(challenge.policy_id):
 				errors.append(str(id) + ": challenge policy missing")
@@ -148,6 +159,8 @@ static func validate(raw: Variant) -> Dictionary:
 				errors.append(str(id) + ": invalid page access requirements")
 	if data.endings.is_empty():
 		errors.append("Ending definitions cannot be empty.")
+	for message in _contact_errors(data):
+		errors.append(message)
 	var ending_ids: Array[String] = []
 	for ending in data.endings:
 		if not ending is Dictionary or not ending.has_all(["id", "title", "text", "requires_facts"]) or not ending.get("id") is String or not ending.get("title") is String or not ending.get("text") is String or not ending.get("requires_facts") is Array:
@@ -190,6 +203,8 @@ static func _challenge_errors(challenge: Dictionary, mission: Dictionary) -> Arr
 	var errors: Array[String] = []
 	if not _requirements_valid(challenge, mission):
 		errors.append("Invalid access requirements.")
+	if Models.STATEFUL_KINDS.has(challenge.kind):
+		return errors + ModelSchema.errors(challenge, mission)
 	var fields: Dictionary = {
 		"query": [], "render": ["marker"], "path": ["base_path", "target_path"], "exec": ["marker"], "fetch": ["target_url"],
 		"permission": ["group", "host_id", "account_id"], "audit": ["encoded", "xor_key"], "reverse": ["encoded", "xor_key"],
@@ -246,4 +261,49 @@ static func _challenge_errors(challenge: Dictionary, mission: Dictionary) -> Arr
 	for field in ["limit", "cooldown", "ttl"]:
 		if challenge.has(field) and not _integer(challenge[field], 1, 64):
 			errors.append("Invalid logical timing bound.")
+	return errors
+
+
+static func _model_goal_errors(goal: Dictionary, mission: Dictionary) -> Array[String]:
+	var errors: Array[String] = []
+	var required_kind: String = {"response_matrix": "response_lab", "observation_handoff": "observation_case", "vm_cases": "branch_vm"}.get(goal.kind, "")
+	if not required_kind.is_empty():
+		var model: Variant = mission.challenges.get(goal.get("challenge_id", ""))
+		if not model is Dictionary or model.get("kind", "") != required_kind: return ["Goal references another model kind."]
+		if goal.kind == "response_matrix":
+			if not goal.get("case_ids") is Array or goal.case_ids.is_empty(): return ["Response goal must name its cases."]
+			for id in goal.case_ids:
+				if not id is String or not model.get("cases", {}).has(id): errors.append("Unknown response goal case.")
+		if goal.kind == "vm_cases":
+			if not goal.get("requirements") is Array or goal.requirements.is_empty(): return ["VM goal must name actual output predicates."]
+			for id in goal.requirements:
+				if not id is String or not model.get("outcomes", {}).has(id): errors.append("Unknown VM output predicate.")
+	if goal.kind == "current_boundaries":
+		if not goal.get("cases") is Dictionary: return ["Boundary references must be qualified."]
+		for boundary in ["web", "route", "service"]:
+			if not goal.cases.get(boundary) is Array or goal.cases[boundary].is_empty():
+				errors.append("Missing current boundary cases.")
+				continue
+			for ref in goal.cases[boundary]:
+				if not ref is Dictionary or ref.size() != 2 or not ref.get("challenge_id") is String or not ref.get("case_id") is String:
+					errors.append("Boundary case requires challenge_id and case_id.")
+					continue
+				var model: Variant = mission.challenges.get(ref.challenge_id)
+				if not model is Dictionary or model.get("kind", "") != "response_lab" or not model.get("cases", {}).has(ref.case_id): errors.append("Unknown qualified boundary case.")
+	return errors
+
+
+static func _contact_errors(data: Dictionary) -> Array[String]:
+	var errors: Array[String] = []
+	if not data.get("contacts", {}) is Dictionary: return ["Invalid campaign contacts."]
+	for id in data.get("contacts", {}):
+		var contact: Variant = data.contacts[id]
+		if not id in ["C01", "C02", "C03", "C04"] or not contact is Dictionary or not contact.get("name_key") is String or not contact.get("introduced_by") is Array or contact.introduced_by.is_empty() or not contact.get("face_gate") is Dictionary:
+			errors.append("Invalid campaign contact metadata.")
+			continue
+		for mission_id in contact.introduced_by:
+			if not mission_id is String or not data.missions.has(mission_id): errors.append("Unknown contact introduction.")
+		var gate: Dictionary = contact.face_gate
+		if not gate.get("when", "") in ["introduced", "completed"] or not gate.get("explicit") is bool or (gate.get("when") == "completed" and not data.missions.has(gate.get("mission_id", ""))): errors.append("Invalid contact face gate.")
+		if id == "C01" and gate.get("explicit") != true: errors.append("C01 privacy reveal must remain an explicit choice.")
 	return errors

@@ -1,0 +1,54 @@
+{
+  "campaigns": {
+    "legacy_intruder": {
+      "ko": {
+        "path": "godot/data/campaign/locales/ko.json",
+        "sha256": "99ba19e3aadd6f17cd983004815f6e1f67bc3d0299ad6f779b778432006faec7"
+      },
+      "en": {
+        "path": "godot/data/campaign/locales/en.json",
+        "sha256": "5b9fb00531baa378f16477cf619b2658fae4ddf0ed9d2f6d2f2ba4dbec785ffd"
+      }
+    },
+    "defender": {
+      "ko": {
+        "path": "godot/data/campaign/locales/defender_v1.ko.json",
+        "sha256": "2c56eb3d6baf4dc05398f9c6ffd3293b99b65528bf21f7b16cba51b2f234ee82"
+      },
+      "en": {
+        "path": "godot/data/campaign/locales/defender_v1.en.json",
+        "sha256": "7baad13f5ef504ef1c479e136b643d1103054e667126e96ad2208221e7a48a54"
+      }
+    },
+    "tracker": {
+      "ko": {
+        "path": "godot/data/campaign/locales/tracker_v1.ko.json",
+        "sha256": "268f5e117c681f230b35cf18227bb7d55b4cd3e70aabb5d9a14b8f02b94035e5"
+      },
+      "en": {
+        "path": "godot/data/campaign/locales/tracker_v1.en.json",
+        "sha256": "34c48024406b213ae936f67e2c8b446ef2306ab4306bc307df0fae954eac685c"
+      }
+    },
+    "intruder": {
+      "ko": {
+        "path": "godot/data/campaign/locales/intruder_v2.ko.json",
+        "sha256": "12690c759065b3c21339cd1daa67490b768bccabcb5b2fc3426b461c696ddc97"
+      },
+      "en": {
+        "path": "godot/data/campaign/locales/intruder_v2.en.json",
+        "sha256": "c63347ee0b45d41ffcf2a580000a7c80078fda6bae461ba39be0d8d9cd9a358d"
+      }
+    }
+  },
+  "ui": {
+    "ko": {
+      "path": "godot/assets/ui/strings_ko.json",
+      "sha256": "d20d8ecd0f0b0bd77c1ff0552742d089ec406bebb6f6f6249d0dc2eebee5b3f7"
+    },
+    "en": {
+      "path": "godot/assets/ui/strings_en.json",
+      "sha256": "eb5a9e9f2826032cd6e7675310900513033551082183d9c18d30b256fa525747"
+    }
+  }
+}

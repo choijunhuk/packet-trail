@@ -1,10 +1,74 @@
 {
-"UI_MAIL_CONTACTS":["連絡先","联系人","Contactos","Kontakte"],"UI_MAIL_CONTACTS_NONE":["まだ誰にも会っていません。","尚未遇到任何人物。","Aún no has conocido a nadie.","Noch keine Personen kennengelernt."],
-"UI_TOOL_FIELD_TARGET":["対象ホスト","目标主机","Host de destino","Zielhost"],"UI_TOOL_FIELD_PATH":["ファイルパス","文件路径","Ruta del archivo","Dateipfad"],"UI_TOOL_PH_FIELD_TARGET":["ホスト名かアドレス","主机名或地址","Nombre o dirección del host","Hostname oder Adresse"],"UI_TOOL_PH_FIELD_PATH":["読むファイルのパス","要读取的文件路径","Ruta del archivo que leer","Pfad der zu lesenden Datei"],"UI_TOOL_OBS_TARGETS":["既知のホスト · 押すと対象欄に入力","已知主机 · 点击填入目标框","Hosts conocidos · pulsa para elegir destino","Bekannte Hosts · anklicken, um das Ziel zu übernehmen"],"UI_TOOL_OBS_FILES":["現在地の項目 · 押すとパス欄に入力","当前位置可见项目 · 点击填入路径框","Elementos visibles aquí · pulsa para tomar la ruta","Sichtbare Einträge am aktuellen Ort · anklicken, um den Pfad zu übernehmen"],"UI_TOOL_OBS_NONE_KNOWN":["まだ既知の候補はありません。直接入力するか、先に調べてください。","暂无已知候选，请手动输入或先调查。","Aún no hay candidatos conocidos. Introduce uno o investiga primero.","Noch keine Kandidaten bekannt. Gib selbst einen ein oder ermittle zuerst."],"UI_BD_STATE_RECHECK":["現在の状態は再び未達成（完了記録は保持）","当前状态不再满足目标（保留完成记录）","El estado actual ya no cumple el objetivo (se conserva la finalización)","Aktueller Zustand erfüllt Ziele nicht erneut (Abschluss bleibt vermerkt)"],"UI_TOP_RECORDED":["完了記録あり · 現在の目標 {done}/{total}","已有完成记录 · 当前目标 {done}/{total}","Finalización registrada · objetivos actuales {done}/{total}","Abschluss vermerkt · aktuelle Ziele {done}/{total}"],
-"UI_HELP_BODY":[
-"このコンピューターはゲーム内の仮想端末です。サーバー、サイト、ファイル、ツールは架空であり、実際のネットワーク、シェル、ウェブブラウザーには移りません。\n\nウィンドウ\n  タイトルバーをドラッグして移動 · ダブルクリックか □ で最大化/復元 · 右下でサイズ変更\n  ─ 最小化 · × 閉じる：窓だけを隠し、セッション、入力、履歴は保持します\n  Ctrl/Cmd+1~9：ターミナル · メール · ブラウザー · RequestLab · ツール · ファイル · 保管資料 · 事件ボード · 状態\n  Ctrl/Cmd+Shift+1~4：ターミナル 1~4 · Ctrl/Cmd+Tab：別の窓へ\n  F1 ヘルプ · F6 タスクバー · Shift+F6 上部の文字サイズ・一時停止 · F10 作業部屋へ\n  入力欄の外で Esc：一時停止\n\nターミナル\n  ターミナル 1~4 は同じ世界を共有し、接続、作業パス、履歴、認証待機は別々です。\n  Enter 実行 · ↑/↓ 履歴 · Tab 補完 · Esc 入力消去/認証取消 · Ctrl+L または clear で画面消去\n  パスワードは非表示で履歴に残りません。exit と接続終了は、その端末の遠隔接続だけを切ります。\n\nブラウザーと RequestLab\n  ゲームの仮想アドレスだけを開きます。ブラウザー、curl、RequestLab は同じ要求処理を使います。\n  RequestLab のヘッダーと本文は JSON オブジェクトが必要です。形式が違えば送りません。\n\nツール作業台\n  ツールは正解ボタンではありません。公開の観察を読み、仮説を入力して結果を比べます。\n  空の入力は送りません。上級 JSON 入力は任意です。使ったツール自体は判定に関係しません。\n\n事件ボードとヒント\n  目標の実際の達成状況を表示します。ヒントは必要なときだけ 1 → 2 → 3 と開けます。\n  全目標を満たすと次の事件へ進めます。切り替えても各事件の状態は保持します。\n\n保存\n  状態変更時に自動保存します。失敗すると自動保存を止め、バックアップ復旧か、破損版を残して新規保存を選びます。\n  保管資料の固定、比較、メモは画面上の補助であり、保存や判定には使いません。\n\n警戒度\n  サーバーが観察した拒否動作だけで上がります。ローカルの誤入力、読むこと、窓の切り替え、時間経過は無関係です。",
-"这台电脑是游戏中的虚拟终端。服务器、网站、文件与工具均为虚构，不会进入真实网络、shell 或网页浏览器。\n\n窗口\n  拖动标题栏移动 · 双击或 □ 最大化/还原 · 拖动右下角调整大小\n  ─ 最小化 · × 关闭：仅隐藏窗口，保留会话、输入与记录\n  Ctrl/Cmd+1~9：终端 · 邮件 · 浏览器 · RequestLab · 工具 · 文件 · 归档资料 · 事件板 · 状态\n  Ctrl/Cmd+Shift+1~4：终端 1~4 · Ctrl/Cmd+Tab：切换窗口\n  F1 帮助 · F6 任务栏 · Shift+F6 顶部文字大小与暂停 · F10 返回工作室\n  输入框外按 Esc：暂停\n\n终端\n  终端 1~4 共享同一世界，但连接、工作路径、命令历史与等待密码均独立。\n  Enter 执行 · ↑/↓ 历史命令 · Tab 补全 · Esc 清空输入/取消认证 · Ctrl+L 或 clear 清屏\n  密码隐藏且不留历史。exit 与断开连接仅结束当前终端的远程连接。\n\n浏览器与 RequestLab\n  仅打开游戏内虚拟地址。浏览器、curl 与 RequestLab 使用相同的虚拟请求处理器。\n  RequestLab 标头与正文须为 JSON 对象，格式错误时不会发送。\n\n工具工作台\n  工具不是答案按钮。阅读公开观察、输入假设并比较结果。\n  不发送空输入，高级 JSON 输入可选。工具选择本身不参与判定。\n\n事件板与提示\n  显示目标的实际满足状态。按需以 1 → 2 → 3 顺序打开提示。\n  满足全部目标即可进入下个事件。切换时各事件状态均保留。\n\n保存\n  状态变化时自动保存。失败后暂停自动保存，可选择备份恢复，或保留损坏文件并新建存档。\n  归档资料的固定、对比与笔记仅为画面辅助，不保存，也不参与判定。\n\n警报\n  仅因服务器观察到的拒绝行为上升。本地输入错误、阅读、窗口切换与时间经过均不影响警报。",
-"Este ordenador es una terminal virtual del juego. Servidores, sitios, archivos y herramientas son ficticios y no salen a redes, shells ni navegadores reales.\n\nVentanas\n  Arrastra la barra de título para mover · doble clic o □ para maximizar/restaurar · esquina inferior derecha para redimensionar\n  ─ minimizar · × cerrar: solo ocultan la ventana; conservan sesión, entrada e historial\n  Ctrl/Cmd+1~9: terminal · correo · navegador · RequestLab · herramientas · archivos · pruebas · tablero · estado\n  Ctrl/Cmd+Shift+1~4: terminales 1~4 · Ctrl/Cmd+Tab: cambiar de ventana\n  F1 ayuda · F6 barra de tareas · Shift+F6 texto y pausa superiores · F10 estudio\n  Esc fuera de un campo: pausa\n\nTerminales\n  Las terminales 1~4 comparten el mundo, pero tienen conexión, ruta, historial y autenticación independientes.\n  Enter ejecutar · ↑/↓ historial · Tab completar · Esc borrar/cancelar autenticación · Ctrl+L o clear limpiar\n  Las contraseñas se ocultan y no se guardan en el historial. exit y cerrar conexión solo cortan la conexión remota de esa terminal.\n\nNavegador y RequestLab\n  Solo abren direcciones virtuales. Navegador, curl y RequestLab usan el mismo procesador de peticiones.\n  Cabeceras y cuerpo de RequestLab deben ser objetos JSON; un formato inválido no se envía.\n\nBanco de herramientas\n  Las herramientas no son botones de solución. Lee las observaciones, plantea hipótesis y compara resultados.\n  No se envían entradas vacías. El JSON avanzado es opcional. La herramienta elegida no determina el resultado del caso.\n\nTablero y pistas\n  Muestran el cumplimiento real de objetivos. Abre pistas solo si quieres, en orden 1 → 2 → 3.\n  Cumplir todos los objetivos permite avanzar. Cambiar de caso conserva cada estado.\n\nGuardado\n  Los cambios se guardan automáticamente. Si falla, se detiene el guardado automático y puedes recuperar copia o conservar los daños y guardar de nuevo.\n  Fijación, comparación y notas son ayudas de esta pantalla; no se guardan ni cuentan para la evaluación.\n\nAlerta\n  Solo sube por rechazos observados por el servidor. Errores locales, lectura, ventanas y paso del tiempo no la cambian.",
-"Dieser Computer ist ein virtuelles Spielterminal. Server, Seiten, Dateien und Werkzeuge sind fiktiv. Sie verlassen weder das Spielnetz noch öffnen sie echte Shells oder Browser.\n\nFenster\n  Titelleiste ziehen zum Verschieben · Doppelklick oder □ maximiert/stellt wieder her · unten rechts Größe ändern\n  ─ minimieren · × schließen: blendet nur das Fenster aus; Sitzung, Eingabe und Verlauf bleiben\n  Ctrl/Cmd+1~9: Terminal · Post · Browser · RequestLab · Werkzeuge · Dateien · Belege · Fallübersicht · Status\n  Ctrl/Cmd+Shift+1~4: Terminals 1~4 · Ctrl/Cmd+Tab: Fenster wechseln\n  F1 Hilfe · F6 Taskleiste · Shift+F6 obere Textgröße und Pause · F10 Arbeitszimmer\n  Esc außerhalb eines Eingabefelds: Pause\n\nTerminals\n  Terminals 1~4 teilen dieselbe Welt, behalten aber eigene Verbindungen, Pfade, Verläufe und Anmeldezustände.\n  Enter ausführen · ↑/↓ Verlauf · Tab ergänzen · Esc leeren/Anmeldung abbrechen · Ctrl+L oder clear leeren\n  Passwörter sind verdeckt und landen nicht im Verlauf. exit und Verbindungsende schließen nur die Fernverbindung dieses Terminals.\n\nBrowser und RequestLab\n  Öffnen nur virtuelle Spieladressen. Browser, curl und RequestLab verwenden dieselbe Anfrageverarbeitung.\n  Header und Inhalt in RequestLab müssen JSON-Objekte sein. Ungültige Formate werden nicht gesendet.\n\nWerkzeugbank\n  Werkzeuge sind keine Lösungstasten. Lies Beobachtungen, stelle Hypothesen auf und vergleiche Ergebnisse.\n  Leere Eingaben werden nicht gesendet. Erweitertes JSON ist optional. Die Werkzeugwahl entscheidet den Fall nicht.\n\nFallübersicht und Hinweise\n  Zeigen die tatsächliche Zielerfüllung. Hinweise öffnest du auf Wunsch in der Folge 1 → 2 → 3.\n  Nach allen Zielen kannst du weitergehen. Beim Fallwechsel bleibt jeder Zustand erhalten.\n\nSpeichern\n  Zustandsänderungen werden automatisch gespeichert. Bei Fehlern stoppt dies; du wählst Sicherungswiederherstellung oder Erhalt beschädigter Dateien und neues Speichern.\n  Anheften, Vergleiche und Notizen sind Ansichtshilfen. Sie werden weder gespeichert noch gewertet.\n\nAlarm\n  Steigt nur durch vom Server beobachtete abgewiesene Aktionen. Lokale Tippfehler, Lesen, Fensterwechsel und Zeitablauf beeinflussen ihn nicht."
-]
+  "UI_MAIL_CONTACTS": [
+    "連絡先",
+    "联系人",
+    "Contactos",
+    "Kontakte"
+  ],
+  "UI_MAIL_CONTACTS_NONE": [
+    "まだ誰にも会っていません。",
+    "尚未遇到任何人物。",
+    "Aún no has conocido a nadie.",
+    "Noch keine Personen kennengelernt."
+  ],
+  "UI_TOOL_FIELD_TARGET": [
+    "対象ホスト",
+    "目标主机",
+    "Host de destino",
+    "Zielhost"
+  ],
+  "UI_TOOL_FIELD_PATH": [
+    "ファイルパス",
+    "文件路径",
+    "Ruta del archivo",
+    "Dateipfad"
+  ],
+  "UI_TOOL_PH_FIELD_TARGET": [
+    "ホスト名かアドレス",
+    "主机名或地址",
+    "Nombre o dirección del host",
+    "Hostname oder Adresse"
+  ],
+  "UI_TOOL_PH_FIELD_PATH": [
+    "読むファイルのパス",
+    "要读取的文件路径",
+    "Ruta del archivo que leer",
+    "Pfad der zu lesenden Datei"
+  ],
+  "UI_TOOL_OBS_TARGETS": [
+    "既知のホスト · 押すと対象欄に入力",
+    "已知主机 · 点击填入目标框",
+    "Hosts conocidos · pulsa para elegir destino",
+    "Bekannte Hosts · anklicken, um das Ziel zu übernehmen"
+  ],
+  "UI_TOOL_OBS_FILES": [
+    "現在地の項目 · 押すとパス欄に入力",
+    "当前位置可见项目 · 点击填入路径框",
+    "Elementos visibles aquí · pulsa para tomar la ruta",
+    "Sichtbare Einträge am aktuellen Ort · anklicken, um den Pfad zu übernehmen"
+  ],
+  "UI_TOOL_OBS_NONE_KNOWN": [
+    "まだ既知の候補はありません。直接入力するか、先に調べてください。",
+    "暂无已知候选，请手动输入或先调查。",
+    "Aún no hay candidatos conocidos. Introduce uno o investiga primero.",
+    "Noch keine Kandidaten bekannt. Gib selbst einen ein oder ermittle zuerst."
+  ],
+  "UI_BD_STATE_RECHECK": [
+    "現在の状態では目標を満たしていません（完了記録は保持）",
+    "当前状态不再满足目标（保留完成记录）",
+    "El estado actual ya no cumple el objetivo (se conserva la finalización)",
+    "Der aktuelle Zustand erfüllt die Ziele nicht (Abschluss bleibt vermerkt)"
+  ],
+  "UI_TOP_RECORDED": [
+    "完了記録あり · 現在の目標 {done}/{total}",
+    "已有完成记录 · 当前目标 {done}/{total}",
+    "Finalización registrada · objetivos actuales {done}/{total}",
+    "Abschluss vermerkt · aktuelle Ziele {done}/{total}"
+  ],
+  "UI_HELP_BODY": [
+    "このコンピューターはゲーム内の仮想端末です。サーバー、サイト、ファイル、ツールは架空であり、実際のネットワーク、シェル、ウェブブラウザーには移りません。\n\nウィンドウ\n  タイトルバーをドラッグして移動 · ダブルクリックか □ で最大化/復元 · 右下でサイズ変更\n  ─ 最小化 · × 閉じる：窓だけを隠し、セッション、入力、履歴は保持します\n  Ctrl/Cmd+1~9：ターミナル · メール · ブラウザー · RequestLab · ツール · ファイル · 保管資料 · 事件ボード · 状態\n  Ctrl/Cmd+Shift+1~4：ターミナル 1~4 · Ctrl/Cmd+Tab：別の窓へ\n  F1 ヘルプ · F6 タスクバー · Shift+F6 上部の文字サイズ・一時停止 · F10 作業部屋へ\n  入力欄の外で Esc：一時停止\n\nターミナル\n  ターミナル 1~4 は同じ世界を共有し、接続、作業パス、履歴、認証待機は別々です。\n  Enter 実行 · ↑/↓ 履歴 · Tab 補完 · Esc 入力消去/認証取消 · Ctrl+L または clear で画面消去\n  パスワードは非表示で履歴に残りません。exit と接続終了は、その端末の遠隔接続だけを切ります。\n\nブラウザーと RequestLab\n  ゲームの仮想アドレスだけを開きます。ブラウザー、curl、RequestLab は同じ要求処理を使います。\n  RequestLab のヘッダーと本文は JSON オブジェクトが必要です。形式が違えば送りません。\n\nツール作業台\n  ツールは正解ボタンではありません。公開の観察を読み、仮説を入力して結果を比べます。\n  空の入力は送りません。上級 JSON 入力は任意です。使ったツール自体は判定に関係しません。\n\n事件ボードとヒント\n  目標の実際の達成状況を表示します。ヒントは必要なときだけ 1 → 2 → 3 と開けます。\n  全目標を満たすと次の事件へ進めます。切り替えても各事件の状態は保持します。\n\n保存\n  状態変更時に自動保存します。失敗すると自動保存を止め、バックアップ復旧か、破損版を残して新規保存を選びます。\n  保管資料の固定、比較、メモは画面上の補助であり、保存や判定には使いません。\n\n警戒度\n  サーバーが観察した拒否動作だけで上がります。ローカルの誤入力、読むこと、窓の切り替え、時間経過は無関係です。",
+    "这台电脑是游戏中的虚拟终端。服务器、网站、文件与工具均为虚构，不会进入真实网络、shell 或网页浏览器。\n\n窗口\n  拖动标题栏移动 · 双击或 □ 最大化/还原 · 拖动右下角调整大小\n  ─ 最小化 · × 关闭：仅隐藏窗口，保留会话、输入与记录\n  Ctrl/Cmd+1~9：终端 · 邮件 · 浏览器 · RequestLab · 工具 · 文件 · 归档资料 · 事件板 · 状态\n  Ctrl/Cmd+Shift+1~4：终端 1~4 · Ctrl/Cmd+Tab：切换窗口\n  F1 帮助 · F6 任务栏 · Shift+F6 顶部文字大小与暂停 · F10 返回工作室\n  输入框外按 Esc：暂停\n\n终端\n  终端 1~4 共享同一世界，但连接、工作路径、命令历史与等待密码均独立。\n  Enter 执行 · ↑/↓ 历史命令 · Tab 补全 · Esc 清空输入/取消认证 · Ctrl+L 或 clear 清屏\n  密码隐藏且不留历史。exit 与断开连接仅结束当前终端的远程连接。\n\n浏览器与 RequestLab\n  仅打开游戏内虚拟地址。浏览器、curl 与 RequestLab 使用相同的虚拟请求处理器。\n  RequestLab 标头与正文须为 JSON 对象，格式错误时不会发送。\n\n工具工作台\n  工具不是答案按钮。阅读公开观察、输入假设并比较结果。\n  不发送空输入，高级 JSON 输入可选。工具选择本身不参与判定。\n\n事件板与提示\n  显示目标的实际满足状态。按需以 1 → 2 → 3 顺序打开提示。\n  满足全部目标即可进入下个事件。切换时各事件状态均保留。\n\n保存\n  状态变化时自动保存。失败后暂停自动保存，可选择备份恢复，或保留损坏文件并新建存档。\n  归档资料的固定、对比与笔记仅为画面辅助，不保存，也不参与判定。\n\n警报\n  仅因服务器观察到的拒绝行为上升。本地输入错误、阅读、窗口切换与时间经过均不影响警报。",
+    "Este ordenador es una terminal virtual del juego. Servidores, sitios, archivos y herramientas son ficticios y no salen a redes, shells ni navegadores reales.\n\nVentanas\n  Arrastra la barra de título para mover · doble clic o □ para maximizar/restaurar · esquina inferior derecha para redimensionar\n  ─ minimizar · × cerrar: solo ocultan la ventana; conservan sesión, entrada e historial\n  Ctrl/Cmd+1~9: terminal · correo · navegador · RequestLab · herramientas · archivos · pruebas · tablero · estado\n  Ctrl/Cmd+Shift+1~4: terminales 1~4 · Ctrl/Cmd+Tab: cambiar de ventana\n  F1 ayuda · F6 barra de tareas · Shift+F6 texto y pausa superiores · F10 estudio\n  Esc fuera de un campo: pausa\n\nTerminales\n  Las terminales 1~4 comparten el mundo, pero tienen conexión, ruta, historial y autenticación independientes.\n  Enter ejecutar · ↑/↓ historial · Tab completar · Esc borrar/cancelar autenticación · Ctrl+L o clear limpiar\n  Las contraseñas se ocultan y no se guardan en el historial. exit y cerrar conexión solo cortan la conexión remota de esa terminal.\n\nNavegador y RequestLab\n  Solo abren direcciones virtuales. Navegador, curl y RequestLab usan el mismo procesador de peticiones.\n  Cabeceras y cuerpo de RequestLab deben ser objetos JSON; un formato inválido no se envía.\n\nBanco de herramientas\n  Las herramientas no son botones de solución. Lee las observaciones, plantea hipótesis y compara resultados.\n  No se envían entradas vacías. El JSON avanzado es opcional. La herramienta elegida no determina el resultado del caso.\n\nTablero y pistas\n  Muestran el cumplimiento real de objetivos. Abre pistas solo si quieres, en orden 1 → 2 → 3.\n  Cumplir todos los objetivos permite avanzar. Cambiar de caso conserva cada estado.\n\nGuardado\n  Los cambios se guardan automáticamente. Si falla, se detiene el guardado automático y puedes recuperar copia o conservar los daños y guardar de nuevo.\n  Fijación, comparación y notas son ayudas de esta pantalla; no se guardan ni cuentan para la evaluación.\n\nAlerta\n  Solo sube por rechazos observados por el servidor. Errores locales, lectura, ventanas y paso del tiempo no la cambian.",
+    "Dieser Computer ist ein virtuelles Spielterminal. Server, Seiten, Dateien und Werkzeuge sind fiktiv. Sie verlassen weder das Spielnetz noch öffnen sie echte Shells oder Browser.\n\nFenster\n  Titelleiste ziehen zum Verschieben · Doppelklick oder □ maximiert/stellt wieder her · unten rechts Größe ändern\n  ─ minimieren · × schließen: blendet nur das Fenster aus; Sitzung, Eingabe und Verlauf bleiben\n  Ctrl/Cmd+1~9: Terminal · Post · Browser · RequestLab · Werkzeuge · Dateien · Belege · Fallübersicht · Status\n  Ctrl/Cmd+Shift+1~4: Terminals 1~4 · Ctrl/Cmd+Tab: Fenster wechseln\n  F1 Hilfe · F6 Taskleiste · Shift+F6 obere Textgröße und Pause · F10 Arbeitszimmer\n  Esc außerhalb eines Eingabefelds: Pause\n\nTerminals\n  Terminals 1~4 teilen dieselbe Welt, behalten aber eigene Verbindungen, Pfade, Verläufe und Anmeldezustände.\n  Enter ausführen · ↑/↓ Verlauf · Tab ergänzen · Esc leeren/Anmeldung abbrechen · Ctrl+L oder clear leeren\n  Passwörter sind verdeckt und landen nicht im Verlauf. exit und Verbindungsende schließen nur die Fernverbindung dieses Terminals.\n\nBrowser und RequestLab\n  Öffnen nur virtuelle Spieladressen. Browser, curl und RequestLab verwenden dieselbe Anfrageverarbeitung.\n  Header und Inhalt in RequestLab müssen JSON-Objekte sein. Ungültige Formate werden nicht gesendet.\n\nWerkzeugbank\n  Werkzeuge sind keine Lösungstasten. Lies Beobachtungen, stelle Hypothesen auf und vergleiche Ergebnisse.\n  Leere Eingaben werden nicht gesendet. Erweitertes JSON ist optional. Die Werkzeugwahl entscheidet den Fall nicht.\n\nFallübersicht und Hinweise\n  Zeigen die tatsächliche Zielerfüllung. Hinweise öffnest du auf Wunsch in der Folge 1 → 2 → 3.\n  Nach allen Zielen kannst du weitergehen. Beim Fallwechsel bleibt jeder Zustand erhalten.\n\nSpeichern\n  Zustandsänderungen werden automatisch gespeichert. Bei Fehlern stoppt dies; du wählst Sicherungswiederherstellung oder Erhalt beschädigter Dateien und neues Speichern.\n  Anheften, Vergleiche und Notizen sind Ansichtshilfen. Sie werden weder gespeichert noch gewertet.\n\nAlarm\n  Steigt nur durch vom Server beobachtete abgewiesene Aktionen. Lokale Tippfehler, Lesen, Fensterwechsel und Zeitablauf beeinflussen ihn nicht."
+  ]
 }

@@ -4,6 +4,7 @@ signal desktop_requested(action: String)
 signal room_entered
 signal settings_changed(values: Dictionary)
 signal application_focus_changed(active: bool)
+signal campaign_selected(pack_id: String)
 
 const Store = preload("res://scripts/presentation/settings_store.gd")
 const SettingsPanel = preload("res://scripts/presentation/settings_panel.gd")
@@ -20,12 +21,36 @@ const FALLBACK := {
 	"IMPORT_LEGACY": "구버전 M01 가져오기",
 	"IMPORT_CONFIRM": "M01 구버전 저장은 유지됩니다. 가져온 진행으로 현재 캠페인 슬롯을 교체하며, 기존 캠페인이 있으면 백업합니다.",
 	"CREDITS_BODY": "독립 제작 해킹 시뮬레이터\n가상 서버·명령만 사용합니다.\n\nNoto Sans KR · SIL Open Font License 1.1",
+	"CAMPAIGN_SELECT": "캠페인 선택", "CAMPAIGN_INTRUDER": "침투자", "CAMPAIGN_DEFENDER": "방어자", "CAMPAIGN_TRACKER": "추적자",
+	"CAMPAIGN_INTRUDER_DESC": "닫힌 경로를 열고 숨겨진 기록을 회수하세요.",
+	"CAMPAIGN_DEFENDER_DESC": "위협을 막으면서 정상 업무를 지키세요.",
+	"CAMPAIGN_TRACKER_DESC": "관측과 반증으로 연결을 좁히세요.",
+	"CAMPAIGN_PROGRESS": "진행 {done}/{total}", "CAMPAIGN_NO_SAVE": "아직 저장된 진행 없음",
+	"CAMPAIGN_SAVE_ATTENTION": "저장 상태를 확인하거나 백업을 복구할 수 있습니다.",
+	"CAMPAIGN_NEW_CONFIRM": "{campaign}의 기존 진행을 백업하고 새로 시작합니다. 다른 캠페인과 이전판 저장은 유지됩니다.",
+	"LEGACY_CONTINUE": "이전판 계속", "LEGACY_CONTINUE_DESC": "이전판 진행은 새 캠페인과 별도로 보존됩니다.",
+	"LEGACY_SOURCE_UNSUPPORTED": "이전판 저장을 찾았지만 현재 검증을 통과하지 못했습니다. 원본은 보존되며 새 캠페인에 반영되지 않습니다. 이유: {code}",
+	"CAMPAIGN_IMPORT_CONFIRM": "구버전 M01을 이전판 캠페인으로 가져옵니다. 이전판 슬롯이 있으면 백업 후 교체하며, 새 캠페인 저장은 유지됩니다.",
+	"UI_CONFIRM_LOAD": "디스크의 마지막 저장으로 되돌립니다.\n저장하지 않은 현재 진행은 사라집니다.",
 }
 
 @export var desktop_scene: PackedScene
 @export var desktop_save_slot_path := "user://saves/campaign_01.json"
 @export var has_saved_session := false
 @export var has_legacy_session := false
+@export var selected_pack_id := "intruder"
+var campaign_slots: Dictionary = {}
+var campaign_picker: OptionButton
+var campaign_summary: Label
+var campaign_progress: Label
+var legacy_continue_button: Button
+var legacy_notice: Label
+var _campaigns: Array = []
+var _desktops: Dictionary = {}
+var _active_pack_id := ""
+var _legacy_campaign_available := false
+var _legacy_campaign_problem := ""
+var _menu_focus_target: Control
 var settings_store := Store.new()
 var studio: Node3D
 var player: CharacterBody3D
@@ -49,12 +74,15 @@ var _looking := false
 var _pitch := -0.05
 var _theme := Theme.new()
 var _desktop_windows: Array[Window] = []
-var _pending_action := "new"
+var _desktop_window_generations: Dictionary = {}
+var _pending_action := ""
+var _pending_pack_id := ""
 
 
-func _text(key: String) -> String:
+func _text(key: String, replacements: Dictionary = {}) -> String:
 	var translated := TranslationServer.translate(key)
-	return FALLBACK.get(key, key) if translated == key else translated
+	var result: String = FALLBACK.get(key, key) if translated == key else translated
+	return result.format(replacements) if not replacements.is_empty() else result
 
 
 func _ready() -> void:
@@ -77,7 +105,8 @@ func _ready() -> void:
 func set_session_available(available: bool) -> void:
 	has_saved_session = available
 	if continue_button != null:
-		continue_button.disabled = not available and desktop == null
+		var cached = _desktops.get(selected_pack_id)
+		continue_button.disabled = not available and not (is_instance_valid(cached) and cached.session_active)
 		load_button.disabled = not available
 
 
@@ -85,6 +114,68 @@ func set_legacy_session_available(available: bool) -> void:
 	has_legacy_session = available
 	if import_button != null:
 		import_button.disabled = not available
+
+
+func set_campaigns(entries: Array) -> void:
+	_campaigns = entries.duplicate(true)
+	var ids: Array = []
+	for entry in _campaigns:
+		ids.append(str(entry.get("id", "")))
+	if not ids.has(selected_pack_id) and not ids.is_empty():
+		selected_pack_id = ids[0]
+	if menu_box != null:
+		_rebuild_menu()
+		call_deferred("_focus_menu")
+
+
+func set_legacy_campaign_available(available: bool, problem := "") -> void:
+	_legacy_campaign_available = available
+	_legacy_campaign_problem = problem
+	if legacy_continue_button != null:
+		legacy_continue_button.visible = available or not problem.is_empty()
+		legacy_continue_button.disabled = not available
+	if legacy_notice != null:
+		legacy_notice.text = problem
+		legacy_notice.visible = not problem.is_empty()
+
+
+func select_campaign(id: String) -> bool:
+	for entry in _campaigns:
+		if str(entry.get("id", "")) == id:
+			selected_pack_id = id
+			_update_campaign_details()
+			campaign_selected.emit(id)
+			return true
+	return false
+
+
+func _campaign_entry() -> Dictionary:
+	for entry in _campaigns:
+		if str(entry.get("id", "")) == selected_pack_id:
+			return entry
+	return {}
+
+
+func get_cached_desktop(id: String) -> Control:
+	return _desktops.get(id)
+
+
+func _campaign_title(id: String) -> String:
+	return _text("LEGACY_CONTINUE") if id == "legacy_intruder" else _text("CAMPAIGN_" + id.to_upper())
+
+
+func _update_campaign_details() -> void:
+	var entry := _campaign_entry()
+	if campaign_picker == null:
+		return
+	for index in campaign_picker.item_count:
+		if campaign_picker.get_item_metadata(index) == selected_pack_id:
+			campaign_picker.select(index)
+	campaign_summary.text = _text("CAMPAIGN_" + selected_pack_id.to_upper() + "_DESC")
+	var progress: Dictionary = entry.get("progress", {})
+	var state := str(entry.get("save_state", "empty"))
+	campaign_progress.text = _text("CAMPAIGN_NO_SAVE") if state == "empty" else (_text("CAMPAIGN_SAVE_ATTENTION") if state == "recovery" else _text("CAMPAIGN_PROGRESS", {"done": progress.get("completed", 0), "total": progress.get("total", 0)}))
+	set_session_available(bool(entry.get("disk_available", entry.get("can_continue", false))))
 
 
 func _build_player() -> void:
@@ -183,7 +274,8 @@ func _build_interface() -> void:
 	button_style.content_margin_bottom = 8
 	for button in [confirm.get_ok_button(), confirm.get_cancel_button()]:
 		button.add_theme_stylebox_override("normal", button_style)
-	confirm.confirmed.connect(func(): open_desktop(_pending_action))
+	confirm.confirmed.connect(_on_menu_confirmed)
+	confirm.canceled.connect(_cancel_menu_confirmation)
 	overlay.add_child(confirm)
 
 
@@ -207,9 +299,41 @@ func _rebuild_menu() -> void:
 	subtitle.add_theme_color_override("font_color", Color("a4b7bf"))
 	menu_box.add_child(subtitle)
 	menu_box.add_child(HSeparator.new())
+	var choose_label := Label.new()
+	choose_label.text = _text("CAMPAIGN_SELECT")
+	menu_box.add_child(choose_label)
+	campaign_picker = OptionButton.new()
+	campaign_picker.accessibility_name = _text("CAMPAIGN_SELECT")
+	campaign_picker.set_meta("campaign_selector", true)
+	for entry in _campaigns:
+		var id := str(entry.get("id", ""))
+		campaign_picker.add_item(_campaign_title(id))
+		campaign_picker.set_item_metadata(campaign_picker.item_count - 1, id)
+	campaign_picker.item_selected.connect(func(index: int): select_campaign(str(campaign_picker.get_item_metadata(index))))
+	campaign_picker.disabled = _campaigns.is_empty()
+	menu_box.add_child(campaign_picker)
+	campaign_summary = Label.new()
+	campaign_summary.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	campaign_summary.add_theme_font_size_override("font_size", _theme.default_font_size - 2)
+	menu_box.add_child(campaign_summary)
+	campaign_progress = Label.new()
+	campaign_progress.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	campaign_progress.add_theme_color_override("font_color", Color("a4b7bf"))
+	menu_box.add_child(campaign_progress)
 	continue_button = _button("CONTINUE", func(): open_desktop("continue"))
 	_button("NEW_GAME", _confirm_new)
-	load_button = _button("LOAD_GAME", func(): open_desktop("load"))
+	load_button = _button("LOAD_GAME", _confirm_load)
+	legacy_continue_button = _button("LEGACY_CONTINUE", func(): open_desktop("legacy"))
+	legacy_continue_button.set_meta("pack_id", "legacy_intruder")
+	legacy_continue_button.tooltip_text = _text("LEGACY_CONTINUE_DESC")
+	legacy_continue_button.visible = _legacy_campaign_available or not _legacy_campaign_problem.is_empty()
+	legacy_continue_button.disabled = not _legacy_campaign_available
+	legacy_notice = Label.new()
+	legacy_notice.text = _legacy_campaign_problem
+	legacy_notice.visible = not _legacy_campaign_problem.is_empty()
+	legacy_notice.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	legacy_notice.add_theme_color_override("font_color", Color("d5aa75"))
+	menu_box.add_child(legacy_notice)
 	import_button = _button("IMPORT_LEGACY", _confirm_import)
 	_button("ENTER_ROOM", return_to_room)
 	_button("SETTINGS", show_settings)
@@ -222,6 +346,7 @@ func _rebuild_menu() -> void:
 	menu_box.add_child(note)
 	set_session_available(has_saved_session)
 	set_legacy_session_available(has_legacy_session)
+	_update_campaign_details()
 
 
 func _button(key: String, callback: Callable) -> Button:
@@ -246,24 +371,79 @@ func _button(key: String, callback: Callable) -> Button:
 
 
 func _confirm_new() -> void:
+	_menu_focus_target = get_viewport().gui_get_focus_owner()
 	_pending_action = "new"
+	_pending_pack_id = selected_pack_id
 	confirm.title = _text("NEW_GAME")
-	confirm.dialog_text = _text("NEW_GAME_CONFIRM")
+	confirm.dialog_text = _text("CAMPAIGN_NEW_CONFIRM", {"campaign": _campaign_title(selected_pack_id)})
 	confirm.ok_button_text = _text("START_NEW")
 	confirm.cancel_button_text = _text("CANCEL")
 	confirm.popup_centered(Vector2i(540, 220))
 
 
 func _confirm_import() -> void:
+	_menu_focus_target = get_viewport().gui_get_focus_owner()
 	_pending_action = "import"
+	_pending_pack_id = "legacy_intruder"
 	confirm.title = _text("IMPORT_LEGACY")
-	confirm.dialog_text = _text("IMPORT_CONFIRM")
+	confirm.dialog_text = _text("CAMPAIGN_IMPORT_CONFIRM")
 	confirm.ok_button_text = _text("IMPORT_LEGACY")
 	confirm.cancel_button_text = _text("CANCEL")
 	confirm.popup_centered(Vector2i(540, 240))
 
 
-func open_desktop(action := "continue") -> void:
+func _confirm_load() -> void:
+	var cached = _desktops.get(selected_pack_id)
+	if not is_instance_valid(cached) or not cached.session_active:
+		open_desktop("load")
+		return
+	_menu_focus_target = get_viewport().gui_get_focus_owner()
+	_pending_action = "load"
+	_pending_pack_id = selected_pack_id
+	confirm.title = _text("LOAD_GAME")
+	confirm.dialog_text = _text("UI_CONFIRM_LOAD")
+	confirm.ok_button_text = _text("LOAD_GAME")
+	confirm.cancel_button_text = _text("CANCEL")
+	confirm.popup_centered(Vector2i(540, 220))
+
+
+func _on_menu_confirmed() -> void:
+	var action := _pending_action
+	var pack := _pending_pack_id
+	_pending_action = ""
+	_pending_pack_id = ""
+	if not action.is_empty() and not pack.is_empty():
+		open_desktop(action, pack)
+
+
+func _cancel_menu_confirmation() -> void:
+	_pending_action = ""
+	_pending_pack_id = ""
+	_restore_menu_focus()
+
+
+func _restore_menu_focus() -> void:
+	call_deferred("_restore_menu_focus_now")
+
+
+func _restore_menu_focus_now() -> void:
+	if is_instance_valid(_menu_focus_target) and _menu_focus_target.is_visible_in_tree():
+		_menu_focus_target.grab_focus()
+	else:
+		_focus_menu()
+
+
+func open_desktop(action := "continue", target_pack := "") -> void:
+	if target_pack.is_empty():
+		target_pack = "legacy_intruder" if action in ["legacy", "import"] else selected_pack_id
+	var slot := str(campaign_slots.get(target_pack, ""))
+	if slot.is_empty():
+		show_main_menu()
+		note.text = _text("DESKTOP_NOT_READY")
+		return
+	_hide_desktop()
+	desktop = _desktops.get(target_pack)
+	desktop_save_slot_path = slot
 	if desktop == null:
 		if desktop_scene == null:
 			show_main_menu()
@@ -274,12 +454,14 @@ func open_desktop(action := "continue") -> void:
 			instance.queue_free()
 			note.text = _text("DESKTOP_NOT_READY")
 			return
-		instance.set("save_slot_path", desktop_save_slot_path)
+		instance.set("save_slot_path", slot)
+		instance.set("pack_id", target_pack)
 		desktop = instance
+		_desktops[target_pack] = desktop
 		desktop_layer.add_child(desktop)
 		desktop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	if desktop.has_method("start_session"):
-		var result: Variant = desktop.call("start_session", action)
+		var result: Variant = desktop.call("start_session", "continue" if action == "legacy" else action)
 		if result is Dictionary and not result.get("ok", true):
 			show_main_menu()
 			note.text = str(result.get("text", _text("DESKTOP_NOT_READY")))
@@ -288,12 +470,21 @@ func open_desktop(action := "continue") -> void:
 		show_main_menu()
 		note.text = _text("DESKTOP_NOT_READY")
 		return
+	_active_pack_id = target_pack
 	desktop.visible = true
 	desktop.process_mode = Node.PROCESS_MODE_INHERIT
+	var retained: Array[Window] = []
+	var retained_generations := {}
 	for window in _desktop_windows:
 		if is_instance_valid(window):
-			window.show()
-	_desktop_windows.clear()
+			if desktop.is_ancestor_of(window):
+				if _desktop_window_generations.get(window.get_instance_id()) == desktop.get("session_generation"):
+					window.show()
+			else:
+				retained.append(window)
+				retained_generations[window.get_instance_id()] = _desktop_window_generations.get(window.get_instance_id())
+	_desktop_windows = retained
+	_desktop_window_generations = retained_generations
 	_in_desktop = true
 	# The desktop is opaque; avoid rendering the studio behind its interface.
 	studio.hide()
@@ -338,12 +529,18 @@ func _hide_desktop() -> void:
 		if child.visible:
 			if not child in _desktop_windows:
 				_desktop_windows.append(child)
+			_desktop_window_generations[child.get_instance_id()] = desktop.get("session_generation")
 			child.hide()
 	desktop.hide()
 	desktop.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _focus_menu() -> void:
+	if menu == null or not menu.visible:
+		return
+	if campaign_picker != null and not campaign_picker.disabled:
+		campaign_picker.grab_focus()
+		return
 	for child in menu_box.get_children():
 		if child is Button and not child.disabled:
 			child.grab_focus()
@@ -433,7 +630,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			show_main_menu()
 		get_viewport().set_input_as_handled()
 	elif event.physical_keycode == KEY_E and not menu.visible and _can_use_computer():
-		open_desktop("continue")
+		open_desktop("continue", _active_pack_id)
 		get_viewport().set_input_as_handled()
 
 

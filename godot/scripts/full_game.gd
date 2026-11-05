@@ -4,14 +4,17 @@ extends Node
 const RoomScene = preload("res://scenes/room.tscn")
 const DesktopScene = preload("res://scenes/campaign_desktop.tscn")
 const Campaign = preload("res://scripts/core/campaign_game.gd")
+const Catalog = preload("res://scripts/core/campaign_catalog.gd")
 const AudioDirector = preload("res://scripts/presentation/audio_director.gd")
 const Locale = preload("res://scripts/presentation/localization.gd")
 
-@export var save_slot_path := "user://saves/campaign_01.json"
+## Empty selects fixed product slots; a nonempty base must resolve only to tests slots.
+@export var save_slot_path := ""
 var room: Node3D
 var audio: Node
 var _last_view: Dictionary = {}
-var _connected_desktop: Control
+var _connected_desktops: Dictionary = {}
+var _ending_presenting := false
 
 
 func _ready() -> void:
@@ -21,11 +24,19 @@ func _ready() -> void:
 	room = RoomScene.instantiate()
 	room.name = "Studio"
 	room.desktop_scene = DesktopScene
-	room.desktop_save_slot_path = save_slot_path
+	for pack in Catalog.list_packs(true):
+		var id := str(pack["id"])
+		var slot := _slot_for(id)
+		if slot.is_empty():
+			push_error("Invalid campaign test slot override; no default user slot was selected.")
+			return
+		room.campaign_slots[id] = slot
+	room.desktop_save_slot_path = _slot_for("intruder")
 	room.settings_changed.connect(_on_settings)
 	room.application_focus_changed.connect(audio.set_background_active)
 	room.desktop_requested.connect(_on_desktop_requested)
 	room.room_entered.connect(_on_room_entered)
+	room.campaign_selected.connect(_on_campaign_selected)
 	add_child(room)
 	audio.configure(room.settings_store.get_values())
 	audio.set_mood("home")
@@ -34,10 +45,46 @@ func _ready() -> void:
 
 
 func _refresh_save_status() -> void:
-	var probe = Campaign.new(save_slot_path)
-	var status: Dictionary = probe.get_save_status()
-	room.set_session_available(bool(status.get("exists", false)) or bool(status.get("backup_available", false)))
-	room.set_legacy_session_available(bool(status.get("legacy_available", false)))
+	var entries: Array = []
+	for pack in Catalog.list_packs():
+		var id := str(pack["id"])
+		var probe = Campaign.new(_slot_for(id), id)
+		var status: Dictionary = probe.get_save_status()
+		var cached = room.get_cached_desktop(id)
+		var memory_active := is_instance_valid(cached) and bool(cached.get("session_active"))
+		var view: Dictionary = cached.get_game_view() if memory_active else {}
+		if not memory_active and bool(status.get("valid", false)):
+			var loaded: Dictionary = probe.load_game()
+			if bool(loaded.get("ok", false)):
+				view = probe.get_view()
+			else:
+				status["valid"] = false
+		var entry: Dictionary = pack.duplicate(true)
+		entry["disk_available"] = bool(status.get("exists", false)) or bool(status.get("backup_available", false))
+		entry["can_continue"] = memory_active or entry["disk_available"]
+		entry["save_state"] = "memory" if memory_active else ("saved" if bool(status.get("valid", false)) else ("recovery" if entry["can_continue"] else "empty"))
+		entry["progress"] = view.get("campaign_progress", {})
+		entries.append(entry)
+	room.set_campaigns(entries)
+	room.desktop_save_slot_path = _slot_for(room.selected_pack_id)
+	var legacy = Campaign.new(_slot_for("legacy_intruder"), "legacy_intruder")
+	var legacy_status: Dictionary = legacy.get_save_status(save_slot_path.is_empty())
+	var cached_legacy = room.get_cached_desktop("legacy_intruder")
+	var legacy_memory := is_instance_valid(cached_legacy) and bool(cached_legacy.get("session_active"))
+	var can_resume_legacy := legacy_memory or bool(legacy_status.get("exists", false)) or bool(legacy_status.get("backup_available", false)) or bool(legacy_status.get("legacy_source_available", false))
+	var legacy_problem := ""
+	if not can_resume_legacy and bool(legacy_status.get("legacy_source_exists", false)):
+		legacy_problem = room._text("LEGACY_SOURCE_UNSUPPORTED", {"code": legacy_status.get("legacy_source_reason", "UNKNOWN")})
+	room.set_legacy_campaign_available(can_resume_legacy, legacy_problem)
+	room.set_legacy_session_available(bool(legacy_status.get("legacy_available", false)))
+
+
+func _slot_for(id: String) -> String:
+	return Catalog.default_slot(id) if save_slot_path.is_empty() else Catalog.test_slot(save_slot_path, id)
+
+
+func _on_campaign_selected(_id: String) -> void:
+	_refresh_save_status()
 
 
 func _on_settings(values: Dictionary) -> void:
@@ -53,28 +100,33 @@ func _update_title() -> void:
 
 func _on_desktop_requested(_action: String) -> void:
 	var desktop: Control = room.desktop
-	if desktop != _connected_desktop:
-		_connected_desktop = desktop
+	_ending_presenting = false
+	if not _connected_desktops.has(desktop.get_instance_id()):
+		_connected_desktops[desktop.get_instance_id()] = true
 		if desktop.has_signal("view_changed"):
-			desktop.view_changed.connect(_on_view_changed)
+			desktop.view_changed.connect(_on_view_changed.bind(desktop))
 		if desktop.has_signal("return_to_room_requested"):
-			desktop.return_to_room_requested.connect(room.return_to_room)
+			desktop.return_to_room_requested.connect(_on_return_requested.bind(desktop))
 		if desktop.has_signal("campaign_finished"):
-			desktop.campaign_finished.connect(func(_ending): audio.set_mood("ending"))
+			desktop.campaign_finished.connect(_on_campaign_finished.bind(desktop))
+		if desktop.has_signal("presentation_context_changed"):
+			desktop.presentation_context_changed.connect(_on_presentation_context_changed.bind(desktop))
 		if desktop.has_signal("pause_changed"):
-			desktop.pause_changed.connect(audio.set_paused)
+			desktop.pause_changed.connect(_on_pause_changed.bind(desktop))
 		if desktop.has_signal("action_performed"):
-			desktop.action_performed.connect(_on_action_performed)
+			desktop.action_performed.connect(_on_action_performed.bind(desktop))
 		if desktop.has_signal("settings_requested"):
-			desktop.settings_requested.connect(_on_settings_requested)
+			desktop.settings_requested.connect(_on_settings_requested.bind(desktop))
 	if desktop.has_method("apply_settings"):
 		desktop.apply_settings(room.settings_store.get_values())
 	if desktop.has_method("get_game_view"):
-		_on_view_changed(desktop.get_game_view())
+		_on_view_changed(desktop.get_game_view(), desktop)
 	_refresh_save_status()
 
 
-func _on_view_changed(view: Dictionary) -> void:
+func _on_view_changed(view: Dictionary, source: Control = null) -> void:
+	if source != null and (source != room.desktop or not room._in_desktop):
+		return
 	if not bool(view.get("ready", false)):
 		return
 	var ending: Variant = view.get("ending", "")
@@ -82,18 +134,20 @@ func _on_view_changed(view: Dictionary) -> void:
 	var mission := str(view.get("mission_id", "M01"))
 	var alert := int(view.get("alert_level", 0))
 	var completed := bool(view.get("completed", false))
-	if has_ending:
+	var campaign: Dictionary = view.get("campaign", {})
+	if str(_last_view.get("campaign", {}).get("id", "")) != str(campaign.get("id", "")):
+		_last_view = {}
+		_ending_presenting = false
+	if not _last_view.is_empty() and (mission != str(_last_view.get("mission_id", "")) or alert > int(_last_view.get("alert_level", 0))):
+		_ending_presenting = false
+	if _ending_presenting and has_ending:
 		audio.set_mood("ending")
-	elif completed:
-		audio.set_mood("flow")
 	elif alert > 0:
 		audio.set_mood("alert")
-	elif mission in ["M12", "M16", "M20", "M24"]:
-		audio.set_mood("reveal")
-	elif mission in ["M01", "M02"]:
-		audio.set_mood("intro")
+	elif completed:
+		audio.set_mood("flow")
 	else:
-		audio.set_mood("investigate")
+		audio.set_mood(_mission_mood(mission))
 	if not _last_view.is_empty():
 		if mission != str(_last_view.get("mission_id", "")):
 			audio.play_ui("notification")
@@ -106,7 +160,19 @@ func _on_view_changed(view: Dictionary) -> void:
 	_last_view = view.duplicate(true)
 
 
-func _on_action_performed(result: Dictionary) -> void:
+func _mission_mood(mission: String) -> String:
+	if mission in ["M01", "M02", "D01", "T01"]:
+		return "intro"
+	if mission in ["M12", "M16", "M20", "M24", "D04", "D07", "D08", "T04", "T07", "T08"]:
+		return "reveal"
+	if mission in ["M05", "M06", "M07", "M08", "M13", "M14", "M15", "D02", "D03", "D05", "D06", "T03", "T05"]:
+		return "flow"
+	return "investigate"
+
+
+func _on_action_performed(result: Dictionary, source: Control = null) -> void:
+	if source != null and (source != room.desktop or not room._in_desktop):
+		return
 	if not bool(result.get("ok", false)):
 		audio.play_ui("error")
 	elif str(result.get("event", "")) in ["tool", "tool_observed"] or str(result.get("ui_app", "")) == "tools":
@@ -114,17 +180,48 @@ func _on_action_performed(result: Dictionary) -> void:
 
 
 func _on_room_entered() -> void:
+	_ending_presenting = false
 	audio.set_paused(false)
 	audio.set_mood("home")
+	_refresh_save_status()
 
 
-func _on_settings_requested() -> void:
+func _on_return_requested(source: Control) -> void:
+	if source == room.desktop and room._in_desktop:
+		room.return_to_room()
+
+
+func _on_campaign_finished(_ending: Dictionary, source: Control) -> void:
+	if source == room.desktop and room._in_desktop:
+		_ending_presenting = true
+		audio.set_mood("ending")
+
+
+func _on_presentation_context_changed(app_id: String, source: Control) -> void:
+	if source != room.desktop or not room._in_desktop:
+		return
+	_ending_presenting = app_id == "ending"
+	_on_view_changed(_last_view, source)
+
+
+func _on_pause_changed(value: bool, source: Control) -> void:
+	if source == room.desktop and room._in_desktop:
+		audio.set_paused(value)
+
+
+func _on_settings_requested(source: Control = null) -> void:
+	if source != null and source != room.desktop:
+		return
 	var previous_focus := get_viewport().gui_get_focus_owner()
 	room.show_settings()
 	if room.settings_panel != null:
 		room.settings_panel.closed.connect(func():
 			if is_instance_valid(previous_focus) and previous_focus.is_visible_in_tree():
-				previous_focus.call_deferred("grab_focus"), CONNECT_ONE_SHOT)
+				previous_focus.call_deferred("grab_focus")
+			elif room._in_desktop and is_instance_valid(room.desktop):
+				room.desktop.call_deferred("_restore_focus")
+			else:
+				room._focus_menu(), CONNECT_ONE_SHOT)
 
 
 func _input(event: InputEvent) -> void:
