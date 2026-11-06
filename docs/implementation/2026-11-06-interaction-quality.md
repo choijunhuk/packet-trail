@@ -24,3 +24,5 @@ Godot 4.7에서 헤드리스 **170 checks / 0 failures**. 최초 실행의 누�
 부모가 수정 소스에서 `bash tools/gate.sh`를 실행해 종료0과 최종 PASS를 확인했다. 공개44사건·88해법14,110검사, 보존 캠페인31,717검사, browser414·support340·desktop170·lobby105·mutation1,217 및 정상 종료8/6이 통과했다. 문서·현지화·runtime25스크립트 경계 검사도 통과했다. 원본 로그는 `.omx/artifacts/interaction-quality/whole-gate.log`다.
 
 이번 변경은 로컬 소스에 있으며 커밋·새 설치본 배포는 하지 않았다. 기존1.2 릴리스의 검증과 이번 소스 검증을 구분한다. 다음 확장 순서는 [품질 개선 순서](../QUALITY_ROADMAP.md)를 따른다.
+
+이후 위 입력 변경을 [1.2.1 시각·난이도 개선](2026-11-06-immersion-quality.md)에 통합해 전체 소스/패키지/CI를 다시 검증했다. 위 로컬 전용 상태는 이 문서의 첫 작업 시점 기록이다.

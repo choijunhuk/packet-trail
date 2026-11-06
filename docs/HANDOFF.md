@@ -4,9 +4,9 @@
 
 ## 현재 구현과 검증
 
-`1.2.0-rc1`은 1.1의 공개44사건·세 결말·강화OST·6언어를 보존하고 Midnight OS 바탕화면·검색 런처·실행 중 작업표시줄·창 조작·Nightfox8탭을 구현했다. 시작 화면에서 세 시나리오/진행과 가이드·표준·자율을 고르고 설정15개+지원3개를 네 카테고리에서 바꾼다. 지원 수준은 안내/힌트량이며 목표·경보 압박 난이도는 아니다. [다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.2.0-rc1) · [이번 실행 기록](implementation/2026-11-06-desktop-experience.md) · [DESIGN](../DESIGN.md) · [코어 계약](implementation/three-perspectives-contract.md).
+`1.2.1-rc1`은 기존44사건과 데스크톱을 보존하고 Nightfox 사이트 문서/큰 글씨 폼·터미널 접두어 기록·브라우저 탐색 키·도구 발견성을 개선했다. 경보 상한이 접속 차단을 한다는 부정확한 설명을6언어에서 고쳤다. 가이드/표준/자율은 여전히 도움 수준이며 실제 압박 난이도는 별도 사건 규칙/저장 호환 설계가 필요하다. [다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.2.1-rc1) · [이번 기록](implementation/2026-11-06-immersion-quality.md) · [DESIGN](../DESIGN.md).
 
-배포 게임 소스는 `345eff6f92a768f9380d85f3c09c278fbdae54c6`, Godot tree는 `ffbfee95d99ee75e2aaf33d7a471b8b846dd0661`다. [세OS CI](https://github.com/choijunhuk/packet-trail/actions/runs/42153263811)는 모두 성공했다. 최종 Mac native5,435/0·44사건/세 결말, 별도 preview824/0·45PNG, Linux 부분 GUI467/0·M01 한 사건, 실제3PCK 각478/0을 구분했다. Mac ZIP을 추출해 실제 OS 마우스/키보드로 시나리오/설정·새 게임/취소·창/탭·저장/재실행을 확인했으며 최종 한 줄 수정 뒤 첫 메뉴/이어하기/터미널/정상 종료를 다시 확인했다. 태그·문서 마감 커밋과 게임 소스가 다르면 Godot tree 동등과 BUILD-INFO를 확인한다.
+실행 소스 `210b8fa5846e07015a38e84c66d06f17a4c00f15`, Godot tree `dd6dc228fc2efd3f06aa402529e12914dc6096b3`. [CI42165926526](https://github.com/choijunhuk/packet-trail/actions/runs/42165926526)의 세OS가 모두 성공했다. 로컬 whole gate·공개88해법·native full5436/0·44사건/세결말, 별도 preview926/0·49PNG·큰글씨KO/DE폼21조작, Linux부분468/0·M01한사건, PCK각478/0을 구분해 확인했다. 실제 Mac ZIP의 시작/설정/취소/종료와 기존사용자파일7개 보존도 확인했다. 새 브라우저 전체 물리OS 입력이나 WindowsGUI를 확인한 것은 아니다. 태그는 문서 마감 커밋일 수 있으며 BUILD-INFO의 실행 소스와 Godot tree 동등을 확인한다.
 
 이전 [1.1 배포 기록](implementation/2026-11-05-three-perspectives.md)·[1.0 배포 기록](implementation/2026-11-05-full-production.md)과 원본 저장은 보존한다. 공개3편의 진도는 독립 고정 슬롯이며, 구판 진행은 동결한 콘텐츠의 별도 이어하기 사본에서 계속한다. 기존 캠페인 v2 저장 구조는 그대로다. 새 지원 선호 키를 구1.1에서 읽으면 설정이 기본값으로 보일 수 있으므로 선호 파일의 역방향 호환과 캠페인 호환을 혼동하지 않는다. 사람이 직접8~12h·재미·원어민 번역·물리IME·WindowsGUI·장시간 청취를 검증했다는 뜻으로 자동 통과를 확대하지 않는다.
 
