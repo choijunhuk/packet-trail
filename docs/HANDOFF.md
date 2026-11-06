@@ -4,6 +4,9 @@
 
 ## 현재 구현과 검증
 
+최신은 `1.3.1-rc1` 색상 개선판이다. 공통차콜·터미널민트/도구청록/메일구리/브라우저보라/파일파랑/보드모래색을 기존위젯에연결했다. 실행소스 `6262d5aefbde1db991360f4df7993a24d4af33c8`, Godot tree `384a795fd17dfb13dc5b14bfad542c702d99ea53`. [현재배포](https://github.com/choijunhuk/packet-trail/releases/tag/v1.3.1-rc1), [기록](implementation/2026-11-06-color-refinement.md), [3OS CI](https://github.com/choijunhuk/packet-trail/actions/runs/42179897714). 전체gate/대비44/nativepreview1270·71PNG/PCK각509와Mac시작·3D이동·종료를확인했다. 아래1.3전편GUI기록은선행버전근거다.
+
+
 `1.3.0-rc1`은 기존3편44사건/88해법과 v2 저장을 보존하고 별도 종합 도전3사건/6해법과 분석 작업대를 추가했다. 관찰·행동·결과, 공개기록상세·펼침상태, 현재목표이동, 안내/중요오류알림을 정리했다. [다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.3.0-rc1) · [실행 기록](implementation/2026-11-06-challenge-workbench.md) · [발전 계획](EVOLUTION_PLAN.md).
 
 실행 소스 `5fe9c9c7463c5005dcb786a51f7fa15f5c60c038`, Godot tree `a73d0271ec2d158902a375c6577c7005df8c9ca5`. [CI42173382639](https://github.com/choijunhuk/packet-trail/actions/runs/42173382639)의 세OS가 모두 성공했다. 전체gate/Python51·public15,059/94경로·독립686·workbench78, 실제native6,284/47사건/4결말과preview1,237/65PNG, 세PCK각509/0을 확인했다. Linux부분GUI516/1사건/0결말은 전편GUI와 다르다. Mac 최종ZIP의4선택·4지원·취소·종료는 실제OS로 확인했으며 기존사용자파일7개와새도전slot4보호경로가 같았다. tag/문서커밋은 BUILD-INFO에서 실행소스와 구분한다.

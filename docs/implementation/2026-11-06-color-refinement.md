@@ -17,3 +17,21 @@ Sol6.1 구현은 `desktop_theme.gd`와 `campaign_desktop.gd` 두 파일에 한�
 Root는실제동시앱·브라우저·터미널캡처와대비표를독립확인해92/pass로기록했다. 사용자미적승인이나색각시뮬레이션/정식접근성인증은아니다.1280출력은기존1600논리캔버스의축소이며일반화하지않는다.
 
 전체 `tools/gate.sh`는 종료0/PASS이며 기존47사건94해법·독립도전686·Python51·현지화와 실행 경계를 확인했다. 이번 색상 전용 변경에서는 전편47 GUI를 다시 재생하지 않았고 새로운71장 preview와 입력/기능 회귀를 검증했다. 이전1.3 전편6284 결과를 이번 실행으로 표시하지 않는다.
+
+## 최종 패키지
+
+1.3.1 실행소스 `6262d5aefbde1db991360f4df7993a24d4af33c8`, source tree `c6cf14ca372a4fcc825d2a42895ceda9322dff60`, Godot tree `384a795fd17dfb13dc5b14bfad542c702d99ea53`. [CI42179897714](https://github.com/choijunhuk/packet-trail/actions/runs/42179897714)의Mac/Windows/Linux가모두성공했다. 실제3OS export·PCK각509/0·ZIP CRC/내부SHA/조작안내·MacUniversal/strictdeep서명을확인했다. source345SHA는같았다.
+
+- MidnightAccess-1.3.1-rc1-macos-universal.zip: 122812629 bytes, SHA256 `4f142fc252c99851d302285a19cd1421857ef3036f634448705dbfdd26525c4c`.
+- MidnightAccess-1.3.1-rc1-windows-x86_64.zip: 101524461 bytes, SHA256 `5d708ca02a9cccc0ad654b7f9509ea27f205992c29a776c3ded4e3c5cb3b4a21`.
+- MidnightAccess-1.3.1-rc1-linux-x86_64.zip: 91918381 bytes, SHA256 `ef0b7f8982309022ebe17ff07be372cb84d54487dd51323c5f99ecf4f92f002a`.
+
+Mac ZIP을추출해1.3.1메뉴·작업실진입·실제W이동과E컴퓨터사용안내·Esc메뉴복귀·종료를관찰했다. 기존사용자파일7SHA는불변이다. 물리IME나새전편47GUI/WindowsGUI를검증했다고확대하지않는다.
+
+[비공개1.3.1배포](https://github.com/choijunhuk/packet-trail/releases/tag/v1.3.1-rc1)의BUILD-INFO/SHA256SUMS로소스/문서태그와파일을대조한다. 기존릴리스와게임진행은보존했다.
+
+## 서브콘텐츠와3D 확인
+
+침투편 선택사건4개는 S01지워진인계공지(M08후), S02두번전달된신호(M20후), R01작은검증기의문장·P01경계옆의한칸(둘다M16후)이다. 메인완료에필수는아니며사건보드에서선택한다. 방어8·추적8·종합도전3은독립추가콘텐츠다.
+
+3D는현재작업실이동·오른쪽마우스시점·컴퓨터사용/OS전환용거점이다. 보드·선반·소품은시각자산이며NPC대화·물건수집·장비연결퍼즐은구현하지않았다. 이번색상작업으로3D플레이를추가했다고표시하지않는다.
