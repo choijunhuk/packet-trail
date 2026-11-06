@@ -37,6 +37,7 @@ func _run() -> void:
 	await _launcher_and_windows()
 	await _browser_tabs()
 	await _browser_large_font()
+	await _color_identity_views()
 	await _close_all_and_resume()
 	await _common_input_checks()
 	await _request_lab_checks()
@@ -345,6 +346,34 @@ func _browser_large_font() -> void:
 	_set_test_settings(original)
 	await _frames(3)
 	await _click(desktop.wins.browser.actions.maximize)
+
+
+func _color_identity_views() -> void:
+	var before: Dictionary = desktop.game.export_snapshot()
+	var placements := {}
+	var ids := ["term0", "mail", "browser", "tools", "board"]
+	for id in ids:
+		if id == "term0":
+			await _open_terminal(0)
+		else:
+			await _open_app(id)
+		var win: Control = desktop.wins[id].win
+		placements[id] = Rect2(win.position, win.size)
+		await _capture("color-%s-active.png" % id)
+	# Deterministic placement makes active and inactive titlebars comparable in one frame.
+	for index in range(ids.size()):
+		var win: Control = desktop.wins[ids[index]].win
+		win.position = Vector2(65 + index * 95, 24 + index * 49)
+		win.size = Vector2(1030, 470)
+	await _frames(3)
+	await _capture("color-multiple-apps.png")
+	for id in ids:
+		var win: Control = desktop.wins[id].win
+		win.position = placements[id].position
+		win.size = placements[id].size
+	await _frames(3)
+	_check(desktop.game.export_snapshot() == before, "color comparison window setup preserves canonical world and goals")
+	observations.append({"stage": "color_identity", "apps": ids, "placement": "deterministic comparison setup; activation uses actual input", "world_unchanged": desktop.game.export_snapshot() == before})
 
 
 func _close_all_and_resume() -> void:

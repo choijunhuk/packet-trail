@@ -24,11 +24,11 @@ const C_BG := DesktopTheme.BG
 const C_PANEL := DesktopTheme.SURFACE
 const C_FIELD := DesktopTheme.FIELD
 const C_BAR := DesktopTheme.RAISED
-const C_BAR_ACTIVE := Color("294365")
+const C_BAR_ACTIVE := Color("3b4548")
 const C_LINE := DesktopTheme.LINE
 const C_TEXT := DesktopTheme.TEXT
 const C_DIM := DesktopTheme.MUTED
-const C_FAINT := Color("7e91ac")
+const C_FAINT := Color("9ca4a5")
 const C_TEAL := DesktopTheme.ACCENT
 const C_TEAL_DIM := DesktopTheme.ACCENT_SOFT
 const C_AMBER := DesktopTheme.WARNING
@@ -587,7 +587,7 @@ func _build_theme() -> void:
 	ui_theme.default_font_size = ui_size
 	ui_theme.set_stylebox("normal", "RichTextLabel", DesktopTheme.panel(C_FIELD, C_LINE, 5, 10))
 	ui_theme.set_color("default_color", "RichTextLabel", C_TEXT)
-	ui_theme.set_color("selection_color", "RichTextLabel", Color("315c93"))
+	ui_theme.set_color("selection_color", "RichTextLabel", Color("39544f"))
 	ui_theme.set_stylebox("focus", "RichTextLabel", StyleBoxEmpty.new())
 	ui_theme.set_stylebox("panel", "ScrollContainer", StyleBoxEmpty.new())
 	ui_theme.set_stylebox("panel", "AcceptDialog", DesktopTheme.panel(C_PANEL, C_TEAL, 8, 18))
@@ -632,6 +632,11 @@ func _font_apply() -> void:
 	ui_size = clampi(roundi(17.0 * font_scale) + font_step, 13, 34)
 	term_size = clampi(roundi(19.0 * font_scale) + font_step, 14, 36)
 	ui_theme.default_font_size = ui_size
+	ui_font.base_font = Localization.get_font()
+	terminal_font.base_font = Localization.get_mono_font()
+	for state in wins.values():
+		state.win.theme.default_font = ui_font
+		state.win.theme.default_font_size = ui_size
 	var kept: Array = []
 	for e in sized:
 		if is_instance_valid(e[0]):
@@ -818,13 +823,15 @@ func _build_shell() -> void:
 		_reg(button, "tooltip_text", _app_name_key(id))
 		_reg(button, "accessibility_name", _app_name_key(id))
 		button.add_theme_stylebox_override("normal", _sb(Color.TRANSPARENT, Color.TRANSPARENT, 0, 8, 6))
-		button.add_theme_stylebox_override("hover", _sb(Color(0.3, 0.48, 0.75, 0.18), Color(0.4, 0.6, 0.9, 0.25), 1, 8, 6))
+		button.add_theme_stylebox_override("hover", _sb(DesktopTheme.app_surface(id), DesktopTheme.app_accent(id), 1, 8, 6))
+		button.add_theme_stylebox_override("focus", _sb(Color.TRANSPARENT, DesktopTheme.app_accent(id), 2, 8, 6))
 		var stack := VBoxContainer.new()
 		stack.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		stack.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 		stack.offset_top = 8
 		var image := TextureRect.new()
 		image.texture = _desktop_icon(id)
+		image.modulate = DesktopTheme.app_accent(id)
 		image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		image.custom_minimum_size = Vector2(48, 48)
@@ -848,7 +855,7 @@ func _build_shell() -> void:
 	layer.resized.connect(_clamp_all)
 	add_child(layer)
 	top_panel = PanelContainer.new()
-	top_panel.add_theme_stylebox_override("panel", DesktopTheme.panel(Color("0c1728"), C_LINE, 0, 8))
+	top_panel.add_theme_stylebox_override("panel", DesktopTheme.panel(Color("1b1d20"), C_LINE, 0, 8))
 	top_panel.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
 	top_panel.offset_bottom = top_h
 	add_child(top_panel)
@@ -873,7 +880,7 @@ func _build_shell() -> void:
 		row.add_child(item)
 
 	task_panel = PanelContainer.new()
-	task_panel.add_theme_stylebox_override("panel", DesktopTheme.panel(Color("101b2c"), C_LINE, 0, 6))
+	task_panel.add_theme_stylebox_override("panel", DesktopTheme.panel(Color("1d1f22"), C_LINE, 0, 6))
 	task_panel.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	task_panel.offset_top = -task_h
 	add_child(task_panel)
@@ -1021,6 +1028,8 @@ func _build_launcher() -> void:
 		var button := _btn_raw("", "", _launch_app.bind(id))
 		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		button.icon = _desktop_icon(id)
+		button.add_theme_color_override("icon_normal_color", DesktopTheme.app_accent(id))
+		button.add_theme_color_override("icon_hover_color", DesktopTheme.app_accent(id))
 		button.expand_icon = true
 		button.add_theme_constant_override("icon_max_width", 28)
 		button.set_meta("app_id", id)
@@ -1537,6 +1546,8 @@ func _build_windows() -> void:
 
 func _make_window(id: String, title_key: String, repl: Dictionary, content: Control, focus: Control) -> void:
 	var win := Control.new()
+	var accent := DesktopTheme.app_accent(id)
+	win.theme = DesktopTheme.create(font_scale, accent)
 	win.mouse_filter = Control.MOUSE_FILTER_STOP
 	win.visible = false
 	win.set_meta("app_id", id)
@@ -1561,6 +1572,7 @@ func _make_window(id: String, title_key: String, repl: Dictionary, content: Cont
 	bar.add_child(bar_row)
 	var app_icon := TextureRect.new()
 	app_icon.texture = _desktop_icon(id)
+	app_icon.modulate = accent
 	app_icon.custom_minimum_size = Vector2(22, 22)
 	app_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	app_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -1610,6 +1622,22 @@ func _make_window(id: String, title_key: String, repl: Dictionary, content: Cont
 
 	wins[id] = {"win": win, "frame": frame, "bar": bar, "title": title, "focus": focus,
 			"state": "closed", "placed": false, "restore": Rect2(), "actions": actions}
+	var surface := DesktopTheme.app_surface(id)
+	var frame_off := sb_frame_off.duplicate() as StyleBoxFlat
+	frame_off.bg_color = surface
+	var frame_on := frame_off.duplicate() as StyleBoxFlat
+	frame_on.border_color = accent
+	var bar_off := sb_bar_off.duplicate() as StyleBoxFlat
+	bar_off.bg_color = C_BAR.lerp(accent, 0.12)
+	var bar_on := bar_off.duplicate() as StyleBoxFlat
+	bar_on.bg_color = C_BAR.lerp(accent, 0.26)
+	wins[id]["palette"] = {"frame_off": frame_off, "frame_on": frame_on, "bar_off": bar_off, "bar_on": bar_on}
+	frame.add_theme_stylebox_override("panel", frame_off)
+	bar.add_theme_stylebox_override("panel", bar_off)
+	for button in actions.values():
+		button.add_theme_stylebox_override("hover", DesktopTheme.panel(surface.lerp(accent, 0.16), Color.TRANSPARENT, 5, 5))
+		button.add_theme_stylebox_override("pressed", DesktopTheme.panel(surface.lerp(accent, 0.24), Color.TRANSPARENT, 5, 5))
+		button.add_theme_stylebox_override("focus", DesktopTheme.panel(Color.TRANSPARENT, accent, 5, 5))
 
 
 func _draw_grip(grip: Control) -> void:
@@ -1712,8 +1740,9 @@ func _activate(id: String, grab: bool) -> void:
 	win.move_to_front()
 	for k in wins:
 		var on: bool = k == id
-		wins[k]["frame"].add_theme_stylebox_override("panel", sb_frame_on if on else sb_frame_off)
-		wins[k]["bar"].add_theme_stylebox_override("panel", sb_bar_on if on else sb_bar_off)
+		var palette: Dictionary = wins[k]["palette"]
+		wins[k]["frame"].add_theme_stylebox_override("panel", palette.frame_on if on else palette.frame_off)
+		wins[k]["bar"].add_theme_stylebox_override("panel", palette.bar_on if on else palette.bar_off)
 	if id.begins_with("term"):
 		var t := int(id.substr(4))
 		if t != active_term:
@@ -2050,7 +2079,12 @@ func _update_taskbar() -> void:
 		var active: bool = id == active_id and state == "open"
 		button.tooltip_text = _t("UI_DESKTOP_TASK_TIP", {"name": title})
 		button.accessibility_name = _t("UI_DESKTOP_MINIMIZED" if state == "min" else "UI_DESKTOP_RUNNING", {"name": title})
-		button.add_theme_stylebox_override("normal", DesktopTheme.panel(C_BAR_ACTIVE if active else Color.TRANSPARENT, C_TEAL if active else Color.TRANSPARENT, 5, 5))
+		var accent := DesktopTheme.app_accent(id)
+		button.add_theme_stylebox_override("normal", DesktopTheme.panel(C_BAR.lerp(accent, 0.22) if active else Color.TRANSPARENT, accent if active else Color.TRANSPARENT, 5, 5))
+		button.add_theme_stylebox_override("hover", DesktopTheme.panel(C_BAR.lerp(accent, 0.15), accent, 5, 5))
+		button.add_theme_stylebox_override("focus", DesktopTheme.panel(Color.TRANSPARENT, accent, 5, 5))
+		button.add_theme_color_override("icon_normal_color", accent)
+		button.add_theme_color_override("icon_hover_color", accent)
 		button.modulate = Color.WHITE if state == "open" else Color(0.7, 0.78, 0.9)
 		if id.begins_with("term"):
 			button.text = str(int(id.substr(4)) + 1)
@@ -2087,12 +2121,13 @@ func _build_terminal(t: int) -> Control:
 		head.add_child(b)
 	col.add_child(head)
 	var out := _plain_text(true)
+	out.add_theme_stylebox_override("normal", DesktopTheme.panel(Color("141c18"), C_LINE, 5, 10))
 	# 맨 아래일 때만 따라가고, 위로 읽는 중이면 위치를 유지한다.
 	out.scroll_following = true
 	out.gui_input.connect(_on_term_out_input.bind(t))
 	col.add_child(out)
 	var row := HBoxContainer.new()
-	var prompt := _label("$", C_TEAL, -2, false, true)
+	var prompt := _label("$", DesktopTheme.app_accent("terminal"), -2, false, true)
 	row.add_child(prompt)
 	var input := LineEdit.new()
 	input.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -2352,7 +2387,7 @@ func _refresh_terminal(t: int) -> void:
 	input.context_menu_enabled = not pw
 	var prompt: Label = d["prompt"]
 	prompt.text = _t("UI_TERM_PASSWORD_PROMPT") if pw else _s(v, "prompt", "$")
-	prompt.add_theme_color_override("font_color", C_AMBER if pw else C_TEAL)
+	prompt.add_theme_color_override("font_color", C_AMBER if pw else DesktopTheme.app_accent("terminal"))
 	input.placeholder_text = _t("UI_TERM_PASSWORD_PLACEHOLDER") if pw else _t("UI_TERM_PLACEHOLDER")
 	var header: Label = d["header"]
 	header.text = _t("UI_TERM_HEADER", {"n": t + 1, "user": _s(v, "user"), "host": _s(v, "host"), "cwd": _s(v, "cwd")})
@@ -2383,7 +2418,7 @@ func _build_mail() -> Control:
 	mail_avatar_box = PanelContainer.new()
 	mail_avatar_box.custom_minimum_size = Vector2(80, 80)
 	mail_avatar_box.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
-	mail_avatar_box.add_theme_stylebox_override("panel", _sb(Color(0.085, 0.16, 0.175), C_TEAL_DIM.darkened(0.2), 1, 8, 3))
+	mail_avatar_box.add_theme_stylebox_override("panel", _sb(Color("42332b"), DesktopTheme.app_accent("mail"), 1, 8, 3))
 	mail_avatar_box.clip_contents = true
 	mail_avatar_tex = TextureRect.new()
 	mail_avatar_tex.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -2696,7 +2731,7 @@ func _build_browser() -> Control:
 	# The simulated site is a document surface, separate from browser controls.
 	br_site_page = PanelContainer.new()
 	br_site_page.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
-	br_site_page.add_theme_stylebox_override("panel", DesktopTheme.panel(Color("edf1f5"), Color("c9d3df"), 3, 0))
+	br_site_page.add_theme_stylebox_override("panel", DesktopTheme.panel(Color("f3eee3"), Color("d1c8b9"), 3, 0))
 	br_site_margin = MarginContainer.new()
 	br_site_margin.add_theme_constant_override("margin_top", 18)
 	br_site_margin.add_theme_constant_override("margin_bottom", 16)
@@ -2710,25 +2745,25 @@ func _build_browser() -> Control:
 	br_site_host.scroll_active = false
 	br_site_host.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	br_site_host.add_theme_stylebox_override("normal", DesktopTheme.panel(Color.TRANSPARENT, Color.TRANSPARENT, 0, 0))
-	br_site_host.add_theme_color_override("default_color", Color("34516f"))
+	br_site_host.add_theme_color_override("default_color", Color("665177"))
 	_size(br_site_host, -2)
 	article.add_child(br_site_host)
 	var rule := HSeparator.new()
-	rule.add_theme_color_override("separator", Color("c4cfdb"))
+	rule.add_theme_color_override("separator", Color("cfc3b0"))
 	article.add_child(rule)
-	br_title = _label("", Color("172c43"), 6, true)
+	br_title = _label("", Color("342b3e"), 6, true)
 	article.add_child(br_title)
 	br_body = _plain_text()
 	br_body.fit_content = true
 	br_body.scroll_active = false
 	br_body.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	br_body.add_theme_stylebox_override("normal", DesktopTheme.panel(Color.TRANSPARENT, Color.TRANSPARENT, 0, 0))
-	br_body.add_theme_color_override("default_color", Color("243b53"))
+	br_body.add_theme_color_override("default_color", Color("393536"))
 	br_body.add_theme_color_override("selection_color", Color("b3d4f4"))
 	br_body.custom_minimum_size = Vector2(0, 120)
 	article.add_child(br_body)
 	var links_wrap := VBoxContainer.new()
-	var link_heading := _klabel("UI_BR_LINKS", Color("526b83"), -3)
+	var link_heading := _klabel("UI_BR_LINKS", Color("665d68"), -3)
 	links_wrap.add_child(link_heading)
 	br_links = VBoxContainer.new()
 	br_links.add_theme_constant_override("separation", 4)
@@ -2881,15 +2916,15 @@ func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool, from_cache
 			lb.alignment = HORIZONTAL_ALIGNMENT_LEFT
 			lb.flat = true
 			lb.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-			lb.add_theme_color_override("font_color", Color("1c588c"))
-			lb.add_theme_color_override("font_hover_color", Color("103c65"))
-			lb.add_theme_color_override("font_pressed_color", Color("103c65"))
-			lb.add_theme_stylebox_override("hover", DesktopTheme.panel(Color("dce7f1"), Color.TRANSPARENT, 3, 6))
-			lb.add_theme_stylebox_override("pressed", DesktopTheme.panel(Color("cedeed"), Color.TRANSPARENT, 3, 6))
+			lb.add_theme_color_override("font_color", Color("644778"))
+			lb.add_theme_color_override("font_hover_color", Color("4a315c"))
+			lb.add_theme_color_override("font_pressed_color", Color("4a315c"))
+			lb.add_theme_stylebox_override("hover", DesktopTheme.panel(Color("e6ddeb"), Color.TRANSPARENT, 3, 6))
+			lb.add_theme_stylebox_override("pressed", DesktopTheme.panel(Color("ddd0e3"), Color.TRANSPARENT, 3, 6))
 			_size(lb, -2)
 			br_links.add_child(lb)
 		if br_links.get_child_count() == 0:
-			br_links.add_child(_label(_t("UI_BR_NO_LINKS"), Color("526b83"), -3))
+			br_links.add_child(_label(_t("UI_BR_NO_LINKS"), Color("665d68"), -3))
 		br_archive.visible = _b(r, "can_archive")
 		br_status.text = _t("UI_BR_STATUS_OK", {"status": status})
 		br_status.add_theme_color_override("font_color", C_DIM if status < 400 else C_AMBER)
@@ -2901,7 +2936,7 @@ func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool, from_cache
 		br_title.text = _br_error_title(status)
 		var body := _s(r, "body", _s(r, "text"))
 		_set_plain(br_body, body if not body.is_empty() else _t("UI_BR_ERR_EMPTY"))
-		br_links.add_child(_label(_t("UI_BR_NO_LINKS"), Color("526b83"), -3))
+		br_links.add_child(_label(_t("UI_BR_NO_LINKS"), Color("665d68"), -3))
 		br_status.text = _t("UI_BR_STATUS_ERR", {"code": code, "status": status, "url": url})
 		br_status.add_theme_color_override("font_color", C_AMBER)
 	br_status.tooltip_text = br_status.text
