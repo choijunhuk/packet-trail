@@ -4,7 +4,10 @@
 
 ## 현재 구현과 검증
 
-최신은 `1.3.1-rc1` 색상 개선판이다. 공통차콜·터미널민트/도구청록/메일구리/브라우저보라/파일파랑/보드모래색을 기존위젯에연결했다. 실행소스 `6262d5aefbde1db991360f4df7993a24d4af33c8`, Godot tree `384a795fd17dfb13dc5b14bfad542c702d99ea53`. [현재배포](https://github.com/choijunhuk/packet-trail/releases/tag/v1.3.1-rc1), [기록](implementation/2026-11-06-color-refinement.md), [3OS CI](https://github.com/choijunhuk/packet-trail/actions/runs/42179897714). 전체gate/대비44/nativepreview1270·71PNG/PCK각509와Mac시작·3D이동·종료를확인했다. 아래1.3전편GUI기록은선행버전근거다.
+최신 작업은 `1.4.0-rc1` 선택 의뢰·생활 공간 확장이다. 실행 소스 `44c12d59e169d67a1ce00ffe034ecbe846dcd582`, Godot tree `6dae489404cf85350c80c4c78301e33611bb4e75`. [기록](implementation/2026-11-06-optional-living.md), [배포](https://github.com/choijunhuk/packet-trail/releases/tag/v1.4.0-rc1), [CI](https://github.com/choijunhuk/packet-trail/actions/runs/42213402265). 본편4선택/47사건/94경로는 그대로이며 I01/I02는 사건 보드의 독립 선택 의뢰다. 안뜰·배송 수령·통신함 일감·벤치·고정 데스크 장착은 별도 생활 저장을 쓴다. 전체 gate, 본편 GUI6,286/47사건/4결말, 선택·생활 GUI688, 생활1,068, 의뢰복구41, 생활UI31, 세 PCK 각564를 확인했다. 독립 코드 검토의 두 결함을 재현·수리했고 Claude 두 검토 호출은 시간 제한으로 완료 응답이 없었다.
+
+
+이전 `1.3.1-rc1`은 색상 개선판이다. 공통차콜·터미널민트/도구청록/메일구리/브라우저보라/파일파랑/보드모래색을 기존위젯에연결했다. 실행소스 `6262d5aefbde1db991360f4df7993a24d4af33c8`, Godot tree `384a795fd17dfb13dc5b14bfad542c702d99ea53`. [현재배포](https://github.com/choijunhuk/packet-trail/releases/tag/v1.3.1-rc1), [기록](implementation/2026-11-06-color-refinement.md), [3OS CI](https://github.com/choijunhuk/packet-trail/actions/runs/42179897714). 전체gate/대비44/nativepreview1270·71PNG/PCK각509와Mac시작·3D이동·종료를확인했다. 아래1.3전편GUI기록은선행버전근거다.
 
 
 `1.3.0-rc1`은 기존3편44사건/88해법과 v2 저장을 보존하고 별도 종합 도전3사건/6해법과 분석 작업대를 추가했다. 관찰·행동·결과, 공개기록상세·펼침상태, 현재목표이동, 안내/중요오류알림을 정리했다. [다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.3.0-rc1) · [실행 기록](implementation/2026-11-06-challenge-workbench.md) · [발전 계획](EVOLUTION_PLAN.md).
