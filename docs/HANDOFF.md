@@ -4,9 +4,11 @@
 
 ## 현재 구현과 검증
 
-`1.2.1-rc1`은 기존44사건과 데스크톱을 보존하고 Nightfox 사이트 문서/큰 글씨 폼·터미널 접두어 기록·브라우저 탐색 키·도구 발견성을 개선했다. 경보 상한이 접속 차단을 한다는 부정확한 설명을6언어에서 고쳤다. 가이드/표준/자율은 여전히 도움 수준이며 실제 압박 난이도는 별도 사건 규칙/저장 호환 설계가 필요하다. [다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.2.1-rc1) · [이번 기록](implementation/2026-11-06-immersion-quality.md) · [DESIGN](../DESIGN.md).
+`1.3.0-rc1`은 기존3편44사건/88해법과 v2 저장을 보존하고 별도 종합 도전3사건/6해법과 분석 작업대를 추가했다. 관찰·행동·결과, 공개기록상세·펼침상태, 현재목표이동, 안내/중요오류알림을 정리했다. [다운로드](https://github.com/choijunhuk/packet-trail/releases/tag/v1.3.0-rc1) · [실행 기록](implementation/2026-11-06-challenge-workbench.md) · [발전 계획](EVOLUTION_PLAN.md).
 
-실행 소스 `210b8fa5846e07015a38e84c66d06f17a4c00f15`, Godot tree `dd6dc228fc2efd3f06aa402529e12914dc6096b3`. [CI42165926526](https://github.com/choijunhuk/packet-trail/actions/runs/42165926526)의 세OS가 모두 성공했다. 로컬 whole gate·공개88해법·native full5436/0·44사건/세결말, 별도 preview926/0·49PNG·큰글씨KO/DE폼21조작, Linux부분468/0·M01한사건, PCK각478/0을 구분해 확인했다. 실제 Mac ZIP의 시작/설정/취소/종료와 기존사용자파일7개 보존도 확인했다. 새 브라우저 전체 물리OS 입력이나 WindowsGUI를 확인한 것은 아니다. 태그는 문서 마감 커밋일 수 있으며 BUILD-INFO의 실행 소스와 Godot tree 동등을 확인한다.
+실행 소스 `5fe9c9c7463c5005dcb786a51f7fa15f5c60c038`, Godot tree `a73d0271ec2d158902a375c6577c7005df8c9ca5`. [CI42173382639](https://github.com/choijunhuk/packet-trail/actions/runs/42173382639)의 세OS가 모두 성공했다. 전체gate/Python51·public15,059/94경로·독립686·workbench78, 실제native6,284/47사건/4결말과preview1,237/65PNG, 세PCK각509/0을 확인했다. Linux부분GUI516/1사건/0결말은 전편GUI와 다르다. Mac 최종ZIP의4선택·4지원·취소·종료는 실제OS로 확인했으며 기존사용자파일7개와새도전slot4보호경로가 같았다. tag/문서커밋은 BUILD-INFO에서 실행소스와 구분한다.
+
+새 challenge는 midnight_challenge@1과 challenge_01.json으로 독립된다. current_content/allowlist_policy는 새정의만 사용하는 opt-in 모델 계약이며 기존basis/통지의미를 보존했다. 재현된 파일오염 완료오판·인증탐색 복구·typed배열입력 문제는 실제RED→GREEN으로 수리했다. 새지원선호키는 구버전설정검증기에서거절될수 있고 기존캠페인호환과 별개다. 구현은 Sol6.1 high/xhigh, Astra는 통합/검증이며 같은결함반복실패로 구현을 전환한 사례는 없었다.
 
 이전 [1.1 배포 기록](implementation/2026-11-05-three-perspectives.md)·[1.0 배포 기록](implementation/2026-11-05-full-production.md)과 원본 저장은 보존한다. 공개3편의 진도는 독립 고정 슬롯이며, 구판 진행은 동결한 콘텐츠의 별도 이어하기 사본에서 계속한다. 기존 캠페인 v2 저장 구조는 그대로다. 새 지원 선호 키를 구1.1에서 읽으면 설정이 기본값으로 보일 수 있으므로 선호 파일의 역방향 호환과 캠페인 호환을 혼동하지 않는다. 사람이 직접8~12h·재미·원어민 번역·물리IME·WindowsGUI·장시간 청취를 검증했다는 뜻으로 자동 통과를 확대하지 않는다.
 

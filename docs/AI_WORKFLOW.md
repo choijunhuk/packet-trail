@@ -275,3 +275,5 @@ C24는 로컬 Claude CLI2.1.311에 고정15,710자 source/design excerpt를 제�
 C25: 로컬CLI2.1.311, 요청/실제 `claude-opus-5-5/high`만,323.960초·exit0·is_error=false·permission_denials=[]·원본15/15SHA불변. 고정162,974자 source/design snapshot만 전달했고 tools없음·safe/restricted·strict emptyMCP·noChrome·noPersistence를 유지했다. 원문/argv/모델사용과판정은 `.omx/artifacts/challenge-workbench/advisor/`, 재사용요약은 `.omx/artifacts/claude-challenge-workbench-20261106.md`다. 정적REVISE C1/I3/M6는 실행결과가 아니다.
 
 부모가 실제재현을 요구해 QA571/9 RED를 얻었다. X02내용오염후권한복구 완료오판, X01baseline탐색후인증복구, X02통지범위제어의실제의미를 확인했다. 코어의 새 opt-in 규칙과 새 콘텐츠만 수리해 기존정의/receipt basis를 보존했고 실제전체94해법15,059/0·독립686/0으로통과했다. X03의단일센서해법은 정적근거로복합추론설계를보완하고새단일센서거절/별도감사권한/원시시각역전검사를추가했다. 경보/도움설정과실제규칙은분리한다. 알림이완전히없어진다는의견은상태줄/벨출력을확인해과장을완화하고실제중요오류표시를보강했다.
+
+최종1.3 결과: Sol6.1 제품수리를거쳐전체gate/Python51·독립686·UIworkbench78·native6,284(47사건/4결말)·preview1,237(65PNG)·실제PCK각509·세OS CI42173382639 통과. 시각검토는87/revise→92/pass. C25뒤의번역토큰문제는감사계정/암호의실제줄바꿈으로문구를고쳐원검사를유지했다. 제품구현을Astra로전환한사례는없으며RootAstra의통합·검증과구분한다. 실제 모델의제공자측별도계측은Claude modelUsage에만있고 native하위에이전트는요청설정으로기록한다.
