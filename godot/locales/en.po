@@ -35,6 +35,9 @@ msgstr "Minseo"
 msgid "C04_NAME"
 msgstr "Taegyeong"
 
+msgid "CAMPAIGN_CHALLENGE"
+msgstr "Combined challenge"
+
 msgid "CAMPAIGN_COMPLETE"
 msgstr "The midnight records are connected."
 
@@ -409,6 +412,243 @@ msgstr "Cancel"
 
 msgid "CASE_BOARD"
 msgstr "Case board"
+
+msgid "CH1_ENDING_TITLE"
+msgstr "Verified Joint Handoff"
+
+msgid "CH1_PACK_SUMMARY"
+msgstr "Three independent advanced cases combining access control, deployment recovery and counterevidence."
+
+msgid "CH1_PACK_TITLE"
+msgstr "Joint Challenge · Three Handoffs"
+
+msgid "CH1_X01_ABSTRACTION"
+msgstr "This independent challenge uses registered accounts, requests, files and observations. Other valid solutions and manual help remain available."
+
+msgid "CH1_X01_BRIEF"
+msgstr "This is the first joint-response exercise. Receipt records are exposed to unrelated accounts, while sign-in failures repeat at the same entrance. Closing every entrance also removes legitimate citizen work. Verify receipt access and failed-attempt limits together under one configuration.\n\nThe original route needs separate ownership and per-account retry controls. The approved gateway has fixed delegation scopes and its own retry limit, so legitimate work may be migrated there instead. Observe the repeated-failure samples and verify a limiting response on the final sample. An account already tested may be limited on an earlier sample too. Another citizen must still be able to sign in.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X01_CASE_FAILED_1"
+msgstr "Original entrance repeated failure 1"
+
+msgid "CH1_X01_CASE_FAILED_2"
+msgstr "Original entrance repeated failure 2"
+
+msgid "CH1_X01_CASE_FAILED_3"
+msgstr "Original entrance repeated failure 3"
+
+msgid "CH1_X01_CASE_FOREIGN_DIRECT"
+msgstr "Unrelated Account at the Original Entrance"
+
+msgid "CH1_X01_CASE_FOREIGN_GATEWAY"
+msgstr "Unrelated Account at the Approved Route"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_1"
+msgstr "Gateway repeated failure 1"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_2"
+msgstr "Gateway repeated failure 2"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_3"
+msgstr "Gateway repeated failure 3"
+
+msgid "CH1_X01_CASE_LEGITIMATE"
+msgstr "Another Citizen's Valid Sign-in"
+
+msgid "CH1_X01_CASE_OWN_A"
+msgstr "Citizen A's Own Receipt"
+
+msgid "CH1_X01_CASE_OWN_B"
+msgstr "Citizen B's Own Receipt"
+
+msgid "CH1_X01_CASE_STAFF"
+msgstr "Assigned Staff's Delegated Receipt"
+
+msgid "CH1_X01_CONTROL_AUTH_RETRY"
+msgstr "Limit Repeated Sign-ins per Account"
+
+msgid "CH1_X01_CONTROL_DIRECT_OPEN"
+msgstr "Enable Original Work Entrance"
+
+msgid "CH1_X01_CONTROL_GATEWAY_OPEN"
+msgstr "Enable Approved Route"
+
+msgid "CH1_X01_CONTROL_OWNER_CHECK"
+msgstr "Receipt Ownership Check"
+
+msgid "CH1_X01_DESK_NAME"
+msgstr "A Door That Must Stay Open Desk"
+
+msgid "CH1_X01_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "CH1_X01_GOAL"
+msgstr "Preserve legitimate receipt access, staff work and sign-in while limiting unauthorized reads and repeated failures on both routes."
+
+msgid "CH1_X01_HINT_1"
+msgstr "Ownership and retry limits are separate controls. Fixing only one cannot satisfy every outcome."
+
+msgid "CH1_X01_HINT_2"
+msgstr "Failure samples at each entrance must be refused, with the final sample limited. Earlier limiting caused by your investigation is also a valid refusal. Legitimate sign-in uses a different account."
+
+msgid "CH1_X01_HINT_3"
+msgstr "Repair the original entrance, or close only that entrance and migrate legitimate receipt/sign-in work to the approved gateway. Keep the gateway open."
+
+msgid "CH1_X01_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "CH1_X01_LIMIT"
+msgstr "This does not attack real servers or establish protection against every attack. Reading has no time penalty, and mistaken settings can be repaired."
+
+msgid "CH1_X01_PRINCIPLE"
+msgstr "Availability and authorization scope must be checked together. Retry limiting is an authentication outcome, distinct from the global alert indicator."
+
+msgid "CH1_X01_REPLY"
+msgstr "Legitimate citizen and staff work remains, while unrelated reads and repeated sign-ins are refused. The handoff records that real work survived, whichever entrance you chose. The next site proposes widening deployment permissions."
+
+msgid "CH1_X01_SENDER"
+msgstr "Joint Night Response Desk"
+
+msgid "CH1_X01_TITLE"
+msgstr "A Door That Must Stay Open"
+
+msgid "CH1_X02_ABSTRACTION"
+msgstr "This independent challenge uses registered accounts, requests, files and observations. Other valid solutions and manual help remain available."
+
+msgid "CH1_X02_BRIEF"
+msgstr "The deployment account cannot update its status file, so the night notice has stopped. A proposal would open both folder and file to everyone, including unrelated accounts at the same entrance. Verify legitimate reads, writes and notification delivery alongside refusal of unrelated writes.\n\nOnly the deploy group can traverse the original folder and write its file. Check the worker's groups, or use the approved workbench already available to jobs. Notifications may target only ward. Primary notification delivery is currently off; the approved standby can be enabled separately.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X02_CASE_FOREIGN_APPROVED"
+msgstr "Unrelated Write at the Approved Route"
+
+msgid "CH1_X02_CASE_FOREIGN_WRITE"
+msgstr "Unrelated Account Modifying Deployment"
+
+msgid "CH1_X02_CASE_INTERNAL_TARGET"
+msgstr "Out-of-scope Notification Target: x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_NOTIFY"
+msgstr "Legitimate ward Notification"
+
+msgid "CH1_X02_CASE_READ"
+msgstr "Deployment Account Reading Its Status"
+
+msgid "CH1_X02_CASE_STANDBY_TARGET"
+msgstr "Out-of-scope Notification Target: gateway.x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_WRITE"
+msgstr "Deployment Account Writing Its Work Result"
+
+msgid "CH1_X02_CONTROL_NOTICE_NOTIFY_OPEN"
+msgstr "Enable Primary Notification"
+
+msgid "CH1_X02_CONTROL_NOTICE_STANDBY_OPEN"
+msgstr "Enable Approved Standby Notification"
+
+msgid "CH1_X02_CONTROL_NOTICE_TARGET_SCOPE"
+msgstr "Constrain Notifications to ward"
+
+msgid "CH1_X02_DESK_NAME"
+msgstr "Keep the Deployment Working Desk"
+
+msgid "CH1_X02_DIRECTORY_MODE"
+msgstr "Deployment Folder Traversal Rights"
+
+msgid "CH1_X02_FILE_MODE"
+msgstr "Work Result File Rights"
+
+msgid "CH1_X02_GATEWAY_NAME"
+msgstr "Approved Work Route"
+
+msgid "CH1_X02_GOAL"
+msgstr "Restore legitimate status reads/writes and ward delivery while refusing unrelated modifications and out-of-scope notifications."
+
+msgid "CH1_X02_HINT_1"
+msgstr "Folder traversal and file writing are separate permissions. Check the service account's groups instead of opening access to everyone."
+
+msgid "CH1_X02_HINT_2"
+msgstr "Keep original permissions and assign deploy membership, or migrate the job to the approved workbench file."
+
+msgid "CH1_X02_HINT_3"
+msgstr "Observe allowed ward delivery and refused internal targets separately. Closing the route you used invalidates an earlier success."
+
+msgid "CH1_X02_JOB_GROUPS"
+msgstr "Required Deployment Account Groups"
+
+msgid "CH1_X02_LAB_NAME"
+msgstr "Live Work and Response Checks"
+
+msgid "CH1_X02_LIMIT"
+msgstr "This does not attack real servers or establish protection against every attack. Reading has no time penalty, and mistaken settings can be repaired."
+
+msgid "CH1_X02_PRINCIPLE"
+msgstr "Least privilege and continued business work must hold together. Approved alternative file and delivery routes are valid when they actually work."
+
+msgid "CH1_X02_REPLY"
+msgstr "The permitted work result exists in a real virtual file and the ward notice was delivered. Unrelated writes and internal-target misuse were refused. The final handoff begins by checking an assumption that one address meant one session."
+
+msgid "CH1_X02_SENDER"
+msgstr "Joint Night Response Desk"
+
+msgid "CH1_X02_TITLE"
+msgstr "Keep the Deployment Working"
+
+msgid "CH1_X03_ABSTRACTION"
+msgstr "This independent challenge uses registered accounts, requests, files and observations. Other valid solutions and manual help remain available."
+
+msgid "CH1_X03_BRIEF"
+msgstr "A preliminary report treats two records at one relay address with matching client labels as one session. Those labels were supplied by clients, and the source clocks differ. Do not turn a session inference into a person's identity: hand off a supported connection and counterevidence that identify the next observation point.\n\nThe first field window contains only a shared address and the same client-claimed night-worker label. The latest field window has only rotation; receiver records have departure and the other session, so investigate them together. The independent audit export requires the separate auditor account below. Check server-issued S1/S2, rotation-before-departure after clock correction, and N03 forwarding to vault. Choose between vault and shared-address observation by following the actual route.\n\nSeparate auditor account\n\nauditor@x03.challenge.packet.test\naudit-custody\n\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X03_DESK_NAME"
+msgstr "Different Sessions at One Address Desk"
+
+msgid "CH1_X03_GOAL"
+msgstr "Refute the preliminary same-session inference, support rotation-before-departure and forwarding to vault, and hand off the next observation point."
+
+msgid "CH1_X03_HINT_1"
+msgstr "A shared address and client label are not server-issued session identifiers. Check provenance and marker authority."
+
+msgid "CH1_X03_HINT_2"
+msgstr "Comparing field rotation at130–132 with receiver departure at105–107 directly reverses their order. Subtract each source clock offset before comparing the intervals."
+
+msgid "CH1_X03_HINT_3"
+msgstr "Use the current field window together with receiver records, or connect as auditor for the independent audit export. Support before and forwarded_to, collect counterevidence to the initial same_session claim, and hand off to vault observation."
+
+msgid "CH1_X03_LIMIT"
+msgstr "This does not attack real servers or establish protection against every attack. Reading has no time penalty, and mistaken settings can be repaired."
+
+msgid "CH1_X03_PRINCIPLE"
+msgstr "Evaluate connections using custody sources, clock intervals and server-issued markers. A shared IP alone establishes neither one session nor one person."
+
+msgid "CH1_X03_PRIOR"
+msgstr "Preliminary Same-session Inference from a Shared Address"
+
+msgid "CH1_X03_REPLY"
+msgstr "Server-issued records refuted the preliminary same-session claim. Sourced observations supported the time order and forwarding to vault. The next investigation is narrower without asserting a person's identity. The three-case handoff is complete."
+
+msgid "CH1_X03_SENDER"
+msgstr "Joint Night Response Desk"
+
+msgid "CH1_X03_SENSOR_ADDRESS_WATCH"
+msgstr "Next Observation at Shared Address"
+
+msgid "CH1_X03_SENSOR_AUDIT"
+msgstr "Approved Receiver Audit Export"
+
+msgid "CH1_X03_SENSOR_FIELD"
+msgstr "Field Record Windows"
+
+msgid "CH1_X03_SENSOR_RECEIVER"
+msgstr "Receiver Handoff Records"
+
+msgid "CH1_X03_SENSOR_VAULT_WATCH"
+msgstr "Next Observation at vault"
+
+msgid "CH1_X03_TITLE"
+msgstr "Different Sessions at One Address"
+
+msgid "CH1_X03_TOOL_NAME"
+msgstr "Joint Observations and Counterevidence"
 
 msgid "CLOSE"
 msgstr "Close"
@@ -2842,6 +3082,9 @@ msgstr "{main} main · {optional} optional"
 
 msgid "LOBBY_CHOOSE_STORY"
 msgstr "Choose your role for tonight."
+
+msgid "LOBBY_ROLE_CHALLENGE"
+msgstr "Advanced cases combine intrusion, defense and investigation. Learn the basic controls before attempting them."
 
 msgid "LOBBY_ROLE_DEFENDER"
 msgstr "Contain threats while keeping legitimate work running."
@@ -7343,6 +7586,9 @@ msgstr "This tool is not part of the current case."
 msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
 msgstr "Upload accepted at step"
 
+msgid "UI_TOOL_FIELD_ACCOUNT_ID"
+msgstr "Account identifier"
+
 msgid "UI_TOOL_FIELD_ACQUISITION"
 msgstr "Acquisition"
 
@@ -7369,6 +7615,9 @@ msgstr "Business effect"
 
 msgid "UI_TOOL_FIELD_CALL_STACK"
 msgstr "Call stack"
+
+msgid "UI_TOOL_FIELD_CAN_ADVANCE"
+msgstr "Next observation available"
 
 msgid "UI_TOOL_FIELD_CASE_ID"
 msgstr "Request or input case"
@@ -7448,6 +7697,9 @@ msgstr "Function"
 msgid "UI_TOOL_FIELD_GROUP"
 msgstr "Policy group"
 
+msgid "UI_TOOL_FIELD_HOST_ID"
+msgstr "Host identifier"
+
 msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
 msgstr "Hypothesis name"
 
@@ -7481,6 +7733,9 @@ msgstr "MIME type"
 msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
 msgstr "Next vantage point"
 
+msgid "UI_TOOL_FIELD_NORMAL"
+msgstr "Normal business"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "Object ID"
 
@@ -7495,6 +7750,9 @@ msgstr "Observed time interval"
 
 msgid "UI_TOOL_FIELD_OP"
 msgstr "Instruction"
+
+msgid "UI_TOOL_FIELD_OPTIONS"
+msgstr "Available values"
 
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "Origin"
@@ -7517,6 +7775,9 @@ msgstr "File path"
 msgid "UI_TOOL_FIELD_PC"
 msgstr "Program counter"
 
+msgid "UI_TOOL_FIELD_POLICY"
+msgstr "Applied policy"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "Provenance"
 
@@ -7538,8 +7799,14 @@ msgstr "Source register"
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "Virtual registers"
 
+msgid "UI_TOOL_FIELD_RELATION"
+msgstr "Relationship"
+
 msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
 msgstr "Revised claim"
+
+msgid "UI_TOOL_FIELD_REQUEST_ID"
+msgstr "Request identifier"
 
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "Request tag"
@@ -7553,11 +7820,17 @@ msgstr "Second entity"
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "Request route"
 
+msgid "UI_TOOL_FIELD_ROUTE_OPTIONS"
+msgstr "Available routes"
+
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "Sampling"
 
 msgid "UI_TOOL_FIELD_SATISFIED"
 msgstr "Condition met"
+
+msgid "UI_TOOL_FIELD_SCOPE"
+msgstr "Observation scope"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "Section"
@@ -7604,6 +7877,9 @@ msgstr "Target host"
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "True branch"
 
+msgid "UI_TOOL_FIELD_THREAT"
+msgstr "Threat request"
+
 msgid "UI_TOOL_FIELD_TICK"
 msgstr "Event step"
 
@@ -7648,6 +7924,9 @@ msgstr "Visible information"
 
 msgid "UI_TOOL_FIELD_WINDOW"
 msgstr "Observation window"
+
+msgid "UI_TOOL_FIELD_WINDOW_INDEX"
+msgstr "Current observation window"
 
 msgid "UI_TOOL_FILTER"
 msgstr "Filter"
@@ -7939,3 +8218,15 @@ msgstr "Minimize"
 
 msgid "UI_WIN_TERMINAL_N"
 msgstr "Terminal {n}"
+
+msgid "UI_WORKBENCH_EXPAND_RECORDS"
+msgstr "Expand or collapse this observation section. Select a row to inspect all its fields."
+
+msgid "UI_WORKBENCH_NO_DESCRIPTION"
+msgstr "Review the observations, enter an action or hypothesis, then compare the result."
+
+msgid "UI_WORKBENCH_OPEN_GOALS"
+msgstr "View current case objectives"
+
+msgid "UI_WORKBENCH_RECORD_DETAIL_HINT"
+msgstr "Select a row to inspect its full record, including identifiers and sources."

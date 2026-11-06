@@ -5782,5 +5782,149 @@
     "四个终端均已打开，请通过任务栏切换。",
     "Las cuatro terminales están abiertas. Cambia entre ellas en la barra de tareas.",
     "Alle vier Terminals sind offen. Wechsle über die Taskleiste zwischen ihnen."
+  ],
+  "CAMPAIGN_CHALLENGE": [
+    "종합 도전",
+    "Combined challenge",
+    "複合チャレンジ",
+    "综合挑战",
+    "Desafío combinado",
+    "Kombinierte Herausforderung"
+  ],
+  "LOBBY_ROLE_CHALLENGE": [
+    "침투·방어·추적을 조합하는 고급 사건입니다. 기본 조작을 익힌 뒤 도전하세요.",
+    "Advanced cases combine intrusion, defense and investigation. Learn the basic controls before attempting them.",
+    "侵入・防御・調査を組み合わせる上級事件です。基本操作を覚えてから挑戦してください。",
+    "进阶案件结合入侵、防御与调查。请先熟悉基本操作，再尝试挑战。",
+    "Casos avanzados que combinan intrusión, defensa e investigación. Aprende los controles básicos antes de intentarlos.",
+    "Fortgeschrittene Fälle verbinden Eindringen, Abwehr und Ermittlung. Lerne zuerst die grundlegende Bedienung."
+  ],
+  "UI_WORKBENCH_OPEN_GOALS": [
+    "현재 사건의 목표 보기",
+    "View current case objectives",
+    "現在の事件の目標を見る",
+    "查看当前案件目标",
+    "Ver objetivos del caso actual",
+    "Ziele des aktuellen Falls ansehen"
+  ],
+  "UI_WORKBENCH_EXPAND_RECORDS": [
+    "관측 구역을 펼치거나 접습니다. 행을 선택하면 전체 필드를 확인할 수 있습니다.",
+    "Expand or collapse this observation section. Select a row to inspect all its fields.",
+    "この観測区画を開閉します。行を選ぶと全フィールドを確認できます。",
+    "展开或收起此观测区域。选择一行可查看全部字段。",
+    "Expande o contrae esta sección de observaciones. Selecciona una fila para ver todos sus campos.",
+    "Diesen Beobachtungsbereich auf- oder zuklappen. Wähle eine Zeile, um alle Felder einzusehen."
+  ],
+  "UI_TOOL_FIELD_WINDOW_INDEX": [
+    "현재 관측 순서",
+    "Current observation window",
+    "現在の観測順序",
+    "当前观测窗口",
+    "Ventana de observación actual",
+    "Aktuelles Beobachtungsfenster"
+  ],
+  "UI_TOOL_FIELD_CAN_ADVANCE": [
+    "다음 관측 가능",
+    "Next observation available",
+    "次の観測が可能",
+    "可进行下一次观测",
+    "Siguiente observación disponible",
+    "Nächste Beobachtung verfügbar"
+  ],
+  "UI_TOOL_FIELD_SCOPE": [
+    "관측 범위",
+    "Observation scope",
+    "観測範囲",
+    "观测范围",
+    "Ámbito de observación",
+    "Beobachtungsumfang"
+  ],
+  "UI_TOOL_FIELD_RELATION": [
+    "연결 관계",
+    "Relationship",
+    "関連",
+    "关联关系",
+    "Relación",
+    "Beziehung"
+  ],
+  "UI_TOOL_FIELD_NORMAL": [
+    "정상 업무",
+    "Normal business",
+    "通常業務",
+    "正常业务",
+    "Actividad normal",
+    "Normaler Geschäftsbetrieb"
+  ],
+  "UI_TOOL_FIELD_THREAT": [
+    "위협 요청",
+    "Threat request",
+    "脅威リクエスト",
+    "威胁请求",
+    "Solicitud amenazante",
+    "Bedrohliche Anfrage"
+  ],
+  "UI_TOOL_FIELD_REQUEST_ID": [
+    "요청 식별자",
+    "Request identifier",
+    "リクエスト識別子",
+    "请求标识符",
+    "Identificador de solicitud",
+    "Anfragekennung"
+  ],
+  "UI_TOOL_FIELD_POLICY": [
+    "적용 정책",
+    "Applied policy",
+    "適用ポリシー",
+    "应用策略",
+    "Política aplicada",
+    "Angewandte Richtlinie"
+  ],
+  "UI_TOOL_FIELD_HOST_ID": [
+    "호스트 식별자",
+    "Host identifier",
+    "ホスト識別子",
+    "主机标识符",
+    "Identificador de host",
+    "Hostkennung"
+  ],
+  "UI_TOOL_FIELD_ACCOUNT_ID": [
+    "계정 식별자",
+    "Account identifier",
+    "アカウント識別子",
+    "账户标识符",
+    "Identificador de cuenta",
+    "Kontokennung"
+  ],
+  "UI_TOOL_FIELD_OPTIONS": [
+    "선택 가능한 값",
+    "Available values",
+    "選択可能な値",
+    "可选值",
+    "Valores disponibles",
+    "Verfügbare Werte"
+  ],
+  "UI_TOOL_FIELD_ROUTE_OPTIONS": [
+    "선택 가능한 경로",
+    "Available routes",
+    "選択可能な経路",
+    "可选路径",
+    "Rutas disponibles",
+    "Verfügbare Wege"
+  ],
+  "UI_WORKBENCH_RECORD_DETAIL_HINT": [
+    "행을 선택하면 식별자와 출처를 포함한 전체 기록을 확인할 수 있습니다.",
+    "Select a row to inspect its full record, including identifiers and sources.",
+    "行を選ぶと、識別子や出典を含む記録全体を確認できます。",
+    "选择一行可查看包含标识符和来源的完整记录。",
+    "Selecciona una fila para ver el registro completo, incluidos identificadores y fuentes.",
+    "Wähle eine Zeile, um den vollständigen Datensatz mit Kennungen und Quellen einzusehen."
+  ],
+  "UI_WORKBENCH_NO_DESCRIPTION": [
+    "관측을 확인하고 조치나 가설을 입력한 뒤 실행 결과를 비교하세요.",
+    "Review the observations, enter an action or hypothesis, then compare the result.",
+    "観測を確認して操作や仮説を入力し、実行結果を比較してください。",
+    "查看观测，输入操作或假设，再比较执行结果。",
+    "Revisa las observaciones, introduce una acción o hipótesis y compara el resultado.",
+    "Prüfe die Beobachtungen, gib eine Aktion oder Hypothese ein und vergleiche das Ergebnis."
   ]
 }

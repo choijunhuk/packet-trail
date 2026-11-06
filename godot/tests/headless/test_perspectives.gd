@@ -1,10 +1,19 @@
 extends "res://tests/headless/test_mutation_limits.gd"
 ## Real public actions and independent semantic checks; never achievement injection.
 
-const PACKS := {"intruder": 28, "defender": 8, "tracker": 8}
-const STARTS := {"intruder": "M01", "defender": "D01", "tracker": "T01"}
+const ORIGINAL_PACKS := {"intruder": 28, "defender": 8, "tracker": 8}
+const PACKS := {"intruder": 28, "defender": 8, "tracker": 8, "challenge": 3}
+const STARTS := {"intruder": "M01", "defender": "D01", "tracker": "T01", "challenge": "X01"}
 const FIXTURES := "res://tests/fixtures/perspectives_solutions.json"
+const CHALLENGE_FIXTURES := "res://tests/fixtures/challenge_solutions.json"
 const LEGACY_SHA := "51699e38f77e1cf1caa01eaa2617587e9e668261c82373cb77d7ad5b0c74d9b8"
+
+const ORIGINAL_CONTENT_SHA := {
+	"res://data/campaign/packs/intruder_v2.json": "e4fac8d215aa88523b4bb2df44429fa3cdd36594f9dc8d679e80908d7876abdc",
+	"res://data/campaign/packs/defender_v1.json": "cd874fded35c1385ae9bf3778338e5bdd2f9503126f0d9b54c7bc91896daeb65",
+	"res://data/campaign/packs/tracker_v1.json": "925ca4914a994ae5213d7e0726b30cb83366f572ed0f17441202f16b95909efc",
+	"res://tests/fixtures/perspectives_solutions.json": "38878a973f6aaf99c354727635b40f7226392339b72ae2712f4b7323cb113f2e",
+}
 
 var current_pack := "legacy_intruder"
 var catalog: Variant
@@ -22,7 +31,11 @@ func _run() -> void:
 	var raw: Variant = JSON.parse_string(FileAccess.get_file_as_string(FIXTURES))
 	_check(raw is Dictionary and raw.get("packs") is Dictionary, "all public campaigns have actual-action fixtures")
 	if catalog != null and raw is Dictionary and raw.get("packs") is Dictionary:
-		pack_fixtures = raw.packs
+		pack_fixtures = raw.packs.duplicate(true)
+		var added: Variant = JSON.parse_string(FileAccess.get_file_as_string(CHALLENGE_FIXTURES))
+		_check(added is Dictionary and added.get("packs") is Dictionary and added.packs.keys() == ["challenge"], "independent challenge fixture contains only the new pack")
+		if added is Dictionary and added.get("packs") is Dictionary and added.packs.keys() == ["challenge"]:
+			pack_fixtures["challenge"] = added.packs.challenge
 		_test_catalog()
 		for id in PACKS:
 			if not _select_pack(id):
@@ -39,11 +52,18 @@ func _run() -> void:
 		_test_foreign_sidecar_preservation()
 		_test_legacy_continuation()
 		_test_malformed_terminal_entries()
-	_check(routes_attempted == 88, "all public44 cases have two fresh-engine route attempts", routes_attempted)
+	var original_routes := 0
+	var challenge_routes := 0
+	for row in route_rows:
+		if ORIGINAL_PACKS.has(row.pack): original_routes += 1
+		elif row.pack == "challenge": challenge_routes += 1
+	_check(original_routes == 88, "preserved original44 cases still have two completed route witnesses each", original_routes)
+	_check(challenge_routes == 6, "three new challenge cases have two completed route witnesses each", challenge_routes)
+	_check(routes_attempted == 94 and route_rows.size() == 94, "aggregate47 cases have94 actual fresh-engine route witnesses", routes_attempted)
 	_check(_fingerprints() == before, "all real legacy/public campaign and preferences bytes remain unchanged")
 	_cleanup(test_root)
 	print(JSON.stringify({"suite": "perspectives", "checks": checks, "failures": failures,
-		"routes_attempted": routes_attempted, "routes": route_rows, "endings": ending_rows,
+		"routes_attempted": routes_attempted, "original_routes": original_routes, "challenge_routes": challenge_routes, "original_cases": 44, "challenge_cases": 3, "routes": route_rows, "endings": ending_rows,
 		"limit": "Finite API/disk/semantic contracts and real fixture actions; not human timing, native GUI, hearing or physical IME acceptance."}))
 	quit(0 if failures.is_empty() else 1)
 
@@ -59,6 +79,11 @@ func _select_pack(id: String) -> bool:
 	if not loaded.get("ok", false):
 		return false
 	definition = loaded.definition
+	if id == "challenge":
+		_check(definition.mission_order == ["X01", "X02", "X03"] and definition.start_mission == "X01", "challenge has the declared ordered three-case progression")
+		for mission in definition.missions.values():
+			_check(mission.optional == false, "each authored challenge case belongs to its independent campaign progression")
+		_check(definition.endings.size() == 1 and definition.endings[0].id == "ch1_handoff", "challenge has its own handoff ending identity")
 	if id == "legacy_intruder":
 		solutions = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/campaign_solutions.json")).missions
 		return true
@@ -80,15 +105,18 @@ func _test_catalog() -> void:
 		ids.append(str(item.get("id", "")))
 		_check(not item.has("path") and not item.has("definition") and not item.has("solutions"), "catalog metadata excludes authoring definitions")
 	ids.sort()
-	_check(ids == ["defender", "intruder", "tracker"], "exactly three independent public choices exist", ids)
-	for id in ["intruder", "defender", "tracker", "legacy_intruder"]:
+	_check(ids == ["challenge", "defender", "intruder", "tracker"], "three original choices and one independent challenge choice exist", ids)
+	for path in ORIGINAL_CONTENT_SHA:
+		_check(FileAccess.get_sha256(path) == ORIGINAL_CONTENT_SHA[path], "original three-pack definitions and88-route fixture retain exact bytes", path)
+	for id in ["intruder", "defender", "tracker", "challenge", "legacy_intruder"]:
 		var path: String = catalog.default_slot(id)
 		_check(path.begins_with("user://saves/") and path.ends_with(".json") and not slots_seen.has(path), "fixed campaign slot is valid and distinct: " + id)
 		_check(not path in ["user://saves/campaign_01.json", "user://saves/slot_01.json"], "new campaign never defaults to an original save: " + id)
 		slots_seen.append(path)
 		var test_path: String = catalog.test_slot(test_root + "/selector.json", id)
 		_check(test_path.begins_with(test_root + "/") and test_path.ends_with(".json"), "test UI selection derives an owned path: " + id)
-	for invalid in ["", "../intruder", "res://data/campaign/legacy_v1.json", "unknown", "INTRUDER"]:
+	_check(catalog.default_slot("challenge") == "user://saves/challenge_01.json", "challenge uses its declared independent fixed slot")
+	for invalid in ["", "../intruder", "res://data/campaign/legacy_v1.json", "unknown", "INTRUDER", "CHALLENGE", "../challenge"]:
 		_check(catalog.default_slot(invalid).is_empty(), "unknown pack cannot choose a resource/save path: " + invalid)
 		var candidate = Campaign.new(test_root + "/invalid.json", invalid)
 		_check(not candidate.get_view().get("ready", true), "unknown pack gives a structured not-ready view")
@@ -381,7 +409,7 @@ func _test_every_route() -> void:
 			if split < actions.size() and not _replay(game, actions.slice(split), label + " after disk resume"):
 				continue
 			_assert_route(game, id, route.get("expected", {}))
-			if id in ["M24", "D08", "T08"]:
+			if id in ["M24", "D08", "T08", "X03"]:
 				_assert_read_context(game, id)
 			_round_trip(game, current_pack + "/" + id + "/" + str(route.get("id", "")))
 			var before: Dictionary = game.export_snapshot()
@@ -438,13 +466,26 @@ func _test_endings() -> void:
 func _test_wrong_pack_snapshot() -> void:
 	var source = _fresh()
 	var raw: Dictionary = source.export_snapshot()
-	var other_id := "tracker" if current_pack != "tracker" else "intruder"
-	var other = Campaign.new(test_root + "/foreign_" + current_pack + ".json", other_id)
-	var before: Dictionary = other.export_snapshot()
-	_check(not other.restore_snapshot(raw).get("ok", true), "another campaign cannot acquire foreign progress")
-	_check(_same(other.export_snapshot(), before), "rejected foreign snapshot preserves selected campaign")
-	var v1: Variant = load("res://scripts/core/game.gd").new(test_root + "/v1_read_only.json")
-	_check(not other.import_m01(v1.export_snapshot()).get("ok", true), "new campaign cannot relabel old M01 as new achievement")
+	_check(raw.size() == 9 and raw.get("save_version") == 2, "new and original packs preserve strict v2 nine-field snapshots")
+	_round_trip(source, current_pack + ": initial isolated source")
+	var source_path: String = slots[source.get_instance_id()]
+	var source_files := {}
+	for suffix in ["", ".bak", ".tmp", ".bak.tmp"]:
+		source_files[suffix] = FileAccess.get_sha256(source_path + suffix) if FileAccess.file_exists(source_path + suffix) else "MISSING"
+	for other_id in ["intruder", "defender", "tracker", "challenge", "legacy_intruder"]:
+		if other_id == current_pack: continue
+		var other = Campaign.new(source_path, other_id)
+		var before: Dictionary = other.export_snapshot()
+		_check(not other.restore_snapshot(raw).get("ok", true), "foreign snapshot cannot become another pack's progress: " + current_pack + "→" + other_id)
+		_check(not other.load_game().get("ok", true), "foreign disk checkpoint is rejected: " + current_pack + "→" + other_id)
+		_check(not other.start_new_save().get("ok", true), "foreign disk checkpoint cannot be replaced as a new game: " + current_pack + "→" + other_id)
+		_check(_same(other.export_snapshot(), before), "foreign snapshot/disk rejection preserves selected campaign")
+		if other_id != "legacy_intruder":
+			var v1: Variant = load("res://scripts/core/game.gd").new(test_root + "/v1_read_only.json")
+			_check(not other.import_m01(v1.export_snapshot()).get("ok", true), "new campaign cannot relabel old M01 as new achievement")
+		for suffix in source_files:
+			var actual := FileAccess.get_sha256(source_path + suffix) if FileAccess.file_exists(source_path + suffix) else "MISSING"
+			_check(actual == source_files[suffix], "foreign pack operations preserve exact source/backup/temporary bytes: " + suffix)
 
 
 func _test_recovery_alternatives() -> void:
@@ -574,6 +615,89 @@ func _test_response_semantics() -> void:
 	_test_boundary_namespace(mission)
 	_test_http_parity(mission)
 	_test_assessment_gate(mission)
+	_test_opt_in_response_contract(mission)
+
+
+func _test_opt_in_response_contract(mission: Dictionary) -> void:
+	var response: Variant = load("res://scripts/core/response_lab.gd")
+	var actor := {"host_id": "desk", "account_id": "worker"}
+	var files := {"/": {"kind": "dir", "owner": "root", "group": "root", "mode": "755"},
+		"/status.txt": {"kind": "file", "owner": "worker", "group": "staff", "mode": "600", "content": "before"}}
+	var service := {"state": "open", "protocol": "https"}
+	var context := {"origin": "desk", "policies": {"legacy_target": false, "scope": false}, "files": {"desk": files},
+		"hosts": {"desk": {"domain": "optin.qa.packet.test", "files": files, "services": {"443": service}, "accounts": {"worker": {"groups": ["staff"]}}}}}
+	var request := {"method": "POST", "url": "https://optin.qa.packet.test/write", "body": {"content": "expected"}}
+	var definition := {"bindings": {"endpoints": {
+		"write": {"host_id": "desk", "method": "POST", "path_prefix": "/write", "operation": "vfs_write", "file_path": "/status.txt", "write_scope": ["/status.txt"]},
+		"notify": {"host_id": "desk", "method": "POST", "path_prefix": "/notify", "operation": "notify_send", "allowed_targets": ["ward"], "target_policy": "legacy_target"}}},
+		"cases": {"write": {"label": "Write", "actor_ref": actor, "request": request, "expect": {"statuses": [200], "business_key": "file:desk:/status.txt:write", "value": true}}}}
+	var legacy_basis := {"endpoint": "write", "policies": {}, "actor": "worker", "origin": "desk", "service": service,
+		"files": {"/status.txt": {"kind": "file", "owner": "worker", "group": "staff", "mode": "600"}, "/": {"kind": "dir", "owner": "root", "group": "root", "mode": "755"}}, "groups": ["staff"]}
+	var legacy_sha := JSON.stringify(legacy_basis, "", true, true).sha256_text()
+	var normal: Dictionary = response.apply_action(definition, {"action": "probe", "case_id": "write"}, {}, context)
+	_check(normal.get("ok", false) and normal.get("status") == 200 and normal.get("solved", false), "legacy write model still completes with its original receipt semantics")
+	_check(normal.state.probe_receipts.write.basis == legacy_sha, "absent current-content option retains the exact released basis serialization")
+	var replaced: Dictionary = normal.state.duplicate(true)
+	replaced.file_overrides.desk["/status.txt"].content = "changed"
+	_check(response.basis(definition, replaced, context, request, actor) == legacy_sha and response.goal_met(definition, replaced, context), "legacy non-opt-in basis and goal behavior are not retroactively changed")
+	var opted: Dictionary = definition.duplicate(true)
+	opted.bindings.endpoints.write["current_content"] = true
+	normal = response.apply_action(opted, {"action": "probe", "case_id": "write"}, {}, context)
+	_check(normal.get("ok", false) and normal.get("status") == 200 and normal.get("solved", false), "opt-in first correct write qualifies without an extra write or probe")
+	_check(normal.state.probe_receipts.write.basis == response.basis(opted, normal.state, context, request, actor), "opt-in receipt basis is computed after the actual write")
+	replaced = normal.state.duplicate(true)
+	replaced.file_overrides.desk["/status.txt"].content = "changed"
+	_check(not response.goal_met(opted, replaced, context), "same-permission content replacement invalidates the opt-in current-write goal")
+	_check(response.basis(opted, replaced, context, request, actor) != normal.state.probe_receipts.write.basis, "opt-in content replacement changes its current material basis")
+	var repaired: Dictionary = response.apply_action(opted, {"action": "probe", "case_id": "write"}, replaced, context)
+	_check(repaired.get("solved", false) and repaired.state.file_overrides.desk["/status.txt"].content == "expected", "actual permitted write restores the opt-in current result")
+	var notify := {"method": "POST", "url": "https://optin.qa.packet.test/notify", "body": {"target": "ward"}}
+	var legacy: Dictionary = response.dispatch(definition, notify, actor, {}, context)
+	_check(legacy.response.status == 403, "legacy target policy false still blocks allowed-target delivery")
+	context.policies.legacy_target = true
+	_check(response.dispatch(definition, notify, actor, {}, context).response.status == 200, "legacy target policy true still permits an allowed target")
+	notify.body.target = "outside"
+	_check(response.dispatch(definition, notify, actor, {}, context).response.status == 403, "legacy notification allowlist remains enforced without the new option")
+	opted.bindings.endpoints.notify.erase("target_policy")
+	opted.bindings.endpoints.notify["allowlist_policy"] = "scope"
+	var open: Dictionary = response.dispatch(opted, notify, actor, {}, context)
+	_check(open.response.status == 200 and open.response.business.get("notify:outside:delivered") == true and open.state.business_objects.get("notify:outside:delivered") == 1, "disabled opt-in scope produces an actual outside-target delivery and business effect")
+	context.policies.scope = true
+	var guarded: Dictionary = response.dispatch(opted, notify, actor, {}, context)
+	_check(guarded.response.status == 403 and guarded.response.business.get("notify:outside:delivered") == false and not guarded.state.business_objects.has("notify:outside:delivered"), "enabled opt-in scope refuses outside delivery without creating a business effect")
+	notify.body.target = "ward"
+	_check(response.dispatch(opted, notify, actor, {}, context).response.status == 200, "enabled opt-in scope preserves legitimate delivery")
+	_test_opt_in_response_schema(mission)
+
+
+func _test_opt_in_response_schema(mission: Dictionary) -> void:
+	var schema: Variant = load("res://scripts/core/campaign_model_schema.gd")
+	var original: Dictionary = mission.challenges.qa_response.duplicate(true)
+	_check(schema.errors(original, mission).is_empty(), "optional-model schema regressions start from a valid legacy model")
+	for invalid in [true, false, "true", 1, null]:
+		var wrong: Dictionary = original.duplicate(true)
+		wrong.bindings.endpoints.direct["current_content"] = invalid
+		_check(not schema.errors(wrong, mission).is_empty(), "current-content option is rejected on non-write operations")
+	var file_path: String = mission.hosts.archive.files.keys().filter(func(path): return mission.hosts.archive.files[path].kind == "file")[0]
+	var write: Dictionary = original.duplicate(true)
+	write.bindings.endpoints.direct.merge({"operation": "vfs_write", "file_path": file_path, "write_scope": [file_path], "current_content": true}, true)
+	_check(schema.errors(write, mission).is_empty(), "well-typed opt-in write endpoint validates")
+	for invalid in ["true", 1, null]:
+		var wrong: Dictionary = write.duplicate(true)
+		wrong.bindings.endpoints.direct.current_content = invalid
+		_check(not schema.errors(wrong, mission).is_empty(), "non-boolean current-content flag is rejected before runtime")
+	var notify: Dictionary = original.duplicate(true)
+	notify.bindings.endpoints.direct.merge({"operation": "notify_send", "allowed_targets": ["ward"], "allowlist_policy": "qa_owner"}, true)
+	_check(schema.errors(notify, mission).is_empty(), "registered opt-in notification scope validates")
+	var wrong: Dictionary = original.duplicate(true)
+	wrong.bindings.endpoints.direct["allowlist_policy"] = "qa_owner"
+	_check(not schema.errors(wrong, mission).is_empty(), "notification allowlist policy is rejected on another operation")
+	wrong = notify.duplicate(true)
+	wrong.bindings.endpoints.direct["target_policy"] = "qa_owner"
+	_check(not schema.errors(wrong, mission).is_empty(), "mixed legacy and opt-in notification policy semantics are rejected")
+	wrong = notify.duplicate(true)
+	wrong.bindings.endpoints.direct.allowlist_policy = "unknown"
+	_check(not schema.errors(wrong, mission).is_empty(), "unknown notification policy reference is rejected")
 
 
 func _test_http_parity(mission: Dictionary) -> void:

@@ -8,7 +8,7 @@ const Store = preload("res://scripts/core/save_store.gd")
 const Localization = preload("res://scripts/presentation/localization.gd")
 const PROTECTED := ["user://settings.json", "user://saves/campaign_01.json", "user://saves/slot_01.json",
 	"user://saves/legacy_continue_01.json", "user://saves/intruder_v2_01.json",
-	"user://saves/defender_01.json", "user://saves/tracker_01.json"]
+	"user://saves/defender_01.json", "user://saves/tracker_01.json", "user://saves/challenge_01.json"]
 
 var checks := 0
 var failures: Array[Dictionary] = []

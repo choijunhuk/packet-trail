@@ -1,0 +1,1966 @@
+{
+  "schema_version": 1,
+  "content_version": 1,
+  "campaign_id": "midnight_challenge",
+  "title": "CH1_PACK_TITLE",
+  "summary": "CH1_PACK_SUMMARY",
+  "start_mission": "X01",
+  "mission_order": [
+    "X01",
+    "X02",
+    "X03"
+  ],
+  "missions": {
+    "X01": {
+      "schema_version": 1,
+      "mission_id": "X01",
+      "title": "CH1_X01_TITLE",
+      "chapter": 1,
+      "optional": false,
+      "prerequisites": [],
+      "alert_max": 2,
+      "initial_web_url": "https://x01.challenge.packet.test",
+      "goal": {
+        "record_id": "ch1_x01_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "ch1_x01_response",
+          "case_ids": [
+            "own_a",
+            "own_b",
+            "staff",
+            "foreign_direct",
+            "foreign_gateway",
+            "failed_1",
+            "gateway_failed_1",
+            "failed_2",
+            "gateway_failed_2",
+            "failed_3",
+            "gateway_failed_3",
+            "legitimate"
+          ],
+          "label_display": "CH1_X01_GOAL",
+          "target_display": "https://x01.challenge.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "ch1_x01_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:ch1_x01_desk"
+          ]
+        },
+        "ch1_x01_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:ch1_x01_response:C731"
+          ]
+        },
+        "ch1_x01_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:ch1_x01_response:C732"
+          ]
+        },
+        "ch1_x01_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:ch1_x01_response:HEALTH"
+          ]
+        },
+        "ch1_x01_secret": {
+          "content": "Receipt SECRET\nCustodian investigator\nService: night duty\n",
+          "allowed_sources": [
+            "service:ch1_x01_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "ch1_x01_desk": {
+          "name": "CH1_X01_DESK_NAME",
+          "domain": "x01.challenge.packet.test",
+          "address": "10.53.197.182",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "ch1_x01_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        },
+        "ch1_x01_gateway": {
+          "name": "CH1_X01_GATEWAY_NAME",
+          "domain": "gateway.x01.challenge.packet.test",
+          "address": "10.53.222.76",
+          "via": [
+            "ch1_x01_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "ch1_x01_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://x01.challenge.packet.test": {
+          "title": "CH1_X01_TITLE",
+          "body": "CH1_X01_BRIEF",
+          "links": [
+            {
+              "label": "CH1_X01_GOAL",
+              "url": "https://x01.challenge.packet.test/scope"
+            }
+          ]
+        },
+        "https://x01.challenge.packet.test/scope": {
+          "title": "CH1_X01_TITLE",
+          "body": "CH1_X01_PRINCIPLE",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "CH1_X01_SENDER",
+          "subject": "CH1_X01_TITLE",
+          "body": "CH1_X01_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "CH1_X01_SENDER",
+          "subject": "CH1_X01_TITLE",
+          "body": "CH1_X01_REPLY"
+        }
+      },
+      "policies": {
+        "ch1_x01_direct_open": true,
+        "ch1_x01_gateway_open": true,
+        "ch1_x01_owner_check": false,
+        "ch1_x01_retry_limit": false,
+        "ch1_x01_session_guard": false,
+        "ch1_x01_photo_check": false,
+        "ch1_x01_no_execution": true,
+        "ch1_x01_target_scope": true,
+        "ch1_x01_notify_open": true,
+        "ch1_x01_standby_open": false,
+        "ch1_x01_gateway_rate": true
+      },
+      "challenges": {
+        "ch1_x01_response": {
+          "kind": "response_lab",
+          "name": "CH1_X01_LAB_NAME",
+          "host_id": "ch1_x01_desk",
+          "requires_session": {
+            "host_id": "ch1_x01_desk",
+            "account_id": "investigator"
+          },
+          "controls": {
+            "direct_open": {
+              "policy_id": "ch1_x01_direct_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "CH1_X01_CONTROL_DIRECT_OPEN"
+            },
+            "gateway_open": {
+              "policy_id": "ch1_x01_gateway_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "CH1_X01_CONTROL_GATEWAY_OPEN"
+            },
+            "owner_check": {
+              "policy_id": "ch1_x01_owner_check",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "CH1_X01_CONTROL_OWNER_CHECK"
+            },
+            "retry_limit": {
+              "policy_id": "ch1_x01_retry_limit",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "CH1_X01_CONTROL_AUTH_RETRY"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "ch1_x01_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "ch1_x01_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "ch1_x01_health"
+              },
+              "SECRET": {
+                "owner": "investigator",
+                "record_id": "ch1_x01_secret"
+              }
+            },
+            "endpoints": {
+              "receipts": {
+                "host_id": "ch1_x01_desk",
+                "method": "GET",
+                "path_prefix": "/tickets/",
+                "operation": "object_read",
+                "owner_policy": "ch1_x01_owner_check"
+              },
+              "delegated": {
+                "host_id": "ch1_x01_gateway",
+                "method": "GET",
+                "path_prefix": "/tickets/",
+                "operation": "delegated_read",
+                "scopes": {
+                  "citizen_a": [
+                    "C731"
+                  ],
+                  "citizen_b": [
+                    "C732"
+                  ],
+                  "investigator": [
+                    "C731",
+                    "C732",
+                    "SECRET"
+                  ],
+                  "notifier": [
+                    "HEALTH"
+                  ]
+                }
+              },
+              "login": {
+                "host_id": "ch1_x01_desk",
+                "method": "POST",
+                "path_prefix": "/sign-in",
+                "operation": "auth_login",
+                "rate_policy": "ch1_x01_retry_limit",
+                "limit": 2,
+                "cooldown": 2
+              },
+              "gateway_login": {
+                "host_id": "ch1_x01_gateway",
+                "method": "POST",
+                "path_prefix": "/sign-in",
+                "operation": "auth_login",
+                "rate_policy": "ch1_x01_gateway_rate",
+                "limit": 2,
+                "cooldown": 2
+              }
+            }
+          },
+          "cases": {
+            "own_a": {
+              "label": "CH1_X01_CASE_OWN_A",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://x01.challenge.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C731:read",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "GET",
+                  "url": "https://gateway.x01.challenge.packet.test/tickets/C731",
+                  "body": {},
+                  "headers": {}
+                }
+              }
+            },
+            "own_b": {
+              "label": "CH1_X01_CASE_OWN_B",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "citizen_b"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://x01.challenge.packet.test/tickets/C732",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C732:read",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "GET",
+                  "url": "https://gateway.x01.challenge.packet.test/tickets/C732",
+                  "body": {},
+                  "headers": {}
+                }
+              }
+            },
+            "staff": {
+              "label": "CH1_X01_CASE_STAFF",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "investigator"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://gateway.x01.challenge.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "ticket:C731:read",
+                "value": true
+              }
+            },
+            "foreign_direct": {
+              "label": "CH1_X01_CASE_FOREIGN_DIRECT",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://x01.challenge.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403,
+                  404,
+                  503
+                ],
+                "business_key": "ticket:C731:read",
+                "value": false
+              }
+            },
+            "foreign_gateway": {
+              "label": "CH1_X01_CASE_FOREIGN_GATEWAY",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://gateway.x01.challenge.packet.test/tickets/C731",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  403,
+                  404
+                ],
+                "business_key": "ticket:C731:read",
+                "value": false
+              }
+            },
+            "failed_1": {
+              "label": "CH1_X01_CASE_FAILED_1",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://x01.challenge.packet.test/sign-in",
+                "body": {
+                  "username": "citizen_a",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  429,
+                  503
+                ],
+                "business_key": "auth:citizen_a:login",
+                "value": false
+              }
+            },
+            "gateway_failed_1": {
+              "label": "CH1_X01_CASE_GATEWAY_FAILED_1",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.x01.challenge.packet.test/sign-in",
+                "body": {
+                  "username": "outsider",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  429
+                ],
+                "business_key": "auth:outsider:login",
+                "value": false
+              }
+            },
+            "failed_2": {
+              "label": "CH1_X01_CASE_FAILED_2",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://x01.challenge.packet.test/sign-in",
+                "body": {
+                  "username": "citizen_a",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  429,
+                  503
+                ],
+                "business_key": "auth:citizen_a:login",
+                "value": false
+              }
+            },
+            "gateway_failed_2": {
+              "label": "CH1_X01_CASE_GATEWAY_FAILED_2",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.x01.challenge.packet.test/sign-in",
+                "body": {
+                  "username": "outsider",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  401,
+                  429
+                ],
+                "business_key": "auth:outsider:login",
+                "value": false
+              }
+            },
+            "failed_3": {
+              "label": "CH1_X01_CASE_FAILED_3",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "citizen_a"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://x01.challenge.packet.test/sign-in",
+                "body": {
+                  "username": "citizen_a",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  429,
+                  503
+                ],
+                "business_key": "auth:citizen_a:login",
+                "value": false
+              }
+            },
+            "gateway_failed_3": {
+              "label": "CH1_X01_CASE_GATEWAY_FAILED_3",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.x01.challenge.packet.test/sign-in",
+                "body": {
+                  "username": "outsider",
+                  "password": "incorrect"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  429
+                ],
+                "business_key": "auth:outsider:login",
+                "value": false
+              }
+            },
+            "legitimate": {
+              "label": "CH1_X01_CASE_LEGITIMATE",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "ch1_x01_desk",
+                "account_id": "citizen_b"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://x01.challenge.packet.test/sign-in",
+                "body": {
+                  "username": "citizen_b",
+                  "password": "b-sample"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ],
+                "business_key": "auth:citizen_b:login",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.x01.challenge.packet.test/sign-in",
+                  "body": {
+                    "username": "citizen_b",
+                    "password": "b-sample"
+                  },
+                  "headers": {}
+                }
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "availability": [
+              "direct_open",
+              "gateway_open"
+            ],
+            "security": [
+              "owner_check",
+              "retry_limit"
+            ]
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "CH1_X01_GOAL",
+      "hints": [
+        "CH1_X01_HINT_1",
+        "CH1_X01_HINT_2",
+        "CH1_X01_HINT_3"
+      ],
+      "principle": "CH1_X01_PRINCIPLE",
+      "abstraction": "CH1_X01_ABSTRACTION",
+      "limit": "CH1_X01_LIMIT",
+      "tutorial": "CH1_X01_HINT_1",
+      "explain": "CH1_X01_PRINCIPLE"
+    },
+    "X02": {
+      "schema_version": 1,
+      "mission_id": "X02",
+      "title": "CH1_X02_TITLE",
+      "chapter": 1,
+      "optional": false,
+      "prerequisites": [
+        "X01"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://x02.challenge.packet.test",
+      "goal": {
+        "record_id": "ch1_x02_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "response_matrix",
+          "challenge_id": "ch1_x02_response",
+          "case_ids": [
+            "read",
+            "write",
+            "foreign_write",
+            "foreign_approved",
+            "notify",
+            "internal_target",
+            "standby_target"
+          ],
+          "label_display": "CH1_X02_GOAL",
+          "target_display": "https://x02.challenge.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "ch1_x02_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:ch1_x02_desk"
+          ]
+        },
+        "ch1_x02_c731": {
+          "content": "Receipt C731\nCustodian citizen_a\nService: night duty\n",
+          "allowed_sources": [
+            "service:ch1_x02_response:C731"
+          ]
+        },
+        "ch1_x02_c732": {
+          "content": "Receipt C732\nCustodian citizen_b\nService: night duty\n",
+          "allowed_sources": [
+            "service:ch1_x02_response:C732"
+          ]
+        },
+        "ch1_x02_health": {
+          "content": "Receipt HEALTH\nCustodian notifier\nService: night duty\n",
+          "allowed_sources": [
+            "service:ch1_x02_response:HEALTH"
+          ]
+        },
+        "ch1_x02_secret": {
+          "content": "Receipt SECRET\nCustodian investigator\nService: night duty\n",
+          "allowed_sources": [
+            "service:ch1_x02_response:SECRET"
+          ]
+        }
+      },
+      "hosts": {
+        "ch1_x02_desk": {
+          "name": "CH1_X02_DESK_NAME",
+          "domain": "x02.challenge.packet.test",
+          "address": "10.53.59.4",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "ch1_x02_direct_open": true
+              }
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            },
+            "/deploy": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "deploy",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            },
+            "/deploy/status.txt": {
+              "kind": "file",
+              "owner": "investigator",
+              "group": "deploy",
+              "mode": "660",
+              "content": "PENDING\n",
+              "record_id": ""
+            }
+          }
+        },
+        "ch1_x02_gateway": {
+          "name": "CH1_X02_GATEWAY_NAME",
+          "domain": "gateway.x02.challenge.packet.test",
+          "address": "10.53.209.189",
+          "via": [
+            "ch1_x02_desk"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open",
+              "required_policies": {
+                "ch1_x02_gateway_open": true
+              }
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            },
+            "/approved": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "jobs",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            },
+            "/approved/status.txt": {
+              "kind": "file",
+              "owner": "investigator",
+              "group": "jobs",
+              "mode": "660",
+              "content": "PENDING\n",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://x02.challenge.packet.test": {
+          "title": "CH1_X02_TITLE",
+          "body": "CH1_X02_BRIEF",
+          "links": [
+            {
+              "label": "CH1_X02_GOAL",
+              "url": "https://x02.challenge.packet.test/scope"
+            }
+          ]
+        },
+        "https://x02.challenge.packet.test/scope": {
+          "title": "CH1_X02_TITLE",
+          "body": "CH1_X02_PRINCIPLE",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "CH1_X02_SENDER",
+          "subject": "CH1_X02_TITLE",
+          "body": "CH1_X02_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "CH1_X02_SENDER",
+          "subject": "CH1_X02_TITLE",
+          "body": "CH1_X02_REPLY"
+        }
+      },
+      "policies": {
+        "ch1_x02_direct_open": true,
+        "ch1_x02_gateway_open": true,
+        "ch1_x02_owner_check": false,
+        "ch1_x02_retry_limit": false,
+        "ch1_x02_session_guard": false,
+        "ch1_x02_photo_check": false,
+        "ch1_x02_no_execution": true,
+        "ch1_x02_target_scope": false,
+        "ch1_x02_notify_open": false,
+        "ch1_x02_standby_open": false
+      },
+      "challenges": {
+        "ch1_x02_response": {
+          "kind": "response_lab",
+          "name": "CH1_X02_LAB_NAME",
+          "host_id": "ch1_x02_desk",
+          "requires_session": {
+            "host_id": "ch1_x02_desk",
+            "account_id": "investigator"
+          },
+          "controls": {
+            "job_groups": {
+              "kind": "actor_groups",
+              "host_id": "ch1_x02_desk",
+              "account_id": "notifier",
+              "values": [
+                [
+                  "jobs"
+                ],
+                [
+                  "jobs",
+                  "deploy"
+                ]
+              ],
+              "group": "permissions",
+              "label": "CH1_X02_JOB_GROUPS"
+            },
+            "directory_mode": {
+              "kind": "vfs_mode",
+              "host_id": "ch1_x02_desk",
+              "file_path": "/deploy",
+              "values": [
+                "750",
+                "777"
+              ],
+              "group": "permissions",
+              "label": "CH1_X02_DIRECTORY_MODE"
+            },
+            "file_mode": {
+              "kind": "vfs_mode",
+              "host_id": "ch1_x02_desk",
+              "file_path": "/deploy/status.txt",
+              "values": [
+                "660",
+                "666"
+              ],
+              "group": "permissions",
+              "label": "CH1_X02_FILE_MODE"
+            },
+            "notify_open": {
+              "policy_id": "ch1_x02_notify_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "CH1_X02_CONTROL_NOTICE_NOTIFY_OPEN"
+            },
+            "standby_open": {
+              "policy_id": "ch1_x02_standby_open",
+              "values": [
+                false,
+                true
+              ],
+              "group": "availability",
+              "label": "CH1_X02_CONTROL_NOTICE_STANDBY_OPEN"
+            },
+            "target_scope": {
+              "policy_id": "ch1_x02_target_scope",
+              "values": [
+                false,
+                true
+              ],
+              "group": "security",
+              "label": "CH1_X02_CONTROL_NOTICE_TARGET_SCOPE"
+            }
+          },
+          "bindings": {
+            "objects": {
+              "C731": {
+                "owner": "citizen_a",
+                "record_id": "ch1_x02_c731"
+              },
+              "C732": {
+                "owner": "citizen_b",
+                "record_id": "ch1_x02_c732"
+              },
+              "HEALTH": {
+                "owner": "notifier",
+                "record_id": "ch1_x02_health"
+              },
+              "SECRET": {
+                "owner": "investigator",
+                "record_id": "ch1_x02_secret"
+              }
+            },
+            "endpoints": {
+              "deployment_read": {
+                "host_id": "ch1_x02_desk",
+                "method": "GET",
+                "path_prefix": "/deployment/read",
+                "operation": "vfs_read",
+                "file_path": "/deploy/status.txt"
+              },
+              "deployment_write": {
+                "host_id": "ch1_x02_desk",
+                "method": "POST",
+                "path_prefix": "/deployment/write",
+                "operation": "vfs_write",
+                "file_path": "/deploy/status.txt",
+                "current_content": true
+              },
+              "approved_read": {
+                "host_id": "ch1_x02_gateway",
+                "method": "GET",
+                "path_prefix": "/deployment/read",
+                "operation": "vfs_read",
+                "file_path": "/approved/status.txt"
+              },
+              "approved_write": {
+                "host_id": "ch1_x02_gateway",
+                "method": "POST",
+                "path_prefix": "/deployment/write",
+                "operation": "vfs_write",
+                "file_path": "/approved/status.txt",
+                "current_content": true
+              },
+              "notify": {
+                "host_id": "ch1_x02_desk",
+                "method": "POST",
+                "path_prefix": "/notify",
+                "operation": "notify_send",
+                "enabled_policy": "ch1_x02_notify_open",
+                "allowed_targets": [
+                  "ward"
+                ],
+                "allowlist_policy": "ch1_x02_target_scope"
+              },
+              "standby_notify": {
+                "host_id": "ch1_x02_gateway",
+                "method": "POST",
+                "path_prefix": "/notify",
+                "operation": "notify_send",
+                "enabled_policy": "ch1_x02_standby_open",
+                "allowed_targets": [
+                  "ward"
+                ],
+                "allowlist_policy": "ch1_x02_target_scope"
+              }
+            },
+            "write_scope": [
+              "/deploy/status.txt",
+              "/approved/status.txt"
+            ]
+          },
+          "cases": {
+            "read": {
+              "label": "CH1_X02_CASE_READ",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "ch1_x02_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "GET",
+                "url": "https://x02.challenge.packet.test/deployment/read",
+                "body": {},
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200
+                ]
+              },
+              "routes": {
+                "gateway": {
+                  "method": "GET",
+                  "url": "https://gateway.x02.challenge.packet.test/deployment/read",
+                  "body": {},
+                  "headers": {}
+                }
+              }
+            },
+            "write": {
+              "label": "CH1_X02_CASE_WRITE",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "ch1_x02_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://x02.challenge.packet.test/deployment/write",
+                "body": {
+                  "content": "DEPLOYMENT READY\n"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200,
+                  201
+                ]
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.x02.challenge.packet.test/deployment/write",
+                  "body": {
+                    "content": "DEPLOYMENT READY\n"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "foreign_write": {
+              "label": "CH1_X02_CASE_FOREIGN_WRITE",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x02_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://x02.challenge.packet.test/deployment/write",
+                "body": {
+                  "content": "UNAUTHORIZED\n"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403
+                ]
+              }
+            },
+            "foreign_approved": {
+              "label": "CH1_X02_CASE_FOREIGN_APPROVED",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x02_desk",
+                "account_id": "outsider"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.x02.challenge.packet.test/deployment/write",
+                "body": {
+                  "content": "UNAUTHORIZED\n"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403
+                ]
+              }
+            },
+            "notify": {
+              "label": "CH1_X02_CASE_NOTIFY",
+              "class": "normal",
+              "actor_ref": {
+                "host_id": "ch1_x02_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://x02.challenge.packet.test/notify",
+                "body": {
+                  "target": "ward"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  200,
+                  202
+                ],
+                "business_key": "notify:ward:delivered",
+                "value": true
+              },
+              "routes": {
+                "gateway": {
+                  "method": "POST",
+                  "url": "https://gateway.x02.challenge.packet.test/notify",
+                  "body": {
+                    "target": "ward"
+                  },
+                  "headers": {}
+                }
+              }
+            },
+            "internal_target": {
+              "label": "CH1_X02_CASE_INTERNAL_TARGET",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x02_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://x02.challenge.packet.test/notify",
+                "body": {
+                  "target": "internal-secrets"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403,
+                  503
+                ],
+                "business_key": "notify:internal-secrets:delivered",
+                "value": false
+              }
+            },
+            "standby_target": {
+              "label": "CH1_X02_CASE_STANDBY_TARGET",
+              "class": "threat",
+              "actor_ref": {
+                "host_id": "ch1_x02_desk",
+                "account_id": "notifier"
+              },
+              "request": {
+                "method": "POST",
+                "url": "https://gateway.x02.challenge.packet.test/notify",
+                "body": {
+                  "target": "internal-secrets"
+                },
+                "headers": {}
+              },
+              "expect": {
+                "statuses": [
+                  403,
+                  503
+                ],
+                "business_key": "notify:internal-secrets:delivered",
+                "value": false
+              }
+            }
+          },
+          "checkpoint_groups": {
+            "permissions": [
+              "job_groups",
+              "directory_mode",
+              "file_mode"
+            ],
+            "availability": [
+              "notify_open",
+              "standby_open"
+            ],
+            "security": [
+              "target_scope"
+            ]
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "CH1_X02_GOAL",
+      "hints": [
+        "CH1_X02_HINT_1",
+        "CH1_X02_HINT_2",
+        "CH1_X02_HINT_3"
+      ],
+      "principle": "CH1_X02_PRINCIPLE",
+      "abstraction": "CH1_X02_ABSTRACTION",
+      "limit": "CH1_X02_LIMIT",
+      "tutorial": "CH1_X02_HINT_1",
+      "explain": "CH1_X02_PRINCIPLE"
+    },
+    "X03": {
+      "schema_version": 1,
+      "mission_id": "X03",
+      "title": "CH1_X03_TITLE",
+      "chapter": 2,
+      "optional": false,
+      "prerequisites": [
+        "X02"
+      ],
+      "alert_max": 2,
+      "initial_web_url": "https://x03.challenge.packet.test",
+      "goal": {
+        "record_id": "ch1_x03_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "observation_handoff",
+          "challenge_id": "ch1_x03_observations",
+          "label_display": "CH1_X03_GOAL",
+          "target_display": "https://x03.challenge.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "ch1_x03_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:ch1_x03_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "ch1_x03_desk": {
+          "name": "CH1_X03_DESK_NAME",
+          "domain": "x03.challenge.packet.test",
+          "address": "10.53.247.35",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            },
+            "auditor": {
+              "password": "audit-custody",
+              "groups": [
+                "staff",
+                "audit"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://x03.challenge.packet.test": {
+          "title": "CH1_X03_TITLE",
+          "body": "CH1_X03_BRIEF",
+          "links": [
+            {
+              "label": "CH1_X03_GOAL",
+              "url": "https://x03.challenge.packet.test/scope"
+            }
+          ]
+        },
+        "https://x03.challenge.packet.test/scope": {
+          "title": "CH1_X03_TITLE",
+          "body": "CH1_X03_PRINCIPLE",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "CH1_X03_SENDER",
+          "subject": "CH1_X03_TITLE",
+          "body": "CH1_X03_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "CH1_X03_SENDER",
+          "subject": "CH1_X03_TITLE",
+          "body": "CH1_X03_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "ch1_x03_observations": {
+          "kind": "observation_case",
+          "name": "CH1_X03_TOOL_NAME",
+          "sensors": {
+            "ch1_x03_field": {
+              "label": "CH1_X03_SENSOR_FIELD",
+              "host_id": "ch1_x03_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  90,
+                  145
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "CLIENT_A",
+                      "observed_at": [
+                        100,
+                        110
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S1",
+                        "shared_address": "10.63.9.8",
+                        "claimed_account": "night-worker"
+                      },
+                      "provenance": {
+                        "source_id": "field-client",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "client_supplied"
+                      }
+                    },
+                    {
+                      "event_id": "CLIENT_B",
+                      "observed_at": [
+                        100,
+                        110
+                      ],
+                      "clock_offset": [
+                        0,
+                        0
+                      ],
+                      "public": {
+                        "session_tag": "S2",
+                        "shared_address": "10.63.9.8",
+                        "claimed_account": "night-worker"
+                      },
+                      "provenance": {
+                        "source_id": "field-client",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "client_supplied"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "rows": [
+                    {
+                      "event_id": "ROTATE",
+                      "observed_at": [
+                        130,
+                        132
+                      ],
+                      "clock_offset": [
+                        30,
+                        30
+                      ],
+                      "public": {
+                        "session_tag": "S1",
+                        "shared_address": "10.63.9.8",
+                        "event": "rotation"
+                      },
+                      "provenance": {
+                        "source_id": "edge-custody:rotation",
+                        "collector": "authorized-export",
+                        "vantage": "edge",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "ch1_x03_desk",
+                "account_id": "investigator"
+              }
+            },
+            "ch1_x03_audit": {
+              "label": "CH1_X03_SENSOR_AUDIT",
+              "host_id": "ch1_x03_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  90,
+                  145
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "ROTATE",
+                      "observed_at": [
+                        95,
+                        97
+                      ],
+                      "clock_offset": [
+                        -5,
+                        -5
+                      ],
+                      "public": {
+                        "session_tag": "S1",
+                        "shared_address": "10.63.9.8",
+                        "event": "rotation"
+                      },
+                      "provenance": {
+                        "source_id": "receiver-authorized-export:rotation",
+                        "collector": "authorized-export",
+                        "vantage": "vault",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "DEPART",
+                      "observed_at": [
+                        105,
+                        107
+                      ],
+                      "clock_offset": [
+                        -5,
+                        -5
+                      ],
+                      "public": {
+                        "session_tag": "S1",
+                        "request_tag": "N03",
+                        "from_node": "edge",
+                        "to_node": "vault"
+                      },
+                      "provenance": {
+                        "source_id": "receiver-authorized-export:departure",
+                        "collector": "authorized-export",
+                        "vantage": "vault",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "OTHER",
+                      "observed_at": [
+                        105,
+                        107
+                      ],
+                      "clock_offset": [
+                        -5,
+                        -5
+                      ],
+                      "public": {
+                        "session_tag": "S2",
+                        "shared_address": "10.63.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "receiver-authorized-export:other-session",
+                        "collector": "authorized-export",
+                        "vantage": "vault",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "ch1_x03_desk",
+                "account_id": "auditor"
+              }
+            },
+            "ch1_x03_receiver": {
+              "label": "CH1_X03_SENSOR_RECEIVER",
+              "host_id": "ch1_x03_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "complete",
+                "window": [
+                  90,
+                  145
+                ]
+              },
+              "windows": [
+                {
+                  "rows": [
+                    {
+                      "event_id": "DEPART",
+                      "observed_at": [
+                        105,
+                        107
+                      ],
+                      "clock_offset": [
+                        -5,
+                        -5
+                      ],
+                      "public": {
+                        "session_tag": "S1",
+                        "request_tag": "N03",
+                        "from_node": "edge",
+                        "to_node": "vault"
+                      },
+                      "provenance": {
+                        "source_id": "receiver-live-custody:departure",
+                        "collector": "authorized-export",
+                        "vantage": "vault",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    },
+                    {
+                      "event_id": "OTHER",
+                      "observed_at": [
+                        105,
+                        107
+                      ],
+                      "clock_offset": [
+                        -5,
+                        -5
+                      ],
+                      "public": {
+                        "session_tag": "S2",
+                        "shared_address": "10.63.9.8"
+                      },
+                      "provenance": {
+                        "source_id": "receiver-live-custody:other-session",
+                        "collector": "authorized-export",
+                        "vantage": "vault",
+                        "acquisition": "bounded-observation",
+                        "marker_authority": "server_issued"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "requires_session": {
+                "host_id": "ch1_x03_desk",
+                "account_id": "investigator"
+              }
+            },
+            "ch1_x03_vault_watch": {
+              "label": "CH1_X03_SENSOR_VAULT_WATCH",
+              "host_id": "ch1_x03_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  90,
+                  145
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "ch1_x03_desk",
+                "account_id": "investigator"
+              }
+            },
+            "ch1_x03_address_watch": {
+              "label": "CH1_X03_SENSOR_ADDRESS_WATCH",
+              "host_id": "ch1_x03_desk",
+              "visibility": "metadata",
+              "coverage": {
+                "sampling": "sampled",
+                "window": [
+                  90,
+                  145
+                ]
+              },
+              "windows": [
+                {
+                  "rows": []
+                }
+              ],
+              "requires_session": {
+                "host_id": "ch1_x03_desk",
+                "account_id": "investigator"
+              }
+            }
+          },
+          "claim_types": [
+            "same_session",
+            "before",
+            "forwarded_to"
+          ],
+          "initial_claims": {
+            "prior": {
+              "label": "CH1_X03_PRIOR",
+              "claim": {
+                "kind": "same_session",
+                "left": "session:S1",
+                "right": "session:S2"
+              },
+              "source_id": "joint-preliminary-notes"
+            }
+          },
+          "handoff_requirements": {
+            "supported": [
+              {
+                "kind": "before",
+                "left": "event:ROTATE",
+                "right": "event:DEPART"
+              },
+              {
+                "kind": "forwarded_to",
+                "request_tag": "N03",
+                "target_node": "vault"
+              }
+            ],
+            "refuted": [
+              "prior"
+            ],
+            "next_vantage": [
+              "ch1_x03_vault_watch"
+            ],
+            "allow_identity_unknown": true
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "CH1_X03_GOAL",
+      "hints": [
+        "CH1_X03_HINT_1",
+        "CH1_X03_HINT_2",
+        "CH1_X03_HINT_3"
+      ],
+      "principle": "CH1_X03_PRINCIPLE",
+      "abstraction": "CH1_X03_ABSTRACTION",
+      "limit": "CH1_X03_LIMIT",
+      "tutorial": "CH1_X03_HINT_1",
+      "explain": "CH1_X03_PRINCIPLE"
+    }
+  },
+  "endings": [
+    {
+      "id": "ch1_handoff",
+      "title": "CH1_ENDING_TITLE",
+      "text": "CH1_X03_REPLY",
+      "requires_facts": []
+    }
+  ],
+  "contacts": {
+    "C02": {
+      "name_key": "CH1_X01_SENDER",
+      "introduced_by": [
+        "X01"
+      ],
+      "face_gate": {
+        "when": "introduced",
+        "mission_id": "X01",
+        "explicit": false
+      }
+    }
+  }
+}

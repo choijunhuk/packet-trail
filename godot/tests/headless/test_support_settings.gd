@@ -3,7 +3,7 @@ extends RefCounted
 const Settings = preload("res://scripts/presentation/settings_store.gd")
 const Campaign = preload("res://scripts/core/campaign_game.gd")
 const Loader = preload("res://scripts/core/campaign_loader.gd")
-const SUPPORT_FIELDS := ["support_intruder", "support_defender", "support_tracker"]
+const SUPPORT_FIELDS := ["support_intruder", "support_defender", "support_tracker", "support_challenge"]
 const LEVELS := ["guided", "standard", "independent"]
 
 var checks := 0
@@ -35,7 +35,7 @@ func run() -> Dictionary:
 	_links()
 	_bad_files()
 	_campaign_invariance()
-	_check(_fingerprints() == protected, "all 28 real preferences/slot paths remain byte-identical")
+	_check(_fingerprints() == protected, "all real preferences/slot paths remain byte-identical")
 	_remove_owned(root_path)
 	_check(not DirAccess.dir_exists_absolute(root_path), "remove only the unique owned test tree")
 	return _report("full")
@@ -98,13 +98,13 @@ func _round_trip() -> void:
 	store.changed.connect(func(values: Dictionary):
 		signals.append(values.duplicate(true))
 		values.support_intruder = "listener-mutated")
-	var saved: Dictionary = store.update_settings({"support_intruder": "guided", "support_defender": "independent", "support_tracker": "standard"})
+	var saved: Dictionary = store.update_settings({"support_intruder": "guided", "support_defender": "independent", "support_tracker": "standard", "support_challenge": "independent"})
 	_check(saved.get("ok", false), "save isolated explicit per-campaign support")
 	_check(signals.size() == 1 and signals[0].support_intruder == "guided", "changed signal emits normalized values only after successful persistence")
 	_check(store.get_values().support_intruder == "guided", "signal listener cannot mutate store memory")
 	_check(FileAccess.get_file_as_bytes(path + ".bak") == original, "backup preserves exact old v1 bytes")
 	var disk: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
-	_check(disk is Dictionary and disk.size() == 2 and disk.get("version") == 1 and disk.get("values", {}).get("support_defender") == "independent", "preferences retain the existing v1 envelope with scalar support fields")
+	_check(disk is Dictionary and disk.size() == 2 and disk.get("version") == 1 and disk.get("values", {}).get("support_defender") == "independent" and disk.get("values", {}).get("support_challenge") == "independent", "preferences retain the existing v1 envelope with scalar support fields")
 	var restored = _store(path)
 	_check(restored.load_settings().get("ok", false) and restored.get_values().recursive_equal(store.get_values(), 0), "all display/audio/support values survive disk round-trip")
 	var before := _owned_files(path)
@@ -219,13 +219,13 @@ func _bad_files() -> void:
 func _campaign_invariance() -> void:
 	var path := root_path + "/campaign-support.json"
 	var store = _store(path)
-	for pack in ["intruder", "defender", "tracker", "legacy_intruder"]:
+	for pack in ["intruder", "defender", "tracker", "challenge", "legacy_intruder"]:
 		var game = Campaign.new(root_path + "/campaign_" + pack + ".json", pack)
 		var before: Dictionary = game.export_snapshot()
 		var view: Dictionary = game.get_view()
 		_check(view.get("ready", false) and before.size() == 9 and before.get("save_version") == 2, "campaign retains strict v2 nine-field contract: " + pack)
 		for level in LEVELS:
-			var patch := {"support_intruder": level, "support_defender": level, "support_tracker": level}
+			var patch := {"support_intruder": level, "support_defender": level, "support_tracker": level, "support_challenge": level}
 			_check(store.update_settings(patch).get("ok", false), "persist support without touching game: " + pack + "/" + level)
 			game.get_hint(2)
 			game.execute("pwd")
@@ -252,7 +252,7 @@ func _campaign_invariance() -> void:
 		while wrong == host.accounts[username].password: wrong += "_"
 		var results: Array = []
 		for level in LEVELS:
-			store.update_settings({"support_intruder": level, "support_defender": level, "support_tracker": level})
+			store.update_settings({"support_intruder": level, "support_defender": level, "support_tracker": level, "support_challenge": level})
 			var candidate = Campaign.new(root_path + "/action_" + pack + "_" + level + ".json", pack)
 			var connected: Dictionary = candidate.execute("ssh " + username + "@" + host.domain)
 			var failed: Dictionary = candidate.submit_password(wrong)
@@ -280,7 +280,7 @@ func _owned_files(path: String) -> Dictionary:
 
 func _fingerprints() -> Dictionary:
 	var paths: Array = ["user://settings.json"]
-	for name in ["slot_01", "campaign_01", "legacy_continue_01", "intruder_v2_01", "defender_01", "tracker_01"]: paths.append("user://saves/" + name + ".json")
+	for name in ["slot_01", "campaign_01", "legacy_continue_01", "intruder_v2_01", "defender_01", "tracker_01", "challenge_01"]: paths.append("user://saves/" + name + ".json")
 	var result := {}
 	for path in paths:
 		for suffix in ["", ".tmp", ".bak", ".bak.tmp"]: result[path + suffix] = _fingerprint(path + suffix)

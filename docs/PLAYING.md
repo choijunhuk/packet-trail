@@ -1,6 +1,6 @@
 # 심야접속 · MidnightAccess 실행 안내
 
-설치형 오프라인 해킹 시뮬레이터, `1.2.1-rc1`. 게임 안의 서버·웹사이트·명령어는 가상 세계에서 동작한다. 별도의 Linux·VM·Docker·실제 해킹 도구 설치가 필요하지 않다.
+설치형 오프라인 해킹 시뮬레이터, `1.3.0-rc1`. 게임 안의 서버·웹사이트·명령어는 가상 세계에서 동작한다. 별도의 Linux·VM·Docker·실제 해킹 도구 설치가 필요하지 않다.
 
 ## 압축을 풀고 실행
 
@@ -23,7 +23,7 @@ chmod +x MidnightAccess.x86_64
 
 ## 첫 실행과 조작
 
-시작 화면의 **침투자·방어자·추적자** 선택 행에서 이야기와 저장 진행을 확인한다. **플레이 지원**을 선택하고 **새 게임** 또는 **계속하기**를 누른다. 새 게임 확인은 선택한 편의 슬롯과 지원을 캡처하며, 취소하면 기존 진행·선호를 바꾸지 않는다. 세 편은 각각 자기 온보딩·이야기·결말·저장을 가지며 다른 편을 먼저 끝낼 필요가 없다.
+시작 화면의 **침투자·방어자·추적자·종합 도전** 선택 행에서 이야기와 저장 진행을 확인한다. **플레이 지원**을 선택하고 **새 게임** 또는 **계속하기**를 누른다. 새 게임 확인은 선택한 편의 슬롯과 지원을 캡처하며, 취소하면 기존 진행·선호를 바꾸지 않는다. 각 선택은 자기 안내·결말·저장을 가지며 다른 편을 먼저 끝낼 필요가 없다.
 
 지원은 **가이드·표준·자율**의 안내/힌트량이다. 가이드는 새 의뢰와 첫 방향을 보여 주고, 표준은 필요할 때 단계 힌트를 요청하며, 자율은 자동 안내를 줄인다. 모든 수준에서 수동 도움을 사용할 수 있다. 목표·경보·허용 해법을 바꾸는 압박 난이도는 현재 구현하지 않았다. 각 편의 지원은 설정에서 따로 바꿀 수 있다.
 
@@ -36,6 +36,7 @@ chmod +x MidnightAccess.x86_64
 | 침투자 | 거부되는 이유와 다른 접근 경로를 조사하고, 현재 권한·서비스·네트워크 경계를 확인해 필요한 자료만 회수 |
 | 방어자 | 정상 업무와 의심 요청을 함께 검사하고, 정밀 정책·승인 경로·격리·부분 되돌리기로 피해를 줄이며 업무 복구 |
 | 추적자 | 허가된 위치의 기록을 수집하고, 시각·출처·연결로 가설을 지원/반박하며 다음 관찰과 인계 범위를 선택 |
+| 종합 도전 | 정상 업무와 접근 통제·실제 파일 갱신과 통지 범위·복합 관측과 반례를 함께 판단하는 독립3사건 |
 
 방어편에서 모든 서비스를 끄면 정상 업무도 실패할 수 있다. 조치 전후의 실제 요청 결과를 함께 확인한다. 저장된 업로드는 **수락 당시**와 **현재**의 실행 허용을 구분하고, 격리할 때 정상 사진까지 막지 않는지 확인한다. 추적편의 **근거 부족**은 틀렸다는 판정과 다르다. 새 관측으로 가설을 바꾸는 것도 진전이며, 같은 IP 하나로 사람을 확정하지 않는다.
 
@@ -58,6 +59,12 @@ Nightfox는 실제 Firefox/Chrome을 실행하는 프로그램이 아니라 **�
 
 입력 중 자동 알림은 작업표시줄에 축약해 명령칸을 가리지 않는다. 알림 버튼으로 내용을 열고 다시 입력칸을 누르면 접힌다. 알림을 읽으려고 연 상태와 자동 알림을 구분한다.
 
+## 분석 도구 작업대
+
+관찰과 행동·결과 영역을 따로 스크롤할 수 있다. +/−가 있는 관측 구역은 펼치거나 접고, 표의 행을 선택하면 모든 공개 필드를 상세로 볼 수 있다. 도구를 실행하거나 바꿔도 사용자가 선택한 펼침 상태를 유지하며, 바뀐 기록을 이전 내용으로 표시하지 않는다. 상단 목표 버튼은 현재 사건 보드를 연다. 처음 안내 중 일반 저장 알림은 작업표시줄에 모으고, 벨을 누르면 전체 알림을 읽을 수 있다. 중요한 저장 실패는 안내 카드 옆에서도 표시된다.
+
+종합 도전에서는 먼저 조사한 뒤 설정을 바꿔도 복구할 수 있다. 배포 파일의 실제 내용까지 확인하고, 권한만 되돌렸다고 정상 작업이 복구됐다고 가정하지 않는다. 추적 도구가 제공하는 보정된 시간 구간과 출처를 비교한다. 각 사건에는 서로 다른 유효 해법이 있으며 특정 힌트·명령을 따라 할 의무는 없다.
+
 ## 저장과 업데이트
 
 캠페인은 자동 저장과 화면의 저장 버튼을 사용한다. 저장 실패 메시지가 보이면 성공으로 간주하지 말고 안내를 확인한다. **새 게임**은 선택한 편의 슬롯만 확인 후 교체·백업한다. 같은 실행 안에서 다른 편으로 바꾸어도 각 편의 진행과 터미널은 섞이지 않는다.
@@ -79,16 +86,17 @@ Nightfox는 실제 Firefox/Chrome을 실행하는 프로그램이 아니라 **�
 | 개선 침투자 | `intruder_v2_01.json` |
 | 방어자 | `defender_01.json` |
 | 추적자 | `tracker_01.json` |
+| 종합 도전 | `challenge_01.json` |
 | 이전판 이어하기 사본 | `legacy_continue_01.json` |
 | 이전판 읽기 원본 | `campaign_01.json`, `slot_01.json` |
 
 설정은 `settings.json`이다. 백업하려면 게임을 종료한 뒤 사용자 데이터 폴더 전체를 복사한다. 업데이트할 때는 새 배포 폴더를 사용하고 사용자 데이터는 유지한다. 동시에 여러 게임 인스턴스에서 같은 저장 슬롯에 쓰지 않는다. 이전 완료는 그때의 기록이며, 현재 사건을 다시 실험해 조건이 달라졌을 때는 현재 충족 상태와 구분해 표시한다.
 
-기존 설정에 지원 값이 없으면 표준으로 읽는다. 설정 파일을 읽지 못했을 때 로비의 지원 선택이 원본·정상 백업을 기본값으로 덮어쓰지 않는다. 저장 실패 알림이 있어도 이번 세션의 선택은 유지되며 설정 화면에도 현재 적용값을 보여 준다.1.1로 다시 내려가면 추가된 지원 키를 구1.1 설정 검증기가 거절해 기본 설정으로 표시할 수 있다. 캠페인 v2 저장과 선호 파일의 버전 호환은 다르다.
+기존 설정에 지원 값이 없으면 표준으로 읽는다. 설정 파일을 읽지 못했을 때 로비의 지원 선택이 원본·정상 백업을 기본값으로 덮어쓰지 않는다. 저장 실패 알림이 있어도 이번 세션의 선택은 유지되며 설정 화면에도 현재 적용값을 보여 준다.1.2.1 또는 그 이전으로 다시 내려가면 새 지원 키를 이전 설정 검증기가 거절해 기본 설정으로 표시할 수 있다. 캠페인 v2 저장과 선호 파일의 버전 호환은 다르다.
 
 ## 버전 범위
 
-침투자 메인24·선택4, 독립 방어자8·추적자8의 공개44사건, 3D 작업실, 가상 OS, 강화 OST7큐·엔딩 편집본과 인물 초상16장을 포함한다. 이전판 이어하기는 별도 호환 경로다. 선택 R01은 작은 분기·호출 흐름을 읽고 정상 입력과 반례를 실행하는 퍼즐이며 실제 CPU나 임의 코드를 실행하지 않는다.
+침투자 메인24·선택4, 독립 방어자8·추적자8과 종합 도전3의 공개47사건, 3D 작업실, 가상 OS, 강화 OST7큐·엔딩 편집본과 인물 초상16장을 포함한다. 이전판 이어하기는 별도 호환 경로다. 선택 R01은 작은 분기·호출 흐름을 읽고 정상 입력과 반례를 실행하는 퍼즐이며 실제 CPU나 임의 코드를 실행하지 않는다.
 
 8–12시간은 **침투자편**의 분량 설계 목표이며 사람의 실측 결과가 아니다. 새 두 편을 그 시간에서 나누어 센 것이 아니다. 원어민 번역, 실제 OS별 IME·장치, 장시간 청취·난이도 평가는 추가 피드백 대상이다. 터미널은 게임이 지원하는 Linux식 명령 부분집합이며 실제 Linux 셸 전체를 구현하지 않는다. 일반 메모·핀은 현재 세션용이며, 추적 사건의 수집 관측·가설·인계 상태는 해당 진행에 저장된다.
 
@@ -96,17 +104,17 @@ Nightfox는 실제 Firefox/Chrome을 실행하는 프로그램이 아니라 **�
 
 Extract the entire ZIP, then launch the file for your OS shown above. Keep the executable and `.pck` together on Windows/Linux. Godot, Linux, containers and real security tools are not required. All targets and websites are fictional and offline.
 
-Choose **Settings** to select English. Select **Intruder**, **Defender** or **Tracker**, choose assistance and then **New Game** or **Continue**. Guided/Standard/Independent change guidance, not objective or alert rules. Each story has its own onboarding, ending and save; another campaign is not required.
+Choose **Settings** to select English. Select **Intruder**, **Defender**, **Tracker** or **Combined Challenge**, choose assistance and then **New Game** or **Continue**. Guided/Standard/Independent change guidance, not objective or alert rules. Each story has its own onboarding, ending and save; another campaign is not required.
 
 Open apps from desktop icons or the lower-left launcher. The taskbar contains running apps; clicking the foreground app minimizes it, and clicking again restores it. Move/resize windows and use their title controls. The + button opens another terminal, up to four. Terminal Up/Down searches history by the current draft prefix; Down past the newest match restores that draft. An empty draft recalls all history. Nightfox supports eight separate tabs and is entirely fictional/offline. Browser Ctrl/Cmd+T/W/L opens/closes tabs or selects the address; Alt+Left/Right goes back/forward, and Ctrl/Cmd+R or F5 reloads the loaded page. Navigation/reload shortcuts wait while a password field, text composition, a modal or pause is active. Recorded response identity is separate from the current request identity.
 
 Read Mail and the Case Board; F1 opens Help, F6 focuses the launcher. In the room use WASD, hold right mouse to look, and press E near the computer. F10 returns to the room. Use the on-screen Pause button if your keyboard has no Pause key. Settings has Play, Display, Audio and Controls categories, reachable by keyboard. Input-time automatic notifications stay compact; click the notification button to inspect and return to input to fold it away.
 
-Defenders must preserve legitimate work while containing threats. Trackers evaluate collected observations, provenance and time ranges; insufficient evidence is different from a refuted hypothesis. Tools expose structured controls and observations rather than requiring authoring JSON.
+Defenders must preserve legitimate work while containing threats. Trackers evaluate collected observations, provenance and time ranges; insufficient evidence is different from a refuted hypothesis. Tools expose structured controls and observations rather than requiring authoring JSON. Observation and action/result panes scroll independently; use the +/− section controls and select a table row for all public fields. The current-objective button opens the Case Board. Combined Challenge has its own challenge_01.json slot and authored constraints; it does not change the existing campaigns through a difficulty multiplier. Verify the actual deployment file content and compare the tool-provided corrected time intervals and provenance.
 
-Use Save before leaving. New Game replaces only the selected campaign after confirmation and backup. Old campaign saves remain read-only sources for a separate legacy continuation copy, using the old content; old progress does not certify the new objectives. Your saves live outside the installation directory, at the OS-specific location above. Quit before backing up that folder or installing an update. Do not run multiple writers against the same save. Missing old assistance preferences default to Standard; unreadable settings are preserved during automatic lobby selection. The older1.1 binary may reject new preference keys on downgrade, independently of campaign-save compatibility.
+Use Save before leaving. New Game replaces only the selected campaign after confirmation and backup. Old campaign saves remain read-only sources for a separate legacy continuation copy, using the old content; old progress does not certify the new objectives. Your saves live outside the installation directory, at the OS-specific location above. Quit before backing up that folder or installing an update. Do not run multiple writers against the same save. Missing old assistance preferences default to Standard; unreadable settings are preserved during automatic lobby selection. Older binaries, including1.2.1, may reject the new challenge preference key on downgrade, independently of campaign-save compatibility.
 
-This release candidate includes 24 main and four optional intruder cases, eight defender cases and eight tracker cases, independent endings, six languages and seven stronger original music cues. The 8–12-hour target belongs to the intruder story and is not measured human playtime. Native-language quality, physical IME/audio-device acceptance and Windows GUI play remain separate validation work. macOS is ad-hoc signed without notarization; Windows is unsigned. Package hashes and source/build evidence accompany the release.
+This release candidate includes 24 main and four optional intruder cases, eight defender cases, eight tracker cases and three combined challenge cases, independent endings, six languages and seven stronger original music cues. The 8–12-hour target belongs to the intruder story and is not measured human playtime. Native-language quality, physical IME/audio-device acceptance and Windows GUI play remain separate validation work. macOS is ad-hoc signed without notarization; Windows is unsigned. Package hashes and source/build evidence accompany the release.
 
 ## 경보와 도움 수준
 

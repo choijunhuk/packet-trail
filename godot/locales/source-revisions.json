@@ -39,16 +39,26 @@
         "path": "godot/data/campaign/locales/intruder_v2.en.json",
         "sha256": "c63347ee0b45d41ffcf2a580000a7c80078fda6bae461ba39be0d8d9cd9a358d"
       }
+    },
+    "challenge": {
+      "ko": {
+        "path": "godot/data/campaign/locales/challenge_v1.ko.json",
+        "sha256": "81d9907d62479027797b8545bf5eb4f20c91cfa012a7c28ef8fc48ec07e79fbc"
+      },
+      "en": {
+        "path": "godot/data/campaign/locales/challenge_v1.en.json",
+        "sha256": "915c1c059dcde60b7937bf491722c5931cb4d9035a89a058208116a30e896fc2"
+      }
     }
   },
   "ui": {
     "ko": {
       "path": "godot/assets/ui/strings_ko.json",
-      "sha256": "5b4e421cfa1f66cbdbf8b728c43de372ff8aa4c82fd6367187d09bed13ecc0a7"
+      "sha256": "1bbc96edf254297b99280ea57f8648e635383f57063da5ffaed1991e6792e150"
     },
     "en": {
       "path": "godot/assets/ui/strings_en.json",
-      "sha256": "fb94b97df96fdf7f4ee7675503bba19831bbdf3469ab32fdd3e1a5654e91a2fa"
+      "sha256": "21e69a60b67e55921715b72b4919d4df7c538083e0d12c1af5c8423eef6fe255"
     }
   }
 }

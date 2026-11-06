@@ -180,7 +180,8 @@ static func dispatch(definition: Dictionary, request: Dictionary, actor: Diction
 	elif operation == "notify_send":
 		var target: String = str(body.get("target", ""))
 		key = "notify:" + target + ":delivered"
-		if status == 200 and (not endpoint.get("allowed_targets", []).has(target) or (endpoint.has("target_policy") and policies.get(endpoint.target_policy) != true)):
+		var enforce_targets: bool = not endpoint.has("allowlist_policy") or policies.get(endpoint.allowlist_policy, false) == true
+		if status == 200 and ((enforce_targets and not endpoint.get("allowed_targets", []).has(target)) or (not endpoint.has("allowlist_policy") and endpoint.has("target_policy") and policies.get(endpoint.target_policy) != true)):
 			status = 403
 		if status == 200:
 			state.business_objects[key] = int(state.business_objects.get(key, 0)) + 1
@@ -367,6 +368,8 @@ static func basis(definition: Dictionary, state: Dictionary, context: Dictionary
 		while not path.is_empty():
 			var entry: Dictionary = files.get(path, {})
 			relevant.files[path] = {"kind": entry.get("kind", ""), "owner": entry.get("owner", ""), "group": entry.get("group", ""), "mode": entry.get("mode", "")}
+			if endpoint.get("current_content", false) == true and path == endpoint.get("file_path", ""):
+				relevant.files[path]["content"] = entry.get("content")
 			if path == "/": break
 			path = path.get_base_dir()
 		relevant["groups"] = actor_groups(state, context, endpoint.host_id, actor.get("account_id", ""))
@@ -417,6 +420,10 @@ static func _normal_current(definition: Dictionary, state: Dictionary, context: 
 			if artifact.is_empty() or artifact.get("quarantined", false): return false
 			for field in ["filename", "mime", "signature"]:
 				if artifact.get(field, "") != body.get(field, ""): return false
+		"vfs_write":
+			if endpoint.get("current_content", false) == true:
+				var entry: Dictionary = effective_files(definition, state, context, endpoint.host_id).get(endpoint.get("file_path", ""), {})
+				if entry.get("kind", "") != "file" or not _same_value(entry.get("content"), body.get("content", "")): return false
 		"csrf_change":
 			var setting: String = str(body.get("setting_id", endpoint.get("own_setting", "")))
 			if not _same_value(state.get("business_objects", {}).get("setting:" + str(actor.get("account_id", "")) + ":" + setting), body.get("value")): return false

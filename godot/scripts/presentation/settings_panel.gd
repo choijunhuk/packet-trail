@@ -6,6 +6,7 @@ signal applied(values: Dictionary)
 const Localization = preload("res://scripts/presentation/localization.gd")
 const DesktopTheme = preload("res://scripts/presentation/desktop_theme.gd")
 const FALLBACK := {
+	"CAMPAIGN_CHALLENGE": "종합 도전",
 	"LOBBY_CHOOSE_STORY": "오늘 밤, 어느 쪽에 설까요?",
 	"LOBBY_ROLE_INTRUDER": "단서를 따라 침투하고 감춰진 기록을 회수합니다.",
 	"LOBBY_ROLE_DEFENDER": "위협을 막으면서 시민과 동료의 업무를 지킵니다.",
@@ -81,7 +82,7 @@ func _build() -> void:
 	scope.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	scope.add_theme_color_override("font_color", DesktopTheme.MUTED)
 	play.add_child(scope)
-	for id in ["intruder", "defender", "tracker"]:
+	for id in ["intruder", "defender", "tracker", "challenge"]:
 		var label := Label.new()
 		label.text = _text("SETTINGS_SUPPORT_FOR", {"campaign": _text("CAMPAIGN_" + id.to_upper())})
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART

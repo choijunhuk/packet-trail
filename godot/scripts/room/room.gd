@@ -18,6 +18,8 @@ const FALLBACK := {
 	"LOBBY_CHOOSE_STORY": "오늘 밤, 어느 쪽에 설까요?",
 	"LOBBY_ROLE_INTRUDER": "단서를 따라 침투하고 감춰진 기록을 회수합니다.",
 	"LOBBY_ROLE_DEFENDER": "위협을 막으면서 시민과 동료의 업무를 지킵니다.",
+	"LOBBY_ROLE_CHALLENGE": "침투·방어·추적을 조합하는 고급 사건입니다. 기본 조작을 익힌 뒤 도전하세요.",
+	"CAMPAIGN_CHALLENGE": "종합 도전",
 	"LOBBY_ROLE_TRACKER": "기록의 출처와 시간을 비교해 연결을 추적합니다.",
 	"LOBBY_CASE_COUNTS": "본편 {main} · 선택 {optional}",
 	"LOBBY_CASE_COUNT": "독립 이야기 · {total}개 사건",

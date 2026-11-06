@@ -32,7 +32,7 @@ func run(scene_tree: SceneTree) -> Dictionary:
 	await _interaction_quality()
 	await _settings_cancel()
 	Localization.set_locale(locale)
-	_check(profiles.size() == 9, "all three support modes were exercised for each public pack")
+	_check(profiles.size() == 12, "all three support modes were exercised for the original three packs and challenge")
 	_check(_fingerprints() == before, "default campaign/settings/sidecars and progress folders remain unchanged")
 	_remove_owned(test_root)
 	return {"suite": "desktop_shell", "checks": checks, "failures": failures.duplicate(), "profiles": profiles,
@@ -75,7 +75,7 @@ func _visible_windows(desktop: Control) -> Array[String]:
 
 
 func _profile_and_window_lifetime() -> void:
-	for pack in ["intruder", "defender", "tracker"]:
+	for pack in ["intruder", "defender", "tracker", "challenge"]:
 		var canonical := {}
 		for level in ["guided", "standard", "independent"]:
 			var desktop := await _new_desktop(pack, level, level)

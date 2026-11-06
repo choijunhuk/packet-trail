@@ -35,6 +35,9 @@ msgstr "민서"
 msgid "C04_NAME"
 msgstr "태경"
 
+msgid "CAMPAIGN_CHALLENGE"
+msgstr "종합 도전"
+
 msgid "CAMPAIGN_COMPLETE"
 msgstr "심야의 기록이 이어졌습니다."
 
@@ -409,6 +412,243 @@ msgstr "취소"
 
 msgid "CASE_BOARD"
 msgstr "사건 노트"
+
+msgid "CH1_ENDING_TITLE"
+msgstr "검증된 합동 인계"
+
+msgid "CH1_PACK_SUMMARY"
+msgstr "접근 통제·배포 복구·추적 반례를 복합 제약으로 해결하는 독립 3사건."
+
+msgid "CH1_PACK_TITLE"
+msgstr "종합 도전 · 세 갈래 인계"
+
+msgid "CH1_X01_ABSTRACTION"
+msgstr "등록된 계정·요청·파일·관측으로 작동하는 독립 도전입니다. 다른 유효한 해법과 수동 도움도 사용할 수 있습니다."
+
+msgid "CH1_X01_BRIEF"
+msgstr "합동 대응 훈련의 첫 의뢰입니다. 민원 접수 기록이 다른 계정에 노출됐고 같은 입구에서는 인증 실패도 반복됩니다. 입구 전체를 끄면 시민의 정상 접수도 사라집니다. 정상 접수와 실패 제한을 한 설정에서 함께 확인해 주세요.\n\n직접 경로는 소유자 검사와 계정별 제한을 따로 고쳐야 합니다. 승인 중계는 고정된 위임 범위와 자체 인증 제한을 갖고 있어 정상 업무를 옮길 수도 있습니다. 반복 실패 표본을 확인하고 최종 표본에서 제한 응답이 나오는지 보세요. 이미 조사한 계정은 앞선 표본부터 제한될 수도 있습니다. 다른 시민의 정상 인증은 계속 가능해야 합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X01_CASE_FAILED_1"
+msgstr "원래 입구 반복 실패 1"
+
+msgid "CH1_X01_CASE_FAILED_2"
+msgstr "원래 입구 반복 실패 2"
+
+msgid "CH1_X01_CASE_FAILED_3"
+msgstr "원래 입구 반복 실패 3"
+
+msgid "CH1_X01_CASE_FOREIGN_DIRECT"
+msgstr "무관한 계정의 원래 입구 요청"
+
+msgid "CH1_X01_CASE_FOREIGN_GATEWAY"
+msgstr "무관한 계정의 승인 경로 요청"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_1"
+msgstr "승인 경로 반복 실패 1"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_2"
+msgstr "승인 경로 반복 실패 2"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_3"
+msgstr "승인 경로 반복 실패 3"
+
+msgid "CH1_X01_CASE_LEGITIMATE"
+msgstr "다른 시민의 정상 인증"
+
+msgid "CH1_X01_CASE_OWN_A"
+msgstr "시민 A의 자기 접수"
+
+msgid "CH1_X01_CASE_OWN_B"
+msgstr "시민 B의 자기 접수"
+
+msgid "CH1_X01_CASE_STAFF"
+msgstr "담당자의 위임된 접수"
+
+msgid "CH1_X01_CONTROL_AUTH_RETRY"
+msgstr "계정별 반복 인증 제한"
+
+msgid "CH1_X01_CONTROL_DIRECT_OPEN"
+msgstr "원래 업무 입구 열기"
+
+msgid "CH1_X01_CONTROL_GATEWAY_OPEN"
+msgstr "승인 경로 열기"
+
+msgid "CH1_X01_CONTROL_OWNER_CHECK"
+msgstr "접수 소유자 검사"
+
+msgid "CH1_X01_DESK_NAME"
+msgstr "열려 있어야 하는 문 담당실"
+
+msgid "CH1_X01_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "CH1_X01_GOAL"
+msgstr "정상 접수·담당자 열람·정상 인증을 유지하고 직접/중계의 비인가 열람과 반복 실패를 제한한다."
+
+msgid "CH1_X01_HINT_1"
+msgstr "직접 입구의 소유권 검사와 인증 제한은 다른 제어입니다. 하나만 고쳐서는 모든 결과가 맞지 않습니다."
+
+msgid "CH1_X01_HINT_2"
+msgstr "각 입구의 실패 표본은 모두 거부되고 최종 표본은 제한돼야 합니다. 앞선 조사로 이미 제한된 계정도 유효한 거부입니다. 정상 인증에는 다른 계정을 사용합니다."
+
+msgid "CH1_X01_HINT_3"
+msgstr "직접 입구를 수리하거나 그 입구만 닫고 정상 접수·인증을 승인 중계로 옮기세요. 중계는 열려 있어야 합니다."
+
+msgid "CH1_X01_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "CH1_X01_LIMIT"
+msgstr "실제 서버 침투나 모든 공격에 대한 안전 보증이 아닙니다. 읽는 시간에는 벌점이 없고 잘못된 설정은 다시 고칠 수 있습니다."
+
+msgid "CH1_X01_PRINCIPLE"
+msgstr "서비스 가용성과 권한 범위는 함께 검증해야 합니다. 실패 제한은 개별 인증 결과이며 전역 경보 수치와 다릅니다."
+
+msgid "CH1_X01_REPLY"
+msgstr "정상 시민과 담당자의 접수는 유지되고 무관한 열람과 반복 인증은 거부됐습니다. 어떤 입구를 택했는지보다 실제 업무가 남았다는 점이 인계 기준입니다. 다음 현장은 배포 권한을 넓히자는 제안으로 시끄럽습니다."
+
+msgid "CH1_X01_SENDER"
+msgstr "야간 합동 대응실"
+
+msgid "CH1_X01_TITLE"
+msgstr "열려 있어야 하는 문"
+
+msgid "CH1_X02_ABSTRACTION"
+msgstr "등록된 계정·요청·파일·관측으로 작동하는 독립 도전입니다. 다른 유효한 해법과 수동 도움도 사용할 수 있습니다."
+
+msgid "CH1_X02_BRIEF"
+msgstr "배포 계정이 상태 파일을 갱신하지 못해 야간 안내가 멈췄습니다. 폴더와 파일을 모두에게 열자는 제안이 있지만 같은 입구에 비담당 계정도 있습니다. 정상 읽기·쓰기와 통지, 비담당 쓰기 거부를 모두 확인해 주세요.\n\n원래 폴더는 deploy 그룹만 탐색하고 파일은 해당 그룹만 쓸 수 있습니다. 배포 계정의 현재 그룹을 확인하거나, jobs 그룹이 이미 접근할 수 있는 승인 작업대를 사용하세요. 통지의 목적지는 ward뿐이며 직접 통지는 현재 꺼져 있고 승인 대기 통지는 별도로 켤 수 있습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X02_CASE_FOREIGN_APPROVED"
+msgstr "승인 경로의 비담당 쓰기"
+
+msgid "CH1_X02_CASE_FOREIGN_WRITE"
+msgstr "비담당 계정의 배포 파일 변경"
+
+msgid "CH1_X02_CASE_INTERNAL_TARGET"
+msgstr "범위 밖 통지 대상: x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_NOTIFY"
+msgstr "ward 정상 통지"
+
+msgid "CH1_X02_CASE_READ"
+msgstr "배포 계정의 상태 읽기"
+
+msgid "CH1_X02_CASE_STANDBY_TARGET"
+msgstr "범위 밖 통지 대상: gateway.x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_WRITE"
+msgstr "배포 계정의 작업 결과 쓰기"
+
+msgid "CH1_X02_CONTROL_NOTICE_NOTIFY_OPEN"
+msgstr "주 통지 경로 열기"
+
+msgid "CH1_X02_CONTROL_NOTICE_STANDBY_OPEN"
+msgstr "승인 대기 통지 열기"
+
+msgid "CH1_X02_CONTROL_NOTICE_TARGET_SCOPE"
+msgstr "ward 통지 범위 제한"
+
+msgid "CH1_X02_DESK_NAME"
+msgstr "살려야 할 배포 담당실"
+
+msgid "CH1_X02_DIRECTORY_MODE"
+msgstr "배포 폴더의 탐색 권한"
+
+msgid "CH1_X02_FILE_MODE"
+msgstr "작업 결과 파일의 권한"
+
+msgid "CH1_X02_GATEWAY_NAME"
+msgstr "승인된 업무 경로"
+
+msgid "CH1_X02_GOAL"
+msgstr "정상 상태 읽기·쓰기와 ward 통지를 살리고 비담당 파일 변경 및 범위 밖 통지를 거부한다."
+
+msgid "CH1_X02_HINT_1"
+msgstr "폴더 탐색과 파일 쓰기는 다른 권한입니다. 모든 사용자에게 여는 대신 현재 서비스 계정의 그룹을 확인하세요."
+
+msgid "CH1_X02_HINT_2"
+msgstr "원래 파일의 권한을 유지하고 deploy 그룹을 부여하거나 승인 작업대의 파일로 업무를 옮길 수 있습니다."
+
+msgid "CH1_X02_HINT_3"
+msgstr "허용된 ward 통지와 거부할 내부 목적지를 각각 관찰하세요. 사용한 통지 경로를 닫으면 과거 성공만으로는 완료되지 않습니다."
+
+msgid "CH1_X02_JOB_GROUPS"
+msgstr "배포 계정의 필요한 그룹"
+
+msgid "CH1_X02_LAB_NAME"
+msgstr "현재 업무와 대응 검증"
+
+msgid "CH1_X02_LIMIT"
+msgstr "실제 서버 침투나 모든 공격에 대한 안전 보증이 아닙니다. 읽는 시간에는 벌점이 없고 잘못된 설정은 다시 고칠 수 있습니다."
+
+msgid "CH1_X02_PRINCIPLE"
+msgstr "최소 권한과 정상 업무의 지속을 함께 확인합니다. 승인된 대체 파일·통지 경로도 실제 동작하면 유효합니다."
+
+msgid "CH1_X02_REPLY"
+msgstr "허용된 작업 결과가 실제 파일에 남고 ward 안내도 전달됐습니다. 비담당 쓰기와 내부 목적지 오용은 거부됐습니다. 마지막 인계에서는 같은 주소를 같은 세션으로 보았던 추정부터 확인해야 합니다."
+
+msgid "CH1_X02_SENDER"
+msgstr "야간 합동 대응실"
+
+msgid "CH1_X02_TITLE"
+msgstr "살려야 할 배포"
+
+msgid "CH1_X03_ABSTRACTION"
+msgstr "등록된 계정·요청·파일·관측으로 작동하는 독립 도전입니다. 다른 유효한 해법과 수동 도움도 사용할 수 있습니다."
+
+msgid "CH1_X03_BRIEF"
+msgstr "같은 중계 주소와 같은 이름표가 두 기록에 나타나니 같은 세션이라는 선행 보고가 왔습니다. 그러나 이름표는 클라이언트가 붙였고 출처별 시계도 다릅니다. 세션을 사람의 신원으로 확대하지 말고, 다음 조사 지점을 정할 수 있는 연결과 반례를 인계해 주세요.\n\n현장 센서의 첫 창은 공유 주소와 클라이언트가 주장한 같은 night-worker 이름표만 보입니다. 최신 현장 창에는 회전 기록만, 수신 서버에는 출발과 다른 세션 기록만 있으므로 함께 조사하세요. 독립 감사 내보내기는 아래의 별도 감사 계정으로 접속하면 사용할 수 있습니다. 서버 발급 S1·S2, 시계 오차를 보정한 회전/출발 순서, N03의 vault 전달을 확인해야 합니다. vault 관측과 공유 주소 관측 중 실제 전달 경로를 따라 다음 지점을 고르세요.\n\n별도 감사 계정\n\nauditor@x03.challenge.packet.test\naudit-custody\n\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X03_DESK_NAME"
+msgstr "같은 주소의 다른 세션 담당실"
+
+msgid "CH1_X03_GOAL"
+msgstr "초기 동일 세션 추정을 반박하고 회전→출발 순서와 vault 전달을 입증해 다음 관측점을 인계한다."
+
+msgid "CH1_X03_HINT_1"
+msgstr "공유 주소와 클라이언트 표식은 서버가 발급한 세션 식별자와 다릅니다. 출처와 marker authority를 보세요."
+
+msgid "CH1_X03_HINT_2"
+msgstr "현장 회전 시각 130~132와 수신 출발 시각 105~107을 그대로 비교하면 순서를 거꾸로 읽게 됩니다. 각각의 시계 오차를 빼서 구간을 비교하세요."
+
+msgid "CH1_X03_HINT_3"
+msgstr "현장 최신 창과 수신 기록을 함께 사용하거나, auditor 계정으로 접속해 독립 감사 내보내기를 이용할 수 있습니다. before와 forwarded_to를 지원하고 초기 same_session 반례를 모은 뒤 vault 관측으로 인계하세요."
+
+msgid "CH1_X03_LIMIT"
+msgstr "실제 서버 침투나 모든 공격에 대한 안전 보증이 아닙니다. 읽는 시간에는 벌점이 없고 잘못된 설정은 다시 고칠 수 있습니다."
+
+msgid "CH1_X03_PRINCIPLE"
+msgstr "관측 출처·시계 범위·서버 발급 표식으로 연결을 평가합니다. 공유 IP만으로 동일 세션이나 사람을 단정하지 않습니다."
+
+msgid "CH1_X03_PRIOR"
+msgstr "공유 주소가 같으니 같은 세션이라는 선행 추정"
+
+msgid "CH1_X03_REPLY"
+msgstr "선행 동일 세션 추정은 서버 발급 기록으로 반박됐고, 시각 순서와 vault 전달이 출처 있는 관측으로 지원됐습니다. 사람의 신원을 단정하지 않은 채 다음 조사 범위를 좁혔습니다. 세 의뢰의 인계가 완료됐습니다."
+
+msgid "CH1_X03_SENDER"
+msgstr "야간 합동 대응실"
+
+msgid "CH1_X03_SENSOR_ADDRESS_WATCH"
+msgstr "공유 주소의 다음 관측"
+
+msgid "CH1_X03_SENSOR_AUDIT"
+msgstr "승인된 수신 감사 내보내기"
+
+msgid "CH1_X03_SENSOR_FIELD"
+msgstr "현장 기록의 관측 창"
+
+msgid "CH1_X03_SENSOR_RECEIVER"
+msgstr "수신 서버 인계 기록"
+
+msgid "CH1_X03_SENSOR_VAULT_WATCH"
+msgstr "vault의 다음 관측"
+
+msgid "CH1_X03_TITLE"
+msgstr "같은 주소의 다른 세션"
+
+msgid "CH1_X03_TOOL_NAME"
+msgstr "합동 관측과 반례 인계"
 
 msgid "CLOSE"
 msgstr "닫기"
@@ -2842,6 +3082,9 @@ msgstr "본편 {main} · 선택 {optional}"
 
 msgid "LOBBY_CHOOSE_STORY"
 msgstr "오늘 밤, 어느 쪽에 설까요?"
+
+msgid "LOBBY_ROLE_CHALLENGE"
+msgstr "침투·방어·추적을 조합하는 고급 사건입니다. 기본 조작을 익힌 뒤 도전하세요."
 
 msgid "LOBBY_ROLE_DEFENDER"
 msgstr "위협을 막으면서 시민과 동료의 업무를 지킵니다."
@@ -7343,6 +7586,9 @@ msgstr "현재 사건에 없는 도구입니다."
 msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
 msgstr "업로드 접수 단계"
 
+msgid "UI_TOOL_FIELD_ACCOUNT_ID"
+msgstr "계정 식별자"
+
 msgid "UI_TOOL_FIELD_ACQUISITION"
 msgstr "수집 방법"
 
@@ -7369,6 +7615,9 @@ msgstr "업무 반영 결과"
 
 msgid "UI_TOOL_FIELD_CALL_STACK"
 msgstr "호출 스택"
+
+msgid "UI_TOOL_FIELD_CAN_ADVANCE"
+msgstr "다음 관측 가능"
 
 msgid "UI_TOOL_FIELD_CASE_ID"
 msgstr "요청·입력 사례"
@@ -7448,6 +7697,9 @@ msgstr "함수"
 msgid "UI_TOOL_FIELD_GROUP"
 msgstr "정책 묶음"
 
+msgid "UI_TOOL_FIELD_HOST_ID"
+msgstr "호스트 식별자"
+
 msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
 msgstr "가설 이름"
 
@@ -7481,6 +7733,9 @@ msgstr "MIME 형식"
 msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
 msgstr "다음 관찰 지점"
 
+msgid "UI_TOOL_FIELD_NORMAL"
+msgstr "정상 업무"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "객체 ID"
 
@@ -7495,6 +7750,9 @@ msgstr "관측 시각 구간"
 
 msgid "UI_TOOL_FIELD_OP"
 msgstr "명령"
+
+msgid "UI_TOOL_FIELD_OPTIONS"
+msgstr "선택 가능한 값"
 
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "출처 (origin)"
@@ -7517,6 +7775,9 @@ msgstr "파일 경로"
 msgid "UI_TOOL_FIELD_PC"
 msgstr "명령 위치"
 
+msgid "UI_TOOL_FIELD_POLICY"
+msgstr "적용 정책"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "출처·수집 근거"
 
@@ -7538,8 +7799,14 @@ msgstr "읽는 레지스터"
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "가상 레지스터"
 
+msgid "UI_TOOL_FIELD_RELATION"
+msgstr "연결 관계"
+
 msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
 msgstr "정정한 주장"
+
+msgid "UI_TOOL_FIELD_REQUEST_ID"
+msgstr "요청 식별자"
 
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "요청 표식"
@@ -7553,11 +7820,17 @@ msgstr "비교할 둘째 대상"
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "요청 경로"
 
+msgid "UI_TOOL_FIELD_ROUTE_OPTIONS"
+msgstr "선택 가능한 경로"
+
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "표본 방식"
 
 msgid "UI_TOOL_FIELD_SATISFIED"
 msgstr "조건 충족"
+
+msgid "UI_TOOL_FIELD_SCOPE"
+msgstr "관측 범위"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "볼 내용"
@@ -7604,6 +7877,9 @@ msgstr "대상 호스트"
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "참일 때 분기"
 
+msgid "UI_TOOL_FIELD_THREAT"
+msgstr "위협 요청"
+
 msgid "UI_TOOL_FIELD_TICK"
 msgstr "발생 단계"
 
@@ -7648,6 +7924,9 @@ msgstr "보이는 정보"
 
 msgid "UI_TOOL_FIELD_WINDOW"
 msgstr "관측 구간"
+
+msgid "UI_TOOL_FIELD_WINDOW_INDEX"
+msgstr "현재 관측 순서"
 
 msgid "UI_TOOL_FILTER"
 msgstr "필터"
@@ -7939,3 +8218,15 @@ msgstr "최소화"
 
 msgid "UI_WIN_TERMINAL_N"
 msgstr "터미널 {n}"
+
+msgid "UI_WORKBENCH_EXPAND_RECORDS"
+msgstr "관측 구역을 펼치거나 접습니다. 행을 선택하면 전체 필드를 확인할 수 있습니다."
+
+msgid "UI_WORKBENCH_NO_DESCRIPTION"
+msgstr "관측을 확인하고 조치나 가설을 입력한 뒤 실행 결과를 비교하세요."
+
+msgid "UI_WORKBENCH_OPEN_GOALS"
+msgstr "현재 사건의 목표 보기"
+
+msgid "UI_WORKBENCH_RECORD_DETAIL_HINT"
+msgstr "행을 선택하면 식별자와 출처를 포함한 전체 기록을 확인할 수 있습니다."

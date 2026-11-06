@@ -47,6 +47,10 @@ static func _response(model: Dictionary, mission: Dictionary) -> Array[String]:
 			continue
 		for key in endpoint:
 			if str(key).ends_with("_policy") and (not mission.policies.has(endpoint[key]) or not mission.policies[endpoint[key]] is bool): result.append("Unknown/nonboolean endpoint policy.")
+		if endpoint.has("current_content") and (not endpoint.current_content is bool or endpoint.operation != "vfs_write"):
+			result.append("Current-content validation requires a boolean on a virtual write endpoint.")
+		if endpoint.has("allowlist_policy") and (endpoint.operation != "notify_send" or endpoint.has("target_policy")):
+			result.append("Notification allowlist policy cannot be combined with legacy target policy or another operation.")
 		if endpoint.operation == "delegated_read":
 			if not endpoint.get("scopes") is Dictionary: result.append("Delegation scopes must be explicit.")
 			else:

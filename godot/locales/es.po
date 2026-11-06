@@ -35,6 +35,9 @@ msgstr "Minseo"
 msgid "C04_NAME"
 msgstr "Taegyeong"
 
+msgid "CAMPAIGN_CHALLENGE"
+msgstr "Desafío combinado"
+
 msgid "CAMPAIGN_COMPLETE"
 msgstr "Los registros de medianoche están conectados."
 
@@ -409,6 +412,243 @@ msgstr "Cancelar"
 
 msgid "CASE_BOARD"
 msgstr "Tablero del caso"
+
+msgid "CH1_ENDING_TITLE"
+msgstr "Traspaso conjunto verificado"
+
+msgid "CH1_PACK_SUMMARY"
+msgstr "Tres casos avanzados independientes que combinan control de acceso, recuperación del despliegue y pruebas en contra."
+
+msgid "CH1_PACK_TITLE"
+msgstr "Desafío conjunto · Tres traspasos"
+
+msgid "CH1_X01_ABSTRACTION"
+msgstr "Este desafío independiente utiliza cuentas, solicitudes, archivos y observaciones registrados. Siguen disponibles otras soluciones válidas y la ayuda manual."
+
+msgid "CH1_X01_BRIEF"
+msgstr "Es el primer ejercicio de respuesta conjunta. Los registros de recepción están expuestos a cuentas ajenas y se repiten fallos de acceso en la misma entrada. Cerrar todas las entradas también interrumpe el trabajo legítimo de los ciudadanos. Verifica el acceso a los recibos y los límites de intentos fallidos bajo una misma configuración.\n\nLa ruta original requiere controles separados de propiedad y reintentos por cuenta. La pasarela aprobada tiene ámbitos de delegación fijos y su propio límite de reintentos, por lo que también puedes trasladar allí el trabajo legítimo. Observa las muestras de fallos repetidos y verifica una respuesta de limitación en la última. Una cuenta ya investigada puede quedar limitada también en una muestra anterior. Otro ciudadano debe poder seguir iniciando sesión.\nLa cuenta de trabajo autorizada figura abajo. Tras conectar, la herramienta del caso muestra las observaciones actuales y las acciones permitidas.\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X01_CASE_FAILED_1"
+msgstr "Fallo repetido 1 en la entrada original"
+
+msgid "CH1_X01_CASE_FAILED_2"
+msgstr "Fallo repetido 2 en la entrada original"
+
+msgid "CH1_X01_CASE_FAILED_3"
+msgstr "Fallo repetido 3 en la entrada original"
+
+msgid "CH1_X01_CASE_FOREIGN_DIRECT"
+msgstr "Cuenta ajena en la entrada original"
+
+msgid "CH1_X01_CASE_FOREIGN_GATEWAY"
+msgstr "Cuenta ajena en la ruta aprobada"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_1"
+msgstr "Fallo repetido 1 en la pasarela"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_2"
+msgstr "Fallo repetido 2 en la pasarela"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_3"
+msgstr "Fallo repetido 3 en la pasarela"
+
+msgid "CH1_X01_CASE_LEGITIMATE"
+msgstr "Inicio de sesión válido de otro ciudadano"
+
+msgid "CH1_X01_CASE_OWN_A"
+msgstr "Recibo propio del ciudadano A"
+
+msgid "CH1_X01_CASE_OWN_B"
+msgstr "Recibo propio del ciudadano B"
+
+msgid "CH1_X01_CASE_STAFF"
+msgstr "Recibo delegado al personal asignado"
+
+msgid "CH1_X01_CONTROL_AUTH_RETRY"
+msgstr "Limitar los accesos repetidos por cuenta"
+
+msgid "CH1_X01_CONTROL_DIRECT_OPEN"
+msgstr "Habilitar la entrada de trabajo original"
+
+msgid "CH1_X01_CONTROL_GATEWAY_OPEN"
+msgstr "Habilitar la ruta aprobada"
+
+msgid "CH1_X01_CONTROL_OWNER_CHECK"
+msgstr "Comprobación de propiedad del recibo"
+
+msgid "CH1_X01_DESK_NAME"
+msgstr "Mesa de Una puerta que debe seguir abierta"
+
+msgid "CH1_X01_GATEWAY_NAME"
+msgstr "Ruta de trabajo aprobada"
+
+msgid "CH1_X01_GOAL"
+msgstr "Mantén el acceso legítimo a recibos, el trabajo del personal y los inicios de sesión, limitando las lecturas no autorizadas y los fallos repetidos en ambas rutas."
+
+msgid "CH1_X01_HINT_1"
+msgstr "La propiedad y el límite de reintentos son controles distintos. Corregir solo uno no satisface todos los resultados."
+
+msgid "CH1_X01_HINT_2"
+msgstr "Las muestras fallidas de cada entrada deben rechazarse y la última debe quedar limitada. Una limitación anterior causada por tu investigación también es un rechazo válido. El acceso legítimo usa otra cuenta."
+
+msgid "CH1_X01_HINT_3"
+msgstr "Repara la entrada original o cierra solo esa entrada y traslada los recibos y accesos legítimos a la pasarela aprobada. Mantén abierta la pasarela."
+
+msgid "CH1_X01_LAB_NAME"
+msgstr "Comprobaciones de trabajo y respuesta actuales"
+
+msgid "CH1_X01_LIMIT"
+msgstr "Esto no ataca servidores reales ni demuestra protección frente a todos los ataques. Leer no tiene penalización de tiempo y los ajustes erróneos pueden repararse."
+
+msgid "CH1_X01_PRINCIPLE"
+msgstr "La disponibilidad y el ámbito de autorización deben comprobarse juntos. El límite de reintentos es un resultado de autenticación, distinto del indicador global de alerta."
+
+msgid "CH1_X01_REPLY"
+msgstr "Se mantiene el trabajo legítimo de ciudadanos y personal, mientras se rechazan lecturas ajenas e intentos repetidos. El traspaso se basa en que el trabajo real siga funcionando, elijas la entrada que elijas. El siguiente lugar propone ampliar permisos de despliegue."
+
+msgid "CH1_X01_SENDER"
+msgstr "Centro conjunto de respuesta nocturna"
+
+msgid "CH1_X01_TITLE"
+msgstr "Una puerta que debe seguir abierta"
+
+msgid "CH1_X02_ABSTRACTION"
+msgstr "Este desafío independiente utiliza cuentas, solicitudes, archivos y observaciones registrados. Siguen disponibles otras soluciones válidas y la ayuda manual."
+
+msgid "CH1_X02_BRIEF"
+msgstr "La cuenta de despliegue no puede actualizar su archivo de estado y el aviso nocturno se ha detenido. Se propone abrir la carpeta y el archivo a todos, incluidas cuentas ajenas en la misma entrada. Verifica lecturas, escrituras y entrega de avisos legítimas, además del rechazo de escrituras ajenas.\n\nSolo el grupo deploy puede recorrer la carpeta original y escribir su archivo. Revisa los grupos de la cuenta de trabajo o usa el entorno aprobado que ya está disponible para jobs. Los avisos solo pueden dirigirse a ward. La entrega principal está desactivada; la reserva aprobada se habilita por separado.\nLa cuenta de trabajo autorizada figura abajo. Tras conectar, la herramienta del caso muestra las observaciones actuales y las acciones permitidas.\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X02_CASE_FOREIGN_APPROVED"
+msgstr "Escritura ajena en la ruta aprobada"
+
+msgid "CH1_X02_CASE_FOREIGN_WRITE"
+msgstr "Cuenta ajena modificando el despliegue"
+
+msgid "CH1_X02_CASE_INTERNAL_TARGET"
+msgstr "Destino de aviso fuera de ámbito: x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_NOTIFY"
+msgstr "Aviso legítimo a ward"
+
+msgid "CH1_X02_CASE_READ"
+msgstr "Cuenta de despliegue leyendo su estado"
+
+msgid "CH1_X02_CASE_STANDBY_TARGET"
+msgstr "Destino de aviso fuera de ámbito: gateway.x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_WRITE"
+msgstr "Cuenta de despliegue escribiendo su resultado"
+
+msgid "CH1_X02_CONTROL_NOTICE_NOTIFY_OPEN"
+msgstr "Habilitar aviso principal"
+
+msgid "CH1_X02_CONTROL_NOTICE_STANDBY_OPEN"
+msgstr "Habilitar aviso de reserva aprobado"
+
+msgid "CH1_X02_CONTROL_NOTICE_TARGET_SCOPE"
+msgstr "Limitar los avisos a ward"
+
+msgid "CH1_X02_DESK_NAME"
+msgstr "Mesa de Mantén el despliegue en marcha"
+
+msgid "CH1_X02_DIRECTORY_MODE"
+msgstr "Permisos de recorrido de la carpeta de despliegue"
+
+msgid "CH1_X02_FILE_MODE"
+msgstr "Permisos del archivo de resultados"
+
+msgid "CH1_X02_GATEWAY_NAME"
+msgstr "Ruta de trabajo aprobada"
+
+msgid "CH1_X02_GOAL"
+msgstr "Restaura lecturas y escrituras legítimas del estado y la entrega a ward, rechazando modificaciones ajenas y avisos fuera de ámbito."
+
+msgid "CH1_X02_HINT_1"
+msgstr "Recorrer carpetas y escribir archivos son permisos distintos. Revisa los grupos de la cuenta de servicio en vez de abrir el acceso a todos."
+
+msgid "CH1_X02_HINT_2"
+msgstr "Conserva los permisos originales y asigna pertenencia a deploy, o traslada la tarea al archivo del entorno aprobado."
+
+msgid "CH1_X02_HINT_3"
+msgstr "Observa por separado la entrega permitida a ward y los destinos internos rechazados. Cerrar la ruta utilizada invalida un éxito anterior."
+
+msgid "CH1_X02_JOB_GROUPS"
+msgstr "Grupos necesarios de la cuenta de despliegue"
+
+msgid "CH1_X02_LAB_NAME"
+msgstr "Comprobaciones de trabajo y respuesta actuales"
+
+msgid "CH1_X02_LIMIT"
+msgstr "Esto no ataca servidores reales ni demuestra protección frente a todos los ataques. Leer no tiene penalización de tiempo y los ajustes erróneos pueden repararse."
+
+msgid "CH1_X02_PRINCIPLE"
+msgstr "El mínimo privilegio y la continuidad del trabajo deben mantenerse juntos. Las rutas alternativas aprobadas para archivos y avisos son válidas si realmente funcionan."
+
+msgid "CH1_X02_REPLY"
+msgstr "El resultado permitido existe en un archivo virtual real y el aviso llegó a ward. Se rechazaron escrituras ajenas y el abuso de destinos internos. El último traspaso empieza cuestionando que una dirección equivalga a una sesión."
+
+msgid "CH1_X02_SENDER"
+msgstr "Centro conjunto de respuesta nocturna"
+
+msgid "CH1_X02_TITLE"
+msgstr "Mantén el despliegue en marcha"
+
+msgid "CH1_X03_ABSTRACTION"
+msgstr "Este desafío independiente utiliza cuentas, solicitudes, archivos y observaciones registrados. Siguen disponibles otras soluciones válidas y la ayuda manual."
+
+msgid "CH1_X03_BRIEF"
+msgstr "Un informe preliminar considera una misma sesión dos registros de una dirección de relevo con etiquetas de cliente coincidentes. Esas etiquetas las aportan los clientes y los relojes de origen difieren. No conviertas una inferencia de sesión en la identidad de una persona: entrega una conexión respaldada y pruebas en contra que permitan elegir el siguiente punto de observación.\n\nLa primera ventana de campo solo contiene una dirección compartida y la misma etiqueta night-worker declarada por el cliente. La ventana más reciente solo contiene la rotación; los registros del receptor tienen la salida y la otra sesión, así que investígalos juntos. La exportación independiente de auditoría requiere la cuenta de auditor separada que figura abajo. Comprueba S1/S2 emitidos por el servidor, la rotación anterior a la salida tras corregir los relojes y el reenvío de N03 a vault.\n\nElige observar vault o la dirección compartida siguiendo la ruta real.\nCuenta de auditor:\n\nauditor@x03.challenge.packet.test\naudit-custody\nLa cuenta de trabajo autorizada figura abajo. Tras conectar, la herramienta del caso muestra las observaciones actuales y las acciones permitidas.\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X03_DESK_NAME"
+msgstr "Mesa de Sesiones distintas en una dirección"
+
+msgid "CH1_X03_GOAL"
+msgstr "Refuta la inferencia inicial de una misma sesión, respalda la rotación anterior a la salida y el reenvío a vault, y entrega el siguiente punto de observación."
+
+msgid "CH1_X03_HINT_1"
+msgstr "Una dirección compartida y una etiqueta de cliente no son identificadores de sesión emitidos por el servidor. Comprueba la procedencia y la autoridad del marcador."
+
+msgid "CH1_X03_HINT_2"
+msgstr "Comparar directamente la rotación de campo a130–132 con la salida del receptor a105–107 invierte su orden. Resta el desfase del reloj de cada fuente antes de comparar los intervalos."
+
+msgid "CH1_X03_HINT_3"
+msgstr "Combina la ventana de campo actual con los registros del receptor, o conecta como auditor para usar la exportación independiente. Respalda before y forwarded_to, reúne pruebas contra la afirmación inicial same_session y deriva el caso a la observación de vault."
+
+msgid "CH1_X03_LIMIT"
+msgstr "Esto no ataca servidores reales ni demuestra protección frente a todos los ataques. Leer no tiene penalización de tiempo y los ajustes erróneos pueden repararse."
+
+msgid "CH1_X03_PRINCIPLE"
+msgstr "Evalúa las conexiones mediante fuentes bajo custodia, intervalos de reloj y marcadores del servidor. Una IP compartida no demuestra por sí sola una misma sesión ni una misma persona."
+
+msgid "CH1_X03_PRIOR"
+msgstr "Inferencia preliminar de una misma sesión por dirección compartida"
+
+msgid "CH1_X03_REPLY"
+msgstr "Los registros del servidor refutaron la afirmación preliminar de una misma sesión. Observaciones con procedencia respaldaron el orden temporal y el reenvío a vault. La siguiente investigación se ha acotado sin afirmar la identidad de una persona. Se completa el traspaso de los tres casos."
+
+msgid "CH1_X03_SENDER"
+msgstr "Centro conjunto de respuesta nocturna"
+
+msgid "CH1_X03_SENSOR_ADDRESS_WATCH"
+msgstr "Siguiente observación en la dirección compartida"
+
+msgid "CH1_X03_SENSOR_AUDIT"
+msgstr "Exportación aprobada de auditoría del receptor"
+
+msgid "CH1_X03_SENSOR_FIELD"
+msgstr "Ventanas de registros de campo"
+
+msgid "CH1_X03_SENSOR_RECEIVER"
+msgstr "Registros de traspaso del receptor"
+
+msgid "CH1_X03_SENSOR_VAULT_WATCH"
+msgstr "Siguiente observación en vault"
+
+msgid "CH1_X03_TITLE"
+msgstr "Sesiones distintas en una dirección"
+
+msgid "CH1_X03_TOOL_NAME"
+msgstr "Observaciones conjuntas y pruebas en contra"
 
 msgid "CLOSE"
 msgstr "Cerrar"
@@ -2842,6 +3082,9 @@ msgstr "Principales: {main} · Opcionales: {optional}"
 
 msgid "LOBBY_CHOOSE_STORY"
 msgstr "Elige tu papel para esta noche."
+
+msgid "LOBBY_ROLE_CHALLENGE"
+msgstr "Casos avanzados que combinan intrusión, defensa e investigación. Aprende los controles básicos antes de intentarlos."
 
 msgid "LOBBY_ROLE_DEFENDER"
 msgstr "Contén amenazas sin detener el trabajo legítimo de ciudadanos y compañeros."
@@ -7343,6 +7586,9 @@ msgstr "La herramienta no pertenece a este caso."
 msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
 msgstr "Paso de aceptación de la subida"
 
+msgid "UI_TOOL_FIELD_ACCOUNT_ID"
+msgstr "Identificador de cuenta"
+
 msgid "UI_TOOL_FIELD_ACQUISITION"
 msgstr "Método de adquisición"
 
@@ -7369,6 +7615,9 @@ msgstr "Efecto sobre el trabajo"
 
 msgid "UI_TOOL_FIELD_CALL_STACK"
 msgstr "Pila de llamadas"
+
+msgid "UI_TOOL_FIELD_CAN_ADVANCE"
+msgstr "Siguiente observación disponible"
 
 msgid "UI_TOOL_FIELD_CASE_ID"
 msgstr "Caso de petición o entrada"
@@ -7448,6 +7697,9 @@ msgstr "Función"
 msgid "UI_TOOL_FIELD_GROUP"
 msgstr "Grupo de políticas"
 
+msgid "UI_TOOL_FIELD_HOST_ID"
+msgstr "Identificador de host"
+
 msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
 msgstr "Nombre de hipótesis"
 
@@ -7481,6 +7733,9 @@ msgstr "Tipo MIME"
 msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
 msgstr "Siguiente punto de observación"
 
+msgid "UI_TOOL_FIELD_NORMAL"
+msgstr "Actividad normal"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "ID de objeto"
 
@@ -7495,6 +7750,9 @@ msgstr "Intervalo temporal observado"
 
 msgid "UI_TOOL_FIELD_OP"
 msgstr "Instrucción"
+
+msgid "UI_TOOL_FIELD_OPTIONS"
+msgstr "Valores disponibles"
 
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "Origen (origin)"
@@ -7517,6 +7775,9 @@ msgstr "Ruta del archivo"
 msgid "UI_TOOL_FIELD_PC"
 msgstr "Posición de instrucción"
 
+msgid "UI_TOOL_FIELD_POLICY"
+msgstr "Política aplicada"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "Procedencia"
 
@@ -7538,8 +7799,14 @@ msgstr "Registro de origen"
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "Registros virtuales"
 
+msgid "UI_TOOL_FIELD_RELATION"
+msgstr "Relación"
+
 msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
 msgstr "Afirmación revisada"
+
+msgid "UI_TOOL_FIELD_REQUEST_ID"
+msgstr "Identificador de solicitud"
 
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "Marca de petición"
@@ -7553,11 +7820,17 @@ msgstr "Segunda entidad"
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "Ruta de petición"
 
+msgid "UI_TOOL_FIELD_ROUTE_OPTIONS"
+msgstr "Rutas disponibles"
+
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "Muestreo"
 
 msgid "UI_TOOL_FIELD_SATISFIED"
 msgstr "Condición cumplida"
+
+msgid "UI_TOOL_FIELD_SCOPE"
+msgstr "Ámbito de observación"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "Sección"
@@ -7604,6 +7877,9 @@ msgstr "Host de destino"
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "Rama verdadera"
 
+msgid "UI_TOOL_FIELD_THREAT"
+msgstr "Solicitud amenazante"
+
 msgid "UI_TOOL_FIELD_TICK"
 msgstr "Paso del evento"
 
@@ -7648,6 +7924,9 @@ msgstr "Información visible"
 
 msgid "UI_TOOL_FIELD_WINDOW"
 msgstr "Ventana de observación"
+
+msgid "UI_TOOL_FIELD_WINDOW_INDEX"
+msgstr "Ventana de observación actual"
 
 msgid "UI_TOOL_FILTER"
 msgstr "Filtro"
@@ -7939,3 +8218,15 @@ msgstr "Minimizar"
 
 msgid "UI_WIN_TERMINAL_N"
 msgstr "Terminal {n}"
+
+msgid "UI_WORKBENCH_EXPAND_RECORDS"
+msgstr "Expande o contrae esta sección de observaciones. Selecciona una fila para ver todos sus campos."
+
+msgid "UI_WORKBENCH_NO_DESCRIPTION"
+msgstr "Revisa las observaciones, introduce una acción o hipótesis y compara el resultado."
+
+msgid "UI_WORKBENCH_OPEN_GOALS"
+msgstr "Ver objetivos del caso actual"
+
+msgid "UI_WORKBENCH_RECORD_DETAIL_HINT"
+msgstr "Selecciona una fila para ver el registro completo, incluidos identificadores y fuentes."

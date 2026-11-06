@@ -181,7 +181,8 @@ class LocaleChecks(unittest.TestCase):
             locales = root / 'godot/locales'
             locales.mkdir(parents=True)
             manifest = {'campaigns': {}, 'ui': {'ko': {}, 'en': {}}}
-            for pack, stem, prefix in [('legacy_intruder', '', 'M01_'), ('intruder', 'intruder_v2.', 'IN2_')]:
+            for pack, stem, prefix in [('legacy_intruder', '', 'M01_'), ('intruder', 'intruder_v2.', 'IN2_'),
+                                       ('challenge', 'challenge_v1.', 'CH1_')]:
                 manifest['campaigns'][pack] = {}
                 for language in ('ko', 'en'):
                     relative = f'godot/data/campaign/locales/{stem}{language}.json'
@@ -191,7 +192,7 @@ class LocaleChecks(unittest.TestCase):
                     manifest['campaigns'][pack][language] = {'path': relative, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
             review_path = locales / 'source-revisions.json'
             review_path.write_text(json.dumps(manifest), encoding='utf-8')
-            self.assertEqual(set(read_campaign_sources(root)), {'legacy_intruder', 'intruder'})
+            self.assertEqual(set(read_campaign_sources(root)), {'legacy_intruder', 'intruder', 'challenge'})
             changed = root / 'godot/data/campaign/locales/intruder_v2.ko.json'
             changed.write_text('{"IN2_TITLE":"changed after review"}', encoding='utf-8')
             with self.assertRaisesRegex(ValueError, 'needs translation review'):
@@ -257,6 +258,17 @@ class LocaleChecks(unittest.TestCase):
             path.write_text(json.dumps({'challenges': {'vm': {'kind': 'branch_vm', 'name': 'IN2_VM_NAME',
                 'program': {'functions': {'main': [{'label': 'ENTRY', 'op': 'HALT'}]}}}}}), encoding='utf-8')
             self.assertEqual(required_content_keys(root), {'IN2_VM_NAME'})
+
+    def test_challenge_content_keys_are_required_without_reading_solution_labels(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / 'godot/data/campaign/packs/challenge_v1.json'
+            path.parent.mkdir(parents=True)
+            path.write_text(json.dumps({'title': 'CH1_PACK_TITLE', 'missions': {'X01': {
+                'goal_text': 'CH1_X01_GOAL', 'challenges': {'vm': {'kind': 'branch_vm',
+                'name': 'CH1_VM_NAME', 'program': {'functions': {'main': [
+                    {'label': 'ENTRY', 'op': 'HALT'}]}}}}}}}), encoding='utf-8')
+            self.assertEqual(required_content_keys(root), {'CH1_PACK_TITLE', 'CH1_X01_GOAL', 'CH1_VM_NAME'})
 
 
 if __name__ == '__main__':

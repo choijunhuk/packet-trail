@@ -256,3 +256,22 @@ Claude의 M1/M3(손상 선호 원본/backup 덮어쓰기, 임시 지원 유실)�
 C24는 로컬 Claude CLI2.1.311에 고정15,710자 source/design excerpt를 제공했다. 요청 `claude-opus-5-5/high`, 실제 modelUsage도5.5만 사용,72.026초·exit0·is_error=false·permission_denials=[]·stderr빈문자열이다. tools없음·strict empty MCP·safe/restricted·noChrome·no-session-persistence로 실행했다. 결과는 정적 설계 ACCEPT이며 새 브라우저 구현 코드/실제 화면 인증이 아니다. 원문 prompt/SHA/argv/raw final은 `.omx/artifacts/quality-pass/advisor/`와 `.omx/artifacts/claude-immersion-difficulty-20261106.md`에 있다.
 
 전역 난이도 슬라이더 유보와 저장 ruleset 경계는 채택했다. 경보 상한이 로그인을 차단한다는 UI 문구는 실제 코드와 대조해 수리 대상으로 확인했다. 자율 지원이 모든 힌트를 금지해야 한다는 해석은 기각했고, 장식 색 배정을 보안 문제로 확대하지 않았다. 모든88해법을 표시 지원 수준마다 반복하라는 요구 대신 기존 지원별 world 동일성·변경 소스 전체88해법·실제 UI 수락으로 검증 범위를 정했다.
+
+### 1.3 종합 도전·작업대 실행
+
+사용자는 제품 구현을 Sol6.1에 맡기고 제대로 해결하지 못할 때 Astra로 전환하라고 명시했다. 리더 Astra는 범위/인터페이스·통합·검증을 담당하며 이번 제품 코드 레인은 모두 요청 `gpt-6.1-sol`로 분리했다.
+
+| 레인 | 요청 추론 수준 | 책임 |
+|---|---|---|
+| 콘텐츠/게임성 | high | 새3사건·6해법·79KOEN·생성기와 실제복합제약 |
+| 코어/통합 | xhigh | catalog/독립slot/Store/검사, 이후 실제결함의 opt-in response/model schema 수리 |
+| UI/디자인 | high | 관찰/행동/결과 작업대·도움/알림·목표 이동·typed draft와disclosure 복원 |
+| 현지화 | high | 새콘텐츠/UI4언어와6PO, 기존원고/토큰/소스해시 보존 |
+| 독립 QA | high | 실제부정/복구/저장/경로차이, native47사건/4결말과작업대검사 |
+| 독립 시각 검토 | high | 새PNG와소스 독립비교, 정성판정 및빠진수락증거식별 |
+
+현재까지 같은제품결함에 대한 반복수정실패로 Astra 구현에 넘긴 사례는 없다. 최초RED/파서오류를 숨기지 않고 수리결과로 판단한다. native X02 배열초안/문자열선택지 비교 오류는 실제위젯 재현후 Sol수리62/0, 후속표상태/중요알림은78/0으로검증했다.
+
+C25: 로컬CLI2.1.311, 요청/실제 `claude-opus-5-5/high`만,323.960초·exit0·is_error=false·permission_denials=[]·원본15/15SHA불변. 고정162,974자 source/design snapshot만 전달했고 tools없음·safe/restricted·strict emptyMCP·noChrome·noPersistence를 유지했다. 원문/argv/모델사용과판정은 `.omx/artifacts/challenge-workbench/advisor/`, 재사용요약은 `.omx/artifacts/claude-challenge-workbench-20261106.md`다. 정적REVISE C1/I3/M6는 실행결과가 아니다.
+
+부모가 실제재현을 요구해 QA571/9 RED를 얻었다. X02내용오염후권한복구 완료오판, X01baseline탐색후인증복구, X02통지범위제어의실제의미를 확인했다. 코어의 새 opt-in 규칙과 새 콘텐츠만 수리해 기존정의/receipt basis를 보존했고 실제전체94해법15,059/0·독립686/0으로통과했다. X03의단일센서해법은 정적근거로복합추론설계를보완하고새단일센서거절/별도감사권한/원시시각역전검사를추가했다. 경보/도움설정과실제규칙은분리한다. 알림이완전히없어진다는의견은상태줄/벨출력을확인해과장을완화하고실제중요오류표시를보강했다.

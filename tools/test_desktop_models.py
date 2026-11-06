@@ -1,4 +1,4 @@
-"""Run actual browser-subject and assistance-preference regressions with deadlines."""
+"""Run actual browser, assistance, desktop and workbench regressions with deadlines."""
 
 import json
 import os
@@ -21,6 +21,7 @@ class DesktopModelTests(unittest.TestCase):
             ("res://tools/run_support_settings.gd", "support_settings"),
             ("res://tools/run_desktop_shell.gd", "desktop_shell"),
             ("res://tools/run_lobby_preferences.gd", "lobby_preferences"),
+            ("res://tools/run_workbench.gd", "workbench"),
         ):
             with self.subTest(suite=suite):
                 try:
@@ -49,10 +50,10 @@ class DesktopModelTests(unittest.TestCase):
                 if suite == "desktop_shell":
                     profiles = report.get("profiles")
                     self.assertIsInstance(profiles, list, output)
-                    self.assertEqual(len(profiles), 9, output)
+                    self.assertEqual(len(profiles), 12, output)
                     self.assertEqual(
                         {(row.get("pack"), row.get("support")) for row in profiles},
-                        {(pack, level) for pack in ("intruder", "defender", "tracker")
+                        {(pack, level) for pack in ("intruder", "defender", "tracker", "challenge")
                          for level in ("guided", "standard", "independent")}, output,
                     )
                     self.assertTrue(all(row.get("canonical_equal") is True for row in profiles), output)

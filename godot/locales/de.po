@@ -35,6 +35,9 @@ msgstr "Minseo"
 msgid "C04_NAME"
 msgstr "Taegyeong"
 
+msgid "CAMPAIGN_CHALLENGE"
+msgstr "Kombinierte Herausforderung"
+
 msgid "CAMPAIGN_COMPLETE"
 msgstr "Die Aufzeichnungen der Nacht sind verbunden."
 
@@ -409,6 +412,243 @@ msgstr "Abbrechen"
 
 msgid "CASE_BOARD"
 msgstr "Fallübersicht"
+
+msgid "CH1_ENDING_TITLE"
+msgstr "Geprüfte gemeinsame Übergabe"
+
+msgid "CH1_PACK_SUMMARY"
+msgstr "Drei eigenständige fortgeschrittene Fälle zu Zugriffskontrolle, Wiederherstellung von Bereitstellungen und Gegenbelegen."
+
+msgid "CH1_PACK_TITLE"
+msgstr "Gemeinsame Herausforderung · Drei Übergaben"
+
+msgid "CH1_X01_ABSTRACTION"
+msgstr "Diese eigenständige Herausforderung verwendet registrierte Konten, Anfragen, Dateien und Beobachtungen. Andere gültige Lösungen und manuelle Hilfe bleiben verfügbar."
+
+msgid "CH1_X01_BRIEF"
+msgstr "Dies ist die erste gemeinsame Einsatzübung. Empfangsbelege sind für unbeteiligte Konten sichtbar, während am selben Zugang wiederholt Anmeldungen scheitern. Werden alle Zugänge geschlossen, fällt auch die reguläre Arbeit der Bürger aus. Prüfe Belegzugriff und Begrenzung fehlgeschlagener Versuche unter derselben Konfiguration.\n\nDer ursprüngliche Weg benötigt getrennte Eigentümerprüfungen und Wiederholungslimits je Konto. Das genehmigte Gateway hat feste Delegationsbereiche und ein eigenes Wiederholungslimit; reguläre Arbeit kann auch dorthin verlegt werden. Beobachte die wiederholten Fehlversuche und prüfe beim letzten Muster eine Begrenzungsantwort. Ein bereits untersuchtes Konto kann auch bei einem früheren Muster begrenzt werden. Ein anderer Bürger muss sich weiterhin anmelden können.\nDas autorisierte Arbeitskonto steht unten. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X01_CASE_FAILED_1"
+msgstr "Wiederholter Fehlversuch 1 am ursprünglichen Zugang"
+
+msgid "CH1_X01_CASE_FAILED_2"
+msgstr "Wiederholter Fehlversuch 2 am ursprünglichen Zugang"
+
+msgid "CH1_X01_CASE_FAILED_3"
+msgstr "Wiederholter Fehlversuch 3 am ursprünglichen Zugang"
+
+msgid "CH1_X01_CASE_FOREIGN_DIRECT"
+msgstr "Unbeteiligtes Konto am ursprünglichen Zugang"
+
+msgid "CH1_X01_CASE_FOREIGN_GATEWAY"
+msgstr "Unbeteiligtes Konto auf dem genehmigten Weg"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_1"
+msgstr "Wiederholter Fehlversuch 1 am Gateway"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_2"
+msgstr "Wiederholter Fehlversuch 2 am Gateway"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_3"
+msgstr "Wiederholter Fehlversuch 3 am Gateway"
+
+msgid "CH1_X01_CASE_LEGITIMATE"
+msgstr "Gültige Anmeldung eines anderen Bürgers"
+
+msgid "CH1_X01_CASE_OWN_A"
+msgstr "Eigener Beleg von Bürger A"
+
+msgid "CH1_X01_CASE_OWN_B"
+msgstr "Eigener Beleg von Bürger B"
+
+msgid "CH1_X01_CASE_STAFF"
+msgstr "An zuständiges Personal delegierter Beleg"
+
+msgid "CH1_X01_CONTROL_AUTH_RETRY"
+msgstr "Wiederholte Anmeldungen je Konto begrenzen"
+
+msgid "CH1_X01_CONTROL_DIRECT_OPEN"
+msgstr "Ursprünglichen Arbeitszugang öffnen"
+
+msgid "CH1_X01_CONTROL_GATEWAY_OPEN"
+msgstr "Genehmigten Weg öffnen"
+
+msgid "CH1_X01_CONTROL_OWNER_CHECK"
+msgstr "Eigentümerprüfung für Belege"
+
+msgid "CH1_X01_DESK_NAME"
+msgstr "Arbeitsplatz: Eine Tür muss offen bleiben"
+
+msgid "CH1_X01_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "CH1_X01_GOAL"
+msgstr "Erhalte berechtigten Belegzugriff, Personalarbeit und Anmeldung; begrenze unbefugtes Lesen und wiederholte Fehlversuche auf beiden Wegen."
+
+msgid "CH1_X01_HINT_1"
+msgstr "Eigentümerprüfung und Wiederholungslimit sind getrennte Kontrollen. Eine allein erfüllt nicht alle Ergebnisse."
+
+msgid "CH1_X01_HINT_2"
+msgstr "Fehlversuche an jedem Zugang müssen abgewiesen werden; das letzte Muster muss begrenzt sein. Eine durch deine Untersuchung früher ausgelöste Begrenzung ist ebenfalls eine gültige Ablehnung. Die reguläre Anmeldung nutzt ein anderes Konto."
+
+msgid "CH1_X01_HINT_3"
+msgstr "Repariere den ursprünglichen Zugang oder schließe nur diesen und verlege reguläre Belege und Anmeldungen zum genehmigten Gateway. Halte das Gateway offen."
+
+msgid "CH1_X01_LAB_NAME"
+msgstr "Aktuelle Arbeits- und Reaktionsprüfungen"
+
+msgid "CH1_X01_LIMIT"
+msgstr "Dies greift keine echten Server an und belegt keinen Schutz gegen alle Angriffe. Lesen verursacht keinen Zeitabzug; fehlerhafte Einstellungen lassen sich korrigieren."
+
+msgid "CH1_X01_PRINCIPLE"
+msgstr "Verfügbarkeit und Berechtigungsumfang müssen gemeinsam geprüft werden. Das Wiederholungslimit ist ein Authentifizierungsergebnis und vom globalen Alarmzähler getrennt."
+
+msgid "CH1_X01_REPLY"
+msgstr "Reguläre Bürger- und Personalarbeit bleibt möglich, unbeteiligtes Lesen und wiederholte Anmeldungen werden abgewiesen. Für die Übergabe zählt die funktionierende Arbeit, unabhängig vom gewählten Zugang. Am nächsten Standort wird eine Ausweitung der Bereitstellungsrechte vorgeschlagen."
+
+msgid "CH1_X01_SENDER"
+msgstr "Gemeinsame Nachteinsatzzentrale"
+
+msgid "CH1_X01_TITLE"
+msgstr "Eine Tür muss offen bleiben"
+
+msgid "CH1_X02_ABSTRACTION"
+msgstr "Diese eigenständige Herausforderung verwendet registrierte Konten, Anfragen, Dateien und Beobachtungen. Andere gültige Lösungen und manuelle Hilfe bleiben verfügbar."
+
+msgid "CH1_X02_BRIEF"
+msgstr "Das Bereitstellungskonto kann seine Statusdatei nicht aktualisieren; der nächtliche Hinweis bleibt aus. Ein Vorschlag würde Ordner und Datei für alle öffnen, auch für unbeteiligte Konten am selben Zugang. Prüfe reguläres Lesen, Schreiben und Benachrichtigen sowie die Ablehnung fremder Schreibzugriffe.\n\nNur die Gruppe deploy darf den ursprünglichen Ordner durchlaufen und dessen Datei beschreiben. Prüfe die Gruppen des Arbeitskontos oder nutze den genehmigten Arbeitsplatz, der jobs bereits offensteht. Benachrichtigungen dürfen nur an ward gehen. Der Hauptversand ist derzeit aus; die genehmigte Reserve kann separat aktiviert werden.\nDas autorisierte Arbeitskonto steht unten. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X02_CASE_FOREIGN_APPROVED"
+msgstr "Fremder Schreibzugriff auf dem genehmigten Weg"
+
+msgid "CH1_X02_CASE_FOREIGN_WRITE"
+msgstr "Unbeteiligtes Konto verändert Bereitstellung"
+
+msgid "CH1_X02_CASE_INTERNAL_TARGET"
+msgstr "Benachrichtigungsziel außerhalb des Bereichs: x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_NOTIFY"
+msgstr "Reguläre Benachrichtigung an ward"
+
+msgid "CH1_X02_CASE_READ"
+msgstr "Bereitstellungskonto liest eigenen Status"
+
+msgid "CH1_X02_CASE_STANDBY_TARGET"
+msgstr "Benachrichtigungsziel außerhalb des Bereichs: gateway.x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_WRITE"
+msgstr "Bereitstellungskonto schreibt Arbeitsergebnis"
+
+msgid "CH1_X02_CONTROL_NOTICE_NOTIFY_OPEN"
+msgstr "Hauptbenachrichtigung aktivieren"
+
+msgid "CH1_X02_CONTROL_NOTICE_STANDBY_OPEN"
+msgstr "Genehmigte Reservebenachrichtigung aktivieren"
+
+msgid "CH1_X02_CONTROL_NOTICE_TARGET_SCOPE"
+msgstr "Benachrichtigungen auf ward beschränken"
+
+msgid "CH1_X02_DESK_NAME"
+msgstr "Arbeitsplatz: Bereitstellung am Laufen halten"
+
+msgid "CH1_X02_DIRECTORY_MODE"
+msgstr "Durchquerungsrechte des Bereitstellungsordners"
+
+msgid "CH1_X02_FILE_MODE"
+msgstr "Rechte der Ergebnisdatei"
+
+msgid "CH1_X02_GATEWAY_NAME"
+msgstr "Genehmigter Arbeitsweg"
+
+msgid "CH1_X02_GOAL"
+msgstr "Stelle reguläres Lesen und Schreiben des Status sowie die Zustellung an ward wieder her. Weise fremde Änderungen und Benachrichtigungen außerhalb des Bereichs ab."
+
+msgid "CH1_X02_HINT_1"
+msgstr "Ordnerdurchquerung und Dateischreiben sind getrennte Rechte. Prüfe die Gruppen des Dienstkontos, statt den Zugriff für alle zu öffnen."
+
+msgid "CH1_X02_HINT_2"
+msgstr "Behalte die ursprünglichen Rechte und weise die deploy-Mitgliedschaft zu, oder verlege die Aufgabe zur Datei des genehmigten Arbeitsplatzes."
+
+msgid "CH1_X02_HINT_3"
+msgstr "Beobachte erlaubte Zustellung an ward und abgewiesene interne Ziele getrennt. Wird der verwendete Weg geschlossen, gilt ein früherer Erfolg nicht mehr."
+
+msgid "CH1_X02_JOB_GROUPS"
+msgstr "Erforderliche Gruppen des Bereitstellungskontos"
+
+msgid "CH1_X02_LAB_NAME"
+msgstr "Aktuelle Arbeits- und Reaktionsprüfungen"
+
+msgid "CH1_X02_LIMIT"
+msgstr "Dies greift keine echten Server an und belegt keinen Schutz gegen alle Angriffe. Lesen verursacht keinen Zeitabzug; fehlerhafte Einstellungen lassen sich korrigieren."
+
+msgid "CH1_X02_PRINCIPLE"
+msgstr "Minimale Rechte und fortgesetzter Geschäftsbetrieb müssen zusammen bestehen. Genehmigte alternative Datei- und Zustellwege sind gültig, wenn sie tatsächlich funktionieren."
+
+msgid "CH1_X02_REPLY"
+msgstr "Das erlaubte Arbeitsergebnis liegt in einer echten virtuellen Datei vor, und der Hinweis wurde an ward zugestellt. Fremde Schreibzugriffe und Missbrauch interner Ziele wurden abgewiesen. Die letzte Übergabe prüft zunächst die Annahme, eine Adresse bedeute eine Sitzung."
+
+msgid "CH1_X02_SENDER"
+msgstr "Gemeinsame Nachteinsatzzentrale"
+
+msgid "CH1_X02_TITLE"
+msgstr "Bereitstellung am Laufen halten"
+
+msgid "CH1_X03_ABSTRACTION"
+msgstr "Diese eigenständige Herausforderung verwendet registrierte Konten, Anfragen, Dateien und Beobachtungen. Andere gültige Lösungen und manuelle Hilfe bleiben verfügbar."
+
+msgid "CH1_X03_BRIEF"
+msgstr "Ein vorläufiger Bericht hält zwei Datensätze derselben Relaisadresse mit gleichen Clientnamen für eine Sitzung. Die Namen stammen jedoch von den Clients, und die Quellen haben unterschiedliche Uhren. Leite aus einer Sitzungsvermutung keine Personenidentität ab. Übergib eine belegte Verbindung und Gegenbelege, die den nächsten Beobachtungspunkt bestimmen.\n\nDas erste Feldfenster enthält nur eine gemeinsame Adresse und denselben vom Client behaupteten Namen night-worker. Das neueste Feldfenster enthält nur den Wechsel; Empfängerdaten enthalten den Abgang und die andere Sitzung. Untersuche beides gemeinsam. Der unabhängige Auditexport erfordert das untenstehende separate Auditkonto. Prüfe serverseitig vergebene S1/S2, den Wechsel vor dem Abgang nach Uhrkorrektur und die Weiterleitung von N03 an vault.\n\nFolge dem tatsächlichen Weg, um zwischen vault und der gemeinsamen Adresse als nächstem Beobachtungspunkt zu wählen.\nAuditkonto:\n\nauditor@x03.challenge.packet.test\naudit-custody\nDas autorisierte Arbeitskonto steht unten. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X03_DESK_NAME"
+msgstr "Arbeitsplatz: Verschiedene Sitzungen an einer Adresse"
+
+msgid "CH1_X03_GOAL"
+msgstr "Widerlege die vorläufige Annahme derselben Sitzung, belege den Wechsel vor dem Abgang und die Weiterleitung an vault und übergib den nächsten Beobachtungspunkt."
+
+msgid "CH1_X03_HINT_1"
+msgstr "Gemeinsame Adresse und Clientname sind keine vom Server vergebenen Sitzungskennungen. Prüfe Herkunft und Aussteller des Kennzeichens."
+
+msgid "CH1_X03_HINT_2"
+msgstr "Ein direkter Vergleich des Feldwechsels bei130–132 mit dem Empfängerabgang bei105–107 kehrt die Reihenfolge um. Ziehe vor dem Intervallvergleich die Uhrenabweichung jeder Quelle ab."
+
+msgid "CH1_X03_HINT_3"
+msgstr "Nutze das aktuelle Feldfenster zusammen mit Empfängerdaten oder melde dich als Auditor für den unabhängigen Auditexport an. Belege before und forwarded_to, sammle Gegenbelege zur ursprünglichen same_session-Behauptung und übergib an die vault-Beobachtung."
+
+msgid "CH1_X03_LIMIT"
+msgstr "Dies greift keine echten Server an und belegt keinen Schutz gegen alle Angriffe. Lesen verursacht keinen Zeitabzug; fehlerhafte Einstellungen lassen sich korrigieren."
+
+msgid "CH1_X03_PRINCIPLE"
+msgstr "Bewerte Verbindungen anhand verwahrter Quellen, Zeitintervalle und serverseitig vergebener Kennzeichen. Eine gemeinsame IP belegt weder dieselbe Sitzung noch dieselbe Person."
+
+msgid "CH1_X03_PRIOR"
+msgstr "Vorläufige Annahme derselben Sitzung aufgrund einer gemeinsamen Adresse"
+
+msgid "CH1_X03_REPLY"
+msgstr "Serverseitige Datensätze widerlegten die vorläufige Behauptung derselben Sitzung. Beobachtungen mit Herkunftsnachweis belegten die Reihenfolge und Weiterleitung an vault. Die nächste Untersuchung ist eingegrenzt, ohne eine Personenidentität zu behaupten. Die Übergabe der drei Fälle ist abgeschlossen."
+
+msgid "CH1_X03_SENDER"
+msgstr "Gemeinsame Nachteinsatzzentrale"
+
+msgid "CH1_X03_SENSOR_ADDRESS_WATCH"
+msgstr "Nächste Beobachtung an gemeinsamer Adresse"
+
+msgid "CH1_X03_SENSOR_AUDIT"
+msgstr "Genehmigter Auditexport des Empfängers"
+
+msgid "CH1_X03_SENSOR_FIELD"
+msgstr "Beobachtungsfenster der Felddaten"
+
+msgid "CH1_X03_SENSOR_RECEIVER"
+msgstr "Übergabeaufzeichnungen des Empfängers"
+
+msgid "CH1_X03_SENSOR_VAULT_WATCH"
+msgstr "Nächste Beobachtung bei vault"
+
+msgid "CH1_X03_TITLE"
+msgstr "Verschiedene Sitzungen an einer Adresse"
+
+msgid "CH1_X03_TOOL_NAME"
+msgstr "Gemeinsame Beobachtungen und Gegenbelege"
 
 msgid "CLOSE"
 msgstr "Schließen"
@@ -2842,6 +3082,9 @@ msgstr "Hauptfälle: {main} · Optional: {optional}"
 
 msgid "LOBBY_CHOOSE_STORY"
 msgstr "Wähle deine Rolle für diese Nacht."
+
+msgid "LOBBY_ROLE_CHALLENGE"
+msgstr "Fortgeschrittene Fälle verbinden Eindringen, Abwehr und Ermittlung. Lerne zuerst die grundlegende Bedienung."
 
 msgid "LOBBY_ROLE_DEFENDER"
 msgstr "Wehre Bedrohungen ab und erhalte die Arbeit von Bürgern und Kollegen."
@@ -7343,6 +7586,9 @@ msgstr "Dieses Werkzeug gehört nicht zum aktuellen Fall."
 msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
 msgstr "Annahmeschritt des Uploads"
 
+msgid "UI_TOOL_FIELD_ACCOUNT_ID"
+msgstr "Kontokennung"
+
 msgid "UI_TOOL_FIELD_ACQUISITION"
 msgstr "Erhebungsmethode"
 
@@ -7369,6 +7615,9 @@ msgstr "Auswirkung auf den Vorgang"
 
 msgid "UI_TOOL_FIELD_CALL_STACK"
 msgstr "Aufrufstapel"
+
+msgid "UI_TOOL_FIELD_CAN_ADVANCE"
+msgstr "Nächste Beobachtung verfügbar"
 
 msgid "UI_TOOL_FIELD_CASE_ID"
 msgstr "Anfrage- oder Eingabefall"
@@ -7448,6 +7697,9 @@ msgstr "Funktion"
 msgid "UI_TOOL_FIELD_GROUP"
 msgstr "Richtliniengruppe"
 
+msgid "UI_TOOL_FIELD_HOST_ID"
+msgstr "Hostkennung"
+
 msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
 msgstr "Hypothesenname"
 
@@ -7481,6 +7733,9 @@ msgstr "MIME-Typ"
 msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
 msgstr "Nächster Beobachtungspunkt"
 
+msgid "UI_TOOL_FIELD_NORMAL"
+msgstr "Normaler Geschäftsbetrieb"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "Objekt-ID"
 
@@ -7495,6 +7750,9 @@ msgstr "Beobachtetes Zeitintervall"
 
 msgid "UI_TOOL_FIELD_OP"
 msgstr "Anweisung"
+
+msgid "UI_TOOL_FIELD_OPTIONS"
+msgstr "Verfügbare Werte"
 
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "Herkunft (origin)"
@@ -7517,6 +7775,9 @@ msgstr "Dateipfad"
 msgid "UI_TOOL_FIELD_PC"
 msgstr "Befehlsposition"
 
+msgid "UI_TOOL_FIELD_POLICY"
+msgstr "Angewandte Richtlinie"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "Herkunft und Erhebungsbeleg"
 
@@ -7538,8 +7799,14 @@ msgstr "Quellregister"
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "Virtuelle Register"
 
+msgid "UI_TOOL_FIELD_RELATION"
+msgstr "Beziehung"
+
 msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
 msgstr "Berichtigte Behauptung"
+
+msgid "UI_TOOL_FIELD_REQUEST_ID"
+msgstr "Anfragekennung"
 
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "Anfragemarkierung"
@@ -7553,11 +7820,17 @@ msgstr "Zweite Entität"
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "Anfrageweg"
 
+msgid "UI_TOOL_FIELD_ROUTE_OPTIONS"
+msgstr "Verfügbare Wege"
+
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "Stichprobenverfahren"
 
 msgid "UI_TOOL_FIELD_SATISFIED"
 msgstr "Bedingung erfüllt"
+
+msgid "UI_TOOL_FIELD_SCOPE"
+msgstr "Beobachtungsumfang"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "Abschnitt"
@@ -7604,6 +7877,9 @@ msgstr "Zielhost"
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "Wahr-Zweig"
 
+msgid "UI_TOOL_FIELD_THREAT"
+msgstr "Bedrohliche Anfrage"
+
 msgid "UI_TOOL_FIELD_TICK"
 msgstr "Ereignisschritt"
 
@@ -7648,6 +7924,9 @@ msgstr "Sichtbare Informationen"
 
 msgid "UI_TOOL_FIELD_WINDOW"
 msgstr "Beobachtungsfenster"
+
+msgid "UI_TOOL_FIELD_WINDOW_INDEX"
+msgstr "Aktuelles Beobachtungsfenster"
 
 msgid "UI_TOOL_FILTER"
 msgstr "Filter"
@@ -7939,3 +8218,15 @@ msgstr "Minimieren"
 
 msgid "UI_WIN_TERMINAL_N"
 msgstr "Terminal {n}"
+
+msgid "UI_WORKBENCH_EXPAND_RECORDS"
+msgstr "Diesen Beobachtungsbereich auf- oder zuklappen. Wähle eine Zeile, um alle Felder einzusehen."
+
+msgid "UI_WORKBENCH_NO_DESCRIPTION"
+msgstr "Prüfe die Beobachtungen, gib eine Aktion oder Hypothese ein und vergleiche das Ergebnis."
+
+msgid "UI_WORKBENCH_OPEN_GOALS"
+msgstr "Ziele des aktuellen Falls ansehen"
+
+msgid "UI_WORKBENCH_RECORD_DETAIL_HINT"
+msgstr "Wähle eine Zeile, um den vollständigen Datensatz mit Kennungen und Quellen einzusehen."

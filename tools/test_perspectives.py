@@ -1,4 +1,4 @@
-"""Actual three-campaign regression with an external deadline for synchronous model loops."""
+"""Actual original44 plus challenge3 campaign regression with an external deadline for synchronous model loops."""
 
 from collections import Counter
 import json
@@ -11,11 +11,12 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CASE_IDS = {
+ORIGINAL_CASE_IDS = {
     "intruder": {f"M{index:02}" for index in range(1, 25)} | {"S01", "S02", "R01", "P01"},
     "defender": {f"D{index:02}" for index in range(1, 9)},
     "tracker": {f"T{index:02}" for index in range(1, 9)},
 }
+CASE_IDS = {**ORIGINAL_CASE_IDS, "challenge": {"X01", "X02", "X03"}}
 
 
 class PerspectivesTests(unittest.TestCase):
@@ -47,10 +48,16 @@ class PerspectivesTests(unittest.TestCase):
         self.assertGreater(report["checks"], 0, output)
         self.assertEqual(report.get("failures"), [], output)
         self.assertIs(type(report.get("routes_attempted")), int, output)
-        self.assertEqual(report["routes_attempted"], 88, output)
+        self.assertEqual(report["routes_attempted"], 94, output)
         rows = report.get("routes")
         self.assertIsInstance(rows, list, output)
-        self.assertEqual(len(rows), 88, output)
+        self.assertEqual(len(rows), 94, output)
+        self.assertEqual(report.get("original_cases"), 44, output)
+        self.assertEqual(report.get("challenge_cases"), 3, output)
+        self.assertEqual(report.get("original_routes"), 88, output)
+        self.assertEqual(report.get("challenge_routes"), 6, output)
+        self.assertEqual(sum(row.get("pack") in ORIGINAL_CASE_IDS for row in rows), 88, output)
+        self.assertEqual(sum(row.get("pack") == "challenge" for row in rows), 6, output)
         route_ids = {}
         for row in rows:
             self.assertIsInstance(row, dict, output)
@@ -72,7 +79,7 @@ class PerspectivesTests(unittest.TestCase):
         self.assertTrue(all(isinstance(ids, list) and ids and len(ids) == len(set(ids))
                             for ids in endings.values()), output)
         print(json.dumps({"suite": "perspectives", "checks": report["checks"],
-                          "routes_attempted": 88,
+                          "routes_attempted": 94, "original_routes": 88, "challenge_routes": 6,
                           "actual_public_counts": {pack: len(ids) for pack, ids in CASE_IDS.items()},
                           "failures": []}, sort_keys=True))
 

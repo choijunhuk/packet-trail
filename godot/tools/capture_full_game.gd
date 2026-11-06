@@ -7,7 +7,9 @@ const Settings = preload("res://scripts/presentation/settings_store.gd")
 const Campaign = preload("res://scripts/core/campaign_game.gd")
 const PROTECTED := ["user://settings.json", "user://settings.json.bak",
 	"user://saves/campaign_01.json", "user://saves/campaign_01.json.bak",
-	"user://saves/slot_01.json", "user://saves/slot_01.json.bak"]
+	"user://saves/slot_01.json", "user://saves/slot_01.json.bak",
+	"user://saves/challenge_01.json", "user://saves/challenge_01.json.bak",
+	"user://saves/challenge_01.json.tmp", "user://saves/challenge_01.json.bak.tmp"]
 
 var checks := 0
 var failures: Array[String] = []

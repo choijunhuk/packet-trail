@@ -134,7 +134,7 @@ var layer: Control
 var top_panel: PanelContainer
 var task_panel: PanelContainer
 var top_mission: Label
-var top_progress: Label
+var top_progress: Button
 var top_alert: Label
 var top_host: Label
 var top_save: Label
@@ -157,6 +157,8 @@ var toast_scroll: ScrollContainer
 var toast_close_button: Button
 var notification_button: Button
 var _notification_text := ""
+var _notification_explicit := false
+var _notification_important := false
 var toast_tween: Tween
 var confirm: ConfirmationDialog
 var confirm_action := Callable()
@@ -272,6 +274,8 @@ var rl_history: Array = []
 var tool_list: ItemList
 var tool_empty: Label
 var tool_detail: VBoxContainer
+var tool_actions: VBoxContainer
+var tool_action_scroll: ScrollContainer
 var tool_detail_scroll: ScrollContainer
 var tool_title: Label
 var tool_kind: Label
@@ -293,6 +297,7 @@ var tool_selected := ""
 var tool_ids_sig := ""
 var tool_observation_sig := ""
 var tool_actions_sig := ""
+var _tool_section_state: Dictionary = {}
 var tool_drafts := {}
 var tool_tree: Tree
 var tool_row_keys: Array = []
@@ -855,7 +860,10 @@ func _build_shell() -> void:
 	top_mission.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	top_mission.clip_text = true
 	row.add_child(top_mission)
-	top_progress = _label("", C_DIM, -3)
+	top_progress = _btn_raw("", "UI_WORKBENCH_OPEN_GOALS", _open_current_board)
+	top_progress.flat = true
+	top_progress.set_meta("objective_action", "current_board")
+	_size(top_progress, -3)
 	top_alert = _label("", C_DIM, -3)
 	top_host = _label("", C_DIM, -3)
 	top_host.clip_text = true
@@ -1115,7 +1123,7 @@ func _update_support(view: Dictionary) -> void:
 	var key := _support_key(view)
 	var historical := _b(view, "completed") or _b(view, "completion_recorded") or not _d(view.get("ending", {})).is_empty()
 	_support_title.text = _t("UI_DESKTOP_NEW_CASE", {"title": _s(view, "mission_title")})
-	_support_body.text = _t("UI_DESKTOP_MAIL_PROMPT")
+	_support_body.text = _t("UI_BD_GOAL", {"text": _s(view, "mission_goal")}) + "\n\n" + _t("UI_DESKTOP_MAIL_PROMPT")
 	var open_window := false
 	for window in wins.values():
 		open_window = open_window or window.state == "open"
@@ -1222,6 +1230,8 @@ func _overlay_box(parent: Control, width: float) -> VBoxContainer:
 
 
 func _toast(text: String, color: Color) -> void:
+	_notification_important = color == C_AMBER
+	_notification_explicit = false
 	_notification_text = text
 	toast_label.text = text
 	toast_label.add_theme_color_override("font_color", color)
@@ -1237,7 +1247,7 @@ func _toast(text: String, color: Color) -> void:
 	_layout_notifications()
 	if toast_tween != null:
 		toast_tween.kill()
-	if _notification_protects_input():
+	if _notification_protects_input() or (support_card != null and support_card.visible and not _notification_important):
 		_hide_toast()
 		return
 	toast_tween = create_tween()
@@ -1250,6 +1260,7 @@ func _toast(text: String, color: Color) -> void:
 
 
 func _hide_toast() -> void:
+	_notification_explicit = false
 	toast_panel.hide()
 	_layout_notifications()
 
@@ -1286,6 +1297,7 @@ func _toggle_notification() -> void:
 	if toast_panel.visible:
 		_dismiss_notification()
 	elif not _notification_text.is_empty():
+		_notification_explicit = true
 		if toast_tween != null:
 			toast_tween.kill()
 		toast_panel.modulate.a = 1.0
@@ -1319,6 +1331,8 @@ func _layout_notifications() -> void:
 	if support_card == null or toast_panel == null or size.y <= top_h + task_h:
 		return
 	var toast_bounds := Rect2()
+	if support_card.visible and toast_panel.visible and not _notification_explicit and not _notification_important:
+		toast_panel.hide()
 	if toast_panel.visible:
 		toast_bounds = _notification_rect(Vector2(440, minf(180, ui_size * 4 + 40)))
 		toast_panel.position = toast_bounds.position
@@ -3425,7 +3439,8 @@ func _build_tools() -> Control:
 	tool_req = _label("", C_AMBER, -3, true)
 	for c in [tool_title, tool_kind, tool_desc, tool_usage, tool_req]:
 		tool_detail.add_child(c)
-	tool_detail.add_child(_section("UI_TOOL_OBSERVATIONS"))
+	var observation_heading := _section("UI_TOOL_OBSERVATIONS")
+	tool_detail.add_child(observation_heading)
 	tool_obs_box = VBoxContainer.new()
 	tool_detail.add_child(tool_obs_box)
 	tool_detail.add_child(_section("UI_TOOL_INPUT"))
@@ -3465,8 +3480,25 @@ func _build_tools() -> Control:
 	tool_detail.add_child(tool_model)
 	tool_detail.add_child(tool_limit)
 	tool_detail.visible = false
+	tool_actions = VBoxContainer.new()
+	var actions := tool_actions
+	actions.set_meta("workbench_panel", "actions")
+	var input_index := tool_detail.get_children().find(tool_input_box) - 1
+	for child in tool_detail.get_children().slice(input_index):
+		tool_detail.remove_child(child)
+		actions.add_child(child)
+	var workbench := VSplitContainer.new()
+	workbench.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	workbench.split_offset = 230
 	tool_detail_scroll = _scroll_wrap(tool_detail)
-	right.add_child(tool_detail_scroll)
+	tool_detail_scroll.custom_minimum_size.y = 120
+	workbench.add_child(tool_detail_scroll)
+	tool_action_scroll = _scroll_wrap(actions)
+	var action_scroll := tool_action_scroll
+	action_scroll.set_meta("workbench_panel", "action_scroll")
+	action_scroll.custom_minimum_size.y = 180
+	workbench.add_child(action_scroll)
+	right.add_child(workbench)
 	split.add_child(right)
 	return split
 
@@ -3508,6 +3540,7 @@ func _refresh_tools(v: Dictionary) -> void:
 	var has := not tools.is_empty()
 	tool_empty.visible = not has
 	tool_detail.visible = has
+	tool_actions.visible = has
 	if not has:
 		tool_selected = ""
 		return
@@ -3534,6 +3567,7 @@ func _on_tool_selected(i: int) -> void:
 	_tool_save_draft()
 	tool_selected = id
 	tool_detail_scroll.scroll_vertical = 0
+	tool_action_scroll.scroll_vertical = 0
 	var tool := _tool_current()
 	if not tool.is_empty():
 		_tool_show(tool, true)
@@ -3550,7 +3584,7 @@ func _tool_show(tool: Dictionary, rebuild: bool) -> void:
 	tool_title.text = _s(tool, "name", tool_selected)
 	tool_kind.text = _t("UI_TOOL_KIND_LINE", {"kind": _kind_name(kind), "id": tool_selected})
 	var desc := _s(tool, "description")
-	tool_desc.text = desc if not desc.is_empty() else _t("UI_TOOL_NO_DESC")
+	tool_desc.text = desc if not desc.is_empty() else _t("UI_WORKBENCH_NO_DESCRIPTION")
 	var usage := _s(tool, "usage")
 	tool_usage.text = _t("UI_TOOL_USAGE", {"text": usage}) if not usage.is_empty() else ""
 	tool_usage.visible = not usage.is_empty()
@@ -3630,7 +3664,7 @@ func _tool_build_obs(tool: Dictionary) -> void:
 								public_claim[key] = row[key]
 						public_claims.append(public_claim)
 					rows = public_claims
-				_model_table(sections[field], rows)
+				_model_table(sections[field], rows, field not in ["controls", "matrix", "sensors", "observations", "cases", "listing"])
 				any = true
 	if data.has("rows"):
 		_obs_rows(_a(data, "rows"))
@@ -3705,10 +3739,38 @@ func _model_value(value: Variant, field_id := "") -> String:
 	return "—" if value == null else str(value)
 
 
-func _model_table(title_key: String, rows: Array) -> void:
-	tool_obs_box.add_child(_section(title_key))
+func _model_table(title_key: String, rows: Array, auxiliary := false) -> void:
+	var memo_key := tool_selected + ":" + title_key
+	var memo: Dictionary = _tool_section_state.get(memo_key, {"open": not auxiliary and not rows.is_empty(), "selected": "", "chosen": false})
+	if not bool(memo.get("chosen", false)):
+		memo.open = not auxiliary and not rows.is_empty()
+	_tool_section_state[memo_key] = memo
+	var group := VBoxContainer.new()
+	group.set_meta("observation_section", title_key)
+	tool_obs_box.add_child(group)
+	var heading := Button.new()
+	heading.text = _t(title_key) + " (" + str(rows.size()) + ")"
+	heading.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	heading.toggle_mode = true
+	heading.flat = true
+	heading.button_pressed = bool(memo.open)
+	heading.icon = _desktop_icon("minimize" if heading.button_pressed else "add")
+	heading.expand_icon = true
+	heading.add_theme_constant_override("icon_max_width", 16)
+	heading.tooltip_text = _t("UI_WORKBENCH_EXPAND_RECORDS")
+	_size(heading, -2)
+	group.add_child(heading)
+	var content := VBoxContainer.new()
+	content.visible = heading.button_pressed
+	heading.toggled.connect(func(open: bool):
+		memo.chosen = true
+		memo.open = open
+		content.visible = open
+		heading.icon = _desktop_icon("minimize" if open else "add"))
+	group.add_child(content)
 	if rows.is_empty():
-		tool_obs_box.add_child(_klabel("UI_MODEL_NO_OBSERVATIONS", C_FAINT, -3, true))
+		memo.selected = ""
+		content.add_child(_klabel("UI_MODEL_NO_OBSERVATIONS", C_FAINT, -3, true))
 		return
 	var columns: Array[String] = []
 	for row in rows:
@@ -3720,30 +3782,39 @@ func _model_table(title_key: String, rows: Array) -> void:
 	table.hide_root = true
 	table.column_titles_visible = true
 	table.select_mode = Tree.SELECT_ROW
-	table.custom_minimum_size = Vector2(0, clampf(float(rows.size() + 1) * (ui_size + 12), 100, 250))
+	table.custom_minimum_size = Vector2(0, clampf(float(rows.size() + 1) * (ui_size + 12), 100, 210))
 	for index in columns.size():
 		table.set_column_title(index, _field_name(columns[index]))
 		table.set_column_clip_content(index, true)
 	var root := table.create_item()
+	var restored: TreeItem
 	for row in rows.slice(0, MAX_TABLE_ROWS):
 		var item := table.create_item(root)
 		item.set_metadata(0, row)
+		if JSON.stringify(row, "", true) == str(memo.selected):
+			restored = item
 		for index in columns.size():
 			var value := _model_value(row.get(columns[index]), columns[index])
 			item.set_text(index, value)
 			item.set_tooltip_text(index, value)
 	_size(table, -3)
-	tool_obs_box.add_child(table)
-	var detail := _label("", C_DIM, -3, true)
-	tool_obs_box.add_child(detail)
+	content.add_child(table)
+	var detail := _klabel("UI_WORKBENCH_RECORD_DETAIL_HINT", C_DIM, -3, true)
+	content.add_child(detail)
 	table.item_selected.connect(func():
 		var selected := table.get_selected()
 		if selected != null:
 			var record: Dictionary = selected.get_metadata(0)
+			memo.selected = JSON.stringify(record, "", true)
 			var lines := PackedStringArray()
 			for key in record:
 				lines.append(_field_name(str(key)) + ": " + _model_value(record[key], str(key)))
 			detail.text = "\n".join(lines))
+	if restored != null:
+		restored.select(0)
+		table.item_selected.emit()
+	else:
+		memo.selected = ""
 
 
 func _obs_rows(rows: Array) -> void:
@@ -4072,14 +4143,14 @@ func _model_build_fields(fields: Array, prefix: Array, grid: GridContainer, draf
 		var options := _a(field, "options")
 		if kind == "bool":
 			var check := CheckBox.new()
-			check.button_pressed = bool(draft.get(key, field.get("default", false)))
+			check.button_pressed = draft[key] if draft.get(key) is bool else bool(field.get("default", false))
 			control = check
 		elif kind in ["int", "integer"]:
 			var count := SpinBox.new()
 			count.min_value = float(field.get("min", 0))
 			count.max_value = float(field.get("max", 256))
 			count.step = 1
-			count.value = float(draft.get(key, count.min_value))
+			count.value = float(draft[key]) if typeof(draft.get(key)) in [TYPE_INT, TYPE_FLOAT] else count.min_value
 			control = count
 		elif kind in ["array", "multi_enum"]:
 			var list := ItemList.new()
@@ -4089,8 +4160,10 @@ func _model_build_fields(fields: Array, prefix: Array, grid: GridContainer, draf
 				var item := list.add_item(_model_option_text(option, id))
 				var value: Variant = option.get("id", "") if option is Dictionary else option
 				list.set_item_metadata(item, value)
-				if value in draft.get(key, []):
-					list.select(item, false)
+				if draft.get(key) is Array:
+					for remembered in draft[key]:
+						if typeof(remembered) == typeof(value) and remembered == value:
+							list.select(item, false)
 			control = list
 		elif kind == "enum" or not options.is_empty():
 			var selector := OptionButton.new()
@@ -4100,12 +4173,12 @@ func _model_build_fields(fields: Array, prefix: Array, grid: GridContainer, draf
 				var value: Variant = option.get("id", "") if option is Dictionary else option
 				selector.add_item(_model_option_text(option, id))
 				selector.set_item_metadata(selector.item_count - 1, value)
-				if draft.has(key) and draft[key] == value:
+				if draft.has(key) and typeof(draft[key]) == typeof(value) and draft[key] == value:
 					selector.select(selector.item_count - 1)
 			control = selector
 		else:
 			var input := _line_edit("", -2)
-			input.text = str(draft.get(key, ""))
+			input.text = draft[key] if draft.get(key) is String else ""
 			input.secret = bool(field.get("secret", false))
 			input.context_menu_enabled = not input.secret
 			input.text_submitted.connect(_on_tool_submit)
@@ -4313,6 +4386,7 @@ func _tool_run_json() -> void:
 
 
 func _tools_reset() -> void:
+	_tool_section_state.clear()
 	tool_selected = ""
 	tool_ids_sig = ""
 	tool_observation_sig = ""
@@ -5172,6 +5246,12 @@ func _refresh_top(v: Dictionary) -> void:
 	top_host.text = _t("UI_TOP_SESSION", {"n": active_term + 1, "user": _s(tv, "user"), "host": _s(tv, "host")})
 	top_host.tooltip_text = top_host.text
 	_refresh_save_mode()
+
+
+func _open_current_board() -> void:
+	bd_selected = _s(last_view, "mission_id")
+	_open_app("board", true)
+	_bd_show(_mission_dict(bd_selected))
 
 
 func _after_action(before: Dictionary, r: Dictionary, t: int, before_t: Dictionary) -> void:

@@ -5,8 +5,9 @@ const ENTRIES := {
 	"intruder": {"id": "intruder", "title_key": "PACK_INTRUDER_TITLE", "summary_key": "PACK_INTRUDER_SUMMARY", "role": "intruder", "start_mission": "M01", "main_count": 24, "optional_count": 4, "resource": "res://data/campaign/packs/intruder_v2.json", "slot": "user://saves/intruder_v2_01.json", "campaign_id": "midnight", "content_version": 2},
 	"defender": {"id": "defender", "title_key": "PACK_DEFENDER_TITLE", "summary_key": "PACK_DEFENDER_SUMMARY", "role": "defender", "start_mission": "D01", "main_count": 8, "optional_count": 0, "resource": "res://data/campaign/packs/defender_v1.json", "slot": "user://saves/defender_01.json", "campaign_id": "midnight_defender", "content_version": 1},
 	"tracker": {"id": "tracker", "title_key": "PACK_TRACKER_TITLE", "summary_key": "PACK_TRACKER_SUMMARY", "role": "tracker", "start_mission": "T01", "main_count": 8, "optional_count": 0, "resource": "res://data/campaign/packs/tracker_v1.json", "slot": "user://saves/tracker_01.json", "campaign_id": "midnight_tracker", "content_version": 1},
+	"challenge": {"id": "challenge", "title_key": "CH1_PACK_TITLE", "summary_key": "CH1_PACK_SUMMARY", "role": "challenge", "start_mission": "X01", "main_count": 3, "optional_count": 0, "resource": "res://data/campaign/packs/challenge_v1.json", "slot": "user://saves/challenge_01.json", "campaign_id": "midnight_challenge", "content_version": 1},
 }
-const PUBLIC_IDS := ["intruder", "defender", "tracker"]
+const PUBLIC_IDS := ["intruder", "defender", "tracker", "challenge"]
 const LEGACY_SOURCE := "user://saves/campaign_01.json"
 
 

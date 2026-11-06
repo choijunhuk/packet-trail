@@ -1,0 +1,869 @@
+{
+  "packs": {
+    "challenge": {
+      "missions": {
+        "X01": {
+          "paths": [
+            {
+              "id": "precise_repair",
+              "name": "precise repair",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@x01.challenge.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "set_control",
+                    "control_id": "owner_check",
+                    "value": true
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "set_control",
+                    "control_id": "retry_limit",
+                    "value": true
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "own_a"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "own_b"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "staff"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "foreign_direct"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "foreign_gateway"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "failed_1"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "gateway_failed_1"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "failed_2"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "gateway_failed_2"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "failed_3"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "gateway_failed_3"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "legitimate"
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {
+                  "ch1_x01_owner_check": true,
+                  "ch1_x01_retry_limit": true
+                },
+                "model_outcomes": {
+                  "ch1_x01_response": {
+                    "kind": "response_matrix",
+                    "case_ids": [
+                      "own_a",
+                      "own_b",
+                      "staff",
+                      "foreign_direct",
+                      "foreign_gateway",
+                      "failed_1",
+                      "gateway_failed_1",
+                      "failed_2",
+                      "gateway_failed_2",
+                      "failed_3",
+                      "gateway_failed_3",
+                      "legitimate"
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "id": "approved_migration",
+              "name": "approved migration",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@x01.challenge.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "set_control",
+                    "control_id": "direct_open",
+                    "value": false
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "own_a",
+                    "route_id": "gateway"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "own_b",
+                    "route_id": "gateway"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "staff"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "foreign_direct"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "foreign_gateway"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "failed_1"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "gateway_failed_1"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "failed_2"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "gateway_failed_2"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "failed_3"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "gateway_failed_3"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x01_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "legitimate",
+                    "route_id": "gateway"
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {
+                  "ch1_x01_direct_open": false
+                },
+                "model_outcomes": {
+                  "ch1_x01_response": {
+                    "kind": "response_matrix",
+                    "case_ids": [
+                      "own_a",
+                      "own_b",
+                      "staff",
+                      "foreign_direct",
+                      "foreign_gateway",
+                      "failed_1",
+                      "gateway_failed_1",
+                      "failed_2",
+                      "gateway_failed_2",
+                      "failed_3",
+                      "gateway_failed_3",
+                      "legitimate"
+                    ]
+                  }
+                }
+              }
+            }
+          ],
+          "negative_hints": [
+            "all_services_off_does_not_complete",
+            "normal_and_threat_outcomes_both_required",
+            "stale_receipts_do_not_complete"
+          ],
+          "negative_controls": {
+            "all_services_off": {
+              "controls": [
+                "direct_open",
+                "gateway_open"
+              ]
+            },
+            "current_basis": {
+              "challenge_id": "ch1_x01_response",
+              "normal_case_ids": [
+                "own_a",
+                "own_b",
+                "staff",
+                "legitimate"
+              ]
+            }
+          }
+        },
+        "X02": {
+          "paths": [
+            {
+              "id": "precise_repair",
+              "name": "precise repair",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@x02.challenge.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "set_control",
+                    "control_id": "job_groups",
+                    "value": [
+                      "jobs",
+                      "deploy"
+                    ]
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "set_control",
+                    "control_id": "target_scope",
+                    "value": true
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "set_control",
+                    "control_id": "notify_open",
+                    "value": true
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "read"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "write"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "foreign_write"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "foreign_approved"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "notify"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "internal_target"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "standby_target"
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {
+                  "ch1_x02_target_scope": true,
+                  "ch1_x02_notify_open": true
+                },
+                "model_outcomes": {
+                  "ch1_x02_response": {
+                    "kind": "response_matrix",
+                    "case_ids": [
+                      "read",
+                      "write",
+                      "foreign_write",
+                      "foreign_approved",
+                      "notify",
+                      "internal_target",
+                      "standby_target"
+                    ]
+                  }
+                },
+                "remote_files": {
+                  "ch1_x02_desk": {
+                    "/deploy/status.txt": {
+                      "content": "DEPLOYMENT READY\n"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "approved_migration",
+              "name": "approved migration",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@x02.challenge.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "set_control",
+                    "control_id": "target_scope",
+                    "value": true
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "set_control",
+                    "control_id": "standby_open",
+                    "value": true
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "read",
+                    "route_id": "gateway"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "write",
+                    "route_id": "gateway"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "foreign_write"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "foreign_approved"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "notify",
+                    "route_id": "gateway"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "internal_target"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x02_response",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "standby_target"
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {
+                  "ch1_x02_target_scope": true,
+                  "ch1_x02_standby_open": true
+                },
+                "model_outcomes": {
+                  "ch1_x02_response": {
+                    "kind": "response_matrix",
+                    "case_ids": [
+                      "read",
+                      "write",
+                      "foreign_write",
+                      "foreign_approved",
+                      "notify",
+                      "internal_target",
+                      "standby_target"
+                    ]
+                  }
+                },
+                "remote_files": {
+                  "ch1_x02_gateway": {
+                    "/approved/status.txt": {
+                      "content": "DEPLOYMENT READY\n"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "negative_hints": [
+            "all_services_off_does_not_complete",
+            "normal_and_threat_outcomes_both_required",
+            "stale_receipts_do_not_complete"
+          ],
+          "negative_controls": {
+            "all_services_off": {
+              "controls": [
+                "notify_open",
+                "standby_open"
+              ]
+            },
+            "current_basis": {
+              "challenge_id": "ch1_x02_response",
+              "normal_case_ids": [
+                "read",
+                "write",
+                "notify"
+              ]
+            }
+          }
+        },
+        "X03": {
+          "paths": [
+            {
+              "id": "field_corroboration",
+              "name": "Field windows and receiver custody",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@x03.challenge.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "collect",
+                    "sensor_id": "ch1_x03_field"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "advance_watch",
+                    "sensor_id": "ch1_x03_field"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "collect",
+                    "sensor_id": "ch1_x03_field"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "collect",
+                    "sensor_id": "ch1_x03_receiver"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "hypothesize",
+                    "hypothesis_id": "supported_1",
+                    "claim": {
+                      "kind": "before",
+                      "left": "event:ROTATE",
+                      "right": "event:DEPART"
+                    },
+                    "observation_ids": [
+                      "ch1_x03_field:1:ROTATE",
+                      "ch1_x03_receiver:0:DEPART",
+                      "ch1_x03_receiver:0:OTHER"
+                    ]
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "test",
+                    "hypothesis_id": "supported_1"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "hypothesize",
+                    "hypothesis_id": "supported_2",
+                    "claim": {
+                      "kind": "forwarded_to",
+                      "left": "request:N03",
+                      "right": "node:vault"
+                    },
+                    "observation_ids": [
+                      "ch1_x03_field:1:ROTATE",
+                      "ch1_x03_receiver:0:DEPART",
+                      "ch1_x03_receiver:0:OTHER"
+                    ]
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "test",
+                    "hypothesis_id": "supported_2"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "handoff",
+                    "supported_hypothesis_ids": [
+                      "supported_1",
+                      "supported_2"
+                    ],
+                    "next_sensor_id": "ch1_x03_vault_watch"
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {},
+                "model_outcomes": {
+                  "ch1_x03_observations": {
+                    "kind": "observation_handoff",
+                    "supported": [
+                      {
+                        "kind": "before",
+                        "left": "event:ROTATE",
+                        "right": "event:DEPART"
+                      },
+                      {
+                        "kind": "forwarded_to",
+                        "request_tag": "N03",
+                        "target_node": "vault"
+                      }
+                    ],
+                    "refuted_initial_claims": [
+                      "prior"
+                    ],
+                    "next_sensor_id": "ch1_x03_vault_watch"
+                  }
+                }
+              }
+            },
+            {
+              "id": "independent_audit",
+              "name": "Independent receiver-side audit handoff",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@x03.challenge.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "command",
+                  "line": "ssh auditor@x03.challenge.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "audit-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "collect",
+                    "sensor_id": "ch1_x03_audit"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "ch1_x03_observations",
+                  "params": {
+                    "action": "handoff",
+                    "claims": [
+                      {
+                        "kind": "before",
+                        "left": "event:ROTATE",
+                        "right": "event:DEPART",
+                        "observation_ids": [
+                          "ch1_x03_audit:0:ROTATE",
+                          "ch1_x03_audit:0:DEPART",
+                          "ch1_x03_audit:0:OTHER"
+                        ]
+                      },
+                      {
+                        "kind": "forwarded_to",
+                        "left": "request:N03",
+                        "right": "node:vault",
+                        "observation_ids": [
+                          "ch1_x03_audit:0:ROTATE",
+                          "ch1_x03_audit:0:DEPART",
+                          "ch1_x03_audit:0:OTHER"
+                        ]
+                      }
+                    ],
+                    "supported_hypothesis_ids": [],
+                    "next_sensor_id": "ch1_x03_vault_watch"
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {},
+                "model_outcomes": {
+                  "ch1_x03_observations": {
+                    "kind": "observation_handoff",
+                    "supported": [
+                      {
+                        "kind": "before",
+                        "left": "event:ROTATE",
+                        "right": "event:DEPART"
+                      },
+                      {
+                        "kind": "forwarded_to",
+                        "request_tag": "N03",
+                        "target_node": "vault"
+                      }
+                    ],
+                    "refuted_initial_claims": [
+                      "prior"
+                    ],
+                    "next_sensor_id": "ch1_x03_vault_watch"
+                  }
+                }
+              }
+            }
+          ],
+          "negative_hints": [
+            "shared_address_is_not_identity",
+            "uncollected_observation_cannot_support_claim",
+            "unknown_only_cannot_complete"
+          ],
+          "negative_controls": {
+            "wrong_next_sensor": "ch1_x03_address_watch",
+            "client_only_sensor": "ch1_x03_field",
+            "required_initial_refutation": "prior"
+          }
+        }
+      },
+      "endings": {
+        "ch1_handoff": {
+          "requires_completed": [
+            "X01",
+            "X02",
+            "X03"
+          ]
+        }
+      }
+    }
+  }
+}

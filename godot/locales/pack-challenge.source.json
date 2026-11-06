@@ -1,0 +1,634 @@
+{
+  "CH1_ENDING_TITLE": [
+    "검증된 합동 인계",
+    "Verified Joint Handoff",
+    "検証済みの合同引き継ぎ",
+    "已验证的联合交接",
+    "Traspaso conjunto verificado",
+    "Geprüfte gemeinsame Übergabe"
+  ],
+  "CH1_PACK_SUMMARY": [
+    "접근 통제·배포 복구·추적 반례를 복합 제약으로 해결하는 독립 3사건.",
+    "Three independent advanced cases combining access control, deployment recovery and counterevidence.",
+    "アクセス制御・配備復旧・反証を複合条件で解く独立した上級事件3件。",
+    "三个独立进阶案件，结合访问控制、部署恢复与反证分析。",
+    "Tres casos avanzados independientes que combinan control de acceso, recuperación del despliegue y pruebas en contra.",
+    "Drei eigenständige fortgeschrittene Fälle zu Zugriffskontrolle, Wiederherstellung von Bereitstellungen und Gegenbelegen."
+  ],
+  "CH1_PACK_TITLE": [
+    "종합 도전 · 세 갈래 인계",
+    "Joint Challenge · Three Handoffs",
+    "複合チャレンジ · 三つの引き継ぎ",
+    "综合挑战 · 三次交接",
+    "Desafío conjunto · Tres traspasos",
+    "Gemeinsame Herausforderung · Drei Übergaben"
+  ],
+  "CH1_X01_ABSTRACTION": [
+    "등록된 계정·요청·파일·관측으로 작동하는 독립 도전입니다. 다른 유효한 해법과 수동 도움도 사용할 수 있습니다.",
+    "This independent challenge uses registered accounts, requests, files and observations. Other valid solutions and manual help remain available.",
+    "登録されたアカウント・要求・ファイル・観測で動作する独立チャレンジです。他の有効な解法や手動ヘルプも利用できます。",
+    "本独立挑战使用已登记的账户、请求、文件与观测。其他有效解法和手动帮助仍然可用。",
+    "Este desafío independiente utiliza cuentas, solicitudes, archivos y observaciones registrados. Siguen disponibles otras soluciones válidas y la ayuda manual.",
+    "Diese eigenständige Herausforderung verwendet registrierte Konten, Anfragen, Dateien und Beobachtungen. Andere gültige Lösungen und manuelle Hilfe bleiben verfügbar."
+  ],
+  "CH1_X01_BRIEF": [
+    "합동 대응 훈련의 첫 의뢰입니다. 민원 접수 기록이 다른 계정에 노출됐고 같은 입구에서는 인증 실패도 반복됩니다. 입구 전체를 끄면 시민의 정상 접수도 사라집니다. 정상 접수와 실패 제한을 한 설정에서 함께 확인해 주세요.\n\n직접 경로는 소유자 검사와 계정별 제한을 따로 고쳐야 합니다. 승인 중계는 고정된 위임 범위와 자체 인증 제한을 갖고 있어 정상 업무를 옮길 수도 있습니다. 반복 실패 표본을 확인하고 최종 표본에서 제한 응답이 나오는지 보세요. 이미 조사한 계정은 앞선 표본부터 제한될 수도 있습니다. 다른 시민의 정상 인증은 계속 가능해야 합니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n",
+    "This is the first joint-response exercise. Receipt records are exposed to unrelated accounts, while sign-in failures repeat at the same entrance. Closing every entrance also removes legitimate citizen work. Verify receipt access and failed-attempt limits together under one configuration.\n\nThe original route needs separate ownership and per-account retry controls. The approved gateway has fixed delegation scopes and its own retry limit, so legitimate work may be migrated there instead. Observe the repeated-failure samples and verify a limiting response on the final sample. An account already tested may be limited on an earlier sample too. Another citizen must still be able to sign in.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n",
+    "合同対応訓練の最初の依頼です。受付記録が無関係のアカウントに公開され、同じ入口で認証失敗も繰り返されています。入口をすべて閉じれば、市民の通常業務も失われます。同じ設定のもとで受付のアクセス権と失敗回数の制限を両方検証してください。\n\n元の経路では所有者検査とアカウント別の再試行制限を別々に修復します。承認済みゲートウェイには固定された委任範囲と独自の再試行制限があり、通常業務を移すことも可能です。連続失敗のサンプルを観測し、最後のサンプルで制限応答を確認してください。調査済みのアカウントでは、それ以前のサンプルでも制限されることがあります。別の市民は引き続きサインインできなければなりません。\n認可済み業務アカウントは以下です。接続後、事件ツールで現在の観測と許可された操作を確認できます。\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n",
+    "这是联合响应演练的第一项委托。受理记录向无关账户暴露，同一入口还出现了重复认证失败。关闭所有入口也会中断市民的正常业务。请在同一配置下，同时验证受理记录访问与失败次数限制。\n\n原始路径需要分别修复所有者检查与按账户重试限制。获批网关具有固定的委托范围和独立的重试限制，也可将正常业务迁移至此。观测重复失败样本，并确认最后一个样本返回限制响应。已经测试过的账户也可能在更早的样本上受到限制。另一位市民必须仍能正常登录。\n获授权的业务账户如下。连接后，案件工具会显示当前观测和允许的操作。\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n",
+    "Es el primer ejercicio de respuesta conjunta. Los registros de recepción están expuestos a cuentas ajenas y se repiten fallos de acceso en la misma entrada. Cerrar todas las entradas también interrumpe el trabajo legítimo de los ciudadanos. Verifica el acceso a los recibos y los límites de intentos fallidos bajo una misma configuración.\n\nLa ruta original requiere controles separados de propiedad y reintentos por cuenta. La pasarela aprobada tiene ámbitos de delegación fijos y su propio límite de reintentos, por lo que también puedes trasladar allí el trabajo legítimo. Observa las muestras de fallos repetidos y verifica una respuesta de limitación en la última. Una cuenta ya investigada puede quedar limitada también en una muestra anterior. Otro ciudadano debe poder seguir iniciando sesión.\nLa cuenta de trabajo autorizada figura abajo. Tras conectar, la herramienta del caso muestra las observaciones actuales y las acciones permitidas.\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n",
+    "Dies ist die erste gemeinsame Einsatzübung. Empfangsbelege sind für unbeteiligte Konten sichtbar, während am selben Zugang wiederholt Anmeldungen scheitern. Werden alle Zugänge geschlossen, fällt auch die reguläre Arbeit der Bürger aus. Prüfe Belegzugriff und Begrenzung fehlgeschlagener Versuche unter derselben Konfiguration.\n\nDer ursprüngliche Weg benötigt getrennte Eigentümerprüfungen und Wiederholungslimits je Konto. Das genehmigte Gateway hat feste Delegationsbereiche und ein eigenes Wiederholungslimit; reguläre Arbeit kann auch dorthin verlegt werden. Beobachte die wiederholten Fehlversuche und prüfe beim letzten Muster eine Begrenzungsantwort. Ein bereits untersuchtes Konto kann auch bei einem früheren Muster begrenzt werden. Ein anderer Bürger muss sich weiterhin anmelden können.\nDas autorisierte Arbeitskonto steht unten. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n"
+  ],
+  "CH1_X01_CASE_FAILED_1": [
+    "원래 입구 반복 실패 1",
+    "Original entrance repeated failure 1",
+    "元の入口での連続失敗 1",
+    "原始入口重复失败 1",
+    "Fallo repetido 1 en la entrada original",
+    "Wiederholter Fehlversuch 1 am ursprünglichen Zugang"
+  ],
+  "CH1_X01_CASE_FAILED_2": [
+    "원래 입구 반복 실패 2",
+    "Original entrance repeated failure 2",
+    "元の入口での連続失敗 2",
+    "原始入口重复失败 2",
+    "Fallo repetido 2 en la entrada original",
+    "Wiederholter Fehlversuch 2 am ursprünglichen Zugang"
+  ],
+  "CH1_X01_CASE_FAILED_3": [
+    "원래 입구 반복 실패 3",
+    "Original entrance repeated failure 3",
+    "元の入口での連続失敗 3",
+    "原始入口重复失败 3",
+    "Fallo repetido 3 en la entrada original",
+    "Wiederholter Fehlversuch 3 am ursprünglichen Zugang"
+  ],
+  "CH1_X01_CASE_FOREIGN_DIRECT": [
+    "무관한 계정의 원래 입구 요청",
+    "Unrelated Account at the Original Entrance",
+    "元の入口への無関係アカウントの要求",
+    "无关账户在原始入口的请求",
+    "Cuenta ajena en la entrada original",
+    "Unbeteiligtes Konto am ursprünglichen Zugang"
+  ],
+  "CH1_X01_CASE_FOREIGN_GATEWAY": [
+    "무관한 계정의 승인 경로 요청",
+    "Unrelated Account at the Approved Route",
+    "承認済み経路への無関係アカウントの要求",
+    "无关账户在获批路径的请求",
+    "Cuenta ajena en la ruta aprobada",
+    "Unbeteiligtes Konto auf dem genehmigten Weg"
+  ],
+  "CH1_X01_CASE_GATEWAY_FAILED_1": [
+    "승인 경로 반복 실패 1",
+    "Gateway repeated failure 1",
+    "ゲートウェイでの連続失敗 1",
+    "网关重复失败 1",
+    "Fallo repetido 1 en la pasarela",
+    "Wiederholter Fehlversuch 1 am Gateway"
+  ],
+  "CH1_X01_CASE_GATEWAY_FAILED_2": [
+    "승인 경로 반복 실패 2",
+    "Gateway repeated failure 2",
+    "ゲートウェイでの連続失敗 2",
+    "网关重复失败 2",
+    "Fallo repetido 2 en la pasarela",
+    "Wiederholter Fehlversuch 2 am Gateway"
+  ],
+  "CH1_X01_CASE_GATEWAY_FAILED_3": [
+    "승인 경로 반복 실패 3",
+    "Gateway repeated failure 3",
+    "ゲートウェイでの連続失敗 3",
+    "网关重复失败 3",
+    "Fallo repetido 3 en la pasarela",
+    "Wiederholter Fehlversuch 3 am Gateway"
+  ],
+  "CH1_X01_CASE_LEGITIMATE": [
+    "다른 시민의 정상 인증",
+    "Another Citizen's Valid Sign-in",
+    "別の市民の正常な認証",
+    "另一位市民的正常登录",
+    "Inicio de sesión válido de otro ciudadano",
+    "Gültige Anmeldung eines anderen Bürgers"
+  ],
+  "CH1_X01_CASE_OWN_A": [
+    "시민 A의 자기 접수",
+    "Citizen A's Own Receipt",
+    "市民A自身の受付記録",
+    "市民 A 自己的受理记录",
+    "Recibo propio del ciudadano A",
+    "Eigener Beleg von Bürger A"
+  ],
+  "CH1_X01_CASE_OWN_B": [
+    "시민 B의 자기 접수",
+    "Citizen B's Own Receipt",
+    "市民B自身の受付記録",
+    "市民 B 自己的受理记录",
+    "Recibo propio del ciudadano B",
+    "Eigener Beleg von Bürger B"
+  ],
+  "CH1_X01_CASE_STAFF": [
+    "담당자의 위임된 접수",
+    "Assigned Staff's Delegated Receipt",
+    "担当職員に委任された受付記録",
+    "委托给负责人员的受理记录",
+    "Recibo delegado al personal asignado",
+    "An zuständiges Personal delegierter Beleg"
+  ],
+  "CH1_X01_CONTROL_AUTH_RETRY": [
+    "계정별 반복 인증 제한",
+    "Limit Repeated Sign-ins per Account",
+    "アカウント別の再認証を制限",
+    "按账户限制重复登录",
+    "Limitar los accesos repetidos por cuenta",
+    "Wiederholte Anmeldungen je Konto begrenzen"
+  ],
+  "CH1_X01_CONTROL_DIRECT_OPEN": [
+    "원래 업무 입구 열기",
+    "Enable Original Work Entrance",
+    "元の業務入口を有効化",
+    "启用原始业务入口",
+    "Habilitar la entrada de trabajo original",
+    "Ursprünglichen Arbeitszugang öffnen"
+  ],
+  "CH1_X01_CONTROL_GATEWAY_OPEN": [
+    "승인 경로 열기",
+    "Enable Approved Route",
+    "承認済み経路を有効化",
+    "启用获批路径",
+    "Habilitar la ruta aprobada",
+    "Genehmigten Weg öffnen"
+  ],
+  "CH1_X01_CONTROL_OWNER_CHECK": [
+    "접수 소유자 검사",
+    "Receipt Ownership Check",
+    "受付記録の所有者検査",
+    "受理记录所有者检查",
+    "Comprobación de propiedad del recibo",
+    "Eigentümerprüfung für Belege"
+  ],
+  "CH1_X01_DESK_NAME": [
+    "열려 있어야 하는 문 담당실",
+    "A Door That Must Stay Open Desk",
+    "開いておくべき扉の担当室",
+    "必须保持开放的门事务室",
+    "Mesa de Una puerta que debe seguir abierta",
+    "Arbeitsplatz: Eine Tür muss offen bleiben"
+  ],
+  "CH1_X01_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済み業務経路",
+    "获批业务路径",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "CH1_X01_GOAL": [
+    "정상 접수·담당자 열람·정상 인증을 유지하고 직접/중계의 비인가 열람과 반복 실패를 제한한다.",
+    "Preserve legitimate receipt access, staff work and sign-in while limiting unauthorized reads and repeated failures on both routes.",
+    "通常の受付・担当者の閲覧・認証を維持し、両経路の不正閲覧と連続失敗を制限する。",
+    "保持正常受理、工作人员访问和登录，同时限制两条路径上的未授权读取与重复失败。",
+    "Mantén el acceso legítimo a recibos, el trabajo del personal y los inicios de sesión, limitando las lecturas no autorizadas y los fallos repetidos en ambas rutas.",
+    "Erhalte berechtigten Belegzugriff, Personalarbeit und Anmeldung; begrenze unbefugtes Lesen und wiederholte Fehlversuche auf beiden Wegen."
+  ],
+  "CH1_X01_HINT_1": [
+    "직접 입구의 소유권 검사와 인증 제한은 다른 제어입니다. 하나만 고쳐서는 모든 결과가 맞지 않습니다.",
+    "Ownership and retry limits are separate controls. Fixing only one cannot satisfy every outcome.",
+    "所有者検査と再試行制限は別の制御です。一方だけ直してもすべての結果は満たせません。",
+    "所有者检查与重试限制是不同控制项。只修复其中一项无法满足所有结果。",
+    "La propiedad y el límite de reintentos son controles distintos. Corregir solo uno no satisface todos los resultados.",
+    "Eigentümerprüfung und Wiederholungslimit sind getrennte Kontrollen. Eine allein erfüllt nicht alle Ergebnisse."
+  ],
+  "CH1_X01_HINT_2": [
+    "각 입구의 실패 표본은 모두 거부되고 최종 표본은 제한돼야 합니다. 앞선 조사로 이미 제한된 계정도 유효한 거부입니다. 정상 인증에는 다른 계정을 사용합니다.",
+    "Failure samples at each entrance must be refused, with the final sample limited. Earlier limiting caused by your investigation is also a valid refusal. Legitimate sign-in uses a different account.",
+    "各入口の失敗サンプルは拒否され、最後のサンプルは制限される必要があります。調査の結果、それ以前に制限されても有効な拒否です。正常な認証には別のアカウントを使います。",
+    "每个入口的失败样本都必须被拒绝，最后一个样本须受到限制。调查造成的提前限制同样是有效拒绝。正常登录使用另一账户。",
+    "Las muestras fallidas de cada entrada deben rechazarse y la última debe quedar limitada. Una limitación anterior causada por tu investigación también es un rechazo válido. El acceso legítimo usa otra cuenta.",
+    "Fehlversuche an jedem Zugang müssen abgewiesen werden; das letzte Muster muss begrenzt sein. Eine durch deine Untersuchung früher ausgelöste Begrenzung ist ebenfalls eine gültige Ablehnung. Die reguläre Anmeldung nutzt ein anderes Konto."
+  ],
+  "CH1_X01_HINT_3": [
+    "직접 입구를 수리하거나 그 입구만 닫고 정상 접수·인증을 승인 중계로 옮기세요. 중계는 열려 있어야 합니다.",
+    "Repair the original entrance, or close only that entrance and migrate legitimate receipt/sign-in work to the approved gateway. Keep the gateway open.",
+    "元の入口を修復するか、その入口だけ閉じて通常の受付・認証を承認済みゲートウェイへ移してください。ゲートウェイは開いたままにします。",
+    "修复原始入口，或只关闭该入口并将正常受理与登录迁移至获批网关。保持网关开放。",
+    "Repara la entrada original o cierra solo esa entrada y traslada los recibos y accesos legítimos a la pasarela aprobada. Mantén abierta la pasarela.",
+    "Repariere den ursprünglichen Zugang oder schließe nur diesen und verlege reguläre Belege und Anmeldungen zum genehmigten Gateway. Halte das Gateway offen."
+  ],
+  "CH1_X01_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "現在の業務と対応の検証",
+    "当前业务与响应验证",
+    "Comprobaciones de trabajo y respuesta actuales",
+    "Aktuelle Arbeits- und Reaktionsprüfungen"
+  ],
+  "CH1_X01_LIMIT": [
+    "실제 서버 침투나 모든 공격에 대한 안전 보증이 아닙니다. 읽는 시간에는 벌점이 없고 잘못된 설정은 다시 고칠 수 있습니다.",
+    "This does not attack real servers or establish protection against every attack. Reading has no time penalty, and mistaken settings can be repaired.",
+    "実際のサーバーへの攻撃や、あらゆる攻撃に対する安全性の証明ではありません。読む時間に罰則はなく、誤った設定は修正できます。",
+    "这不会攻击真实服务器，也不能证明能够防御所有攻击。阅读没有时间惩罚，错误设置可以修复。",
+    "Esto no ataca servidores reales ni demuestra protección frente a todos los ataques. Leer no tiene penalización de tiempo y los ajustes erróneos pueden repararse.",
+    "Dies greift keine echten Server an und belegt keinen Schutz gegen alle Angriffe. Lesen verursacht keinen Zeitabzug; fehlerhafte Einstellungen lassen sich korrigieren."
+  ],
+  "CH1_X01_PRINCIPLE": [
+    "서비스 가용성과 권한 범위는 함께 검증해야 합니다. 실패 제한은 개별 인증 결과이며 전역 경보 수치와 다릅니다.",
+    "Availability and authorization scope must be checked together. Retry limiting is an authentication outcome, distinct from the global alert indicator.",
+    "可用性と権限範囲は一緒に検証します。再試行制限は個別の認証結果であり、全体の警戒表示とは別です。",
+    "可用性和授权范围必须一起验证。重试限制属于单独的认证结果，与全局警报指示不同。",
+    "La disponibilidad y el ámbito de autorización deben comprobarse juntos. El límite de reintentos es un resultado de autenticación, distinto del indicador global de alerta.",
+    "Verfügbarkeit und Berechtigungsumfang müssen gemeinsam geprüft werden. Das Wiederholungslimit ist ein Authentifizierungsergebnis und vom globalen Alarmzähler getrennt."
+  ],
+  "CH1_X01_REPLY": [
+    "정상 시민과 담당자의 접수는 유지되고 무관한 열람과 반복 인증은 거부됐습니다. 어떤 입구를 택했는지보다 실제 업무가 남았다는 점이 인계 기준입니다. 다음 현장은 배포 권한을 넓히자는 제안으로 시끄럽습니다.",
+    "Legitimate citizen and staff work remains, while unrelated reads and repeated sign-ins are refused. The handoff records that real work survived, whichever entrance you chose. The next site proposes widening deployment permissions.",
+    "市民と担当者の通常業務を維持しつつ、無関係な閲覧と連続認証を拒否できました。どの入口を選んだかより、実際の業務が残ったことが引き継ぎの基準です。次の現場では配備権限を広げる提案が出ています。",
+    "市民和工作人员的正常业务得到保留，无关读取与重复登录已被拒绝。交接标准是实际业务仍可运行，而不是选择了哪个入口。下一处现场提出了扩大部署权限的建议。",
+    "Se mantiene el trabajo legítimo de ciudadanos y personal, mientras se rechazan lecturas ajenas e intentos repetidos. El traspaso se basa en que el trabajo real siga funcionando, elijas la entrada que elijas. El siguiente lugar propone ampliar permisos de despliegue.",
+    "Reguläre Bürger- und Personalarbeit bleibt möglich, unbeteiligtes Lesen und wiederholte Anmeldungen werden abgewiesen. Für die Übergabe zählt die funktionierende Arbeit, unabhängig vom gewählten Zugang. Am nächsten Standort wird eine Ausweitung der Bereitstellungsrechte vorgeschlagen."
+  ],
+  "CH1_X01_SENDER": [
+    "야간 합동 대응실",
+    "Joint Night Response Desk",
+    "夜間合同対応室",
+    "夜间联合响应室",
+    "Centro conjunto de respuesta nocturna",
+    "Gemeinsame Nachteinsatzzentrale"
+  ],
+  "CH1_X01_TITLE": [
+    "열려 있어야 하는 문",
+    "A Door That Must Stay Open",
+    "開いておくべき扉",
+    "必须保持开放的门",
+    "Una puerta que debe seguir abierta",
+    "Eine Tür muss offen bleiben"
+  ],
+  "CH1_X02_ABSTRACTION": [
+    "등록된 계정·요청·파일·관측으로 작동하는 독립 도전입니다. 다른 유효한 해법과 수동 도움도 사용할 수 있습니다.",
+    "This independent challenge uses registered accounts, requests, files and observations. Other valid solutions and manual help remain available.",
+    "登録されたアカウント・要求・ファイル・観測で動作する独立チャレンジです。他の有効な解法や手動ヘルプも利用できます。",
+    "本独立挑战使用已登记的账户、请求、文件与观测。其他有效解法和手动帮助仍然可用。",
+    "Este desafío independiente utiliza cuentas, solicitudes, archivos y observaciones registrados. Siguen disponibles otras soluciones válidas y la ayuda manual.",
+    "Diese eigenständige Herausforderung verwendet registrierte Konten, Anfragen, Dateien und Beobachtungen. Andere gültige Lösungen und manuelle Hilfe bleiben verfügbar."
+  ],
+  "CH1_X02_BRIEF": [
+    "배포 계정이 상태 파일을 갱신하지 못해 야간 안내가 멈췄습니다. 폴더와 파일을 모두에게 열자는 제안이 있지만 같은 입구에 비담당 계정도 있습니다. 정상 읽기·쓰기와 통지, 비담당 쓰기 거부를 모두 확인해 주세요.\n\n원래 폴더는 deploy 그룹만 탐색하고 파일은 해당 그룹만 쓸 수 있습니다. 배포 계정의 현재 그룹을 확인하거나, jobs 그룹이 이미 접근할 수 있는 승인 작업대를 사용하세요. 통지의 목적지는 ward뿐이며 직접 통지는 현재 꺼져 있고 승인 대기 통지는 별도로 켤 수 있습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n",
+    "The deployment account cannot update its status file, so the night notice has stopped. A proposal would open both folder and file to everyone, including unrelated accounts at the same entrance. Verify legitimate reads, writes and notification delivery alongside refusal of unrelated writes.\n\nOnly the deploy group can traverse the original folder and write its file. Check the worker's groups, or use the approved workbench already available to jobs. Notifications may target only ward. Primary notification delivery is currently off; the approved standby can be enabled separately.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n",
+    "配備アカウントが状態ファイルを更新できず、夜間通知が止まりました。フォルダーとファイルを全員に開放する提案がありますが、同じ入口には無関係のアカウントもいます。正規の読み書き・通知と、無関係の書き込みの拒否を一緒に検証してください。\n\n元のフォルダーをたどり、そのファイルへ書き込めるのはdeployグループだけです。作業アカウントの現在のグループを調べるか、jobsグループが利用できる承認済み作業台を使ってください。通知先はwardのみです。主通知は現在停止しており、承認済み待機系は別に有効化できます。\n認可済み業務アカウントは以下です。接続後、事件ツールで現在の観測と許可された操作を確認できます。\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n",
+    "部署账户无法更新状态文件，导致夜间通知停止。有人提议向所有人开放文件夹和文件，但同一入口还有无关账户。请验证正常读取、写入和通知送达，同时拒绝无关写入。\n\n原始文件夹仅允许deploy组遍历，文件也仅允许该组写入。检查工作账户当前所属的组，或使用jobs组已能访问的获批工作台。通知目标只能是ward。主通知目前关闭，获批备用通知可单独启用。\n获授权的业务账户如下。连接后，案件工具会显示当前观测和允许的操作。\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n",
+    "La cuenta de despliegue no puede actualizar su archivo de estado y el aviso nocturno se ha detenido. Se propone abrir la carpeta y el archivo a todos, incluidas cuentas ajenas en la misma entrada. Verifica lecturas, escrituras y entrega de avisos legítimas, además del rechazo de escrituras ajenas.\n\nSolo el grupo deploy puede recorrer la carpeta original y escribir su archivo. Revisa los grupos de la cuenta de trabajo o usa el entorno aprobado que ya está disponible para jobs. Los avisos solo pueden dirigirse a ward. La entrega principal está desactivada; la reserva aprobada se habilita por separado.\nLa cuenta de trabajo autorizada figura abajo. Tras conectar, la herramienta del caso muestra las observaciones actuales y las acciones permitidas.\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n",
+    "Das Bereitstellungskonto kann seine Statusdatei nicht aktualisieren; der nächtliche Hinweis bleibt aus. Ein Vorschlag würde Ordner und Datei für alle öffnen, auch für unbeteiligte Konten am selben Zugang. Prüfe reguläres Lesen, Schreiben und Benachrichtigen sowie die Ablehnung fremder Schreibzugriffe.\n\nNur die Gruppe deploy darf den ursprünglichen Ordner durchlaufen und dessen Datei beschreiben. Prüfe die Gruppen des Arbeitskontos oder nutze den genehmigten Arbeitsplatz, der jobs bereits offensteht. Benachrichtigungen dürfen nur an ward gehen. Der Hauptversand ist derzeit aus; die genehmigte Reserve kann separat aktiviert werden.\nDas autorisierte Arbeitskonto steht unten. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n"
+  ],
+  "CH1_X02_CASE_FOREIGN_APPROVED": [
+    "승인 경로의 비담당 쓰기",
+    "Unrelated Write at the Approved Route",
+    "承認済み経路の無関係な書き込み",
+    "获批路径上的无关写入",
+    "Escritura ajena en la ruta aprobada",
+    "Fremder Schreibzugriff auf dem genehmigten Weg"
+  ],
+  "CH1_X02_CASE_FOREIGN_WRITE": [
+    "비담당 계정의 배포 파일 변경",
+    "Unrelated Account Modifying Deployment",
+    "無関係アカウントによる配備変更",
+    "无关账户修改部署文件",
+    "Cuenta ajena modificando el despliegue",
+    "Unbeteiligtes Konto verändert Bereitstellung"
+  ],
+  "CH1_X02_CASE_INTERNAL_TARGET": [
+    "범위 밖 통지 대상: x02.challenge.packet.test",
+    "Out-of-scope Notification Target: x02.challenge.packet.test",
+    "範囲外の通知先: x02.challenge.packet.test",
+    "范围外通知目标：x02.challenge.packet.test",
+    "Destino de aviso fuera de ámbito: x02.challenge.packet.test",
+    "Benachrichtigungsziel außerhalb des Bereichs: x02.challenge.packet.test"
+  ],
+  "CH1_X02_CASE_NOTIFY": [
+    "ward 정상 통지",
+    "Legitimate ward Notification",
+    "wardへの正常な通知",
+    "向ward正常通知",
+    "Aviso legítimo a ward",
+    "Reguläre Benachrichtigung an ward"
+  ],
+  "CH1_X02_CASE_READ": [
+    "배포 계정의 상태 읽기",
+    "Deployment Account Reading Its Status",
+    "配備アカウントによる状態読み取り",
+    "部署账户读取自身状态",
+    "Cuenta de despliegue leyendo su estado",
+    "Bereitstellungskonto liest eigenen Status"
+  ],
+  "CH1_X02_CASE_STANDBY_TARGET": [
+    "범위 밖 통지 대상: gateway.x02.challenge.packet.test",
+    "Out-of-scope Notification Target: gateway.x02.challenge.packet.test",
+    "範囲外の通知先: gateway.x02.challenge.packet.test",
+    "范围外通知目标：gateway.x02.challenge.packet.test",
+    "Destino de aviso fuera de ámbito: gateway.x02.challenge.packet.test",
+    "Benachrichtigungsziel außerhalb des Bereichs: gateway.x02.challenge.packet.test"
+  ],
+  "CH1_X02_CASE_WRITE": [
+    "배포 계정의 작업 결과 쓰기",
+    "Deployment Account Writing Its Work Result",
+    "配備アカウントによる作業結果の書き込み",
+    "部署账户写入工作结果",
+    "Cuenta de despliegue escribiendo su resultado",
+    "Bereitstellungskonto schreibt Arbeitsergebnis"
+  ],
+  "CH1_X02_CONTROL_NOTICE_NOTIFY_OPEN": [
+    "주 통지 경로 열기",
+    "Enable Primary Notification",
+    "主通知を有効化",
+    "启用主通知",
+    "Habilitar aviso principal",
+    "Hauptbenachrichtigung aktivieren"
+  ],
+  "CH1_X02_CONTROL_NOTICE_STANDBY_OPEN": [
+    "승인 대기 통지 열기",
+    "Enable Approved Standby Notification",
+    "承認済み待機通知を有効化",
+    "启用获批备用通知",
+    "Habilitar aviso de reserva aprobado",
+    "Genehmigte Reservebenachrichtigung aktivieren"
+  ],
+  "CH1_X02_CONTROL_NOTICE_TARGET_SCOPE": [
+    "ward 통지 범위 제한",
+    "Constrain Notifications to ward",
+    "通知先をwardに制限",
+    "将通知范围限制为ward",
+    "Limitar los avisos a ward",
+    "Benachrichtigungen auf ward beschränken"
+  ],
+  "CH1_X02_DESK_NAME": [
+    "살려야 할 배포 담당실",
+    "Keep the Deployment Working Desk",
+    "配備を維持する担当室",
+    "保持部署运作事务室",
+    "Mesa de Mantén el despliegue en marcha",
+    "Arbeitsplatz: Bereitstellung am Laufen halten"
+  ],
+  "CH1_X02_DIRECTORY_MODE": [
+    "배포 폴더의 탐색 권한",
+    "Deployment Folder Traversal Rights",
+    "配備フォルダーの通過権限",
+    "部署文件夹遍历权限",
+    "Permisos de recorrido de la carpeta de despliegue",
+    "Durchquerungsrechte des Bereitstellungsordners"
+  ],
+  "CH1_X02_FILE_MODE": [
+    "작업 결과 파일의 권한",
+    "Work Result File Rights",
+    "作業結果ファイルの権限",
+    "工作结果文件权限",
+    "Permisos del archivo de resultados",
+    "Rechte der Ergebnisdatei"
+  ],
+  "CH1_X02_GATEWAY_NAME": [
+    "승인된 업무 경로",
+    "Approved Work Route",
+    "承認済み業務経路",
+    "获批业务路径",
+    "Ruta de trabajo aprobada",
+    "Genehmigter Arbeitsweg"
+  ],
+  "CH1_X02_GOAL": [
+    "정상 상태 읽기·쓰기와 ward 통지를 살리고 비담당 파일 변경 및 범위 밖 통지를 거부한다.",
+    "Restore legitimate status reads/writes and ward delivery while refusing unrelated modifications and out-of-scope notifications.",
+    "正規の状態読み書きとwardへの通知を復旧し、無関係な変更と範囲外の通知を拒否する。",
+    "恢复正常状态读写和ward通知，同时拒绝无关修改与范围外通知。",
+    "Restaura lecturas y escrituras legítimas del estado y la entrega a ward, rechazando modificaciones ajenas y avisos fuera de ámbito.",
+    "Stelle reguläres Lesen und Schreiben des Status sowie die Zustellung an ward wieder her. Weise fremde Änderungen und Benachrichtigungen außerhalb des Bereichs ab."
+  ],
+  "CH1_X02_HINT_1": [
+    "폴더 탐색과 파일 쓰기는 다른 권한입니다. 모든 사용자에게 여는 대신 현재 서비스 계정의 그룹을 확인하세요.",
+    "Folder traversal and file writing are separate permissions. Check the service account's groups instead of opening access to everyone.",
+    "フォルダーの通過とファイルへの書き込みは別の権限です。全員に開放せず、サービスアカウントのグループを確認しましょう。",
+    "文件夹遍历与文件写入是不同权限。检查服务账户的组，而不是向所有人开放访问。",
+    "Recorrer carpetas y escribir archivos son permisos distintos. Revisa los grupos de la cuenta de servicio en vez de abrir el acceso a todos.",
+    "Ordnerdurchquerung und Dateischreiben sind getrennte Rechte. Prüfe die Gruppen des Dienstkontos, statt den Zugriff für alle zu öffnen."
+  ],
+  "CH1_X02_HINT_2": [
+    "원래 파일의 권한을 유지하고 deploy 그룹을 부여하거나 승인 작업대의 파일로 업무를 옮길 수 있습니다.",
+    "Keep original permissions and assign deploy membership, or migrate the job to the approved workbench file.",
+    "元の権限を維持してdeployグループに所属させるか、承認済み作業台のファイルへ業務を移してください。",
+    "保持原始权限并赋予deploy组成员身份，或将任务迁移至获批工作台文件。",
+    "Conserva los permisos originales y asigna pertenencia a deploy, o traslada la tarea al archivo del entorno aprobado.",
+    "Behalte die ursprünglichen Rechte und weise die deploy-Mitgliedschaft zu, oder verlege die Aufgabe zur Datei des genehmigten Arbeitsplatzes."
+  ],
+  "CH1_X02_HINT_3": [
+    "허용된 ward 통지와 거부할 내부 목적지를 각각 관찰하세요. 사용한 통지 경로를 닫으면 과거 성공만으로는 완료되지 않습니다.",
+    "Observe allowed ward delivery and refused internal targets separately. Closing the route you used invalidates an earlier success.",
+    "許可されたwardへの配信と、拒否すべき内部宛先を別々に観測してください。使った経路を閉じると、以前の成功は無効になります。",
+    "分别观测允许的ward送达和应拒绝的内部目标。关闭使用过的路径后，之前的成功不能继续满足条件。",
+    "Observa por separado la entrega permitida a ward y los destinos internos rechazados. Cerrar la ruta utilizada invalida un éxito anterior.",
+    "Beobachte erlaubte Zustellung an ward und abgewiesene interne Ziele getrennt. Wird der verwendete Weg geschlossen, gilt ein früherer Erfolg nicht mehr."
+  ],
+  "CH1_X02_JOB_GROUPS": [
+    "배포 계정의 필요한 그룹",
+    "Required Deployment Account Groups",
+    "配備アカウントに必要なグループ",
+    "部署账户所需的组",
+    "Grupos necesarios de la cuenta de despliegue",
+    "Erforderliche Gruppen des Bereitstellungskontos"
+  ],
+  "CH1_X02_LAB_NAME": [
+    "현재 업무와 대응 검증",
+    "Live Work and Response Checks",
+    "現在の業務と対応の検証",
+    "当前业务与响应验证",
+    "Comprobaciones de trabajo y respuesta actuales",
+    "Aktuelle Arbeits- und Reaktionsprüfungen"
+  ],
+  "CH1_X02_LIMIT": [
+    "실제 서버 침투나 모든 공격에 대한 안전 보증이 아닙니다. 읽는 시간에는 벌점이 없고 잘못된 설정은 다시 고칠 수 있습니다.",
+    "This does not attack real servers or establish protection against every attack. Reading has no time penalty, and mistaken settings can be repaired.",
+    "実際のサーバーへの攻撃や、あらゆる攻撃に対する安全性の証明ではありません。読む時間に罰則はなく、誤った設定は修正できます。",
+    "这不会攻击真实服务器，也不能证明能够防御所有攻击。阅读没有时间惩罚，错误设置可以修复。",
+    "Esto no ataca servidores reales ni demuestra protección frente a todos los ataques. Leer no tiene penalización de tiempo y los ajustes erróneos pueden repararse.",
+    "Dies greift keine echten Server an und belegt keinen Schutz gegen alle Angriffe. Lesen verursacht keinen Zeitabzug; fehlerhafte Einstellungen lassen sich korrigieren."
+  ],
+  "CH1_X02_PRINCIPLE": [
+    "최소 권한과 정상 업무의 지속을 함께 확인합니다. 승인된 대체 파일·통지 경로도 실제 동작하면 유효합니다.",
+    "Least privilege and continued business work must hold together. Approved alternative file and delivery routes are valid when they actually work.",
+    "最小権限と通常業務の継続を同時に確認します。承認済みの代替ファイル・配信経路も、実際に機能すれば有効です。",
+    "最小权限与正常业务连续性必须同时成立。获批的替代文件和送达路径只要实际有效，也是有效解法。",
+    "El mínimo privilegio y la continuidad del trabajo deben mantenerse juntos. Las rutas alternativas aprobadas para archivos y avisos son válidas si realmente funcionan.",
+    "Minimale Rechte und fortgesetzter Geschäftsbetrieb müssen zusammen bestehen. Genehmigte alternative Datei- und Zustellwege sind gültig, wenn sie tatsächlich funktionieren."
+  ],
+  "CH1_X02_REPLY": [
+    "허용된 작업 결과가 실제 파일에 남고 ward 안내도 전달됐습니다. 비담당 쓰기와 내부 목적지 오용은 거부됐습니다. 마지막 인계에서는 같은 주소를 같은 세션으로 보았던 추정부터 확인해야 합니다.",
+    "The permitted work result exists in a real virtual file and the ward notice was delivered. Unrelated writes and internal-target misuse were refused. The final handoff begins by checking an assumption that one address meant one session.",
+    "許可された作業結果が仮想ファイルに残り、wardへの通知も届きました。無関係な書き込みと内部宛先の悪用は拒否されています。最後の引き継ぎでは、同じアドレスなら同じセッションという前提を検証します。",
+    "获授权的工作结果已写入实际虚拟文件，ward通知也已送达。无关写入与内部目标滥用均被拒绝。最终交接将先核查“同一地址就是同一会话”的假设。",
+    "El resultado permitido existe en un archivo virtual real y el aviso llegó a ward. Se rechazaron escrituras ajenas y el abuso de destinos internos. El último traspaso empieza cuestionando que una dirección equivalga a una sesión.",
+    "Das erlaubte Arbeitsergebnis liegt in einer echten virtuellen Datei vor, und der Hinweis wurde an ward zugestellt. Fremde Schreibzugriffe und Missbrauch interner Ziele wurden abgewiesen. Die letzte Übergabe prüft zunächst die Annahme, eine Adresse bedeute eine Sitzung."
+  ],
+  "CH1_X02_SENDER": [
+    "야간 합동 대응실",
+    "Joint Night Response Desk",
+    "夜間合同対応室",
+    "夜间联合响应室",
+    "Centro conjunto de respuesta nocturna",
+    "Gemeinsame Nachteinsatzzentrale"
+  ],
+  "CH1_X02_TITLE": [
+    "살려야 할 배포",
+    "Keep the Deployment Working",
+    "配備を維持する",
+    "保持部署运作",
+    "Mantén el despliegue en marcha",
+    "Bereitstellung am Laufen halten"
+  ],
+  "CH1_X03_ABSTRACTION": [
+    "등록된 계정·요청·파일·관측으로 작동하는 독립 도전입니다. 다른 유효한 해법과 수동 도움도 사용할 수 있습니다.",
+    "This independent challenge uses registered accounts, requests, files and observations. Other valid solutions and manual help remain available.",
+    "登録されたアカウント・要求・ファイル・観測で動作する独立チャレンジです。他の有効な解法や手動ヘルプも利用できます。",
+    "本独立挑战使用已登记的账户、请求、文件与观测。其他有效解法和手动帮助仍然可用。",
+    "Este desafío independiente utiliza cuentas, solicitudes, archivos y observaciones registrados. Siguen disponibles otras soluciones válidas y la ayuda manual.",
+    "Diese eigenständige Herausforderung verwendet registrierte Konten, Anfragen, Dateien und Beobachtungen. Andere gültige Lösungen und manuelle Hilfe bleiben verfügbar."
+  ],
+  "CH1_X03_BRIEF": [
+    "같은 중계 주소와 같은 이름표가 두 기록에 나타나니 같은 세션이라는 선행 보고가 왔습니다. 그러나 이름표는 클라이언트가 붙였고 출처별 시계도 다릅니다. 세션을 사람의 신원으로 확대하지 말고, 다음 조사 지점을 정할 수 있는 연결과 반례를 인계해 주세요.\n\n현장 센서의 첫 창은 공유 주소와 클라이언트가 주장한 같은 night-worker 이름표만 보입니다. 최신 현장 창에는 회전 기록만, 수신 서버에는 출발과 다른 세션 기록만 있으므로 함께 조사하세요. 독립 감사 내보내기는 아래의 별도 감사 계정으로 접속하면 사용할 수 있습니다. 서버 발급 S1·S2, 시계 오차를 보정한 회전/출발 순서, N03의 vault 전달을 확인해야 합니다. vault 관측과 공유 주소 관측 중 실제 전달 경로를 따라 다음 지점을 고르세요.\n\n별도 감사 계정\n\nauditor@x03.challenge.packet.test\naudit-custody\n\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n",
+    "A preliminary report treats two records at one relay address with matching client labels as one session. Those labels were supplied by clients, and the source clocks differ. Do not turn a session inference into a person's identity: hand off a supported connection and counterevidence that identify the next observation point.\n\nThe first field window contains only a shared address and the same client-claimed night-worker label. The latest field window has only rotation; receiver records have departure and the other session, so investigate them together. The independent audit export requires the separate auditor account below. Check server-issued S1/S2, rotation-before-departure after clock correction, and N03 forwarding to vault. Choose between vault and shared-address observation by following the actual route.\n\nSeparate auditor account\n\nauditor@x03.challenge.packet.test\naudit-custody\n\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n",
+    "同じ中継アドレスで同じクライアント名が記録されたため、同一セッションだとする予備報告が届きました。しかし名前はクライアントが付けたもので、出典の時計も異なります。セッションの推測を個人の身元に広げず、次の観測地点を決められる関連と反証を引き継いでください。\n\n現場の最初の観測窓には共有アドレスと、クライアントが申告した同じnight-worker名しかありません。最新の現場窓には切り替えだけがあり、受信側には出発と別のセッションが記録されているため、両方を調べてください。独立した監査エクスポートには、下記の別の監査アカウントが必要です。サーバー発行のS1/S2、時計補正後の切り替え→出発の順序、N03からvaultへの転送を確認しましょう。\n\n実際の経路をたどり、vaultと共有アドレスのどちらを次に観測するか選びます。\n監査アカウント:\n\nauditor@x03.challenge.packet.test\naudit-custody\n認可済み業務アカウントは以下です。接続後、事件ツールで現在の観測と許可された操作を確認できます。\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n",
+    "初步报告将同一中继地址、相同客户端标签的两条记录视为同一会话。但标签由客户端提供，不同来源的时钟也有偏差。不要把会话推断扩大为个人身份认定：请交接有证据支持的关联与反证，确定下一个观测位置。\n\n现场的首个窗口只有共享地址和客户端声称的相同night-worker标签。最新现场窗口仅包含轮换；接收方记录包含出发和另一会话，须结合调查。独立审计导出需要使用下方单独的审计账户。检查服务器签发的S1/S2、时钟校正后先轮换再出发的顺序，以及N03向vault的转发。\n\n沿实际路径判断下一步应观测vault还是共享地址。\n审计账户：\n\nauditor@x03.challenge.packet.test\naudit-custody\n获授权的业务账户如下。连接后，案件工具会显示当前观测和允许的操作。\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n",
+    "Un informe preliminar considera una misma sesión dos registros de una dirección de relevo con etiquetas de cliente coincidentes. Esas etiquetas las aportan los clientes y los relojes de origen difieren. No conviertas una inferencia de sesión en la identidad de una persona: entrega una conexión respaldada y pruebas en contra que permitan elegir el siguiente punto de observación.\n\nLa primera ventana de campo solo contiene una dirección compartida y la misma etiqueta night-worker declarada por el cliente. La ventana más reciente solo contiene la rotación; los registros del receptor tienen la salida y la otra sesión, así que investígalos juntos. La exportación independiente de auditoría requiere la cuenta de auditor separada que figura abajo. Comprueba S1/S2 emitidos por el servidor, la rotación anterior a la salida tras corregir los relojes y el reenvío de N03 a vault.\n\nElige observar vault o la dirección compartida siguiendo la ruta real.\nCuenta de auditor:\n\nauditor@x03.challenge.packet.test\naudit-custody\nLa cuenta de trabajo autorizada figura abajo. Tras conectar, la herramienta del caso muestra las observaciones actuales y las acciones permitidas.\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n",
+    "Ein vorläufiger Bericht hält zwei Datensätze derselben Relaisadresse mit gleichen Clientnamen für eine Sitzung. Die Namen stammen jedoch von den Clients, und die Quellen haben unterschiedliche Uhren. Leite aus einer Sitzungsvermutung keine Personenidentität ab. Übergib eine belegte Verbindung und Gegenbelege, die den nächsten Beobachtungspunkt bestimmen.\n\nDas erste Feldfenster enthält nur eine gemeinsame Adresse und denselben vom Client behaupteten Namen night-worker. Das neueste Feldfenster enthält nur den Wechsel; Empfängerdaten enthalten den Abgang und die andere Sitzung. Untersuche beides gemeinsam. Der unabhängige Auditexport erfordert das untenstehende separate Auditkonto. Prüfe serverseitig vergebene S1/S2, den Wechsel vor dem Abgang nach Uhrkorrektur und die Weiterleitung von N03 an vault.\n\nFolge dem tatsächlichen Weg, um zwischen vault und der gemeinsamen Adresse als nächstem Beobachtungspunkt zu wählen.\nAuditkonto:\n\nauditor@x03.challenge.packet.test\naudit-custody\nDas autorisierte Arbeitskonto steht unten. Nach der Verbindung zeigt das Fallwerkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n"
+  ],
+  "CH1_X03_DESK_NAME": [
+    "같은 주소의 다른 세션 담당실",
+    "Different Sessions at One Address Desk",
+    "同じアドレスの異なるセッション担当室",
+    "同一地址的不同会话事务室",
+    "Mesa de Sesiones distintas en una dirección",
+    "Arbeitsplatz: Verschiedene Sitzungen an einer Adresse"
+  ],
+  "CH1_X03_GOAL": [
+    "초기 동일 세션 추정을 반박하고 회전→출발 순서와 vault 전달을 입증해 다음 관측점을 인계한다.",
+    "Refute the preliminary same-session inference, support rotation-before-departure and forwarding to vault, and hand off the next observation point.",
+    "最初の同一セッション説を反証し、切り替え→出発の順序とvaultへの転送を裏付け、次の観測地点を引き継ぐ。",
+    "反驳初步同一会话推断，证明先轮换再出发及向vault转发，并交接下一个观测位置。",
+    "Refuta la inferencia inicial de una misma sesión, respalda la rotación anterior a la salida y el reenvío a vault, y entrega el siguiente punto de observación.",
+    "Widerlege die vorläufige Annahme derselben Sitzung, belege den Wechsel vor dem Abgang und die Weiterleitung an vault und übergib den nächsten Beobachtungspunkt."
+  ],
+  "CH1_X03_HINT_1": [
+    "공유 주소와 클라이언트 표식은 서버가 발급한 세션 식별자와 다릅니다. 출처와 marker authority를 보세요.",
+    "A shared address and client label are not server-issued session identifiers. Check provenance and marker authority.",
+    "共有アドレスやクライアント名は、サーバー発行のセッション識別子とは違います。出典と標識の発行主体を確認しましょう。",
+    "共享地址与客户端标签不同于服务器签发的会话标识符。检查来源及标记的签发权威。",
+    "Una dirección compartida y una etiqueta de cliente no son identificadores de sesión emitidos por el servidor. Comprueba la procedencia y la autoridad del marcador.",
+    "Gemeinsame Adresse und Clientname sind keine vom Server vergebenen Sitzungskennungen. Prüfe Herkunft und Aussteller des Kennzeichens."
+  ],
+  "CH1_X03_HINT_2": [
+    "현장 회전 시각 130~132와 수신 출발 시각 105~107을 그대로 비교하면 순서를 거꾸로 읽게 됩니다. 각각의 시계 오차를 빼서 구간을 비교하세요.",
+    "Comparing field rotation at130–132 with receiver departure at105–107 directly reverses their order. Subtract each source clock offset before comparing the intervals.",
+    "現場の切り替え130–132と受信側の出発105–107を直接比べると順序が逆になります。区間を比べる前に、各出典の時計のずれを引いてください。",
+    "直接比较现场轮换130–132与接收方出发105–107会颠倒顺序。比较区间前，请减去各来源的时钟偏差。",
+    "Comparar directamente la rotación de campo a130–132 con la salida del receptor a105–107 invierte su orden. Resta el desfase del reloj de cada fuente antes de comparar los intervalos.",
+    "Ein direkter Vergleich des Feldwechsels bei130–132 mit dem Empfängerabgang bei105–107 kehrt die Reihenfolge um. Ziehe vor dem Intervallvergleich die Uhrenabweichung jeder Quelle ab."
+  ],
+  "CH1_X03_HINT_3": [
+    "현장 최신 창과 수신 기록을 함께 사용하거나, auditor 계정으로 접속해 독립 감사 내보내기를 이용할 수 있습니다. before와 forwarded_to를 지원하고 초기 same_session 반례를 모은 뒤 vault 관측으로 인계하세요.",
+    "Use the current field window together with receiver records, or connect as auditor for the independent audit export. Support before and forwarded_to, collect counterevidence to the initial same_session claim, and hand off to vault observation.",
+    "現場の現在の窓と受信記録を組み合わせるか、監査アカウントで接続して独立した監査エクスポートを使ってください。beforeとforwarded_toを裏付け、最初のsame_session説の反証を集め、vaultの観測へ引き継ぎましょう。",
+    "将当前现场窗口与接收记录结合，或以审计账户连接并使用独立审计导出。支持before和forwarded_to，收集初始same_session论断的反证，再交接至vault观测。",
+    "Combina la ventana de campo actual con los registros del receptor, o conecta como auditor para usar la exportación independiente. Respalda before y forwarded_to, reúne pruebas contra la afirmación inicial same_session y deriva el caso a la observación de vault.",
+    "Nutze das aktuelle Feldfenster zusammen mit Empfängerdaten oder melde dich als Auditor für den unabhängigen Auditexport an. Belege before und forwarded_to, sammle Gegenbelege zur ursprünglichen same_session-Behauptung und übergib an die vault-Beobachtung."
+  ],
+  "CH1_X03_LIMIT": [
+    "실제 서버 침투나 모든 공격에 대한 안전 보증이 아닙니다. 읽는 시간에는 벌점이 없고 잘못된 설정은 다시 고칠 수 있습니다.",
+    "This does not attack real servers or establish protection against every attack. Reading has no time penalty, and mistaken settings can be repaired.",
+    "実際のサーバーへの攻撃や、あらゆる攻撃に対する安全性の証明ではありません。読む時間に罰則はなく、誤った設定は修正できます。",
+    "这不会攻击真实服务器，也不能证明能够防御所有攻击。阅读没有时间惩罚，错误设置可以修复。",
+    "Esto no ataca servidores reales ni demuestra protección frente a todos los ataques. Leer no tiene penalización de tiempo y los ajustes erróneos pueden repararse.",
+    "Dies greift keine echten Server an und belegt keinen Schutz gegen alle Angriffe. Lesen verursacht keinen Zeitabzug; fehlerhafte Einstellungen lassen sich korrigieren."
+  ],
+  "CH1_X03_PRINCIPLE": [
+    "관측 출처·시계 범위·서버 발급 표식으로 연결을 평가합니다. 공유 IP만으로 동일 세션이나 사람을 단정하지 않습니다.",
+    "Evaluate connections using custody sources, clock intervals and server-issued markers. A shared IP alone establishes neither one session nor one person.",
+    "記録の保管元・時計の区間・サーバー発行の標識から関連を評価します。共有IPだけで同一セッションや同一人物とは判断できません。",
+    "依据保管来源、时钟区间及服务器签发的标记评估关联。共享IP本身不能证明同一会话或同一个人。",
+    "Evalúa las conexiones mediante fuentes bajo custodia, intervalos de reloj y marcadores del servidor. Una IP compartida no demuestra por sí sola una misma sesión ni una misma persona.",
+    "Bewerte Verbindungen anhand verwahrter Quellen, Zeitintervalle und serverseitig vergebener Kennzeichen. Eine gemeinsame IP belegt weder dieselbe Sitzung noch dieselbe Person."
+  ],
+  "CH1_X03_PRIOR": [
+    "공유 주소가 같으니 같은 세션이라는 선행 추정",
+    "Preliminary Same-session Inference from a Shared Address",
+    "共有アドレスから導かれた予備的な同一セッション説",
+    "基于共享地址的初步同一会话推断",
+    "Inferencia preliminar de una misma sesión por dirección compartida",
+    "Vorläufige Annahme derselben Sitzung aufgrund einer gemeinsamen Adresse"
+  ],
+  "CH1_X03_REPLY": [
+    "선행 동일 세션 추정은 서버 발급 기록으로 반박됐고, 시각 순서와 vault 전달이 출처 있는 관측으로 지원됐습니다. 사람의 신원을 단정하지 않은 채 다음 조사 범위를 좁혔습니다. 세 의뢰의 인계가 완료됐습니다.",
+    "Server-issued records refuted the preliminary same-session claim. Sourced observations supported the time order and forwarding to vault. The next investigation is narrower without asserting a person's identity. The three-case handoff is complete.",
+    "サーバー発行の記録によって最初の同一セッション説は反証されました。出典付きの観測が時間順序とvaultへの転送を裏付けています。個人の身元を断定せず、次の調査範囲を絞れました。三つの事件の引き継ぎは完了です。",
+    "服务器签发的记录反驳了初步同一会话论断。有来源的观测支持了时间顺序和向vault的转发。在不认定个人身份的前提下，下一步调查范围已缩小。三个案件交接完成。",
+    "Los registros del servidor refutaron la afirmación preliminar de una misma sesión. Observaciones con procedencia respaldaron el orden temporal y el reenvío a vault. La siguiente investigación se ha acotado sin afirmar la identidad de una persona. Se completa el traspaso de los tres casos.",
+    "Serverseitige Datensätze widerlegten die vorläufige Behauptung derselben Sitzung. Beobachtungen mit Herkunftsnachweis belegten die Reihenfolge und Weiterleitung an vault. Die nächste Untersuchung ist eingegrenzt, ohne eine Personenidentität zu behaupten. Die Übergabe der drei Fälle ist abgeschlossen."
+  ],
+  "CH1_X03_SENDER": [
+    "야간 합동 대응실",
+    "Joint Night Response Desk",
+    "夜間合同対応室",
+    "夜间联合响应室",
+    "Centro conjunto de respuesta nocturna",
+    "Gemeinsame Nachteinsatzzentrale"
+  ],
+  "CH1_X03_SENSOR_ADDRESS_WATCH": [
+    "공유 주소의 다음 관측",
+    "Next Observation at Shared Address",
+    "共有アドレスの次の観測",
+    "共享地址的下一步观测",
+    "Siguiente observación en la dirección compartida",
+    "Nächste Beobachtung an gemeinsamer Adresse"
+  ],
+  "CH1_X03_SENSOR_AUDIT": [
+    "승인된 수신 감사 내보내기",
+    "Approved Receiver Audit Export",
+    "承認済みの受信監査エクスポート",
+    "获批的接收方审计导出",
+    "Exportación aprobada de auditoría del receptor",
+    "Genehmigter Auditexport des Empfängers"
+  ],
+  "CH1_X03_SENSOR_FIELD": [
+    "현장 기록의 관측 창",
+    "Field Record Windows",
+    "現場記録の観測窓",
+    "现场记录观测窗口",
+    "Ventanas de registros de campo",
+    "Beobachtungsfenster der Felddaten"
+  ],
+  "CH1_X03_SENSOR_RECEIVER": [
+    "수신 서버 인계 기록",
+    "Receiver Handoff Records",
+    "受信側の引き継ぎ記録",
+    "接收方交接记录",
+    "Registros de traspaso del receptor",
+    "Übergabeaufzeichnungen des Empfängers"
+  ],
+  "CH1_X03_SENSOR_VAULT_WATCH": [
+    "vault의 다음 관측",
+    "Next Observation at vault",
+    "vaultの次の観測",
+    "vault的下一步观测",
+    "Siguiente observación en vault",
+    "Nächste Beobachtung bei vault"
+  ],
+  "CH1_X03_TITLE": [
+    "같은 주소의 다른 세션",
+    "Different Sessions at One Address",
+    "同じアドレスの異なるセッション",
+    "同一地址的不同会话",
+    "Sesiones distintas en una dirección",
+    "Verschiedene Sitzungen an einer Adresse"
+  ],
+  "CH1_X03_TOOL_NAME": [
+    "합동 관측과 반례 인계",
+    "Joint Observations and Counterevidence",
+    "合同観測と反証の引き継ぎ",
+    "联合观测与反证交接",
+    "Observaciones conjuntas y pruebas en contra",
+    "Gemeinsame Beobachtungen und Gegenbelege"
+  ]
+}

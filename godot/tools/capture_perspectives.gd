@@ -2,9 +2,10 @@ extends "res://tools/capture_full_game.gd"
 ## Public-pack render regression. Base input/capture primitives are reused without editing the old suite.
 
 const Catalog = preload("res://scripts/core/campaign_catalog.gd")
-const PACK_IDS := ["intruder", "defender", "tracker"]
+const ORIGINAL_PACK_IDS := ["intruder", "defender", "tracker"]
+const PACK_IDS := ["intruder", "defender", "tracker", "challenge"]
 const STRUCTURED := ["response_lab", "observation_case", "branch_vm"]
-const CASE_COUNTS := {"intruder": 28, "defender": 8, "tracker": 8}
+const CASE_COUNTS := {"intruder": 28, "defender": 8, "tracker": 8, "challenge": 3}
 
 var test_base := ""
 var active_pack := ""
@@ -32,7 +33,7 @@ func _initialize() -> void:
 	not_run.append("Legacy campaign GUI and alternate GUI solution routes are outside this public-pack A-route suite; legacy/backend validation is separate.")
 	if OS.get_cmdline_user_args().has("--ci-render-smoke"):
 		profile = "ci-render-smoke"
-		not_run.append("Smoke completes only intruder M01 (1/44); remaining 43 case GUI solutions and all three endings are NOT_RUN. Full headless campaign evidence is separate.")
+		not_run.append("Smoke completes only intruder M01 (1/47); remaining46 case GUI solutions and all four endings are NOT_RUN. Full headless campaign evidence is separate.")
 		not_run.append("Smoke views only typed forms exposed by each pack's real first case; later branch_vm forms and model actions are NOT_RUN.")
 	_run.call_deferred()
 	create_timer(240.0 if profile == "ci-render-smoke" else 600.0).timeout.connect(func():
@@ -76,7 +77,7 @@ func _boot_product() -> bool:
 	if room == null or not _require_fields(room, ["campaign_buttons", "support_picker", "campaign_slots", "selected_pack_id", "desktop", "menu", "menu_box", "settings_path"]):
 		_check(false, "real campaign-aware room booted")
 		return false
-	_check(room.get("campaign_slots") == pack_slots, "all four slot overrides arrive before any desktop exists")
+	_check(room.get("campaign_slots") == pack_slots, "all five slot overrides arrive before any desktop exists")
 	if room.get("campaign_slots") != pack_slots:
 		return false
 	preferences_path = test_base.get_basename() + "_preferences.json"
@@ -134,12 +135,18 @@ func _run() -> void:
 			if profile == "full":
 				await _load_pack_from_ui()
 	if profile == "full":
-		_check(campaign_cases.size() == 44 and pack_endings.size() == 3, "full reports all 44 real case completions and three endings")
+		var original_cases := campaign_cases.filter(func(row: Dictionary): return row.pack_id in ORIGINAL_PACK_IDS)
+		var challenge_cases := campaign_cases.filter(func(row: Dictionary): return row.pack_id == "challenge")
+		var original_endings := pack_endings.filter(func(row: Dictionary): return row.pack_id in ORIGINAL_PACK_IDS)
+		var challenge_endings := pack_endings.filter(func(row: Dictionary): return row.pack_id == "challenge")
+		_check(original_cases.size() == 44 and original_endings.size() == 3, "preserved original44 cases and three endings actually replay")
+		_check(challenge_cases.size() == 3 and challenge_endings.size() == 1, "new challenge3 cases and one ending actually replay")
+		_check(campaign_cases.size() == 47 and pack_endings.size() == 4, "aggregate47 cases and four endings reconcile")
 		for kind in STRUCTURED:
 			_check(typed_runs.any(func(row: Dictionary): return row.kind == kind), "real basic form executed for model kind: " + kind)
 	else:
 		_check(campaign_cases.size() == 1 and campaign_cases[0].pack_id == "intruder" and campaign_cases[0].mission_id == "M01",
-			"smoke reports exactly one actually completed case out of 44")
+			"smoke reports exactly one actually completed case out of47")
 		_check(pack_endings.is_empty(), "smoke does not claim ending GUI validation")
 	_finish()
 
@@ -153,7 +160,17 @@ func _load_fixtures() -> bool:
 	_check(parsed is Dictionary and parsed.get("packs", {}) is Dictionary, "perspective fixture schema parses")
 	if not parsed is Dictionary or not parsed.get("packs", {}) is Dictionary:
 		return false
-	fixture_packs = parsed.packs
+	fixture_packs = parsed.packs.duplicate(true)
+	var challenge_path := "res://tests/fixtures/challenge_solutions.json"
+	var extra: Variant = JSON.parse_string(FileAccess.get_file_as_string(challenge_path))
+	_check(extra is Dictionary and extra.get("packs") is Dictionary and extra.packs.keys() == ["challenge"], "separate challenge fixture schema is exact")
+	if not extra is Dictionary or not extra.get("packs") is Dictionary or extra.packs.keys() != ["challenge"]:
+		return false
+	for id in extra.packs:
+		_check(not fixture_packs.has(id), "fixture merge rejects duplicate pack identity: " + id)
+		if fixture_packs.has(id):
+			return false
+		fixture_packs[id] = extra.packs[id]
 	for id in PACK_IDS:
 		_check(fixture_packs.has(id) and fixture_packs[id].get("missions", {}).size() == CASE_COUNTS[id], "real fixture inventory matches pack scope: " + id)
 		if not fixture_packs.has(id) or fixture_packs[id].get("missions", {}).size() != CASE_COUNTS[id]:
@@ -214,7 +231,7 @@ func _select_pack(id: String) -> bool:
 func _accept_option(control: OptionButton, value: Variant, label: String) -> bool:
 	var index := -1
 	for item in range(control.item_count):
-		if control.get_item_metadata(item) == value:
+		if _enum_value_matches(control.get_item_metadata(item), value):
 			index = item
 	_check(index >= 0, "public option metadata is available: " + label)
 	if index < 0:
@@ -423,7 +440,7 @@ func _fill_basic_form(values: Dictionary) -> bool:
 			for requested in value:
 				var found := false
 				for index in range(control.item_count):
-					if control.get_item_metadata(index) == requested:
+					if _enum_value_matches(control.get_item_metadata(index), requested):
 						control.select(index, false)
 						found = true
 				_check(found, "multi-value metadata contains requested canonical id: " + key)
@@ -449,9 +466,16 @@ func _fill_basic_form(values: Dictionary) -> bool:
 	return true
 
 
+func _enum_value_matches(actual: Variant, expected: Variant) -> bool:
+	# Registered controls can expose arrays, strings and booleans in one enum.
+	if typeof(actual) != typeof(expected) and not (typeof(actual) in [TYPE_INT, TYPE_FLOAT] and typeof(expected) in [TYPE_INT, TYPE_FLOAT]):
+		return false
+	return actual == expected
+
+
 func _select_option(control: OptionButton, value: Variant) -> bool:
 	for index in range(control.item_count):
-		if control.get_item_metadata(index) == value:
+		if _enum_value_matches(control.get_item_metadata(index), value):
 			control.select(index)
 			return true
 	return false
@@ -503,7 +527,7 @@ func _view_first_forms() -> void:
 		desktop.tool_run_btn.grab_focus()
 		await _frames(3)
 		await _capture("first-form-%s.png" % kind)
-	if profile == "ci-render-smoke" and active_pack in ["defender", "tracker"]:
+	if profile == "ci-render-smoke" and active_pack in ["defender", "tracker", "challenge"]:
 		_check(not seen.is_empty(), "new public perspective has a real first-case basic form: " + active_pack)
 
 
@@ -776,9 +800,10 @@ func _render_ui_observations() -> Array:
 
 
 func _render_expected_scope() -> Dictionary:
-	return {"packs_selected": 3, "cases": 1 if profile == "ci-render-smoke" else 44,
-		"endings": 0 if profile == "ci-render-smoke" else 3,
-		"case_counts": {"intruder": 1, "defender": 0, "tracker": 0} if profile == "ci-render-smoke" else CASE_COUNTS,
+	return {"packs_selected": 4, "cases": 1 if profile == "ci-render-smoke" else 47,
+		"original_cases": 1 if profile == "ci-render-smoke" else 44, "challenge_cases": 0 if profile == "ci-render-smoke" else 3,
+		"endings": 0 if profile == "ci-render-smoke" else 4,
+		"case_counts": {"intruder": 1, "defender": 0, "tracker": 0, "challenge": 0} if profile == "ci-render-smoke" else CASE_COUNTS,
 		"locales": Localization.LOCALES}
 
 
@@ -813,13 +838,15 @@ func _cleanup_and_report() -> void:
 	var protected_after := _fingerprints()
 	var protected_unchanged: bool = protected_after == before_files
 	_check(protected_unchanged, "all default slots/backups/preferences bytes remain unchanged")
-	if profile == "full" and (campaign_cases.size() < 44 or pack_endings.size() < 3):
-		not_run.append("Full replay stopped with %d/44 case completions and %d/3 ending screens; remaining %d case solutions and %d endings are GUI NOT_RUN." %
-			[campaign_cases.size(), pack_endings.size(), 44 - campaign_cases.size(), 3 - pack_endings.size()])
+	if profile == "full" and (campaign_cases.size() < 47 or pack_endings.size() < 4):
+		not_run.append("Full replay stopped with %d/47 case completions and %d/4 ending screens; remaining %d case solutions and %d endings are GUI NOT_RUN." %
+			[campaign_cases.size(), pack_endings.size(), 47 - campaign_cases.size(), 4 - pack_endings.size()])
 	var status := "pass" if failures.is_empty() else ("partial_failure" if not campaign_cases.is_empty() else "failed")
-	print(JSON.stringify({"suite": _render_suite(), "interface_revision": "desktop-1.2", "profile": profile, "status": status, "checks": checks, "failures": failures,
+	print(JSON.stringify({"suite": _render_suite(), "interface_revision": "challenge-workbench", "profile": profile, "status": status, "checks": checks, "failures": failures,
 		"expected_scope": _render_expected_scope(), "selected_packs": selected_packs, "ui_observations": _render_ui_observations(),
 		"actual_case_count": campaign_cases.size(), "actual_ending_count": pack_endings.size(),
+		"original_case_count": campaign_cases.filter(func(row: Dictionary): return row.pack_id in ORIGINAL_PACK_IDS).size(),
+		"challenge_case_count": campaign_cases.filter(func(row: Dictionary): return row.pack_id == "challenge").size(),
 		"campaign_cases": campaign_cases, "pack_endings": pack_endings, "typed_basic_runs": typed_runs, "first_case_form_views": form_views,
 		"native_fixture_actions": native_actions, "password_actions": password_actions,
 		"setup_api_scope": "Text/number/bool/enum/array assignment, ItemList/Tree selection, action-change signals and isolated test preference IO are setup. Run, save, picker accept, confirmation and lifecycle use actual InputEvents.",

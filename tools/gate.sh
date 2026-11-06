@@ -39,6 +39,7 @@ for required in godot/project.godot godot/scripts/core/game.gd \
     godot/scripts/core/campaign_catalog.gd godot/data/campaign/legacy_v1.json \
     godot/data/campaign/packs/intruder_v2.json godot/data/campaign/packs/defender_v1.json \
     godot/data/campaign/packs/tracker_v1.json godot/tests/fixtures/perspectives_solutions.json \
+    godot/data/campaign/packs/challenge_v1.json godot/tests/fixtures/challenge_solutions.json tools/build_challenge_content.py \
     godot/tests/headless/test_mutation_limits.gd godot/tests/headless/test_perspectives.gd \
     godot/tests/headless/test_audio_revision.gd godot/tools/run_audio_revision.gd \
     godot/tools/inspect_package.gd tools/test_mutation_limits.py tools/test_perspectives.py \
@@ -49,7 +50,9 @@ for required in godot/project.godot godot/scripts/core/game.gd \
     godot/tests/headless/test_browser_context.gd godot/tests/headless/test_support_settings.gd \
     godot/tools/run_support_settings.gd tools/test_desktop_models.py \
     godot/tests/headless/test_desktop_shell.gd godot/tools/run_desktop_shell.gd \
-    godot/tests/headless/test_lobby_preferences.gd godot/tools/run_lobby_preferences.gd; do
+    godot/tests/headless/test_lobby_preferences.gd godot/tools/run_lobby_preferences.gd \
+    godot/tests/headless/test_workbench.gd godot/tools/run_workbench.gd \
+    godot/tests/headless/test_challenge_regressions.gd tools/test_challenge.py; do
     [[ -f "$required" ]] || fail "missing required file: $required"
 done
 

@@ -1,5 +1,5 @@
 extends "res://tools/capture_perspectives.gd"
-## First-look proof uses actual product UI and engine input. Never a substitute for full44 or OS input.
+## First-look proof uses actual product UI and engine input. Never a substitute for full47 or OS input.
 
 var observations: Array[Dictionary] = []
 
@@ -7,8 +7,8 @@ var observations: Array[Dictionary] = []
 func _initialize() -> void:
 	started_ms = Time.get_ticks_msec()
 	profile = "desktop-preview"
-	not_run.append("Preview completes intruder M01 only (1/44); remaining43 and three endings are GUI NOT_RUN.")
-	not_run.append("Functional shell tests, prior full44, physical OS input and visual acceptance are separate evidence.")
+	not_run.append("Preview completes intruder M01 only (1/47); remaining46 and four endings are GUI NOT_RUN.")
+	not_run.append("Functional shell tests, prior full47, physical OS input and visual acceptance are separate evidence.")
 	_run.call_deferred()
 	create_timer(240.0).timeout.connect(func():
 		if not finished:
@@ -48,14 +48,16 @@ func _run() -> void:
 	# Old assumptions about automatic mail/terminal opening are replaced by explicit launches.
 	await _open_app("mail")
 	await _locale_audio_checks()
-	for id in ["defender", "tracker"]:
+	for id in ["defender", "tracker", "challenge"]:
 		if not (await _select_pack(id)) or not (await _start_new_pack(id)):
 			_finish()
 			return
 		_check(_open_windows().is_empty(), "new standard scenario keeps desktop empty: " + id)
 		await _capture("empty-desktop.png")
 		await _view_first_forms()
-	_check(selected_packs.size() == 3 and campaign_cases.size() == 1, "preview reports three real selections and exactly one completed case")
+		await _workbench_large_view()
+	await _guided_goals_and_notifications()
+	_check(selected_packs.size() == 4 and campaign_cases.size() == 1, "preview reports four real selections and exactly one completed case")
 	_finish()
 
 
@@ -105,7 +107,7 @@ func _settings_pages(prefix := "") -> void:
 		_check(panel.tabs.current_tab == index, "actual tab input opens settings page %d" % index)
 		await _capture(prefix + "settings-%d.png" % index)
 		if not prefix.is_empty():
-			var page_keys: Array = [["support_intruder", "support_defender", "support_tracker"],
+			var page_keys: Array = [["support_intruder", "support_defender", "support_tracker", "support_challenge"],
 				["locale", "font_scale", "fullscreen", "reduced_motion"],
 				["master_volume", "music_volume", "sfx_volume", "ui_volume", "ambience_volume", "keyboard_volume", "tool_volume", "notification_volume", "background_audio"],
 				["mouse_sensitivity", "comfort_mode"]][index]
@@ -372,10 +374,10 @@ func _render_suite() -> String:
 
 
 func _render_expected_scope() -> Dictionary:
-	return {"packs_selected": 3, "cases": 1, "endings": 0, "support_confirm_cancel": 3,
+	return {"packs_selected": 4, "cases": 1, "endings": 0, "support_confirm_cancel": 3,
 		"settings_categories": 4, "browser_tabs": 2, "locales": Localization.LOCALES,
-		"small_viewport": {"width": 1280, "height": 720, "font_scale": 1.6, "lobby_roles": 3, "settings_tabs": 4, "launcher_open": true},
-		"limit": "First-look preview; full44 and OS acceptance are separate."}
+		"small_viewport": {"width": 1280, "height": 720, "font_scale": 1.6, "lobby_roles": 4, "settings_tabs": 4, "launcher_open": true},
+		"limit": "First-look preview; full47 and OS acceptance are separate."}
 
 
 func _render_ui_observations() -> Array:
@@ -478,3 +480,110 @@ func _launcher_small_viewport() -> void:
 	root.size = Vector2i(1600, 900)
 	_set_test_settings(original)
 	await _frames(3)
+
+
+func _workbench_large_view() -> void:
+	var original: Dictionary = room.settings_store.get_values()
+	var large := original.duplicate(true)
+	large.font_scale = 1.6
+	large.fullscreen = false
+	root.size = Vector2i(1280, 720)
+	if not _set_test_settings(large): return
+	await _open_app("tools")
+	await _frames(4)
+	var win: Control = desktop.wins["tools"].win
+	if not Rect2(win.position, win.size).is_equal_approx(Rect2(Vector2.ZERO, desktop._desk_size())):
+		await _focus_and_click(desktop.wins["tools"].actions.maximize)
+	await _frames(3)
+	for key in desktop.tool_inputs:
+		var control: Control = desktop.tool_inputs[key]
+		if control.visible and control.focus_mode != Control.FOCUS_NONE:
+			await _require_reachable(control, active_pack + "/workbench-large/input/" + str(key))
+	await _require_reachable(desktop.tool_run_btn, active_pack + "/workbench-large/run")
+	await _capture("workbench-1280-large-actions.png")
+	for group in desktop.tool_obs_box.get_children():
+		if not group.has_meta("observation_section") or group.get_child_count() < 2: continue
+		var heading := group.get_child(0) as Button
+		if heading == null: continue
+		await _require_reachable(heading, active_pack + "/workbench-large/section/" + str(group.get_meta("observation_section")))
+		if not heading.button_pressed:
+			await _key(KEY_ENTER)
+		await _frames(2)
+		var content: Node = group.get_child(1)
+		_check(content.visible, "native keyboard opens all public workbench record sections")
+		var table: Tree = null
+		for child in content.get_children():
+			if child is Tree: table = child; break
+		if table != null and table.get_root() != null and table.get_root().get_first_child() != null:
+			await _require_reachable(table, active_pack + "/workbench-large/records")
+			await _key(KEY_DOWN)
+			await _frames(2)
+			var selected := table.get_selected()
+			_check(selected != null, "native keyboard selects a public record row")
+			if selected != null:
+				var detail: Label = content.get_child(content.get_child_count() - 1) as Label
+				var record: Dictionary = selected.get_metadata(0)
+				var complete := detail != null and not record.is_empty()
+				if detail != null:
+					for field in record:
+						complete = complete and detail.text.contains(desktop._field_name(str(field)) + ": " + desktop._model_value(record[field], str(field)))
+				_check(complete, "selected public record exposes every actual field beyond clipped table columns")
+	await _capture("workbench-1280-large-records.png")
+	var record_memory := _record_memory()
+	if await _fill_basic_form({"action": "inspect"}):
+		var actual: Dictionary = await _run_selected_tool()
+		_check(actual.has("ok"), "native workbench memory check actually submits a registered model action")
+		_check(_record_memory() == record_memory, "public record disclosure and exact selected rows survive actual Run refresh")
+	await _capture("workbench-1280-large-records-after-run.png")
+	root.size = Vector2i(1600, 900)
+	_set_test_settings(original)
+	await _frames(3)
+
+
+func _guided_goals_and_notifications() -> void:
+	if not (await _select_pack("challenge")): return
+	if not (await _accept_option(room.support_picker, "guided", "challenge guided notification check")): return
+	if not (await _start_new_pack("challenge")): return
+	await _frames(6)
+	_check(desktop.support_mode == "guided" and desktop.support_card.visible, "fresh guided challenge visibly presents actual first-case direction")
+	_check(not desktop.toast_panel.visible and not desktop.notification_button.disabled, "automatic save notice is compact while first-case card is visible")
+	await _capture("guided-card-compact-notification.png")
+	await _focus_and_click(desktop.notification_button)
+	await _frames(2)
+	_check(desktop.toast_panel.visible, "explicit bell still opens full notification over guided state")
+	await _capture("guided-card-explicit-bell.png")
+	await _focus_and_click(desktop.notification_button)
+	var snapshot: Dictionary = desktop.game.export_snapshot()
+	var hints: int = desktop.hints_revealed
+	await _focus_and_click(desktop.top_progress)
+	await _frames(2)
+	_check(desktop.active_id == "board" and desktop.game.export_snapshot() == snapshot and desktop.hints_revealed == hints, "actual goal button opens current board without changing evidence or revealing a new hint")
+	await _capture("goal-button-current-board.png")
+	var blocker := slot + ".tmp"
+	_check(blocker.begins_with("user://tests/") and not FileAccess.file_exists(blocker) and not DirAccess.dir_exists_absolute(blocker), "save-failure blocker belongs to an absent isolated test sidecar")
+	if blocker.begins_with("user://tests/") and not FileAccess.file_exists(blocker) and not DirAccess.dir_exists_absolute(blocker):
+		var created := DirAccess.make_dir_recursive_absolute(blocker)
+		_check(created == OK, "actual isolated temporary-sidecar directory blocks atomic save")
+		if created == OK:
+			var disk_before := _path_fingerprint(slot)
+			var world_before: Dictionary = desktop.game.export_snapshot()
+			await _focus_and_click(desktop.save_btn)
+			await _frames(2)
+			_check(desktop.support_card.visible and desktop.toast_panel.visible, "important actual save failure stays visible alongside first-case guidance")
+			_check(desktop._notification_important and desktop.game.export_snapshot() == world_before and _path_fingerprint(slot) == disk_before, "failed actual Save reports importance and preserves both disk and canonical world")
+			await _capture("guided-card-important-save-failure.png")
+			_check(DirAccess.remove_absolute(blocker) == OK, "only the owned empty temporary-sidecar blocker is removed")
+
+
+func _record_memory() -> Dictionary:
+	var memory := {}
+	for group in desktop.tool_obs_box.get_children():
+		if not group.has_meta("observation_section") or group.get_child_count() < 2: continue
+		var heading := group.get_child(0) as Button
+		if heading == null: continue
+		var row := ""
+		for child in group.get_child(1).get_children():
+			if child is Tree and child.get_selected() != null:
+				row = JSON.stringify(child.get_selected().get_metadata(0), "", true)
+		memory[str(group.get_meta("observation_section"))] = {"open": heading.button_pressed, "selected": row}
+	return memory

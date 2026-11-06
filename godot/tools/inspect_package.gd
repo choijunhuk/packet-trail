@@ -5,6 +5,7 @@ const DEFINITIONS := {
 	"intruder": {"path": "res://data/campaign/packs/intruder_v2.json", "prefix": "M", "main": 24, "optional": ["S01", "S02", "R01", "P01"]},
 	"defender": {"path": "res://data/campaign/packs/defender_v1.json", "prefix": "D", "main": 8, "optional": []},
 	"tracker": {"path": "res://data/campaign/packs/tracker_v1.json", "prefix": "T", "main": 8, "optional": []},
+	"challenge": {"path": "res://data/campaign/packs/challenge_v1.json", "prefix": "X", "main": 3, "optional": []},
 	"legacy_intruder": {"path": "res://data/campaign/legacy_v1.json", "prefix": "M", "main": 24, "optional": ["S01", "S02", "R01", "P01"]},
 }
 const MUSIC := ["a01_signal_home", "a02_first_connection", "a03_hidden_route", "a04_packet_flow",
@@ -50,9 +51,11 @@ func _initialize() -> void:
 	for entry in catalog.list_packs():
 		public_ids.append(str(entry.get("id", "")))
 	public_ids.sort()
-	_check(public_ids == ["defender", "intruder", "tracker"], "catalog exposes exactly three public independent campaigns", public_ids)
+	_check(public_ids == ["challenge", "defender", "intruder", "tracker"], "catalog exposes the original three campaigns and independent challenge pack", public_ids)
 	var campaign_ids: Array[String] = []
 	var public_cases := 0
+	var original_cases := 0
+	var challenge_cases := 0
 	var legacy_cases := 0
 	for id in DEFINITIONS:
 		var spec: Dictionary = DEFINITIONS[id]
@@ -81,13 +84,15 @@ func _initialize() -> void:
 			legacy_cases += raw.missions.size()
 		else:
 			public_cases += raw.missions.size()
-	_check(public_cases == 44 and legacy_cases == 28, "public44 and preserved legacy28 are counted separately", {"public": public_cases, "legacy": legacy_cases})
+			if id == "challenge": challenge_cases += raw.missions.size()
+			else: original_cases += raw.missions.size()
+	_check(original_cases == 44 and challenge_cases == 3 and public_cases == 47 and legacy_cases == 28, "preserved original44, challenge3, public47 and legacy28 are counted separately", {"original": original_cases, "challenge": challenge_cases, "public": public_cases, "legacy": legacy_cases})
 	var localization: Variant = load("res://scripts/presentation/localization.gd")
 	_check(localization != null, "packed localization implementation loads")
 	if localization != null:
 		for locale in LOCALES:
 			_check(localization.configure(locale), "packed locale configures: " + locale)
-			for key in ["NEW_GAME", "UI_APP_TOOLS", "CREDITS_BODY"]:
+			for key in ["NEW_GAME", "UI_APP_TOOLS", "CREDITS_BODY", "CH1_PACK_TITLE", "CH1_PACK_SUMMARY"]:
 				_check(localization.tr_key(key) != key, "actual packed translation: " + locale + "/" + key)
 			for id in packs:
 				for ending in packs[id].endings:
@@ -163,7 +168,7 @@ func _finish() -> void:
 		else:
 			public_counts[id] = int(packs[id].cases)
 	print(JSON.stringify({"suite": "packed_perspectives", "checks": checks, "failures": failures,
-		"packs": counts, "actual_public_counts": public_counts, "legacy_case_count": legacy_count,
+		"packs": counts, "actual_public_counts": public_counts, "original_case_count": int(public_counts.get("intruder", 0)) + int(public_counts.get("defender", 0)) + int(public_counts.get("tracker", 0)), "challenge_case_count": int(public_counts.get("challenge", 0)), "legacy_case_count": legacy_count,
 		"inventory_files": visible_files.size(),
 		"limit": "Actual PCK resource loading from an empty project; does not establish native OS input/audio or human acceptance."}))
 	quit(0 if failures.is_empty() else 1)

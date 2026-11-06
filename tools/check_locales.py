@@ -18,6 +18,7 @@ CAMPAIGN_SOURCES = {
     'intruder': ('godot/data/campaign/locales/intruder_v2.{}.json', 'IN2_'),
     'defender': ('godot/data/campaign/locales/defender_v1.{}.json', 'DF1_'),
     'tracker': ('godot/data/campaign/locales/tracker_v1.{}.json', 'TR1_'),
+    'challenge': ('godot/data/campaign/locales/challenge_v1.{}.json', 'CH1_'),
 }
 KEY = re.compile(r'^[A-Z][A-Z0-9_]*$')
 NAMED = re.compile(r'(?<!\{)\{(?:[A-Za-z_][A-Za-z_0-9]*|\d+)\}(?!\})')
@@ -234,7 +235,7 @@ def required_content_keys(root: Path) -> set[str]:
             result.add(value)
     for relative in ['godot/data/campaign/campaign.json', 'godot/data/campaign/legacy_v1.json',
                      'godot/data/campaign/packs/intruder_v2.json', 'godot/data/campaign/packs/defender_v1.json',
-                     'godot/data/campaign/packs/tracker_v1.json']:
+                     'godot/data/campaign/packs/tracker_v1.json', 'godot/data/campaign/packs/challenge_v1.json']:
         campaign = root / relative
         if campaign.exists():
             visit(json.loads(campaign.read_text(encoding='utf-8')))

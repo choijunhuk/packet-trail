@@ -35,6 +35,9 @@ msgstr "敏瑞"
 msgid "C04_NAME"
 msgstr "泰景"
 
+msgid "CAMPAIGN_CHALLENGE"
+msgstr "综合挑战"
+
 msgid "CAMPAIGN_COMPLETE"
 msgstr "午夜的记录已串联起来。"
 
@@ -409,6 +412,243 @@ msgstr "取消"
 
 msgid "CASE_BOARD"
 msgstr "事件笔记"
+
+msgid "CH1_ENDING_TITLE"
+msgstr "已验证的联合交接"
+
+msgid "CH1_PACK_SUMMARY"
+msgstr "三个独立进阶案件，结合访问控制、部署恢复与反证分析。"
+
+msgid "CH1_PACK_TITLE"
+msgstr "综合挑战 · 三次交接"
+
+msgid "CH1_X01_ABSTRACTION"
+msgstr "本独立挑战使用已登记的账户、请求、文件与观测。其他有效解法和手动帮助仍然可用。"
+
+msgid "CH1_X01_BRIEF"
+msgstr "这是联合响应演练的第一项委托。受理记录向无关账户暴露，同一入口还出现了重复认证失败。关闭所有入口也会中断市民的正常业务。请在同一配置下，同时验证受理记录访问与失败次数限制。\n\n原始路径需要分别修复所有者检查与按账户重试限制。获批网关具有固定的委托范围和独立的重试限制，也可将正常业务迁移至此。观测重复失败样本，并确认最后一个样本返回限制响应。已经测试过的账户也可能在更早的样本上受到限制。另一位市民必须仍能正常登录。\n获授权的业务账户如下。连接后，案件工具会显示当前观测和允许的操作。\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X01_CASE_FAILED_1"
+msgstr "原始入口重复失败 1"
+
+msgid "CH1_X01_CASE_FAILED_2"
+msgstr "原始入口重复失败 2"
+
+msgid "CH1_X01_CASE_FAILED_3"
+msgstr "原始入口重复失败 3"
+
+msgid "CH1_X01_CASE_FOREIGN_DIRECT"
+msgstr "无关账户在原始入口的请求"
+
+msgid "CH1_X01_CASE_FOREIGN_GATEWAY"
+msgstr "无关账户在获批路径的请求"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_1"
+msgstr "网关重复失败 1"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_2"
+msgstr "网关重复失败 2"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_3"
+msgstr "网关重复失败 3"
+
+msgid "CH1_X01_CASE_LEGITIMATE"
+msgstr "另一位市民的正常登录"
+
+msgid "CH1_X01_CASE_OWN_A"
+msgstr "市民 A 自己的受理记录"
+
+msgid "CH1_X01_CASE_OWN_B"
+msgstr "市民 B 自己的受理记录"
+
+msgid "CH1_X01_CASE_STAFF"
+msgstr "委托给负责人员的受理记录"
+
+msgid "CH1_X01_CONTROL_AUTH_RETRY"
+msgstr "按账户限制重复登录"
+
+msgid "CH1_X01_CONTROL_DIRECT_OPEN"
+msgstr "启用原始业务入口"
+
+msgid "CH1_X01_CONTROL_GATEWAY_OPEN"
+msgstr "启用获批路径"
+
+msgid "CH1_X01_CONTROL_OWNER_CHECK"
+msgstr "受理记录所有者检查"
+
+msgid "CH1_X01_DESK_NAME"
+msgstr "必须保持开放的门事务室"
+
+msgid "CH1_X01_GATEWAY_NAME"
+msgstr "获批业务路径"
+
+msgid "CH1_X01_GOAL"
+msgstr "保持正常受理、工作人员访问和登录，同时限制两条路径上的未授权读取与重复失败。"
+
+msgid "CH1_X01_HINT_1"
+msgstr "所有者检查与重试限制是不同控制项。只修复其中一项无法满足所有结果。"
+
+msgid "CH1_X01_HINT_2"
+msgstr "每个入口的失败样本都必须被拒绝，最后一个样本须受到限制。调查造成的提前限制同样是有效拒绝。正常登录使用另一账户。"
+
+msgid "CH1_X01_HINT_3"
+msgstr "修复原始入口，或只关闭该入口并将正常受理与登录迁移至获批网关。保持网关开放。"
+
+msgid "CH1_X01_LAB_NAME"
+msgstr "当前业务与响应验证"
+
+msgid "CH1_X01_LIMIT"
+msgstr "这不会攻击真实服务器，也不能证明能够防御所有攻击。阅读没有时间惩罚，错误设置可以修复。"
+
+msgid "CH1_X01_PRINCIPLE"
+msgstr "可用性和授权范围必须一起验证。重试限制属于单独的认证结果，与全局警报指示不同。"
+
+msgid "CH1_X01_REPLY"
+msgstr "市民和工作人员的正常业务得到保留，无关读取与重复登录已被拒绝。交接标准是实际业务仍可运行，而不是选择了哪个入口。下一处现场提出了扩大部署权限的建议。"
+
+msgid "CH1_X01_SENDER"
+msgstr "夜间联合响应室"
+
+msgid "CH1_X01_TITLE"
+msgstr "必须保持开放的门"
+
+msgid "CH1_X02_ABSTRACTION"
+msgstr "本独立挑战使用已登记的账户、请求、文件与观测。其他有效解法和手动帮助仍然可用。"
+
+msgid "CH1_X02_BRIEF"
+msgstr "部署账户无法更新状态文件，导致夜间通知停止。有人提议向所有人开放文件夹和文件，但同一入口还有无关账户。请验证正常读取、写入和通知送达，同时拒绝无关写入。\n\n原始文件夹仅允许deploy组遍历，文件也仅允许该组写入。检查工作账户当前所属的组，或使用jobs组已能访问的获批工作台。通知目标只能是ward。主通知目前关闭，获批备用通知可单独启用。\n获授权的业务账户如下。连接后，案件工具会显示当前观测和允许的操作。\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X02_CASE_FOREIGN_APPROVED"
+msgstr "获批路径上的无关写入"
+
+msgid "CH1_X02_CASE_FOREIGN_WRITE"
+msgstr "无关账户修改部署文件"
+
+msgid "CH1_X02_CASE_INTERNAL_TARGET"
+msgstr "范围外通知目标：x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_NOTIFY"
+msgstr "向ward正常通知"
+
+msgid "CH1_X02_CASE_READ"
+msgstr "部署账户读取自身状态"
+
+msgid "CH1_X02_CASE_STANDBY_TARGET"
+msgstr "范围外通知目标：gateway.x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_WRITE"
+msgstr "部署账户写入工作结果"
+
+msgid "CH1_X02_CONTROL_NOTICE_NOTIFY_OPEN"
+msgstr "启用主通知"
+
+msgid "CH1_X02_CONTROL_NOTICE_STANDBY_OPEN"
+msgstr "启用获批备用通知"
+
+msgid "CH1_X02_CONTROL_NOTICE_TARGET_SCOPE"
+msgstr "将通知范围限制为ward"
+
+msgid "CH1_X02_DESK_NAME"
+msgstr "保持部署运作事务室"
+
+msgid "CH1_X02_DIRECTORY_MODE"
+msgstr "部署文件夹遍历权限"
+
+msgid "CH1_X02_FILE_MODE"
+msgstr "工作结果文件权限"
+
+msgid "CH1_X02_GATEWAY_NAME"
+msgstr "获批业务路径"
+
+msgid "CH1_X02_GOAL"
+msgstr "恢复正常状态读写和ward通知，同时拒绝无关修改与范围外通知。"
+
+msgid "CH1_X02_HINT_1"
+msgstr "文件夹遍历与文件写入是不同权限。检查服务账户的组，而不是向所有人开放访问。"
+
+msgid "CH1_X02_HINT_2"
+msgstr "保持原始权限并赋予deploy组成员身份，或将任务迁移至获批工作台文件。"
+
+msgid "CH1_X02_HINT_3"
+msgstr "分别观测允许的ward送达和应拒绝的内部目标。关闭使用过的路径后，之前的成功不能继续满足条件。"
+
+msgid "CH1_X02_JOB_GROUPS"
+msgstr "部署账户所需的组"
+
+msgid "CH1_X02_LAB_NAME"
+msgstr "当前业务与响应验证"
+
+msgid "CH1_X02_LIMIT"
+msgstr "这不会攻击真实服务器，也不能证明能够防御所有攻击。阅读没有时间惩罚，错误设置可以修复。"
+
+msgid "CH1_X02_PRINCIPLE"
+msgstr "最小权限与正常业务连续性必须同时成立。获批的替代文件和送达路径只要实际有效，也是有效解法。"
+
+msgid "CH1_X02_REPLY"
+msgstr "获授权的工作结果已写入实际虚拟文件，ward通知也已送达。无关写入与内部目标滥用均被拒绝。最终交接将先核查“同一地址就是同一会话”的假设。"
+
+msgid "CH1_X02_SENDER"
+msgstr "夜间联合响应室"
+
+msgid "CH1_X02_TITLE"
+msgstr "保持部署运作"
+
+msgid "CH1_X03_ABSTRACTION"
+msgstr "本独立挑战使用已登记的账户、请求、文件与观测。其他有效解法和手动帮助仍然可用。"
+
+msgid "CH1_X03_BRIEF"
+msgstr "初步报告将同一中继地址、相同客户端标签的两条记录视为同一会话。但标签由客户端提供，不同来源的时钟也有偏差。不要把会话推断扩大为个人身份认定：请交接有证据支持的关联与反证，确定下一个观测位置。\n\n现场的首个窗口只有共享地址和客户端声称的相同night-worker标签。最新现场窗口仅包含轮换；接收方记录包含出发和另一会话，须结合调查。独立审计导出需要使用下方单独的审计账户。检查服务器签发的S1/S2、时钟校正后先轮换再出发的顺序，以及N03向vault的转发。\n\n沿实际路径判断下一步应观测vault还是共享地址。\n审计账户：\n\nauditor@x03.challenge.packet.test\naudit-custody\n获授权的业务账户如下。连接后，案件工具会显示当前观测和允许的操作。\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X03_DESK_NAME"
+msgstr "同一地址的不同会话事务室"
+
+msgid "CH1_X03_GOAL"
+msgstr "反驳初步同一会话推断，证明先轮换再出发及向vault转发，并交接下一个观测位置。"
+
+msgid "CH1_X03_HINT_1"
+msgstr "共享地址与客户端标签不同于服务器签发的会话标识符。检查来源及标记的签发权威。"
+
+msgid "CH1_X03_HINT_2"
+msgstr "直接比较现场轮换130–132与接收方出发105–107会颠倒顺序。比较区间前，请减去各来源的时钟偏差。"
+
+msgid "CH1_X03_HINT_3"
+msgstr "将当前现场窗口与接收记录结合，或以审计账户连接并使用独立审计导出。支持before和forwarded_to，收集初始same_session论断的反证，再交接至vault观测。"
+
+msgid "CH1_X03_LIMIT"
+msgstr "这不会攻击真实服务器，也不能证明能够防御所有攻击。阅读没有时间惩罚，错误设置可以修复。"
+
+msgid "CH1_X03_PRINCIPLE"
+msgstr "依据保管来源、时钟区间及服务器签发的标记评估关联。共享IP本身不能证明同一会话或同一个人。"
+
+msgid "CH1_X03_PRIOR"
+msgstr "基于共享地址的初步同一会话推断"
+
+msgid "CH1_X03_REPLY"
+msgstr "服务器签发的记录反驳了初步同一会话论断。有来源的观测支持了时间顺序和向vault的转发。在不认定个人身份的前提下，下一步调查范围已缩小。三个案件交接完成。"
+
+msgid "CH1_X03_SENDER"
+msgstr "夜间联合响应室"
+
+msgid "CH1_X03_SENSOR_ADDRESS_WATCH"
+msgstr "共享地址的下一步观测"
+
+msgid "CH1_X03_SENSOR_AUDIT"
+msgstr "获批的接收方审计导出"
+
+msgid "CH1_X03_SENSOR_FIELD"
+msgstr "现场记录观测窗口"
+
+msgid "CH1_X03_SENSOR_RECEIVER"
+msgstr "接收方交接记录"
+
+msgid "CH1_X03_SENSOR_VAULT_WATCH"
+msgstr "vault的下一步观测"
+
+msgid "CH1_X03_TITLE"
+msgstr "同一地址的不同会话"
+
+msgid "CH1_X03_TOOL_NAME"
+msgstr "联合观测与反证交接"
 
 msgid "CLOSE"
 msgstr "关闭"
@@ -2842,6 +3082,9 @@ msgstr "主线 {main} · 可选 {optional}"
 
 msgid "LOBBY_CHOOSE_STORY"
 msgstr "今夜，你将站在哪一边？"
+
+msgid "LOBBY_ROLE_CHALLENGE"
+msgstr "进阶案件结合入侵、防御与调查。请先熟悉基本操作，再尝试挑战。"
 
 msgid "LOBBY_ROLE_DEFENDER"
 msgstr "阻止威胁，同时守住市民与同伴的正常业务。"
@@ -7343,6 +7586,9 @@ msgstr "当前事件没有此工具。"
 msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
 msgstr "上传接收步骤"
 
+msgid "UI_TOOL_FIELD_ACCOUNT_ID"
+msgstr "账户标识符"
+
 msgid "UI_TOOL_FIELD_ACQUISITION"
 msgstr "采集方式"
 
@@ -7369,6 +7615,9 @@ msgstr "业务作用结果"
 
 msgid "UI_TOOL_FIELD_CALL_STACK"
 msgstr "调用栈"
+
+msgid "UI_TOOL_FIELD_CAN_ADVANCE"
+msgstr "可进行下一次观测"
 
 msgid "UI_TOOL_FIELD_CASE_ID"
 msgstr "请求或输入样例"
@@ -7448,6 +7697,9 @@ msgstr "函数"
 msgid "UI_TOOL_FIELD_GROUP"
 msgstr "策略组"
 
+msgid "UI_TOOL_FIELD_HOST_ID"
+msgstr "主机标识符"
+
 msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
 msgstr "假设名称"
 
@@ -7481,6 +7733,9 @@ msgstr "MIME 类型"
 msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
 msgstr "下个观察点"
 
+msgid "UI_TOOL_FIELD_NORMAL"
+msgstr "正常业务"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "对象 ID"
 
@@ -7495,6 +7750,9 @@ msgstr "观察时间区间"
 
 msgid "UI_TOOL_FIELD_OP"
 msgstr "指令"
+
+msgid "UI_TOOL_FIELD_OPTIONS"
+msgstr "可选值"
 
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "来源 (origin)"
@@ -7517,6 +7775,9 @@ msgstr "文件路径"
 msgid "UI_TOOL_FIELD_PC"
 msgstr "指令位置"
 
+msgid "UI_TOOL_FIELD_POLICY"
+msgstr "应用策略"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "来源与采集依据"
 
@@ -7538,8 +7799,14 @@ msgstr "源寄存器"
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "虚拟寄存器"
 
+msgid "UI_TOOL_FIELD_RELATION"
+msgstr "关联关系"
+
 msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
 msgstr "修正主张"
+
+msgid "UI_TOOL_FIELD_REQUEST_ID"
+msgstr "请求标识符"
 
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "请求标记"
@@ -7553,11 +7820,17 @@ msgstr "第二个比较对象"
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "请求通路"
 
+msgid "UI_TOOL_FIELD_ROUTE_OPTIONS"
+msgstr "可选路径"
+
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "采样方式"
 
 msgid "UI_TOOL_FIELD_SATISFIED"
 msgstr "条件已满足"
+
+msgid "UI_TOOL_FIELD_SCOPE"
+msgstr "观测范围"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "查看部分"
@@ -7604,6 +7877,9 @@ msgstr "目标主机"
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "真分支"
 
+msgid "UI_TOOL_FIELD_THREAT"
+msgstr "威胁请求"
+
 msgid "UI_TOOL_FIELD_TICK"
 msgstr "发生步骤"
 
@@ -7648,6 +7924,9 @@ msgstr "可见信息"
 
 msgid "UI_TOOL_FIELD_WINDOW"
 msgstr "观察窗口"
+
+msgid "UI_TOOL_FIELD_WINDOW_INDEX"
+msgstr "当前观测窗口"
 
 msgid "UI_TOOL_FILTER"
 msgstr "过滤"
@@ -7939,3 +8218,15 @@ msgstr "最小化"
 
 msgid "UI_WIN_TERMINAL_N"
 msgstr "终端 {n}"
+
+msgid "UI_WORKBENCH_EXPAND_RECORDS"
+msgstr "展开或收起此观测区域。选择一行可查看全部字段。"
+
+msgid "UI_WORKBENCH_NO_DESCRIPTION"
+msgstr "查看观测，输入操作或假设，再比较执行结果。"
+
+msgid "UI_WORKBENCH_OPEN_GOALS"
+msgstr "查看当前案件目标"
+
+msgid "UI_WORKBENCH_RECORD_DETAIL_HINT"
+msgstr "选择一行可查看包含标识符和来源的完整记录。"

@@ -35,6 +35,9 @@ msgstr "ミンソ"
 msgid "C04_NAME"
 msgstr "テギョン"
 
+msgid "CAMPAIGN_CHALLENGE"
+msgstr "複合チャレンジ"
+
 msgid "CAMPAIGN_COMPLETE"
 msgstr "深夜の記録がつながりました。"
 
@@ -409,6 +412,243 @@ msgstr "キャンセル"
 
 msgid "CASE_BOARD"
 msgstr "事件ノート"
+
+msgid "CH1_ENDING_TITLE"
+msgstr "検証済みの合同引き継ぎ"
+
+msgid "CH1_PACK_SUMMARY"
+msgstr "アクセス制御・配備復旧・反証を複合条件で解く独立した上級事件3件。"
+
+msgid "CH1_PACK_TITLE"
+msgstr "複合チャレンジ · 三つの引き継ぎ"
+
+msgid "CH1_X01_ABSTRACTION"
+msgstr "登録されたアカウント・要求・ファイル・観測で動作する独立チャレンジです。他の有効な解法や手動ヘルプも利用できます。"
+
+msgid "CH1_X01_BRIEF"
+msgstr "合同対応訓練の最初の依頼です。受付記録が無関係のアカウントに公開され、同じ入口で認証失敗も繰り返されています。入口をすべて閉じれば、市民の通常業務も失われます。同じ設定のもとで受付のアクセス権と失敗回数の制限を両方検証してください。\n\n元の経路では所有者検査とアカウント別の再試行制限を別々に修復します。承認済みゲートウェイには固定された委任範囲と独自の再試行制限があり、通常業務を移すことも可能です。連続失敗のサンプルを観測し、最後のサンプルで制限応答を確認してください。調査済みのアカウントでは、それ以前のサンプルでも制限されることがあります。別の市民は引き続きサインインできなければなりません。\n認可済み業務アカウントは以下です。接続後、事件ツールで現在の観測と許可された操作を確認できます。\n\ninvestigator@x01.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X01_CASE_FAILED_1"
+msgstr "元の入口での連続失敗 1"
+
+msgid "CH1_X01_CASE_FAILED_2"
+msgstr "元の入口での連続失敗 2"
+
+msgid "CH1_X01_CASE_FAILED_3"
+msgstr "元の入口での連続失敗 3"
+
+msgid "CH1_X01_CASE_FOREIGN_DIRECT"
+msgstr "元の入口への無関係アカウントの要求"
+
+msgid "CH1_X01_CASE_FOREIGN_GATEWAY"
+msgstr "承認済み経路への無関係アカウントの要求"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_1"
+msgstr "ゲートウェイでの連続失敗 1"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_2"
+msgstr "ゲートウェイでの連続失敗 2"
+
+msgid "CH1_X01_CASE_GATEWAY_FAILED_3"
+msgstr "ゲートウェイでの連続失敗 3"
+
+msgid "CH1_X01_CASE_LEGITIMATE"
+msgstr "別の市民の正常な認証"
+
+msgid "CH1_X01_CASE_OWN_A"
+msgstr "市民A自身の受付記録"
+
+msgid "CH1_X01_CASE_OWN_B"
+msgstr "市民B自身の受付記録"
+
+msgid "CH1_X01_CASE_STAFF"
+msgstr "担当職員に委任された受付記録"
+
+msgid "CH1_X01_CONTROL_AUTH_RETRY"
+msgstr "アカウント別の再認証を制限"
+
+msgid "CH1_X01_CONTROL_DIRECT_OPEN"
+msgstr "元の業務入口を有効化"
+
+msgid "CH1_X01_CONTROL_GATEWAY_OPEN"
+msgstr "承認済み経路を有効化"
+
+msgid "CH1_X01_CONTROL_OWNER_CHECK"
+msgstr "受付記録の所有者検査"
+
+msgid "CH1_X01_DESK_NAME"
+msgstr "開いておくべき扉の担当室"
+
+msgid "CH1_X01_GATEWAY_NAME"
+msgstr "承認済み業務経路"
+
+msgid "CH1_X01_GOAL"
+msgstr "通常の受付・担当者の閲覧・認証を維持し、両経路の不正閲覧と連続失敗を制限する。"
+
+msgid "CH1_X01_HINT_1"
+msgstr "所有者検査と再試行制限は別の制御です。一方だけ直してもすべての結果は満たせません。"
+
+msgid "CH1_X01_HINT_2"
+msgstr "各入口の失敗サンプルは拒否され、最後のサンプルは制限される必要があります。調査の結果、それ以前に制限されても有効な拒否です。正常な認証には別のアカウントを使います。"
+
+msgid "CH1_X01_HINT_3"
+msgstr "元の入口を修復するか、その入口だけ閉じて通常の受付・認証を承認済みゲートウェイへ移してください。ゲートウェイは開いたままにします。"
+
+msgid "CH1_X01_LAB_NAME"
+msgstr "現在の業務と対応の検証"
+
+msgid "CH1_X01_LIMIT"
+msgstr "実際のサーバーへの攻撃や、あらゆる攻撃に対する安全性の証明ではありません。読む時間に罰則はなく、誤った設定は修正できます。"
+
+msgid "CH1_X01_PRINCIPLE"
+msgstr "可用性と権限範囲は一緒に検証します。再試行制限は個別の認証結果であり、全体の警戒表示とは別です。"
+
+msgid "CH1_X01_REPLY"
+msgstr "市民と担当者の通常業務を維持しつつ、無関係な閲覧と連続認証を拒否できました。どの入口を選んだかより、実際の業務が残ったことが引き継ぎの基準です。次の現場では配備権限を広げる提案が出ています。"
+
+msgid "CH1_X01_SENDER"
+msgstr "夜間合同対応室"
+
+msgid "CH1_X01_TITLE"
+msgstr "開いておくべき扉"
+
+msgid "CH1_X02_ABSTRACTION"
+msgstr "登録されたアカウント・要求・ファイル・観測で動作する独立チャレンジです。他の有効な解法や手動ヘルプも利用できます。"
+
+msgid "CH1_X02_BRIEF"
+msgstr "配備アカウントが状態ファイルを更新できず、夜間通知が止まりました。フォルダーとファイルを全員に開放する提案がありますが、同じ入口には無関係のアカウントもいます。正規の読み書き・通知と、無関係の書き込みの拒否を一緒に検証してください。\n\n元のフォルダーをたどり、そのファイルへ書き込めるのはdeployグループだけです。作業アカウントの現在のグループを調べるか、jobsグループが利用できる承認済み作業台を使ってください。通知先はwardのみです。主通知は現在停止しており、承認済み待機系は別に有効化できます。\n認可済み業務アカウントは以下です。接続後、事件ツールで現在の観測と許可された操作を確認できます。\n\ninvestigator@x02.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X02_CASE_FOREIGN_APPROVED"
+msgstr "承認済み経路の無関係な書き込み"
+
+msgid "CH1_X02_CASE_FOREIGN_WRITE"
+msgstr "無関係アカウントによる配備変更"
+
+msgid "CH1_X02_CASE_INTERNAL_TARGET"
+msgstr "範囲外の通知先: x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_NOTIFY"
+msgstr "wardへの正常な通知"
+
+msgid "CH1_X02_CASE_READ"
+msgstr "配備アカウントによる状態読み取り"
+
+msgid "CH1_X02_CASE_STANDBY_TARGET"
+msgstr "範囲外の通知先: gateway.x02.challenge.packet.test"
+
+msgid "CH1_X02_CASE_WRITE"
+msgstr "配備アカウントによる作業結果の書き込み"
+
+msgid "CH1_X02_CONTROL_NOTICE_NOTIFY_OPEN"
+msgstr "主通知を有効化"
+
+msgid "CH1_X02_CONTROL_NOTICE_STANDBY_OPEN"
+msgstr "承認済み待機通知を有効化"
+
+msgid "CH1_X02_CONTROL_NOTICE_TARGET_SCOPE"
+msgstr "通知先をwardに制限"
+
+msgid "CH1_X02_DESK_NAME"
+msgstr "配備を維持する担当室"
+
+msgid "CH1_X02_DIRECTORY_MODE"
+msgstr "配備フォルダーの通過権限"
+
+msgid "CH1_X02_FILE_MODE"
+msgstr "作業結果ファイルの権限"
+
+msgid "CH1_X02_GATEWAY_NAME"
+msgstr "承認済み業務経路"
+
+msgid "CH1_X02_GOAL"
+msgstr "正規の状態読み書きとwardへの通知を復旧し、無関係な変更と範囲外の通知を拒否する。"
+
+msgid "CH1_X02_HINT_1"
+msgstr "フォルダーの通過とファイルへの書き込みは別の権限です。全員に開放せず、サービスアカウントのグループを確認しましょう。"
+
+msgid "CH1_X02_HINT_2"
+msgstr "元の権限を維持してdeployグループに所属させるか、承認済み作業台のファイルへ業務を移してください。"
+
+msgid "CH1_X02_HINT_3"
+msgstr "許可されたwardへの配信と、拒否すべき内部宛先を別々に観測してください。使った経路を閉じると、以前の成功は無効になります。"
+
+msgid "CH1_X02_JOB_GROUPS"
+msgstr "配備アカウントに必要なグループ"
+
+msgid "CH1_X02_LAB_NAME"
+msgstr "現在の業務と対応の検証"
+
+msgid "CH1_X02_LIMIT"
+msgstr "実際のサーバーへの攻撃や、あらゆる攻撃に対する安全性の証明ではありません。読む時間に罰則はなく、誤った設定は修正できます。"
+
+msgid "CH1_X02_PRINCIPLE"
+msgstr "最小権限と通常業務の継続を同時に確認します。承認済みの代替ファイル・配信経路も、実際に機能すれば有効です。"
+
+msgid "CH1_X02_REPLY"
+msgstr "許可された作業結果が仮想ファイルに残り、wardへの通知も届きました。無関係な書き込みと内部宛先の悪用は拒否されています。最後の引き継ぎでは、同じアドレスなら同じセッションという前提を検証します。"
+
+msgid "CH1_X02_SENDER"
+msgstr "夜間合同対応室"
+
+msgid "CH1_X02_TITLE"
+msgstr "配備を維持する"
+
+msgid "CH1_X03_ABSTRACTION"
+msgstr "登録されたアカウント・要求・ファイル・観測で動作する独立チャレンジです。他の有効な解法や手動ヘルプも利用できます。"
+
+msgid "CH1_X03_BRIEF"
+msgstr "同じ中継アドレスで同じクライアント名が記録されたため、同一セッションだとする予備報告が届きました。しかし名前はクライアントが付けたもので、出典の時計も異なります。セッションの推測を個人の身元に広げず、次の観測地点を決められる関連と反証を引き継いでください。\n\n現場の最初の観測窓には共有アドレスと、クライアントが申告した同じnight-worker名しかありません。最新の現場窓には切り替えだけがあり、受信側には出発と別のセッションが記録されているため、両方を調べてください。独立した監査エクスポートには、下記の別の監査アカウントが必要です。サーバー発行のS1/S2、時計補正後の切り替え→出発の順序、N03からvaultへの転送を確認しましょう。\n\n実際の経路をたどり、vaultと共有アドレスのどちらを次に観測するか選びます。\n監査アカウント:\n\nauditor@x03.challenge.packet.test\naudit-custody\n認可済み業務アカウントは以下です。接続後、事件ツールで現在の観測と許可された操作を確認できます。\n\ninvestigator@x03.challenge.packet.test\nsource-custody\n"
+
+msgid "CH1_X03_DESK_NAME"
+msgstr "同じアドレスの異なるセッション担当室"
+
+msgid "CH1_X03_GOAL"
+msgstr "最初の同一セッション説を反証し、切り替え→出発の順序とvaultへの転送を裏付け、次の観測地点を引き継ぐ。"
+
+msgid "CH1_X03_HINT_1"
+msgstr "共有アドレスやクライアント名は、サーバー発行のセッション識別子とは違います。出典と標識の発行主体を確認しましょう。"
+
+msgid "CH1_X03_HINT_2"
+msgstr "現場の切り替え130–132と受信側の出発105–107を直接比べると順序が逆になります。区間を比べる前に、各出典の時計のずれを引いてください。"
+
+msgid "CH1_X03_HINT_3"
+msgstr "現場の現在の窓と受信記録を組み合わせるか、監査アカウントで接続して独立した監査エクスポートを使ってください。beforeとforwarded_toを裏付け、最初のsame_session説の反証を集め、vaultの観測へ引き継ぎましょう。"
+
+msgid "CH1_X03_LIMIT"
+msgstr "実際のサーバーへの攻撃や、あらゆる攻撃に対する安全性の証明ではありません。読む時間に罰則はなく、誤った設定は修正できます。"
+
+msgid "CH1_X03_PRINCIPLE"
+msgstr "記録の保管元・時計の区間・サーバー発行の標識から関連を評価します。共有IPだけで同一セッションや同一人物とは判断できません。"
+
+msgid "CH1_X03_PRIOR"
+msgstr "共有アドレスから導かれた予備的な同一セッション説"
+
+msgid "CH1_X03_REPLY"
+msgstr "サーバー発行の記録によって最初の同一セッション説は反証されました。出典付きの観測が時間順序とvaultへの転送を裏付けています。個人の身元を断定せず、次の調査範囲を絞れました。三つの事件の引き継ぎは完了です。"
+
+msgid "CH1_X03_SENDER"
+msgstr "夜間合同対応室"
+
+msgid "CH1_X03_SENSOR_ADDRESS_WATCH"
+msgstr "共有アドレスの次の観測"
+
+msgid "CH1_X03_SENSOR_AUDIT"
+msgstr "承認済みの受信監査エクスポート"
+
+msgid "CH1_X03_SENSOR_FIELD"
+msgstr "現場記録の観測窓"
+
+msgid "CH1_X03_SENSOR_RECEIVER"
+msgstr "受信側の引き継ぎ記録"
+
+msgid "CH1_X03_SENSOR_VAULT_WATCH"
+msgstr "vaultの次の観測"
+
+msgid "CH1_X03_TITLE"
+msgstr "同じアドレスの異なるセッション"
+
+msgid "CH1_X03_TOOL_NAME"
+msgstr "合同観測と反証の引き継ぎ"
 
 msgid "CLOSE"
 msgstr "閉じる"
@@ -2842,6 +3082,9 @@ msgstr "本編 {main} · 任意 {optional}"
 
 msgid "LOBBY_CHOOSE_STORY"
 msgstr "今夜は、どの立場を選びますか？"
+
+msgid "LOBBY_ROLE_CHALLENGE"
+msgstr "侵入・防御・調査を組み合わせる上級事件です。基本操作を覚えてから挑戦してください。"
 
 msgid "LOBBY_ROLE_DEFENDER"
 msgstr "脅威を防ぎながら、市民や仲間の業務を守ります。"
@@ -7343,6 +7586,9 @@ msgstr "現在の事件にはないツールです。"
 msgid "UI_TOOL_FIELD_ACCEPTED_TICK"
 msgstr "アップロード受理ステップ"
 
+msgid "UI_TOOL_FIELD_ACCOUNT_ID"
+msgstr "アカウント識別子"
+
 msgid "UI_TOOL_FIELD_ACQUISITION"
 msgstr "収集方法"
 
@@ -7369,6 +7615,9 @@ msgstr "業務への反映結果"
 
 msgid "UI_TOOL_FIELD_CALL_STACK"
 msgstr "呼び出しスタック"
+
+msgid "UI_TOOL_FIELD_CAN_ADVANCE"
+msgstr "次の観測が可能"
 
 msgid "UI_TOOL_FIELD_CASE_ID"
 msgstr "要求・入力ケース"
@@ -7448,6 +7697,9 @@ msgstr "関数"
 msgid "UI_TOOL_FIELD_GROUP"
 msgstr "方針グループ"
 
+msgid "UI_TOOL_FIELD_HOST_ID"
+msgstr "ホスト識別子"
+
 msgid "UI_TOOL_FIELD_HYPOTHESIS_ID"
 msgstr "仮説名"
 
@@ -7481,6 +7733,9 @@ msgstr "MIME 型"
 msgid "UI_TOOL_FIELD_NEXT_SENSOR_ID"
 msgstr "次の観測地点"
 
+msgid "UI_TOOL_FIELD_NORMAL"
+msgstr "通常業務"
+
 msgid "UI_TOOL_FIELD_OBJECT_ID"
 msgstr "オブジェクト ID"
 
@@ -7495,6 +7750,9 @@ msgstr "観測時刻の区間"
 
 msgid "UI_TOOL_FIELD_OP"
 msgstr "命令"
+
+msgid "UI_TOOL_FIELD_OPTIONS"
+msgstr "選択可能な値"
 
 msgid "UI_TOOL_FIELD_ORIGIN"
 msgstr "要求元 (origin)"
@@ -7517,6 +7775,9 @@ msgstr "ファイルパス"
 msgid "UI_TOOL_FIELD_PC"
 msgstr "命令の位置"
 
+msgid "UI_TOOL_FIELD_POLICY"
+msgstr "適用ポリシー"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "出所と収集根拠"
 
@@ -7538,8 +7799,14 @@ msgstr "読むレジスター"
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "仮想レジスター"
 
+msgid "UI_TOOL_FIELD_RELATION"
+msgstr "関連"
+
 msgid "UI_TOOL_FIELD_REPLACEMENT_CLAIM"
 msgstr "訂正した主張"
+
+msgid "UI_TOOL_FIELD_REQUEST_ID"
+msgstr "リクエスト識別子"
 
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "要求標識"
@@ -7553,11 +7820,17 @@ msgstr "比較する二つ目の対象"
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "要求経路"
 
+msgid "UI_TOOL_FIELD_ROUTE_OPTIONS"
+msgstr "選択可能な経路"
+
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "標本の方式"
 
 msgid "UI_TOOL_FIELD_SATISFIED"
 msgstr "条件を満たす"
+
+msgid "UI_TOOL_FIELD_SCOPE"
+msgstr "観測範囲"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "表示内容"
@@ -7604,6 +7877,9 @@ msgstr "対象ホスト"
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "真の場合の分岐"
 
+msgid "UI_TOOL_FIELD_THREAT"
+msgstr "脅威リクエスト"
+
 msgid "UI_TOOL_FIELD_TICK"
 msgstr "発生ステップ"
 
@@ -7648,6 +7924,9 @@ msgstr "見える情報"
 
 msgid "UI_TOOL_FIELD_WINDOW"
 msgstr "観測区間"
+
+msgid "UI_TOOL_FIELD_WINDOW_INDEX"
+msgstr "現在の観測順序"
 
 msgid "UI_TOOL_FILTER"
 msgstr "フィルター"
@@ -7939,3 +8218,15 @@ msgstr "最小化"
 
 msgid "UI_WIN_TERMINAL_N"
 msgstr "ターミナル {n}"
+
+msgid "UI_WORKBENCH_EXPAND_RECORDS"
+msgstr "この観測区画を開閉します。行を選ぶと全フィールドを確認できます。"
+
+msgid "UI_WORKBENCH_NO_DESCRIPTION"
+msgstr "観測を確認して操作や仮説を入力し、実行結果を比較してください。"
+
+msgid "UI_WORKBENCH_OPEN_GOALS"
+msgstr "現在の事件の目標を見る"
+
+msgid "UI_WORKBENCH_RECORD_DETAIL_HINT"
+msgstr "行を選ぶと、識別子や出典を含む記録全体を確認できます。"
