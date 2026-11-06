@@ -67,7 +67,7 @@
   "UI_AUTOSAVE_ON": "Autosave on",
   "UI_AUTOSAVE_OFF": "Autosave paused",
   "UI_AUTOSAVE_ON_TIP": "Progress is saved to the campaign slot whenever the state changes.",
-  "UI_AUTOSAVE_OFF_TIP": "Autosave is paused to protect existing files on disk. Choose Save, Restore backup, or Keep damaged files.",
+  "UI_AUTOSAVE_OFF_TIP": "Autosave is paused to protect existing files. Choose Retry autosave for the current scenario, Restore backup, or Keep damaged files.",
   "UI_AUTOSAVE_FAILED": "Autosave failed · autosave paused ({code})\n{detail}",
   "UI_SAVE_FAILED": "Save failed ({code})\n{detail}",
   "UI_RECOVER_FAILED": "Backup restore failed ({code})\n{detail}",
@@ -946,5 +946,6 @@
   "MANUAL_SLOT_BACKUP_LOAD": "Load slot backup",
   "MANUAL_SLOT_BACKUP_CONFIRM": "Load the backup of slot {slot}? All main campaigns, optional commissions and living space are restored together. Original saves are preserved and settings stay as they are.",
   "LEGACY_SOURCE_IMPORT": "Import preserved-edition progress",
-  "LEGACY_SOURCE_IMPORT_CONFIRM": "Copy the preserved original campaign into this profile? The original file and other campaigns remain unchanged."
+  "LEGACY_SOURCE_IMPORT_CONFIRM": "Copy the preserved original campaign into this profile? The original file and other campaigns remain unchanged.",
+  "MANUAL_AUTOSAVE_RETRY": "Retry autosave"
 }

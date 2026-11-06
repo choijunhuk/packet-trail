@@ -68,18 +68,18 @@ Claude Code2.1.311, 요청 `claude-opus-5-5` / effort `high`. 세 응답의 `mod
 
   ```gdscript
   func start_fresh() -> Dictionary:
-  	var guard: Dictionary = _guard()
-  	if not guard.ok:
-  		return guard
-  	var started: Dictionary = _store.start_new(_fresh_snapshot(), validate_snapshot, _path)
-  	if not started.ok:
-  		return _remember_failure(started) if not _writable else started
-  	_snapshot = _fresh_snapshot()
-  	_loaded = true
-  	_writable = true
-  	var result: Dictionary = _success("HABITAT_FRESH", "Starter room restored; previous files preserved.", true)
-  	result["damaged_path"] = started.get("damaged_path", "")
-  	return result
+      var guard: Dictionary = _guard()
+      if not guard.ok:
+          return guard
+      var started: Dictionary = _store.start_new(_fresh_snapshot(), validate_snapshot, _path)
+      if not started.ok:
+          return _remember_failure(started) if not _writable else started
+      _snapshot = _fresh_snapshot()
+      _loaded = true
+      _writable = true
+      var result: Dictionary = _success("HABITAT_FRESH", "Starter room restored; previous files preserved.", true)
+      result["damaged_path"] = started.get("damaged_path", "")
+      return result
   ```
 
   `get_view`에는 `view["fresh_available"] = _loaded and not _writable`를 추가합니다. room.gd에는 `_recover_habitat`와 같은 형태의 `_fresh_habitat`를 추가합니다.
@@ -109,7 +109,7 @@ Claude Code2.1.311, 요청 `claude-opus-5-5` / effort `high`. 세 응답의 `mod
 
   ```gdscript
   func _commission_disk_state(status: Dictionary) -> bool:
-  	return status.get("exists", false) or status.get("backup_available", false) or status.get("backup_exists", false)
+      return status.get("exists", false) or status.get("backup_available", false) or status.get("backup_exists", false)
   ```
 - **회귀 테스트**:
   1. 슬롯을 `user://tests/inv.json`으로 둡니다.
@@ -320,4 +320,3 @@ Claude Code2.1.311, 요청 `claude-opus-5-5` / effort `high`. 세 응답의 `mod
 ---
 
 **범위 밖 확인 사항**: 메인 4선택과 47사건의 보존, 의뢰 간 선수 조건, 강제 반복 작업은 제공된 소스에서 위반을 찾지 못했습니다. 비용 1,320과 시작 크레딧 1,500으로 반복 작업 없이 전부 구매할 수 있습니다.
-

@@ -544,12 +544,12 @@
     "Speichert die Kampagne bei Zustandsänderungen automatisch."
   ],
   "UI_AUTOSAVE_OFF_TIP": [
-    "디스크의 기존 파일을 보호하려고 자동저장을 멈췄습니다. 저장·백업 복구·손상본 보존 중 하나를 선택하세요.",
-    "Autosave is paused to protect existing files on disk. Choose Save, Restore backup, or Keep damaged files.",
-    "ディスクの既存ファイルを守るため自動保存を止めました。保存、バックアップ復旧、破損版保持から選んでください。",
-    "为保护磁盘上的现有文件已暂停自动保存。请选择保存、备份恢复或保留损坏副本。",
-    "Se detuvo para proteger los archivos. Elige guardar, recuperar copia o conservar los dañados.",
-    "Zum Schutz bestehender Dateien angehalten. Wähle Speichern, Sicherungswiederherstellung oder Erhalt beschädigter Dateien."
+    "기존 파일을 보호하려고 자동 저장을 멈췄습니다. 현재 시나리오의 자동 저장 재시도·백업 복구·손상본 보존 중 하나를 선택하세요.",
+    "Autosave is paused to protect existing files. Choose Retry autosave for the current scenario, Restore backup, or Keep damaged files.",
+    "既存のファイルを守るためオートセーブを停止しました。現在のシナリオの「オートセーブを再試行」、バックアップ復元、破損ファイルの保持から選んでください。",
+    "为保护现有文件，自动存档已暂停。请选择重试当前场景的自动存档、恢复备份或保留损坏文件。",
+    "El autoguardado está en pausa para proteger los archivos existentes. Elige Reintentar autoguardado para el escenario actual, Restaurar copia o Conservar archivos dañados.",
+    "Zum Schutz bestehender Dateien ist automatisches Speichern angehalten. Wähle für das aktuelle Szenario Automatisches Speichern erneut versuchen, Sicherung wiederherstellen oder Beschädigte Dateien behalten."
   ],
   "UI_AUTOSAVE_FAILED": [
     "자동저장 실패 · 자동저장을 멈췄습니다 ({code})\n{detail}",
@@ -7582,5 +7582,13 @@
     "将保留的原版战役进度复制到此档案？原文件及其他战役保持不变。",
     "¿Copiar la campaña original conservada a este perfil? El archivo original y las demás campañas se mantienen sin cambios.",
     "Die erhaltene ursprüngliche Kampagne in dieses Profil kopieren? Die Originaldatei und andere Kampagnen bleiben unverändert."
+  ],
+  "MANUAL_AUTOSAVE_RETRY": [
+    "자동 저장 재시도",
+    "Retry autosave",
+    "オートセーブを再試行",
+    "重试自动存档",
+    "Reintentar autoguardado",
+    "Automatisches Speichern erneut versuchen"
   ]
 }

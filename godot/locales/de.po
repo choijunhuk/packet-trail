@@ -5741,6 +5741,9 @@ msgstr "Automatischen Spielstand des aktuellen Szenarios laden"
 msgid "MANUAL_AUTOSAVE_LOAD_TIP"
 msgstr "Lädt den letzten automatischen Spielstand des aktuellen Szenarios. Nutze einen manuellen Speicherplatz, um den gesamten Fortschritt wiederherzustellen."
 
+msgid "MANUAL_AUTOSAVE_RETRY"
+msgstr "Automatisches Speichern erneut versuchen"
+
 msgid "MANUAL_CURRENT_MISSION"
 msgstr "Aktuelle Mission: {mission}"
 
@@ -6906,7 +6909,7 @@ msgid "UI_AUTOSAVE_OFF"
 msgstr "Automatisches Speichern angehalten"
 
 msgid "UI_AUTOSAVE_OFF_TIP"
-msgstr "Zum Schutz bestehender Dateien angehalten. Wähle Speichern, Sicherungswiederherstellung oder Erhalt beschädigter Dateien."
+msgstr "Zum Schutz bestehender Dateien ist automatisches Speichern angehalten. Wähle für das aktuelle Szenario Automatisches Speichern erneut versuchen, Sicherung wiederherstellen oder Beschädigte Dateien behalten."
 
 msgid "UI_AUTOSAVE_ON"
 msgstr "Automatisches Speichern aktiv"

@@ -166,6 +166,7 @@ func run(scene_tree: SceneTree) -> Dictionary:
 	await _explicit_legacy_source_import()
 	await _locale_geometry()
 	await _lobby_action_geometry()
+	await _autosave_retry_regression()
 	Localization.set_locale(previous_locale)
 	var after := _fingerprints()
 	_fingerprint_folder("user://profiles", after)
@@ -449,6 +450,37 @@ func _lobby_action_geometry() -> void:
 	await _free_full(full)
 	tree.root.size = original_size
 	await tree.process_frame
+
+
+func _autosave_retry_regression() -> void:
+	var full := await _new_full(test_root + "/autosave_retry.json")
+	var room = full.room
+	room.open_desktop("new", "intruder", "independent")
+	var desktop = room.desktop
+	var path: String = desktop.save_slot_path
+	var before := FileAccess.get_file_as_bytes(path)
+	_check(not desktop.autosave_suspended and not desktop.autosave_retry_btn.visible, "healthy autosave does not show a retry action")
+	_check(DirAccess.make_dir_absolute(path + ".tmp") == OK, "owned autosave fixture blocks only its staging path")
+	var action: Dictionary = desktop._act("terminal", desktop.game.execute.bind("mkdir ~/dirty_retry_progress"))
+	var dirty: Dictionary = desktop.game.export_snapshot()
+	_check(action.ok and desktop.autosave_suspended and desktop.autosave_retry_btn.visible and not desktop.autosave_retry_btn.disabled and FileAccess.get_file_as_bytes(path) == before, "real action IO failure suspends autosave and exposes its distinct retry action without changing saved bytes")
+	desktop._set_paused(true)
+	_check(desktop.autosave_retry_btn.disabled, "paused sessions cannot retry autosave")
+	desktop._set_paused(false)
+	_check(not desktop.autosave_retry_btn.disabled, "resuming the session enables retry without reloading progress")
+	desktop._open_manual_saves()
+	room.manual_save_panel.cards[1].save.pressed.emit()
+	_check(full.manual_store.list_slots()[0].status == "valid" and desktop.autosave_suspended and FileAccess.get_file_as_bytes(path) == before, "saving one of five manual checkpoints never claims that the original autosave resumed")
+	full._close_manual_saves()
+	_check(DirAccess.remove_absolute(path + ".tmp") == OK, "owned autosave IO failure is repaired")
+	desktop.autosave_retry_btn.pressed.emit()
+	var reloaded = Campaign.new(path, "intruder")
+	_check(not desktop.autosave_suspended and not desktop.autosave_retry_btn.visible and reloaded.load_game().ok and reloaded.export_snapshot() == dirty, "retry button writes the dirty current campaign and resumes autosave without losing progress")
+	for language in Localization.LOCALES:
+		Localization.set_locale(language)
+		desktop.apply_settings({"support_intruder": "independent"})
+		_check(desktop.autosave_retry_btn.tooltip_text == Localization.tr_key("MANUAL_AUTOSAVE_RETRY") and not desktop.autosave_retry_btn.tooltip_text.begins_with("MANUAL_"), "autosave retry has a distinct localized accessible action in " + language)
+	await _free_full(full)
 
 
 func _new_full(base: String, legacy_source: String = "") -> Node:

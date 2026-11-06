@@ -67,7 +67,7 @@
   "UI_AUTOSAVE_ON": "자동저장 켜짐",
   "UI_AUTOSAVE_OFF": "자동저장 멈춤",
   "UI_AUTOSAVE_ON_TIP": "상태가 바뀌면 캠페인 슬롯에 자동으로 저장합니다.",
-  "UI_AUTOSAVE_OFF_TIP": "디스크의 기존 파일을 보호하려고 자동저장을 멈췄습니다. 저장·백업 복구·손상본 보존 중 하나를 선택하세요.",
+  "UI_AUTOSAVE_OFF_TIP": "기존 파일을 보호하려고 자동 저장을 멈췄습니다. 현재 시나리오의 자동 저장 재시도·백업 복구·손상본 보존 중 하나를 선택하세요.",
   "UI_AUTOSAVE_FAILED": "자동저장 실패 · 자동저장을 멈췄습니다 ({code})\n{detail}",
   "UI_SAVE_FAILED": "저장 실패 ({code})\n{detail}",
   "UI_RECOVER_FAILED": "백업 복구 실패 ({code})\n{detail}",
@@ -946,5 +946,6 @@
   "MANUAL_SLOT_BACKUP_LOAD": "슬롯 백업 불러오기",
   "MANUAL_SLOT_BACKUP_CONFIRM": "슬롯 {slot}의 백업을 불러올까요? 본편·선택 의뢰 전체와 생활 공간이 함께 복원됩니다. 기존 저장은 별도로 보존하고 설정은 유지합니다.",
   "LEGACY_SOURCE_IMPORT": "보존판 진행 가져오기",
-  "LEGACY_SOURCE_IMPORT_CONFIRM": "보존된 원본 캠페인 진행을 이 프로필로 복사할까요? 원본 파일과 다른 캠페인은 그대로 유지됩니다."
+  "LEGACY_SOURCE_IMPORT_CONFIRM": "보존된 원본 캠페인 진행을 이 프로필로 복사할까요? 원본 파일과 다른 캠페인은 그대로 유지됩니다.",
+  "MANUAL_AUTOSAVE_RETRY": "자동 저장 재시도"
 }

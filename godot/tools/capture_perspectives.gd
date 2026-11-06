@@ -583,6 +583,7 @@ func _replay_case(id: String) -> bool:
 		var disk_before := _path_fingerprint(slot)
 		if not manual_save_checked.get(active_pack, false):
 			desktop.autosave_suspended = true
+			desktop._refresh_save_mode()
 		var terminal := int(action.get("terminal_id", 0))
 		if str(action.get("kind", "")) == "password":
 			_check(desktop.terms[terminal]["input"].secret and desktop.game.get_view(terminal).get("password_pending", false), "actual password submission is masked")
@@ -599,11 +600,12 @@ func _replay_case(id: String) -> bool:
 		var after: Dictionary = desktop.game.export_snapshot()
 		if not manual_save_checked.get(active_pack, false) and after != before:
 			_check(_path_fingerprint(slot) == disk_before, "suspended test autosave leaves this pack's real dirty state unsaved")
-			await _click(desktop.save_btn)
-			_check(not desktop.autosave_suspended and _path_fingerprint(slot) != disk_before, "actual Save click commits dirty state and resumes saving: " + active_pack)
+			await _frames(2)
+			await _click(desktop.autosave_retry_btn)
+			_check(not desktop.autosave_suspended and _path_fingerprint(slot) != disk_before, "actual autosave Retry click commits dirty state and resumes saving: " + active_pack)
 			var probe := Campaign.new(slot, active_pack)
 			var loaded: Dictionary = probe.load_game()
-			_check(loaded.get("ok", false) and probe.export_snapshot() == after, "manual pack save round-trips actual domain state")
+			_check(loaded.get("ok", false) and probe.export_snapshot() == after, "retried pack autosave round-trips actual domain state")
 			manual_save_checked[active_pack] = true
 		if str(action.get("kind", "")) == "password":
 			password_actions += 1
@@ -700,7 +702,6 @@ func _choose_pack_ending() -> void:
 	_check(not player.stream.loop, "actual ending UI selects the one-shot soundtrack edit")
 	pack_endings.append({"pack_id": active_pack, "ending_id": ending.get("id", ""), "chosen_from_real_facts": not ending.is_empty()})
 	await _capture("ending-credits.png")
-	await _click(desktop.save_btn)
 	var probe := Campaign.new(slot, active_pack)
 	var loaded: Dictionary = probe.load_game()
 	_check(loaded.get("ok", false) and probe.get_view().get("ending", {}).get("id") == ending.get("id"), "selected ending survives this pack's isolated disk load")

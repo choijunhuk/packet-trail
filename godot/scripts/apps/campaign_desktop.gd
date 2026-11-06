@@ -152,6 +152,7 @@ var term_task_buttons: Array = []
 var new_terminal_buttons: Array[Button] = []
 var status_label: Label
 var save_btn: Button
+var autosave_retry_btn: Button
 var load_btn: Button
 var recover_btn: Button
 var fresh_btn: Button
@@ -945,13 +946,16 @@ func _build_shell() -> void:
 	font_up_btn = _shell_button("font_larger", "UI_FONT_LARGER", _font_nudge.bind(1))
 	font_up_btn.set_meta("shell_action", "font_larger")
 	save_btn = _shell_button("save", "MANUAL_SAVES", _open_manual_saves)
+	autosave_retry_btn = _shell_button("reload", "MANUAL_AUTOSAVE_RETRY", _manual_save)
+	autosave_retry_btn.set_meta("shell_action", "autosave_retry")
+	autosave_retry_btn.visible = false
 	load_btn = _shell_button("load", "MANUAL_AUTOSAVE_LOAD", _ask_load)
 	load_btn.tooltip_text = _t("MANUAL_AUTOSAVE_LOAD_TIP")
 	recover_btn = _shell_button("load", "UI_RECOVER", _ask_recover)
 	fresh_btn = _shell_button("save", "UI_FRESH_SAVE", _ask_fresh)
 	room_btn = _shell_button("room", "UI_ROOM", _request_room)
 	pause_btn = _shell_button("pause", "UI_PAUSE", _toggle_pause)
-	for button in [font_down_btn, font_up_btn, save_btn, load_btn, recover_btn, fresh_btn, room_btn, pause_btn]:
+	for button in [font_down_btn, font_up_btn, save_btn, load_btn, autosave_retry_btn, recover_btn, fresh_btn, room_btn, pause_btn]:
 		task_row.add_child(button)
 	recover_btn.visible = false
 	fresh_btn.visible = false
@@ -1454,6 +1458,7 @@ func _set_paused(on: bool, restore_focus: bool = true) -> void:
 		if restore_focus:
 			_restore_focus(_focus_before_pause)
 		_focus_before_pause = null
+	_refresh_save_mode()
 	pause_changed.emit(on)
 
 
@@ -5676,6 +5681,7 @@ func _focus_recovery() -> void:
 
 func _recovery_dismiss() -> void:
 	recovery_overlay.visible = false
+	_refresh_save_mode()
 	_toast(_t("UI_NOTE_UNSAVED_PLAY"), C_AMBER)
 	_restore_focus(null)
 
@@ -5688,6 +5694,9 @@ func _set_recovery_buttons(r: Dictionary) -> void:
 
 
 func _refresh_save_mode() -> void:
+	if autosave_retry_btn != null:
+		autosave_retry_btn.visible = autosave_suspended
+		autosave_retry_btn.disabled = not session_active or game == null or paused or (fatal_overlay != null and fatal_overlay.visible) or (recovery_overlay != null and recovery_overlay.visible)
 	if top_save == null:
 		return
 	top_save.text = _t("UI_AUTOSAVE_OFF") if autosave_suspended else _t("UI_AUTOSAVE_ON")

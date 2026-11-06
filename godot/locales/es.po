@@ -5741,6 +5741,9 @@ msgstr "Cargar autoguardado del escenario actual"
 msgid "MANUAL_AUTOSAVE_LOAD_TIP"
 msgstr "Carga el último autoguardado del escenario actual. Usa una ranura manual para restaurar todo el progreso."
 
+msgid "MANUAL_AUTOSAVE_RETRY"
+msgstr "Reintentar autoguardado"
+
 msgid "MANUAL_CURRENT_MISSION"
 msgstr "Misión actual: {mission}"
 
@@ -6906,7 +6909,7 @@ msgid "UI_AUTOSAVE_OFF"
 msgstr "Guardado automático detenido"
 
 msgid "UI_AUTOSAVE_OFF_TIP"
-msgstr "Se detuvo para proteger los archivos. Elige guardar, recuperar copia o conservar los dañados."
+msgstr "El autoguardado está en pausa para proteger los archivos existentes. Elige Reintentar autoguardado para el escenario actual, Restaurar copia o Conservar archivos dañados."
 
 msgid "UI_AUTOSAVE_ON"
 msgstr "Guardado automático activo"

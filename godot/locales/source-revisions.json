@@ -64,11 +64,11 @@
   "ui": {
     "ko": {
       "path": "godot/assets/ui/strings_ko.json",
-      "sha256": "e23556b1fcc81c1e84e9fb63a2210198b87662d65351a46e2c3bc281f4f7d335"
+      "sha256": "1794996d2c8ecbea5984e57b1006ebc3b01ff0fb2e5e56ed8073583b454522cf"
     },
     "en": {
       "path": "godot/assets/ui/strings_en.json",
-      "sha256": "6efe40ed7801e8446907af5500104abff986ec67707c331c2c5f6f8972915dc0"
+      "sha256": "e716e1f3cbeb93354b4dc149afc14dd4ab83b347c1ca82f7e6ef201029947451"
     }
   }
 }

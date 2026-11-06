@@ -190,5 +190,11 @@
     "将保留的原版战役进度复制到此档案？原文件及其他战役保持不变。",
     "¿Copiar la campaña original conservada a este perfil? El archivo original y las demás campañas se mantienen sin cambios.",
     "Die erhaltene ursprüngliche Kampagne in dieses Profil kopieren? Die Originaldatei und andere Kampagnen bleiben unverändert."
+  ],
+  "MANUAL_AUTOSAVE_RETRY": [
+    "オートセーブを再試行",
+    "重试自动存档",
+    "Reintentar autoguardado",
+    "Automatisches Speichern erneut versuchen"
   ]
 }

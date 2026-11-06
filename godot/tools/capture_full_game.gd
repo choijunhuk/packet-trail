@@ -131,7 +131,7 @@ func _run() -> void:
 		return
 	desktop.action_performed.connect(func(result: Dictionary): action_result = result.duplicate(true))
 	if not _require_fields(desktop, ["terms", "active_term", "active_id", "wins", "task_buttons",
-		"font_down_btn", "top_panel", "ui_size", "save_btn", "room_btn", "bd_tree", "bd_next_btn"]):
+		"font_down_btn", "top_panel", "ui_size", "save_btn", "autosave_retry_btn", "room_btn", "bd_tree", "bd_next_btn"]):
 		_finish()
 		return
 	await _keyboard_focus_checks()
@@ -276,17 +276,19 @@ func _play_route(id: String, fixture: Dictionary) -> bool:
 
 func _save_and_room_checks() -> void:
 	var disk_before := FileAccess.get_sha256(slot)
-	# Suspend only this test UI's autosave so a real virtual change proves the Save click.
+	# Suspend only this test UI's autosave so a real virtual change proves the retry click.
 	desktop.autosave_suspended = true
+	desktop._refresh_save_mode()
 	var changed := await _submit("mkdir /home/player/qa_ui_%d" % Time.get_ticks_usec(), 1)
 	_check(changed.get("ok", false) and changed.get("changed", false), "manual-save test creates a real unsaved virtual directory")
 	_check(FileAccess.get_sha256(slot) == disk_before, "suspended test autosave leaves the test slot unchanged")
 	var snapshot: Dictionary = desktop.game.export_snapshot()
-	await _click(desktop.save_btn)
-	_check(not desktop.autosave_suspended and FileAccess.get_sha256(slot) != disk_before, "actual Save click writes new state and resumes saving")
+	await _frames(2)
+	await _click(desktop.autosave_retry_btn)
+	_check(not desktop.autosave_suspended and FileAccess.get_sha256(slot) != disk_before, "actual autosave Retry click writes new state and resumes saving")
 	var probe := Campaign.new(slot)
 	var loaded: Dictionary = probe.load_game()
-	_check(loaded.get("ok", false) and probe.export_snapshot() == snapshot, "manual save round-trips the actual campaign snapshot")
+	_check(loaded.get("ok", false) and probe.export_snapshot() == snapshot, "retried autosave round-trips the actual campaign snapshot")
 	await _open_terminal(0)
 	var input: LineEdit = desktop.terms[0]["input"]
 	input.text = "room-return-draft"
@@ -430,7 +432,6 @@ func _ending_checks() -> void:
 	_check(desktop.en_credits.visible and not desktop.en_credits.text.is_empty(), "ending screen exposes credits")
 	_assert_mood(desktop.get_game_view(), "real chosen ending")
 	await _capture("full-ending-credits.png")
-	await _click(desktop.save_btn)
 	var probe := Campaign.new(slot)
 	var loaded: Dictionary = probe.load_game()
 	_check(loaded.get("ok", false) and probe.get_view().get("ending", {}).get("id") == ending.get("id"), "real chosen ending survives isolated save/load")

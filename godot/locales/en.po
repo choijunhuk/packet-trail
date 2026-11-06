@@ -5741,6 +5741,9 @@ msgstr "Load current scenario autosave"
 msgid "MANUAL_AUTOSAVE_LOAD_TIP"
 msgstr "Load the latest autosave for the current scenario. Use a manual save slot to restore overall progress."
 
+msgid "MANUAL_AUTOSAVE_RETRY"
+msgstr "Retry autosave"
+
 msgid "MANUAL_CURRENT_MISSION"
 msgstr "Current mission: {mission}"
 
@@ -6906,7 +6909,7 @@ msgid "UI_AUTOSAVE_OFF"
 msgstr "Autosave paused"
 
 msgid "UI_AUTOSAVE_OFF_TIP"
-msgstr "Autosave is paused to protect existing files on disk. Choose Save, Restore backup, or Keep damaged files."
+msgstr "Autosave is paused to protect existing files. Choose Retry autosave for the current scenario, Restore backup, or Keep damaged files."
 
 msgid "UI_AUTOSAVE_ON"
 msgstr "Autosave on"

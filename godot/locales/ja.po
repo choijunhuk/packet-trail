@@ -5741,6 +5741,9 @@ msgstr "現在のシナリオのオートセーブをロード"
 msgid "MANUAL_AUTOSAVE_LOAD_TIP"
 msgstr "現在のシナリオの最新オートセーブをロードします。全体の進行を復元するには手動セーブスロットを使ってください。"
 
+msgid "MANUAL_AUTOSAVE_RETRY"
+msgstr "オートセーブを再試行"
+
 msgid "MANUAL_CURRENT_MISSION"
 msgstr "現在のミッション：{mission}"
 
@@ -6906,7 +6909,7 @@ msgid "UI_AUTOSAVE_OFF"
 msgstr "自動保存停止"
 
 msgid "UI_AUTOSAVE_OFF_TIP"
-msgstr "ディスクの既存ファイルを守るため自動保存を止めました。保存、バックアップ復旧、破損版保持から選んでください。"
+msgstr "既存のファイルを守るためオートセーブを停止しました。現在のシナリオの「オートセーブを再試行」、バックアップ復元、破損ファイルの保持から選んでください。"
 
 msgid "UI_AUTOSAVE_ON"
 msgstr "自動保存オン"

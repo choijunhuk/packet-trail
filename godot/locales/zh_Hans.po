@@ -5741,6 +5741,9 @@ msgstr "读取当前场景的自动存档"
 msgid "MANUAL_AUTOSAVE_LOAD_TIP"
 msgstr "读取当前场景的最新自动存档。要恢复全部进度，请使用手动存档槽。"
 
+msgid "MANUAL_AUTOSAVE_RETRY"
+msgstr "重试自动存档"
+
 msgid "MANUAL_CURRENT_MISSION"
 msgstr "当前任务：{mission}"
 
@@ -6906,7 +6909,7 @@ msgid "UI_AUTOSAVE_OFF"
 msgstr "自动保存暂停"
 
 msgid "UI_AUTOSAVE_OFF_TIP"
-msgstr "为保护磁盘上的现有文件已暂停自动保存。请选择保存、备份恢复或保留损坏副本。"
+msgstr "为保护现有文件，自动存档已暂停。请选择重试当前场景的自动存档、恢复备份或保留损坏文件。"
 
 msgid "UI_AUTOSAVE_ON"
 msgstr "自动保存开启"
