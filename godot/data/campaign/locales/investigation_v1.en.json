@@ -57,7 +57,7 @@
   "IV1_I02_GOAL": "Maintain legitimate work and boundaries with a verified release, then disclose only observed evidence and complete the recipient’s follow-up.",
   "IV1_I02_HINT_1": "Matching names and versions do not imply matching payload digests. Inspect the prior registry release and delivered file first.",
   "IV1_I02_HINT_2": "Authentic provenance can still describe overbroad behavior. Test legitimate service and notifications together with outside-scope requests.",
-  "IV1_I02_HINT_3": "Verify and restore the known-good prior release, or rebuild approved inputs. After current service checks, report public digests from stable_evidence and delivered_evidence and answer the recipient’s follow-up.",
+  "IV1_I02_HINT_3": "Verify and restore the known-good prior release, or rebuild approved inputs. After current service checks, report public digests from Independent Registry Comparison and Delivered Package Evidence and answer the recipient’s follow-up.",
   "IV1_I02_LIMIT": "This optional commission is not required for the main story or its endings. It does not reproduce external services or every security rule. Mistaken changes can be restored to the initial configuration.",
   "IV1_I02_NEWS_REPLY": "Journalist reply: we are checking the claim that packages with the same name contain the same bytes. Support the differing registry and delivered-file digests with actual observations.",
   "IV1_I02_NEWS_RESULT": "Verified report: packages sharing a version name contained different bytes, and recovery retained normal work. Internal handoff references were not published.",

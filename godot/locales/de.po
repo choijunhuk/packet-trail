@@ -1391,6 +1391,9 @@ msgstr "Abgeholt. Gegenstände können ausgerüstet werden."
 msgid "HABITAT_EQUIPPED"
 msgstr "Geräteaussehen geändert und gespeichert."
 
+msgid "HABITAT_FRESH"
+msgstr "Wohnbereich neu gestartet; vorherige Dateien wurden aufbewahrt."
+
 msgid "HABITAT_INSPECTION_REQUIRED"
 msgstr "Zuerst den angenommenen Schrank untersuchen."
 
@@ -1498,6 +1501,12 @@ msgstr "Ausrüsten"
 
 msgid "HAB_EQUIPPED"
 msgstr "Ausgerüstet"
+
+msgid "HAB_FRESH"
+msgstr "Wohnbereich neu starten"
+
+msgid "HAB_FRESH_CONFIRM"
+msgstr "Credits, Bestellungen, Ausstattung und Außenauftrag des Wohnbereichs zurücksetzen? Vorhandene Wohnspielstände bleiben separat erhalten. Hauptkampagnen und optionale Aufträge bleiben unverändert."
 
 msgid "HAB_INSPECT"
 msgstr "Schrank untersuchen"
@@ -1630,6 +1639,9 @@ msgstr "Auftragstafel im Hof"
 
 msgid "HAB_TITLE_SHOP"
 msgstr "Schreibtischladen"
+
+msgid "HAB_UNAPPLIED_CHANGES"
+msgstr "Es gibt nicht angewendete Änderungen. Wende die Einstellungen vor der Prüfung an."
 
 msgid "HAB_VERIFY"
 msgstr "Fernmessung und unbefugten Zugriff prüfen"
@@ -3558,7 +3570,7 @@ msgid "IV1_I02_HINT_2"
 msgstr "Echte Herkunft kann übermäßiges Verhalten beschreiben. Dienst und Meldungen zusammen mit unzulässigen Anfragen testen."
 
 msgid "IV1_I02_HINT_3"
-msgstr "Guten Vorgänger prüfen und wiederherstellen oder genehmigte Eingaben neu bauen. Nach Dienstprüfungen öffentliche Prüfsummen aus stable_evidence und delivered_evidence berichten und Rückfragen beantworten."
+msgstr "Guten Vorgänger prüfen und wiederherstellen oder genehmigte Eingaben neu bauen. Nach Dienstprüfungen öffentliche Prüfsummen aus Vergleich mit unabhängigem Register und Nachweise zum gelieferten Paket berichten und Rückfragen beantworten."
 
 msgid "IV1_I02_LIMIT"
 msgstr "Dieser Auftrag ist für Geschichte und Enden optional. Externe Dienste und sämtliche Regeln werden nicht nachgebildet. Fehländerungen lassen sich zurücksetzen."
@@ -3634,6 +3646,12 @@ msgstr "Vorherige Fassung fortsetzen"
 
 msgid "LEGACY_CONTINUE_DESC"
 msgstr "Setze die vorige Fassung fort. Ihr Fortschritt bleibt von den neuen Kampagnen getrennt."
+
+msgid "LEGACY_SOURCE_IMPORT"
+msgstr "Fortschritt der erhaltenen Fassung importieren"
+
+msgid "LEGACY_SOURCE_IMPORT_CONFIRM"
+msgstr "Die erhaltene ursprüngliche Kampagne in dieses Profil kopieren? Die Originaldatei und andere Kampagnen bleiben unverändert."
 
 msgid "LEGACY_SOURCE_UNSUPPORTED"
 msgstr "Ein alter Spielstand wurde gefunden, bestand aber die Prüfung nicht. Das Original bleibt erhalten und wird nicht auf neue Kampagnen angewendet. Grund: {code}"
@@ -5702,6 +5720,87 @@ msgstr "Der letzte Zugriff, die bleibende Wahrheit"
 msgid "MAIL"
 msgstr "Postfach"
 
+msgid "MANUAL_ACTIVE_RECOVER"
+msgstr "Automatische Sicherungen wiederherstellen"
+
+msgid "MANUAL_ACTIVE_RECOVER_CONFIRM"
+msgstr "Den angezeigten Spielstand aus geprüften automatischen Sicherungen wiederherstellen? Ursprüngliche Spielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+
+msgid "MANUAL_ACTIVE_RECOVER_CURRENT"
+msgstr "Aktueller Spielstand: {members} aus geprüften automatischen Sicherungen wiederherstellen und den übrigen gültigen Fortschritt behalten."
+
+msgid "MANUAL_ACTIVE_RECOVER_OK"
+msgstr "Automatisch gespeicherten Fortschritt wiederhergestellt."
+
+msgid "MANUAL_ACTIVE_RECOVER_PREVIOUS"
+msgstr "Vorherigen vollständigen automatischen Spielstand wiederherstellen. Alle Kampagnen und der Wohnbereich kehren gemeinsam zurück und können von den neuesten automatischen Spielständen abweichen. Aktuelle Originalspielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+
+msgid "MANUAL_AUTOSAVE_LOAD"
+msgstr "Automatischen Spielstand des aktuellen Szenarios laden"
+
+msgid "MANUAL_AUTOSAVE_LOAD_TIP"
+msgstr "Lädt den letzten automatischen Spielstand des aktuellen Szenarios. Nutze einen manuellen Speicherplatz, um den gesamten Fortschritt wiederherzustellen."
+
+msgid "MANUAL_CURRENT_MISSION"
+msgstr "Aktuelle Mission: {mission}"
+
+msgid "MANUAL_LOAD_ACTION"
+msgstr "Diesen Spielstand laden"
+
+msgid "MANUAL_LOAD_CONFIRM"
+msgstr "Speicherplatz {slot} laden? Alle Hauptkampagnen, optionalen Aufträge und der Wohnbereich kehren zu diesem Stand zurück. Einstellungen bleiben erhalten; automatische Spielstände werden separat aufbewahrt."
+
+msgid "MANUAL_LOAD_OK"
+msgstr "Gesamten Fortschritt von Speicherplatz {slot} geladen."
+
+msgid "MANUAL_OPERATION_FAILED"
+msgstr "Der Vorgang konnte nicht abgeschlossen werden. Code: {code}"
+
+msgid "MANUAL_OVERWRITE_CONFIRM"
+msgstr "Den manuellen Spielstand auf Speicherplatz {slot} mit deinem gesamten aktuellen Fortschritt überschreiben?"
+
+msgid "MANUAL_PROFILE_RECOVERY"
+msgstr "Spielstand zur Wiederherstellung wählen"
+
+msgid "MANUAL_PROFILE_RECOVERY_HELP"
+msgstr "Der aktuelle Fortschritt konnte nicht wiederhergestellt werden. Stelle geprüfte automatische Sicherungen wieder her oder lade einen gültigen manuellen Spielstand. Ursprüngliche Spielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+
+msgid "MANUAL_SAVES"
+msgstr "Manuell speichern / Laden"
+
+msgid "MANUAL_SAVES_HELP"
+msgstr "Alle Szenarien teilen sich fünf Speicherplätze. Jeder Spielstand speichert und stellt alle Hauptkampagnen, optionalen Aufträge und den Wohnbereich gemeinsam wieder her. Einstellungen bleiben erhalten; automatische Spielstände werden separat aufbewahrt."
+
+msgid "MANUAL_SAVES_TITLE"
+msgstr "Fünf manuelle Speicherplätze"
+
+msgid "MANUAL_SAVE_ACTION"
+msgstr "Hier speichern"
+
+msgid "MANUAL_SAVE_OK"
+msgstr "Gesamten Fortschritt auf Speicherplatz {slot} gespeichert."
+
+msgid "MANUAL_SLOT"
+msgstr "Speicherplatz {slot}"
+
+msgid "MANUAL_SLOT_BACKUP_CONFIRM"
+msgstr "Sicherung von Speicherplatz {slot} laden? Alle Hauptkampagnen, optionalen Aufträge und der Wohnbereich werden gemeinsam wiederhergestellt. Ursprüngliche Spielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+
+msgid "MANUAL_SLOT_BACKUP_LOAD"
+msgstr "Sicherung des Speicherplatzes laden"
+
+msgid "MANUAL_SLOT_DAMAGED"
+msgstr "Beschädigter oder unlesbarer Spielstand"
+
+msgid "MANUAL_SLOT_EMPTY"
+msgstr "Leer"
+
+msgid "MANUAL_SLOT_PROGRESS"
+msgstr "Abgeschlossen: {done}/{total}"
+
+msgid "MANUAL_SLOT_SAVED_AT"
+msgstr "Gespeichert: {datetime}"
+
 msgid "MASTER_VOLUME"
 msgstr "Gesamtlautstärke"
 
@@ -6115,6 +6214,15 @@ msgstr "Arbeitszimmer: WASD bewegt, rechte Maustaste halten zum Umsehen, E benut
 
 msgid "SETTINGS_CONTROLS_TAB"
 msgstr "Steuerung"
+
+msgid "SETTINGS_DESKTOP_EFFECTS"
+msgstr "Effekte am Spielfenster erlauben"
+
+msgid "SETTINGS_DESKTOP_EFFECTS_NOTE"
+msgstr "Optional: Bewegt kurz dieses Spielfenster und ändert seinen Titel; danach wird beides wiederhergestellt. Andere Apps, Dateien und Eingaben bleiben unberührt. Jederzeit abschaltbar. Anwenden, Einstellungen erneut öffnen und Vorschau starten."
+
+msgid "SETTINGS_DESKTOP_EFFECTS_PREVIEW"
+msgstr "Fenstereffekt ansehen"
 
 msgid "SETTINGS_DISPLAY"
 msgstr "Anzeige und Komfort"
@@ -7339,6 +7447,9 @@ msgstr "Ressourcen und Grenzen"
 
 msgid "UI_IAM_ROLES"
 msgstr "Rollen und Regeln"
+
+msgid "UI_IAM_STALE"
+msgstr "Die Einstellungen wurden geändert. Prüfe die angezeigten Anfragen erneut mit der aktuellen Konfiguration."
 
 msgid "UI_IMPORT_FAILED"
 msgstr "Altes M01 konnte nicht importiert werden ({code}). Das Original blieb unverändert.\n{detail}"

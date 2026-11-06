@@ -28,6 +28,9 @@ class DesktopModelTests(unittest.TestCase):
             ("res://tools/run_habitat.gd", "habitat"),
             ("res://tools/run_habitat_ui.gd", "habitat_ui"),
             ("res://tools/run_neighborhood.gd", "neighborhood"),
+            ("res://tools/run_desktop_effects.gd", "desktop_effects"),
+            ("res://tools/run_manual_profile_store.gd", "manual_profile_store"),
+            ("res://tools/run_manual_profile_ui.gd", "manual_profile_ui"),
         ):
             with self.subTest(suite=suite):
                 try:

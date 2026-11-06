@@ -1391,6 +1391,9 @@ msgstr "주문을 수령했습니다. 데스크샵에서 장착할 수 있습니
 msgid "HABITAT_EQUIPPED"
 msgstr "장비 모양을 변경하고 저장했습니다."
 
+msgid "HABITAT_FRESH"
+msgstr "기존 파일을 보존하고 생활 공간을 새로 시작했습니다."
+
 msgid "HABITAT_INSPECTION_REQUIRED"
 msgstr "수락한 의뢰의 통신함을 먼저 조사하세요."
 
@@ -1498,6 +1501,12 @@ msgstr "장착"
 
 msgid "HAB_EQUIPPED"
 msgstr "장착 중"
+
+msgid "HAB_FRESH"
+msgstr "생활 공간 새로 시작"
+
+msgid "HAB_FRESH_CONFIRM"
+msgstr "생활 공간의 크레딧·주문·장비·현장 일감을 초기화합니다. 기존 생활 저장 파일은 따로 보존하며, 본편과 선택 의뢰의 진행은 바뀌지 않습니다. 새로 시작할까요?"
 
 msgid "HAB_INSPECT"
 msgstr "현재 통신함 조사"
@@ -1630,6 +1639,9 @@ msgstr "동네 의뢰 게시판"
 
 msgid "HAB_TITLE_SHOP"
 msgstr "데스크샵"
+
+msgid "HAB_UNAPPLIED_CHANGES"
+msgstr "적용되지 않은 변경이 있습니다. 설정을 적용한 뒤 확인하세요."
 
 msgid "HAB_VERIFY"
 msgstr "정상 업무·비인가 접근 확인"
@@ -3558,7 +3570,7 @@ msgid "IV1_I02_HINT_2"
 msgstr "출처가 맞는 파일도 과도한 서비스 동작을 담을 수 있습니다. 정상 화면·통지와 범위 밖 요청을 실제로 함께 시험하세요."
 
 msgid "IV1_I02_HINT_3"
-msgstr "이전 정상 배포본을 검증해 복구하거나 승인 입력을 재빌드하세요. 현재 서비스 검증 뒤 stable_evidence·delivered_evidence의 공개 digest를 보고하고 수신자의 후속 질문에 답하세요."
+msgstr "이전 정상 배포본을 검증해 복구하거나 승인 입력을 재빌드하세요. 현재 서비스 검증 뒤 독립 원장의 비교 자료·전달받은 배포 자료의 공개 digest를 보고하고 수신자의 후속 질문에 답하세요."
 
 msgid "IV1_I02_LIMIT"
 msgstr "선택 의뢰입니다. 본편 진행과 엔딩에 필요하지 않습니다. 실제 외부 서비스나 모든 보안 정책을 재현하지 않으며 잘못된 조작은 초기 상태로 복구할 수 있습니다."
@@ -3634,6 +3646,12 @@ msgstr "이전판 계속"
 
 msgid "LEGACY_CONTINUE_DESC"
 msgstr "이전판 진행을 그대로 재개합니다. 새 캠페인과는 별도로 보존됩니다."
+
+msgid "LEGACY_SOURCE_IMPORT"
+msgstr "보존판 진행 가져오기"
+
+msgid "LEGACY_SOURCE_IMPORT_CONFIRM"
+msgstr "보존된 원본 캠페인 진행을 이 프로필로 복사할까요? 원본 파일과 다른 캠페인은 그대로 유지됩니다."
 
 msgid "LEGACY_SOURCE_UNSUPPORTED"
 msgstr "이전판 저장을 찾았지만 현재 검증을 통과하지 못했습니다. 원본은 보존되며 새 캠페인에 반영되지 않습니다. 이유: {code}"
@@ -5702,6 +5720,87 @@ msgstr "마지막 접근, 남겨진 진실"
 msgid "MAIL"
 msgstr "메일"
 
+msgid "MANUAL_ACTIVE_RECOVER"
+msgstr "자동 저장 백업으로 복구"
+
+msgid "MANUAL_ACTIVE_RECOVER_CONFIRM"
+msgstr "표시된 전체 진행을 검증된 자동 저장 백업으로 복구할까요? 기존 저장은 별도로 보존하고 설정은 유지합니다."
+
+msgid "MANUAL_ACTIVE_RECOVER_CURRENT"
+msgstr "현재 진행: {members}을(를) 검증된 자동 저장 백업으로 복구하고, 나머지 정상 진행은 유지합니다."
+
+msgid "MANUAL_ACTIVE_RECOVER_OK"
+msgstr "자동 저장 진행을 복구했습니다."
+
+msgid "MANUAL_ACTIVE_RECOVER_PREVIOUS"
+msgstr "이전 전체 자동 저장을 복구합니다. 모든 캠페인과 생활 공간을 함께 되돌리므로 최신 자동 저장과 다를 수 있습니다. 현재 원본 저장은 보존하고 설정은 유지합니다."
+
+msgid "MANUAL_AUTOSAVE_LOAD"
+msgstr "현재 시나리오 자동 저장 불러오기"
+
+msgid "MANUAL_AUTOSAVE_LOAD_TIP"
+msgstr "현재 시나리오의 최근 자동 저장을 불러옵니다. 전체 진행을 복원하려면 수동 저장 슬롯을 사용하세요."
+
+msgid "MANUAL_CURRENT_MISSION"
+msgstr "현재 임무: {mission}"
+
+msgid "MANUAL_LOAD_ACTION"
+msgstr "이 슬롯 불러오기"
+
+msgid "MANUAL_LOAD_CONFIRM"
+msgstr "슬롯 {slot}을 불러올까요? 본편·선택 의뢰 전체와 생활 공간이 저장 시점으로 돌아갑니다. 설정은 유지되며 자동 저장은 별도로 보관됩니다."
+
+msgid "MANUAL_LOAD_OK"
+msgstr "슬롯 {slot}의 전체 진행을 불러왔습니다."
+
+msgid "MANUAL_OPERATION_FAILED"
+msgstr "작업을 완료하지 못했습니다. 코드: {code}"
+
+msgid "MANUAL_OVERWRITE_CONFIRM"
+msgstr "슬롯 {slot}의 기존 수동 저장을 현재 전체 진행으로 덮어쓸까요?"
+
+msgid "MANUAL_PROFILE_RECOVERY"
+msgstr "복구할 저장 선택"
+
+msgid "MANUAL_PROFILE_RECOVERY_HELP"
+msgstr "현재 진행을 복원하지 못했습니다. 검증된 자동 저장 백업으로 복구하거나 정상적인 수동 저장 슬롯을 불러오세요. 기존 저장은 별도로 보존하고 설정은 유지합니다."
+
+msgid "MANUAL_SAVES"
+msgstr "수동 저장 / 불러오기"
+
+msgid "MANUAL_SAVES_HELP"
+msgstr "슬롯 5개를 모든 시나리오에서 함께 사용합니다. 본편·선택 의뢰 전체와 생활 공간을 한 번에 저장하고 복원합니다. 설정은 되돌리지 않으며 자동 저장은 별도로 유지됩니다."
+
+msgid "MANUAL_SAVES_TITLE"
+msgstr "수동 저장 슬롯 5개"
+
+msgid "MANUAL_SAVE_ACTION"
+msgstr "이 슬롯에 저장"
+
+msgid "MANUAL_SAVE_OK"
+msgstr "전체 진행을 슬롯 {slot}에 저장했습니다."
+
+msgid "MANUAL_SLOT"
+msgstr "슬롯 {slot}"
+
+msgid "MANUAL_SLOT_BACKUP_CONFIRM"
+msgstr "슬롯 {slot}의 백업을 불러올까요? 본편·선택 의뢰 전체와 생활 공간이 함께 복원됩니다. 기존 저장은 별도로 보존하고 설정은 유지합니다."
+
+msgid "MANUAL_SLOT_BACKUP_LOAD"
+msgstr "슬롯 백업 불러오기"
+
+msgid "MANUAL_SLOT_DAMAGED"
+msgstr "손상되었거나 읽을 수 없는 저장"
+
+msgid "MANUAL_SLOT_EMPTY"
+msgstr "비어 있음"
+
+msgid "MANUAL_SLOT_PROGRESS"
+msgstr "완료 {done}/{total}"
+
+msgid "MANUAL_SLOT_SAVED_AT"
+msgstr "저장 일시: {datetime}"
+
 msgid "MASTER_VOLUME"
 msgstr "전체 음량"
 
@@ -6115,6 +6214,15 @@ msgstr "작업실: WASD 이동 · 마우스 오른쪽 시선 · E 컴퓨터 · F
 
 msgid "SETTINGS_CONTROLS_TAB"
 msgstr "조작"
+
+msgid "SETTINGS_DESKTOP_EFFECTS"
+msgstr "실제 게임 창 연출 허용"
+
+msgid "SETTINGS_DESKTOP_EFFECTS_NOTE"
+msgstr "선택 사항: 이 게임 창만 잠깐 움직이고 제목이 바뀐 뒤 원래대로 돌아옵니다. 다른 앱·파일·입력에는 관여하지 않습니다. 언제든 끌 수 있습니다. 적용 후 설정을 다시 열어 미리 보세요."
+
+msgid "SETTINGS_DESKTOP_EFFECTS_PREVIEW"
+msgstr "게임 창 연출 미리 보기"
 
 msgid "SETTINGS_DISPLAY"
 msgstr "화면과 편안함"
@@ -7339,6 +7447,9 @@ msgstr "자원과 경계"
 
 msgid "UI_IAM_ROLES"
 msgstr "역할과 규칙"
+
+msgid "UI_IAM_STALE"
+msgstr "설정이 바뀌어 이전 검사 결과를 다시 확인해야 합니다. 표시된 요청을 현재 설정으로 다시 검사하세요."
 
 msgid "UI_IMPORT_FAILED"
 msgstr "구버전 M01 저장을 가져오지 못했습니다 ({code}). 원본은 바뀌지 않았습니다.\n{detail}"

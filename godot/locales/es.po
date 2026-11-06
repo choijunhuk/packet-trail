@@ -1391,6 +1391,9 @@ msgstr "Pedidos recogidos. Ya puedes equiparlos."
 msgid "HABITAT_EQUIPPED"
 msgstr "Aspecto cambiado y guardado."
 
+msgid "HABITAT_FRESH"
+msgstr "Espacio personal reiniciado; se conservaron los archivos anteriores."
+
 msgid "HABITAT_INSPECTION_REQUIRED"
 msgstr "Inspecciona primero el armario del encargo."
 
@@ -1498,6 +1501,12 @@ msgstr "Equipar"
 
 msgid "HAB_EQUIPPED"
 msgstr "Equipado"
+
+msgid "HAB_FRESH"
+msgstr "Reiniciar espacio personal"
+
+msgid "HAB_FRESH_CONFIRM"
+msgstr "¿Restablecer créditos, pedidos, equipo y encargo exterior del espacio personal? Los archivos anteriores se conservarán aparte. Las campañas y encargos opcionales no cambiarán."
 
 msgid "HAB_INSPECT"
 msgstr "Inspeccionar armario"
@@ -1630,6 +1639,9 @@ msgstr "Tablón del barrio"
 
 msgid "HAB_TITLE_SHOP"
 msgstr "Tienda del escritorio"
+
+msgid "HAB_UNAPPLIED_CHANGES"
+msgstr "Hay cambios sin aplicar. Aplica los ajustes antes de comprobar."
 
 msgid "HAB_VERIFY"
 msgstr "Verificar telemetría y acceso no autorizado"
@@ -3558,7 +3570,7 @@ msgid "IV1_I02_HINT_2"
 msgstr "Una procedencia auténtica puede describir comportamientos excesivos. Prueba servicio y avisos junto con solicitudes fuera de ámbito."
 
 msgid "IV1_I02_HINT_3"
-msgstr "Verifica y restaura la versión anterior fiable o recompila las entradas aprobadas. Tras las pruebas, informa los resúmenes públicos de stable_evidence y delivered_evidence y responde."
+msgstr "Verifica y restaura la versión anterior fiable o recompila las entradas aprobadas. Tras las pruebas, informa los resúmenes públicos de Comparación del registro independiente y Pruebas del paquete recibido y responde."
 
 msgid "IV1_I02_LIMIT"
 msgstr "Encargo opcional para la historia y sus finales. No reproduce servicios externos ni todas las reglas. Puedes restaurar la configuración inicial."
@@ -3634,6 +3646,12 @@ msgstr "Continuar edición anterior"
 
 msgid "LEGACY_CONTINUE_DESC"
 msgstr "Retoma la edición anterior. Su progreso se conserva separado de las campañas nuevas."
+
+msgid "LEGACY_SOURCE_IMPORT"
+msgstr "Importar progreso de la edición conservada"
+
+msgid "LEGACY_SOURCE_IMPORT_CONFIRM"
+msgstr "¿Copiar la campaña original conservada a este perfil? El archivo original y las demás campañas se mantienen sin cambios."
 
 msgid "LEGACY_SOURCE_UNSUPPORTED"
 msgstr "Se encontró un guardado anterior, pero no superó la validación. Se conserva el original y no se aplica a campañas nuevas. Motivo: {code}"
@@ -5702,6 +5720,87 @@ msgstr "El último acceso, la verdad que queda"
 msgid "MAIL"
 msgstr "Correo"
 
+msgid "MANUAL_ACTIVE_RECOVER"
+msgstr "Recuperar copias de autoguardado"
+
+msgid "MANUAL_ACTIVE_RECOVER_CONFIRM"
+msgstr "¿Recuperar el perfil mostrado usando copias de autoguardado verificadas? Se conservan los guardados originales y los ajustes actuales."
+
+msgid "MANUAL_ACTIVE_RECOVER_CURRENT"
+msgstr "Perfil actual: recupera {members} desde copias de autoguardado verificadas y conserva el resto del progreso válido."
+
+msgid "MANUAL_ACTIVE_RECOVER_OK"
+msgstr "Progreso del autoguardado recuperado."
+
+msgid "MANUAL_ACTIVE_RECOVER_PREVIOUS"
+msgstr "Restaura el perfil completo del autoguardado anterior. Todas las campañas y la zona de vida vuelven juntas y pueden diferir de los últimos autoguardados. Se conservan los guardados originales actuales y los ajustes."
+
+msgid "MANUAL_AUTOSAVE_LOAD"
+msgstr "Cargar autoguardado del escenario actual"
+
+msgid "MANUAL_AUTOSAVE_LOAD_TIP"
+msgstr "Carga el último autoguardado del escenario actual. Usa una ranura manual para restaurar todo el progreso."
+
+msgid "MANUAL_CURRENT_MISSION"
+msgstr "Misión actual: {mission}"
+
+msgid "MANUAL_LOAD_ACTION"
+msgstr "Cargar esta ranura"
+
+msgid "MANUAL_LOAD_CONFIRM"
+msgstr "¿Cargar la ranura {slot}? Todas las campañas principales, las comisiones opcionales y la zona de vida volverán a ese punto. Los ajustes se mantienen; los autoguardados se conservan por separado."
+
+msgid "MANUAL_LOAD_OK"
+msgstr "Todo el progreso se cargó desde la ranura {slot}."
+
+msgid "MANUAL_OPERATION_FAILED"
+msgstr "No se pudo completar la operación. Código: {code}"
+
+msgid "MANUAL_OVERWRITE_CONFIRM"
+msgstr "¿Sobrescribir el guardado manual de la ranura {slot} con todo tu progreso actual?"
+
+msgid "MANUAL_PROFILE_RECOVERY"
+msgstr "Elige un guardado para recuperar"
+
+msgid "MANUAL_PROFILE_RECOVERY_HELP"
+msgstr "No se pudo restaurar el progreso actual. Recupera copias de autoguardado verificadas o carga una ranura manual válida. Se conservan los guardados originales y los ajustes actuales."
+
+msgid "MANUAL_SAVES"
+msgstr "Guardar / Cargar"
+
+msgid "MANUAL_SAVES_HELP"
+msgstr "Las cinco ranuras se comparten entre todos los escenarios. Cada guardado restaura juntas las campañas principales, las comisiones opcionales y la zona de vida. Los ajustes se mantienen; los autoguardados se conservan por separado."
+
+msgid "MANUAL_SAVES_TITLE"
+msgstr "Cinco ranuras de guardado manual"
+
+msgid "MANUAL_SAVE_ACTION"
+msgstr "Guardar en esta ranura"
+
+msgid "MANUAL_SAVE_OK"
+msgstr "Todo el progreso se guardó en la ranura {slot}."
+
+msgid "MANUAL_SLOT"
+msgstr "Ranura {slot}"
+
+msgid "MANUAL_SLOT_BACKUP_CONFIRM"
+msgstr "¿Cargar la copia de la ranura {slot}? Se restauran juntas todas las campañas principales, las comisiones opcionales y la zona de vida. Se conservan los guardados originales y los ajustes actuales."
+
+msgid "MANUAL_SLOT_BACKUP_LOAD"
+msgstr "Cargar copia de la ranura"
+
+msgid "MANUAL_SLOT_DAMAGED"
+msgstr "Guardado dañado o ilegible"
+
+msgid "MANUAL_SLOT_EMPTY"
+msgstr "Vacía"
+
+msgid "MANUAL_SLOT_PROGRESS"
+msgstr "Completados: {done}/{total}"
+
+msgid "MANUAL_SLOT_SAVED_AT"
+msgstr "Guardado: {datetime}"
+
 msgid "MASTER_VOLUME"
 msgstr "Volumen general"
 
@@ -6115,6 +6214,15 @@ msgstr "Estudio: WASD para moverte, mantén clic derecho para mirar, E para usar
 
 msgid "SETTINGS_CONTROLS_TAB"
 msgstr "Controles"
+
+msgid "SETTINGS_DESKTOP_EFFECTS"
+msgstr "Permitir efectos en la ventana del juego"
+
+msgid "SETTINGS_DESKTOP_EFFECTS_NOTE"
+msgstr "Opcional: mueve brevemente esta ventana y cambia su título; después restaura ambos. No afecta a otras aplicaciones, archivos ni entradas. Puedes desactivarlo cuando quieras. Aplica, vuelve a abrir Ajustes y prueba la vista previa."
+
+msgid "SETTINGS_DESKTOP_EFFECTS_PREVIEW"
+msgstr "Ver efecto de ventana"
 
 msgid "SETTINGS_DISPLAY"
 msgstr "Pantalla y comodidad"
@@ -7339,6 +7447,9 @@ msgstr "Recursos y límites"
 
 msgid "UI_IAM_ROLES"
 msgstr "Roles y reglas"
+
+msgid "UI_IAM_STALE"
+msgstr "Los ajustes cambiaron. Vuelve a comprobar las solicitudes con la configuración actual."
 
 msgid "UI_IMPORT_FAILED"
 msgstr "No se pudo importar M01 anterior ({code}). El original no cambió.\n{detail}"

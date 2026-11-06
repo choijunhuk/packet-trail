@@ -7286,5 +7286,301 @@
     "WASD移动 · 按住鼠标右键环顾 · 靠近后按E互动 · Esc菜单",
     "WASD: moverse · Botón derecho: mirar · E cerca: interactuar · Esc: menú",
     "WASD: bewegen · Rechte Maustaste: umsehen · E in der Nähe: interagieren · Esc: Menü"
+  ],
+  "HAB_UNAPPLIED_CHANGES": [
+    "적용되지 않은 변경이 있습니다. 설정을 적용한 뒤 확인하세요.",
+    "You have unapplied changes. Apply the settings before checking.",
+    "未適用の変更があります。設定を適用してから確認してください。",
+    "有尚未应用的更改。请先应用设置，再进行验证。",
+    "Hay cambios sin aplicar. Aplica los ajustes antes de comprobar.",
+    "Es gibt nicht angewendete Änderungen. Wende die Einstellungen vor der Prüfung an."
+  ],
+  "HAB_FRESH": [
+    "생활 공간 새로 시작",
+    "Restart living space",
+    "生活スペースをやり直す",
+    "重新开始生活空间",
+    "Reiniciar espacio personal",
+    "Wohnbereich neu starten"
+  ],
+  "HAB_FRESH_CONFIRM": [
+    "생활 공간의 크레딧·주문·장비·현장 일감을 초기화합니다. 기존 생활 저장 파일은 따로 보존하며, 본편과 선택 의뢰의 진행은 바뀌지 않습니다. 새로 시작할까요?",
+    "Reset living-space credits, orders, equipment and the outdoor job? Existing living save files will be preserved separately. Main campaigns and optional commissions are unchanged.",
+    "生活スペースのクレジット・注文・装備・屋外の依頼を初期化しますか？既存の生活セーブは別に保存します。本編と任意の依頼の進行は変わりません。",
+    "要重置生活空间的点数、订单、设备和户外任务吗？原有生活存档会另行保留。主线和可选委托进度不受影响。",
+    "¿Restablecer créditos, pedidos, equipo y encargo exterior del espacio personal? Los archivos anteriores se conservarán aparte. Las campañas y encargos opcionales no cambiarán.",
+    "Credits, Bestellungen, Ausstattung und Außenauftrag des Wohnbereichs zurücksetzen? Vorhandene Wohnspielstände bleiben separat erhalten. Hauptkampagnen und optionale Aufträge bleiben unverändert."
+  ],
+  "HABITAT_FRESH": [
+    "기존 파일을 보존하고 생활 공간을 새로 시작했습니다.",
+    "Living space restarted; previous files were preserved.",
+    "以前のファイルを保存し、生活スペースをやり直しました。",
+    "已保留原有文件并重新开始生活空间。",
+    "Espacio personal reiniciado; se conservaron los archivos anteriores.",
+    "Wohnbereich neu gestartet; vorherige Dateien wurden aufbewahrt."
+  ],
+  "UI_IAM_STALE": [
+    "설정이 바뀌어 이전 검사 결과를 다시 확인해야 합니다. 표시된 요청을 현재 설정으로 다시 검사하세요.",
+    "Settings changed. Recheck the displayed requests against the current configuration.",
+    "設定が変わったため、表示されたリクエストを現在の設定で再検査してください。",
+    "设置已更改。请使用当前配置重新检查显示的请求。",
+    "Los ajustes cambiaron. Vuelve a comprobar las solicitudes con la configuración actual.",
+    "Die Einstellungen wurden geändert. Prüfe die angezeigten Anfragen erneut mit der aktuellen Konfiguration."
+  ],
+  "MANUAL_SAVES": [
+    "수동 저장 / 불러오기",
+    "Manual saves / Load",
+    "手動セーブ／ロード",
+    "手动保存 / 读取",
+    "Guardar / Cargar",
+    "Manuell speichern / Laden"
+  ],
+  "MANUAL_SAVES_TITLE": [
+    "수동 저장 슬롯 5개",
+    "Five manual save slots",
+    "手動セーブスロット（5個）",
+    "5 个手动存档槽",
+    "Cinco ranuras de guardado manual",
+    "Fünf manuelle Speicherplätze"
+  ],
+  "MANUAL_SAVES_HELP": [
+    "슬롯 5개를 모든 시나리오에서 함께 사용합니다. 본편·선택 의뢰 전체와 생활 공간을 한 번에 저장하고 복원합니다. 설정은 되돌리지 않으며 자동 저장은 별도로 유지됩니다.",
+    "Five slots are shared across all scenarios. Each save restores all main campaigns, optional commissions and living-space progress together. Settings stay as they are; autosaves are kept separately.",
+    "5個のスロットをすべてのシナリオで共有します。本編・任意依頼のすべてと生活空間の進行をまとめて保存・復元します。設定は変わらず、オートセーブは別に保持されます。",
+    "所有场景共用 5 个存档槽。每次保存和恢复都包含全部主线、可选委托及生活空间进度。设置保持不变，自动存档单独保留。",
+    "Las cinco ranuras se comparten entre todos los escenarios. Cada guardado restaura juntas las campañas principales, las comisiones opcionales y la zona de vida. Los ajustes se mantienen; los autoguardados se conservan por separado.",
+    "Alle Szenarien teilen sich fünf Speicherplätze. Jeder Spielstand speichert und stellt alle Hauptkampagnen, optionalen Aufträge und den Wohnbereich gemeinsam wieder her. Einstellungen bleiben erhalten; automatische Spielstände werden separat aufbewahrt."
+  ],
+  "MANUAL_SLOT": [
+    "슬롯 {slot}",
+    "Slot {slot}",
+    "スロット {slot}",
+    "存档槽 {slot}",
+    "Ranura {slot}",
+    "Speicherplatz {slot}"
+  ],
+  "MANUAL_SLOT_EMPTY": [
+    "비어 있음",
+    "Empty",
+    "空き",
+    "空",
+    "Vacía",
+    "Leer"
+  ],
+  "MANUAL_SLOT_DAMAGED": [
+    "손상되었거나 읽을 수 없는 저장",
+    "Damaged or unreadable save",
+    "破損しているか読み込めないセーブ",
+    "存档已损坏或无法读取",
+    "Guardado dañado o ilegible",
+    "Beschädigter oder unlesbarer Spielstand"
+  ],
+  "MANUAL_SLOT_PROGRESS": [
+    "완료 {done}/{total}",
+    "Completed {done}/{total}",
+    "完了 {done}/{total}",
+    "已完成 {done}/{total}",
+    "Completados: {done}/{total}",
+    "Abgeschlossen: {done}/{total}"
+  ],
+  "MANUAL_SLOT_SAVED_AT": [
+    "저장 일시: {datetime}",
+    "Saved: {datetime}",
+    "保存日時：{datetime}",
+    "保存时间：{datetime}",
+    "Guardado: {datetime}",
+    "Gespeichert: {datetime}"
+  ],
+  "MANUAL_CURRENT_MISSION": [
+    "현재 임무: {mission}",
+    "Current mission: {mission}",
+    "現在のミッション：{mission}",
+    "当前任务：{mission}",
+    "Misión actual: {mission}",
+    "Aktuelle Mission: {mission}"
+  ],
+  "MANUAL_SAVE_ACTION": [
+    "이 슬롯에 저장",
+    "Save to this slot",
+    "このスロットに保存",
+    "保存到此存档槽",
+    "Guardar en esta ranura",
+    "Hier speichern"
+  ],
+  "MANUAL_LOAD_ACTION": [
+    "이 슬롯 불러오기",
+    "Load this slot",
+    "このスロットをロード",
+    "读取此存档槽",
+    "Cargar esta ranura",
+    "Diesen Spielstand laden"
+  ],
+  "MANUAL_OVERWRITE_CONFIRM": [
+    "슬롯 {slot}의 기존 수동 저장을 현재 전체 진행으로 덮어쓸까요?",
+    "Overwrite the manual save in slot {slot} with your current overall progress?",
+    "スロット {slot} の手動セーブを現在の全体の進行で上書きしますか？",
+    "用当前全部进度覆盖存档槽 {slot} 中的手动存档？",
+    "¿Sobrescribir el guardado manual de la ranura {slot} con todo tu progreso actual?",
+    "Den manuellen Spielstand auf Speicherplatz {slot} mit deinem gesamten aktuellen Fortschritt überschreiben?"
+  ],
+  "MANUAL_LOAD_CONFIRM": [
+    "슬롯 {slot}을 불러올까요? 본편·선택 의뢰 전체와 생활 공간이 저장 시점으로 돌아갑니다. 설정은 유지되며 자동 저장은 별도로 보관됩니다.",
+    "Load slot {slot}? All main campaigns, optional commissions and living-space progress return to this save point. Settings stay as they are; autosaves are kept separately.",
+    "スロット {slot} をロードしますか？本編・任意依頼のすべてと生活空間が保存時点に戻ります。設定は変わらず、オートセーブは別に保持されます。",
+    "读取存档槽 {slot}？全部主线、可选委托及生活空间进度将恢复至保存时的状态。设置保持不变，自动存档单独保留。",
+    "¿Cargar la ranura {slot}? Todas las campañas principales, las comisiones opcionales y la zona de vida volverán a ese punto. Los ajustes se mantienen; los autoguardados se conservan por separado.",
+    "Speicherplatz {slot} laden? Alle Hauptkampagnen, optionalen Aufträge und der Wohnbereich kehren zu diesem Stand zurück. Einstellungen bleiben erhalten; automatische Spielstände werden separat aufbewahrt."
+  ],
+  "MANUAL_SAVE_OK": [
+    "전체 진행을 슬롯 {slot}에 저장했습니다.",
+    "Overall progress saved to slot {slot}.",
+    "全体の進行をスロット {slot} に保存しました。",
+    "已将全部进度保存到存档槽 {slot}。",
+    "Todo el progreso se guardó en la ranura {slot}.",
+    "Gesamten Fortschritt auf Speicherplatz {slot} gespeichert."
+  ],
+  "MANUAL_LOAD_OK": [
+    "슬롯 {slot}의 전체 진행을 불러왔습니다.",
+    "Overall progress loaded from slot {slot}.",
+    "スロット {slot} から全体の進行をロードしました。",
+    "已从存档槽 {slot} 读取全部进度。",
+    "Todo el progreso se cargó desde la ranura {slot}.",
+    "Gesamten Fortschritt von Speicherplatz {slot} geladen."
+  ],
+  "MANUAL_OPERATION_FAILED": [
+    "작업을 완료하지 못했습니다. 코드: {code}",
+    "The operation could not be completed. Code: {code}",
+    "操作を完了できませんでした。コード：{code}",
+    "无法完成操作。代码：{code}",
+    "No se pudo completar la operación. Código: {code}",
+    "Der Vorgang konnte nicht abgeschlossen werden. Code: {code}"
+  ],
+  "MANUAL_PROFILE_RECOVERY": [
+    "복구할 저장 선택",
+    "Choose a recovery save",
+    "復元するセーブを選択",
+    "选择用于恢复的存档",
+    "Elige un guardado para recuperar",
+    "Spielstand zur Wiederherstellung wählen"
+  ],
+  "MANUAL_PROFILE_RECOVERY_HELP": [
+    "현재 진행을 복원하지 못했습니다. 검증된 자동 저장 백업으로 복구하거나 정상적인 수동 저장 슬롯을 불러오세요. 기존 저장은 별도로 보존하고 설정은 유지합니다.",
+    "The current progress could not be restored. Recover from verified autosave backups or load a valid manual save slot. Original saves are preserved and settings stay as they are.",
+    "現在の進行を復元できませんでした。検証済みのオートセーブのバックアップから復元するか、有効な手動セーブをロードしてください。元のセーブは別に保存され、設定は変わりません。",
+    "无法恢复当前进度。请从已验证的自动存档备份恢复，或读取有效的手动存档槽。原存档将另行保留，设置保持不变。",
+    "No se pudo restaurar el progreso actual. Recupera copias de autoguardado verificadas o carga una ranura manual válida. Se conservan los guardados originales y los ajustes actuales.",
+    "Der aktuelle Fortschritt konnte nicht wiederhergestellt werden. Stelle geprüfte automatische Sicherungen wieder her oder lade einen gültigen manuellen Spielstand. Ursprüngliche Spielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+  ],
+  "MANUAL_AUTOSAVE_LOAD": [
+    "현재 시나리오 자동 저장 불러오기",
+    "Load current scenario autosave",
+    "現在のシナリオのオートセーブをロード",
+    "读取当前场景的自动存档",
+    "Cargar autoguardado del escenario actual",
+    "Automatischen Spielstand des aktuellen Szenarios laden"
+  ],
+  "MANUAL_AUTOSAVE_LOAD_TIP": [
+    "현재 시나리오의 최근 자동 저장을 불러옵니다. 전체 진행을 복원하려면 수동 저장 슬롯을 사용하세요.",
+    "Load the latest autosave for the current scenario. Use a manual save slot to restore overall progress.",
+    "現在のシナリオの最新オートセーブをロードします。全体の進行を復元するには手動セーブスロットを使ってください。",
+    "读取当前场景的最新自动存档。要恢复全部进度，请使用手动存档槽。",
+    "Carga el último autoguardado del escenario actual. Usa una ranura manual para restaurar todo el progreso.",
+    "Lädt den letzten automatischen Spielstand des aktuellen Szenarios. Nutze einen manuellen Speicherplatz, um den gesamten Fortschritt wiederherzustellen."
+  ],
+  "SETTINGS_DESKTOP_EFFECTS": [
+    "실제 게임 창 연출 허용",
+    "Allow effects on the game window",
+    "実際のゲームウィンドウの演出を許可",
+    "允许游戏窗口演出效果",
+    "Permitir efectos en la ventana del juego",
+    "Effekte am Spielfenster erlauben"
+  ],
+  "SETTINGS_DESKTOP_EFFECTS_NOTE": [
+    "선택 사항: 이 게임 창만 잠깐 움직이고 제목이 바뀐 뒤 원래대로 돌아옵니다. 다른 앱·파일·입력에는 관여하지 않습니다. 언제든 끌 수 있습니다. 적용 후 설정을 다시 열어 미리 보세요.",
+    "Optional: briefly moves this game window and changes its title, then restores both. Other apps, files and input are untouched. Disable anytime. Apply, reopen Settings, then preview.",
+    "任意設定：このゲームのウィンドウだけが一瞬動き、タイトルが変わった後、元に戻ります。他のアプリ・ファイル・入力には触れません。いつでも無効にできます。適用後、設定を開き直してプレビューしてください。",
+    "可选：仅短暂移动本游戏窗口并更改标题，随后恢复原位和原标题。不会影响其他应用、文件或输入，可随时关闭。应用后重新打开设置即可预览。",
+    "Opcional: mueve brevemente esta ventana y cambia su título; después restaura ambos. No afecta a otras aplicaciones, archivos ni entradas. Puedes desactivarlo cuando quieras. Aplica, vuelve a abrir Ajustes y prueba la vista previa.",
+    "Optional: Bewegt kurz dieses Spielfenster und ändert seinen Titel; danach wird beides wiederhergestellt. Andere Apps, Dateien und Eingaben bleiben unberührt. Jederzeit abschaltbar. Anwenden, Einstellungen erneut öffnen und Vorschau starten."
+  ],
+  "SETTINGS_DESKTOP_EFFECTS_PREVIEW": [
+    "게임 창 연출 미리 보기",
+    "Preview game-window effect",
+    "ウィンドウ演出をプレビュー",
+    "预览游戏窗口效果",
+    "Ver efecto de ventana",
+    "Fenstereffekt ansehen"
+  ],
+  "MANUAL_ACTIVE_RECOVER": [
+    "자동 저장 백업으로 복구",
+    "Recover autosave backups",
+    "オートセーブのバックアップから復元",
+    "从自动存档备份恢复",
+    "Recuperar copias de autoguardado",
+    "Automatische Sicherungen wiederherstellen"
+  ],
+  "MANUAL_ACTIVE_RECOVER_CURRENT": [
+    "현재 진행: {members}을(를) 검증된 자동 저장 백업으로 복구하고, 나머지 정상 진행은 유지합니다.",
+    "Current profile: recover {members} from verified autosave backups and keep other valid progress.",
+    "現在の進行：{members} を検証済みのオートセーブのバックアップから復元し、他の正常な進行は維持します。",
+    "当前进度：从已验证的自动存档备份恢复 {members}，保留其他有效进度。",
+    "Perfil actual: recupera {members} desde copias de autoguardado verificadas y conserva el resto del progreso válido.",
+    "Aktueller Spielstand: {members} aus geprüften automatischen Sicherungen wiederherstellen und den übrigen gültigen Fortschritt behalten."
+  ],
+  "MANUAL_ACTIVE_RECOVER_PREVIOUS": [
+    "이전 전체 자동 저장을 복구합니다. 모든 캠페인과 생활 공간을 함께 되돌리므로 최신 자동 저장과 다를 수 있습니다. 현재 원본 저장은 보존하고 설정은 유지합니다.",
+    "Restore the previous complete autosave profile. All campaigns and living space return together and may differ from the latest autosaves. Current original saves are preserved and settings stay as they are.",
+    "前回の完全なオートセーブを復元します。すべてのキャンペーンと生活空間をまとめて戻すため、最新のオートセーブとは異なる場合があります。現在の元のセーブは保存され、設定は変わりません。",
+    "恢复上一个完整自动存档。所有战役与生活空间将一同恢复，可能与最新自动存档不同。当前原存档将保留，设置保持不变。",
+    "Restaura el perfil completo del autoguardado anterior. Todas las campañas y la zona de vida vuelven juntas y pueden diferir de los últimos autoguardados. Se conservan los guardados originales actuales y los ajustes.",
+    "Vorherigen vollständigen automatischen Spielstand wiederherstellen. Alle Kampagnen und der Wohnbereich kehren gemeinsam zurück und können von den neuesten automatischen Spielständen abweichen. Aktuelle Originalspielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+  ],
+  "MANUAL_ACTIVE_RECOVER_CONFIRM": [
+    "표시된 전체 진행을 검증된 자동 저장 백업으로 복구할까요? 기존 저장은 별도로 보존하고 설정은 유지합니다.",
+    "Recover the displayed progress profile using verified autosave backups? Original saves are preserved and settings stay as they are.",
+    "表示された進行を検証済みのオートセーブのバックアップから復元しますか？元のセーブは別に保存され、設定は変わりません。",
+    "使用已验证的自动存档备份恢复所示进度？原存档将另行保留，设置保持不变。",
+    "¿Recuperar el perfil mostrado usando copias de autoguardado verificadas? Se conservan los guardados originales y los ajustes actuales.",
+    "Den angezeigten Spielstand aus geprüften automatischen Sicherungen wiederherstellen? Ursprüngliche Spielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+  ],
+  "MANUAL_ACTIVE_RECOVER_OK": [
+    "자동 저장 진행을 복구했습니다.",
+    "Autosave progress recovered.",
+    "オートセーブの進行を復元しました。",
+    "已恢复自动存档进度。",
+    "Progreso del autoguardado recuperado.",
+    "Automatisch gespeicherten Fortschritt wiederhergestellt."
+  ],
+  "MANUAL_SLOT_BACKUP_LOAD": [
+    "슬롯 백업 불러오기",
+    "Load slot backup",
+    "スロットのバックアップをロード",
+    "读取存档槽备份",
+    "Cargar copia de la ranura",
+    "Sicherung des Speicherplatzes laden"
+  ],
+  "MANUAL_SLOT_BACKUP_CONFIRM": [
+    "슬롯 {slot}의 백업을 불러올까요? 본편·선택 의뢰 전체와 생활 공간이 함께 복원됩니다. 기존 저장은 별도로 보존하고 설정은 유지합니다.",
+    "Load the backup of slot {slot}? All main campaigns, optional commissions and living space are restored together. Original saves are preserved and settings stay as they are.",
+    "スロット {slot} のバックアップをロードしますか？本編・任意依頼のすべてと生活空間をまとめて復元します。元のセーブは別に保存され、設定は変わりません。",
+    "读取存档槽 {slot} 的备份？全部主线、可选委托与生活空间将一同恢复。原存档将另行保留，设置保持不变。",
+    "¿Cargar la copia de la ranura {slot}? Se restauran juntas todas las campañas principales, las comisiones opcionales y la zona de vida. Se conservan los guardados originales y los ajustes actuales.",
+    "Sicherung von Speicherplatz {slot} laden? Alle Hauptkampagnen, optionalen Aufträge und der Wohnbereich werden gemeinsam wiederhergestellt. Ursprüngliche Spielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+  ],
+  "LEGACY_SOURCE_IMPORT": [
+    "보존판 진행 가져오기",
+    "Import preserved-edition progress",
+    "保存版の進行を取り込む",
+    "导入保留版进度",
+    "Importar progreso de la edición conservada",
+    "Fortschritt der erhaltenen Fassung importieren"
+  ],
+  "LEGACY_SOURCE_IMPORT_CONFIRM": [
+    "보존된 원본 캠페인 진행을 이 프로필로 복사할까요? 원본 파일과 다른 캠페인은 그대로 유지됩니다.",
+    "Copy the preserved original campaign into this profile? The original file and other campaigns remain unchanged.",
+    "保存された元のキャンペーンの進行をこのプロフィールにコピーしますか？元のファイルと他のキャンペーンはそのまま維持されます。",
+    "将保留的原版战役进度复制到此档案？原文件及其他战役保持不变。",
+    "¿Copiar la campaña original conservada a este perfil? El archivo original y las demás campañas se mantienen sin cambios.",
+    "Die erhaltene ursprüngliche Kampagne in dieses Profil kopieren? Die Originaldatei und andere Kampagnen bleiben unverändert."
   ]
 }

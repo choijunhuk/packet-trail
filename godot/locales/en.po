@@ -1391,6 +1391,9 @@ msgstr "Orders collected. You can equip the items in Deskshop."
 msgid "HABITAT_EQUIPPED"
 msgstr "Equipment appearance changed and saved."
 
+msgid "HABITAT_FRESH"
+msgstr "Living space restarted; previous files were preserved."
+
 msgid "HABITAT_INSPECTION_REQUIRED"
 msgstr "Inspect the cabinet for the accepted job first."
 
@@ -1498,6 +1501,12 @@ msgstr "Equip"
 
 msgid "HAB_EQUIPPED"
 msgstr "Equipped"
+
+msgid "HAB_FRESH"
+msgstr "Restart living space"
+
+msgid "HAB_FRESH_CONFIRM"
+msgstr "Reset living-space credits, orders, equipment and the outdoor job? Existing living save files will be preserved separately. Main campaigns and optional commissions are unchanged."
 
 msgid "HAB_INSPECT"
 msgstr "Inspect current cabinet"
@@ -1630,6 +1639,9 @@ msgstr "Neighborhood noticeboard"
 
 msgid "HAB_TITLE_SHOP"
 msgstr "Deskshop"
+
+msgid "HAB_UNAPPLIED_CHANGES"
+msgstr "You have unapplied changes. Apply the settings before checking."
 
 msgid "HAB_VERIFY"
 msgstr "Verify telemetry and unauthorized access"
@@ -3558,7 +3570,7 @@ msgid "IV1_I02_HINT_2"
 msgstr "Authentic provenance can still describe overbroad behavior. Test legitimate service and notifications together with outside-scope requests."
 
 msgid "IV1_I02_HINT_3"
-msgstr "Verify and restore the known-good prior release, or rebuild approved inputs. After current service checks, report public digests from stable_evidence and delivered_evidence and answer the recipient’s follow-up."
+msgstr "Verify and restore the known-good prior release, or rebuild approved inputs. After current service checks, report public digests from Independent Registry Comparison and Delivered Package Evidence and answer the recipient’s follow-up."
 
 msgid "IV1_I02_LIMIT"
 msgstr "This optional commission is not required for the main story or its endings. It does not reproduce external services or every security rule. Mistaken changes can be restored to the initial configuration."
@@ -3634,6 +3646,12 @@ msgstr "Continue previous edition"
 
 msgid "LEGACY_CONTINUE_DESC"
 msgstr "Resume the previous edition. Its progress stays separate from the new campaigns."
+
+msgid "LEGACY_SOURCE_IMPORT"
+msgstr "Import preserved-edition progress"
+
+msgid "LEGACY_SOURCE_IMPORT_CONFIRM"
+msgstr "Copy the preserved original campaign into this profile? The original file and other campaigns remain unchanged."
 
 msgid "LEGACY_SOURCE_UNSUPPORTED"
 msgstr "A previous-edition save was found but could not be validated. The original is preserved and is not applied to new campaigns. Reason: {code}"
@@ -5702,6 +5720,87 @@ msgstr "The Last Access, the Remaining Truth"
 msgid "MAIL"
 msgstr "Mail"
 
+msgid "MANUAL_ACTIVE_RECOVER"
+msgstr "Recover autosave backups"
+
+msgid "MANUAL_ACTIVE_RECOVER_CONFIRM"
+msgstr "Recover the displayed progress profile using verified autosave backups? Original saves are preserved and settings stay as they are."
+
+msgid "MANUAL_ACTIVE_RECOVER_CURRENT"
+msgstr "Current profile: recover {members} from verified autosave backups and keep other valid progress."
+
+msgid "MANUAL_ACTIVE_RECOVER_OK"
+msgstr "Autosave progress recovered."
+
+msgid "MANUAL_ACTIVE_RECOVER_PREVIOUS"
+msgstr "Restore the previous complete autosave profile. All campaigns and living space return together and may differ from the latest autosaves. Current original saves are preserved and settings stay as they are."
+
+msgid "MANUAL_AUTOSAVE_LOAD"
+msgstr "Load current scenario autosave"
+
+msgid "MANUAL_AUTOSAVE_LOAD_TIP"
+msgstr "Load the latest autosave for the current scenario. Use a manual save slot to restore overall progress."
+
+msgid "MANUAL_CURRENT_MISSION"
+msgstr "Current mission: {mission}"
+
+msgid "MANUAL_LOAD_ACTION"
+msgstr "Load this slot"
+
+msgid "MANUAL_LOAD_CONFIRM"
+msgstr "Load slot {slot}? All main campaigns, optional commissions and living-space progress return to this save point. Settings stay as they are; autosaves are kept separately."
+
+msgid "MANUAL_LOAD_OK"
+msgstr "Overall progress loaded from slot {slot}."
+
+msgid "MANUAL_OPERATION_FAILED"
+msgstr "The operation could not be completed. Code: {code}"
+
+msgid "MANUAL_OVERWRITE_CONFIRM"
+msgstr "Overwrite the manual save in slot {slot} with your current overall progress?"
+
+msgid "MANUAL_PROFILE_RECOVERY"
+msgstr "Choose a recovery save"
+
+msgid "MANUAL_PROFILE_RECOVERY_HELP"
+msgstr "The current progress could not be restored. Recover from verified autosave backups or load a valid manual save slot. Original saves are preserved and settings stay as they are."
+
+msgid "MANUAL_SAVES"
+msgstr "Manual saves / Load"
+
+msgid "MANUAL_SAVES_HELP"
+msgstr "Five slots are shared across all scenarios. Each save restores all main campaigns, optional commissions and living-space progress together. Settings stay as they are; autosaves are kept separately."
+
+msgid "MANUAL_SAVES_TITLE"
+msgstr "Five manual save slots"
+
+msgid "MANUAL_SAVE_ACTION"
+msgstr "Save to this slot"
+
+msgid "MANUAL_SAVE_OK"
+msgstr "Overall progress saved to slot {slot}."
+
+msgid "MANUAL_SLOT"
+msgstr "Slot {slot}"
+
+msgid "MANUAL_SLOT_BACKUP_CONFIRM"
+msgstr "Load the backup of slot {slot}? All main campaigns, optional commissions and living space are restored together. Original saves are preserved and settings stay as they are."
+
+msgid "MANUAL_SLOT_BACKUP_LOAD"
+msgstr "Load slot backup"
+
+msgid "MANUAL_SLOT_DAMAGED"
+msgstr "Damaged or unreadable save"
+
+msgid "MANUAL_SLOT_EMPTY"
+msgstr "Empty"
+
+msgid "MANUAL_SLOT_PROGRESS"
+msgstr "Completed {done}/{total}"
+
+msgid "MANUAL_SLOT_SAVED_AT"
+msgstr "Saved: {datetime}"
+
 msgid "MASTER_VOLUME"
 msgstr "Master volume"
 
@@ -6115,6 +6214,15 @@ msgstr "Room: WASD to move, hold right mouse to look, E to use the computer and 
 
 msgid "SETTINGS_CONTROLS_TAB"
 msgstr "Controls"
+
+msgid "SETTINGS_DESKTOP_EFFECTS"
+msgstr "Allow effects on the game window"
+
+msgid "SETTINGS_DESKTOP_EFFECTS_NOTE"
+msgstr "Optional: briefly moves this game window and changes its title, then restores both. Other apps, files and input are untouched. Disable anytime. Apply, reopen Settings, then preview."
+
+msgid "SETTINGS_DESKTOP_EFFECTS_PREVIEW"
+msgstr "Preview game-window effect"
 
 msgid "SETTINGS_DISPLAY"
 msgstr "Display and comfort"
@@ -7339,6 +7447,9 @@ msgstr "Resources and boundaries"
 
 msgid "UI_IAM_ROLES"
 msgstr "Roles and rules"
+
+msgid "UI_IAM_STALE"
+msgstr "Settings changed. Recheck the displayed requests against the current configuration."
 
 msgid "UI_IMPORT_FAILED"
 msgstr "The legacy M01 save could not be imported ({code}). The original is unchanged.\n{detail}"

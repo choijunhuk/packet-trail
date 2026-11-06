@@ -76,14 +76,9 @@ static func goal_met(definition: Dictionary, state: Dictionary, _context: Dictio
 	if not _valid_state(definition, state) or definition.get("required_requests", []).is_empty():
 		return false
 	for id in definition.required_requests:
-		if not definition.get("requests", {}).has(id) or not state.probe_receipts.get(id) is Dictionary:
+		if not definition.get("requests", {}).has(id) or not _receipt_current(definition, state, id):
 			return false
-		var observed: Dictionary = state.probe_receipts[id]
-		var route: Variant = observed.get("route_id")
-		if not route is String or _credential_for(definition.requests[id], route).is_empty():
-			return false
-		var current: Dictionary = _receipt(definition, state, id, route)
-		if not observed.recursive_equal(current, 0) or current.decision != definition.requests[id].expect:
+		if state.probe_receipts[id].decision != definition.requests[id].expect:
 			return false
 	return true
 
@@ -107,13 +102,26 @@ static func public_data(definition: Dictionary, previous: Dictionary, _context: 
 		result.credentials.append({"credential_ref": ref, "principal_id": credential.principal_id, "expires_tick": credential.expires_tick, "revoked": state.revoked[ref], "expired": int(state.tick) >= int(credential.expires_tick)})
 	for id in definition.requests:
 		var request: Dictionary = definition.requests[id]
-		result.requests.append({"request_id": id, "label": _tr(request.label), "action": request.action, "resource_id": request.resource_id, "expect": request.expect, "route_options": ["direct"] + request.get("routes", {}).keys(), "observed": state.probe_receipts.get(id, {}).duplicate(true)})
+		result.requests.append({"request_id": id, "label": _tr(request.label), "action": request.action, "resource_id": request.resource_id, "expect": request.expect, "route_options": ["direct"] + request.get("routes", {}).keys(), "observed": state.probe_receipts.get(id, {}).duplicate(true), "current": _receipt_current(definition, state, id)})
 	result.probe_receipts = state.probe_receipts.duplicate(true)
 	return result
 
 
 static func _credential_for(request: Dictionary, route: String) -> String:
 	return str(request.get("credential_ref", "")) if route == "direct" else str(request.get("routes", {}).get(route, {}).get("credential_ref", ""))
+
+
+static func _receipt_current(definition: Dictionary, state: Dictionary, request_id: String) -> bool:
+	var observed: Variant = state.probe_receipts.get(request_id)
+	if not observed is Dictionary or not _integer(observed.get("tick"), 0, MAX_TICK):
+		return false
+	var route: Variant = observed.get("route_id")
+	if not route is String or _credential_for(definition.requests[request_id], route).is_empty():
+		return false
+	# JSON restores integer-valued ticks as floats; all other evidence stays exact.
+	var canonical: Dictionary = observed.duplicate(true)
+	canonical.tick = int(canonical.tick)
+	return canonical.recursive_equal(_receipt(definition, state, request_id, route), 0)
 
 
 static func _receipt(definition: Dictionary, state: Dictionary, request_id: String, route_id: String) -> Dictionary:

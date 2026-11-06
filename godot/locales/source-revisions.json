@@ -53,22 +53,22 @@
     "investigation": {
       "ko": {
         "path": "godot/data/campaign/locales/investigation_v1.ko.json",
-        "sha256": "1bd4e1cd8ccff564551183d70463110755bc8005090b346a2259a310c8075f30"
+        "sha256": "11ac88635c697195e5d1b24929357a6f0f0c39065df7ce19cf5f895c4c65465a"
       },
       "en": {
         "path": "godot/data/campaign/locales/investigation_v1.en.json",
-        "sha256": "7af162d9e98e2d273a3d8423d87f046c8086f6e084f86a5fa8a8c2204a342651"
+        "sha256": "a821e4c9a12757696996870f285627ceedbd49f63552b636371c18cf5d63e98e"
       }
     }
   },
   "ui": {
     "ko": {
       "path": "godot/assets/ui/strings_ko.json",
-      "sha256": "345edc89841c6a3f7e6105e399dff8c0c731831783a01956a6da839057874151"
+      "sha256": "e23556b1fcc81c1e84e9fb63a2210198b87662d65351a46e2c3bc281f4f7d335"
     },
     "en": {
       "path": "godot/assets/ui/strings_en.json",
-      "sha256": "09461226857e37c06f72181263437ecba223da5c6744267d77acc823daf8a4db"
+      "sha256": "6efe40ed7801e8446907af5500104abff986ec67707c331c2c5f6f8972915dc0"
     }
   }
 }

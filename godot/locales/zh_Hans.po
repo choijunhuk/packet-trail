@@ -1391,6 +1391,9 @@ msgstr "已领取。可在桌面商店装备。"
 msgid "HABITAT_EQUIPPED"
 msgstr "设备外观已更改并保存。"
 
+msgid "HABITAT_FRESH"
+msgstr "已保留原有文件并重新开始生活空间。"
+
 msgid "HABITAT_INSPECTION_REQUIRED"
 msgstr "请先检查已接受工作的通信柜。"
 
@@ -1498,6 +1501,12 @@ msgstr "装备"
 
 msgid "HAB_EQUIPPED"
 msgstr "已装备"
+
+msgid "HAB_FRESH"
+msgstr "重新开始生活空间"
+
+msgid "HAB_FRESH_CONFIRM"
+msgstr "要重置生活空间的点数、订单、设备和户外任务吗？原有生活存档会另行保留。主线和可选委托进度不受影响。"
 
 msgid "HAB_INSPECT"
 msgstr "检查当前通信柜"
@@ -1630,6 +1639,9 @@ msgstr "社区委托公告栏"
 
 msgid "HAB_TITLE_SHOP"
 msgstr "桌面商店"
+
+msgid "HAB_UNAPPLIED_CHANGES"
+msgstr "有尚未应用的更改。请先应用设置，再进行验证。"
 
 msgid "HAB_VERIFY"
 msgstr "验证遥测与未授权访问"
@@ -3558,7 +3570,7 @@ msgid "IV1_I02_HINT_2"
 msgstr "真实来源也可能描述越权行为。同时测试正常服务、通知及越界请求。"
 
 msgid "IV1_I02_HINT_3"
-msgstr "验证并恢复已知正常旧版，或重建批准输入。检查当前服务后，报告stable_evidence和delivered_evidence的公开摘要并回答后续问题。"
+msgstr "验证并恢复已知正常旧版，或重建批准输入。检查当前服务后，报告独立登记表对照和收到的软件包证据的公开摘要并回答后续问题。"
 
 msgid "IV1_I02_LIMIT"
 msgstr "此委托不是主线或结局必需内容，不复现外部服务或全部规则。误改可恢复初始配置。"
@@ -3634,6 +3646,12 @@ msgstr "继续旧版"
 
 msgid "LEGACY_CONTINUE_DESC"
 msgstr "原样继续旧版进度，与新战役分别保留。"
+
+msgid "LEGACY_SOURCE_IMPORT"
+msgstr "导入保留版进度"
+
+msgid "LEGACY_SOURCE_IMPORT_CONFIRM"
+msgstr "将保留的原版战役进度复制到此档案？原文件及其他战役保持不变。"
 
 msgid "LEGACY_SOURCE_UNSUPPORTED"
 msgstr "找到旧版存档，但未通过当前验证。原件会保留，不会应用到新战役。原因：{code}"
@@ -5702,6 +5720,87 @@ msgstr "最后的访问，留下的真相"
 msgid "MAIL"
 msgstr "邮件"
 
+msgid "MANUAL_ACTIVE_RECOVER"
+msgstr "从自动存档备份恢复"
+
+msgid "MANUAL_ACTIVE_RECOVER_CONFIRM"
+msgstr "使用已验证的自动存档备份恢复所示进度？原存档将另行保留，设置保持不变。"
+
+msgid "MANUAL_ACTIVE_RECOVER_CURRENT"
+msgstr "当前进度：从已验证的自动存档备份恢复 {members}，保留其他有效进度。"
+
+msgid "MANUAL_ACTIVE_RECOVER_OK"
+msgstr "已恢复自动存档进度。"
+
+msgid "MANUAL_ACTIVE_RECOVER_PREVIOUS"
+msgstr "恢复上一个完整自动存档。所有战役与生活空间将一同恢复，可能与最新自动存档不同。当前原存档将保留，设置保持不变。"
+
+msgid "MANUAL_AUTOSAVE_LOAD"
+msgstr "读取当前场景的自动存档"
+
+msgid "MANUAL_AUTOSAVE_LOAD_TIP"
+msgstr "读取当前场景的最新自动存档。要恢复全部进度，请使用手动存档槽。"
+
+msgid "MANUAL_CURRENT_MISSION"
+msgstr "当前任务：{mission}"
+
+msgid "MANUAL_LOAD_ACTION"
+msgstr "读取此存档槽"
+
+msgid "MANUAL_LOAD_CONFIRM"
+msgstr "读取存档槽 {slot}？全部主线、可选委托及生活空间进度将恢复至保存时的状态。设置保持不变，自动存档单独保留。"
+
+msgid "MANUAL_LOAD_OK"
+msgstr "已从存档槽 {slot} 读取全部进度。"
+
+msgid "MANUAL_OPERATION_FAILED"
+msgstr "无法完成操作。代码：{code}"
+
+msgid "MANUAL_OVERWRITE_CONFIRM"
+msgstr "用当前全部进度覆盖存档槽 {slot} 中的手动存档？"
+
+msgid "MANUAL_PROFILE_RECOVERY"
+msgstr "选择用于恢复的存档"
+
+msgid "MANUAL_PROFILE_RECOVERY_HELP"
+msgstr "无法恢复当前进度。请从已验证的自动存档备份恢复，或读取有效的手动存档槽。原存档将另行保留，设置保持不变。"
+
+msgid "MANUAL_SAVES"
+msgstr "手动保存 / 读取"
+
+msgid "MANUAL_SAVES_HELP"
+msgstr "所有场景共用 5 个存档槽。每次保存和恢复都包含全部主线、可选委托及生活空间进度。设置保持不变，自动存档单独保留。"
+
+msgid "MANUAL_SAVES_TITLE"
+msgstr "5 个手动存档槽"
+
+msgid "MANUAL_SAVE_ACTION"
+msgstr "保存到此存档槽"
+
+msgid "MANUAL_SAVE_OK"
+msgstr "已将全部进度保存到存档槽 {slot}。"
+
+msgid "MANUAL_SLOT"
+msgstr "存档槽 {slot}"
+
+msgid "MANUAL_SLOT_BACKUP_CONFIRM"
+msgstr "读取存档槽 {slot} 的备份？全部主线、可选委托与生活空间将一同恢复。原存档将另行保留，设置保持不变。"
+
+msgid "MANUAL_SLOT_BACKUP_LOAD"
+msgstr "读取存档槽备份"
+
+msgid "MANUAL_SLOT_DAMAGED"
+msgstr "存档已损坏或无法读取"
+
+msgid "MANUAL_SLOT_EMPTY"
+msgstr "空"
+
+msgid "MANUAL_SLOT_PROGRESS"
+msgstr "已完成 {done}/{total}"
+
+msgid "MANUAL_SLOT_SAVED_AT"
+msgstr "保存时间：{datetime}"
+
 msgid "MASTER_VOLUME"
 msgstr "总音量"
 
@@ -6115,6 +6214,15 @@ msgstr "工作室：WASD 移动 · 按住鼠标右键转动视角 · E 使用电
 
 msgid "SETTINGS_CONTROLS_TAB"
 msgstr "操作"
+
+msgid "SETTINGS_DESKTOP_EFFECTS"
+msgstr "允许游戏窗口演出效果"
+
+msgid "SETTINGS_DESKTOP_EFFECTS_NOTE"
+msgstr "可选：仅短暂移动本游戏窗口并更改标题，随后恢复原位和原标题。不会影响其他应用、文件或输入，可随时关闭。应用后重新打开设置即可预览。"
+
+msgid "SETTINGS_DESKTOP_EFFECTS_PREVIEW"
+msgstr "预览游戏窗口效果"
 
 msgid "SETTINGS_DISPLAY"
 msgstr "显示与舒适度"
@@ -7339,6 +7447,9 @@ msgstr "资源与边界"
 
 msgid "UI_IAM_ROLES"
 msgstr "角色与规则"
+
+msgid "UI_IAM_STALE"
+msgstr "设置已更改。请使用当前配置重新检查显示的请求。"
 
 msgid "UI_IMPORT_FAILED"
 msgstr "无法导入旧版 M01 存档 ({code})，原件未改变。\n{detail}"

@@ -20,6 +20,8 @@ func run() -> Dictionary:
 	_test_cabinet()
 	_test_tampering()
 	_test_io_and_recovery()
+	_test_fresh_recovery()
+	_test_v1_fixture()
 	_test_paths()
 	_test_cosmetic_history()
 	_test_cabinet_history()
@@ -220,10 +222,81 @@ func _test_io_and_recovery() -> void:
 	_check(reopened.recover_backup().ok and reopened.get_view().balance == Habitat.STARTING_CREDITS - 100, "missing main can be explicitly restored from its known backup")
 
 
+func _test_fresh_recovery() -> void:
+	var healthy = _new("fresh-healthy")
+	_check(healthy.has_method("start_fresh"), "locked rooms expose an explicit preserved fresh-start API")
+	if not healthy.has_method("start_fresh"): return
+	_check(not healthy.start_fresh().ok and not FileAccess.file_exists(root_path + "/fresh-healthy.json"), "healthy unwritten starter room refuses recovery reset without writing")
+	_check(healthy.apply("order", {"product_id": "keyboard_ivory"}).ok, "seed healthy saved room for reset refusal")
+	var healthy_memory: Dictionary = healthy.export_snapshot()
+	var healthy_bytes := FileAccess.get_file_as_bytes(root_path + "/fresh-healthy.json")
+	_check(healthy.start_fresh().code == "RECOVERY_NOT_NEEDED" and healthy.export_snapshot() == healthy_memory and FileAccess.get_file_as_bytes(root_path + "/fresh-healthy.json") == healthy_bytes, "healthy saved room refuses reset without losing wallet or bytes")
+	for kind in ["corrupt", "future", "orphan-invalid", "orphan-valid", "corrupt-with-backup"]:
+		var path: String = root_path + "/fresh-" + kind + ".json"
+		var original := "{unreadable room state"
+		if kind == "future":
+			var future: Dictionary = healthy_memory.duplicate(true)
+			future.save_version = 99
+			original = JSON.stringify(future)
+		var orphan: bool = kind.begins_with("orphan-")
+		if not orphan: _write(path, original)
+		var backup := "{unreadable backup"
+		if kind in ["orphan-valid", "corrupt-with-backup"]: backup = JSON.stringify(healthy_memory)
+		if orphan or kind == "corrupt-with-backup": _write(path + ".bak", backup)
+		var had_backup := FileAccess.file_exists(path + ".bak")
+		var valid_backup: bool = kind in ["orphan-valid", "corrupt-with-backup"]
+		var store = Habitat.new(path)
+		_check(not store.load_state().ok and store.get_view().get("fresh_available", false) == not valid_backup, "fresh recovery is offered only without a valid room backup: " + kind)
+		_check(not store.apply("set_lighting", {"lighting": "dawn"}).ok and FileAccess.file_exists(path) == not orphan, "recovery lock never creates or replaces the primary automatically: " + kind)
+		var memory: Dictionary = store.export_snapshot()
+		if valid_backup:
+			var files := DirAccess.get_files_at(root_path)
+			var refused: Dictionary = store.start_fresh()
+			_check(not refused.ok and refused.code == "RECOVERY_NOT_NEEDED" and store.export_snapshot() == memory and store.get_view().recovery_available and not store.get_view().fresh_available, "valid room backup requires explicit backup recovery instead of fresh reset: " + kind)
+			_check(DirAccess.get_files_at(root_path) == files and (orphan or FileAccess.get_file_as_string(path) == original) and FileAccess.get_file_as_string(path + ".bak") == backup, "refused fresh reset never moves the valid backup or original: " + kind)
+			_check(store.recover_backup().ok and store.get_view().balance == 1320 and FileAccess.get_file_as_string(path + ".bak") == backup, "the in-game backup recovery path remains available: " + kind)
+			continue
+		DirAccess.make_dir_absolute(path + ".tmp")
+		_check(not store.start_fresh().ok and store.export_snapshot() == memory and not store.get_view().ready and store.get_view().fresh_available, "failed fresh staging preserves read-only memory and retry option: " + kind)
+		_check((orphan or FileAccess.get_file_as_string(path) == original) and (not had_backup or FileAccess.get_file_as_string(path + ".bak") == backup), "failed fresh staging preserves existing original and backup bytes: " + kind)
+		DirAccess.remove_absolute(path + ".tmp")
+		var started: Dictionary = store.start_fresh()
+		_check(started.ok and started.code == "HABITAT_FRESH" and store.get_view().ready and store.get_view().balance == 1500 and not store.get_view().fresh_available and not store.get_view().recovery_available, "explicit fresh recovery persists starter state and clears recovery choices: " + kind)
+		_check((orphan and started.damaged_path.is_empty()) or (not orphan and FileAccess.get_file_as_string(started.damaged_path) == original), "fresh recovery preserves the exact prior primary bytes: " + kind)
+		_check((not had_backup and started.damaged_backup_path.is_empty()) or (had_backup and FileAccess.get_file_as_string(started.damaged_backup_path) == backup), "fresh recovery preserves the exact prior backup bytes: " + kind)
+		var reopened = Habitat.new(path)
+		_check(reopened.load_state().ok and reopened.export_snapshot() == store.export_snapshot() and store.apply("set_lighting", {"lighting": "dawn"}).ok, "fresh room reloads and accepts later persisted actions: " + kind)
+	var appeared_path := root_path + "/fresh-backup-appeared.json"
+	_write(appeared_path, "{damaged before confirmation")
+	var waiting = Habitat.new(appeared_path)
+	_check(not waiting.load_state().ok and waiting.get_view().fresh_available, "fresh confirmation can be offered before a valid backup appears")
+	_write(appeared_path + ".bak", JSON.stringify(healthy_memory))
+	var appeared_files := DirAccess.get_files_at(root_path)
+	var appeared_backup := FileAccess.get_file_as_bytes(appeared_path + ".bak")
+	var declined: Dictionary = waiting.start_fresh()
+	_check(not declined.ok and declined.code == "RECOVERY_NOT_NEEDED" and not waiting.get_view().fresh_available and waiting.get_view().recovery_available, "fresh confirmation rechecks disk and prefers a newly available valid backup")
+	_check(DirAccess.get_files_at(root_path) == appeared_files and FileAccess.get_file_as_string(appeared_path) == "{damaged before confirmation" and FileAccess.get_file_as_bytes(appeared_path + ".bak") == appeared_backup, "a backup appearing during confirmation leaves both files in place")
+	_check(waiting.recover_backup().ok and waiting.get_view().balance == 1320, "backup discovered during confirmation remains recoverable in game")
+
+
+func _test_v1_fixture() -> void:
+	# Published v1 economics are a disk compatibility contract; do not regenerate from current constants.
+	var fixture := FileAccess.get_file_as_string("res://tests/fixtures/habitat_v1_economy.json")
+	var path := root_path + "/published-v1.json"
+	_write(path, fixture)
+	var store = Habitat.new(path)
+	_check(store.load_state().ok, "published v1 room fixture remains loadable across economy changes")
+	var view: Dictionary = store.get_view()
+	_check(view.balance == 380 and view.earned == 200 and view.owned.size() == 8 and view.orders.size() == 5, "v1 fixture preserves five fixed purchase prices, ownership and one reward")
+	_check(view.equipped == {"keyboard": "keyboard_coral", "monitor": "monitor_dual", "lamp": "lamp_cool"} and view.lighting == "dawn", "v1 fixture retains all equipped slots and lighting")
+	_check(view.job.rewarded and view.job.reward_receipt.get("route") == "service" and view.job.current_check.is_empty() and view.job.route == "public", "v1 fixture retains historical reward proof after a later cabinet reset")
+	_check(FileAccess.get_file_as_string(path) == fixture, "loading a v1 fixture never rewrites its original bytes")
+
+
 func _test_paths() -> void:
 	for path in ["", "user://saves/slot_01.json", "user://saves/intruder_v2_01.json", "user://settings.json", "res://host.json", "user://tests/../bad.json", "user://tests//bad.json", "user://tests\\bad.json", "user://tests/bad.txt", "user://tests/bad:\n.json"]:
 		var store = Habitat.new(path)
-		_check(not store.load_state().ok and not store.apply("order", {"product_id": "lamp_cool"}).ok, "invalid/private room paths never fall back to a real user slot")
+		_check(not store.load_state().ok and not store.apply("order", {"product_id": "lamp_cool"}).ok and not store.start_fresh().ok, "invalid/private room paths never fall back to a real user slot, including explicit fresh recovery")
 	var target := root_path + "/target.json"
 	_write(target, "owned target bytes")
 	var before := FileAccess.get_file_as_bytes(target)
@@ -236,7 +309,7 @@ func _test_paths() -> void:
 			else: _check(false, "create isolated habitat symlink")
 			continue
 		var store = Habitat.new(path)
-		_check(not store.load_state().ok and not store.apply("order", {"product_id": "lamp_cool"}).ok, "linked main/sidecars are rejected before reading or writing")
+		_check(not store.load_state().ok and not store.apply("order", {"product_id": "lamp_cool"}).ok and not store.start_fresh().ok, "linked main/sidecars are rejected before reading, writing or fresh recovery")
 		_check(FileAccess.get_file_as_bytes(target) == before, "habitat link target remains untouched")
 
 

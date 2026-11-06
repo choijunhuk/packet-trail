@@ -14,7 +14,7 @@ const DEFAULTS := {
 	"keyboard_volume": 0.45, "tool_volume": 0.7, "notification_volume": 0.7,
 	"reduced_motion": false, "comfort_mode": true, "font_scale": 1.0,
 	"fullscreen": false, "mouse_sensitivity": 0.12,
-	"background_audio": false, "locale": "ko",
+	"background_audio": false, "desktop_effects": false, "locale": "ko",
 	"support_intruder": "standard", "support_defender": "standard", "support_tracker": "standard", "support_challenge": "standard", "support_investigation": "standard",
 }
 var _values: Dictionary = DEFAULTS.duplicate(true)

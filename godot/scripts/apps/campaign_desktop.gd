@@ -13,6 +13,7 @@ signal campaign_finished(ending: Dictionary)
 signal pause_changed(paused: bool)
 signal action_performed(result: Dictionary)
 signal settings_requested
+signal manual_saves_requested
 signal presentation_context_changed(app_id: String)
 signal commission_requested(mission_id: String)
 signal commission_return_requested
@@ -98,6 +99,8 @@ const ICON_ROOT := "res://assets/ui/desktop/"
 
 @export var save_slot_path: String = ""
 @export var pack_id: String = "intruder"
+var allow_legacy_auto_import := true
+var legacy_source_override := ""
 
 var game = null
 var session_active := false
@@ -412,6 +415,8 @@ func start_session(action: String) -> Dictionary:
 			return _begin_new()
 		"import":
 			return _begin_import()
+		"source_import":
+			return _begin_legacy_source_import()
 	return {"ok": false, "code": "UI_UNKNOWN_SESSION_ACTION", "text": _t("UI_ERR_UNKNOWN_SESSION_ACTION", {"action": action})}
 
 
@@ -939,8 +944,9 @@ func _build_shell() -> void:
 	font_down_btn = _shell_button("font_smaller", "UI_FONT_SMALLER", _font_nudge.bind(-1))
 	font_up_btn = _shell_button("font_larger", "UI_FONT_LARGER", _font_nudge.bind(1))
 	font_up_btn.set_meta("shell_action", "font_larger")
-	save_btn = _shell_button("save", "UI_SAVE", _manual_save)
-	load_btn = _shell_button("load", "UI_LOAD", _ask_load)
+	save_btn = _shell_button("save", "MANUAL_SAVES", _open_manual_saves)
+	load_btn = _shell_button("load", "MANUAL_AUTOSAVE_LOAD", _ask_load)
+	load_btn.tooltip_text = _t("MANUAL_AUTOSAVE_LOAD_TIP")
 	recover_btn = _shell_button("load", "UI_RECOVER", _ask_recover)
 	fresh_btn = _shell_button("save", "UI_FRESH_SAVE", _ask_fresh)
 	room_btn = _shell_button("room", "UI_ROOM", _request_room)
@@ -1202,6 +1208,7 @@ func _build_overlays() -> void:
 	pause_resume_btn = _btn("UI_PAUSE_RESUME", "", _set_paused.bind(false))
 	pbox.add_child(pause_resume_btn)
 	pbox.add_child(_btn("UI_OPEN_SETTINGS", "UI_OPEN_SETTINGS_TIP", _open_settings))
+	pbox.add_child(_btn("MANUAL_SAVES", "MANUAL_SAVES_HELP", _open_manual_saves))
 	pbox.add_child(_btn("UI_PAUSE_HELP", "", _pause_to_help))
 	pbox.add_child(_btn("UI_ROOM", "UI_ROOM_TIP", _request_room))
 
@@ -1472,7 +1479,17 @@ func _room_node() -> Node:
 
 func _room_settings_open() -> bool:
 	var room := _room_node()
-	return room != null and (room.get("settings_panel") != null or room.get("habitat_panel") != null)
+	return room != null and (room.get("settings_panel") != null or room.get("habitat_panel") != null or room.get("manual_save_panel") != null)
+
+
+func _open_manual_saves() -> void:
+	_set_launcher(false)
+	if not get_signal_connection_list("manual_saves_requested").is_empty():
+		manual_saves_requested.emit()
+	else:
+		var room := _room_node()
+		if room != null and room.has_signal("manual_saves_requested"):
+			room.manual_saves_requested.emit()
 
 
 func _open_deskshop() -> void:
@@ -3695,6 +3712,13 @@ func _tool_build_obs(tool: Dictionary) -> void:
 	var kind := _s(tool, "kind")
 	var any := false
 	if kind in STRUCTURED_KINDS:
+		if kind == "iam_case":
+			for request in _a(data, "requests"):
+				if not _d(request.get("observed", {})).is_empty() and not _b(request, "current"):
+					var stale := _klabel("UI_IAM_STALE", C_AMBER, -2, true)
+					stale.set_meta("iam_stale_notice", true)
+					tool_obs_box.add_child(stale)
+					break
 		if kind == "branch_vm" and data.has("status"):
 			tool_obs_box.add_child(_label(_t("UI_VM_STATE_LINE", {"state": _model_value(data["status"], "status"), "steps": data.get("steps_used", 0)}), C_TEAL_DIM, -2, true))
 			any = true
@@ -5550,7 +5574,7 @@ func _load_from_disk() -> Dictionary:
 		_show_fatal(err)
 		return {"ok": false, "code": "INVALID_CONTENT", "text": err}
 	var r := _d(candidate.load_game())
-	if pack_id == "legacy_intruder" and not save_slot_path.begins_with("user://tests/") and _s(r, "code") == "SAVE_NOT_FOUND" and not _b(r, "backup_available"):
+	if allow_legacy_auto_import and pack_id == "legacy_intruder" and not save_slot_path.begins_with("user://tests/") and _s(r, "code") == "SAVE_NOT_FOUND" and not _b(r, "backup_available"):
 		r = _d(candidate.continue_legacy_source())
 	if _b(r, "ok"):
 		autosave_suspended = false
@@ -5617,6 +5641,18 @@ func _begin_import() -> Dictionary:
 		_show_recovery(s)
 	_refresh_save_mode()
 	return {"ok": true, "code": "IMPORTED_M01", "text": ""}
+
+
+func _begin_legacy_source_import() -> Dictionary:
+	var candidate = CampaignGame.new(save_slot_path, pack_id)
+	var imported: Dictionary = candidate.continue_legacy_source(legacy_source_override)
+	if not imported.get("ok", false):
+		return imported
+	autosave_suspended = false
+	recovery_overlay.visible = false
+	_set_recovery_buttons({})
+	_install_game(candidate, "UI_BANNER_LOADED")
+	return imported
 
 
 func _show_recovery(r: Dictionary) -> void:

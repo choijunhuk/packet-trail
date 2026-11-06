@@ -61,6 +61,10 @@ for required in godot/project.godot godot/scripts/core/game.gd \
     godot/scripts/core/habitat_store.gd godot/scripts/presentation/habitat_panel.gd godot/tests/headless/test_habitat.gd \
     godot/tests/headless/test_habitat_ui.gd godot/tools/run_habitat.gd godot/tools/run_habitat_ui.gd \
     godot/scripts/room/neighborhood_world.gd godot/tests/headless/test_neighborhood.gd godot/tools/run_neighborhood.gd \
+    godot/scripts/core/manual_profile_store.gd godot/scripts/presentation/manual_save_panel.gd \
+    godot/tests/headless/test_manual_profile_store.gd godot/tools/run_manual_profile_store.gd \
+    godot/tests/headless/test_manual_profile_ui.gd godot/tools/run_manual_profile_ui.gd \
+    godot/scripts/presentation/desktop_effects.gd godot/tests/headless/test_desktop_effects.gd godot/tools/run_desktop_effects.gd \
     godot/tests/headless/test_optional_regressions.gd tools/test_optional_commissions.py; do
     [[ -f "$required" ]] || fail "missing required file: $required"
 done

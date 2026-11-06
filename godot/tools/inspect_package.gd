@@ -103,7 +103,7 @@ func _initialize() -> void:
 	if localization != null:
 		for locale in LOCALES:
 			_check(localization.configure(locale), "packed locale configures: " + locale)
-			for key in ["NEW_GAME", "UI_APP_TOOLS", "CREDITS_BODY", "CH1_PACK_TITLE", "CH1_PACK_SUMMARY", "IV1_PACK_TITLE", "IV1_PACK_SUMMARY", "HAB_PRODUCT_KEYBOARD_IVORY", "HAB_OUTDOOR_CONTROLS"]:
+			for key in ["NEW_GAME", "UI_APP_TOOLS", "CREDITS_BODY", "CH1_PACK_TITLE", "CH1_PACK_SUMMARY", "IV1_PACK_TITLE", "IV1_PACK_SUMMARY", "HAB_PRODUCT_KEYBOARD_IVORY", "HAB_OUTDOOR_CONTROLS", "MANUAL_SAVES", "SETTINGS_DESKTOP_EFFECTS"]:
 				_check(localization.tr_key(key) != key, "actual packed translation: " + locale + "/" + key)
 			for id in packs:
 				for ending in packs[id].endings:
@@ -114,7 +114,7 @@ func _initialize() -> void:
 		_check(load("res://assets/fonts/NotoSans%s.ttf" % suffix) is Font, "actual packed font: " + suffix)
 	var desktop_theme: Variant = load("res://scripts/presentation/desktop_theme.gd")
 	_check(desktop_theme != null and desktop_theme.create(1.0) is Theme, "actual packed native desktop theme")
-	for path in ["core/habitat_store.gd", "presentation/habitat_panel.gd", "room/neighborhood_world.gd", "core/iam_case.gd", "core/release_case.gd"]:
+	for path in ["core/habitat_store.gd", "presentation/habitat_panel.gd", "room/neighborhood_world.gd", "core/iam_case.gd", "core/release_case.gd", "core/manual_profile_store.gd", "presentation/manual_save_panel.gd", "presentation/desktop_effects.gd"]:
 		_check(load("res://scripts/" + path) is Script, "optional living runtime script is packed: " + path)
 	for name in ["wallpaper", "launcher", "terminal", "browser", "mail", "files", "tools", "board", "notification", "minimize", "maximize", "close"]:
 		var icon := load("res://assets/ui/desktop/%s.svg" % name) as Texture2D

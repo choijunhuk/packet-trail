@@ -41,9 +41,11 @@ static func validate(definition: Dictionary, mission: Dictionary) -> Array[Strin
 		var build: Variant = definition.builds[id]
 		if not build is Dictionary or not definition.statements.has(build.get("statement_id", "")) or not definition.registries.has(build.get("registry_id", "")):
 			errors.append("Virtual builds need registered provenance references.")
+		elif errors.is_empty() and not Model._valid_verification(definition, {"built": [id]}, {"artifact_id": id, "statement_id": build.statement_id, "registry_id": build.registry_id}):
+			errors.append("Approved virtual builds need matching trusted provenance.")
 	for id in definition.service_cases:
 		var scenario: Variant = definition.service_cases[id]
-		if not _id(id) or not scenario is Dictionary or not _text(scenario.get("label")) or not _id(scenario.get("operation")) or not _text(scenario.get("target"), 128) or not _integer(scenario.get("expected_status"), 100, 599) or not scenario.get("expected_status") in [200, 403, 503] or not scenario.get("expected_business") is bool or scenario.get("expected_business") != (scenario.get("expected_status") == 200):
+		if not _id(id) or not scenario is Dictionary or not _text(scenario.get("label")) or not _id(scenario.get("operation")) or not _text(scenario.get("target"), 128) or not _integer(scenario.get("expected_status"), 100, 599) or not int(scenario.get("expected_status")) in [200, 403, 503] or not scenario.get("expected_business") is bool or scenario.get("expected_business") != (scenario.get("expected_status") == 200):
 			errors.append("Invalid registered service request.")
 	if not _refs(definition.get("required_service_cases"), definition.service_cases, 32) or definition.get("required_service_cases", []).is_empty():
 		errors.append("Release goals need registered service checks.")

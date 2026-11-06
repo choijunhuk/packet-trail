@@ -13,6 +13,7 @@ RUNTIME_DIRS = ("godot/scripts",)
 FILE_IO_ALLOWED = {
     "godot/scripts/core/content_loader.gd",
     "godot/scripts/core/save_store.gd",
+    "godot/scripts/core/manual_profile_store.gd",
     "godot/scripts/core/campaign_loader.gd",
     "godot/scripts/core/campaign_game.gd",
     "godot/scripts/presentation/settings_store.gd",

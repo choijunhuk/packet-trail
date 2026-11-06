@@ -1391,6 +1391,9 @@ msgstr "受け取りました。デスクショップで装着できます。"
 msgid "HABITAT_EQUIPPED"
 msgstr "機器の外観を変更して保存しました。"
 
+msgid "HABITAT_FRESH"
+msgstr "以前のファイルを保存し、生活スペースをやり直しました。"
+
 msgid "HABITAT_INSPECTION_REQUIRED"
 msgstr "受注した通信盤を先に点検してください。"
 
@@ -1498,6 +1501,12 @@ msgstr "装着"
 
 msgid "HAB_EQUIPPED"
 msgstr "装着中"
+
+msgid "HAB_FRESH"
+msgstr "生活スペースをやり直す"
+
+msgid "HAB_FRESH_CONFIRM"
+msgstr "生活スペースのクレジット・注文・装備・屋外の依頼を初期化しますか？既存の生活セーブは別に保存します。本編と任意の依頼の進行は変わりません。"
 
 msgid "HAB_INSPECT"
 msgstr "現在の通信盤を調べる"
@@ -1630,6 +1639,9 @@ msgstr "近所の依頼掲示板"
 
 msgid "HAB_TITLE_SHOP"
 msgstr "デスクショップ"
+
+msgid "HAB_UNAPPLIED_CHANGES"
+msgstr "未適用の変更があります。設定を適用してから確認してください。"
 
 msgid "HAB_VERIFY"
 msgstr "遠隔計測と不正アクセスを検証"
@@ -3558,7 +3570,7 @@ msgid "IV1_I02_HINT_2"
 msgstr "真正な来歴でも過大な動作を示す場合があります。正常サービスと通知を、範囲外要求と一緒に試してください。"
 
 msgid "IV1_I02_HINT_3"
-msgstr "既知正常の旧版を検証して復元するか、承認入力を再ビルドします。サービス検証後にstable_evidenceとdelivered_evidenceの公開ダイジェストを報告し、追加確認に答えてください。"
+msgstr "既知正常の旧版を検証して復元するか、承認入力を再ビルドします。サービス検証後に独立台帳との比較と届いたパッケージの根拠の公開ダイジェストを報告し、追加確認に答えてください。"
 
 msgid "IV1_I02_LIMIT"
 msgstr "本編や結末には必須ではない依頼です。外部サービスや全規則を再現しません。誤った変更は初期設定へ戻せます。"
@@ -3634,6 +3646,12 @@ msgstr "旧版を続ける"
 
 msgid "LEGACY_CONTINUE_DESC"
 msgstr "旧版の進行をそのまま再開します。新しいキャンペーンとは別に保持されます。"
+
+msgid "LEGACY_SOURCE_IMPORT"
+msgstr "保存版の進行を取り込む"
+
+msgid "LEGACY_SOURCE_IMPORT_CONFIRM"
+msgstr "保存された元のキャンペーンの進行をこのプロフィールにコピーしますか？元のファイルと他のキャンペーンはそのまま維持されます。"
 
 msgid "LEGACY_SOURCE_UNSUPPORTED"
 msgstr "旧版セーブは見つかりましたが、現在の検証に通りませんでした。原本は保持し、新しいキャンペーンには適用しません。理由: {code}"
@@ -5702,6 +5720,87 @@ msgstr "最後のアクセス、残る真実"
 msgid "MAIL"
 msgstr "メール"
 
+msgid "MANUAL_ACTIVE_RECOVER"
+msgstr "オートセーブのバックアップから復元"
+
+msgid "MANUAL_ACTIVE_RECOVER_CONFIRM"
+msgstr "表示された進行を検証済みのオートセーブのバックアップから復元しますか？元のセーブは別に保存され、設定は変わりません。"
+
+msgid "MANUAL_ACTIVE_RECOVER_CURRENT"
+msgstr "現在の進行：{members} を検証済みのオートセーブのバックアップから復元し、他の正常な進行は維持します。"
+
+msgid "MANUAL_ACTIVE_RECOVER_OK"
+msgstr "オートセーブの進行を復元しました。"
+
+msgid "MANUAL_ACTIVE_RECOVER_PREVIOUS"
+msgstr "前回の完全なオートセーブを復元します。すべてのキャンペーンと生活空間をまとめて戻すため、最新のオートセーブとは異なる場合があります。現在の元のセーブは保存され、設定は変わりません。"
+
+msgid "MANUAL_AUTOSAVE_LOAD"
+msgstr "現在のシナリオのオートセーブをロード"
+
+msgid "MANUAL_AUTOSAVE_LOAD_TIP"
+msgstr "現在のシナリオの最新オートセーブをロードします。全体の進行を復元するには手動セーブスロットを使ってください。"
+
+msgid "MANUAL_CURRENT_MISSION"
+msgstr "現在のミッション：{mission}"
+
+msgid "MANUAL_LOAD_ACTION"
+msgstr "このスロットをロード"
+
+msgid "MANUAL_LOAD_CONFIRM"
+msgstr "スロット {slot} をロードしますか？本編・任意依頼のすべてと生活空間が保存時点に戻ります。設定は変わらず、オートセーブは別に保持されます。"
+
+msgid "MANUAL_LOAD_OK"
+msgstr "スロット {slot} から全体の進行をロードしました。"
+
+msgid "MANUAL_OPERATION_FAILED"
+msgstr "操作を完了できませんでした。コード：{code}"
+
+msgid "MANUAL_OVERWRITE_CONFIRM"
+msgstr "スロット {slot} の手動セーブを現在の全体の進行で上書きしますか？"
+
+msgid "MANUAL_PROFILE_RECOVERY"
+msgstr "復元するセーブを選択"
+
+msgid "MANUAL_PROFILE_RECOVERY_HELP"
+msgstr "現在の進行を復元できませんでした。検証済みのオートセーブのバックアップから復元するか、有効な手動セーブをロードしてください。元のセーブは別に保存され、設定は変わりません。"
+
+msgid "MANUAL_SAVES"
+msgstr "手動セーブ／ロード"
+
+msgid "MANUAL_SAVES_HELP"
+msgstr "5個のスロットをすべてのシナリオで共有します。本編・任意依頼のすべてと生活空間の進行をまとめて保存・復元します。設定は変わらず、オートセーブは別に保持されます。"
+
+msgid "MANUAL_SAVES_TITLE"
+msgstr "手動セーブスロット（5個）"
+
+msgid "MANUAL_SAVE_ACTION"
+msgstr "このスロットに保存"
+
+msgid "MANUAL_SAVE_OK"
+msgstr "全体の進行をスロット {slot} に保存しました。"
+
+msgid "MANUAL_SLOT"
+msgstr "スロット {slot}"
+
+msgid "MANUAL_SLOT_BACKUP_CONFIRM"
+msgstr "スロット {slot} のバックアップをロードしますか？本編・任意依頼のすべてと生活空間をまとめて復元します。元のセーブは別に保存され、設定は変わりません。"
+
+msgid "MANUAL_SLOT_BACKUP_LOAD"
+msgstr "スロットのバックアップをロード"
+
+msgid "MANUAL_SLOT_DAMAGED"
+msgstr "破損しているか読み込めないセーブ"
+
+msgid "MANUAL_SLOT_EMPTY"
+msgstr "空き"
+
+msgid "MANUAL_SLOT_PROGRESS"
+msgstr "完了 {done}/{total}"
+
+msgid "MANUAL_SLOT_SAVED_AT"
+msgstr "保存日時：{datetime}"
+
 msgid "MASTER_VOLUME"
 msgstr "全体音量"
 
@@ -6115,6 +6214,15 @@ msgstr "作業部屋: WASD で移動 · マウス右ボタン長押しで視点�
 
 msgid "SETTINGS_CONTROLS_TAB"
 msgstr "操作"
+
+msgid "SETTINGS_DESKTOP_EFFECTS"
+msgstr "実際のゲームウィンドウの演出を許可"
+
+msgid "SETTINGS_DESKTOP_EFFECTS_NOTE"
+msgstr "任意設定：このゲームのウィンドウだけが一瞬動き、タイトルが変わった後、元に戻ります。他のアプリ・ファイル・入力には触れません。いつでも無効にできます。適用後、設定を開き直してプレビューしてください。"
+
+msgid "SETTINGS_DESKTOP_EFFECTS_PREVIEW"
+msgstr "ウィンドウ演出をプレビュー"
 
 msgid "SETTINGS_DISPLAY"
 msgstr "画面と快適さ"
@@ -7339,6 +7447,9 @@ msgstr "資源と境界"
 
 msgid "UI_IAM_ROLES"
 msgstr "ロールと規則"
+
+msgid "UI_IAM_STALE"
+msgstr "設定が変わったため、表示されたリクエストを現在の設定で再検査してください。"
 
 msgid "UI_IMPORT_FAILED"
 msgstr "旧版 M01 を取り込めませんでした ({code})。原本は変更していません。\n{detail}"

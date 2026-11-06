@@ -3,9 +3,12 @@ extends Node3D
 signal desktop_requested(action: String)
 signal room_entered
 signal settings_changed(values: Dictionary)
+signal settings_applying
 signal application_focus_changed(active: bool)
 signal campaign_selected(pack_id: String)
 signal quit_requested
+signal manual_saves_requested
+signal desktop_effects_preview_requested
 
 const HabitatStore = preload("res://scripts/core/habitat_store.gd")
 const HabitatPanel = preload("res://scripts/presentation/habitat_panel.gd")
@@ -81,6 +84,9 @@ var _pending_support := ""
 var _preferences_readable := true
 var campaign_progress: Label
 var legacy_continue_button: Button
+var legacy_source_import_button: Button
+var legacy_source_override := ""
+var _legacy_source_available := false
 var legacy_notice: Label
 var _campaigns: Array = []
 var _desktops: Dictionary = {}
@@ -91,6 +97,7 @@ var habitat_store: RefCounted
 var habitat_load_result: Dictionary = {}
 var habitat_panel: PanelContainer
 var habitat_scrim: ColorRect
+var _habitat_focus_target: Control
 var current_zone := "room"
 var _legacy_campaign_available := false
 var _legacy_campaign_problem := ""
@@ -121,6 +128,10 @@ var _desktop_windows: Array[Window] = []
 var _desktop_window_generations: Dictionary = {}
 var _pending_action := ""
 var _pending_pack_id := ""
+var manual_save_panel: PanelContainer
+var profile_recovery_required := false
+var profile_recovery_code := ""
+var allow_legacy_auto_import := true
 
 
 func _text(key: String, replacements: Dictionary = {}) -> String:
@@ -145,7 +156,7 @@ func _ready() -> void:
 	if habitat_path == HabitatStore.PATH and settings_path.begins_with("user://tests/"):
 		habitat_path = settings_path.get_basename() + "_habitat.json"
 	habitat_store = HabitatStore.new(habitat_path)
-	habitat_load_result = habitat_store.load_state()
+	habitat_load_result = {"ok": false, "code": profile_recovery_code} if profile_recovery_required else habitat_store.load_state()
 	studio.apply_habitat(habitat_store.get_view())
 	_apply_settings(settings_store.get_values())
 	get_window().focus_entered.connect(func(): application_focus_changed.emit(true))
@@ -154,6 +165,8 @@ func _ready() -> void:
 
 
 func set_session_available(available: bool) -> void:
+	if profile_recovery_required:
+		available = false
 	has_saved_session = available
 	if continue_button != null:
 		var cached = _desktops.get(selected_pack_id)
@@ -166,6 +179,13 @@ func set_legacy_session_available(available: bool) -> void:
 	if import_button != null:
 		import_button.disabled = not available
 		import_button.visible = available
+
+
+func set_legacy_source_available(available: bool) -> void:
+	_legacy_source_available = available
+	if legacy_source_import_button != null:
+		legacy_source_import_button.visible = available
+		legacy_source_import_button.disabled = not available
 
 
 func set_campaigns(entries: Array) -> void:
@@ -410,9 +430,16 @@ func _rebuild_menu() -> void:
 	menu_box.remove_child(import_button)
 	body.add_child(import_button)
 	import_button.visible = has_legacy_session
+	legacy_source_import_button = _button("LEGACY_SOURCE_IMPORT", _confirm_legacy_source_import)
+	menu_box.remove_child(legacy_source_import_button)
+	body.add_child(legacy_source_import_button)
+	legacy_source_import_button.visible = _legacy_source_available
+	legacy_source_import_button.disabled = not _legacy_source_available
 	note = Label.new()
 	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	note.add_theme_color_override("font_color", DesktopTheme.WARNING)
+	if profile_recovery_required:
+		note.text = _text("MANUAL_PROFILE_RECOVERY_HELP") + "\n" + profile_recovery_code
 	body.add_child(note)
 	var primary := HBoxContainer.new()
 	menu_box.add_child(primary)
@@ -427,13 +454,17 @@ func _rebuild_menu() -> void:
 	menu_box.remove_child(new_game)
 	new_game.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	primary.add_child(new_game)
-	var actions := HBoxContainer.new()
-	menu_box.add_child(actions)
-	load_button = _button("LOAD_GAME", _confirm_load)
+	load_button = _button("MANUAL_AUTOSAVE_LOAD", _confirm_load)
+	load_button.tooltip_text = _text("MANUAL_AUTOSAVE_LOAD_TIP")
+	load_button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	load_button.set_meta("lobby_action", "load")
 	menu_box.remove_child(load_button)
 	load_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	actions.add_child(load_button)
+	body.add_child(load_button)
+	var actions := HFlowContainer.new()
+	actions.add_theme_constant_override("h_separation", 8)
+	actions.add_theme_constant_override("v_separation", 8)
+	body.add_child(actions)
 	for key in ["SETTINGS", "ENTER_ROOM", "QUIT"]:
 		var callback: Callable = show_settings if key == "SETTINGS" else (return_to_room if key == "ENTER_ROOM" else func(): quit_requested.emit())
 		var button := _button(key, callback)
@@ -441,10 +472,15 @@ func _rebuild_menu() -> void:
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		button.set_meta("lobby_action", key.to_lower())
 		button.tooltip_text = _text(key)
-		button.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		if key == "ENTER_ROOM":
 			button.text = _text("LOBBY_ROOM_SHORT")
 		actions.add_child(button)
+	var manual_button := _button("MANUAL_SAVES", func(): manual_saves_requested.emit())
+	manual_button.set_meta("lobby_action", "manual_saves")
+	if profile_recovery_required:
+		continue_button.disabled = true
+		load_button.disabled = true
+		new_game.disabled = true
 	set_session_available(has_saved_session)
 	set_legacy_session_available(has_legacy_session)
 	_update_campaign_details()
@@ -494,6 +530,18 @@ func _confirm_import() -> void:
 	confirm.popup_centered(Vector2i(540, 240))
 
 
+func _confirm_legacy_source_import() -> void:
+	_menu_focus_target = get_viewport().gui_get_focus_owner()
+	_pending_support = ""
+	_pending_action = "source_import"
+	_pending_pack_id = "legacy_intruder"
+	confirm.title = _text("LEGACY_SOURCE_IMPORT")
+	confirm.dialog_text = _text("LEGACY_SOURCE_IMPORT_CONFIRM")
+	confirm.ok_button_text = _text("LEGACY_SOURCE_IMPORT")
+	confirm.cancel_button_text = _text("CANCEL")
+	confirm.popup_centered(Vector2i(640, 0))
+
+
 func _confirm_load() -> void:
 	var cached = _desktops.get(selected_pack_id)
 	if not is_instance_valid(cached) or not cached.session_active:
@@ -503,9 +551,9 @@ func _confirm_load() -> void:
 	_pending_action = "load"
 	_pending_pack_id = selected_pack_id
 	_pending_support = _support_for_selection()
-	confirm.title = _text("LOAD_GAME")
+	confirm.title = _text("MANUAL_AUTOSAVE_LOAD")
 	confirm.dialog_text = _text("UI_CONFIRM_LOAD")
-	confirm.ok_button_text = _text("LOAD_GAME")
+	confirm.ok_button_text = _text("MANUAL_AUTOSAVE_LOAD")
 	confirm.cancel_button_text = _text("CANCEL")
 	confirm.popup_centered(Vector2i(540, 220))
 
@@ -539,6 +587,8 @@ func _restore_menu_focus_now() -> void:
 
 
 func commission_entries() -> Array:
+	if profile_recovery_required:
+		return []
 	var slot := str(campaign_slots.get("investigation", ""))
 	if slot.is_empty():
 		return []
@@ -556,6 +606,8 @@ func commission_entries() -> Array:
 
 ## Only called after the chooser's explicit confirmation; the main desktop stays installed.
 func repair_commission_save(action: String) -> Dictionary:
+	if profile_recovery_required:
+		return {"ok": false, "code": profile_recovery_code, "text": _text("MANUAL_PROFILE_RECOVERY_HELP")}
 	var slot := str(campaign_slots.get("investigation", ""))
 	if slot.is_empty() or not action in ["recover", "fresh"]:
 		return {"ok": false, "code": "UNKNOWN_COMMISSION", "text": ""}
@@ -569,6 +621,8 @@ func repair_commission_save(action: String) -> Dictionary:
 
 
 func open_commission(mission_id: String) -> Dictionary:
+	if profile_recovery_required:
+		return {"ok": false, "code": profile_recovery_code, "text": _text("MANUAL_PROFILE_RECOVERY_HELP")}
 	var slot := str(campaign_slots.get("investigation", ""))
 	if slot.is_empty() or not mission_id in ["I01", "I02"]:
 		return {"ok": false, "code": "UNKNOWN_COMMISSION", "text": ""}
@@ -580,7 +634,7 @@ func open_commission(mission_id: String) -> Dictionary:
 			return restored
 	else:
 		var status: Dictionary = candidate.get_save_status()
-		if status.get("exists", false) or status.get("backup_available", false):
+		if status.get("exists", false) or status.get("backup_available", false) or status.get("backup_exists", false):
 			var loaded: Dictionary = candidate.load_game()
 			if not loaded.get("ok", false):
 				return loaded
@@ -615,8 +669,11 @@ func return_from_commission() -> void:
 
 
 func open_desktop(action := "continue", target_pack := "", support_level := "") -> void:
+	if profile_recovery_required:
+		manual_saves_requested.emit()
+		return
 	if target_pack.is_empty():
-		target_pack = "legacy_intruder" if action in ["legacy", "import"] else selected_pack_id
+		target_pack = "legacy_intruder" if action in ["legacy", "import", "source_import"] else selected_pack_id
 	var slot := str(campaign_slots.get(target_pack, ""))
 	if slot.is_empty():
 		show_main_menu()
@@ -637,6 +694,8 @@ func open_desktop(action := "continue", target_pack := "", support_level := "") 
 			return
 		instance.set("save_slot_path", slot)
 		instance.set("pack_id", target_pack)
+		instance.set("allow_legacy_auto_import", allow_legacy_auto_import)
+		instance.set("legacy_source_override", legacy_source_override)
 		desktop = instance
 		_desktops[target_pack] = desktop
 		desktop.commission_requested.connect(_on_commission_requested)
@@ -766,6 +825,7 @@ func show_settings() -> void:
 	settings_panel.offset_top = -size.y * 0.5
 	settings_panel.offset_bottom = size.y * 0.5
 	settings_panel.setup(settings_store, presentation_settings())
+	settings_panel.desktop_effects_preview_requested.connect(func(): desktop_effects_preview_requested.emit())
 	settings_panel.closed.connect(func():
 		settings_panel.queue_free()
 		settings_panel = null
@@ -786,6 +846,7 @@ func _on_preferences_committed(values: Dictionary) -> void:
 
 
 func _apply_settings(values: Dictionary) -> void:
+	settings_applying.emit()
 	Localization.set_locale(values["locale"])
 	_theme = DesktopTheme.create(float(values["font_scale"]))
 	_chosen_support.clear()
@@ -818,8 +879,10 @@ func _on_focus_lost() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if manual_save_panel != null:
+		return
 	if habitat_panel != null:
-		if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE and not habitat_panel.recovery.visible:
+		if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE and not habitat_panel.is_confirmation_open():
 			_close_habitat_panel()
 			get_viewport().set_input_as_handled()
 		return
@@ -839,7 +902,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	if not event is InputEventKey or not event.pressed or event.echo or _in_desktop or habitat_panel != null:
+	if not event is InputEventKey or not event.pressed or event.echo or _in_desktop or habitat_panel != null or manual_save_panel != null:
 		return
 	if event.keycode == KEY_ESCAPE:
 		if settings_panel != null:
@@ -864,7 +927,7 @@ func _can_use_computer() -> bool:
 
 
 func _physics_process(delta: float) -> void:
-	if player == null or menu == null or menu.visible or _in_desktop or settings_panel != null or habitat_panel != null:
+	if player == null or menu == null or menu.visible or _in_desktop or settings_panel != null or habitat_panel != null or manual_save_panel != null:
 		return
 	var input := Vector2(float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)), float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W)))
 	var direction := player.global_basis * Vector3(input.x, 0, input.y).normalized()
@@ -911,10 +974,11 @@ func habitat_view() -> Dictionary:
 
 
 func show_habitat(context: String = "shop") -> void:
-	if habitat_panel != null or settings_panel != null or menu.visible:
+	if habitat_panel != null or settings_panel != null or menu.visible or manual_save_panel != null or profile_recovery_required:
 		return
 	if not context in ["shop", "delivery_locker", "noticeboard", "network_cabinet", "bench"]:
 		return
+	_habitat_focus_target = get_viewport().gui_get_focus_owner()
 	_looking = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	habitat_scrim = ColorRect.new()
@@ -927,15 +991,26 @@ func show_habitat(context: String = "shop") -> void:
 	habitat_panel.closed.connect(_close_habitat_panel)
 	habitat_panel.action_requested.connect(_on_habitat_action)
 	habitat_panel.recovery_requested.connect(_recover_habitat)
+	habitat_panel.fresh_requested.connect(_fresh_habitat)
 
 
 func _close_habitat_panel() -> void:
 	if habitat_panel != null:
+		habitat_panel.get_parent().remove_child(habitat_panel)
 		habitat_panel.queue_free()
 		habitat_panel = null
 	if habitat_scrim != null:
+		habitat_scrim.get_parent().remove_child(habitat_scrim)
 		habitat_scrim.queue_free()
 		habitat_scrim = null
+	_restore_habitat_focus.call_deferred()
+
+
+func _restore_habitat_focus() -> void:
+	if habitat_panel != null or not is_instance_valid(_habitat_focus_target): return
+	if _habitat_focus_target.is_queued_for_deletion() or not _habitat_focus_target.is_visible_in_tree() or _habitat_focus_target.focus_mode == Control.FOCUS_NONE: return
+	if _habitat_focus_target is BaseButton and _habitat_focus_target.disabled: return
+	_habitat_focus_target.grab_focus()
 
 
 func _on_habitat_action(action: String, params: Dictionary) -> void:
@@ -947,9 +1022,35 @@ func _on_habitat_action(action: String, params: Dictionary) -> void:
 		habitat_panel.show_result(result)
 
 
+## A profile switch discards every model and embedded window before any Continue action.
+func invalidate_desktops() -> void:
+	_hide_desktop()
+	for cached in _desktops.values():
+		if is_instance_valid(cached):
+			cached.get_parent().remove_child(cached)
+			cached.queue_free()
+	_desktops.clear()
+	_desktop_windows.clear()
+	_desktop_window_generations.clear()
+	desktop = null
+	_active_pack_id = ""
+	_commission_return_pack = ""
+	_in_desktop = false
+
+
 func _recover_habitat() -> void:
 	var result: Dictionary = habitat_store.recover_backup()
 	if result.get("ok", false):
+		habitat_load_result = result
+		studio.apply_habitat(habitat_store.get_view())
+	if habitat_panel != null:
+		habitat_panel.render(habitat_view())
+		habitat_panel.show_result(result)
+
+
+func _fresh_habitat() -> void:
+	var result: Dictionary = habitat_store.start_fresh()
+	if result.ok:
 		habitat_load_result = result
 		studio.apply_habitat(habitat_store.get_view())
 	if habitat_panel != null:

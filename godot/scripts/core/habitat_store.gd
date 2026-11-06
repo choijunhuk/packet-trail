@@ -115,11 +115,40 @@ func recover_backup() -> Dictionary:
 	return result
 
 
+func start_fresh() -> Dictionary:
+	if not _loaded:
+		load_state()
+	if _writable:
+		return _failure("RECOVERY_NOT_NEEDED", "The room is ready; a fresh recovery is not needed.")
+	var guard: Dictionary = _guard()
+	if not guard.ok:
+		return guard
+	# A backup may have appeared while the confirmation was open; keep it recoverable in game.
+	var existing: Dictionary = _store.load_save(validate_snapshot, _path)
+	if existing.ok:
+		return _failure("RECOVERY_NOT_NEEDED", "The current room save is valid; fresh recovery is not needed.")
+	_remember_failure(existing)
+	if _backup_available:
+		return _failure("RECOVERY_NOT_NEEDED", "A valid room backup is available; recover it before making changes.")
+	var candidate: Dictionary = _fresh_snapshot()
+	var started: Dictionary = _store.start_new(candidate, validate_snapshot, _path)
+	if not started.ok:
+		return _remember_failure(started)
+	_snapshot = candidate
+	_loaded = true
+	_writable = true
+	var result: Dictionary = _success("HABITAT_FRESH", "Starter room restored; previous files preserved.", true)
+	result["damaged_path"] = started.get("damaged_path", "")
+	result["damaged_backup_path"] = started.get("damaged_backup_path", "")
+	return result
+
+
 func get_view() -> Dictionary:
 	var view: Dictionary = _snapshot.state.duplicate(true)
 	view["ready"] = _loaded and _writable
 	view["backup_available"] = _backup_available
 	view["recovery_available"] = not _writable and _backup_available
+	view["fresh_available"] = _loaded and not _writable and not _backup_available
 	view["code"] = _last_code
 	view["text"] = _last_text
 	view["catalog"] = []
@@ -195,7 +224,7 @@ func _compact_history(snapshot: Dictionary) -> Dictionary:
 
 
 func _guard() -> Dictionary:
-	if _path != PATH:
+	if _path != PATH and not _generated_profile_path(_path):
 		if not _path.begins_with("user://tests/") or not _path.ends_with(".json") or _path.contains("\\") or _path.trim_prefix("user://").contains(":"):
 			return _failure("HABITAT_PATH_REJECTED", "Only the fixed room slot or isolated test JSON paths are allowed.")
 		for part in _path.trim_prefix("user://").split("/"):
@@ -205,6 +234,16 @@ func _guard() -> Dictionary:
 			if _path.unicode_at(index) < 32 or _path.unicode_at(index) == 127:
 				return _failure("HABITAT_PATH_REJECTED", "Invalid room path character.")
 	return _store.path_status(_path, validate_snapshot)
+
+
+static func _generated_profile_path(path: String) -> bool:
+	const PREFIX := "user://saves/profile_generations/"
+	if not path.begins_with(PREFIX) or not path.ends_with("/habitat.json"): return false
+	var generation: String = path.trim_prefix(PREFIX).trim_suffix("/habitat.json")
+	if generation.length() != 34 or not generation.begins_with("g_"): return false
+	for character in generation.substr(2):
+		if not character in "0123456789abcdef": return false
+	return true
 
 
 func _remember_failure(result: Dictionary) -> Dictionary:

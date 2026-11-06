@@ -1,0 +1,194 @@
+{
+  "MANUAL_SAVES": [
+    "手動セーブ／ロード",
+    "手动保存 / 读取",
+    "Guardar / Cargar",
+    "Manuell speichern / Laden"
+  ],
+  "MANUAL_SAVES_TITLE": [
+    "手動セーブスロット（5個）",
+    "5 个手动存档槽",
+    "Cinco ranuras de guardado manual",
+    "Fünf manuelle Speicherplätze"
+  ],
+  "MANUAL_SAVES_HELP": [
+    "5個のスロットをすべてのシナリオで共有します。本編・任意依頼のすべてと生活空間の進行をまとめて保存・復元します。設定は変わらず、オートセーブは別に保持されます。",
+    "所有场景共用 5 个存档槽。每次保存和恢复都包含全部主线、可选委托及生活空间进度。设置保持不变，自动存档单独保留。",
+    "Las cinco ranuras se comparten entre todos los escenarios. Cada guardado restaura juntas las campañas principales, las comisiones opcionales y la zona de vida. Los ajustes se mantienen; los autoguardados se conservan por separado.",
+    "Alle Szenarien teilen sich fünf Speicherplätze. Jeder Spielstand speichert und stellt alle Hauptkampagnen, optionalen Aufträge und den Wohnbereich gemeinsam wieder her. Einstellungen bleiben erhalten; automatische Spielstände werden separat aufbewahrt."
+  ],
+  "MANUAL_SLOT": [
+    "スロット {slot}",
+    "存档槽 {slot}",
+    "Ranura {slot}",
+    "Speicherplatz {slot}"
+  ],
+  "MANUAL_SLOT_EMPTY": [
+    "空き",
+    "空",
+    "Vacía",
+    "Leer"
+  ],
+  "MANUAL_SLOT_DAMAGED": [
+    "破損しているか読み込めないセーブ",
+    "存档已损坏或无法读取",
+    "Guardado dañado o ilegible",
+    "Beschädigter oder unlesbarer Spielstand"
+  ],
+  "MANUAL_SLOT_PROGRESS": [
+    "完了 {done}/{total}",
+    "已完成 {done}/{total}",
+    "Completados: {done}/{total}",
+    "Abgeschlossen: {done}/{total}"
+  ],
+  "MANUAL_SLOT_SAVED_AT": [
+    "保存日時：{datetime}",
+    "保存时间：{datetime}",
+    "Guardado: {datetime}",
+    "Gespeichert: {datetime}"
+  ],
+  "MANUAL_CURRENT_MISSION": [
+    "現在のミッション：{mission}",
+    "当前任务：{mission}",
+    "Misión actual: {mission}",
+    "Aktuelle Mission: {mission}"
+  ],
+  "MANUAL_SAVE_ACTION": [
+    "このスロットに保存",
+    "保存到此存档槽",
+    "Guardar en esta ranura",
+    "Hier speichern"
+  ],
+  "MANUAL_LOAD_ACTION": [
+    "このスロットをロード",
+    "读取此存档槽",
+    "Cargar esta ranura",
+    "Diesen Spielstand laden"
+  ],
+  "MANUAL_OVERWRITE_CONFIRM": [
+    "スロット {slot} の手動セーブを現在の全体の進行で上書きしますか？",
+    "用当前全部进度覆盖存档槽 {slot} 中的手动存档？",
+    "¿Sobrescribir el guardado manual de la ranura {slot} con todo tu progreso actual?",
+    "Den manuellen Spielstand auf Speicherplatz {slot} mit deinem gesamten aktuellen Fortschritt überschreiben?"
+  ],
+  "MANUAL_LOAD_CONFIRM": [
+    "スロット {slot} をロードしますか？本編・任意依頼のすべてと生活空間が保存時点に戻ります。設定は変わらず、オートセーブは別に保持されます。",
+    "读取存档槽 {slot}？全部主线、可选委托及生活空间进度将恢复至保存时的状态。设置保持不变，自动存档单独保留。",
+    "¿Cargar la ranura {slot}? Todas las campañas principales, las comisiones opcionales y la zona de vida volverán a ese punto. Los ajustes se mantienen; los autoguardados se conservan por separado.",
+    "Speicherplatz {slot} laden? Alle Hauptkampagnen, optionalen Aufträge und der Wohnbereich kehren zu diesem Stand zurück. Einstellungen bleiben erhalten; automatische Spielstände werden separat aufbewahrt."
+  ],
+  "MANUAL_SAVE_OK": [
+    "全体の進行をスロット {slot} に保存しました。",
+    "已将全部进度保存到存档槽 {slot}。",
+    "Todo el progreso se guardó en la ranura {slot}.",
+    "Gesamten Fortschritt auf Speicherplatz {slot} gespeichert."
+  ],
+  "MANUAL_LOAD_OK": [
+    "スロット {slot} から全体の進行をロードしました。",
+    "已从存档槽 {slot} 读取全部进度。",
+    "Todo el progreso se cargó desde la ranura {slot}.",
+    "Gesamten Fortschritt von Speicherplatz {slot} geladen."
+  ],
+  "MANUAL_OPERATION_FAILED": [
+    "操作を完了できませんでした。コード：{code}",
+    "无法完成操作。代码：{code}",
+    "No se pudo completar la operación. Código: {code}",
+    "Der Vorgang konnte nicht abgeschlossen werden. Code: {code}"
+  ],
+  "MANUAL_PROFILE_RECOVERY": [
+    "復元するセーブを選択",
+    "选择用于恢复的存档",
+    "Elige un guardado para recuperar",
+    "Spielstand zur Wiederherstellung wählen"
+  ],
+  "MANUAL_PROFILE_RECOVERY_HELP": [
+    "現在の進行を復元できませんでした。検証済みのオートセーブのバックアップから復元するか、有効な手動セーブをロードしてください。元のセーブは別に保存され、設定は変わりません。",
+    "无法恢复当前进度。请从已验证的自动存档备份恢复，或读取有效的手动存档槽。原存档将另行保留，设置保持不变。",
+    "No se pudo restaurar el progreso actual. Recupera copias de autoguardado verificadas o carga una ranura manual válida. Se conservan los guardados originales y los ajustes actuales.",
+    "Der aktuelle Fortschritt konnte nicht wiederhergestellt werden. Stelle geprüfte automatische Sicherungen wieder her oder lade einen gültigen manuellen Spielstand. Ursprüngliche Spielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+  ],
+  "MANUAL_AUTOSAVE_LOAD": [
+    "現在のシナリオのオートセーブをロード",
+    "读取当前场景的自动存档",
+    "Cargar autoguardado del escenario actual",
+    "Automatischen Spielstand des aktuellen Szenarios laden"
+  ],
+  "MANUAL_AUTOSAVE_LOAD_TIP": [
+    "現在のシナリオの最新オートセーブをロードします。全体の進行を復元するには手動セーブスロットを使ってください。",
+    "读取当前场景的最新自动存档。要恢复全部进度，请使用手动存档槽。",
+    "Carga el último autoguardado del escenario actual. Usa una ranura manual para restaurar todo el progreso.",
+    "Lädt den letzten automatischen Spielstand des aktuellen Szenarios. Nutze einen manuellen Speicherplatz, um den gesamten Fortschritt wiederherzustellen."
+  ],
+  "SETTINGS_DESKTOP_EFFECTS": [
+    "実際のゲームウィンドウの演出を許可",
+    "允许游戏窗口演出效果",
+    "Permitir efectos en la ventana del juego",
+    "Effekte am Spielfenster erlauben"
+  ],
+  "SETTINGS_DESKTOP_EFFECTS_NOTE": [
+    "任意設定：このゲームのウィンドウだけが一瞬動き、タイトルが変わった後、元に戻ります。他のアプリ・ファイル・入力には触れません。いつでも無効にできます。適用後、設定を開き直してプレビューしてください。",
+    "可选：仅短暂移动本游戏窗口并更改标题，随后恢复原位和原标题。不会影响其他应用、文件或输入，可随时关闭。应用后重新打开设置即可预览。",
+    "Opcional: mueve brevemente esta ventana y cambia su título; después restaura ambos. No afecta a otras aplicaciones, archivos ni entradas. Puedes desactivarlo cuando quieras. Aplica, vuelve a abrir Ajustes y prueba la vista previa.",
+    "Optional: Bewegt kurz dieses Spielfenster und ändert seinen Titel; danach wird beides wiederhergestellt. Andere Apps, Dateien und Eingaben bleiben unberührt. Jederzeit abschaltbar. Anwenden, Einstellungen erneut öffnen und Vorschau starten."
+  ],
+  "SETTINGS_DESKTOP_EFFECTS_PREVIEW": [
+    "ウィンドウ演出をプレビュー",
+    "预览游戏窗口效果",
+    "Ver efecto de ventana",
+    "Fenstereffekt ansehen"
+  ],
+  "MANUAL_ACTIVE_RECOVER": [
+    "オートセーブのバックアップから復元",
+    "从自动存档备份恢复",
+    "Recuperar copias de autoguardado",
+    "Automatische Sicherungen wiederherstellen"
+  ],
+  "MANUAL_ACTIVE_RECOVER_CURRENT": [
+    "現在の進行：{members} を検証済みのオートセーブのバックアップから復元し、他の正常な進行は維持します。",
+    "当前进度：从已验证的自动存档备份恢复 {members}，保留其他有效进度。",
+    "Perfil actual: recupera {members} desde copias de autoguardado verificadas y conserva el resto del progreso válido.",
+    "Aktueller Spielstand: {members} aus geprüften automatischen Sicherungen wiederherstellen und den übrigen gültigen Fortschritt behalten."
+  ],
+  "MANUAL_ACTIVE_RECOVER_PREVIOUS": [
+    "前回の完全なオートセーブを復元します。すべてのキャンペーンと生活空間をまとめて戻すため、最新のオートセーブとは異なる場合があります。現在の元のセーブは保存され、設定は変わりません。",
+    "恢复上一个完整自动存档。所有战役与生活空间将一同恢复，可能与最新自动存档不同。当前原存档将保留，设置保持不变。",
+    "Restaura el perfil completo del autoguardado anterior. Todas las campañas y la zona de vida vuelven juntas y pueden diferir de los últimos autoguardados. Se conservan los guardados originales actuales y los ajustes.",
+    "Vorherigen vollständigen automatischen Spielstand wiederherstellen. Alle Kampagnen und der Wohnbereich kehren gemeinsam zurück und können von den neuesten automatischen Spielständen abweichen. Aktuelle Originalspielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+  ],
+  "MANUAL_ACTIVE_RECOVER_CONFIRM": [
+    "表示された進行を検証済みのオートセーブのバックアップから復元しますか？元のセーブは別に保存され、設定は変わりません。",
+    "使用已验证的自动存档备份恢复所示进度？原存档将另行保留，设置保持不变。",
+    "¿Recuperar el perfil mostrado usando copias de autoguardado verificadas? Se conservan los guardados originales y los ajustes actuales.",
+    "Den angezeigten Spielstand aus geprüften automatischen Sicherungen wiederherstellen? Ursprüngliche Spielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+  ],
+  "MANUAL_ACTIVE_RECOVER_OK": [
+    "オートセーブの進行を復元しました。",
+    "已恢复自动存档进度。",
+    "Progreso del autoguardado recuperado.",
+    "Automatisch gespeicherten Fortschritt wiederhergestellt."
+  ],
+  "MANUAL_SLOT_BACKUP_LOAD": [
+    "スロットのバックアップをロード",
+    "读取存档槽备份",
+    "Cargar copia de la ranura",
+    "Sicherung des Speicherplatzes laden"
+  ],
+  "MANUAL_SLOT_BACKUP_CONFIRM": [
+    "スロット {slot} のバックアップをロードしますか？本編・任意依頼のすべてと生活空間をまとめて復元します。元のセーブは別に保存され、設定は変わりません。",
+    "读取存档槽 {slot} 的备份？全部主线、可选委托与生活空间将一同恢复。原存档将另行保留，设置保持不变。",
+    "¿Cargar la copia de la ranura {slot}? Se restauran juntas todas las campañas principales, las comisiones opcionales y la zona de vida. Se conservan los guardados originales y los ajustes actuales.",
+    "Sicherung von Speicherplatz {slot} laden? Alle Hauptkampagnen, optionalen Aufträge und der Wohnbereich werden gemeinsam wiederhergestellt. Ursprüngliche Spielstände werden aufbewahrt und Einstellungen bleiben erhalten."
+  ],
+  "LEGACY_SOURCE_IMPORT": [
+    "保存版の進行を取り込む",
+    "导入保留版进度",
+    "Importar progreso de la edición conservada",
+    "Fortschritt der erhaltenen Fassung importieren"
+  ],
+  "LEGACY_SOURCE_IMPORT_CONFIRM": [
+    "保存された元のキャンペーンの進行をこのプロフィールにコピーしますか？元のファイルと他のキャンペーンはそのまま維持されます。",
+    "将保留的原版战役进度复制到此档案？原文件及其他战役保持不变。",
+    "¿Copiar la campaña original conservada a este perfil? El archivo original y las demás campañas se mantienen sin cambios.",
+    "Die erhaltene ursprüngliche Kampagne in dieses Profil kopieren? Die Originaldatei und andere Kampagnen bleiben unverändert."
+  ]
+}

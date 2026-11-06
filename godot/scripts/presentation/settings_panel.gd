@@ -2,6 +2,7 @@ extends PanelContainer
 
 signal closed
 signal applied(values: Dictionary)
+signal desktop_effects_preview_requested
 
 const Localization = preload("res://scripts/presentation/localization.gd")
 const DesktopTheme = preload("res://scripts/presentation/desktop_theme.gd")
@@ -36,6 +37,9 @@ const FALLBACK := {
 	"MOUSE_SENSITIVITY": "마우스 감도", "REDUCED_MOTION": "움직임 줄이기",
 	"COMFORT_MODE": "편안한 이동 · 좁은 시야각", "FULLSCREEN": "전체 화면",
 	"BACKGROUND_AUDIO": "다른 창을 사용할 때도 소리 재생", "LANGUAGE": "언어",
+	"SETTINGS_DESKTOP_EFFECTS": "실제 게임 창 연출 (선택)",
+	"SETTINGS_DESKTOP_EFFECTS_NOTE": "게임 창 제목과 위치만 잠깐 바뀝니다. 켜고 적용한 뒤 설정을 다시 열어 미리 보세요. Esc로 건너뛸 수 있습니다. 움직임 줄이기에서는 제목만 바뀝니다.",
+	"SETTINGS_DESKTOP_EFFECTS_PREVIEW": "게임 창 연출 미리 보기",
 	"APPLY_SETTINGS": "적용하고 저장", "CANCEL": "취소", "RESET_CONTROLS": "조작 기본값",
 	"SETTINGS_SAVED": "설정을 저장했습니다.", "SETTINGS_NOT_SAVED": "설정을 저장하지 못했습니다.",
 }
@@ -113,6 +117,22 @@ func _build() -> void:
 	_slider(display, "font_scale", values, 0.85, 1.6)
 	for key in ["fullscreen", "reduced_motion"]:
 		_checkbox(display, key, values)
+	_checkbox(display, "desktop_effects", values)
+	controls["desktop_effects"].text = _text("SETTINGS_DESKTOP_EFFECTS")
+	controls["desktop_effects"].accessibility_name = _text("SETTINGS_DESKTOP_EFFECTS")
+	var effects_note := Label.new()
+	effects_note.text = _text("SETTINGS_DESKTOP_EFFECTS_NOTE")
+	effects_note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	effects_note.add_theme_color_override("font_color", DesktopTheme.MUTED)
+	display.add_child(effects_note)
+	var preview := Button.new()
+	preview.text = _text("SETTINGS_DESKTOP_EFFECTS_PREVIEW")
+	preview.set_meta("settings_action", "desktop_effects_preview")
+	preview.disabled = not bool(values.get("desktop_effects", false))
+	controls["desktop_effects"].toggled.connect(func(enabled: bool):
+		preview.disabled = not enabled or not bool(_initial_values.get("desktop_effects", false)))
+	preview.pressed.connect(func(): desktop_effects_preview_requested.emit())
+	display.add_child(preview)
 	var audio := _tab("SETTINGS_AUDIO_TAB")
 	for key in ["master_volume", "music_volume", "sfx_volume", "ui_volume", "ambience_volume"]:
 		_slider(audio, key, values)

@@ -464,12 +464,12 @@
     "Echte Herkunft kann übermäßiges Verhalten beschreiben. Dienst und Meldungen zusammen mit unzulässigen Anfragen testen."
   ],
   "IV1_I02_HINT_3": [
-    "이전 정상 배포본을 검증해 복구하거나 승인 입력을 재빌드하세요. 현재 서비스 검증 뒤 stable_evidence·delivered_evidence의 공개 digest를 보고하고 수신자의 후속 질문에 답하세요.",
-    "Verify and restore the known-good prior release, or rebuild approved inputs. After current service checks, report public digests from stable_evidence and delivered_evidence and answer the recipient’s follow-up.",
-    "既知正常の旧版を検証して復元するか、承認入力を再ビルドします。サービス検証後にstable_evidenceとdelivered_evidenceの公開ダイジェストを報告し、追加確認に答えてください。",
-    "验证并恢复已知正常旧版，或重建批准输入。检查当前服务后，报告stable_evidence和delivered_evidence的公开摘要并回答后续问题。",
-    "Verifica y restaura la versión anterior fiable o recompila las entradas aprobadas. Tras las pruebas, informa los resúmenes públicos de stable_evidence y delivered_evidence y responde.",
-    "Guten Vorgänger prüfen und wiederherstellen oder genehmigte Eingaben neu bauen. Nach Dienstprüfungen öffentliche Prüfsummen aus stable_evidence und delivered_evidence berichten und Rückfragen beantworten."
+    "이전 정상 배포본을 검증해 복구하거나 승인 입력을 재빌드하세요. 현재 서비스 검증 뒤 독립 원장의 비교 자료·전달받은 배포 자료의 공개 digest를 보고하고 수신자의 후속 질문에 답하세요.",
+    "Verify and restore the known-good prior release, or rebuild approved inputs. After current service checks, report public digests from Independent Registry Comparison and Delivered Package Evidence and answer the recipient’s follow-up.",
+    "既知正常の旧版を検証して復元するか、承認入力を再ビルドします。サービス検証後に独立台帳との比較と届いたパッケージの根拠の公開ダイジェストを報告し、追加確認に答えてください。",
+    "验证并恢复已知正常旧版，或重建批准输入。检查当前服务后，报告独立登记表对照和收到的软件包证据的公开摘要并回答后续问题。",
+    "Verifica y restaura la versión anterior fiable o recompila las entradas aprobadas. Tras las pruebas, informa los resúmenes públicos de Comparación del registro independiente y Pruebas del paquete recibido y responde.",
+    "Guten Vorgänger prüfen und wiederherstellen oder genehmigte Eingaben neu bauen. Nach Dienstprüfungen öffentliche Prüfsummen aus Vergleich mit unabhängigem Register und Nachweise zum gelieferten Paket berichten und Rückfragen beantworten."
   ],
   "IV1_I02_LIMIT": [
     "선택 의뢰입니다. 본편 진행과 엔딩에 필요하지 않습니다. 실제 외부 서비스나 모든 보안 정책을 재현하지 않으며 잘못된 조작은 초기 상태로 복구할 수 있습니다.",

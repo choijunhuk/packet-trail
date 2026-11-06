@@ -1,0 +1,158 @@
+{
+  "save_version": 1,
+  "habitat_id": "midnight_habitat",
+  "actions": [
+    {
+      "action": "order",
+      "params": {
+        "product_id": "keyboard_ivory"
+      }
+    },
+    {
+      "action": "order",
+      "params": {
+        "product_id": "keyboard_coral"
+      }
+    },
+    {
+      "action": "order",
+      "params": {
+        "product_id": "monitor_wide"
+      }
+    },
+    {
+      "action": "order",
+      "params": {
+        "product_id": "monitor_dual"
+      }
+    },
+    {
+      "action": "order",
+      "params": {
+        "product_id": "lamp_cool"
+      }
+    },
+    {
+      "action": "collect_delivery",
+      "params": {}
+    },
+    {
+      "action": "equip",
+      "params": {
+        "slot": "keyboard",
+        "product_id": "keyboard_coral"
+      }
+    },
+    {
+      "action": "equip",
+      "params": {
+        "slot": "monitor",
+        "product_id": "monitor_dual"
+      }
+    },
+    {
+      "action": "equip",
+      "params": {
+        "slot": "lamp",
+        "product_id": "lamp_cool"
+      }
+    },
+    {
+      "action": "set_lighting",
+      "params": {
+        "lighting": "dawn"
+      }
+    },
+    {
+      "action": "accept_job",
+      "params": {
+        "job_id": "network_cabinet"
+      }
+    },
+    {
+      "action": "inspect_cabinet",
+      "params": {}
+    },
+    {
+      "action": "configure_cabinet",
+      "params": {
+        "route": "service",
+        "locked": true
+      }
+    },
+    {
+      "action": "verify_job",
+      "params": {}
+    },
+    {
+      "action": "configure_cabinet",
+      "params": {
+        "route": "public",
+        "locked": false
+      }
+    }
+  ],
+  "state": {
+    "balance": 380,
+    "earned": 200,
+    "orders": [
+      {
+        "product_id": "keyboard_ivory",
+        "price": 180,
+        "status": "collected"
+      },
+      {
+        "product_id": "keyboard_coral",
+        "price": 220,
+        "status": "collected"
+      },
+      {
+        "product_id": "monitor_wide",
+        "price": 320,
+        "status": "collected"
+      },
+      {
+        "product_id": "monitor_dual",
+        "price": 500,
+        "status": "collected"
+      },
+      {
+        "product_id": "lamp_cool",
+        "price": 100,
+        "status": "collected"
+      }
+    ],
+    "owned": [
+      "keyboard_starter",
+      "monitor_starter",
+      "lamp_starter",
+      "keyboard_ivory",
+      "keyboard_coral",
+      "monitor_wide",
+      "monitor_dual",
+      "lamp_cool"
+    ],
+    "equipped": {
+      "keyboard": "keyboard_coral",
+      "monitor": "monitor_dual",
+      "lamp": "lamp_cool"
+    },
+    "lighting": "dawn",
+    "job": {
+      "accepted": true,
+      "inspected": true,
+      "route": "public",
+      "locked": false,
+      "current_check": {},
+      "rewarded": true,
+      "reward_receipt": {
+        "job_id": "network_cabinet",
+        "route": "service",
+        "locked": true,
+        "normal_telemetry": true,
+        "unauthorized_access": false,
+        "passed": true
+      }
+    }
+  }
+}

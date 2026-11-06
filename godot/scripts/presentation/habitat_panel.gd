@@ -4,6 +4,7 @@ extends PanelContainer
 signal closed
 signal action_requested(action: String, params: Dictionary)
 signal recovery_requested
+signal fresh_requested
 
 const ThemeSource = preload("res://scripts/presentation/desktop_theme.gd")
 const Locale = preload("res://scripts/presentation/localization.gd")
@@ -12,6 +13,9 @@ var feedback: Label
 var mode := "shop"
 var last_view: Dictionary = {}
 var recovery: ConfirmationDialog
+var fresh: ConfirmationDialog
+var scroll: ScrollContainer
+var close_button: Button
 var controls: Dictionary = {}
 
 
@@ -32,9 +36,10 @@ func setup(view: Dictionary, context: String, font_scale: float = 1.0) -> void:
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	title.add_theme_font_size_override("font_size", roundi(24.0 * font_scale))
 	heading.add_child(title)
-	heading.add_child(_button("HAB_CLOSE", func(): closed.emit()))
+	close_button = _button("HAB_CLOSE", func(): closed.emit())
+	heading.add_child(close_button)
 	outer.add_child(heading)
-	var scroll := ScrollContainer.new()
+	scroll = ScrollContainer.new()
 	scroll.follow_focus = true
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -47,16 +52,27 @@ func setup(view: Dictionary, context: String, font_scale: float = 1.0) -> void:
 	feedback.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	outer.add_child(feedback)
 	recovery = ConfirmationDialog.new()
+	recovery.dialog_autowrap = true
 	recovery.title = _t("HAB_RECOVER")
 	recovery.dialog_text = _t("HAB_RECOVER_CONFIRM")
 	recovery.ok_button_text = _t("HAB_RECOVER")
 	recovery.cancel_button_text = _t("CANCEL")
 	recovery.confirmed.connect(func(): recovery_requested.emit())
 	add_child(recovery)
+	fresh = ConfirmationDialog.new()
+	fresh.dialog_autowrap = true
+	fresh.title = _t("HAB_FRESH")
+	fresh.dialog_text = _t("HAB_FRESH_CONFIRM")
+	fresh.ok_button_text = _t("HAB_FRESH")
+	fresh.cancel_button_text = _t("CANCEL")
+	fresh.confirmed.connect(func(): fresh_requested.emit())
+	add_child(fresh)
 	render(view)
 
 
 func render(view: Dictionary) -> void:
+	var focus_key := _focus_key(get_viewport().gui_get_focus_owner())
+	var scroll_position := scroll.scroll_vertical
 	last_view = view.duplicate(true)
 	for child in content.get_children():
 		content.remove_child(child)
@@ -66,9 +82,14 @@ func render(view: Dictionary) -> void:
 	content.add_child(_label("HAB_OPTIONAL_NOTE"))
 	if not view.get("ready", false):
 		content.add_child(_label("HAB_READ_ONLY"))
-		var recover := _button("HAB_RECOVER", func(): recovery.popup_centered(Vector2i(560, 220)))
+		var recover := _button("HAB_RECOVER", func(): _popup_confirmation(recovery))
 		recover.disabled = not view.get("recovery_available", false)
 		content.add_child(recover)
+		controls.recover = recover
+		if view.get("fresh_available", false):
+			var fresh_button := _button("HAB_FRESH", func(): _popup_confirmation(fresh))
+			controls.fresh = fresh_button
+			content.add_child(fresh_button)
 	if mode == "shop":
 		_build_shop(view)
 	elif mode == "delivery_locker":
@@ -86,14 +107,15 @@ func render(view: Dictionary) -> void:
 		for id in ["public", "service", "approved_relay", "off"]:
 			route.add_item(_t("HAB_ROUTE_" + id.to_upper()))
 			route.set_item_metadata(route.item_count - 1, id)
-			route.set_item_tooltip(route.item_count - 1, id)
 		route.select(["public", "service", "approved_relay", "off"].find(str(view.job.route)))
 		route.accessibility_name = _t("HAB_ROUTE")
+		route.set_meta("habitat_focus", "route")
 		controls.route = route
 		content.add_child(_label("HAB_ROUTE"))
 		content.add_child(route)
 		var locked := CheckBox.new()
 		locked.text = _t("HAB_LOCKED")
+		locked.set_meta("habitat_focus", "locked")
 		locked.button_pressed = view.job.locked
 		controls.locked = locked
 		content.add_child(locked)
@@ -101,11 +123,61 @@ func render(view: Dictionary) -> void:
 		configure.disabled = not view.get("ready", false) or not view.job.inspected
 		content.add_child(configure)
 		controls.configure = configure
+		var pending := _label("HAB_UNAPPLIED_CHANGES")
+		pending.add_theme_color_override("font_color", ThemeSource.WARNING)
+		controls.unapplied_changes = pending
+		content.add_child(pending)
 		content.add_child(_action("HAB_VERIFY", "verify_job", {}, view.get("ready", false) and view.job.inspected))
+		route.item_selected.connect(func(_index: int): _update_cabinet_draft())
+		locked.toggled.connect(func(_pressed: bool): _update_cabinet_draft())
+		_update_cabinet_draft()
 	elif mode == "bench":
 		content.add_child(_label("HAB_REST_NOTE"))
-		content.add_child(_action("HAB_LIGHT_NIGHT", "set_lighting", {"lighting": "night"}, view.get("ready", false)))
-		content.add_child(_action("HAB_LIGHT_DAWN", "set_lighting", {"lighting": "dawn"}, view.get("ready", false)))
+		var night := _action("HAB_LIGHT_NIGHT", "set_lighting", {"lighting": "night"}, view.get("ready", false) and view.get("lighting") != "night")
+		controls.set_lighting_night = night
+		content.add_child(night)
+		var dawn := _action("HAB_LIGHT_DAWN", "set_lighting", {"lighting": "dawn"}, view.get("ready", false) and view.get("lighting") != "dawn")
+		controls.set_lighting_dawn = dawn
+		content.add_child(dawn)
+	_restore_focus.call_deferred(focus_key, scroll_position)
+
+
+func _popup_confirmation(dialog: ConfirmationDialog) -> void:
+	dialog.popup_centered(Vector2i(mini(600, int(get_viewport_rect().size.x) - 40), 0))
+
+
+func is_confirmation_open() -> bool:
+	return recovery.visible or fresh.visible
+
+
+func _update_cabinet_draft() -> void:
+	var route: OptionButton = controls.route
+	var locked: CheckBox = controls.locked
+	var dirty: bool = route.get_item_metadata(route.selected) != last_view.job.route or locked.button_pressed != last_view.job.locked
+	controls.unapplied_changes.visible = dirty
+	controls.verify_job.disabled = dirty or not last_view.get("ready", false) or not last_view.job.inspected
+
+
+func _focus_key(control: Control) -> String:
+	if control == null or not is_ancestor_of(control): return ""
+	if control.has_meta("product_id"): return "product:" + str(control.get_meta("product_id"))
+	return str(control.get_meta("habitat_focus", ""))
+
+
+func _restore_focus(focus_key: String, scroll_position: int) -> void:
+	if not is_inside_tree(): return
+	var fallback: Control = close_button
+	for candidate in content.find_children("*", "Control", true, false):
+		if candidate.focus_mode == Control.FOCUS_NONE or not candidate.is_visible_in_tree(): continue
+		if candidate is BaseButton and candidate.disabled: continue
+		if focus_key.is_empty() and fallback == close_button: fallback = candidate
+		if not focus_key.is_empty() and _focus_key(candidate) == focus_key:
+			fallback = candidate
+			break
+	if focus_key == _focus_key(close_button): fallback = close_button
+	fallback.grab_focus()
+	# Let container sizing and follow_focus settle before restoring the viewport.
+	scroll.set_deferred("scroll_vertical", scroll_position)
 
 
 func _build_shop(view: Dictionary) -> void:
@@ -169,6 +241,7 @@ func _action(key: String, action: String, params: Dictionary, enabled: bool) -> 
 func _button(key: String, callback: Callable) -> Button:
 	var button := Button.new()
 	button.text = _t(key)
+	button.set_meta("habitat_focus", key)
 	button.pressed.connect(callback)
 	return button
 

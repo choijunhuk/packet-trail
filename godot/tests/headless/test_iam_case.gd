@@ -58,6 +58,9 @@ func run() -> Dictionary:
 	_test_deny_precedence(definition)
 	_test_invalid_actions(definition, direct)
 	_test_schema(definition)
+	_test_receipt_freshness(definition, direct)
+	_test_json_round_trip(definition, direct, alternate)
+	_test_authored_initial_assessment()
 	var public_before := direct.duplicate(true)
 	var view: Dictionary = Model.public_data(definition, direct)
 	_check(view.principals.size() == 4 and view.credentials.size() == 6 and view.requests.size() == 7, "public inspection exposes registered identities, credential state and request evidence")
@@ -65,6 +68,60 @@ func run() -> Dictionary:
 	view.probe_receipts.normal_read.decision = "deny"
 	_check(direct == public_before and definition == frozen, "public projection is read-only and does not alias canonical evidence")
 	return {"suite": "iam_case", "checks": checks, "failures": failures, "limit": "Pure finite IAM model/schema checks; Runtime authorization, real campaign replay, native UI and provider IAM completeness are separate."}
+
+
+func _test_receipt_freshness(definition: Dictionary, solved: Dictionary) -> void:
+	for row in Model.public_data(definition, {}).requests:
+		_check(row.get("current") == false and row.observed.is_empty(), "unobserved request has no current evidence")
+	for row in Model.public_data(definition, solved).requests:
+		_check(row.get("current") == true, "successful request receipt is current: " + row.request_id)
+	var changed: Dictionary = Model.apply_action(definition, {"action": "bind", "principal_id": "gateway", "role_id": "blocked"}, solved)
+	for row in Model.public_data(definition, changed.state).requests:
+		_check(row.get("current") == false, "unrelated policy change marks previous receipt stale: " + row.request_id)
+	var state: Dictionary = changed.state
+	for id in definition.required_requests:
+		if id != "normal_read":
+			state = Model.apply_action(definition, {"action": "probe", "request_id": id}, state).state
+	for row in Model.public_data(definition, state).requests:
+		if row.request_id == "normal_read":
+			_check(row.observed.decision == "allow" and row.get("current") == false, "matching old decision still exposes stale evidence")
+	_check(not Model.goal_met(definition, state), "matching displayed decisions cannot replace current evidence")
+	var refreshed: Dictionary = Model.apply_action(definition, {"action": "probe", "request_id": "normal_read"}, state)
+	_check(refreshed.solved, "rechecking the last stale request restores completion")
+	for input in [{"action": "revoke", "credential_ref": "relay"}, {"action": "advance", "ticks": 1}]:
+		changed = Model.apply_action(definition, input, solved)
+		for row in Model.public_data(definition, changed.state).requests:
+			_check(row.get("current") == false, "credential or time change marks previous evidence stale")
+	for field in ["route_id", "principal_id", "tick"]:
+		var forged := solved.duplicate(true)
+		forged.probe_receipts.normal_read[field] = 0.5 if field == "tick" else "invented"
+		for row in Model.public_data(definition, forged).requests:
+			if row.request_id == "normal_read":
+				_check(row.get("current") == false, "forged receipt cannot appear current: " + field)
+		_check(not Model.goal_met(definition, forged), "forged receipt cannot complete: " + field)
+
+
+func _test_json_round_trip(definition: Dictionary, direct: Dictionary, alternate: Dictionary) -> void:
+	for solved in [direct, alternate]:
+		var advanced: Dictionary = Model.apply_action(definition, {"action": "advance", "ticks": 3}, solved)
+		var state: Dictionary = _probe_all(definition, advanced.state, solved.bindings.agent == "blocked")
+		var restored: Dictionary = JSON.parse_string(JSON.stringify(state))
+		var before := restored.duplicate(true)
+		_check(Model.goal_met(definition, restored), "JSON-restored integer receipt ticks preserve current completion")
+		_check(Model.apply_action(definition, {"action": "inspect"}, restored).solved, "direct model inspection accepts JSON-restored evidence")
+		for row in Model.public_data(definition, restored).requests:
+			_check(row.get("current") == true, "JSON-restored request evidence remains current")
+		_check(restored == before, "JSON evidence checks do not mutate the caller's state")
+
+
+func _test_authored_initial_assessment() -> void:
+	var pack: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/campaign/packs/investigation_v1.json"))
+	var definition: Dictionary = pack.missions.I01.challenges.iv1_i01_iam
+	var state: Dictionary = Model.initial_state(definition, {})
+	for id in definition.required_requests:
+		state = Model.apply_action(definition, {"action": "probe", "request_id": id, "route_id": "direct"}, state).state
+	_check(not Model.goal_met(definition, state), "authored I01 cannot complete by probing every direct route without repair")
+	_check(state.probe_receipts.cross_tenant.decision == "allow" and state.probe_receipts.grant_change.decision == "allow" and state.probe_receipts.retired_access.decision == "allow", "authored initial assessment exposes the three unrepaired grants")
 
 
 func _solve(definition: Dictionary, alternate: bool) -> Dictionary:

@@ -12,6 +12,7 @@ func run() -> Dictionary:
 	var definition := fixture()
 	_check(Schema.validate(definition, mission()).is_empty(), "authored bounded release fixture validates: " + str(Schema.validate(definition, mission())))
 	_invalid_schemas(definition)
+	_test_json_schema(definition)
 	var state: Dictionary = {}
 	for input in [null, "verify", {"action": "unknown"}, {"action": "deploy", "artifact_id": "stable", "verified": true}, {"action": "report", "recipient_id": "press", "evidence_ids": ["stable_evidence"], "fields": [123]}, {"action": "inspect", "section": "private"}, {"action": "build", "build_id": "../../host"}]:
 		var result := Model.apply_action(definition, input, state)
@@ -117,8 +118,25 @@ func _apply(definition: Dictionary, state: Dictionary, input: Dictionary) -> Dic
 	return result.state
 
 
+func _test_json_schema(definition: Dictionary) -> void:
+	var restored: Dictionary = JSON.parse_string(JSON.stringify(definition))
+	_check(Schema.validate(restored, mission()).is_empty(), "JSON-restored release definition validates without loader normalization")
+	var pack: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/campaign/packs/investigation_v1.json"))
+	var authored: Dictionary = pack.missions.I02
+	_check(Schema.validate(authored.challenges.iv1_i02_release, authored).is_empty(), "raw authored I02 JSON definition validates without loader normalization")
+	for row in [[200.0, true], [403.0, false], [503.0, false]]:
+		var numeric := definition.duplicate(true)
+		numeric.service_cases.normal.expected_status = row[0]
+		numeric.service_cases.normal.expected_business = row[1]
+		_check(Schema.validate(numeric, mission()).is_empty(), "integer-valued JSON service status validates: " + str(row[0]))
+	for value in [200.5, 403.5, 503.5, 201, "200", true, null]:
+		var invalid := definition.duplicate(true)
+		invalid.service_cases.normal.expected_status = value
+		_check(not Schema.validate(invalid, mission()).is_empty(), "fractional, unsupported or nonnumeric service status is rejected: " + str(value))
+
+
 func _invalid_schemas(definition: Dictionary) -> void:
-	for change in ["payload", "digest", "reference", "private", "collision", "manifest", "evidence", "duplicate_field"]:
+	for change in ["payload", "digest", "reference", "private", "collision", "manifest", "evidence", "duplicate_field", "build_digest", "build_source", "build_builder", "build_untrusted_builder", "build_revoked_builder", "build_untrusted_statement"]:
 		var invalid := definition.duplicate(true)
 		match change:
 			"payload": invalid.artifacts.stable.payload = "A".repeat(4097)
@@ -129,6 +147,12 @@ func _invalid_schemas(definition: Dictionary) -> void:
 			"manifest": invalid.artifacts.stable.payload = '{"enabled":true,"operations":{"serve":"ward"}}'
 			"evidence": invalid.report_evidence.stable_evidence.artifact_id = "invented"
 			"duplicate_field": invalid.report_evidence.bad_evidence.fields.stable_digest = {"source": "digest", "sensitivity": "public"}
+			"build_digest": invalid.builds.rebuilt.payload = _payload(["ward", "outside"])
+			"build_source": invalid.builds.rebuilt.source_revision = "different_source"
+			"build_builder": invalid.builds.rebuilt.builder_id = "different_builder"
+			"build_untrusted_builder": invalid.registries.release_registry.trusted_builders.erase("approved_builder")
+			"build_revoked_builder": invalid.registries.release_registry.revoked_builders.append("approved_builder")
+			"build_untrusted_statement": invalid.registries.release_registry.trusted_statements.erase("rebuilt_statement")
 		_check(not Schema.validate(invalid, mission()).is_empty(), "schema rejects invalid authoring: " + change)
 
 

@@ -1018,5 +1018,35 @@
     "WASD移动 · 按住鼠标右键环顾 · 靠近后按E互动 · Esc菜单",
     "WASD: moverse · Botón derecho: mirar · E cerca: interactuar · Esc: menú",
     "WASD: bewegen · Rechte Maustaste: umsehen · E in der Nähe: interagieren · Esc: Menü"
+  ],
+  "HAB_UNAPPLIED_CHANGES": [
+    "未適用の変更があります。設定を適用してから確認してください。",
+    "有尚未应用的更改。请先应用设置，再进行验证。",
+    "Hay cambios sin aplicar. Aplica los ajustes antes de comprobar.",
+    "Es gibt nicht angewendete Änderungen. Wende die Einstellungen vor der Prüfung an."
+  ],
+  "HAB_FRESH": [
+    "生活スペースをやり直す",
+    "重新开始生活空间",
+    "Reiniciar espacio personal",
+    "Wohnbereich neu starten"
+  ],
+  "HAB_FRESH_CONFIRM": [
+    "生活スペースのクレジット・注文・装備・屋外の依頼を初期化しますか？既存の生活セーブは別に保存します。本編と任意の依頼の進行は変わりません。",
+    "要重置生活空间的点数、订单、设备和户外任务吗？原有生活存档会另行保留。主线和可选委托进度不受影响。",
+    "¿Restablecer créditos, pedidos, equipo y encargo exterior del espacio personal? Los archivos anteriores se conservarán aparte. Las campañas y encargos opcionales no cambiarán.",
+    "Credits, Bestellungen, Ausstattung und Außenauftrag des Wohnbereichs zurücksetzen? Vorhandene Wohnspielstände bleiben separat erhalten. Hauptkampagnen und optionale Aufträge bleiben unverändert."
+  ],
+  "HABITAT_FRESH": [
+    "以前のファイルを保存し、生活スペースをやり直しました。",
+    "已保留原有文件并重新开始生活空间。",
+    "Espacio personal reiniciado; se conservaron los archivos anteriores.",
+    "Wohnbereich neu gestartet; vorherige Dateien wurden aufbewahrt."
+  ],
+  "UI_IAM_STALE": [
+    "設定が変わったため、表示されたリクエストを現在の設定で再検査してください。",
+    "设置已更改。请使用当前配置重新检查显示的请求。",
+    "Los ajustes cambiaron. Vuelve a comprobar las solicitudes con la configuración actual.",
+    "Die Einstellungen wurden geändert. Prüfe die angezeigten Anfragen erneut mit der aktuellen Konfiguration."
   ]
 }
