@@ -1,8 +1,8 @@
 # 1.2 데스크톱·첫 플레이 개선 실행
 
-상태: 구현 중. 사용자1.1 UI 피드백을 실제 동작과 대조하고 수정한다. 이후 완료·배포는 마지막 절에만 기록한다.
+상태: **1.2 구현·검증 완료.** Windows/Kali형 가상 데스크톱, 첫 시나리오/지원 선택과 설정을 구현하고 최종 소스의 세OS CI·실제 패키지·Mac 설치본 입력을 확인했다. 사람의 미적 승인·재미·플레이시간은 별도다. 완료 근거는 마지막 절을 따른다.
 
-## 현재 사실
+## 수정 전 1.1에서 확인한 사실
 
 시작 메뉴·세 공개 캠페인 선택·일반 설정15개는 구현됐다. 난이도/지원 선택과 브라우저 탭은 없다. 앱을 모두 닫은 재개에서도 메일/보드/터미널을 자동으로 다시 여는 동작과 모든 앱의 텍스트 작업표시줄이 OS 경험을 방해한다. 기존 판정·저장·앱 기능의 자동 통과와 사람의 UI 품질 평가는 다른 주장이다.
 
@@ -39,10 +39,6 @@
 
 기존Codex6.1 high/xhigh 세션을 소유에 맞게 재사용한다. Claude는필요한큰수정묶음의읽기전용최종검토만쓴다. 요청/실제응답/수준/범위는AI_WORKFLOW에기록한다. 웹용디자인탐지기가GodotControl을발견하지못하는것을UI없음/검증완료의근거로쓰지않고실제native렌더를본다.
 
-## 최종 완료
-
-아직 미완료. 실제구현/검증/배포뒤갱신한다.
-
 ## 첫 구현과 실제 검증 기록
 
 - 기존 1.1은 일반 설정15개가 실제 동작했지만 지원 수준과 브라우저 탭은 없었다. 초기에 기능·시작 경험·시각 품질을 한 완료 주장으로 묶지 않는다.
@@ -54,7 +50,7 @@
 - Root는 settings signal의 수신 값을 보존하도록 presentation_settings(base_values)를 연결했다. 저장 Store만 다시 읽어 일시적인 UI값을 놓치는 의존을 제거했다.
 - 새context Codex6.1/high가 실제35PNG와 source를 읽고84/fix를 반환했다. OS 구조는 요구에 맞지만 과거 응답 경고의10px 열, 제목/버튼을 덮는 toast, locale 전환 후 남은 transient가 material/low findings다. 수리 후 동일 viewports·같은 reviewer가 확인하며 자기 점수만으로 완료시키지 않는다.
 
-이 절의 수치·첫 실패는 최종 완료 판정이 아니다. CUA는 오늘도 native host/pipe가 이용 불가여서 실제 OS 입력은 별도 NOT_RUN이다.
+이 절의 수치·첫 실패는 최종 완료 판정이 아니다. 이 시점에는 CUA native host/pipe가 이용 불가여서 실제 OS 입력은 NOT_RUN이었다. 서버 복구 뒤의 실제 입력은 마지막 절에 따로 기록했다.
 
 ## C23 읽기 전용 검토와 후속 재현
 
@@ -75,11 +71,61 @@
 | 기존 content/첫 실행·저장/campaign 콘텐츠 | 3 / 336 / 81, 실패0 |
 | 보존 캠페인/공개3편 | 31,717 / 14,110검사·88해법, 실패0 |
 | presentation/audio/UI문맥/초상 | 275 / 147 / 37 / 36, 실패0 |
-| 새 browser actor/지원prefs/desktop기능/lobby보존 | 414 / 340 / 141 / 103, 실패0 |
+| 새 browser actor/지원prefs/desktop기능/lobby보존 | 414 / 340 / 141 / 103, 실패0. 마지막 표시 수리 뒤 lobby는105/0 |
 | mutation/정상종료 menu·WM | 1,217 / 8·6, 실패0 |
 | Python/실행 경계 | 49테스트·자체5·runtime25스크립트 PASS |
 | 최종 desktop preview | 824/0·11.430초·M01 1/44·세 role·45PNG·43reachability. 실제Source74/기본30 보존 |
-| 최종 새UI 전편 native | 5,435/0·86.371초·44/44·세 결말·347fixture행동·47암호·195기본폼Run·41PNG. source74/기본30/preview45 보존·engine error/warning0 |
+| 새UI 전편 native | 첫 통합5,435/0·86.371초. 최종345eff6 소스에서도5,435/0·85.447초·44/44·세 결말·347fixture행동·47암호·195기본폼Run·41PNG. source74/기본30/preview45 보존·engine error/warning0 |
 | 독립 UX 수정 확인 | ship93/100(qualitative scope). V1/V2/V3 해결,45PNG 해시/74소스 대조·26이미지 직접검토 |
 
 Native window/PNG1280×720과 font1.6은 실제다. 프로젝트의 고정 logical canvas1600×900을 축소한 출력이며1280 logical reflow나 물리IME 성공으로 바꾸지 않는다. 전체 native는 A경로44건이며 B해법은 headless에서 검증한다. 이 절은 소스 완료 증거이고 실제3OS export·ZIP·서명·CI·최종 추출 OS 수락은 후속 배포 절에 기록한다.
+
+## 최종 완료·패키지·실제 OS 수락
+
+이전1.1에 있던 시작 메뉴·세 시나리오·일반 설정과, 이번에 추가한 도움 수준·데스크톱 사용감·브라우저 탭을 구분해 완성했다. 별도 첫 실행 마법사를 중복으로 만들지 않고 시작 화면에 시나리오/진행·지원·계속/새 게임을 모았다. **가이드·표준·자율은 안내/힌트량이며, 목표·경보 압박을 바꾸는 난이도는 구현하지 않았다.** 소개된 도구를 써야만 통과하는 조건도 추가하지 않았다.
+
+| 변경 위치 | 최종 동작과 단순화 |
+|---|---|
+| `room.gd`, `full_game.gd`, `desktop_theme.gd` | 시나리오/진행·지원·계속/새 게임, 이전판 가져오기, 공통 native Theme. 별도 UI 프레임워크 없이 기존 Godot Control을 재사용 |
+| `campaign_desktop.gd`, `assets/ui/desktop/` | 직접 작성 SVG31개, 바탕화면·검색 런처·실행 중 작업표시줄·창·Nightfox 최대8탭. 기존14앱/4터미널·드래그/크기·세션과 초안 재사용 |
+| `settings_store.gd`, `settings_panel.gd` | 기존15값+편별지원3값,4카테고리·키보드 탐색·적용/취소. 읽지 못한 원본/backup과 임시 선호를 보존 |
+| `campaign_game.gd`, `campaign_runtime.gd` | 브라우저/회수의 명시적 터미널 주체와 실제 HTTP 관측 changed 전달. 기존 v2 저장9키·판정/권한/허용 해법 유지 |
+| 6개 PO·UI 사전·회귀/runner·패키징 | 새72 UI키, 실제 폰트/문구·새 표적 회귀·외부 deadline, 패키지에 직접 작성 자산 고지 포함. 새 실행 의존성0 |
+
+마지막 실제 OS 검사에서 첫 메뉴의 이전판 가져오기 버튼이 availability 갱신 뒤에도 숨은 것을 찾았다. 공유 setter에 `visible = available` 한 줄을 추가하고 실제105/1 RED→105/0 GREEN을 확인했다. 최종 source에서 전편 native를 다시 실행했으며 helper나 fixture의 성공 조건을 낮추지 않았다.
+
+### 고정 소스와 hosted CI
+
+- 게임/패키지 소스: `345eff6f92a768f9380d85f3c09c278fbdae54c6`.
+- source tree: `fce61e4dae765a3c6b52b36fffd3203be4de27d4`, Godot subtree: `ffbfee95d99ee75e2aaf33d7a471b8b846dd0661`.
+- 엔진: `4.7.stable.official.5b4e0cb0f`. 문서 마감 커밋·태그와 실행 소스가 다르면 동일 Godot tree와 릴리스의 `BUILD-INFO.json`을 대조한다.
+- [최종 CI42153263811](https://github.com/choijunhuk/packet-trail/actions/runs/42153263811): Ubuntu24.04·Windows2025·macOS15 모두 success, head SHA는 위 게임 소스와 같다. 각 전체 gate·Python49·package helper10·실제PCK478 검사 실패0이다. 링크 기능에 따른 지원 경계 검사 수는 Windows330, Mac/Linux340이며 skip을 같은 수로 꾸미지 않는다.
+- Linux Xvfb/Mesa 부분 렌더는467/0·77.020초·M01 **1/44사건·0결말**·15PNG다. 세 편 선택과 D01 `set_control`/T01 `collect` 폼 preview는 확인했지만 두 폼의 실제 model Run 및 나머지43사건 GUI를 검증한 것은 아니다.
+
+CI 로그/JSON·Linux 원본 report는 `.omx/artifacts/desktop-release/ci-345eff6*`에 있다. 최종 Mac full은 `native-full-desktop-release-final*`에 전후74소스·30보호항목·45preview PNG 보존과 함께 기록했다.
+
+### 실제 export·ZIP
+
+세 OS export 성공, 실제 각 PCK를 빈 프로젝트에서 읽어 **478/0**이다. 세 PCK는 모두68,793,668바이트, SHA-256 `deb3673beac107499c020e44bee1ba8a0362407b92b1fe66f38fcaa007f59299`다. source333파일의 export 전후 SHA가 같았다. 실제6번역·폰트·공개44/legacy28·OST·초상·공통Theme·SVG texture와16고지를 확인하고 authoring/test 파일은 제외했다.
+
+| 최종 ZIP | 바이트 | SHA-256 |
+|---|---:|---|
+| `MidnightAccess-1.2.0-rc1-macos-universal.zip` | 122,790,132 | `165daa3eb41c3bb3808296341173e5f7068a8e0e52da3534967c5b10d96a21f2` |
+| `MidnightAccess-1.2.0-rc1-windows-x86_64.zip` | 101,501,966 | `05f3b29c188f371c9da3ab16ecf151add232d47091219fd5d9cfe8c03862f098` |
+| `MidnightAccess-1.2.0-rc1-linux-x86_64.zip` | 91,895,883 | `b03e08e26c8b5cae5cbc5e75aea433513ae1be938cf1cf875e01452b3864e9a6` |
+
+ZIP CRC·모든 내부 파일 SHA·실행 mode·소스 provenance와 실제 포함된1.2 조작 안내를 대조했다. Mac26파일, Windows/Linux21파일이다. Mac Universal의 x86_64/arm64와 추출본 `codesign --verify --deep --strict` exit0을 확인했다. Mac은 ad-hoc 서명으로 Apple 공증 전이며 Windows 인증서 서명도 하지 않았다. 이전 guide/최종 한 줄 수정 전 provisional ZIP은 별도 보존하고 배포 대상에서 뺐다.
+
+릴리스 채널은 비공개 [v1.2.0-rc1](https://github.com/choijunhuk/packet-trail/releases/tag/v1.2.0-rc1)이다. 세 ZIP과 `BUILD-INFO.json`, `SHA256SUMS.txt`로 소스/CI/검증 범위/파일을 대조한다. 원본 저장·`.serena/`·이전1.1/1.0 릴리스는 보존한다.
+
+### Mac 추출 앱의 실제 마우스·키보드
+
+CUA host 복구 뒤 실제 ZIP에서 추출한 앱을 실행했다. OS 마우스/키보드로 세 시나리오 선택·가이드/새 게임 취소·설정4카테고리와 Tab/Right 탐색·음악 편집 취소·새 guided M01·터미널 `pwd`·제목줄 최대화 후 입력·벨 알림 읽기/입력 복귀·Nightfox 두 탭/Cmd+L·창 드래그·작업표시줄 최소화/복원·전부닫기/F10-W-E 재개·F6 런처 검색·수동 저장·정상 Quit·재실행/Continue를 확인했다. 이 넓은 수락은 마지막 visibility 한 줄 수정 전 ZIP이며 나머지 런타임은 같다.
+
+**최종345eff6 ZIP을 새 경로에 다시 추출해**, 첫 메뉴에 구버전 M01 가져오기가 즉시 보이는 것·Continue·바탕화면 Terminal 열기·실제 `pwd` 출력 `/home/player`·F10/메뉴/정상 Quit까지 재확인했다. 모든 넓은 동작을 최종 ZIP에서 재실행했다고 확대하지 않는다. 그 외 전편/창/탭 회귀는 위 exact-source native/3OS CI가 담당한다.
+
+실제 검사 전 공개 세 슬롯과 settings가 없는 것을 확인했다. 검사로 새 `intruder_v2_01` M01 진행0/28과 가이드 선호를 만들었고 음악0.65 유지로 편집 취소를 확인했다. 기존 `campaign_01` 등 원래 존재하던 저장의 SHA는 모두 같으며 덮어쓰지 않았다. 기록은 `manual-first-acceptance.json`, `manual-release-final-acceptance.json`과 보호 manifest에 있다. 새 검사 상태는 이어서 플레이할 수 있게 남겼다.
+
+### 남는 검증 범위
+
+독립 UX93/ship과 자동 통과는 사용자의 미적 승인 또는 사람 플레이 완료를 뜻하지 않는다. 침투편8~12시간·재미·압박 난이도·장시간 청취/피로·원어민 교정·물리IME 조합·Windows GUI·Linux 전편 GUI는 실측/수락 전이다. Linux식 명령/VM은 한정된 가상 부분집합이며 완전한 Linux 에뮬레이션을 주장하지 않는다. 작은 창 출력은1600×900 logical canvas의 축소다. 1.2지원 선호는 구1.1에서 기본값으로 보일 수 있으며 이는 캠페인 v2 저장의 호환과 별개다.

@@ -2,7 +2,7 @@
 
 작성 모델: Codex gpt-6.1-sol / high. 작업 트리 `packet-trail-desktop`, `feat/desktop-experience`.
 
-상태: **새 desktop UI native full5435/0·44사건/3결말 GREEN**, 후속 preview824/0·45PNG GREEN. 앞선 native801/0·기능141/0은 이전 소스/검사 범위의 근거다. 아래 최신 full은 1.2 소스에서 직접 실행했으며 기존1.1의5390 근거를 재사용하지 않았다. 시각 수락·추출 패키지·실제OS 입력은 Root/독립 검토의 별도 판정이다.
+상태: **최종 커밋345eff6f native full5435/0·44사건/3결말·85.447초 GREEN**, 후속 preview824/0·45PNG GREEN. 앞선 native801/0·기능141/0은 이전 소스/검사 범위의 근거다. 아래 최신 full은 1.2 소스에서 직접 실행했으며 기존1.1의5390 근거를 재사용하지 않았다. 시각 수락·추출 패키지·실제OS 입력은 Root/독립 검토의 별도 판정이다.
 
 ## 변경 계획과 기존 근거
 
@@ -79,3 +79,11 @@ Root의 독점 실행 슬롯에서 다음 기본 full을 새 이름으로 한 �
 **제품74 SHA 전후 불변·기본30 보호 항목 불변·preview45 PNG SHA 불변**, full41 PNG header/치수/SHA/밝기 범위 PASS, engine error/warning/누수0·남은 source Godot 프로세스0이다. `native-full-desktop-final-summary.json`, `-source-before/after.json`, `-preview-before/after.json`을 함께 보존한다. full 출력은 `.omx/artifacts/desktop-native/full/`로 preview와 분리했다.
 
 남은 한계는 다른 GUI 해법·legacy GUI·실제OS/물리IME·청취·사람 재미/시간·추출 PCK/서명/패키지·3OS CI다. 이 레인은 source native 검증을 마쳤으며 helper·preview/full 산출물을 동결한다. Whole Gate·추출 앱 실제 입력·배포 검증은 Root 소유다.
+
+## 출시 직전 한 줄 수리 반영 — exact HEAD 최종 재생
+
+Root의 실제OS 수락 중 발견된 legacy import 버튼의 늦은 availability 표시 수리 뒤, **HEAD `345eff6f92a768f9380d85f3c09c278fbdae54c6`**에서 동일 full 명령을 마지막 한 번 재생했다. 이 레인은 helper/fixture/actor/목표/검사 조건을 바꾸지 않았다. `native-full-desktop-release-final.log/.json`은 **5435/0·exit0·85.447초**, 실제 **44/44 A해법(28/8/8)·3/3결말**, fixture 입력347회·password47회·실제 구조화 form Run195회(response134/VM6/observation55)다. M24 response10회·R01 VM6회·D01/D08·T01/T08의 실제 form 실행을 다시 확인했다.
+
+새 full41 PNG(6locale×3role의18장 포함)의 header/실제 치수/SHA/밝기 범위 PASS, **제품74 SHA·기본30 보호 항목·preview45 PNG 전후 불변**, engine error/warning/누수0·잔여 source Godot 프로세스0이다. 이전86.371초 실행의 로그/JSON과41 PNG는 `full-before-release-final-pngs/` 및 SHA manifest로 보존했고 모두 원본 report SHA와 일치한다. 새 summary와 source/preview before-after는 `native-full-desktop-release-final-*`에 있다.
+
+최종 소스 실행 슬롯은 Root에 반환했다. preview45는 독립 시각 검토용 그대로 보존했고, QA helper/생산 소스 추가 편집이나 커밋은 하지 않았다. 이 결과는 source engine 입력/렌더 범위이며 Root의 최종 ZIP/서명/실제OS 재검사·3OS CI와 별도 근거다. 다른 GUI 해법·legacy GUI·물리IME·사람 청취는 이 재생에서 NOT_RUN이다.

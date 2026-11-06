@@ -226,9 +226,17 @@ Claude가 소스 대조를 “재현”이라고 표현한 부분도 **실행 �
 | 부모 | 기존 Codex6.1 세션 | 현재 기능 audit·새DESIGN·공통Theme·시작/시나리오·지원 연결·4카테고리 설정·통합/배포 |
 | Desktop 소유 | gpt-6.1-sol / high 재개 | 기존A34 세션,31SVG·빈 바탕/런처/작업표시줄/창·Nightfox8탭·일회성 지원·review finding 수리 |
 | Settings 소유 | gpt-6.1-sol / xhigh 재개 | 기존A32,3지원enum/안전한testpath·원자prefs/링크·340검사 |
-| Browser context 소유 | gpt-6.1-sol / xhigh 재개 | 기존A37,두 공개API의 단말 인자·160 actor/권한/저장예산 회귀 |
+| Browser context 소유 | gpt-6.1-sol / xhigh 재개 | 기존A37,두 공개API의 단말 인자·후속 실제 HTTP 부수효과까지414 actor/권한/저장예산 회귀 |
 | Locale 소유 | gpt-6.1-sol / high 재개 | 기존A35,72신규키·6PO/source SHA·27회귀·실제로드/glyph |
 | Native/기능 QA | gpt-6.1-sol / high 재개 | 기존A38,실제Control metadata와engine입력·시나리오/설정/창/탭/6locale·고유설정/진행보호 |
-| Fresh UX review | gpt-6.1-sol / high, fork 없음 | 실제첫/교정35PNG 해시·픽셀·요구 대조,84/fix. 제품/실행 변경0 |
+| Fresh UX review | gpt-6.1-sol / high, fork 없음 | 첫84/fix→수정89/fix→최종93/ship(정성 범위). 45PNG 해시/74소스·26이미지 직접 대조, 제품/실행 변경0 |
+| 재시작 복구 QA | gpt-6.1-sol / high, browser만 xhigh, fork 없음 | 이미 완료된 실행을 반복하지 않고 로그/소스부터 복원. browser414, exact345 native5435/0·85.447초와 독립 UX 최종 판정 |
+| C23 최종 UI·선호·문맥 검토 | claude-opus-5-5 / high 요청 | 실제 modelUsage도5.5만 사용,375.486초·exit0/is_error=false, 정적 REVISE C0/I0/M3. 고정 source/diff293,987문자만 제공 |
 
-첫 검토는 UI가 OS처럼 보이는 것과 실제 저장/세션/물리 입력 검증을 분리했다. viewer가 발견한 좁은 경고열·toast 겹침·언어 transient를 수리 대상으로 남기며, 최종 code/native/PCK/CI 결과는 완료 뒤 기록한다. 새 Claude 호출은 실제 실행 뒤 요청/응답 모델과 범위를 추가한다.
+첫 검토는 UI가 OS처럼 보이는 것과 실제 저장/세션/물리 입력 검증을 분리했다. 좁은 과거 응답 경고열·toast 겹침·언어 transient를 수리했다. 최종93/ship은 캡처 범위의 사용성 판단이며 사용자 미적 승인·플레이시간 실측이 아니다.
+
+C23은 로컬 CLI2.1.311의 safe-mode/restricted·tools빈목록·strict empty MCP·dontAsk·noChrome·no-session-persistence로 실행했고 permission_denials=[]였다. Claude에게 파일 수정/실행 권한을 주지 않았다. 원문 prompt·요청 argv·응답 modelUsage·SHA·최종 판정은 `.omx/artifacts/desktop-advisor/`, 재사용 가능한 요약은 `.omx/artifacts/ask-claude-desktop-c23-20261106.md`다. 숨은 추론 원문은 옮기지 않는다.
+
+Claude의 M1/M3(손상 선호 원본/backup 덮어쓰기, 임시 지원 유실)는 실제101/10 RED에서 수리했고, M2(pointer 최대화 뒤 입력)는 실제12/4 RED→12/0으로 검증했다. 질문도 사실로 단정하지 않고 실제 재현했다. Tab 카테고리102/1→103/0, collect HTTP401/NO_RECORD GET 관측366/4→414/0, 마지막 legacy 가져오기 visibility105/1→105/0이다. 최종 로비105/0과 전체 원래 판정/저장·공개88해법은 hosted3OS에서 모두 통과했다(지원 경계는 Windows 링크 기능 차이로330, Mac/Linux340).
+
+최종 exact 소스345eff6에서 native5,435/0·44사건/세 결말·85.447초, 별도 preview824/0, 실제3PCK 각478/0과 ZIP 내부 해시·서명을 확인했다. [CI42153263811](https://github.com/choijunhuk/packet-trail/actions/runs/42153263811)의 세OS가 성공했고 Linux Xvfb/Mesa는467/0·M01 한 사건/세 편 폼 preview다. 복구된 CUA로 Mac 추출 앱의 실제 OS 입력도 별도 확인했다. 물리IME·원어민·WindowsGUI·청취/재미/시간은 미측정이며 자세한 범위는 [최종 기록](implementation/2026-11-06-desktop-experience.md)을 따른다.

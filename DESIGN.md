@@ -1,7 +1,7 @@
 # 심야접속 · Midnight OS 데스크톱 경험
 
 ## Source of truth
-- Status: Active · 2026-11-06 · 1.2 데스크톱 재설계 구현 중.
+- Status: Active · 2026-11-06 · 1.2 데스크톱 구현·소스/패키지·Mac 실제 입력 검증 완료. 사람의 미적 승인·재미 평가는 별도.
 - 사용자 피드백: 1.1 UI는 거부됐다. Windows/Kali처럼 바탕화면에서 터미널·브라우저를 직접 여는 사용감을 원한다.
 - 기준: 기존 PROJECT_PLAN/PLAYING/세 관점 계약, 실제 1.1 소스 b4ef8ce와 렌더, 이번 [실행 계획](docs/implementation/2026-11-06-desktop-experience.md).
 - Windows/Kali는 상호작용 참고다. Kali 로고·벽지·Firefox/Chrome 자산을 복제하거나 실제 외부 브라우저/OS를 실행하지 않는다.
