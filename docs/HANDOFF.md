@@ -4,7 +4,10 @@
 
 ## 현재 구현과 검증
 
-최신 작업은 `1.4.0-rc1` 선택 의뢰·생활 공간 확장이다. 실행 소스 `44c12d59e169d67a1ce00ffe034ecbe846dcd582`, Godot tree `6dae489404cf85350c80c4c78301e33611bb4e75`. [기록](implementation/2026-11-06-optional-living.md), [배포](https://github.com/choijunhuk/packet-trail/releases/tag/v1.4.0-rc1), [CI](https://github.com/choijunhuk/packet-trail/actions/runs/42213402265). 본편4선택/47사건/94경로는 그대로이며 I01/I02는 사건 보드의 독립 선택 의뢰다. 안뜰·배송 수령·통신함 일감·벤치·고정 데스크 장착은 별도 생활 저장을 쓴다. 전체 gate, 본편 GUI6,286/47사건/4결말, 선택·생활 GUI688, 생활1,068, 의뢰복구41, 생활UI31, 세 PCK 각564를 확인했다. 독립 코드 검토의 두 결함을 재현·수리했고 Claude 두 검토 호출은 시간 제한으로 완료 응답이 없었다.
+
+최신은 `1.5.0-rc1` 전체 수동저장5칸·명시적게임창연출이다. 실행소스 `ee84b550bd0af967846b1fc154aa647dbebf8480`, Godot tree `3658dd3287ff5df412d02cb18ba31e7bafc03111`. [검증/범위](implementation/2026-11-06-manual-profiles.md), [배포](https://github.com/choijunhuk/packet-trail/releases/tag/v1.5.0-rc1), [성공CI](https://github.com/choijunhuk/packet-trail/actions/runs/42237023052). 사용자선택1번에따라 모든6캠페인+생활을 함께복원하며 설정은유지한다. 첫활성선택중단은복구필요로멈출수있고불명세대는quarantine으로보존한다. 정상GC/105복원·167저장검사/397통합UI/64연출/693네이티브와PCK각585를확인했다. 처음CI의Linux실패는자동저장재시도경로회귀였고 실제UI와검사헬퍼를고친뒤3OS모두성공했다. 새 게임창연출은기본꺼짐·자신의창제목/최대12px1.2초한정이며실제파일/다른앱을건드리지않는다.
+
+이전 `1.4.0-rc1`은 선택 의뢰·생활 공간 확장이다. 실행 소스 `44c12d59e169d67a1ce00ffe034ecbe846dcd582`, Godot tree `6dae489404cf85350c80c4c78301e33611bb4e75`. [기록](implementation/2026-11-06-optional-living.md), [배포](https://github.com/choijunhuk/packet-trail/releases/tag/v1.4.0-rc1), [CI](https://github.com/choijunhuk/packet-trail/actions/runs/42213402265). 본편4선택/47사건/94경로는 그대로이며 I01/I02는 사건 보드의 독립 선택 의뢰다. 안뜰·배송 수령·통신함 일감·벤치·고정 데스크 장착은 별도 생활 저장을 쓴다. 전체 gate, 본편 GUI6,286/47사건/4결말, 선택·생활 GUI688, 생활1,068, 의뢰복구41, 생활UI31, 세 PCK 각564를 확인했다. 독립 코드 검토의 두 결함을 재현·수리했고 Claude 두 검토 호출은 시간 제한으로 완료 응답이 없었다.
 
 
 이전 `1.3.1-rc1`은 색상 개선판이다. 공통차콜·터미널민트/도구청록/메일구리/브라우저보라/파일파랑/보드모래색을 기존위젯에연결했다. 실행소스 `6262d5aefbde1db991360f4df7993a24d4af33c8`, Godot tree `384a795fd17dfb13dc5b14bfad542c702d99ea53`. [현재배포](https://github.com/choijunhuk/packet-trail/releases/tag/v1.3.1-rc1), [기록](implementation/2026-11-06-color-refinement.md), [3OS CI](https://github.com/choijunhuk/packet-trail/actions/runs/42179897714). 전체gate/대비44/nativepreview1270·71PNG/PCK각509와Mac시작·3D이동·종료를확인했다. 아래1.3전편GUI기록은선행버전근거다.
