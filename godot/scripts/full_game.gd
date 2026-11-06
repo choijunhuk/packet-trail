@@ -26,6 +26,8 @@ func _ready() -> void:
 	room = RoomScene.instantiate()
 	room.name = "Studio"
 	room.desktop_scene = DesktopScene
+	if not save_slot_path.is_empty():
+		room.settings_path = save_slot_path.get_basename() + "_preferences.json"
 	for pack in Catalog.list_packs(true):
 		var id := str(pack["id"])
 		var slot := _slot_for(id)
@@ -126,7 +128,7 @@ func _on_campaign_selected(_id: String) -> void:
 func _on_settings(values: Dictionary) -> void:
 	audio.set_volumes(values)
 	if is_instance_valid(room.desktop) and room.desktop.has_method("apply_settings"):
-		room.desktop.apply_settings(values)
+		room.desktop.apply_settings(room.presentation_settings(values))
 	_update_title()
 
 
@@ -154,7 +156,7 @@ func _on_desktop_requested(_action: String) -> void:
 		if desktop.has_signal("settings_requested"):
 			desktop.settings_requested.connect(_on_settings_requested.bind(desktop))
 	if desktop.has_method("apply_settings"):
-		desktop.apply_settings(room.settings_store.get_values())
+		desktop.apply_settings(room.presentation_settings())
 	if desktop.has_method("get_game_view"):
 		_on_view_changed(desktop.get_game_view(), desktop)
 	_refresh_save_status()

@@ -2834,6 +2834,27 @@ msgstr "Ein alter Spielstand wurde gefunden, bestand aber die Prüfung nicht. Da
 msgid "LOAD_GAME"
 msgstr "Spiel laden"
 
+msgid "LOBBY_CASE_COUNT"
+msgstr "Eigenständige Geschichte · Fälle: {total}"
+
+msgid "LOBBY_CASE_COUNTS"
+msgstr "Hauptfälle: {main} · Optional: {optional}"
+
+msgid "LOBBY_CHOOSE_STORY"
+msgstr "Wähle deine Rolle für diese Nacht."
+
+msgid "LOBBY_ROLE_DEFENDER"
+msgstr "Wehre Bedrohungen ab und erhalte die Arbeit von Bürgern und Kollegen."
+
+msgid "LOBBY_ROLE_INTRUDER"
+msgstr "Folge Hinweisen, verschaffe dir Zugang und sichere verborgene Aufzeichnungen."
+
+msgid "LOBBY_ROLE_TRACKER"
+msgstr "Vergleiche Quellen und Zeiten, um Verbindungen zu untersuchen."
+
+msgid "LOBBY_ROOM_SHORT"
+msgstr "Arbeitszimmer"
+
 msgid "M01_BRIEF"
 msgstr "Ich sende diese Nachricht nur einmal. Die Übergabeaufzeichnung N47 soll aus dem Nachtarchiv entfernt werden. Lass das Original bestehen und lege eine Kopie in ~/archive ab.\n\nDer öffentliche Zugang lautet guest / guest. Ist der geschützte Ordner geschlossen, lies die verbliebene Übergabenotiz. Ob du ins Archiv gelangst oder eine zwischengespeicherte Kopie findest, entscheidest du."
 
@@ -5273,14 +5294,35 @@ msgstr "Einstellungen"
 msgid "SETTINGS_AUDIO"
 msgstr "Audio"
 
+msgid "SETTINGS_AUDIO_DETAILS"
+msgstr "Einzelne Klänge"
+
+msgid "SETTINGS_AUDIO_TAB"
+msgstr "Audio"
+
+msgid "SETTINGS_CONTROLS_NOTE"
+msgstr "Arbeitszimmer: WASD bewegt, rechte Maustaste halten zum Umsehen, E benutzt den Computer und F10 kehrt zurück. Desktop-Hilfe zeigt App- und Terminaltastenkürzel."
+
+msgid "SETTINGS_CONTROLS_TAB"
+msgstr "Steuerung"
+
 msgid "SETTINGS_DISPLAY"
 msgstr "Anzeige und Komfort"
+
+msgid "SETTINGS_DISPLAY_TAB"
+msgstr "Anzeige"
 
 msgid "SETTINGS_NOT_SAVED"
 msgstr "Einstellungen konnten nicht gespeichert werden."
 
+msgid "SETTINGS_PLAY"
+msgstr "Spielhilfe"
+
 msgid "SETTINGS_SAVED"
 msgstr "Einstellungen gespeichert."
+
+msgid "SETTINGS_SUPPORT_FOR"
+msgstr "Hilfe für {campaign}"
 
 msgid "SETTINGS_TITLE"
 msgstr "Einstellungen"
@@ -5317,6 +5359,36 @@ msgstr "Bereit"
 
 msgid "SUCCESS"
 msgstr "Erfolg"
+
+msgid "SUPPORT_GUIDED"
+msgstr "Geführt"
+
+msgid "SUPPORT_GUIDED_DESC"
+msgstr "Öffnet neue Aufträge und zeigt erste Orientierung und Hinweise."
+
+msgid "SUPPORT_INDEPENDENT"
+msgstr "Selbstständig"
+
+msgid "SUPPORT_INDEPENDENT_DESC"
+msgstr "Hält automatische Führung gering. Hilfe und manuell angeforderte Hinweise bleiben verfügbar."
+
+msgid "SUPPORT_NOT_SAVED"
+msgstr "Die Hilfseinstellung konnte nicht gespeichert werden. Deine Wahl gilt trotzdem für diese Sitzung."
+
+msgid "SUPPORT_SCOPE"
+msgstr "Wähle den Umfang der Führung. Ziele, Alarmregeln und gültige Lösungen bleiben gleich. Diese Hilfe lässt sich in den Einstellungen ändern."
+
+msgid "SUPPORT_SCOPE_SHORT"
+msgstr "Ziele und Alarmregeln bleiben gleich; nur die automatische Führung variiert."
+
+msgid "SUPPORT_STANDARD"
+msgstr "Standard"
+
+msgid "SUPPORT_STANDARD_DESC"
+msgstr "Öffne Apps selbst vom Desktop und fordere bei Bedarf schrittweise Hinweise an."
+
+msgid "SUPPORT_TITLE"
+msgstr "Spielhilfe"
 
 msgid "TERMINAL"
 msgstr "Terminal"
@@ -6197,6 +6269,105 @@ msgstr "Der beschädigte Stand bleibt unter anderem Namen erhalten; eine gültig
 msgid "UI_CONFIRM_TITLE"
 msgstr "Bestätigen"
 
+msgid "UI_DESKTOP_ALL_APPS"
+msgstr "Anwendungen"
+
+msgid "UI_DESKTOP_BROWSER_CLOSE_TAB"
+msgstr "Tab schließen"
+
+msgid "UI_DESKTOP_BROWSER_CONTEXT"
+msgstr "{current}\n{response}"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY"
+msgstr "Das virtuelle Internet erkunden"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY_BODY"
+msgstr "Gib eine Adresse ein oder öffne die Startseite. Alle Websites und Anfragen gehören zur fiktiven Spielwelt."
+
+msgid "UI_DESKTOP_BROWSER_NEW_TAB"
+msgstr "Neuer Tab"
+
+msgid "UI_DESKTOP_BROWSER_NO_RESPONSE"
+msgstr "Noch keine Antwort · Gib eine Adresse ein."
+
+msgid "UI_DESKTOP_BROWSER_PAST"
+msgstr "Dies ist eine aufgezeichnete Antwort. Aktualisiere sie, um aktuellen Anfragenden und Serverzustand zu prüfen."
+
+msgid "UI_DESKTOP_BROWSER_RESPONSE"
+msgstr "Angezeigte Antwort · Terminal {n} · {actor}"
+
+msgid "UI_DESKTOP_BROWSER_TABS"
+msgstr "Browser-Tabs"
+
+msgid "UI_DESKTOP_BROWSER_TAB_LIMIT"
+msgstr "Du kannst bis zu {max} Tabs öffnen."
+
+msgid "UI_DESKTOP_DISMISS"
+msgstr "Mitteilung schließen"
+
+msgid "UI_DESKTOP_GUIDED_BODY"
+msgstr "{goal}\n\nErste Orientierung: {hint}"
+
+msgid "UI_DESKTOP_HINT"
+msgstr "Hinweis anfordern"
+
+msgid "UI_DESKTOP_HINT_TIP"
+msgstr "Zeigt den nächsten freiwilligen Hinweis in der Fallübersicht."
+
+msgid "UI_DESKTOP_LAUNCHER"
+msgstr "Apps öffnen"
+
+msgid "UI_DESKTOP_MAIL_PROMPT"
+msgstr "Lies den Auftrag im Postfach. Apps und Terminals kannst du in beliebiger Reihenfolge öffnen."
+
+msgid "UI_DESKTOP_MINIMIZED"
+msgstr "{name} · Minimiert"
+
+msgid "UI_DESKTOP_NEW_CASE"
+msgstr "Neuer Auftrag · {title}"
+
+msgid "UI_DESKTOP_NEW_TERMINAL"
+msgstr "Weiteres Terminal öffnen"
+
+msgid "UI_DESKTOP_NIGHTFOX"
+msgstr "Nightfox"
+
+msgid "UI_DESKTOP_NO_APPS"
+msgstr "Keine passenden Anwendungen."
+
+msgid "UI_DESKTOP_OBJECTIVE"
+msgstr "{name} prüfen"
+
+msgid "UI_DESKTOP_REQUIRED_RESULT"
+msgstr "Gefordertes Ergebnis"
+
+msgid "UI_DESKTOP_RUNNING"
+msgstr "{name} · Läuft"
+
+msgid "UI_DESKTOP_SEARCH"
+msgstr "Apps oder Aufgaben suchen"
+
+msgid "UI_DESKTOP_SESSION"
+msgstr "Anfrageterminal {n} · {user}@{host}"
+
+msgid "UI_DESKTOP_SUPPORT_GUIDED"
+msgstr "Geführt"
+
+msgid "UI_DESKTOP_SUPPORT_INDEPENDENT"
+msgstr "Selbstständig"
+
+msgid "UI_DESKTOP_SUPPORT_STANDARD"
+msgstr "Standard"
+
+msgid "UI_DESKTOP_SUPPORT_STATUS"
+msgstr "Hilfe · {mode}"
+
+msgid "UI_DESKTOP_TASK_TIP"
+msgstr "{name} · Aktives Fenster anklicken zum Minimieren; erneut klicken zum Wiederherstellen"
+
+msgid "UI_DESKTOP_TERMINAL_LIMIT"
+msgstr "Alle vier Terminals sind offen. Wechsle über die Taskleiste zwischen ihnen."
+
 msgid "UI_ENDING_CHOICE"
 msgstr "{title}"
 
@@ -6331,6 +6502,39 @@ msgstr "{field} muss ein JSON-Objekt der Form {…} sein. Nicht gesendet."
 
 msgid "UI_JSON_TOO_LONG"
 msgstr "{field} ist zu lang (höchstens {max} Zeichen). Nicht gesendet."
+
+msgid "UI_LAUNCHER_DESC_ARCHIVE"
+msgstr "Gesicherte Belege und Vergleiche"
+
+msgid "UI_LAUNCHER_DESC_BOARD"
+msgstr "Fallziele und freiwillige Hinweise"
+
+msgid "UI_LAUNCHER_DESC_BROWSER"
+msgstr "Interne Seiten und virtuelles HTTP"
+
+msgid "UI_LAUNCHER_DESC_ENDING"
+msgstr "Gewählter Abschluss und Mitwirkende"
+
+msgid "UI_LAUNCHER_DESC_FILES"
+msgstr "Dateien des aktiven Terminals durchsuchen"
+
+msgid "UI_LAUNCHER_DESC_HELP"
+msgstr "Befehle, Werkzeuge und Bedienung"
+
+msgid "UI_LAUNCHER_DESC_MAIL"
+msgstr "Aufträge und Kontakte"
+
+msgid "UI_LAUNCHER_DESC_REQUESTLAB"
+msgstr "Anfragen erstellen und Antworten vergleichen"
+
+msgid "UI_LAUNCHER_DESC_STATUS"
+msgstr "Sitzungen und Netzwerkzustand"
+
+msgid "UI_LAUNCHER_DESC_TERMINAL"
+msgstr "Befehle und Netzwerkverbindungen"
+
+msgid "UI_LAUNCHER_DESC_TOOLS"
+msgstr "Werkzeuge für Beobachtung, Analyse und Abwehr"
 
 msgid "UI_LOAD"
 msgstr "Spiel laden"
@@ -7148,8 +7352,14 @@ msgstr "Aktion"
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "Gespeichertes Objekt"
 
+msgid "UI_TOOL_FIELD_ASSESSMENT_ELIGIBLE"
+msgstr "Für die aktuelle Prüfung verwendbar"
+
 msgid "UI_TOOL_FIELD_AVAILABLE"
 msgstr "Verfügbar"
+
+msgid "UI_TOOL_FIELD_BASIS"
+msgstr "Belegkennung zum Antwortzeitpunkt"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "Geschäftsvorgang"
@@ -7198,6 +7408,9 @@ msgstr "Zielregister"
 
 msgid "UI_TOOL_FIELD_ELSE"
 msgstr "Falsch-Zweig"
+
+msgid "UI_TOOL_FIELD_ENABLED"
+msgstr "Aktiviert"
 
 msgid "UI_TOOL_FIELD_ENDPOINT_ID"
 msgstr "Annehmender Dienst"
@@ -7342,6 +7555,9 @@ msgstr "Anfrageweg"
 
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "Stichprobenverfahren"
+
+msgid "UI_TOOL_FIELD_SATISFIED"
+msgstr "Bedingung erfüllt"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "Abschnitt"

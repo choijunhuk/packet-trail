@@ -1,0 +1,434 @@
+{
+  "LOBBY_CHOOSE_STORY": [
+    "今夜は、どの立場を選びますか？",
+    "今夜，你将站在哪一边？",
+    "Elige tu papel para esta noche.",
+    "Wähle deine Rolle für diese Nacht."
+  ],
+  "LOBBY_ROLE_INTRUDER": [
+    "手掛かりをたどって侵入し、隠された記録を回収します。",
+    "追随线索，取得访问并找回隐藏记录。",
+    "Sigue pistas, consigue acceso y recupera registros ocultos.",
+    "Folge Hinweisen, verschaffe dir Zugang und sichere verborgene Aufzeichnungen."
+  ],
+  "LOBBY_ROLE_DEFENDER": [
+    "脅威を防ぎながら、市民や仲間の業務を守ります。",
+    "阻止威胁，同时守住市民与同伴的正常业务。",
+    "Contén amenazas sin detener el trabajo legítimo de ciudadanos y compañeros.",
+    "Wehre Bedrohungen ab und erhalte die Arbeit von Bürgern und Kollegen."
+  ],
+  "LOBBY_ROLE_TRACKER": [
+    "記録の出所と時刻を比べ、つながりを追います。",
+    "比较记录来源与时间，追踪其中联系。",
+    "Compara fuentes y tiempos para investigar conexiones.",
+    "Vergleiche Quellen und Zeiten, um Verbindungen zu untersuchen."
+  ],
+  "LOBBY_CASE_COUNTS": [
+    "本編 {main} · 任意 {optional}",
+    "主线 {main} · 可选 {optional}",
+    "Principales: {main} · Opcionales: {optional}",
+    "Hauptfälle: {main} · Optional: {optional}"
+  ],
+  "LOBBY_CASE_COUNT": [
+    "独立した物語 · 事件数 {total}",
+    "独立故事 · {total} 个事件",
+    "Historia independiente · Casos: {total}",
+    "Eigenständige Geschichte · Fälle: {total}"
+  ],
+  "SUPPORT_TITLE": [
+    "プレイ支援",
+    "游玩辅助",
+    "Ayuda al jugar",
+    "Spielhilfe"
+  ],
+  "SUPPORT_GUIDED": [
+    "ガイド付き",
+    "引导",
+    "Guiado",
+    "Geführt"
+  ],
+  "SUPPORT_STANDARD": [
+    "標準",
+    "标准",
+    "Estándar",
+    "Standard"
+  ],
+  "SUPPORT_INDEPENDENT": [
+    "自主",
+    "自主",
+    "Autónomo",
+    "Selbstständig"
+  ],
+  "SUPPORT_GUIDED_DESC": [
+    "新しい依頼と最初の案内を開き、序盤のヒントも表示します。",
+    "打开新委托，自动显示初始指引与提示。",
+    "Abre encargos nuevos y muestra orientación y pistas iniciales.",
+    "Öffnet neue Aufträge und zeigt erste Orientierung und Hinweise."
+  ],
+  "SUPPORT_STANDARD_DESC": [
+    "デスクトップから自分でアプリを開き、必要なときに段階別ヒントを求めます。",
+    "从桌面自行打开应用，按需请求分阶段提示。",
+    "Abre aplicaciones desde el escritorio y pide pistas por etapas cuando las necesites.",
+    "Öffne Apps selbst vom Desktop und fordere bei Bedarf schrittweise Hinweise an."
+  ],
+  "SUPPORT_INDEPENDENT_DESC": [
+    "自動の案内を控えめにします。ヘルプと手動のヒントはいつでも使えます。",
+    "减少自动指引，帮助与手动提示始终可用。",
+    "Reduce la orientación automática. La ayuda y las pistas manuales siguen disponibles.",
+    "Hält automatische Führung gering. Hilfe und manuell angeforderte Hinweise bleiben verfügbar."
+  ],
+  "SUPPORT_SCOPE": [
+    "案内とヒントの表示量を選びます。目標・警戒度のルール・有効な解法は共通です。支援の選択は設定で変更できます。",
+    "选择指引与提示的显示量。目标、警报规则和有效解法保持相同，可在设置中调整辅助方式。",
+    "Elige cuánta orientación se muestra. Objetivos, reglas de alerta y soluciones válidas son iguales. Puedes cambiar esta ayuda en Ajustes.",
+    "Wähle den Umfang der Führung. Ziele, Alarmregeln und gültige Lösungen bleiben gleich. Diese Hilfe lässt sich in den Einstellungen ändern."
+  ],
+  "SUPPORT_NOT_SAVED": [
+    "支援設定を保存できませんでした。今回のプレイには適用されます。",
+    "无法保存辅助设置，但本次游玩仍会应用你的选择。",
+    "No se pudo guardar la ayuda elegida, pero se aplica a esta sesión.",
+    "Die Hilfseinstellung konnte nicht gespeichert werden. Deine Wahl gilt trotzdem für diese Sitzung."
+  ],
+  "SETTINGS_PLAY": [
+    "プレイ支援",
+    "游玩辅助",
+    "Juego",
+    "Spielhilfe"
+  ],
+  "SETTINGS_DISPLAY_TAB": [
+    "画面",
+    "显示",
+    "Pantalla",
+    "Anzeige"
+  ],
+  "SETTINGS_AUDIO_TAB": [
+    "音",
+    "声音",
+    "Sonido",
+    "Audio"
+  ],
+  "SETTINGS_CONTROLS_TAB": [
+    "操作",
+    "操作",
+    "Controles",
+    "Steuerung"
+  ],
+  "SETTINGS_SUPPORT_FOR": [
+    "{campaign} の支援",
+    "{campaign} 辅助",
+    "Ayuda para {campaign}",
+    "Hilfe für {campaign}"
+  ],
+  "SETTINGS_AUDIO_DETAILS": [
+    "個別の音",
+    "各类声音",
+    "Sonidos individuales",
+    "Einzelne Klänge"
+  ],
+  "SETTINGS_CONTROLS_NOTE": [
+    "作業部屋: WASD で移動 · マウス右ボタン長押しで視点操作 · E でコンピューター · F10 で部屋に戻る。アプリとターミナルの操作キーはデスクトップのヘルプにあります。",
+    "工作室：WASD 移动 · 按住鼠标右键转动视角 · E 使用电脑 · F10 返回。应用与终端快捷键见桌面帮助。",
+    "Estudio: WASD para moverte, mantén clic derecho para mirar, E para usar el ordenador y F10 para volver. La ayuda del escritorio incluye los atajos de aplicaciones y terminales.",
+    "Arbeitszimmer: WASD bewegt, rechte Maustaste halten zum Umsehen, E benutzt den Computer und F10 kehrt zurück. Desktop-Hilfe zeigt App- und Terminaltastenkürzel."
+  ],
+  "SUPPORT_SCOPE_SHORT": [
+    "目標と警戒度のルールは同じで、自動案内の量が変わります。",
+    "目标和警报规则相同，仅自动指引量不同。",
+    "Los objetivos y reglas de alerta no cambian; varía la orientación automática.",
+    "Ziele und Alarmregeln bleiben gleich; nur die automatische Führung variiert."
+  ],
+  "LOBBY_ROOM_SHORT": [
+    "作業部屋",
+    "工作室",
+    "Estudio",
+    "Arbeitszimmer"
+  ],
+  "UI_DESKTOP_LAUNCHER": [
+    "アプリを開く",
+    "打开应用",
+    "Abrir aplicaciones",
+    "Apps öffnen"
+  ],
+  "UI_DESKTOP_SEARCH": [
+    "アプリ名や機能を検索",
+    "搜索应用或功能",
+    "Buscar aplicaciones o tareas",
+    "Apps oder Aufgaben suchen"
+  ],
+  "UI_DESKTOP_ALL_APPS": [
+    "アプリケーション",
+    "应用",
+    "Aplicaciones",
+    "Anwendungen"
+  ],
+  "UI_DESKTOP_NO_APPS": [
+    "一致するアプリがありません。",
+    "没有匹配的应用。",
+    "No hay aplicaciones coincidentes.",
+    "Keine passenden Anwendungen."
+  ],
+  "UI_DESKTOP_NIGHTFOX": [
+    "Nightfox",
+    "Nightfox",
+    "Nightfox",
+    "Nightfox"
+  ],
+  "UI_DESKTOP_SESSION": [
+    "要求ターミナル {n} · {user}@{host}",
+    "请求终端 {n} · {user}@{host}",
+    "Terminal de petición {n} · {user}@{host}",
+    "Anfrageterminal {n} · {user}@{host}"
+  ],
+  "UI_DESKTOP_HINT": [
+    "ヒントを求める",
+    "请求提示",
+    "Pedir una pista",
+    "Hinweis anfordern"
+  ],
+  "UI_DESKTOP_HINT_TIP": [
+    "事件ボードで次の任意ヒントを見ます。",
+    "在事件板查看下一条可选提示。",
+    "Muestra la siguiente pista opcional en el tablero.",
+    "Zeigt den nächsten freiwilligen Hinweis in der Fallübersicht."
+  ],
+  "UI_DESKTOP_NEW_CASE": [
+    "新しい依頼 · {title}",
+    "新委托 · {title}",
+    "Nuevo encargo · {title}",
+    "Neuer Auftrag · {title}"
+  ],
+  "UI_DESKTOP_MAIL_PROMPT": [
+    "メールで依頼を確認してください。アプリとターミナルは好きな順に使えます。",
+    "请在邮件中查看委托，应用与终端可按任意顺序使用。",
+    "Lee el encargo en Correo. Puedes abrir aplicaciones y terminales en cualquier orden.",
+    "Lies den Auftrag im Postfach. Apps und Terminals kannst du in beliebiger Reihenfolge öffnen."
+  ],
+  "UI_DESKTOP_GUIDED_BODY": [
+    "{goal}\n\n最初の手掛かり: {hint}",
+    "{goal}\n\n初始方向：{hint}",
+    "{goal}\n\nPrimer paso: {hint}",
+    "{goal}\n\nErste Orientierung: {hint}"
+  ],
+  "UI_DESKTOP_SUPPORT_GUIDED": [
+    "ガイド付き",
+    "引导",
+    "Guiado",
+    "Geführt"
+  ],
+  "UI_DESKTOP_SUPPORT_STANDARD": [
+    "標準",
+    "标准",
+    "Estándar",
+    "Standard"
+  ],
+  "UI_DESKTOP_SUPPORT_INDEPENDENT": [
+    "自主",
+    "自主",
+    "Autónomo",
+    "Selbstständig"
+  ],
+  "UI_DESKTOP_SUPPORT_STATUS": [
+    "支援 · {mode}",
+    "辅助 · {mode}",
+    "Ayuda · {mode}",
+    "Hilfe · {mode}"
+  ],
+  "UI_DESKTOP_DISMISS": [
+    "通知を閉じる",
+    "关闭通知",
+    "Cerrar aviso",
+    "Mitteilung schließen"
+  ],
+  "UI_DESKTOP_RUNNING": [
+    "{name} · 実行中",
+    "{name} · 正在运行",
+    "{name} · En ejecución",
+    "{name} · Läuft"
+  ],
+  "UI_DESKTOP_MINIMIZED": [
+    "{name} · 最小化中",
+    "{name} · 已最小化",
+    "{name} · Minimizada",
+    "{name} · Minimiert"
+  ],
+  "UI_DESKTOP_TASK_TIP": [
+    "{name} · 有効な窓を押すと最小化し、再度押すと戻ります",
+    "{name} · 点击活动窗口可最小化，再次点击可恢复",
+    "{name} · Pulsa la ventana activa para minimizar y otra vez para restaurar",
+    "{name} · Aktives Fenster anklicken zum Minimieren; erneut klicken zum Wiederherstellen"
+  ],
+  "UI_DESKTOP_BROWSER_NEW_TAB": [
+    "新しいタブ",
+    "新建标签页",
+    "Nueva pestaña",
+    "Neuer Tab"
+  ],
+  "UI_DESKTOP_BROWSER_CLOSE_TAB": [
+    "タブを閉じる",
+    "关闭标签页",
+    "Cerrar pestaña",
+    "Tab schließen"
+  ],
+  "UI_DESKTOP_BROWSER_TAB_LIMIT": [
+    "タブは最大 {max} 個まで開けます。",
+    "最多可打开 {max} 个标签页。",
+    "Puedes abrir hasta {max} pestañas.",
+    "Du kannst bis zu {max} Tabs öffnen."
+  ],
+  "UI_DESKTOP_BROWSER_EMPTY": [
+    "仮想インターネットを探索",
+    "探索虚拟互联网",
+    "Explora Internet virtual",
+    "Das virtuelle Internet erkunden"
+  ],
+  "UI_DESKTOP_BROWSER_EMPTY_BODY": [
+    "アドレスを入力するかホームへ進んでください。サイトと要求はすべて、このゲームの架空世界で処理されます。",
+    "输入地址或前往主页。所有网站与请求都在游戏的虚构世界中处理。",
+    "Introduce una dirección o visita Inicio. Todos los sitios y peticiones pertenecen al mundo ficticio del juego.",
+    "Gib eine Adresse ein oder öffne die Startseite. Alle Websites und Anfragen gehören zur fiktiven Spielwelt."
+  ],
+  "UI_DESKTOP_BROWSER_RESPONSE": [
+    "表示中の応答 · ターミナル {n} · {actor}",
+    "正在显示的响应 · 终端 {n} · {actor}",
+    "Respuesta mostrada · Terminal {n} · {actor}",
+    "Angezeigte Antwort · Terminal {n} · {actor}"
+  ],
+  "UI_DESKTOP_BROWSER_NO_RESPONSE": [
+    "応答なし · アドレスを入力してください。",
+    "暂无响应 · 请输入地址。",
+    "Sin respuesta aún · Introduce una dirección.",
+    "Noch keine Antwort · Gib eine Adresse ein."
+  ],
+  "UI_DESKTOP_BROWSER_CONTEXT": [
+    "{current}\n{response}",
+    "{current}\n{response}",
+    "{current}\n{response}",
+    "{current}\n{response}"
+  ],
+  "UI_DESKTOP_BROWSER_PAST": [
+    "過去の応答です。現在の要求主体とサーバー状態を確かめるには更新してください。",
+    "这是已记录的响应。若要检查当前请求身份与服务器状态，请刷新。",
+    "Esta respuesta está registrada. Actualiza para consultar el solicitante y estado del servidor actuales.",
+    "Dies ist eine aufgezeichnete Antwort. Aktualisiere sie, um aktuellen Anfragenden und Serverzustand zu prüfen."
+  ],
+  "UI_DESKTOP_REQUIRED_RESULT": [
+    "必要な結果",
+    "所需结果",
+    "Resultado necesario",
+    "Gefordertes Ergebnis"
+  ],
+  "UI_DESKTOP_OBJECTIVE": [
+    "{name} を確認",
+    "确认 {name}",
+    "Verificar {name}",
+    "{name} prüfen"
+  ],
+  "UI_TOOL_FIELD_BASIS": [
+    "応答時点の根拠識別値",
+    "响应时的证据标识",
+    "Identificador de la evidencia al responder",
+    "Belegkennung zum Antwortzeitpunkt"
+  ],
+  "UI_TOOL_FIELD_ASSESSMENT_ELIGIBLE": [
+    "現在の判定に利用可能",
+    "可用于当前判定",
+    "Válido como prueba actual",
+    "Für die aktuelle Prüfung verwendbar"
+  ],
+  "UI_TOOL_FIELD_ENABLED": [
+    "使用可能",
+    "可用",
+    "Habilitado",
+    "Aktiviert"
+  ],
+  "UI_TOOL_FIELD_SATISFIED": [
+    "条件を満たす",
+    "条件已满足",
+    "Condición cumplida",
+    "Bedingung erfüllt"
+  ],
+  "UI_LAUNCHER_DESC_TERMINAL": [
+    "コマンドとネットワーク接続",
+    "命令与网络连接",
+    "Comandos y conexiones de red",
+    "Befehle und Netzwerkverbindungen"
+  ],
+  "UI_LAUNCHER_DESC_MAIL": [
+    "依頼と仲間からの連絡",
+    "委托与同伴联系",
+    "Encargos y contactos",
+    "Aufträge und Kontakte"
+  ],
+  "UI_LAUNCHER_DESC_BROWSER": [
+    "内部サイトと仮想 HTTP",
+    "内部网站与虚拟 HTTP",
+    "Sitios internos y HTTP virtual",
+    "Interne Seiten und virtuelles HTTP"
+  ],
+  "UI_LAUNCHER_DESC_REQUESTLAB": [
+    "要求を組み立て、応答を比較",
+    "构造请求并比较响应",
+    "Crear peticiones y comparar respuestas",
+    "Anfragen erstellen und Antworten vergleichen"
+  ],
+  "UI_LAUNCHER_DESC_TOOLS": [
+    "観察・解析・対応のツール",
+    "观察、分析与应对工具",
+    "Herramientas de observación, análisis y respuesta",
+    "Werkzeuge für Beobachtung, Analyse und Abwehr"
+  ],
+  "UI_LAUNCHER_DESC_FILES": [
+    "現在のターミナルのファイルを探索",
+    "浏览当前终端的文件",
+    "Explorar archivos del terminal activo",
+    "Dateien des aktiven Terminals durchsuchen"
+  ],
+  "UI_LAUNCHER_DESC_ARCHIVE": [
+    "回収資料と比較",
+    "已取得资料与对比",
+    "Pruebas recogidas y comparación",
+    "Gesicherte Belege und Vergleiche"
+  ],
+  "UI_LAUNCHER_DESC_BOARD": [
+    "事件の目標と任意ヒント",
+    "事件目标与可选提示",
+    "Objetivos del caso y pistas opcionales",
+    "Fallziele und freiwillige Hinweise"
+  ],
+  "UI_LAUNCHER_DESC_STATUS": [
+    "セッションとネットワークの状態",
+    "会话与网络状态",
+    "Sesiones y estado de red",
+    "Sitzungen und Netzwerkzustand"
+  ],
+  "UI_LAUNCHER_DESC_HELP": [
+    "コマンド・ツール・使い方",
+    "命令、工具与用法",
+    "Comandos, herramientas y referencia",
+    "Befehle, Werkzeuge und Bedienung"
+  ],
+  "UI_LAUNCHER_DESC_ENDING": [
+    "選んだ結末と制作情報",
+    "所选结局与制作信息",
+    "Desenlace elegido y créditos",
+    "Gewählter Abschluss und Mitwirkende"
+  ],
+  "UI_DESKTOP_BROWSER_TABS": [
+    "ブラウザーのタブ",
+    "浏览器标签页",
+    "Pestañas del navegador",
+    "Browser-Tabs"
+  ],
+  "UI_DESKTOP_NEW_TERMINAL": [
+    "別のターミナルを開く",
+    "打开另一个终端",
+    "Abrir otro terminal",
+    "Weiteres Terminal öffnen"
+  ],
+  "UI_DESKTOP_TERMINAL_LIMIT": [
+    "四つのターミナルが開いています。タスクバーで切り替えてください。",
+    "四个终端均已打开，请通过任务栏切换。",
+    "Las cuatro terminales están abiertas. Cambia entre ellas en la barra de tareas.",
+    "Alle vier Terminals sind offen. Wechsle über die Taskleiste zwischen ihnen."
+  ]
+}

@@ -2834,6 +2834,27 @@ msgstr "A previous-edition save was found but could not be validated. The origin
 msgid "LOAD_GAME"
 msgstr "Load game"
 
+msgid "LOBBY_CASE_COUNT"
+msgstr "Independent story · {total} cases"
+
+msgid "LOBBY_CASE_COUNTS"
+msgstr "{main} main · {optional} optional"
+
+msgid "LOBBY_CHOOSE_STORY"
+msgstr "Choose your role for tonight."
+
+msgid "LOBBY_ROLE_DEFENDER"
+msgstr "Contain threats while keeping legitimate work running."
+
+msgid "LOBBY_ROLE_INTRUDER"
+msgstr "Follow clues, gain access and recover hidden records."
+
+msgid "LOBBY_ROLE_TRACKER"
+msgstr "Compare sources and timelines to investigate connections."
+
+msgid "LOBBY_ROOM_SHORT"
+msgstr "Studio"
+
 msgid "M01_BRIEF"
 msgstr "I will send this only once. Handoff record N47 is due for removal from the night archive. Leave the original intact and keep one copy in ~/archive.\n\nPublic access is guest / guest. If the protected folder is closed, read the shift note that remains. You can enter the archive or find a cached copy. The route is yours."
 
@@ -5273,14 +5294,35 @@ msgstr "Settings"
 msgid "SETTINGS_AUDIO"
 msgstr "Audio"
 
+msgid "SETTINGS_AUDIO_DETAILS"
+msgstr "Individual sounds"
+
+msgid "SETTINGS_AUDIO_TAB"
+msgstr "Audio"
+
+msgid "SETTINGS_CONTROLS_NOTE"
+msgstr "Room: WASD to move, hold right mouse to look, E to use the computer and F10 to return. Desktop Help lists app and terminal shortcuts."
+
+msgid "SETTINGS_CONTROLS_TAB"
+msgstr "Controls"
+
 msgid "SETTINGS_DISPLAY"
 msgstr "Display and comfort"
+
+msgid "SETTINGS_DISPLAY_TAB"
+msgstr "Display"
 
 msgid "SETTINGS_NOT_SAVED"
 msgstr "Could not save settings."
 
+msgid "SETTINGS_PLAY"
+msgstr "Play"
+
 msgid "SETTINGS_SAVED"
 msgstr "Settings saved."
+
+msgid "SETTINGS_SUPPORT_FOR"
+msgstr "{campaign} assistance"
 
 msgid "SETTINGS_TITLE"
 msgstr "Preferences"
@@ -5317,6 +5359,36 @@ msgstr "Ready"
 
 msgid "SUCCESS"
 msgstr "Success"
+
+msgid "SUPPORT_GUIDED"
+msgstr "Guided"
+
+msgid "SUPPORT_GUIDED_DESC"
+msgstr "Open new assignments and show initial guidance and hints."
+
+msgid "SUPPORT_INDEPENDENT"
+msgstr "Independent"
+
+msgid "SUPPORT_INDEPENDENT_DESC"
+msgstr "Keep automatic guidance minimal. Help and manual hints remain available."
+
+msgid "SUPPORT_NOT_SAVED"
+msgstr "Assistance preferences could not be saved. Your choice still applies to this session."
+
+msgid "SUPPORT_SCOPE"
+msgstr "Choose how much guidance is shown. Objectives, alert rules and valid solutions stay the same. Change this in Settings."
+
+msgid "SUPPORT_SCOPE_SHORT"
+msgstr "Objectives and alert rules stay the same; automatic guidance varies."
+
+msgid "SUPPORT_STANDARD"
+msgstr "Standard"
+
+msgid "SUPPORT_STANDARD_DESC"
+msgstr "Open apps from the desktop and request staged hints when needed."
+
+msgid "SUPPORT_TITLE"
+msgstr "Play assistance"
 
 msgid "TERMINAL"
 msgstr "Terminal"
@@ -6197,6 +6269,105 @@ msgstr "The damaged save file is kept under a separate name, and progress is res
 msgid "UI_CONFIRM_TITLE"
 msgstr "Confirm"
 
+msgid "UI_DESKTOP_ALL_APPS"
+msgstr "Applications"
+
+msgid "UI_DESKTOP_BROWSER_CLOSE_TAB"
+msgstr "Close tab"
+
+msgid "UI_DESKTOP_BROWSER_CONTEXT"
+msgstr "{current}\n{response}"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY"
+msgstr "Explore the virtual internet"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY_BODY"
+msgstr "Enter an address or visit Home. All sites and requests belong to this game’s fictional world."
+
+msgid "UI_DESKTOP_BROWSER_NEW_TAB"
+msgstr "New tab"
+
+msgid "UI_DESKTOP_BROWSER_NO_RESPONSE"
+msgstr "No response yet · Enter an address."
+
+msgid "UI_DESKTOP_BROWSER_PAST"
+msgstr "This is a recorded response. Refresh to check the current request actor and server state."
+
+msgid "UI_DESKTOP_BROWSER_RESPONSE"
+msgstr "Displayed response · Terminal {n} · {actor}"
+
+msgid "UI_DESKTOP_BROWSER_TABS"
+msgstr "Browser tabs"
+
+msgid "UI_DESKTOP_BROWSER_TAB_LIMIT"
+msgstr "Open up to {max} tabs."
+
+msgid "UI_DESKTOP_DISMISS"
+msgstr "Dismiss notification"
+
+msgid "UI_DESKTOP_GUIDED_BODY"
+msgstr "{goal}\n\nFirst direction: {hint}"
+
+msgid "UI_DESKTOP_HINT"
+msgstr "Request a hint"
+
+msgid "UI_DESKTOP_HINT_TIP"
+msgstr "Show the next optional hint on the case board."
+
+msgid "UI_DESKTOP_LAUNCHER"
+msgstr "Open applications"
+
+msgid "UI_DESKTOP_MAIL_PROMPT"
+msgstr "Read your assignment in Mail. Open applications and terminals in any order."
+
+msgid "UI_DESKTOP_MINIMIZED"
+msgstr "{name} · Minimized"
+
+msgid "UI_DESKTOP_NEW_CASE"
+msgstr "New case · {title}"
+
+msgid "UI_DESKTOP_NEW_TERMINAL"
+msgstr "Open another terminal"
+
+msgid "UI_DESKTOP_NIGHTFOX"
+msgstr "Nightfox"
+
+msgid "UI_DESKTOP_NO_APPS"
+msgstr "No matching applications."
+
+msgid "UI_DESKTOP_OBJECTIVE"
+msgstr "Verify {name}"
+
+msgid "UI_DESKTOP_REQUIRED_RESULT"
+msgstr "Required result"
+
+msgid "UI_DESKTOP_RUNNING"
+msgstr "{name} · Running"
+
+msgid "UI_DESKTOP_SEARCH"
+msgstr "Search applications or tasks"
+
+msgid "UI_DESKTOP_SESSION"
+msgstr "Request terminal {n} · {user}@{host}"
+
+msgid "UI_DESKTOP_SUPPORT_GUIDED"
+msgstr "Guided"
+
+msgid "UI_DESKTOP_SUPPORT_INDEPENDENT"
+msgstr "Independent"
+
+msgid "UI_DESKTOP_SUPPORT_STANDARD"
+msgstr "Standard"
+
+msgid "UI_DESKTOP_SUPPORT_STATUS"
+msgstr "Support · {mode}"
+
+msgid "UI_DESKTOP_TASK_TIP"
+msgstr "{name} · Click the active window to minimize; click again to restore"
+
+msgid "UI_DESKTOP_TERMINAL_LIMIT"
+msgstr "All four terminals are open. Switch between them on the taskbar."
+
 msgid "UI_ENDING_CHOICE"
 msgstr "{title}"
 
@@ -6331,6 +6502,39 @@ msgstr "{field} must be a JSON object like {…}. Not sent."
 
 msgid "UI_JSON_TOO_LONG"
 msgstr "{field} is too long (max {max} characters). Not sent."
+
+msgid "UI_LAUNCHER_DESC_ARCHIVE"
+msgstr "Collected evidence and comparisons"
+
+msgid "UI_LAUNCHER_DESC_BOARD"
+msgstr "Case objectives and optional hints"
+
+msgid "UI_LAUNCHER_DESC_BROWSER"
+msgstr "Internal sites and virtual HTTP"
+
+msgid "UI_LAUNCHER_DESC_ENDING"
+msgstr "Chosen outcome and credits"
+
+msgid "UI_LAUNCHER_DESC_FILES"
+msgstr "Browse the active terminal’s files"
+
+msgid "UI_LAUNCHER_DESC_HELP"
+msgstr "Commands, tools and reference"
+
+msgid "UI_LAUNCHER_DESC_MAIL"
+msgstr "Assignments and contacts"
+
+msgid "UI_LAUNCHER_DESC_REQUESTLAB"
+msgstr "Compose requests and compare responses"
+
+msgid "UI_LAUNCHER_DESC_STATUS"
+msgstr "Sessions and network state"
+
+msgid "UI_LAUNCHER_DESC_TERMINAL"
+msgstr "Commands and network connections"
+
+msgid "UI_LAUNCHER_DESC_TOOLS"
+msgstr "Observation, analysis and response tools"
 
 msgid "UI_LOAD"
 msgstr "Load"
@@ -7148,8 +7352,14 @@ msgstr "Action"
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "Stored object"
 
+msgid "UI_TOOL_FIELD_ASSESSMENT_ELIGIBLE"
+msgstr "Eligible as current evidence"
+
 msgid "UI_TOOL_FIELD_AVAILABLE"
 msgstr "Available"
+
+msgid "UI_TOOL_FIELD_BASIS"
+msgstr "Response evidence fingerprint"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "Business item"
@@ -7198,6 +7408,9 @@ msgstr "Destination register"
 
 msgid "UI_TOOL_FIELD_ELSE"
 msgstr "False branch"
+
+msgid "UI_TOOL_FIELD_ENABLED"
+msgstr "Enabled"
 
 msgid "UI_TOOL_FIELD_ENDPOINT_ID"
 msgstr "Receiving service"
@@ -7342,6 +7555,9 @@ msgstr "Request route"
 
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "Sampling"
+
+msgid "UI_TOOL_FIELD_SATISFIED"
+msgstr "Condition met"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "Section"

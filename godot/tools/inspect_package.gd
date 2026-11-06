@@ -13,7 +13,7 @@ const LOCALES := ["ko", "en", "ja", "zh_Hans", "es", "de"]
 const NOTICES := ["LICENSE-Godot.txt", "THIRD-PARTY-LICENSES.json",
 	"assets/fonts/OFL.txt", "assets/fonts/SOURCE.json", "assets/fonts/OFL-JP.txt", "assets/fonts/SOURCE-JP.json", "assets/fonts/METADATA-JP.pb",
 	"assets/fonts/OFL-SC.txt", "assets/fonts/SOURCE-SC.json", "assets/fonts/METADATA-SC.pb", "assets/fonts/OFL-Mono.txt", "assets/fonts/SOURCE-Mono.json",
-	"assets/audio/LICENSE.txt", "assets/audio/manifest.json", "assets/portraits/SOURCE.json"]
+	"assets/audio/LICENSE.txt", "assets/audio/manifest.json", "assets/portraits/SOURCE.json", "assets/ui/desktop/SOURCE.md"]
 
 var checks := 0
 var failures: Array[Dictionary] = []
@@ -96,6 +96,11 @@ func _initialize() -> void:
 						_check(not key.is_empty() and localization.tr_key(key) != key, "packed campaign ending translates: " + locale + "/" + id + "/" + key)
 	for suffix in ["KR", "JP", "SC", "Mono"]:
 		_check(load("res://assets/fonts/NotoSans%s.ttf" % suffix) is Font, "actual packed font: " + suffix)
+	var desktop_theme: Variant = load("res://scripts/presentation/desktop_theme.gd")
+	_check(desktop_theme != null and desktop_theme.create(1.0) is Theme, "actual packed native desktop theme")
+	for name in ["wallpaper", "launcher", "terminal", "browser", "mail", "files", "tools", "board", "notification", "minimize", "maximize", "close"]:
+		var icon := load("res://assets/ui/desktop/%s.svg" % name) as Texture2D
+		_check(icon != null and icon.get_width() > 0 and icon.get_height() > 0, "actual packed original desktop artwork: " + name)
 	for id in ["C01", "C02", "C03", "C04"]:
 		for expression in ["neutral", "focused", "guarded", "relieved"]:
 			var texture := load("res://assets/portraits/%s-%s.png" % [id, expression]) as Texture2D

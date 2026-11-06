@@ -2834,6 +2834,27 @@ msgstr "Se encontró un guardado anterior, pero no superó la validación. Se co
 msgid "LOAD_GAME"
 msgstr "Cargar partida"
 
+msgid "LOBBY_CASE_COUNT"
+msgstr "Historia independiente · Casos: {total}"
+
+msgid "LOBBY_CASE_COUNTS"
+msgstr "Principales: {main} · Opcionales: {optional}"
+
+msgid "LOBBY_CHOOSE_STORY"
+msgstr "Elige tu papel para esta noche."
+
+msgid "LOBBY_ROLE_DEFENDER"
+msgstr "Contén amenazas sin detener el trabajo legítimo de ciudadanos y compañeros."
+
+msgid "LOBBY_ROLE_INTRUDER"
+msgstr "Sigue pistas, consigue acceso y recupera registros ocultos."
+
+msgid "LOBBY_ROLE_TRACKER"
+msgstr "Compara fuentes y tiempos para investigar conexiones."
+
+msgid "LOBBY_ROOM_SHORT"
+msgstr "Estudio"
+
 msgid "M01_BRIEF"
 msgstr "Solo enviaré este correo una vez. El registro de relevo N47 del archivo nocturno está a punto de eliminarse. Conserva el original y deja una copia en ~/archive.\n\nEl acceso público es guest / guest. Si la carpeta protegida está cerrada, lee la nota de relevo. Puedes entrar al archivo o buscar una copia en caché. Tú eliges la ruta."
 
@@ -5273,14 +5294,35 @@ msgstr "Ajustes"
 msgid "SETTINGS_AUDIO"
 msgstr "Sonido"
 
+msgid "SETTINGS_AUDIO_DETAILS"
+msgstr "Sonidos individuales"
+
+msgid "SETTINGS_AUDIO_TAB"
+msgstr "Sonido"
+
+msgid "SETTINGS_CONTROLS_NOTE"
+msgstr "Estudio: WASD para moverte, mantén clic derecho para mirar, E para usar el ordenador y F10 para volver. La ayuda del escritorio incluye los atajos de aplicaciones y terminales."
+
+msgid "SETTINGS_CONTROLS_TAB"
+msgstr "Controles"
+
 msgid "SETTINGS_DISPLAY"
 msgstr "Pantalla y comodidad"
+
+msgid "SETTINGS_DISPLAY_TAB"
+msgstr "Pantalla"
 
 msgid "SETTINGS_NOT_SAVED"
 msgstr "No se han podido guardar los ajustes."
 
+msgid "SETTINGS_PLAY"
+msgstr "Juego"
+
 msgid "SETTINGS_SAVED"
 msgstr "Ajustes guardados."
+
+msgid "SETTINGS_SUPPORT_FOR"
+msgstr "Ayuda para {campaign}"
 
 msgid "SETTINGS_TITLE"
 msgstr "Preferencias"
@@ -5317,6 +5359,36 @@ msgstr "Listo"
 
 msgid "SUCCESS"
 msgstr "Éxito"
+
+msgid "SUPPORT_GUIDED"
+msgstr "Guiado"
+
+msgid "SUPPORT_GUIDED_DESC"
+msgstr "Abre encargos nuevos y muestra orientación y pistas iniciales."
+
+msgid "SUPPORT_INDEPENDENT"
+msgstr "Autónomo"
+
+msgid "SUPPORT_INDEPENDENT_DESC"
+msgstr "Reduce la orientación automática. La ayuda y las pistas manuales siguen disponibles."
+
+msgid "SUPPORT_NOT_SAVED"
+msgstr "No se pudo guardar la ayuda elegida, pero se aplica a esta sesión."
+
+msgid "SUPPORT_SCOPE"
+msgstr "Elige cuánta orientación se muestra. Objetivos, reglas de alerta y soluciones válidas son iguales. Puedes cambiar esta ayuda en Ajustes."
+
+msgid "SUPPORT_SCOPE_SHORT"
+msgstr "Los objetivos y reglas de alerta no cambian; varía la orientación automática."
+
+msgid "SUPPORT_STANDARD"
+msgstr "Estándar"
+
+msgid "SUPPORT_STANDARD_DESC"
+msgstr "Abre aplicaciones desde el escritorio y pide pistas por etapas cuando las necesites."
+
+msgid "SUPPORT_TITLE"
+msgstr "Ayuda al jugar"
 
 msgid "TERMINAL"
 msgstr "Terminal"
@@ -6197,6 +6269,105 @@ msgstr "Se conserva el archivo dañado con otro nombre y se restaura una copia v
 msgid "UI_CONFIRM_TITLE"
 msgstr "Confirmar"
 
+msgid "UI_DESKTOP_ALL_APPS"
+msgstr "Aplicaciones"
+
+msgid "UI_DESKTOP_BROWSER_CLOSE_TAB"
+msgstr "Cerrar pestaña"
+
+msgid "UI_DESKTOP_BROWSER_CONTEXT"
+msgstr "{current}\n{response}"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY"
+msgstr "Explora Internet virtual"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY_BODY"
+msgstr "Introduce una dirección o visita Inicio. Todos los sitios y peticiones pertenecen al mundo ficticio del juego."
+
+msgid "UI_DESKTOP_BROWSER_NEW_TAB"
+msgstr "Nueva pestaña"
+
+msgid "UI_DESKTOP_BROWSER_NO_RESPONSE"
+msgstr "Sin respuesta aún · Introduce una dirección."
+
+msgid "UI_DESKTOP_BROWSER_PAST"
+msgstr "Esta respuesta está registrada. Actualiza para consultar el solicitante y estado del servidor actuales."
+
+msgid "UI_DESKTOP_BROWSER_RESPONSE"
+msgstr "Respuesta mostrada · Terminal {n} · {actor}"
+
+msgid "UI_DESKTOP_BROWSER_TABS"
+msgstr "Pestañas del navegador"
+
+msgid "UI_DESKTOP_BROWSER_TAB_LIMIT"
+msgstr "Puedes abrir hasta {max} pestañas."
+
+msgid "UI_DESKTOP_DISMISS"
+msgstr "Cerrar aviso"
+
+msgid "UI_DESKTOP_GUIDED_BODY"
+msgstr "{goal}\n\nPrimer paso: {hint}"
+
+msgid "UI_DESKTOP_HINT"
+msgstr "Pedir una pista"
+
+msgid "UI_DESKTOP_HINT_TIP"
+msgstr "Muestra la siguiente pista opcional en el tablero."
+
+msgid "UI_DESKTOP_LAUNCHER"
+msgstr "Abrir aplicaciones"
+
+msgid "UI_DESKTOP_MAIL_PROMPT"
+msgstr "Lee el encargo en Correo. Puedes abrir aplicaciones y terminales en cualquier orden."
+
+msgid "UI_DESKTOP_MINIMIZED"
+msgstr "{name} · Minimizada"
+
+msgid "UI_DESKTOP_NEW_CASE"
+msgstr "Nuevo encargo · {title}"
+
+msgid "UI_DESKTOP_NEW_TERMINAL"
+msgstr "Abrir otro terminal"
+
+msgid "UI_DESKTOP_NIGHTFOX"
+msgstr "Nightfox"
+
+msgid "UI_DESKTOP_NO_APPS"
+msgstr "No hay aplicaciones coincidentes."
+
+msgid "UI_DESKTOP_OBJECTIVE"
+msgstr "Verificar {name}"
+
+msgid "UI_DESKTOP_REQUIRED_RESULT"
+msgstr "Resultado necesario"
+
+msgid "UI_DESKTOP_RUNNING"
+msgstr "{name} · En ejecución"
+
+msgid "UI_DESKTOP_SEARCH"
+msgstr "Buscar aplicaciones o tareas"
+
+msgid "UI_DESKTOP_SESSION"
+msgstr "Terminal de petición {n} · {user}@{host}"
+
+msgid "UI_DESKTOP_SUPPORT_GUIDED"
+msgstr "Guiado"
+
+msgid "UI_DESKTOP_SUPPORT_INDEPENDENT"
+msgstr "Autónomo"
+
+msgid "UI_DESKTOP_SUPPORT_STANDARD"
+msgstr "Estándar"
+
+msgid "UI_DESKTOP_SUPPORT_STATUS"
+msgstr "Ayuda · {mode}"
+
+msgid "UI_DESKTOP_TASK_TIP"
+msgstr "{name} · Pulsa la ventana activa para minimizar y otra vez para restaurar"
+
+msgid "UI_DESKTOP_TERMINAL_LIMIT"
+msgstr "Las cuatro terminales están abiertas. Cambia entre ellas en la barra de tareas."
+
 msgid "UI_ENDING_CHOICE"
 msgstr "{title}"
 
@@ -6331,6 +6502,39 @@ msgstr "{field} debe ser un objeto JSON de forma {…}. No se envió."
 
 msgid "UI_JSON_TOO_LONG"
 msgstr "{field} es demasiado largo (máximo {max} caracteres). No se envió."
+
+msgid "UI_LAUNCHER_DESC_ARCHIVE"
+msgstr "Pruebas recogidas y comparación"
+
+msgid "UI_LAUNCHER_DESC_BOARD"
+msgstr "Objetivos del caso y pistas opcionales"
+
+msgid "UI_LAUNCHER_DESC_BROWSER"
+msgstr "Sitios internos y HTTP virtual"
+
+msgid "UI_LAUNCHER_DESC_ENDING"
+msgstr "Desenlace elegido y créditos"
+
+msgid "UI_LAUNCHER_DESC_FILES"
+msgstr "Explorar archivos del terminal activo"
+
+msgid "UI_LAUNCHER_DESC_HELP"
+msgstr "Comandos, herramientas y referencia"
+
+msgid "UI_LAUNCHER_DESC_MAIL"
+msgstr "Encargos y contactos"
+
+msgid "UI_LAUNCHER_DESC_REQUESTLAB"
+msgstr "Crear peticiones y comparar respuestas"
+
+msgid "UI_LAUNCHER_DESC_STATUS"
+msgstr "Sesiones y estado de red"
+
+msgid "UI_LAUNCHER_DESC_TERMINAL"
+msgstr "Comandos y conexiones de red"
+
+msgid "UI_LAUNCHER_DESC_TOOLS"
+msgstr "Herramientas de observación, análisis y respuesta"
 
 msgid "UI_LOAD"
 msgstr "Cargar partida"
@@ -7148,8 +7352,14 @@ msgstr "Acción"
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "Objeto guardado"
 
+msgid "UI_TOOL_FIELD_ASSESSMENT_ELIGIBLE"
+msgstr "Válido como prueba actual"
+
 msgid "UI_TOOL_FIELD_AVAILABLE"
 msgstr "Disponible"
+
+msgid "UI_TOOL_FIELD_BASIS"
+msgstr "Identificador de la evidencia al responder"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "Elemento de trabajo"
@@ -7198,6 +7408,9 @@ msgstr "Registro de destino"
 
 msgid "UI_TOOL_FIELD_ELSE"
 msgstr "Rama falsa"
+
+msgid "UI_TOOL_FIELD_ENABLED"
+msgstr "Habilitado"
 
 msgid "UI_TOOL_FIELD_ENDPOINT_ID"
 msgstr "Servicio receptor"
@@ -7342,6 +7555,9 @@ msgstr "Ruta de petición"
 
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "Muestreo"
+
+msgid "UI_TOOL_FIELD_SATISFIED"
+msgstr "Condición cumplida"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "Sección"

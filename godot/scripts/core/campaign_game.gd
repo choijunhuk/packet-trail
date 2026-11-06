@@ -63,8 +63,8 @@ func cancel_authentication(terminal_id: int = 0) -> Dictionary:
 	return _runtime.cancel_auth(terminal_id) if _ready else _result(false, "INVALID_CONTENT", _error)
 
 
-func browse(url: String) -> Dictionary:
-	return request("GET", url, {}, {"X-Packet-Context": "browser"})
+func browse(url: String, terminal_id: int = 0) -> Dictionary:
+	return request("GET", url, {}, {"X-Packet-Context": "browser"}, terminal_id)
 
 
 func request(method: String, url: String, body: Dictionary = {}, headers: Dictionary = {}, terminal_id: int = 0) -> Dictionary:
@@ -84,11 +84,18 @@ func request(method: String, url: String, body: Dictionary = {}, headers: Dictio
 	return _finish_action(result, before)
 
 
-func collect_web(url: String) -> Dictionary:
+func collect_web(url: String, terminal_id: int = -1) -> Dictionary:
 	if not _ready:
 		return _result(false, "INVALID_CONTENT", _error)
+	if terminal_id < -1 or terminal_id > 3:
+		return _result(false, "INVALID_TERMINAL", "Terminal ID must be -1 or 0–3.")
 	var before: Dictionary = _runtime.checkpoint()
-	return _finish_action(_runtime.collect_page(url), before)
+	if terminal_id != -1:
+		_runtime.select_terminal(terminal_id)
+	var result: Dictionary = _runtime.collect_page(url)
+	if not result.ok and not result.get("changed", false):
+		_runtime.rollback(before)
+	return _finish_action(result, before)
 
 
 func use_tool(tool_id: String, params: Dictionary = {}) -> Dictionary:

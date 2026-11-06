@@ -2834,6 +2834,27 @@ msgstr "旧版セーブは見つかりましたが、現在の検証に通りま
 msgid "LOAD_GAME"
 msgstr "ロード"
 
+msgid "LOBBY_CASE_COUNT"
+msgstr "独立した物語 · 事件数 {total}"
+
+msgid "LOBBY_CASE_COUNTS"
+msgstr "本編 {main} · 任意 {optional}"
+
+msgid "LOBBY_CHOOSE_STORY"
+msgstr "今夜は、どの立場を選びますか？"
+
+msgid "LOBBY_ROLE_DEFENDER"
+msgstr "脅威を防ぎながら、市民や仲間の業務を守ります。"
+
+msgid "LOBBY_ROLE_INTRUDER"
+msgstr "手掛かりをたどって侵入し、隠された記録を回収します。"
+
+msgid "LOBBY_ROLE_TRACKER"
+msgstr "記録の出所と時刻を比べ、つながりを追います。"
+
+msgid "LOBBY_ROOM_SHORT"
+msgstr "作業部屋"
+
 msgid "M01_BRIEF"
 msgstr "このメールは一度だけ送ります。夜間保管庫の引き継ぎ記録 N47 が、まもなく削除されます。原本を残し、~/archive に一部だけコピーしてください。\n\n公開アカウントは guest / guest です。保護フォルダーが開かなければ、残された引き継ぎメモを読んでください。直接入るか、保存されたコピーを探すかは、あなた次第です。"
 
@@ -5273,14 +5294,35 @@ msgstr "設定"
 msgid "SETTINGS_AUDIO"
 msgstr "サウンド"
 
+msgid "SETTINGS_AUDIO_DETAILS"
+msgstr "個別の音"
+
+msgid "SETTINGS_AUDIO_TAB"
+msgstr "音"
+
+msgid "SETTINGS_CONTROLS_NOTE"
+msgstr "作業部屋: WASD で移動 · マウス右ボタン長押しで視点操作 · E でコンピューター · F10 で部屋に戻る。アプリとターミナルの操作キーはデスクトップのヘルプにあります。"
+
+msgid "SETTINGS_CONTROLS_TAB"
+msgstr "操作"
+
 msgid "SETTINGS_DISPLAY"
 msgstr "画面と快適さ"
+
+msgid "SETTINGS_DISPLAY_TAB"
+msgstr "画面"
 
 msgid "SETTINGS_NOT_SAVED"
 msgstr "設定を保存できませんでした。"
 
+msgid "SETTINGS_PLAY"
+msgstr "プレイ支援"
+
 msgid "SETTINGS_SAVED"
 msgstr "設定を保存しました。"
+
+msgid "SETTINGS_SUPPORT_FOR"
+msgstr "{campaign} の支援"
 
 msgid "SETTINGS_TITLE"
 msgstr "環境設定"
@@ -5317,6 +5359,36 @@ msgstr "準備完了"
 
 msgid "SUCCESS"
 msgstr "成功"
+
+msgid "SUPPORT_GUIDED"
+msgstr "ガイド付き"
+
+msgid "SUPPORT_GUIDED_DESC"
+msgstr "新しい依頼と最初の案内を開き、序盤のヒントも表示します。"
+
+msgid "SUPPORT_INDEPENDENT"
+msgstr "自主"
+
+msgid "SUPPORT_INDEPENDENT_DESC"
+msgstr "自動の案内を控えめにします。ヘルプと手動のヒントはいつでも使えます。"
+
+msgid "SUPPORT_NOT_SAVED"
+msgstr "支援設定を保存できませんでした。今回のプレイには適用されます。"
+
+msgid "SUPPORT_SCOPE"
+msgstr "案内とヒントの表示量を選びます。目標・警戒度のルール・有効な解法は共通です。支援の選択は設定で変更できます。"
+
+msgid "SUPPORT_SCOPE_SHORT"
+msgstr "目標と警戒度のルールは同じで、自動案内の量が変わります。"
+
+msgid "SUPPORT_STANDARD"
+msgstr "標準"
+
+msgid "SUPPORT_STANDARD_DESC"
+msgstr "デスクトップから自分でアプリを開き、必要なときに段階別ヒントを求めます。"
+
+msgid "SUPPORT_TITLE"
+msgstr "プレイ支援"
 
 msgid "TERMINAL"
 msgstr "ターミナル"
@@ -6197,6 +6269,105 @@ msgstr "破損セーブを別名で残し、正常なバックアップを読ん
 msgid "UI_CONFIRM_TITLE"
 msgstr "確認"
 
+msgid "UI_DESKTOP_ALL_APPS"
+msgstr "アプリケーション"
+
+msgid "UI_DESKTOP_BROWSER_CLOSE_TAB"
+msgstr "タブを閉じる"
+
+msgid "UI_DESKTOP_BROWSER_CONTEXT"
+msgstr "{current}\n{response}"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY"
+msgstr "仮想インターネットを探索"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY_BODY"
+msgstr "アドレスを入力するかホームへ進んでください。サイトと要求はすべて、このゲームの架空世界で処理されます。"
+
+msgid "UI_DESKTOP_BROWSER_NEW_TAB"
+msgstr "新しいタブ"
+
+msgid "UI_DESKTOP_BROWSER_NO_RESPONSE"
+msgstr "応答なし · アドレスを入力してください。"
+
+msgid "UI_DESKTOP_BROWSER_PAST"
+msgstr "過去の応答です。現在の要求主体とサーバー状態を確かめるには更新してください。"
+
+msgid "UI_DESKTOP_BROWSER_RESPONSE"
+msgstr "表示中の応答 · ターミナル {n} · {actor}"
+
+msgid "UI_DESKTOP_BROWSER_TABS"
+msgstr "ブラウザーのタブ"
+
+msgid "UI_DESKTOP_BROWSER_TAB_LIMIT"
+msgstr "タブは最大 {max} 個まで開けます。"
+
+msgid "UI_DESKTOP_DISMISS"
+msgstr "通知を閉じる"
+
+msgid "UI_DESKTOP_GUIDED_BODY"
+msgstr "{goal}\n\n最初の手掛かり: {hint}"
+
+msgid "UI_DESKTOP_HINT"
+msgstr "ヒントを求める"
+
+msgid "UI_DESKTOP_HINT_TIP"
+msgstr "事件ボードで次の任意ヒントを見ます。"
+
+msgid "UI_DESKTOP_LAUNCHER"
+msgstr "アプリを開く"
+
+msgid "UI_DESKTOP_MAIL_PROMPT"
+msgstr "メールで依頼を確認してください。アプリとターミナルは好きな順に使えます。"
+
+msgid "UI_DESKTOP_MINIMIZED"
+msgstr "{name} · 最小化中"
+
+msgid "UI_DESKTOP_NEW_CASE"
+msgstr "新しい依頼 · {title}"
+
+msgid "UI_DESKTOP_NEW_TERMINAL"
+msgstr "別のターミナルを開く"
+
+msgid "UI_DESKTOP_NIGHTFOX"
+msgstr "Nightfox"
+
+msgid "UI_DESKTOP_NO_APPS"
+msgstr "一致するアプリがありません。"
+
+msgid "UI_DESKTOP_OBJECTIVE"
+msgstr "{name} を確認"
+
+msgid "UI_DESKTOP_REQUIRED_RESULT"
+msgstr "必要な結果"
+
+msgid "UI_DESKTOP_RUNNING"
+msgstr "{name} · 実行中"
+
+msgid "UI_DESKTOP_SEARCH"
+msgstr "アプリ名や機能を検索"
+
+msgid "UI_DESKTOP_SESSION"
+msgstr "要求ターミナル {n} · {user}@{host}"
+
+msgid "UI_DESKTOP_SUPPORT_GUIDED"
+msgstr "ガイド付き"
+
+msgid "UI_DESKTOP_SUPPORT_INDEPENDENT"
+msgstr "自主"
+
+msgid "UI_DESKTOP_SUPPORT_STANDARD"
+msgstr "標準"
+
+msgid "UI_DESKTOP_SUPPORT_STATUS"
+msgstr "支援 · {mode}"
+
+msgid "UI_DESKTOP_TASK_TIP"
+msgstr "{name} · 有効な窓を押すと最小化し、再度押すと戻ります"
+
+msgid "UI_DESKTOP_TERMINAL_LIMIT"
+msgstr "四つのターミナルが開いています。タスクバーで切り替えてください。"
+
 msgid "UI_ENDING_CHOICE"
 msgstr "{title}"
 
@@ -6331,6 +6502,39 @@ msgstr "{field} は {…} 形式の JSON オブジェクトが必要です。送
 
 msgid "UI_JSON_TOO_LONG"
 msgstr "{field} が長すぎます（最大 {max} 文字）。送信しませんでした。"
+
+msgid "UI_LAUNCHER_DESC_ARCHIVE"
+msgstr "回収資料と比較"
+
+msgid "UI_LAUNCHER_DESC_BOARD"
+msgstr "事件の目標と任意ヒント"
+
+msgid "UI_LAUNCHER_DESC_BROWSER"
+msgstr "内部サイトと仮想 HTTP"
+
+msgid "UI_LAUNCHER_DESC_ENDING"
+msgstr "選んだ結末と制作情報"
+
+msgid "UI_LAUNCHER_DESC_FILES"
+msgstr "現在のターミナルのファイルを探索"
+
+msgid "UI_LAUNCHER_DESC_HELP"
+msgstr "コマンド・ツール・使い方"
+
+msgid "UI_LAUNCHER_DESC_MAIL"
+msgstr "依頼と仲間からの連絡"
+
+msgid "UI_LAUNCHER_DESC_REQUESTLAB"
+msgstr "要求を組み立て、応答を比較"
+
+msgid "UI_LAUNCHER_DESC_STATUS"
+msgstr "セッションとネットワークの状態"
+
+msgid "UI_LAUNCHER_DESC_TERMINAL"
+msgstr "コマンドとネットワーク接続"
+
+msgid "UI_LAUNCHER_DESC_TOOLS"
+msgstr "観察・解析・対応のツール"
 
 msgid "UI_LOAD"
 msgstr "ロード"
@@ -7148,8 +7352,14 @@ msgstr "動作"
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "保存オブジェクト"
 
+msgid "UI_TOOL_FIELD_ASSESSMENT_ELIGIBLE"
+msgstr "現在の判定に利用可能"
+
 msgid "UI_TOOL_FIELD_AVAILABLE"
 msgstr "収集可能"
+
+msgid "UI_TOOL_FIELD_BASIS"
+msgstr "応答時点の根拠識別値"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "業務項目"
@@ -7198,6 +7408,9 @@ msgstr "結果を入れるレジスター"
 
 msgid "UI_TOOL_FIELD_ELSE"
 msgstr "偽の場合の分岐"
+
+msgid "UI_TOOL_FIELD_ENABLED"
+msgstr "使用可能"
 
 msgid "UI_TOOL_FIELD_ENDPOINT_ID"
 msgstr "受理サービス"
@@ -7342,6 +7555,9 @@ msgstr "要求経路"
 
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "標本の方式"
+
+msgid "UI_TOOL_FIELD_SATISFIED"
+msgstr "条件を満たす"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "表示内容"

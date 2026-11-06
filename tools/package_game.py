@@ -24,6 +24,7 @@ LICENSE_FILES = (
     "assets/fonts/OFL-SC.txt", "assets/fonts/SOURCE-SC.json", "assets/fonts/METADATA-SC.pb",
     "assets/fonts/OFL-Mono.txt", "assets/fonts/SOURCE-Mono.json",
     "assets/audio/LICENSE.txt", "assets/audio/manifest.json", "assets/portraits/SOURCE.json",
+    "assets/ui/desktop/SOURCE.md",
 )
 FORBIDDEN_PARTS = {"tests", "tools", "fixtures", ".git", ".godot", "__pycache__"}
 FORBIDDEN_NAMES = {"project.godot", "settings.json", "settings.json.bak", "campaign_solutions.json"}
@@ -315,7 +316,7 @@ def main():
     parser.add_argument("--output", type=Path)
     parser.add_argument("--source-commit")
     parser.add_argument("--source-tree")
-    parser.add_argument("--version", default="1.1.0-rc1")
+    parser.add_argument("--version", default="1.2.0-rc1")
     parser.add_argument("--target", choices=TARGETS)
     args = parser.parse_args()
     if args.self_test:

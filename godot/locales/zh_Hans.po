@@ -2834,6 +2834,27 @@ msgstr "找到旧版存档，但未通过当前验证。原件会保留，不会
 msgid "LOAD_GAME"
 msgstr "读取存档"
 
+msgid "LOBBY_CASE_COUNT"
+msgstr "独立故事 · {total} 个事件"
+
+msgid "LOBBY_CASE_COUNTS"
+msgstr "主线 {main} · 可选 {optional}"
+
+msgid "LOBBY_CHOOSE_STORY"
+msgstr "今夜，你将站在哪一边？"
+
+msgid "LOBBY_ROLE_DEFENDER"
+msgstr "阻止威胁，同时守住市民与同伴的正常业务。"
+
+msgid "LOBBY_ROLE_INTRUDER"
+msgstr "追随线索，取得访问并找回隐藏记录。"
+
+msgid "LOBBY_ROLE_TRACKER"
+msgstr "比较记录来源与时间，追踪其中联系。"
+
+msgid "LOBBY_ROOM_SHORT"
+msgstr "工作室"
+
 msgid "M01_BRIEF"
 msgstr "这封邮件我只发一次。夜间档案库的交接记录 N47 即将被清理。请保留原件，只在 ~/archive 中留一份副本。\n\n公开账号是 guest / guest。如果受保护的文件夹无法打开，就读读留下的交接便条。直接进入档案库，还是寻找缓存副本，由你决定。"
 
@@ -5273,14 +5294,35 @@ msgstr "设置"
 msgid "SETTINGS_AUDIO"
 msgstr "音频"
 
+msgid "SETTINGS_AUDIO_DETAILS"
+msgstr "各类声音"
+
+msgid "SETTINGS_AUDIO_TAB"
+msgstr "声音"
+
+msgid "SETTINGS_CONTROLS_NOTE"
+msgstr "工作室：WASD 移动 · 按住鼠标右键转动视角 · E 使用电脑 · F10 返回。应用与终端快捷键见桌面帮助。"
+
+msgid "SETTINGS_CONTROLS_TAB"
+msgstr "操作"
+
 msgid "SETTINGS_DISPLAY"
 msgstr "显示与舒适度"
+
+msgid "SETTINGS_DISPLAY_TAB"
+msgstr "显示"
 
 msgid "SETTINGS_NOT_SAVED"
 msgstr "无法保存设置。"
 
+msgid "SETTINGS_PLAY"
+msgstr "游玩辅助"
+
 msgid "SETTINGS_SAVED"
 msgstr "设置已保存。"
+
+msgid "SETTINGS_SUPPORT_FOR"
+msgstr "{campaign} 辅助"
 
 msgid "SETTINGS_TITLE"
 msgstr "偏好设置"
@@ -5317,6 +5359,36 @@ msgstr "就绪"
 
 msgid "SUCCESS"
 msgstr "成功"
+
+msgid "SUPPORT_GUIDED"
+msgstr "引导"
+
+msgid "SUPPORT_GUIDED_DESC"
+msgstr "打开新委托，自动显示初始指引与提示。"
+
+msgid "SUPPORT_INDEPENDENT"
+msgstr "自主"
+
+msgid "SUPPORT_INDEPENDENT_DESC"
+msgstr "减少自动指引，帮助与手动提示始终可用。"
+
+msgid "SUPPORT_NOT_SAVED"
+msgstr "无法保存辅助设置，但本次游玩仍会应用你的选择。"
+
+msgid "SUPPORT_SCOPE"
+msgstr "选择指引与提示的显示量。目标、警报规则和有效解法保持相同，可在设置中调整辅助方式。"
+
+msgid "SUPPORT_SCOPE_SHORT"
+msgstr "目标和警报规则相同，仅自动指引量不同。"
+
+msgid "SUPPORT_STANDARD"
+msgstr "标准"
+
+msgid "SUPPORT_STANDARD_DESC"
+msgstr "从桌面自行打开应用，按需请求分阶段提示。"
+
+msgid "SUPPORT_TITLE"
+msgstr "游玩辅助"
 
 msgid "TERMINAL"
 msgstr "终端"
@@ -6197,6 +6269,105 @@ msgstr "将另名保留损坏存档，并读取有效备份恢复进度。"
 msgid "UI_CONFIRM_TITLE"
 msgstr "确认"
 
+msgid "UI_DESKTOP_ALL_APPS"
+msgstr "应用"
+
+msgid "UI_DESKTOP_BROWSER_CLOSE_TAB"
+msgstr "关闭标签页"
+
+msgid "UI_DESKTOP_BROWSER_CONTEXT"
+msgstr "{current}\n{response}"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY"
+msgstr "探索虚拟互联网"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY_BODY"
+msgstr "输入地址或前往主页。所有网站与请求都在游戏的虚构世界中处理。"
+
+msgid "UI_DESKTOP_BROWSER_NEW_TAB"
+msgstr "新建标签页"
+
+msgid "UI_DESKTOP_BROWSER_NO_RESPONSE"
+msgstr "暂无响应 · 请输入地址。"
+
+msgid "UI_DESKTOP_BROWSER_PAST"
+msgstr "这是已记录的响应。若要检查当前请求身份与服务器状态，请刷新。"
+
+msgid "UI_DESKTOP_BROWSER_RESPONSE"
+msgstr "正在显示的响应 · 终端 {n} · {actor}"
+
+msgid "UI_DESKTOP_BROWSER_TABS"
+msgstr "浏览器标签页"
+
+msgid "UI_DESKTOP_BROWSER_TAB_LIMIT"
+msgstr "最多可打开 {max} 个标签页。"
+
+msgid "UI_DESKTOP_DISMISS"
+msgstr "关闭通知"
+
+msgid "UI_DESKTOP_GUIDED_BODY"
+msgstr "{goal}\n\n初始方向：{hint}"
+
+msgid "UI_DESKTOP_HINT"
+msgstr "请求提示"
+
+msgid "UI_DESKTOP_HINT_TIP"
+msgstr "在事件板查看下一条可选提示。"
+
+msgid "UI_DESKTOP_LAUNCHER"
+msgstr "打开应用"
+
+msgid "UI_DESKTOP_MAIL_PROMPT"
+msgstr "请在邮件中查看委托，应用与终端可按任意顺序使用。"
+
+msgid "UI_DESKTOP_MINIMIZED"
+msgstr "{name} · 已最小化"
+
+msgid "UI_DESKTOP_NEW_CASE"
+msgstr "新委托 · {title}"
+
+msgid "UI_DESKTOP_NEW_TERMINAL"
+msgstr "打开另一个终端"
+
+msgid "UI_DESKTOP_NIGHTFOX"
+msgstr "Nightfox"
+
+msgid "UI_DESKTOP_NO_APPS"
+msgstr "没有匹配的应用。"
+
+msgid "UI_DESKTOP_OBJECTIVE"
+msgstr "确认 {name}"
+
+msgid "UI_DESKTOP_REQUIRED_RESULT"
+msgstr "所需结果"
+
+msgid "UI_DESKTOP_RUNNING"
+msgstr "{name} · 正在运行"
+
+msgid "UI_DESKTOP_SEARCH"
+msgstr "搜索应用或功能"
+
+msgid "UI_DESKTOP_SESSION"
+msgstr "请求终端 {n} · {user}@{host}"
+
+msgid "UI_DESKTOP_SUPPORT_GUIDED"
+msgstr "引导"
+
+msgid "UI_DESKTOP_SUPPORT_INDEPENDENT"
+msgstr "自主"
+
+msgid "UI_DESKTOP_SUPPORT_STANDARD"
+msgstr "标准"
+
+msgid "UI_DESKTOP_SUPPORT_STATUS"
+msgstr "辅助 · {mode}"
+
+msgid "UI_DESKTOP_TASK_TIP"
+msgstr "{name} · 点击活动窗口可最小化，再次点击可恢复"
+
+msgid "UI_DESKTOP_TERMINAL_LIMIT"
+msgstr "四个终端均已打开，请通过任务栏切换。"
+
 msgid "UI_ENDING_CHOICE"
 msgstr "{title}"
 
@@ -6331,6 +6502,39 @@ msgstr "{field} 必须是 {…} 形式的 JSON 对象，未发送。"
 
 msgid "UI_JSON_TOO_LONG"
 msgstr "{field} 太长（最多 {max} 字符），未发送。"
+
+msgid "UI_LAUNCHER_DESC_ARCHIVE"
+msgstr "已取得资料与对比"
+
+msgid "UI_LAUNCHER_DESC_BOARD"
+msgstr "事件目标与可选提示"
+
+msgid "UI_LAUNCHER_DESC_BROWSER"
+msgstr "内部网站与虚拟 HTTP"
+
+msgid "UI_LAUNCHER_DESC_ENDING"
+msgstr "所选结局与制作信息"
+
+msgid "UI_LAUNCHER_DESC_FILES"
+msgstr "浏览当前终端的文件"
+
+msgid "UI_LAUNCHER_DESC_HELP"
+msgstr "命令、工具与用法"
+
+msgid "UI_LAUNCHER_DESC_MAIL"
+msgstr "委托与同伴联系"
+
+msgid "UI_LAUNCHER_DESC_REQUESTLAB"
+msgstr "构造请求并比较响应"
+
+msgid "UI_LAUNCHER_DESC_STATUS"
+msgstr "会话与网络状态"
+
+msgid "UI_LAUNCHER_DESC_TERMINAL"
+msgstr "命令与网络连接"
+
+msgid "UI_LAUNCHER_DESC_TOOLS"
+msgstr "观察、分析与应对工具"
 
 msgid "UI_LOAD"
 msgstr "读取存档"
@@ -7148,8 +7352,14 @@ msgstr "操作"
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "存储对象"
 
+msgid "UI_TOOL_FIELD_ASSESSMENT_ELIGIBLE"
+msgstr "可用于当前判定"
+
 msgid "UI_TOOL_FIELD_AVAILABLE"
 msgstr "可采集"
+
+msgid "UI_TOOL_FIELD_BASIS"
+msgstr "响应时的证据标识"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "业务项目"
@@ -7198,6 +7408,9 @@ msgstr "目标寄存器"
 
 msgid "UI_TOOL_FIELD_ELSE"
 msgstr "假分支"
+
+msgid "UI_TOOL_FIELD_ENABLED"
+msgstr "可用"
 
 msgid "UI_TOOL_FIELD_ENDPOINT_ID"
 msgstr "接收服务"
@@ -7342,6 +7555,9 @@ msgstr "请求通路"
 
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "采样方式"
+
+msgid "UI_TOOL_FIELD_SATISFIED"
+msgstr "条件已满足"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "查看部分"

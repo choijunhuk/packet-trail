@@ -41,8 +41,8 @@ func run(tree: SceneTree, mode := "menu") -> void:
 		_tree.root.propagate_notification(Node.NOTIFICATION_WM_CLOSE_REQUEST)
 		return
 	var button: Button
-	for child in room.get("menu_box").get_children():
-		if child is Button and child.text == room.call("_text", "QUIT"):
+	for child in room.get("menu_box").find_children("*", "Button", true, false):
+		if child is Button and child.get_meta("lobby_action", "") == "quit":
 			button = child
 			break
 	_check(button != null and button.is_visible_in_tree(), "actual menu Quit button is reachable")

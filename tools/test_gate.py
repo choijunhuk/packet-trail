@@ -64,6 +64,10 @@ class GateFailureTests(unittest.TestCase):
             "tools/build_expansion_content.py",
             "godot/tests/headless/test_ui_context.gd", "godot/tools/run_ui_context.gd",
             "godot/tests/headless/test_shutdown.gd", "godot/tools/run_shutdown.gd", "tools/test_shutdown.py",
+            "godot/scripts/presentation/desktop_theme.gd", "godot/tests/headless/test_browser_context.gd",
+            "godot/tests/headless/test_support_settings.gd", "godot/tools/run_support_settings.gd", "tools/test_desktop_models.py",
+            "godot/tests/headless/test_desktop_shell.gd", "godot/tools/run_desktop_shell.gd",
+            "godot/tests/headless/test_lobby_preferences.gd", "godot/tools/run_lobby_preferences.gd",
         )
         for relative in required:
             target = self.root / relative

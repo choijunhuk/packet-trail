@@ -2834,6 +2834,27 @@ msgstr "이전판 저장을 찾았지만 현재 검증을 통과하지 못했습
 msgid "LOAD_GAME"
 msgstr "불러오기"
 
+msgid "LOBBY_CASE_COUNT"
+msgstr "독립 이야기 · {total}개 사건"
+
+msgid "LOBBY_CASE_COUNTS"
+msgstr "본편 {main} · 선택 {optional}"
+
+msgid "LOBBY_CHOOSE_STORY"
+msgstr "오늘 밤, 어느 쪽에 설까요?"
+
+msgid "LOBBY_ROLE_DEFENDER"
+msgstr "위협을 막으면서 시민과 동료의 업무를 지킵니다."
+
+msgid "LOBBY_ROLE_INTRUDER"
+msgstr "단서를 따라 침투하고 감춰진 기록을 회수합니다."
+
+msgid "LOBBY_ROLE_TRACKER"
+msgstr "기록의 출처와 시간을 비교해 연결을 추적합니다."
+
+msgid "LOBBY_ROOM_SHORT"
+msgstr "작업실"
+
 msgid "M01_BRIEF"
 msgstr "이 메일은 한 번만 보낼게요. 야간 보관소에서 인계 기록 N47이 곧 정리됩니다. 원본을 없애지 말고 사본 하나만 ~/archive에 남겨 주세요.\n\n공개 접속은 guest / guest입니다. 보호 폴더가 닫혀 있으면, 남아 있는 인수인계 메모를 읽어 보세요. 직접 들어가는 길과 보관 사본을 찾는 길 중 무엇을 택할지는 당신 몫입니다."
 
@@ -5273,14 +5294,35 @@ msgstr "설정"
 msgid "SETTINGS_AUDIO"
 msgstr "음향"
 
+msgid "SETTINGS_AUDIO_DETAILS"
+msgstr "세부 소리"
+
+msgid "SETTINGS_AUDIO_TAB"
+msgstr "음향"
+
+msgid "SETTINGS_CONTROLS_NOTE"
+msgstr "작업실: WASD 이동 · 마우스 오른쪽 시선 · E 컴퓨터 · F10 작업실 복귀. 데스크톱 도움말에서 앱과 터미널 단축키를 확인할 수 있습니다."
+
+msgid "SETTINGS_CONTROLS_TAB"
+msgstr "조작"
+
 msgid "SETTINGS_DISPLAY"
 msgstr "화면과 편안함"
+
+msgid "SETTINGS_DISPLAY_TAB"
+msgstr "화면"
 
 msgid "SETTINGS_NOT_SAVED"
 msgstr "설정을 저장하지 못했습니다."
 
+msgid "SETTINGS_PLAY"
+msgstr "플레이 지원"
+
 msgid "SETTINGS_SAVED"
 msgstr "설정을 저장했습니다."
+
+msgid "SETTINGS_SUPPORT_FOR"
+msgstr "{campaign} 지원 수준"
 
 msgid "SETTINGS_TITLE"
 msgstr "환경 설정"
@@ -5317,6 +5359,36 @@ msgstr "준비됨"
 
 msgid "SUCCESS"
 msgstr "성공"
+
+msgid "SUPPORT_GUIDED"
+msgstr "가이드"
+
+msgid "SUPPORT_GUIDED_DESC"
+msgstr "새 의뢰와 첫 방향 안내를 열고 초반 힌트를 함께 보여 줍니다."
+
+msgid "SUPPORT_INDEPENDENT"
+msgstr "자율"
+
+msgid "SUPPORT_INDEPENDENT_DESC"
+msgstr "자동 길잡이를 줄입니다. 도움말과 수동 힌트는 언제든 사용할 수 있습니다."
+
+msgid "SUPPORT_NOT_SAVED"
+msgstr "지원 설정을 저장하지 못했습니다. 이번 플레이에는 적용됩니다."
+
+msgid "SUPPORT_SCOPE"
+msgstr "안내와 힌트 표시량을 선택합니다. 목표·경보 규칙과 허용 해법은 같으며 설정에서 바꿀 수 있습니다."
+
+msgid "SUPPORT_SCOPE_SHORT"
+msgstr "목표와 경보 규칙은 같고, 자동 안내량이 달라집니다."
+
+msgid "SUPPORT_STANDARD"
+msgstr "표준"
+
+msgid "SUPPORT_STANDARD_DESC"
+msgstr "바탕화면에서 직접 앱을 열고 필요할 때 단계별 힌트를 요청합니다."
+
+msgid "SUPPORT_TITLE"
+msgstr "플레이 지원"
 
 msgid "TERMINAL"
 msgstr "터미널"
@@ -6197,6 +6269,105 @@ msgstr "손상된 저장 파일은 별도 이름으로 보존하고, 정상 백�
 msgid "UI_CONFIRM_TITLE"
 msgstr "확인"
 
+msgid "UI_DESKTOP_ALL_APPS"
+msgstr "애플리케이션"
+
+msgid "UI_DESKTOP_BROWSER_CLOSE_TAB"
+msgstr "탭 닫기"
+
+msgid "UI_DESKTOP_BROWSER_CONTEXT"
+msgstr "{current}\n{response}"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY"
+msgstr "가상 인터넷 탐색"
+
+msgid "UI_DESKTOP_BROWSER_EMPTY_BODY"
+msgstr "주소를 입력하거나 홈으로 이동하세요. 모든 사이트와 요청은 이 게임 안의 가상 세계에서 처리됩니다."
+
+msgid "UI_DESKTOP_BROWSER_NEW_TAB"
+msgstr "새 탭"
+
+msgid "UI_DESKTOP_BROWSER_NO_RESPONSE"
+msgstr "아직 응답 없음 · 주소를 입력하세요."
+
+msgid "UI_DESKTOP_BROWSER_PAST"
+msgstr "보관된 응답입니다. 현재 요청 주체와 서버 상태를 확인하려면 새로고침하세요."
+
+msgid "UI_DESKTOP_BROWSER_RESPONSE"
+msgstr "표시 중인 응답 · 터미널 {n} · {actor}"
+
+msgid "UI_DESKTOP_BROWSER_TABS"
+msgstr "브라우저 탭"
+
+msgid "UI_DESKTOP_BROWSER_TAB_LIMIT"
+msgstr "탭은 최대 {max}개까지 열 수 있습니다."
+
+msgid "UI_DESKTOP_DISMISS"
+msgstr "알림 닫기"
+
+msgid "UI_DESKTOP_GUIDED_BODY"
+msgstr "{goal}\n\n첫 방향: {hint}"
+
+msgid "UI_DESKTOP_HINT"
+msgstr "도움 요청"
+
+msgid "UI_DESKTOP_HINT_TIP"
+msgstr "사건 보드에서 다음 단계 힌트를 봅니다."
+
+msgid "UI_DESKTOP_LAUNCHER"
+msgstr "앱 열기"
+
+msgid "UI_DESKTOP_MAIL_PROMPT"
+msgstr "메일에서 의뢰를 확인하세요. 앱과 터미널은 원하는 순서로 사용할 수 있습니다."
+
+msgid "UI_DESKTOP_MINIMIZED"
+msgstr "{name} · 최소화됨"
+
+msgid "UI_DESKTOP_NEW_CASE"
+msgstr "새 의뢰 · {title}"
+
+msgid "UI_DESKTOP_NEW_TERMINAL"
+msgstr "다른 터미널 열기"
+
+msgid "UI_DESKTOP_NIGHTFOX"
+msgstr "Nightfox"
+
+msgid "UI_DESKTOP_NO_APPS"
+msgstr "일치하는 앱이 없습니다."
+
+msgid "UI_DESKTOP_OBJECTIVE"
+msgstr "{name} 확인"
+
+msgid "UI_DESKTOP_REQUIRED_RESULT"
+msgstr "필요한 결과"
+
+msgid "UI_DESKTOP_RUNNING"
+msgstr "{name} · 실행 중"
+
+msgid "UI_DESKTOP_SEARCH"
+msgstr "앱 이름이나 기능 검색"
+
+msgid "UI_DESKTOP_SESSION"
+msgstr "요청 터미널 {n} · {user}@{host}"
+
+msgid "UI_DESKTOP_SUPPORT_GUIDED"
+msgstr "가이드"
+
+msgid "UI_DESKTOP_SUPPORT_INDEPENDENT"
+msgstr "자율"
+
+msgid "UI_DESKTOP_SUPPORT_STANDARD"
+msgstr "표준"
+
+msgid "UI_DESKTOP_SUPPORT_STATUS"
+msgstr "지원 · {mode}"
+
+msgid "UI_DESKTOP_TASK_TIP"
+msgstr "{name} · 활성 창을 누르면 최소화, 다시 누르면 복원"
+
+msgid "UI_DESKTOP_TERMINAL_LIMIT"
+msgstr "네 터미널이 모두 열려 있습니다. 작업표시줄에서 전환하세요."
+
 msgid "UI_ENDING_CHOICE"
 msgstr "{title}"
 
@@ -6331,6 +6502,39 @@ msgstr "{field}은(는) {…} 형태의 JSON 객체여야 합니다. 보내지 �
 
 msgid "UI_JSON_TOO_LONG"
 msgstr "{field}이(가) 너무 깁니다 (최대 {max}자). 보내지 않았습니다."
+
+msgid "UI_LAUNCHER_DESC_ARCHIVE"
+msgstr "회수한 자료와 비교"
+
+msgid "UI_LAUNCHER_DESC_BOARD"
+msgstr "사건 목표와 선택형 힌트"
+
+msgid "UI_LAUNCHER_DESC_BROWSER"
+msgstr "내부 사이트와 가상 HTTP"
+
+msgid "UI_LAUNCHER_DESC_ENDING"
+msgstr "선택한 결말과 제작 정보"
+
+msgid "UI_LAUNCHER_DESC_FILES"
+msgstr "현재 터미널의 파일 탐색"
+
+msgid "UI_LAUNCHER_DESC_HELP"
+msgstr "명령·도구·사용법"
+
+msgid "UI_LAUNCHER_DESC_MAIL"
+msgstr "의뢰와 동료의 연락"
+
+msgid "UI_LAUNCHER_DESC_REQUESTLAB"
+msgstr "요청을 구성하고 응답 비교"
+
+msgid "UI_LAUNCHER_DESC_STATUS"
+msgstr "세션과 네트워크 상태"
+
+msgid "UI_LAUNCHER_DESC_TERMINAL"
+msgstr "명령과 네트워크 연결"
+
+msgid "UI_LAUNCHER_DESC_TOOLS"
+msgstr "관측·분석·대응 도구"
 
 msgid "UI_LOAD"
 msgstr "불러오기"
@@ -7148,8 +7352,14 @@ msgstr "동작"
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "저장 객체"
 
+msgid "UI_TOOL_FIELD_ASSESSMENT_ELIGIBLE"
+msgstr "현재 판정에 사용 가능"
+
 msgid "UI_TOOL_FIELD_AVAILABLE"
 msgstr "수집 가능"
+
+msgid "UI_TOOL_FIELD_BASIS"
+msgstr "응답 시점의 근거 식별값"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "업무 항목"
@@ -7198,6 +7408,9 @@ msgstr "결과 레지스터"
 
 msgid "UI_TOOL_FIELD_ELSE"
 msgstr "거짓일 때 분기"
+
+msgid "UI_TOOL_FIELD_ENABLED"
+msgstr "사용 가능"
 
 msgid "UI_TOOL_FIELD_ENDPOINT_ID"
 msgstr "접수 서비스"
@@ -7342,6 +7555,9 @@ msgstr "요청 경로"
 
 msgid "UI_TOOL_FIELD_SAMPLING"
 msgstr "표본 방식"
+
+msgid "UI_TOOL_FIELD_SATISFIED"
+msgstr "조건 충족"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "볼 내용"

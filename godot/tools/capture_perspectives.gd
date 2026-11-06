@@ -22,6 +22,7 @@ var auth_cancel_checked := false
 var manual_save_checked: Dictionary = {}
 var legacy_source_probe: Dictionary = {}
 var fixture_packs: Dictionary = {}
+var preferences_path := ""
 # Expected presentation intent comes from the actual test actions, never bootstrap's private cue flag.
 var expected_ending_context := false
 
@@ -40,51 +41,49 @@ func _initialize() -> void:
 			_finish())
 
 
-func _run() -> void:
+func _boot_product() -> bool:
 	before_files = _fingerprints()
 	if DisplayServer.get_name() == "headless":
 		_check(false, "rendered_perspectives needs actual rendered pixels; headless is not a substitute")
-		_finish()
-		return
-	output_dir = ProjectSettings.globalize_path("res://../.omx/artifacts/expansion-native/").path_join(profile).simplify_path()
+		return false
+	output_dir = ProjectSettings.globalize_path("res://../.omx/artifacts/desktop-native/").path_join(profile).simplify_path()
 	_check(DirAccess.make_dir_recursive_absolute(output_dir) == OK, "perspectives artifact directory is writable")
 	if not _load_fixtures():
-		_finish()
-		return
-	test_base = "user://tests/perspectives_ui_%d_%d.json" % [Time.get_ticks_usec(), get_instance_id()]
+		return false
+	test_base = "user://tests/desktop_ui_%d_%d.json" % [Time.get_ticks_usec(), get_instance_id()]
 	for pack in Catalog.list_packs(true):
 		var id := str(pack.id)
 		var path := Catalog.test_slot(test_base, id)
 		_check(not path.is_empty() and path.begins_with("user://tests/"), "catalog creates an isolated test slot: " + id)
 		_check(not FileAccess.file_exists(path) and not FileAccess.file_exists(path + ".bak"), "test slot does not overwrite existing bytes: " + id)
 		if path.is_empty() or FileAccess.file_exists(path) or FileAccess.file_exists(path + ".bak"):
-			_finish()
-			return
+			return false
 		pack_slots[id] = path
 	root.size = Vector2i(1600, 900)
 	var scene := load("res://scenes/full_game.tscn") as PackedScene
 	_check(scene != null, "actual three-perspective product scene exists")
 	if scene == null:
-		_finish()
-		return
+		return false
 	full = scene.instantiate()
 	if not _require_fields(full, ["save_slot_path", "room", "audio"]):
 		full.free()
-		_finish()
-		return
+		return false
 	full.set("save_slot_path", test_base)
 	root.add_child(full)
 	current_scene = full
 	await _frames(10)
 	room = full.get("room")
-	if room == null or not _require_fields(room, ["campaign_picker", "campaign_slots", "selected_pack_id", "desktop", "menu", "menu_box"]):
+	if room == null or not _require_fields(room, ["campaign_buttons", "support_picker", "campaign_slots", "selected_pack_id", "desktop", "menu", "menu_box", "settings_path"]):
 		_check(false, "real campaign-aware room booted")
-		_finish()
-		return
+		return false
 	_check(room.get("campaign_slots") == pack_slots, "all four slot overrides arrive before any desktop exists")
 	if room.get("campaign_slots") != pack_slots:
-		_finish()
-		return
+		return false
+	preferences_path = test_base.get_basename() + "_preferences.json"
+	_check(room.settings_path == preferences_path and room.settings_store.get("_path") == preferences_path,
+		"actual settings store is isolated before any UI preference action")
+	if room.settings_path != preferences_path or room.settings_store.get("_path") != preferences_path:
+		return false
 	_check(room.get("selected_pack_id") == "intruder" and room.get("desktop") == null, "public default is intruder without an implicit session")
 	_check(full.get("audio").get("current_mood") == "home", "menu uses home music")
 	var probe := Campaign.new(pack_slots["legacy_intruder"], "legacy_intruder")
@@ -92,6 +91,13 @@ func _run() -> void:
 	_check(not legacy_source_probe.get("legacy_sources_checked", true) and not legacy_source_probe.get("legacy_available", true)
 		and not legacy_source_probe.get("legacy_source_available", true), "test override performs an actual false legacy-source probe")
 	_check(not room.get("legacy_continue_button").visible, "empty test legacy slot does not expose real old-save continuation")
+	return true
+
+
+func _run() -> void:
+	if not (await _boot_product()):
+		_finish()
+		return
 	await _capture("menu-selector.png")
 	await _settings_cancel()
 	for id in PACK_IDS:
@@ -155,18 +161,29 @@ func _load_fixtures() -> bool:
 	return true
 
 
+func _metadata_button(node: Node, key: String, value: String) -> Button:
+	if node is Button and str(node.get_meta(key, "")) == value:
+		return node
+	for child in node.get_children():
+		var found := _metadata_button(child, key, value)
+		if found != null:
+			return found
+	return null
+
+
 func _settings_cancel() -> void:
-	var button := _button_text(room.get("menu_box"), str(TranslationServer.translate("SETTINGS")))
-	_check(button != null, "real menu Settings action exists")
+	var button := _metadata_button(room.menu_box, "lobby_action", "settings")
+	_check(button != null, "real lobby metadata opens settings")
 	if button == null:
 		return
+	var before := _path_fingerprint(preferences_path)
 	await _click(button)
-	_check(room.get("settings_panel") != null, "native menu click opens settings")
-	var cancel := _button_text(room.get("settings_panel"), str(TranslationServer.translate("CANCEL")))
-	_check(cancel != null, "settings can cancel without persistence")
+	_check(room.settings_panel != null, "native lobby click opens settings")
+	var cancel := _metadata_button(room.settings_panel, "settings_action", "cancel")
+	_check(cancel != null, "real settings metadata exposes cancel")
 	if cancel != null:
 		await _click(cancel)
-	_check(room.get("settings_panel") == null, "native cancel closes settings without applying")
+	_check(room.settings_panel == null and _path_fingerprint(preferences_path) == before, "native settings Cancel preserves isolated preferences")
 
 
 func _menu() -> void:
@@ -181,48 +198,44 @@ func _menu() -> void:
 
 func _select_pack(id: String) -> bool:
 	await _menu()
-	var picker: OptionButton = room.get("campaign_picker")
-	var index := -1
-	for item in range(picker.item_count):
-		if str(picker.get_item_metadata(item)) == id:
-			index = item
-	_check(index >= 0, "pack is present by canonical picker metadata: " + id)
-	if index < 0:
+	var card: Button = room.campaign_buttons.get(id)
+	_check(card != null and str(card.get_meta("scenario_id", "")) == id, "actual scenario card exposes canonical id: " + id)
+	if card == null:
 		return false
-	picker.grab_focus()
-	await _key(KEY_SPACE)
-	var popup := picker.get_popup()
-	_check(popup.visible, "native keyboard opens campaign picker")
-	if not popup.visible:
-		return false
-	# Highlight setup chooses a metadata-derived row; Enter performs the actual menu action.
-	popup.set_focused_item(index)
-	var accepted: Array[int] = []
-	popup.id_pressed.connect(func(value: int): accepted.append(value), CONNECT_ONE_SHOT)
-	_check(popup.get_focused_item() == index, "picker setup highlights the canonical target row: " + id)
-	var event := InputEventKey.new()
-	event.keycode = KEY_ENTER
-	event.physical_keycode = KEY_ENTER
-	event.pressed = true
-	# Enter the embedder so Window::_window_input reaches PopupMenu's built-in handler.
-	root.push_input(event, true)
-	await _frames(1)
-	event = event.duplicate() as InputEventKey
-	event.pressed = false
-	root.push_input(event, true)
-	await _frames(2)
-	_check(accepted == [index], "actual embedder Enter activates the PopupMenu row exactly once: " + id)
-	_check(not is_instance_valid(popup) or not popup.visible, "actual picker acceptance closes its popup: " + id)
-	_check(room.get("selected_pack_id") == id, "actual picker Enter selects canonical pack: " + id)
-	if room.get("selected_pack_id") != id:
+	await _focus_and_click(card)
+	_check(room.selected_pack_id == id and card.button_pressed, "actual card input selects scenario: " + id)
+	if room.selected_pack_id != id:
 		return false
 	if not selected_packs.has(id):
 		selected_packs.append(id)
 	return true
 
 
+func _accept_option(control: OptionButton, value: Variant, label: String) -> bool:
+	var index := -1
+	for item in range(control.item_count):
+		if control.get_item_metadata(item) == value:
+			index = item
+	_check(index >= 0, "public option metadata is available: " + label)
+	if index < 0:
+		return false
+	control.grab_focus()
+	await _key(KEY_SPACE)
+	var popup := control.get_popup()
+	_check(popup.visible, "actual keyboard opens option popup: " + label)
+	if not popup.visible:
+		return false
+	# Canonical row highlight is setup; embedder Enter performs actual acceptance.
+	popup.set_focused_item(index)
+	var accepted: Array[int] = []
+	popup.id_pressed.connect(func(value_id: int): accepted.append(value_id), CONNECT_ONE_SHOT)
+	await _key(KEY_ENTER)
+	_check(accepted == [index], "actual Enter accepts option once: " + label)
+	return accepted == [index]
+
+
 func _start_new_pack(id: String) -> bool:
-	var button := _button_text(room.get("menu_box"), str(TranslationServer.translate("NEW_GAME")))
+	var button := _metadata_button(room.menu_box, "lobby_action", "new")
 	_check(button != null, "selected pack has a real New Game action")
 	if button == null:
 		return false
@@ -281,7 +294,7 @@ func _common_input_checks() -> void:
 	var old_size: int = desktop.ui_size
 	await _click(desktop.font_down_btn)
 	_check(desktop.ui_size == old_size - 1, "actual held mouse click activates font decrease")
-	var larger := _button_text(desktop.top_panel, "A+")
+	var larger: Button = desktop.font_up_btn
 	_check(larger != null, "actual font increase control exists")
 	if larger != null:
 		await _click(larger)
@@ -298,13 +311,13 @@ func _common_input_checks() -> void:
 	_check(FileAccess.get_file_as_string("res://scripts/apps/campaign_desktop.gd").contains("has_ime_text()"),
 		"source retains platform IME guard; physical composition remains NOT_RUN")
 	await _key(KEY_F6)
-	_check(root.gui_get_focus_owner() == desktop.task_buttons["terminal"], "F6 reaches taskbar")
+	_check(root.gui_get_focus_owner() == desktop.launcher_button, "F6 reaches persistent launcher")
 	await _key(KEY_F6, false, true)
 	_check(root.gui_get_focus_owner() == desktop.font_down_btn, "Shift F6 reaches font control")
 	await _open_terminal(1)
 	var before: Dictionary = desktop.game.export_snapshot()
 	var retained: LineEdit = desktop.terms[1]["input"]
-	var close := _button_text(desktop.wins["term1"]["bar"], "×")
+	var close: Button = desktop.wins["term1"]["actions"]["close"]
 	_check(close != null, "terminal has a real close action")
 	if close != null:
 		await _click(close)
@@ -614,6 +627,7 @@ func _room_resume_checks() -> void:
 	input.text = active_pack + "-room-draft"
 	var same := desktop
 	var snapshot: Dictionary = desktop.game.export_snapshot()
+	var focus_before := str(root.gui_get_focus_owner().get_path()) if root.gui_get_focus_owner() != null else "NONE"
 	await _key(KEY_F10)
 	_check(not room.get("_in_desktop") and not same.visible, "native F10 returns to 3D room")
 	_check(room.get("studio").visible and room.get("camera").current, "real 3D studio/camera are restored")
@@ -622,6 +636,9 @@ func _room_resume_checks() -> void:
 	await _key(KEY_ESCAPE)
 	await _continue_pack(active_pack)
 	_check(desktop == same and desktop.game.export_snapshot() == snapshot and input.text == active_pack + "-room-draft", "same pack room round-trip preserves world/desktop/draft")
+	var focus_after := str(root.gui_get_focus_owner().get_path()) if root.gui_get_focus_owner() != null else "NONE"
+	print("ROOM_FOCUS ", JSON.stringify({"before": focus_before, "after": focus_after, "active_id": desktop.active_id,
+		"expected": str(input.get_path()), "same_input": root.gui_get_focus_owner() == input}))
 	_check(root.gui_get_focus_owner() == input, "room reentry restores exact input focus")
 	_assert_mood(desktop.get_game_view(), "same pack room resume")
 
@@ -720,12 +737,45 @@ func _fingerprints() -> Dictionary:
 	for path in paths:
 		for suffix in ["", ".bak", ".tmp", ".bak.tmp"]:
 			result[path + suffix] = _path_fingerprint(path + suffix)
-	var directory := DirAccess.open("user://saves")
+	for folder in ["user://saves", "user://progress"]:
+		_fingerprint_tree(folder, result)
+	var directory := DirAccess.open("user://")
 	if directory != null:
 		for filename in directory.get_files():
-			var path := "user://saves/" + filename
-			result[path] = "SYMLINK" if directory.is_link(filename) else _path_fingerprint(path)
+			if ".json" in filename:
+				result["user://" + filename] = "SYMLINK" if directory.is_link(filename) else _path_fingerprint("user://" + filename)
 	return result
+
+
+func _fingerprint_tree(path: String, result: Dictionary) -> void:
+	result[path] = _path_fingerprint(path)
+	var directory := DirAccess.open(path)
+	if directory == null:
+		return
+	for filename in directory.get_files():
+		var child := path.path_join(filename)
+		result[child] = "SYMLINK" if directory.is_link(filename) else _path_fingerprint(child)
+	for name in directory.get_directories():
+		var child := path.path_join(name)
+		if directory.is_link(name):
+			result[child] = "SYMLINK"
+		else:
+			_fingerprint_tree(child, result)
+
+
+func _render_suite() -> String:
+	return "rendered_perspectives"
+
+
+func _render_ui_observations() -> Array:
+	return []
+
+
+func _render_expected_scope() -> Dictionary:
+	return {"packs_selected": 3, "cases": 1 if profile == "ci-render-smoke" else 44,
+		"endings": 0 if profile == "ci-render-smoke" else 3,
+		"case_counts": {"intruder": 1, "defender": 0, "tracker": 0} if profile == "ci-render-smoke" else CASE_COUNTS,
+		"locales": Localization.LOCALES}
 
 
 func _path_fingerprint(path: String) -> String:
@@ -763,17 +813,14 @@ func _cleanup_and_report() -> void:
 		not_run.append("Full replay stopped with %d/44 case completions and %d/3 ending screens; remaining %d case solutions and %d endings are GUI NOT_RUN." %
 			[campaign_cases.size(), pack_endings.size(), 44 - campaign_cases.size(), 3 - pack_endings.size()])
 	var status := "pass" if failures.is_empty() else ("partial_failure" if not campaign_cases.is_empty() else "failed")
-	print(JSON.stringify({"suite": "rendered_perspectives", "profile": profile, "status": status, "checks": checks, "failures": failures,
-		"expected_scope": {"packs_selected": 3, "cases": 1 if profile == "ci-render-smoke" else 44,
-			"endings": 0 if profile == "ci-render-smoke" else 3,
-			"case_counts": {"intruder": 1, "defender": 0, "tracker": 0} if profile == "ci-render-smoke" else CASE_COUNTS,
-			"locales": Localization.LOCALES}, "selected_packs": selected_packs,
+	print(JSON.stringify({"suite": _render_suite(), "interface_revision": "desktop-1.2", "profile": profile, "status": status, "checks": checks, "failures": failures,
+		"expected_scope": _render_expected_scope(), "selected_packs": selected_packs, "ui_observations": _render_ui_observations(),
 		"actual_case_count": campaign_cases.size(), "actual_ending_count": pack_endings.size(),
 		"campaign_cases": campaign_cases, "pack_endings": pack_endings, "typed_basic_runs": typed_runs, "first_case_form_views": form_views,
 		"native_fixture_actions": native_actions, "password_actions": password_actions,
-		"setup_api_scope": "Text/number/bool/enum/array assignment, ItemList/Tree selection and action-change signals are setup. Run, save, picker accept, confirmation and lifecycle use actual InputEvents.",
+		"setup_api_scope": "Text/number/bool/enum/array assignment, ItemList/Tree selection, action-change signals and isolated test preference IO are setup. Run, save, picker accept, confirmation and lifecycle use actual InputEvents.",
 		"capture_dir": output_dir, "captures": captures, "capture_metrics": capture_metrics,
-		"test_slot_base": test_base, "pack_test_slots": pack_slots, "legacy_source_probe": legacy_source_probe,
+		"test_preferences_path": preferences_path, "test_slot_base": test_base, "pack_test_slots": pack_slots, "legacy_source_probe": legacy_source_probe,
 		"protected_file_count": before_files.size(), "protected_files_unchanged": protected_unchanged,
 		"elapsed_seconds": float(Time.get_ticks_msec() - started_ms) / 1000.0,
 		"not_run": not_run, "limit": "Actual source scenes and GPU readback with injected engine input. OS cursor/window/physical IME/hearing and alternate GUI solutions are separate."}))

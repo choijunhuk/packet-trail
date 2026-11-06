@@ -820,11 +820,11 @@ func _response_request(method: String, url: String, body: Dictionary, headers: D
 func collect_page(url: String) -> Dictionary:
 	var response: Dictionary = request_page("GET", url, {}, {"X-Packet-Context": "browser"})
 	if not response.ok or response.status != 200:
-		return _result(false, response.code, response.body)
+		return _result(false, response.code, response.body, response.get("changed", false))
 	var base: String = str(response.url).get_slice("?", 0)
 	var page: Dictionary = _definition.pages.get(base, {})
 	if not page.has("record_id"):
-		return _result(false, "NO_RECORD", "This page has no collectible record.")
+		return _result(false, "NO_RECORD", "This page has no collectible record.", response.get("changed", false))
 	var record: Dictionary = _definition.records[page.record_id]
 	var entry: Dictionary = _entry("file", "600", record.content)
 	entry.record_id = page.record_id

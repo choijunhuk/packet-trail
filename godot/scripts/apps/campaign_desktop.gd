@@ -18,19 +18,20 @@ signal presentation_context_changed(app_id: String)
 const CampaignGame = preload("res://scripts/core/campaign_game.gd")
 const Catalog = preload("res://scripts/core/campaign_catalog.gd")
 const Localization = preload("res://scripts/presentation/localization.gd")
+const DesktopTheme = preload("res://scripts/presentation/desktop_theme.gd")
 
-const C_BG := Color(0.034, 0.050, 0.062)
-const C_PANEL := Color(0.064, 0.086, 0.102, 0.98)
-const C_FIELD := Color(0.036, 0.052, 0.062)
-const C_BAR := Color(0.086, 0.114, 0.132)
-const C_BAR_ACTIVE := Color(0.092, 0.160, 0.172)
-const C_LINE := Color(0.19, 0.26, 0.29)
-const C_TEXT := Color(0.91, 0.94, 0.95)
-const C_DIM := Color(0.64, 0.72, 0.75)
-const C_FAINT := Color(0.47, 0.54, 0.57)
-const C_TEAL := Color(0.40, 0.80, 0.78)
-const C_TEAL_DIM := Color(0.53, 0.77, 0.77)
-const C_AMBER := Color(0.94, 0.67, 0.33)
+const C_BG := DesktopTheme.BG
+const C_PANEL := DesktopTheme.SURFACE
+const C_FIELD := DesktopTheme.FIELD
+const C_BAR := DesktopTheme.RAISED
+const C_BAR_ACTIVE := Color("294365")
+const C_LINE := DesktopTheme.LINE
+const C_TEXT := DesktopTheme.TEXT
+const C_DIM := DesktopTheme.MUTED
+const C_FAINT := Color("7e91ac")
+const C_TEAL := DesktopTheme.ACCENT
+const C_TEAL_DIM := DesktopTheme.ACCENT_SOFT
+const C_AMBER := DesktopTheme.WARNING
 
 const TERMS := 4
 const MAX_LOG_PARAGRAPHS := 900
@@ -65,13 +66,13 @@ const MODEL_ENUM_FIELDS := ["status", "verdict", "class", "intended", "visibilit
 
 # 데스크톱 크기 대비 기본 위치/크기
 const APP_RECTS := {
-	"term0": Rect2(0.010, 0.025, 0.500, 0.950),
-	"term1": Rect2(0.050, 0.065, 0.460, 0.740),
-	"term2": Rect2(0.090, 0.105, 0.460, 0.740),
-	"term3": Rect2(0.130, 0.145, 0.460, 0.740),
-	"mail": Rect2(0.520, 0.025, 0.470, 0.540),
-	"board": Rect2(0.520, 0.585, 0.470, 0.390),
-	"browser": Rect2(0.080, 0.040, 0.620, 0.900),
+	"term0": Rect2(0.15, 0.12, 0.64, 0.74),
+	"term1": Rect2(0.19, 0.15, 0.64, 0.74),
+	"term2": Rect2(0.23, 0.18, 0.64, 0.74),
+	"term3": Rect2(0.27, 0.21, 0.64, 0.74),
+	"mail": Rect2(0.18, 0.08, 0.64, 0.82),
+	"board": Rect2(0.16, 0.07, 0.68, 0.86),
+	"browser": Rect2(0.12, 0.06, 0.76, 0.88),
 	"requestlab": Rect2(0.200, 0.050, 0.640, 0.900),
 	"tools": Rect2(0.110, 0.030, 0.740, 0.940),
 	"files": Rect2(0.240, 0.080, 0.520, 0.720),
@@ -81,13 +82,17 @@ const APP_RECTS := {
 	"ending": Rect2(0.160, 0.040, 0.680, 0.920),
 }
 const APP_TITLES := {
-	"mail": "UI_APP_MAIL", "browser": "UI_APP_BROWSER", "requestlab": "UI_APP_REQUESTLAB",
+	"mail": "UI_APP_MAIL", "browser": "UI_DESKTOP_NIGHTFOX", "requestlab": "UI_APP_REQUESTLAB",
 	"tools": "UI_APP_TOOLS", "files": "UI_APP_FILES", "archive": "UI_APP_ARCHIVE",
 	"board": "UI_APP_BOARD", "status": "UI_APP_STATUS", "help": "UI_APP_HELP", "ending": "UI_APP_ENDING",
 }
 const TASK_APPS := ["mail", "browser", "requestlab", "tools", "files", "archive", "board", "status", "help", "ending"]
 # Ctrl/Cmd+1..9
 const SHORTCUTS := ["terminal", "mail", "browser", "requestlab", "tools", "files", "archive", "board", "status"]
+const MAX_BROWSER_TABS := 8
+const MAX_BROWSER_HISTORY := 64
+const DESKTOP_APPS := ["mail", "browser", "terminal", "files", "tools", "board"]
+const ICON_ROOT := "res://assets/ui/desktop/"
 
 @export var save_slot_path: String = ""
 @export var pack_id: String = "intruder"
@@ -115,6 +120,7 @@ var task_h := 48
 var sized: Array = []  # [Control, delta, is_terminal]
 var _i18n: Array = []  # [Object, property, key, replacements]
 var _fallback_lang := ""
+var _presentation_locale := ""
 var _fallback_strings: Dictionary = {}
 var _texture_cache: Dictionary = {}
 
@@ -132,11 +138,13 @@ var top_progress: Label
 var top_alert: Label
 var top_host: Label
 var top_save: Label
+var font_up_btn: Button
 var font_down_btn: Button
 var pause_btn: Button
 var task_scroll: ScrollContainer
 var task_buttons := {}
 var term_task_buttons: Array = []
+var new_terminal_buttons: Array[Button] = []
 var status_label: Label
 var save_btn: Button
 var load_btn: Button
@@ -145,6 +153,10 @@ var fresh_btn: Button
 var room_btn: Button
 var toast_panel: PanelContainer
 var toast_label: Label
+var toast_scroll: ScrollContainer
+var toast_close_button: Button
+var notification_button: Button
+var _notification_text := ""
 var toast_tween: Tween
 var confirm: ConfirmationDialog
 var confirm_action := Callable()
@@ -166,6 +178,28 @@ var _focus_before_hide = null
 var wins := {}  # id -> {win, frame, bar, title, focus, state, placed, restore}
 var active_id := ""
 var drag := {}
+var _title_pointer_pending := false
+var _title_pointer_focus = null
+var desktop_icons: Dictionary = {}
+var launcher_button: Button
+var launcher_buttons: Dictionary = {}
+var launcher_panel: PanelContainer
+var launcher_search: LineEdit
+var launcher_list: VBoxContainer
+var _launcher_scrim: Control
+var _desktop_icon_grid: GridContainer
+var _desktop_captions: Dictionary = {}
+var _launcher_empty: Label
+var _task_apps: HBoxContainer
+var support_mode := "standard"
+var support_card: PanelContainer
+var _support_status: Label
+var _support_title: Label
+var _support_body: Label
+var _support_seen: Dictionary = {}
+var _support_eligible: Dictionary = {}
+var _support_dismissed: Dictionary = {}
+var _support_icon_cache: Dictionary = {}
 
 # 터미널: 창마다 독립 출력·기록·입력 초안·암호 대기 상태
 var terms: Array = []
@@ -196,6 +230,7 @@ var br_body: RichTextLabel
 var br_links: VBoxContainer
 var br_status: Label
 var br_stale: Label
+var br_stale_row: ScrollContainer
 var br_archive: Button
 var br_form_toggle: Button
 var br_form_box: VBoxContainer
@@ -209,6 +244,12 @@ var br_cursor := -1
 var br_url := ""
 var br_failed := false
 var br_opened := false
+var browser_tabs: TabBar
+var browser_new_tab_button: Button
+var _browser_states: Array[Dictionary] = []
+var _browser_index := -1
+var _browser_tab_sequence := 0
+var _browser_rebuilding := false
 
 # RequestLab
 var rl_method: OptionButton
@@ -326,7 +367,9 @@ func _ready() -> void:
 	_build_overlays()
 	_font_apply()
 	_relocalize()
+	_presentation_locale = Localization.get_locale()
 	visibility_changed.connect(_on_visibility_changed)
+	get_viewport().gui_focus_changed.connect(_on_gui_focus_changed)
 	# 코어만 만든다. 디스크 읽기/쓰기는 Room이 start_session을 호출할 때만 한다.
 	if save_slot_path.is_empty():
 		save_slot_path = Catalog.default_slot(pack_id)
@@ -370,9 +413,19 @@ func get_game_view() -> Dictionary:
 	return _view(active_term)
 
 
+func show_notice(message: String) -> void:
+	_toast(message, C_AMBER)
+
+
 func apply_settings(values: Dictionary) -> void:
+	var previous_locale := _presentation_locale
 	if values.has("locale"):
 		Localization.set_locale(str(values["locale"]))
+	if Localization.get_locale() != previous_locale:
+		_clear_transients()
+	_presentation_locale = Localization.get_locale()
+	var preference := str(values.get("support_" + pack_id, "standard"))
+	support_mode = preference if pack_id != "legacy_intruder" and preference in ["guided", "standard", "independent"] else "standard"
 	var scale_value = values.get("font_scale", font_scale)
 	if scale_value is float or scale_value is int:
 		font_scale = clampf(float(scale_value), 0.75, 2.0)
@@ -383,7 +436,7 @@ func apply_settings(values: Dictionary) -> void:
 	_font_apply()
 	_relocalize()
 	if br_url != "":
-		br_stale.visible = true
+		_set_browser_stale(true)
 	if game != null and _game_ready(game):
 		_refresh_all()
 		var tool := _tool_current()
@@ -493,6 +546,11 @@ func _relocalize() -> void:
 	if rl_recent != null:
 		_rl_rebuild_recent()
 	_update_taskbar()
+	if launcher_search != null:
+		_filter_launcher(launcher_search.text)
+	if browser_tabs != null:
+		_browser_sync_tabs()
+		_browser_update_context()
 
 
 # ── 테마 ──────────────────────────────────────────────────────
@@ -508,103 +566,36 @@ func _sb(bg: Color, border: Color = Color(0, 0, 0, 0), bw: int = 0, radius: int 
 
 
 func _build_theme() -> void:
-	var t := ui_theme
+	ui_theme = DesktopTheme.create(font_scale)
 	ui_font = FontVariation.new()
 	ui_font.base_font = Localization.get_font()
-	ui_font.variation_embolden = 0.4
-	ui_font.variation_opentype = {"wght": 500.0}
+	ui_font.variation_embolden = 0.35
 	terminal_font = FontVariation.new()
 	terminal_font.base_font = Localization.get_mono_font()
 	terminal_font.variation_opentype = {"wght": 500.0, "wdth": 100.0}
-	t.default_font = ui_font
-	t.default_font_size = ui_size
-	for cls in ["Label", "Button", "LineEdit", "ItemList", "TextEdit", "Tree", "OptionButton", "CheckButton", "CheckBox", "PopupMenu"]:
-		t.set_color("font_color", cls, C_TEXT)
-	t.set_color("default_color", "RichTextLabel", C_TEXT)
-	t.set_color("font_selected_color", "RichTextLabel", Color.WHITE)
-	t.set_color("selection_color", "RichTextLabel", Color(0.22, 0.45, 0.46, 0.6))
-	for cls in ["Button", "OptionButton", "CheckButton", "CheckBox"]:
-		t.set_color("font_hover_color", cls, Color.WHITE)
-		t.set_color("font_focus_color", cls, C_TEXT)
-		t.set_color("font_pressed_color", cls, C_TEAL)
-		t.set_color("font_hover_pressed_color", cls, C_TEAL)
-		t.set_color("font_disabled_color", cls, Color(0.40, 0.45, 0.47))
-	for cls in ["LineEdit", "TextEdit"]:
-		t.set_color("font_placeholder_color", cls, Color(0.43, 0.50, 0.53))
-		t.set_color("caret_color", cls, C_TEAL)
-		t.set_color("selection_color", cls, Color(0.22, 0.45, 0.46, 0.6))
-		t.set_color("font_readonly_color", cls, C_DIM)
-	t.set_color("font_selected_color", "ItemList", Color.WHITE)
-	t.set_color("font_hovered_color", "ItemList", Color.WHITE)
-	t.set_color("font_selected_color", "Tree", Color.WHITE)
-	t.set_color("guide_color", "Tree", Color(0.2, 0.27, 0.3, 0.6))
-	t.set_color("font_hover_color", "PopupMenu", Color.WHITE)
-
-	var focus := _sb(Color(0, 0, 0, 0), C_TEAL, 2, 3, 6)
-	focus.draw_center = false
-	var focus_thin := _sb(Color(0, 0, 0, 0), Color(0.36, 0.70, 0.69), 1, 3, 4)
-	focus_thin.draw_center = false
-	for cls in ["Button", "OptionButton"]:
-		t.set_stylebox("normal", cls, _sb(Color(0.105, 0.145, 0.165), C_LINE, 1, 3, 6))
-		t.set_stylebox("hover", cls, _sb(Color(0.135, 0.195, 0.215), Color(0.30, 0.54, 0.55), 1, 3, 6))
-		t.set_stylebox("pressed", cls, _sb(Color(0.085, 0.195, 0.205), C_TEAL, 1, 3, 6))
-		t.set_stylebox("disabled", cls, _sb(Color(0.075, 0.095, 0.105), Color(0.15, 0.2, 0.22), 1, 3, 6))
-		t.set_stylebox("focus", cls, focus)
-	for cls in ["CheckButton", "CheckBox"]:
-		t.set_stylebox("focus", cls, focus)
-	t.set_stylebox("normal", "LineEdit", _sb(C_FIELD, C_LINE, 1, 3, 6))
-	t.set_stylebox("focus", "LineEdit", focus)
-	t.set_stylebox("read_only", "LineEdit", _sb(Color(0.05, 0.06, 0.07), C_LINE, 1, 3, 6))
-	t.set_stylebox("normal", "TextEdit", _sb(C_FIELD, C_LINE, 1, 3, 6))
-	t.set_stylebox("focus", "TextEdit", focus)
-	t.set_stylebox("read_only", "TextEdit", _sb(Color(0.05, 0.06, 0.07), C_LINE, 1, 3, 6))
-	t.set_stylebox("panel", "ItemList", _sb(Color(0.044, 0.064, 0.074), C_LINE, 1, 3, 4))
-	t.set_stylebox("focus", "ItemList", focus_thin)
-	t.set_stylebox("selected", "ItemList", _sb(Color(0.11, 0.22, 0.23), Color(0, 0, 0, 0), 0, 2, 2))
-	t.set_stylebox("selected_focus", "ItemList", _sb(Color(0.12, 0.27, 0.28), Color(0, 0, 0, 0), 0, 2, 2))
-	t.set_stylebox("hovered", "ItemList", _sb(Color(0.085, 0.135, 0.145), Color(0, 0, 0, 0), 0, 2, 2))
-	t.set_stylebox("cursor", "ItemList", StyleBoxEmpty.new())
-	t.set_stylebox("cursor_unfocused", "ItemList", StyleBoxEmpty.new())
-	t.set_constant("v_separation", "ItemList", 5)
-	t.set_stylebox("panel", "Tree", _sb(Color(0.044, 0.064, 0.074), C_LINE, 1, 3, 4))
-	t.set_stylebox("focus", "Tree", focus_thin)
-	t.set_stylebox("selected", "Tree", _sb(Color(0.11, 0.22, 0.23), Color(0, 0, 0, 0), 0, 2, 2))
-	t.set_stylebox("selected_focus", "Tree", _sb(Color(0.12, 0.27, 0.28), Color(0, 0, 0, 0), 0, 2, 2))
-	t.set_stylebox("cursor", "Tree", StyleBoxEmpty.new())
-	t.set_stylebox("cursor_unfocused", "Tree", StyleBoxEmpty.new())
-	t.set_stylebox("title_button_normal", "Tree", _sb(C_BAR, C_LINE, 0, 0, 4))
-	t.set_stylebox("title_button_hover", "Tree", _sb(C_BAR, C_LINE, 0, 0, 4))
-	t.set_stylebox("title_button_pressed", "Tree", _sb(C_BAR, C_LINE, 0, 0, 4))
-	t.set_color("title_button_color", "Tree", C_DIM)
-	t.set_constant("v_separation", "Tree", 4)
-	t.set_constant("item_margin", "Tree", 14)
-	t.set_stylebox("normal", "RichTextLabel", _sb(C_FIELD, C_LINE, 1, 3, 9))
-	t.set_stylebox("focus", "RichTextLabel", StyleBoxEmpty.new())
-	t.set_stylebox("panel", "PanelContainer", _sb(C_PANEL, C_LINE, 1, 4, 0))
-	t.set_stylebox("panel", "PopupMenu", _sb(Color(0.06, 0.085, 0.095), C_LINE, 1, 3, 6))
-	t.set_stylebox("hover", "PopupMenu", _sb(Color(0.11, 0.22, 0.23), Color(0, 0, 0, 0), 0, 2, 4))
-	t.set_stylebox("panel", "TooltipPanel", _sb(Color(0.055, 0.075, 0.085), C_LINE, 1, 3, 7))
-	t.set_color("font_color", "TooltipLabel", C_TEXT)
-	t.set_stylebox("panel", "ScrollContainer", StyleBoxEmpty.new())
-	t.set_stylebox("panel", "AcceptDialog", _sb(Color(0.066, 0.09, 0.105), Color(0.30, 0.55, 0.56), 1, 5, 16))
-	for bar in ["VScrollBar", "HScrollBar"]:
-		t.set_stylebox("scroll", bar, _sb(Color(0, 0, 0, 0.18), Color(0, 0, 0, 0), 0, 3, 2))
-		t.set_stylebox("grabber", bar, _sb(Color(0.24, 0.32, 0.35), Color(0, 0, 0, 0), 0, 3, 3))
-		t.set_stylebox("grabber_highlight", bar, _sb(Color(0.32, 0.50, 0.51), Color(0, 0, 0, 0), 0, 3, 3))
-		t.set_stylebox("grabber_pressed", bar, _sb(C_TEAL, Color(0, 0, 0, 0), 0, 3, 3))
-	t.set_constant("separation", "HBoxContainer", 6)
-	t.set_constant("separation", "VBoxContainer", 6)
-	t.set_constant("separation", "HSplitContainer", 8)
-	t.set_constant("separation", "VSplitContainer", 8)
-
-	sb_frame_off = _sb(C_PANEL, C_LINE, 1, 5, 1)
-	sb_frame_off.shadow_color = Color(0, 0, 0, 0.38)
-	sb_frame_off.shadow_size = 12
+	ui_theme.default_font = ui_font
+	ui_theme.default_font_size = ui_size
+	ui_theme.set_stylebox("normal", "RichTextLabel", DesktopTheme.panel(C_FIELD, C_LINE, 5, 10))
+	ui_theme.set_color("default_color", "RichTextLabel", C_TEXT)
+	ui_theme.set_color("selection_color", "RichTextLabel", Color("315c93"))
+	ui_theme.set_stylebox("focus", "RichTextLabel", StyleBoxEmpty.new())
+	ui_theme.set_stylebox("panel", "ScrollContainer", StyleBoxEmpty.new())
+	ui_theme.set_stylebox("panel", "AcceptDialog", DesktopTheme.panel(C_PANEL, C_TEAL, 8, 18))
+	ui_theme.set_stylebox("panel", "TooltipPanel", DesktopTheme.panel(C_FIELD, C_LINE, 5, 9))
+	ui_theme.set_color("font_color", "TooltipLabel", C_TEXT)
+	for cls in ["Tree", "ItemList"]:
+		ui_theme.set_constant("v_separation", cls, 6)
+		ui_theme.set_stylebox("cursor", cls, StyleBoxEmpty.new())
+		ui_theme.set_stylebox("cursor_unfocused", cls, StyleBoxEmpty.new())
+	sb_frame_off = DesktopTheme.panel(C_PANEL, C_LINE, 8, 1)
+	sb_frame_off.shadow_color = Color(0, 0, 0, 0.45)
+	sb_frame_off.shadow_size = 18
+	sb_frame_off.shadow_offset = Vector2(0, 8)
 	sb_frame_on = sb_frame_off.duplicate()
-	sb_frame_on.border_color = Color(0.30, 0.60, 0.60)
-	sb_bar_off = _sb(C_BAR, Color(0, 0, 0, 0), 0, 0, 3)
-	sb_bar_off.corner_radius_top_left = 5
-	sb_bar_off.corner_radius_top_right = 5
+	sb_frame_on.border_color = C_TEAL
+	sb_bar_off = DesktopTheme.panel(C_BAR, Color.TRANSPARENT, 7, 5)
+	sb_bar_off.corner_radius_bottom_left = 0
+	sb_bar_off.corner_radius_bottom_right = 0
 	sb_bar_off.content_margin_left = 12
 	sb_bar_on = sb_bar_off.duplicate()
 	sb_bar_on.bg_color = C_BAR_ACTIVE
@@ -637,15 +628,22 @@ func _font_apply() -> void:
 			_apply_size(e[0], e[1], e[2])
 			kept.append(e)
 	sized = kept
-	top_h = maxi(36, ui_size + 18)
-	task_h = maxi(50, ui_size + 30)
+	top_h = maxi(44, ui_size + 20)
+	task_h = maxi(58, ui_size + 28)
 	if top_panel != null:
 		top_panel.offset_bottom = top_h
 		task_panel.offset_top = -task_h
 		layer.offset_top = top_h
 		layer.offset_bottom = -task_h
-		toast_panel.offset_top = top_h + 12
-		toast_panel.offset_bottom = top_h + 12
+		_desktop_icon_grid.position.y = top_h + 20
+		for button in desktop_icons.values():
+			button.custom_minimum_size = Vector2(maxi(112, ui_size * 5), maxi(108, ui_size * 3 + 68))
+		launcher_panel.offset_right = minf(560, get_viewport_rect().size.x - 24)
+		launcher_panel.offset_top = -minf(get_viewport_rect().size.y - top_h - 12, 620 * font_scale)
+		launcher_panel.offset_bottom = -task_h - 12
+		_layout_notifications()
+	if br_stale_row != null:
+		br_stale_row.custom_minimum_size.y = minf(112, ui_size * 3 + 14)
 	if net_map != null:
 		net_map.queue_redraw()
 	if tool_memory != null and is_instance_valid(tool_memory):
@@ -782,10 +780,55 @@ func _clear_children(n: Node) -> void:
 # ── 바탕·상단·작업 표시줄 ───────────────────────────────────────
 
 func _build_shell() -> void:
-	var bg := Backdrop.new()
-	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(bg)
+	var wallpaper := TextureRect.new()
+	wallpaper.texture = load(ICON_ROOT + "wallpaper.svg")
+	wallpaper.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	wallpaper.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	wallpaper.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	wallpaper.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(wallpaper)
+	var wordmark := _label("MIDNIGHT OS", Color(0.8, 0.88, 1.0, 0.23), 17)
+	wordmark.set_anchors_and_offsets_preset(Control.PRESET_CENTER_RIGHT)
+	wordmark.offset_left = -440
+	wordmark.offset_top = -90
+	wordmark.offset_right = -80
+	wordmark.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(wordmark)
+	_desktop_icon_grid = GridContainer.new()
+	_desktop_icon_grid.columns = 2
+	_desktop_icon_grid.position = Vector2(22, 65)
+	_desktop_icon_grid.add_theme_constant_override("h_separation", 8)
+	_desktop_icon_grid.add_theme_constant_override("v_separation", 12)
+	add_child(_desktop_icon_grid)
+	for id in DESKTOP_APPS:
+		var button := Button.new()
+		button.custom_minimum_size = Vector2(112, 104)
+		button.set_meta("app_id", id)
+		button.set_meta("launcher_action", "launch")
+		_reg(button, "tooltip_text", _app_name_key(id))
+		_reg(button, "accessibility_name", _app_name_key(id))
+		button.add_theme_stylebox_override("normal", _sb(Color.TRANSPARENT, Color.TRANSPARENT, 0, 8, 6))
+		button.add_theme_stylebox_override("hover", _sb(Color(0.3, 0.48, 0.75, 0.18), Color(0.4, 0.6, 0.9, 0.25), 1, 8, 6))
+		var stack := VBoxContainer.new()
+		stack.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		stack.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		stack.offset_top = 8
+		var image := TextureRect.new()
+		image.texture = _desktop_icon(id)
+		image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		image.custom_minimum_size = Vector2(48, 48)
+		image.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		stack.add_child(image)
+		var caption := _klabel(_app_name_key(id), C_TEXT, -2, true)
+		caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		caption.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		stack.add_child(caption)
+		_desktop_captions[id] = caption
+		button.add_child(stack)
+		button.pressed.connect(_launch_app.bind(id))
+		_desktop_icon_grid.add_child(button)
+		desktop_icons[id] = button
 
 	layer = Control.new()
 	layer.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -794,122 +837,319 @@ func _build_shell() -> void:
 	layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	layer.resized.connect(_clamp_all)
 	add_child(layer)
-
 	top_panel = PanelContainer.new()
-	var top_sb := _sb(Color(0.026, 0.038, 0.047, 0.96), C_LINE, 0, 0, 4)
-	top_sb.border_width_bottom = 1
-	top_sb.content_margin_left = 16
-	top_sb.content_margin_right = 10
-	top_panel.add_theme_stylebox_override("panel", top_sb)
+	top_panel.add_theme_stylebox_override("panel", DesktopTheme.panel(Color("0c1728"), C_LINE, 0, 8))
 	top_panel.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
-	top_panel.offset_top = 0
 	top_panel.offset_bottom = top_h
 	add_child(top_panel)
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 16)
 	top_panel.add_child(row)
-	row.add_child(_klabel("UI_BRAND", C_TEAL_DIM, -4))
+	row.add_child(_label("MIDNIGHT OS", C_TEAL_DIM, -3))
 	top_mission = _label("", C_TEXT, -2)
 	top_mission.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	top_mission.clip_text = true
-	top_mission.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	row.add_child(top_mission)
 	top_progress = _label("", C_DIM, -3)
-	row.add_child(top_progress)
 	top_alert = _label("", C_DIM, -3)
-	row.add_child(top_alert)
-	top_host = _label("", C_TEAL, -3)
+	top_host = _label("", C_DIM, -3)
 	top_host.clip_text = true
-	top_host.custom_minimum_size = Vector2(120, 0)
-	top_host.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-	row.add_child(top_host)
-	top_save = _label("", C_TEAL_DIM, -4)
-	row.add_child(top_save)
-	var flat := _sb(Color(0, 0, 0, 0), C_LINE, 1, 3, 3)
-	flat.content_margin_left = 8
-	flat.content_margin_right = 8
-	font_down_btn = _btn_raw("A−", "UI_FONT_SMALLER", _font_nudge.bind(-1))
-	var font_up := _btn_raw("A+", "UI_FONT_LARGER", _font_nudge.bind(1))
-	pause_btn = _btn("UI_PAUSE", "UI_PAUSE_TIP", _toggle_pause)
-	for b in [font_down_btn, font_up, pause_btn]:
-		b.add_theme_stylebox_override("normal", flat)
-		_size(b, -4)
-		row.add_child(b)
+	top_host.custom_minimum_size.x = 130
+	for item in [top_progress, top_alert, top_host]:
+		row.add_child(item)
 
 	task_panel = PanelContainer.new()
-	var task_sb := _sb(Color(0.032, 0.047, 0.057, 0.97), C_LINE, 0, 0, 5)
-	task_sb.border_width_top = 1
-	task_sb.content_margin_left = 10
-	task_sb.content_margin_right = 10
-	task_panel.add_theme_stylebox_override("panel", task_sb)
+	task_panel.add_theme_stylebox_override("panel", DesktopTheme.panel(Color("101b2c"), C_LINE, 0, 6))
 	task_panel.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	task_panel.offset_top = -task_h
-	task_panel.offset_bottom = 0
 	add_child(task_panel)
-	var trow := HBoxContainer.new()
-	trow.add_theme_constant_override("separation", 8)
-	task_panel.add_child(trow)
+	var task_row := HBoxContainer.new()
+	task_row.add_theme_constant_override("separation", 8)
+	task_panel.add_child(task_row)
+	launcher_button = _shell_button("launcher", "UI_DESKTOP_LAUNCHER", _toggle_launcher, 44)
+	launcher_button.set_meta("launcher_action", "toggle")
+	task_row.add_child(launcher_button)
+	task_row.add_child(VSeparator.new())
 	task_scroll = ScrollContainer.new()
 	task_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	task_scroll.follow_focus = true
 	task_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	task_scroll.size_flags_stretch_ratio = 3.0
-	trow.add_child(task_scroll)
-	var apps := HBoxContainer.new()
-	apps.add_theme_constant_override("separation", 4)
-	task_scroll.add_child(apps)
-	var tb := _btn_raw("", "UI_TASK_TERMINAL_TIP", _open_terminal_last)
-	_size(tb, -3)
-	task_buttons["terminal"] = tb
-	apps.add_child(tb)
+	task_row.add_child(task_scroll)
+	_task_apps = HBoxContainer.new()
+	_task_apps.add_theme_constant_override("separation", 4)
+	task_scroll.add_child(_task_apps)
 	for t in TERMS:
-		var nb := _btn_raw(str(t + 1), "", _open_terminal.bind(t))
-		_reg(nb, "tooltip_text", "UI_TASK_TERMINAL_N_TIP", {"n": t + 1})
-		nb.custom_minimum_size = Vector2(34, 0)
-		_size(nb, -3)
-		term_task_buttons.append(nb)
-		apps.add_child(nb)
-	apps.add_child(VSeparator.new())
+		var id := "term%d" % t
+		var button := _shell_button("terminal", "UI_WIN_TERMINAL_N", _task_activate.bind(id), 42)
+		button.set_meta("app_id", id)
+		button.set_meta("launcher_action", "restore_or_minimize")
+		button.visible = false
+		_task_apps.add_child(button)
+		term_task_buttons.append(button)
+		task_buttons[id] = button
+	task_buttons["terminal"] = term_task_buttons[0]
 	for id in TASK_APPS:
-		var b := _btn_raw("", "UI_TASK_OPEN_TIP", _open_app.bind(id, true))
-		_size(b, -3)
-		task_buttons[id] = b
-		apps.add_child(b)
-	task_buttons["ending"].visible = false
+		var button := _shell_button(id, _app_name_key(id), _task_activate.bind(id), 42)
+		button.set_meta("app_id", id)
+		button.set_meta("launcher_action", "restore_or_minimize")
+		button.visible = false
+		_task_apps.add_child(button)
+		task_buttons[id] = button
 	status_label = _label("", C_DIM, -4)
-	status_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	status_label.size_flags_stretch_ratio = 1.0
-	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	status_label.clip_text = true
-	status_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-	trow.add_child(status_label)
-	save_btn = _btn("UI_SAVE", "UI_SAVE_TIP", _manual_save)
-	load_btn = _btn("UI_LOAD", "UI_LOAD_TIP", _ask_load)
-	recover_btn = _btn("UI_RECOVER", "UI_RECOVER_TIP", _ask_recover)
-	fresh_btn = _btn("UI_FRESH_SAVE", "UI_FRESH_SAVE_TIP", _ask_fresh)
-	room_btn = _btn("UI_ROOM", "UI_ROOM_TIP", _request_room)
-	for b in [save_btn, load_btn, recover_btn, fresh_btn, room_btn]:
-		_size(b, -3)
-		trow.add_child(b)
-	for b in [recover_btn, fresh_btn]:
-		b.add_theme_color_override("font_color", C_AMBER)
-		b.visible = false
+	status_label.custom_minimum_size.x = 0
+	status_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	task_row.add_child(status_label)
+	notification_button = _shell_button("notification", "UI_APP_STATUS", _toggle_notification)
+	notification_button.set_meta("notification_action", "toggle")
+	notification_button.disabled = true
+	task_row.add_child(notification_button)
+	top_save = _label("", C_DIM, -4)
+	task_row.add_child(top_save)
+	font_down_btn = _shell_button("font_smaller", "UI_FONT_SMALLER", _font_nudge.bind(-1))
+	font_up_btn = _shell_button("font_larger", "UI_FONT_LARGER", _font_nudge.bind(1))
+	font_up_btn.set_meta("shell_action", "font_larger")
+	save_btn = _shell_button("save", "UI_SAVE", _manual_save)
+	load_btn = _shell_button("load", "UI_LOAD", _ask_load)
+	recover_btn = _shell_button("load", "UI_RECOVER", _ask_recover)
+	fresh_btn = _shell_button("save", "UI_FRESH_SAVE", _ask_fresh)
+	room_btn = _shell_button("room", "UI_ROOM", _request_room)
+	pause_btn = _shell_button("pause", "UI_PAUSE", _toggle_pause)
+	for button in [font_down_btn, font_up_btn, save_btn, load_btn, recover_btn, fresh_btn, room_btn, pause_btn]:
+		task_row.add_child(button)
+	recover_btn.visible = false
+	fresh_btn.visible = false
+	_build_launcher()
+	_build_support_card()
+
+
+func _desktop_icon(id: String) -> Texture2D:
+	var name := "terminal" if id.begins_with("term") else id
+	if not _support_icon_cache.has(name):
+		_support_icon_cache[name] = load(ICON_ROOT + name + ".svg")
+	return _support_icon_cache[name]
+
+
+func _app_name_key(id: String) -> String:
+	if id == "terminal" or id.begins_with("term"):
+		return "UI_APP_TERMINAL"
+	return "UI_DESKTOP_NIGHTFOX" if id == "browser" else APP_TITLES.get(id, "UI_APP_HELP")
+
+
+func _shell_button(icon: String, name_key: String, callback: Callable, extent := 34) -> Button:
+	var button := _btn_raw("", name_key, callback)
+	button.icon = _desktop_icon(icon)
+	button.expand_icon = true
+	button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	button.add_theme_constant_override("icon_max_width", 22)
+	button.custom_minimum_size = Vector2(extent, extent)
+	button.set_meta("shell_action", icon)
+	_reg(button, "accessibility_name", name_key)
+	for state in ["normal", "hover", "pressed", "focus"]:
+		var fill := Color.TRANSPARENT if state == "normal" else C_BAR_ACTIVE
+		button.add_theme_stylebox_override(state, DesktopTheme.panel(fill, C_TEAL if state == "focus" else Color.TRANSPARENT, 5, 5))
+	return button
+
+
+func _launch_app(id: String) -> void:
+	_set_launcher(false)
+	_open_app(id, true)
+
+
+func _task_activate(id: String) -> void:
+	if wins.has(id) and wins[id]["state"] == "open" and active_id == id:
+		_minimize(id)
+	else:
+		_open_app(id, true)
+
+
+func _build_launcher() -> void:
+	_launcher_scrim = Control.new()
+	_launcher_scrim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_launcher_scrim.mouse_filter = Control.MOUSE_FILTER_STOP
+	_launcher_scrim.gui_input.connect(func(event: InputEvent):
+		if event is InputEventMouseButton and event.pressed:
+			_set_launcher(false))
+	_launcher_scrim.hide()
+	add_child(_launcher_scrim)
+	launcher_panel = PanelContainer.new()
+	launcher_panel.add_theme_stylebox_override("panel", DesktopTheme.panel(C_PANEL, C_LINE, 10, 16))
+	launcher_panel.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
+	launcher_panel.offset_left = 12
+	launcher_panel.offset_right = 460
+	launcher_panel.offset_top = -600
+	launcher_panel.offset_bottom = -task_h - 12
+	launcher_panel.hide()
+	add_child(launcher_panel)
+	var box := VBoxContainer.new()
+	box.add_child(_label("MIDNIGHT OS", C_TEXT, 5))
+	_support_status = _label("", C_DIM, -2, true)
+	box.add_child(_support_status)
+	launcher_search = _line_edit("UI_DESKTOP_SEARCH")
+	launcher_search.accessibility_name = _t("UI_DESKTOP_SEARCH")
+	launcher_search.set_meta("launcher_action", "search")
+	launcher_search.text_changed.connect(_filter_launcher)
+	launcher_search.text_submitted.connect(func(_query: String):
+		for id in launcher_buttons:
+			if launcher_buttons[id].visible and not launcher_buttons[id].disabled:
+				_launch_app(id)
+				return)
+	box.add_child(launcher_search)
+	box.add_child(_section("UI_DESKTOP_ALL_APPS"))
+	var scroll := _scroll_wrap(VBoxContainer.new())
+	launcher_list = scroll.get_child(0)
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.custom_minimum_size.y = 120
+	box.add_child(scroll)
+	_launcher_empty = _klabel("UI_DESKTOP_NO_APPS", C_DIM, -2, true)
+	box.add_child(_launcher_empty)
+	for id in ["terminal"] + TASK_APPS:
+		var button := _btn_raw("", "", _launch_app.bind(id))
+		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		button.icon = _desktop_icon(id)
+		button.expand_icon = true
+		button.add_theme_constant_override("icon_max_width", 28)
+		button.set_meta("app_id", id)
+		button.set_meta("launcher_action", "launch")
+		button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		launcher_buttons[id] = button
+		launcher_list.add_child(button)
+	var actions := HBoxContainer.new()
+	var hint_button := _btn("UI_DESKTOP_HINT", "UI_DESKTOP_HINT_TIP", _manual_hint)
+	hint_button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	hint_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	actions.add_child(hint_button)
+	actions.add_child(_shell_button("settings", "UI_OPEN_SETTINGS", _open_settings))
+	box.add_child(actions)
+	launcher_panel.add_child(box)
+	_filter_launcher("")
+
+
+func _toggle_launcher() -> void:
+	_set_launcher(not launcher_panel.visible)
+
+
+func _set_launcher(open: bool, restore_focus := true) -> void:
+	var was_open := launcher_panel.visible
+	launcher_panel.visible = open
+	_launcher_scrim.visible = open
+	if open:
+		launcher_search.clear()
+		_launcher_scrim.move_to_front()
+		launcher_panel.move_to_front()
+		launcher_search.grab_focus()
+		launcher_search.edit()
+	elif was_open and restore_focus and launcher_button.is_visible_in_tree():
+		launcher_button.grab_focus()
+
+
+func _filter_launcher(query: String) -> void:
+	_support_status.text = _t("UI_DESKTOP_SUPPORT_STATUS", {"mode": _t("UI_DESKTOP_SUPPORT_" + support_mode.to_upper())})
+	var needle := query.strip_edges().to_lower()
+	var matches := 0
+	for id in launcher_buttons:
+		var button: Button = launcher_buttons[id]
+		var title := _t(_app_name_key(id))
+		var description := _t("UI_LAUNCHER_DESC_" + id.to_upper())
+		button.text = title + "\n" + description
+		button.accessibility_name = title
+		button.tooltip_text = description
+		button.visible = needle.is_empty() or needle in (title + " " + description + " " + id).to_lower()
+		if button.visible:
+			matches += 1
+		if id == "ending":
+			button.disabled = not (_main_complete(last_view) or not _d(last_view.get("ending", {})).is_empty())
+	_launcher_empty.visible = matches == 0
+
+
+func _build_support_card() -> void:
+	support_card = PanelContainer.new()
+	support_card.add_theme_stylebox_override("panel", DesktopTheme.panel(C_PANEL, C_LINE, 9, 16))
+	support_card.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	support_card.hide()
+	add_child(support_card)
+	var box := VBoxContainer.new()
+	var heading := HBoxContainer.new()
+	_support_title = _label("", C_TEXT, 1, true)
+	_support_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	heading.add_child(_support_title)
+	heading.add_child(_shell_button("close", "UI_DESKTOP_DISMISS", _dismiss_support))
+	box.add_child(heading)
+	_support_body = _label("", C_DIM, -2, true)
+	var body_scroll := _scroll_wrap(_support_body)
+	body_scroll.custom_minimum_size.y = 100
+	box.add_child(body_scroll)
+	var actions := VBoxContainer.new()
+	actions.add_child(_btn("UI_APP_MAIL", "", _launch_app.bind("mail")))
+	actions.add_child(_btn("UI_DESKTOP_HINT", "UI_DESKTOP_HINT_TIP", _manual_hint))
+	box.add_child(actions)
+	var content_scroll := _scroll_wrap(box)
+	support_card.add_child(content_scroll)
+
+
+func _support_key(view: Dictionary) -> String:
+	return str(session_generation) + ":" + _s(view, "mission_id")
+
+
+func _dismiss_support() -> void:
+	_support_dismissed[_support_key(last_view)] = true
+	support_card.hide()
+	_layout_notifications()
+
+
+func _manual_hint() -> void:
+	_set_launcher(false)
+	_open_app("board", true)
+	_bd_hint(mini(hints_revealed, maxi(_a(last_view, "hints").size() - 1, 0)))
+
+
+func _update_support(view: Dictionary) -> void:
+	if support_card == null or not session_active:
+		return
+	var key := _support_key(view)
+	var historical := _b(view, "completed") or _b(view, "completion_recorded") or not _d(view.get("ending", {})).is_empty()
+	_support_title.text = _t("UI_DESKTOP_NEW_CASE", {"title": _s(view, "mission_title")})
+	_support_body.text = _t("UI_DESKTOP_MAIL_PROMPT")
+	var open_window := false
+	for window in wins.values():
+		open_window = open_window or window.state == "open"
+	support_card.visible = support_mode != "independent" and not historical and not _support_dismissed.has(key) and (not open_window or (support_mode == "guided" and bool(_support_eligible.get(key, false))))
+	if support_mode == "guided" and bool(_support_eligible.get(key, false)):
+		var hints := _a(view, "hints")
+		_support_body.text = _t("UI_DESKTOP_GUIDED_BODY", {"goal": _s(view, "mission_goal"), "hint": str(hints[0]) if not hints.is_empty() else _t("UI_BD_NO_HINTS")})
+		if not historical and not _support_seen.has(key):
+			_support_seen[key] = true
+			call_deferred("_present_guidance", key, session_generation)
+	_layout_notifications()
+
+
+func _present_guidance(key: String, generation: int) -> void:
+	if generation != session_generation or key != _support_key(last_view) or not is_visible_in_tree() or _modal_open() or paused or launcher_panel.visible:
+		return
+	_open_app("mail", true)
+	if not _a(last_view, "hints").is_empty():
+		hints_revealed = maxi(hints_revealed, 1)
+		bd_hint_text.visible = true
+		_bd_update_hints(true)
 
 
 func _build_overlays() -> void:
 	toast_panel = PanelContainer.new()
-	toast_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	toast_panel.anchor_left = 1.0
-	toast_panel.anchor_right = 1.0
-	toast_panel.offset_left = -480
-	toast_panel.offset_right = -18
-	toast_panel.offset_top = top_h + 12
-	toast_panel.offset_bottom = top_h + 12
+	toast_panel.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	toast_panel.mouse_filter = Control.MOUSE_FILTER_PASS
 	toast_panel.visible = false
 	add_child(toast_panel)
+	var notification_row := HBoxContainer.new()
 	toast_label = _label("", C_TEXT, -1, true)
 	toast_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	toast_panel.add_child(toast_label)
+	toast_scroll = _scroll_wrap(toast_label)
+	toast_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	notification_row.add_child(toast_scroll)
+	toast_close_button = _shell_button("close", "UI_DESKTOP_DISMISS", _dismiss_notification, 28)
+	toast_close_button.set_meta("notification_action", "dismiss")
+	toast_close_button.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+	notification_row.add_child(toast_close_button)
+	toast_panel.add_child(notification_row)
 
 	confirm = ConfirmationDialog.new()
 	confirm.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
@@ -976,24 +1216,128 @@ func _overlay_box(parent: Control, width: float) -> VBoxContainer:
 
 
 func _toast(text: String, color: Color) -> void:
+	_notification_text = text
 	toast_label.text = text
 	toast_label.add_theme_color_override("font_color", color)
-	toast_panel.add_theme_stylebox_override("panel", _sb(Color(0.05, 0.072, 0.082, 0.97), color.darkened(0.25), 1, 4, 12))
+	toast_panel.add_theme_stylebox_override("panel", DesktopTheme.panel(C_PANEL, color.darkened(0.25), 8, 12))
 	toast_panel.visible = true
 	toast_panel.modulate.a = 1.0
+	toast_scroll.scroll_vertical = 0
 	status_label.text = text.replace("\n", " · ")
 	status_label.tooltip_text = text
+	notification_button.disabled = false
+	notification_button.tooltip_text = text
+	notification_button.accessibility_name = text
+	_layout_notifications()
 	if toast_tween != null:
 		toast_tween.kill()
+	if _notification_protects_input():
+		_hide_toast()
+		return
 	toast_tween = create_tween()
 	toast_tween.tween_interval(4.5 if not reduced_motion else 6.0)
-	if reduced_motion:
-		toast_tween.tween_callback(toast_panel.hide)
-	else:
+	if not reduced_motion:
 		toast_tween.tween_property(toast_panel, "modulate:a", 0.0, 0.6)
-		toast_tween.tween_callback(toast_panel.hide)
+	toast_tween.tween_callback(_hide_toast)
 	if paused:
 		toast_tween.pause()
+
+
+func _hide_toast() -> void:
+	toast_panel.hide()
+	_layout_notifications()
+
+
+func _notification_protects_input() -> bool:
+	var focus := get_viewport().gui_get_focus_owner()
+	if (focus is LineEdit or focus is TextEdit) and is_ancestor_of(focus) and focus.is_visible_in_tree():
+		return true
+	if active_id.begins_with("term") and wins.has(active_id) and wins[active_id].state == "open":
+		var window: Control = wins[active_id].win
+		return Rect2(window.position, window.size).is_equal_approx(Rect2(Vector2.ZERO, _desk_size()))
+	return false
+
+
+func _compact_notification() -> void:
+	if toast_tween != null:
+		toast_tween.kill()
+	_hide_toast()
+
+
+func _on_gui_focus_changed(control: Control) -> void:
+	if is_visible_in_tree() and (control is LineEdit or control is TextEdit) and is_ancestor_of(control):
+		_compact_notification()
+
+
+func _dismiss_notification() -> void:
+	if toast_tween != null:
+		toast_tween.kill()
+	_hide_toast()
+	_restore_focus()
+
+
+func _toggle_notification() -> void:
+	if toast_panel.visible:
+		_dismiss_notification()
+	elif not _notification_text.is_empty():
+		if toast_tween != null:
+			toast_tween.kill()
+		toast_panel.modulate.a = 1.0
+		toast_panel.show()
+		_layout_notifications()
+
+
+func _notification_rect(extent: Vector2, avoid := Rect2()) -> Rect2:
+	var area := Rect2(Vector2(16, top_h + 12), Vector2(maxf(1, size.x - 32), maxf(1, size.y - top_h - task_h - 24)))
+	var actual := Vector2(minf(extent.x, area.size.x), minf(extent.y, area.size.y))
+	var chrome := Rect2()
+	if wins.has(active_id) and wins[active_id].state == "open":
+		chrome = wins[active_id].bar.get_global_rect()
+		chrome.position -= global_position
+	if avoid.size != Vector2.ZERO:
+		var stacked := Rect2(Vector2(area.end.x - actual.x, avoid.position.y - actual.y - 12), actual)
+		if area.encloses(stacked) and (chrome.size == Vector2.ZERO or not stacked.grow(6).intersects(chrome)):
+			return stacked
+	for step in range(5):
+		var y := area.end.y - actual.y - step * (actual.y + 12)
+		if y < area.position.y:
+			break
+		for x in [area.end.x - actual.x, area.position.x]:
+			var candidate := Rect2(Vector2(x, y), actual)
+			if (chrome.size == Vector2.ZERO or not candidate.grow(6).intersects(chrome)) and (avoid.size == Vector2.ZERO or not candidate.grow(8).intersects(avoid)):
+				return candidate
+	return Rect2(Vector2(area.position.x, area.end.y - actual.y), actual)
+
+
+func _layout_notifications() -> void:
+	if support_card == null or toast_panel == null or size.y <= top_h + task_h:
+		return
+	var toast_bounds := Rect2()
+	if toast_panel.visible:
+		toast_bounds = _notification_rect(Vector2(440, minf(180, ui_size * 4 + 40)))
+		toast_panel.position = toast_bounds.position
+		toast_panel.size = toast_bounds.size
+	if support_card.visible:
+		var support_bounds := _notification_rect(Vector2(420, 320), toast_bounds)
+		support_card.position = support_bounds.position
+		support_card.size = support_bounds.size
+
+
+func _clear_transients() -> void:
+	if toast_tween != null:
+		toast_tween.kill()
+	_notification_text = ""
+	toast_panel.hide()
+	toast_label.text = ""
+	status_label.text = ""
+	status_label.tooltip_text = ""
+	notification_button.disabled = true
+	for state in _browser_states:
+		state["notice"] = {}
+	if br_status != null:
+		br_status.text = ""
+		br_status.tooltip_text = ""
+	_layout_notifications()
 
 
 func _ask(text: String, action: Callable) -> void:
@@ -1043,6 +1387,8 @@ func _toggle_pause() -> void:
 
 
 func _set_paused(on: bool, restore_focus: bool = true) -> void:
+	if on and launcher_panel != null and launcher_panel.visible:
+		_set_launcher(false)
 	if paused == on:
 		return
 	paused = on
@@ -1069,6 +1415,7 @@ func _pause_to_help() -> void:
 
 
 func _request_room() -> void:
+	_focus_before_hide = _owned_focus()
 	_set_paused(false, false)
 	return_to_room_requested.emit()
 
@@ -1088,6 +1435,8 @@ func _room_settings_open() -> bool:
 
 
 func _open_settings() -> void:
+	if launcher_panel.visible:
+		_set_launcher(false)
 	if not get_signal_connection_list("settings_requested").is_empty():
 		settings_requested.emit()
 		return
@@ -1100,8 +1449,13 @@ func _open_settings() -> void:
 
 func _on_visibility_changed() -> void:
 	if not visible:
-		_focus_before_hide = _owned_focus()
+		var owned := _owned_focus()
+		if owned != null:
+			_focus_before_hide = owned
+		_set_launcher(false, false)
 		drag = {}
+		_title_pointer_pending = false
+		_title_pointer_focus = null
 		if paused:
 			_set_paused(false, false)
 	else:
@@ -1129,6 +1483,8 @@ func _restore_focus(target = null) -> void:
 			return
 	if not active_id.is_empty() and wins.has(active_id) and wins[active_id]["win"].visible:
 		_focus_default(active_id)
+	elif launcher_button.is_visible_in_tree():
+		launcher_button.grab_focus()
 
 
 # ── 창 관리 ───────────────────────────────────────────────────
@@ -1183,21 +1539,34 @@ func _make_window(id: String, title_key: String, repl: Dictionary, content: Cont
 	col.add_child(bar)
 	var bar_row := HBoxContainer.new()
 	bar.add_child(bar_row)
+	var app_icon := TextureRect.new()
+	app_icon.texture = _desktop_icon(id)
+	app_icon.custom_minimum_size = Vector2(22, 22)
+	app_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	app_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	app_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	bar_row.add_child(app_icon)
 	var title := _label("", C_TEXT, -2)
 	_reg(title, "text", title_key, repl)
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	title.clip_text = true
 	title.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	bar_row.add_child(title)
-	var flat := _sb(Color(0, 0, 0, 0), Color(0, 0, 0, 0), 0, 3, 2)
-	flat.content_margin_left = 10
-	flat.content_margin_right = 10
-	for spec in [["─", "UI_WIN_MINIMIZE", _minimize], ["□", "UI_WIN_MAXIMIZE", _toggle_max], ["×", "UI_WIN_CLOSE", _close]]:
-		var cb: Callable = spec[2]
-		var b := _btn_raw(spec[0], spec[1], cb.bind(id), false)
-		b.add_theme_stylebox_override("normal", flat)
-		_size(b, -3)
-		bar_row.add_child(b)
+	var actions := {}
+	if id.begins_with("term"):
+		var another := _shell_button("add", "UI_DESKTOP_NEW_TERMINAL", _open_new_terminal, 30)
+		another.set_meta("app_id", id)
+		another.set_meta("window_action", "new_terminal")
+		bar_row.add_child(another)
+		new_terminal_buttons.append(another)
+		actions["new_terminal"] = another
+	for spec in [["minimize", "UI_WIN_MINIMIZE", _minimize], ["maximize", "UI_WIN_MAXIMIZE", _toggle_max], ["close", "UI_WIN_CLOSE", _close]]:
+		var callback: Callable = spec[2]
+		var button := _shell_button(spec[0], spec[1], callback.bind(id), 30)
+		button.set_meta("app_id", id)
+		button.set_meta("window_action", spec[0])
+		bar_row.add_child(button)
+		actions[spec[0]] = button
 
 	var pad := MarginContainer.new()
 	pad.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -1220,7 +1589,7 @@ func _make_window(id: String, title_key: String, repl: Dictionary, content: Cont
 	win.add_child(grip)
 
 	wins[id] = {"win": win, "frame": frame, "bar": bar, "title": title, "focus": focus,
-			"state": "closed", "placed": false, "restore": Rect2()}
+			"state": "closed", "placed": false, "restore": Rect2(), "actions": actions}
 
 
 func _draw_grip(grip: Control) -> void:
@@ -1251,6 +1620,19 @@ func _clamp_win(w: Control) -> void:
 func _clamp_all() -> void:
 	for id in wins:
 		_clamp_win(wins[id]["win"])
+	_layout_notifications()
+
+
+func _open_new_terminal() -> void:
+	for terminal in TERMS:
+		if not term_live[terminal]:
+			_open_terminal(terminal)
+			return
+	for terminal in TERMS:
+		if wins["term%d" % terminal]["state"] != "open":
+			_open_terminal(terminal)
+			return
+	_toast(_t("UI_DESKTOP_TERMINAL_LIMIT"), C_DIM)
 
 
 func _open_terminal_last() -> void:
@@ -1277,6 +1659,8 @@ func _open_app(id: String, grab: bool = true) -> void:
 		return
 	if not wins.has(id):
 		return
+	if launcher_panel.visible:
+		_set_launcher(false)
 	var w: Dictionary = wins[id]
 	var win: Control = w["win"]
 	if not w["placed"]:
@@ -1314,6 +1698,7 @@ func _activate(id: String, grab: bool) -> void:
 		var t := int(id.substr(4))
 		if t != active_term:
 			active_term = t
+			_browser_mark_stale()
 			if game != null:
 				term_views[t] = _view(t)
 				last_view = term_views[t]
@@ -1322,6 +1707,10 @@ func _activate(id: String, grab: bool) -> void:
 	if grab:
 		_focus_default(id)
 	_update_taskbar()
+	_browser_update_context()
+	_update_support(last_view)
+	if active_id.begins_with("term") and _notification_protects_input():
+		_compact_notification()
 	presentation_context_changed.emit(id)
 
 
@@ -1372,6 +1761,7 @@ func _hide_window(id: String, state: String) -> void:
 				return
 		presentation_context_changed.emit(active_id)
 	_update_taskbar()
+	_update_support(last_view)
 
 
 func _minimize(id: String) -> void:
@@ -1452,6 +1842,7 @@ func _on_bar_input(event: InputEvent, id: String) -> void:
 		var start: Vector2 = drag["mouse"]
 		win.position = r.position + (mm.global_position - start)
 		_clamp_win(win)
+		_layout_notifications()
 
 
 func _on_grip_input(event: InputEvent, id: String) -> void:
@@ -1485,9 +1876,16 @@ func _input(event: InputEvent) -> void:
 		return
 	var key := event as InputEventKey
 	if key != null:
-		if not key.pressed or key.echo or key.keycode == KEY_F10:
+		if not key.pressed or key.echo:
+			return
+		if key.keycode == KEY_F10:
+			_focus_before_hide = _owned_focus()
 			return
 		var fo := get_viewport().gui_get_focus_owner()
+		if launcher_panel.visible and key.keycode == KEY_ESCAPE:
+			_set_launcher(false)
+			get_viewport().set_input_as_handled()
+			return
 		if (fo is LineEdit or fo is TextEdit) and fo.has_ime_text():
 			return
 		if paused:
@@ -1512,12 +1910,21 @@ func _input(event: InputEvent) -> void:
 		if not active_id.is_empty():
 			call_deferred("_focus_after_click", active_id)
 		return
+	_title_pointer_pending = false
+	_title_pointer_focus = null
 	for i in range(layer.get_child_count() - 1, -1, -1):
 		var c := layer.get_child(i) as Control
 		if c == null or not c.visible or not c.get_global_rect().has_point(mb.position):
 			continue
 		var id := str(c.get_meta("app_id"))
 		var fo2 := get_viewport().gui_get_focus_owner()
+		if mb.button_index == MOUSE_BUTTON_LEFT and wins.has(id):
+			for button in wins[id].actions.values():
+				if button.is_visible_in_tree() and button.get_global_rect().has_point(mb.position):
+					_title_pointer_pending = true
+					if (fo2 is LineEdit or fo2 is TextEdit) and c.is_ancestor_of(fo2):
+						_title_pointer_focus = fo2
+					break
 		if fo2 != null and wins.has(id) and not c.is_ancestor_of(fo2) and layer.is_ancestor_of(fo2):
 			get_viewport().gui_release_focus()
 		if id != active_id:
@@ -1540,6 +1947,18 @@ func _handle_shortcut(key: InputEventKey, fo: Control) -> bool:
 	if (cmd or key.ctrl_pressed) and code == KEY_TAB:
 		_cycle_window(-1 if key.shift_pressed else 1)
 		return true
+	if cmd and not key.alt_pressed and active_id == "browser":
+		if code == KEY_T:
+			_browser_new_tab()
+			return true
+		if code == KEY_W:
+			_browser_close_tab(_browser_index)
+			return true
+		if code == KEY_L:
+			br_addr.grab_focus()
+			br_addr.select_all()
+			br_addr.edit()
+			return true
 	if cmd or key.alt_pressed:
 		return false
 	match code:
@@ -1550,7 +1969,7 @@ func _handle_shortcut(key: InputEventKey, fo: Control) -> bool:
 			if key.shift_pressed:
 				font_down_btn.grab_focus()
 			else:
-				task_buttons["terminal"].grab_focus()
+				launcher_button.grab_focus()
 			return true
 		KEY_PAUSE:
 			_set_paused(true)
@@ -1565,11 +1984,24 @@ func _handle_shortcut(key: InputEventKey, fo: Control) -> bool:
 
 
 func _focus_after_click(id: String) -> void:
+	if _title_pointer_pending:
+		var previous = _title_pointer_focus
+		_title_pointer_pending = false
+		_title_pointer_focus = null
+		if not is_visible_in_tree() or paused or _modal_open():
+			return
+		if is_instance_valid(previous) and wins.has(active_id) and wins[active_id].win.is_ancestor_of(previous):
+			_restore_focus(previous)
+		else:
+			_restore_focus()
+		return
 	if id != active_id or paused or _modal_open() or not wins.has(id):
 		return
 	var fo := get_viewport().gui_get_focus_owner()
 	var win: Control = wins[id]["win"]
 	if not win.visible:
+		return
+	if toast_panel.visible and (fo == notification_button or (fo != null and toast_panel.is_ancestor_of(fo))):
 		return
 	# 창 안의 다른 컨트롤을 눌렀다면 그 선택을 존중한다. 창 밖(작업 표시줄 등)을 누른 뒤에는 창 입력으로 돌아간다.
 	if fo == null or not win.is_ancestor_of(fo):
@@ -1579,39 +2011,33 @@ func _focus_after_click(id: String) -> void:
 func _update_taskbar() -> void:
 	if task_buttons.is_empty() or wins.is_empty():
 		return
-	for id in task_buttons:
-		var b: Button = task_buttons[id]
-		var label_text := ""
-		var st := "closed"
-		if id == "terminal":
-			label_text = _t("UI_APP_TERMINAL")
-			for t in TERMS:
-				var ts: String = wins["term%d" % t]["state"]
-				if ts == "open":
-					st = "open"
-				elif ts == "min" and st != "open":
-					st = "min"
-		else:
-			label_text = _t(APP_TITLES[id])
-			st = wins[id]["state"]
-		if id == "mail":
-			var n := _unread_count()
-			if n > 0:
-				label_text = _t("UI_TASK_MAIL_UNREAD", {"name": label_text, "n": n})
-		b.text = ("● " if st == "open" else ("○ " if st == "min" else "")) + label_text
-		var active: bool = id == active_id or (id == "terminal" and active_id.begins_with("term"))
-		var col := C_DIM
-		if st != "closed":
-			col = C_TEAL if active and st == "open" else C_TEXT
-		b.add_theme_color_override("font_color", col)
+	for id in wins:
+		var button: Button = task_buttons.get(id)
+		if button == null:
+			continue
+		var state: String = wins[id]["state"]
+		button.visible = state != "closed"
+		var title := _t("UI_WIN_TERMINAL_N", {"n": int(id.substr(4)) + 1}) if id.begins_with("term") else _t(_app_name_key(id))
+		var active: bool = id == active_id and state == "open"
+		button.tooltip_text = _t("UI_DESKTOP_TASK_TIP", {"name": title})
+		button.accessibility_name = _t("UI_DESKTOP_MINIMIZED" if state == "min" else "UI_DESKTOP_RUNNING", {"name": title})
+		button.add_theme_stylebox_override("normal", DesktopTheme.panel(C_BAR_ACTIVE if active else Color.TRANSPARENT, C_TEAL if active else Color.TRANSPARENT, 5, 5))
+		button.modulate = Color.WHITE if state == "open" else Color(0.7, 0.78, 0.9)
+		if id.begins_with("term"):
+			button.text = str(int(id.substr(4)) + 1)
 	for t in TERMS:
-		var nb: Button = term_task_buttons[t]
-		var ts: String = wins["term%d" % t]["state"]
-		var on: bool = active_id == "term%d" % t
-		nb.text = str(t + 1) + ("•" if ts == "open" else ("◦" if ts == "min" else ""))
-		nb.add_theme_color_override("font_color", C_TEAL if on else (C_TEXT if ts != "closed" else C_FAINT))
-	var ending_relevant := _main_complete(last_view) or not _d(last_view.get("ending", {})).is_empty()
-	task_buttons["ending"].visible = ending_relevant
+		if wins["term%d" % t]["state"] != "closed":
+			task_buttons["terminal"] = term_task_buttons[t]
+			if t == active_term:
+				break
+	var unread := _unread_count()
+	if desktop_icons.has("mail"):
+		var caption := _t("UI_TASK_MAIL_UNREAD", {"name": _t("UI_APP_MAIL"), "n": unread}) if unread > 0 else _t("UI_APP_MAIL")
+		desktop_icons.mail.tooltip_text = caption
+		_desktop_captions.mail.text = caption
+		task_buttons.mail.text = str(unread) if unread > 0 else ""
+	if launcher_buttons.has("ending"):
+		launcher_buttons.ending.disabled = not (_main_complete(last_view) or not _d(last_view.get("ending", {})).is_empty())
 
 
 # ── 터미널 (0..3, 각자 독립 세션) ─────────────────────────────
@@ -2192,14 +2618,32 @@ func _unread_count() -> int:
 
 func _build_browser() -> Control:
 	var col := VBoxContainer.new()
+	var tabs_row := HBoxContainer.new()
+	browser_tabs = TabBar.new()
+	browser_tabs.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	browser_tabs.tab_close_display_policy = TabBar.CLOSE_BUTTON_SHOW_ALWAYS
+	browser_tabs.add_theme_icon_override("close", load(ICON_ROOT + "tab_close.svg"))
+	browser_tabs.set_meta("browser_action", "select_tab")
+	_reg(browser_tabs, "accessibility_name", "UI_DESKTOP_BROWSER_TABS")
+	browser_tabs.tab_changed.connect(_browser_tab_changed)
+	browser_tabs.tab_close_pressed.connect(_browser_close_tab)
+	_size(browser_tabs, -2)
+	tabs_row.add_child(browser_tabs)
+	browser_new_tab_button = _shell_button("add", "UI_DESKTOP_BROWSER_NEW_TAB", _browser_new_tab)
+	browser_new_tab_button.set_meta("browser_action", "new_tab")
+	tabs_row.add_child(browser_new_tab_button)
+	col.add_child(tabs_row)
 	var bar := HBoxContainer.new()
-	br_back = _btn_raw("←", "UI_BR_BACK", _br_go.bind(-1))
-	br_fwd = _btn_raw("→", "UI_BR_FORWARD", _br_go.bind(1))
-	var reload := _btn_raw("⟳", "UI_BR_RELOAD", _br_reload)
-	var home := _btn_raw("⌂", "UI_BR_HOME", _br_home)
+	br_back = _shell_button("back", "UI_BR_BACK", _br_go.bind(-1))
+	br_fwd = _shell_button("forward", "UI_BR_FORWARD", _br_go.bind(1))
+	var reload := _shell_button("reload", "UI_BR_RELOAD", _br_reload)
+	var home := _shell_button("home", "UI_BR_HOME", _br_home)
 	for b in [br_back, br_fwd, reload, home]:
+		b.set_meta("browser_action", b.get_meta("shell_action"))
 		bar.add_child(b)
 	br_addr = _line_edit("UI_BR_ADDR_PLACEHOLDER")
+	br_addr.set_meta("browser_action", "address")
+	br_addr.accessibility_name = _t("UI_BR_ADDR_PLACEHOLDER")
 	br_addr.text_submitted.connect(_on_br_addr_submit)
 	bar.add_child(br_addr)
 	bar.add_child(_btn("UI_BR_GO", "UI_BR_GO_TIP", _br_go_addr))
@@ -2207,8 +2651,14 @@ func _build_browser() -> Control:
 	col.add_child(bar)
 	br_title = _label("", C_TEXT, 4, true)
 	col.add_child(br_title)
-	br_meta = _label("", C_FAINT, -4, true)
+	br_meta = _label("", C_DIM, -3, true)
 	col.add_child(br_meta)
+	br_stale = _klabel("UI_DESKTOP_BROWSER_PAST", C_AMBER, -3, true)
+	br_stale_row = _scroll_wrap(br_stale)
+	br_stale_row.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+	br_stale_row.custom_minimum_size.y = minf(112, ui_size * 3 + 14)
+	col.add_child(br_stale_row)
+	_set_browser_stale(false)
 	var split := VSplitContainer.new()
 	split.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	br_body = _plain_text()
@@ -2269,17 +2719,22 @@ func _build_browser() -> Control:
 	br_status.clip_text = true
 	br_status.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	foot.add_child(br_status)
-	br_stale = _klabel("UI_BR_STALE", C_AMBER, -3)
-	br_stale.visible = false
-	foot.add_child(br_stale)
 	br_archive = _btn("UI_BR_ARCHIVE", "UI_BR_ARCHIVE_TIP", _br_archive_page)
 	br_archive.add_theme_color_override("font_color", C_TEAL)
 	br_archive.visible = false
 	_size(br_archive, -3)
 	foot.add_child(br_archive)
 	col.add_child(foot)
+	var response_content := VBoxContainer.new()
+	for child in col.get_children().slice(2):
+		col.remove_child(child)
+		response_content.add_child(child)
+	var response_scroll := _scroll_wrap(response_content)
+	response_scroll.custom_minimum_size.y = 120
+	col.add_child(response_scroll)
 	_br_form_label()
 	_br_update_nav()
+	_browser_new_tab(false)
 	return col
 
 
@@ -2327,13 +2782,14 @@ func _br_navigate(url: String, push: bool) -> void:
 	if url.is_empty() or not _can_act():
 		return
 	br_addr.text = url
-	var r := _act("browser", func(): return game.browse(url))
-	_br_render(r, url, push, true)
+	var terminal := active_term
+	var result := _act("browser", func(): return game.browse(url, terminal), terminal)
+	_br_render(result, url, push, true, false, terminal)
 
 
-func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool) -> void:
+func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool, from_cache := false, response_terminal := -1) -> void:
 	_clear_children(br_links)
-	br_stale.visible = false
+	_set_browser_stale(false)
 	var ok := _b(r, "ok")
 	var status := _i(r, "status", 200 if ok else 0)
 	var code := _s(r, "code", "UNKNOWN")
@@ -2343,6 +2799,8 @@ func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool) -> void:
 		if push and (br_cursor < 0 or br_history[br_cursor] != br_url):
 			br_history.resize(br_cursor + 1)
 			br_history.append(br_url)
+			if br_history.size() > MAX_BROWSER_HISTORY:
+				br_history.pop_front()
 			br_cursor = br_history.size() - 1
 		br_addr.text = br_url
 		br_title.text = _s(r, "title")
@@ -2377,7 +2835,17 @@ func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool) -> void:
 		br_status.text = _t("UI_BR_STATUS_ERR", {"code": code, "status": status, "url": url})
 		br_status.add_theme_color_override("font_color", C_AMBER)
 	br_status.tooltip_text = br_status.text
-	br_meta.text = _br_meta_text(r)
+	br_meta.tooltip_text = _br_meta_text(r)
+	if _browser_index >= 0 and not from_cache:
+		var state: Dictionary = _browser_states[_browser_index]
+		state["response"] = r.duplicate(true)
+		state["response_url"] = url
+		state["response_terminal"] = active_term if response_terminal < 0 else response_terminal
+		state["stale"] = false
+		state["notice"] = {}
+		_browser_store_active()
+	_browser_sync_tabs()
+	_browser_update_context()
 	_br_update_nav()
 
 
@@ -2456,8 +2924,9 @@ func _br_submit_form() -> void:
 		_br_navigate(base + "?" + field.uri_encode() + "=" + value.uri_encode(), true)
 		return
 	var body := {field: value}
-	var r := _act("browser", func(): return game.request("POST", base, body, {"X-Packet-Context": "browser"}))
-	_br_render(r, base, false, false)
+	var terminal := active_term
+	var r := _act("browser", func(): return game.request("POST", base, body, {"X-Packet-Context": "browser"}, terminal), terminal)
+	_br_render(r, base, false, false, false, terminal)
 
 
 func _br_login() -> void:
@@ -2472,11 +2941,11 @@ func _br_login() -> void:
 		return
 	var body := {"username": user, "password": secret_text}
 	secret_text = ""
-	var r := _act("browser", func(): return game.request("POST", origin + "/login", body, {"X-Packet-Context": "browser"}))
+	var r := _act("browser", func(): return game.request("POST", origin + "/login", body, {"X-Packet-Context": "browser"}, active_term))
 	body.clear()
 	_br_note(_t("UI_BR_AUTH_RESULT", {"status": _i(r, "status", 0), "detail": _s(r, "text")}), C_TEAL if _b(r, "ok") else C_AMBER)
 	if not br_url.is_empty():
-		br_stale.visible = true
+		_set_browser_stale(true)
 
 
 func _br_logout() -> void:
@@ -2486,23 +2955,25 @@ func _br_logout() -> void:
 	if origin.is_empty():
 		_br_note(_t("UI_BR_NO_PAGE"), C_AMBER)
 		return
-	var r := _act("browser", func(): return game.request("POST", origin + "/logout", {}, {"X-Packet-Context": "browser"}))
+	var r := _act("browser", func(): return game.request("POST", origin + "/logout", {}, {"X-Packet-Context": "browser"}, active_term))
 	_br_note(_t("UI_BR_AUTH_RESULT", {"status": _i(r, "status", 0), "detail": _s(r, "text")}), C_DIM if _b(r, "ok") else C_AMBER)
 	if not br_url.is_empty():
-		br_stale.visible = true
+		_set_browser_stale(true)
 
 
 func _br_note(text: String, color: Color) -> void:
 	br_status.text = text.replace("\n", " · ")
 	br_status.tooltip_text = text
 	br_status.add_theme_color_override("font_color", color)
+	if _browser_index >= 0:
+		_browser_states[_browser_index]["notice"] = {"text": text, "color": color}
 
 
 func _br_archive_page() -> void:
 	if br_url.is_empty() or not _can_act():
 		return
 	var url := br_url
-	var r := _act("browser", func(): return game.collect_web(url))
+	var r := _act("browser", func(): return game.collect_web(url, active_term))
 	_br_note(_s(r, "text"), C_TEAL if _b(r, "ok") else C_AMBER)
 
 
@@ -2513,21 +2984,151 @@ func _br_to_lab() -> void:
 
 
 func _br_reset() -> void:
+	_browser_states.clear()
+	_browser_index = -1
 	br_history.clear()
 	br_cursor = -1
 	br_url = ""
 	br_failed = false
 	br_opened = false
-	br_addr.text = ""
-	br_title.text = ""
-	br_meta.text = ""
-	br_body.clear()
-	_clear_children(br_links)
-	br_archive.visible = false
-	br_stale.visible = false
-	br_status.text = ""
 	br_pass.clear()
+	_browser_new_tab(false)
+
+
+func _browser_new_tab(focus_address := true) -> void:
+	if _browser_states.size() >= MAX_BROWSER_TABS:
+		_toast(_t("UI_DESKTOP_BROWSER_TAB_LIMIT", {"max": MAX_BROWSER_TABS}), C_AMBER)
+		return
+	_browser_store_active()
+	_browser_tab_sequence += 1
+	_browser_states.append({"id": _browser_tab_sequence, "address": "", "url": "", "history": [], "cursor": -1,
+		"failed": false, "opened": focus_address, "response": {}, "response_url": "", "response_terminal": -1,
+		"stale": false, "notice": {}, "form": {"method": 0, "field": "input", "value": "", "user": "", "visible": false}})
+	_browser_index = _browser_states.size() - 1
+	_browser_restore_active()
+	if focus_address and br_addr.is_visible_in_tree():
+		br_addr.grab_focus()
+		br_addr.edit()
+
+
+func _browser_store_active() -> void:
+	if _browser_index < 0 or _browser_index >= _browser_states.size() or br_addr == null:
+		return
+	var state: Dictionary = _browser_states[_browser_index]
+	state.merge({"address": br_addr.text, "url": br_url, "history": br_history.duplicate(), "cursor": br_cursor,
+		"failed": br_failed, "opened": br_opened, "stale": br_stale.visible,
+		"form": {"method": br_method.selected, "field": br_field.text, "value": br_value.text,
+			"user": br_user.text, "visible": br_form_box.visible}}, true)
+
+
+func _browser_tab_changed(index: int) -> void:
+	if _browser_rebuilding or index == _browser_index or index < 0 or index >= _browser_states.size():
+		return
+	_browser_store_active()
+	_browser_index = index
+	_browser_restore_active()
+
+
+func _browser_restore_active() -> void:
+	if _browser_index < 0:
+		return
+	var state: Dictionary = _browser_states[_browser_index]
+	br_addr.text = str(state.address)
+	br_url = str(state.url)
+	br_history.assign(state.history)
+	br_cursor = int(state.cursor)
+	br_failed = bool(state.failed)
+	br_opened = bool(state.opened)
+	br_pass.clear()
+	var form: Dictionary = state.form
+	br_method.select(int(form.method))
+	br_field.text = str(form.field)
+	br_value.text = str(form.value)
+	br_user.text = str(form.user)
+	br_form_box.visible = bool(form.visible)
+	_br_form_label()
+	if not _d(state.response).is_empty():
+		_br_render(state.response, str(state.response_url), false, false, true)
+		var note: Dictionary = state.notice
+		if not note.is_empty():
+			br_status.text = str(note.text)
+			br_status.add_theme_color_override("font_color", note.color)
+	else:
+		_clear_children(br_links)
+		br_title.text = _t("UI_DESKTOP_BROWSER_EMPTY")
+		_set_plain(br_body, _t("UI_DESKTOP_BROWSER_EMPTY_BODY"))
+		br_status.text = ""
+		br_archive.hide()
+	br_addr.text = str(state.address)
+	_set_browser_stale(bool(state.stale))
+	_browser_sync_tabs()
+	_browser_update_context()
 	_br_update_nav()
+
+
+func _browser_close_tab(index: int) -> void:
+	if index < 0 or index >= _browser_states.size():
+		return
+	_browser_store_active()
+	var was_active := index == _browser_index
+	_browser_states.remove_at(index)
+	if _browser_states.is_empty():
+		_browser_index = -1
+		_browser_new_tab(false)
+		_close("browser")
+		return
+	if index < _browser_index:
+		_browser_index -= 1
+	elif index == _browser_index:
+		_browser_index = mini(index, _browser_states.size() - 1)
+	if not was_active:
+		_browser_sync_tabs()
+		_browser_update_context()
+		return
+	_browser_restore_active()
+
+
+func _browser_sync_tabs() -> void:
+	if browser_tabs == null:
+		return
+	_browser_rebuilding = true
+	browser_tabs.clear_tabs()
+	for state in _browser_states:
+		var title := _s(_d(state.response), "title", _t("UI_DESKTOP_BROWSER_NEW_TAB"))
+		browser_tabs.add_tab(title.left(30))
+		var index := browser_tabs.tab_count - 1
+		browser_tabs.set_tab_metadata(index, {"id": state.id, "url": state.address})
+		browser_tabs.set_tab_tooltip(index, str(state.address))
+	if _browser_index >= 0:
+		browser_tabs.current_tab = _browser_index
+	_browser_rebuilding = false
+	browser_new_tab_button.disabled = _browser_states.size() >= MAX_BROWSER_TABS
+
+
+func _set_browser_stale(stale: bool) -> void:
+	br_stale.visible = stale
+	br_stale_row.visible = stale
+
+
+func _browser_mark_stale() -> void:
+	for state in _browser_states:
+		if not _d(state.response).is_empty():
+			state["stale"] = true
+	if _browser_index >= 0:
+		_set_browser_stale(bool(_browser_states[_browser_index].stale))
+
+
+func _browser_update_context() -> void:
+	if br_meta == null or _browser_index < 0:
+		return
+	var view: Dictionary = term_views[active_term]
+	var current := _t("UI_DESKTOP_SESSION", {"n": active_term + 1, "user": _s(view, "user", "player"), "host": _s(view, "host", "local")})
+	var state: Dictionary = _browser_states[_browser_index]
+	var response := _t("UI_DESKTOP_BROWSER_NO_RESPONSE")
+	if not _d(state.response).is_empty():
+		response = _t("UI_DESKTOP_BROWSER_RESPONSE", {"n": int(state.response_terminal) + 1, "actor": _s(state.response, "actor", "anonymous")})
+	br_meta.text = _t("UI_DESKTOP_BROWSER_CONTEXT", {"current": current, "response": response})
+	_set_browser_stale(bool(state.stale))
 
 
 # ── RequestLab (브라우저·curl과 같은 가상 요청 처리기) ──────────
@@ -4139,12 +4740,12 @@ func _bd_show(d: Dictionary) -> void:
 
 func _obj_text(o: Dictionary) -> String:
 	var kind := _s(o, "kind")
-	var display := _s(o, "display_name", _s(o, "id"))
+	var display := _s(o, "display_name", _t("UI_DESKTOP_REQUIRED_RESULT"))
 	var target := _s(o, "target_display")
 	if not target.is_empty():
 		display += " · " + target
 	var s := _t_opt("UI_OBJ_" + kind.to_upper(), {"id": display})
-	return s if not s.is_empty() else _t("UI_OBJ_OTHER", {"kind": kind, "id": display})
+	return s if not s.is_empty() else _t("UI_DESKTOP_OBJECTIVE", {"name": display})
 
 
 func _bd_update_hints(is_current: bool = true) -> void:
@@ -4403,6 +5004,7 @@ func _choose_ending(id: String) -> void:
 func _act(app: String, action: Callable, t: int = -1) -> Dictionary:
 	if not _can_act():
 		return {"ok": false, "code": "UI_BLOCKED", "text": _t("UI_ERR_BLOCKED"), "changed": false}
+	_support_eligible[_support_key(last_view)] = false
 	var before: Dictionary = last_view
 	var before_t: Dictionary = term_views[t] if t >= 0 else {}
 	var sig_before := _state_sig()
@@ -4410,8 +5012,8 @@ func _act(app: String, action: Callable, t: int = -1) -> Dictionary:
 	var r: Dictionary = raw if raw is Dictionary else {"ok": false, "code": "UI_BAD_RESULT", "text": _t("UI_ERR_BAD_RESULT"), "changed": false}
 	_refresh_all()
 	var changed := _b(r, "changed") or _state_sig() != sig_before
-	if changed and app != "browser" and not br_url.is_empty():
-		br_stale.visible = true
+	if changed:
+		_browser_mark_stale()
 	_after_action(before, r, t, before_t)
 	if changed:
 		_autosave()
@@ -4461,6 +5063,8 @@ func _refresh_all() -> void:
 	_refresh_help(v)
 	_refresh_ending(v)
 	_update_taskbar()
+	_browser_update_context()
+	_update_support(v)
 	view_changed.emit(v.duplicate(true))
 
 
@@ -4573,16 +5177,9 @@ func _on_mission_changed(v: Dictionary) -> void:
 	for t in TERMS:
 		if term_live[t]:
 			_term_line(t, _t("UI_TERM_CASE_BANNER", {"id": _s(v, "mission_id"), "title": _s(v, "mission_title")}), C_FAINT)
-	_toast(_t("UI_NOTE_MISSION", {"id": _s(v, "mission_id"), "title": _s(v, "mission_title")}), C_TEAL)
-	call_deferred("_br_open_home")
-
-
-func _br_open_home() -> void:
-	if wins.has("browser") and wins["browser"]["state"] != "closed" and _can_act():
-		br_opened = true
-		_br_home()
-	else:
-		br_opened = false
+	_support_eligible[_support_key(v)] = not _b(v, "completion_recorded")
+	if support_mode != "independent":
+		_toast(_t("UI_NOTE_MISSION", {"id": _s(v, "mission_id"), "title": _s(v, "mission_title")}), C_TEAL)
 
 
 func _reset_world_caches() -> void:
@@ -4617,6 +5214,15 @@ func _install_game(candidate, banner_key: String) -> void:
 	session_active = true
 	_hide_fatal()
 	_reset_world_caches()
+	_support_seen.clear()
+	_support_dismissed.clear()
+	_support_eligible.clear()
+	if banner_key == "UI_BANNER_NEW":
+		for window in wins.values():
+			window.state = "closed"
+			window.win.hide()
+		active_id = ""
+	_support_eligible[str(session_generation) + ":" + _s(_view(active_term), "mission_id")] = banner_key == "UI_BANNER_NEW"
 	# 저장에서 원격 연결이 남아 있는 터미널은 사용 중인 세션으로 표시한다.
 	for t in TERMS:
 		if not bool(term_live[t]) and _s(_view(t), "host", "local") != "local":
@@ -4626,16 +5232,13 @@ func _install_game(candidate, banner_key: String) -> void:
 			_term_line(t, _t(banner_key), C_FAINT)
 	_refresh_all()
 	_ensure_default_windows()
-	call_deferred("_br_open_home")
 
 
 func _ensure_default_windows() -> void:
-	for id in wins:
-		if wins[id]["state"] == "open":
-			return
-	_open_app("mail", false)
-	_open_app("board", false)
-	_open_terminal(0)
+	# An empty desktop is a valid choice. Guided assistance is scheduled once per new case.
+	_update_support(last_view)
+	if active_id.is_empty() and launcher_button.is_visible_in_tree():
+		launcher_button.grab_focus()
 
 
 func _resume() -> void:
@@ -4855,40 +5458,6 @@ func _retry_core() -> void:
 
 
 # ── 그리기 전용 보조 Control ──────────────────────────────────
-
-class Backdrop extends Control:
-	const PTS := [Vector2(0.06, 0.80), Vector2(0.20, 0.64), Vector2(0.34, 0.72), Vector2(0.52, 0.56),
-			Vector2(0.68, 0.67), Vector2(0.83, 0.47), Vector2(0.95, 0.58)]
-
-	func _notification(what: int) -> void:
-		if what == NOTIFICATION_RESIZED:
-			queue_redraw()
-
-	func _draw() -> void:
-		draw_rect(Rect2(Vector2.ZERO, size), Color(0.034, 0.050, 0.062))
-		var g := Color(0.42, 0.62, 0.66, 0.04)
-		var step := 40.0
-		var x := 0.0
-		while x < size.x:
-			draw_line(Vector2(x, 0), Vector2(x, size.y), g, 1.0)
-			x += step
-		var y := 0.0
-		while y < size.y:
-			draw_line(Vector2(0, y), Vector2(size.x, y), g, 1.0)
-			y += step
-		var line := Color(0.40, 0.80, 0.78, 0.07)
-		for i in PTS.size() - 1:
-			draw_line(PTS[i] * size, PTS[i + 1] * size, line, 1.0, true)
-		draw_line(PTS[1] * size, Vector2(0.28, 0.42) * size, line, 1.0, true)
-		draw_line(PTS[4] * size, Vector2(0.74, 0.86) * size, line, 1.0, true)
-		for p in PTS:
-			draw_circle(p * size, 3.0, Color(0.40, 0.80, 0.78, 0.14))
-		draw_circle(PTS[5] * size, 3.5, Color(0.94, 0.67, 0.33, 0.18))
-		# 가장자리를 조금 어둡게 해 창이 배경보다 앞에 보이게 한다.
-		var edge := Color(0, 0, 0, 0.18)
-		draw_rect(Rect2(0, 0, size.x, 60), edge)
-		draw_rect(Rect2(0, size.y - 60, size.x, 60), edge)
-
 
 class NetMap extends Control:
 	var nodes: Array = []

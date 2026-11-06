@@ -216,3 +216,19 @@ Claude가 소스 대조를 “재현”이라고 표현한 부분도 **실행 �
 기존 336/31,717과 새 mutation/공개88/Audio/locale/실제native/PCK/3OS 결과는 각 실행 로그와 최신 구현 기록을 따른다. fixture 수를 독립 퍼즐 수나 사람 플레이타임으로 바꾸지 않는다. 사람 청취·장기 피로도·재미/난이도·원어민·물리IME/기기는 자동/정적 모델 검토와 별도다.
 
 같은 A34/A38 세션을 재개해 배포 직전 두 문제를 좁게 보완했다. A38은 신설 행동의 정렬 순서에 의존하던 CI preview를 명시적 공개 행동으로 바꿔 실제 smoke459/0을 확인했다. A34는 정상 메뉴 Quit의 Ogg 정리 경고를 실제 RED로 확인하고 메뉴·WM close를 같은 종료 경로로 연결했다. native/headless 메뉴8·창6은 실제 종료0·경고/오류0·기본 자료 보존으로 통과했다. 부모는 종료 후 로그까지 검증하는 외부 deadline 회귀를 추가하고 전체gate/Python48·최종native5,390/44사건/세결말·3OS실제export/PCK398각각·최종ZIP·세OS CI를 확인했다. Linux부분GUI458/1사건과최종Mac바이너리8PNG·compiledPCK종료14도별도기록했다. 새 Claude 호출이나 숨은 추론 원문 공개는 없다.
+
+### 2026-11-06 첫 플레이·Midnight OS UI 재설계
+
+사용자가1.1 UI를 거부하고 Windows/Kali처럼 바탕화면에서 앱을 여는 사용감을 요청했다. 기능의 존재와 UI 품질의 완료는 구분한다. [새 실행 기록](implementation/2026-11-06-desktop-experience.md)의 마지막 절이 이번 결과다.
+
+| 책임 | 모델·추론 수준 | 실제 범위 |
+|---|---|---|
+| 부모 | 기존 Codex6.1 세션 | 현재 기능 audit·새DESIGN·공통Theme·시작/시나리오·지원 연결·4카테고리 설정·통합/배포 |
+| Desktop 소유 | gpt-6.1-sol / high 재개 | 기존A34 세션,31SVG·빈 바탕/런처/작업표시줄/창·Nightfox8탭·일회성 지원·review finding 수리 |
+| Settings 소유 | gpt-6.1-sol / xhigh 재개 | 기존A32,3지원enum/안전한testpath·원자prefs/링크·340검사 |
+| Browser context 소유 | gpt-6.1-sol / xhigh 재개 | 기존A37,두 공개API의 단말 인자·160 actor/권한/저장예산 회귀 |
+| Locale 소유 | gpt-6.1-sol / high 재개 | 기존A35,72신규키·6PO/source SHA·27회귀·실제로드/glyph |
+| Native/기능 QA | gpt-6.1-sol / high 재개 | 기존A38,실제Control metadata와engine입력·시나리오/설정/창/탭/6locale·고유설정/진행보호 |
+| Fresh UX review | gpt-6.1-sol / high, fork 없음 | 실제첫/교정35PNG 해시·픽셀·요구 대조,84/fix. 제품/실행 변경0 |
+
+첫 검토는 UI가 OS처럼 보이는 것과 실제 저장/세션/물리 입력 검증을 분리했다. viewer가 발견한 좁은 경고열·toast 겹침·언어 transient를 수리 대상으로 남기며, 최종 code/native/PCK/CI 결과는 완료 뒤 기록한다. 새 Claude 호출은 실제 실행 뒤 요청/응답 모델과 범위를 추가한다.

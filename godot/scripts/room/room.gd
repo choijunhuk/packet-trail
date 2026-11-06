@@ -8,10 +8,35 @@ signal campaign_selected(pack_id: String)
 signal quit_requested
 
 const Store = preload("res://scripts/presentation/settings_store.gd")
+const DesktopTheme = preload("res://scripts/presentation/desktop_theme.gd")
 const SettingsPanel = preload("res://scripts/presentation/settings_panel.gd")
 const StudioWorld = preload("res://scripts/room/studio_world.gd")
 const Localization = preload("res://scripts/presentation/localization.gd")
 const FALLBACK := {
+	"SUPPORT_SCOPE_SHORT": "목표와 경보 규칙은 같고, 자동 안내량이 달라집니다.",
+	"LOBBY_ROOM_SHORT": "작업실",
+	"LOBBY_CHOOSE_STORY": "오늘 밤, 어느 쪽에 설까요?",
+	"LOBBY_ROLE_INTRUDER": "단서를 따라 침투하고 감춰진 기록을 회수합니다.",
+	"LOBBY_ROLE_DEFENDER": "위협을 막으면서 시민과 동료의 업무를 지킵니다.",
+	"LOBBY_ROLE_TRACKER": "기록의 출처와 시간을 비교해 연결을 추적합니다.",
+	"LOBBY_CASE_COUNTS": "본편 {main} · 선택 {optional}",
+	"LOBBY_CASE_COUNT": "독립 이야기 · {total}개 사건",
+	"SUPPORT_TITLE": "플레이 지원",
+	"SUPPORT_GUIDED": "가이드",
+	"SUPPORT_STANDARD": "표준",
+	"SUPPORT_INDEPENDENT": "자율",
+	"SUPPORT_GUIDED_DESC": "새 의뢰와 첫 방향 안내를 열고 초반 힌트를 함께 보여 줍니다.",
+	"SUPPORT_STANDARD_DESC": "바탕화면에서 직접 앱을 열고 필요할 때 단계별 힌트를 요청합니다.",
+	"SUPPORT_INDEPENDENT_DESC": "자동 길잡이를 줄입니다. 도움말과 수동 힌트는 언제든 사용할 수 있습니다.",
+	"SUPPORT_SCOPE": "안내와 힌트 표시량을 선택합니다. 목표·경보 규칙과 허용 해법은 같으며 설정에서 바꿀 수 있습니다.",
+	"SUPPORT_NOT_SAVED": "지원 설정을 저장하지 못했습니다. 이번 플레이에는 적용됩니다.",
+	"SETTINGS_PLAY": "플레이 지원",
+	"SETTINGS_DISPLAY_TAB": "화면",
+	"SETTINGS_AUDIO_TAB": "음향",
+	"SETTINGS_CONTROLS_TAB": "조작",
+	"SETTINGS_SUPPORT_FOR": "{campaign} 지원 수준",
+	"SETTINGS_AUDIO_DETAILS": "세부 소리",
+	"SETTINGS_CONTROLS_NOTE": "작업실: WASD 이동 · 마우스 오른쪽 시선 · E 컴퓨터 · F10 작업실 복귀. 데스크톱 도움말에서 앱과 터미널 단축키를 확인할 수 있습니다.",
 	"ROOM_TITLE": "심야접속", "ROOM_SUBTITLE": "비가 그치기 전, 다음 기록을 찾는다.",
 	"CONTINUE": "계속하기", "NEW_GAME": "새 게임", "LOAD_GAME": "불러오기", "SETTINGS": "설정",
 	"CREDITS": "제작 정보", "QUIT": "종료", "ENTER_ROOM": "작업실 둘러보기", "BACK": "돌아가기",
@@ -41,8 +66,14 @@ const FALLBACK := {
 @export var has_legacy_session := false
 @export var selected_pack_id := "intruder"
 var campaign_slots: Dictionary = {}
-var campaign_picker: OptionButton
-var campaign_summary: Label
+var campaign_buttons: Dictionary = {}
+var support_summary: Label
+var support_picker: OptionButton
+var settings_path := Store.PATH
+var _chosen_support: Dictionary = {}
+var _session_support: Dictionary = {}
+var _pending_support := ""
+var _preferences_readable := true
 var campaign_progress: Label
 var legacy_continue_button: Button
 var legacy_notice: Label
@@ -87,11 +118,13 @@ func _text(key: String, replacements: Dictionary = {}) -> String:
 
 
 func _ready() -> void:
-	settings_store.load_settings()
+	settings_store = Store.new(settings_path)
+	var loaded: Dictionary = settings_store.load_settings()
+	_preferences_readable = bool(loaded.get("ok", false))
 	Localization.configure(settings_store.get_values()["locale"])
 	if DisplayServer.get_name() != "headless":
 		get_viewport().msaa_3d = Viewport.MSAA_4X
-	settings_store.changed.connect(_apply_settings)
+	settings_store.changed.connect(_on_preferences_committed)
 	studio = StudioWorld.new()
 	studio.name = "Studio"
 	add_child(studio)
@@ -123,11 +156,12 @@ func set_campaigns(entries: Array) -> void:
 	for entry in _campaigns:
 		ids.append(str(entry.get("id", "")))
 	if not ids.has(selected_pack_id) and not ids.is_empty():
-		selected_pack_id = ids[0]
+		selected_pack_id = str(ids[0])
 	if menu_box != null:
-		_rebuild_menu()
-		call_deferred("_focus_menu")
-
+		if campaign_buttons.size() != _campaigns.size():
+			_rebuild_menu()
+		else:
+			_update_campaign_details()
 
 func set_legacy_campaign_available(available: bool, problem := "") -> void:
 	_legacy_campaign_available = available
@@ -167,17 +201,40 @@ func _campaign_title(id: String) -> String:
 
 func _update_campaign_details() -> void:
 	var entry := _campaign_entry()
-	if campaign_picker == null:
-		return
-	for index in campaign_picker.item_count:
-		if campaign_picker.get_item_metadata(index) == selected_pack_id:
-			campaign_picker.select(index)
-	campaign_summary.text = _text("CAMPAIGN_" + selected_pack_id.to_upper() + "_DESC")
+	for id in campaign_buttons:
+		var button: Button = campaign_buttons[id]
+		button.set_pressed_no_signal(id == selected_pack_id)
 	var progress: Dictionary = entry.get("progress", {})
 	var state := str(entry.get("save_state", "empty"))
-	campaign_progress.text = _text("CAMPAIGN_NO_SAVE") if state == "empty" else (_text("CAMPAIGN_SAVE_ATTENTION") if state == "recovery" else _text("CAMPAIGN_PROGRESS", {"done": progress.get("completed", 0), "total": progress.get("total", 0)}))
+	if campaign_progress != null:
+		campaign_progress.text = _text("CAMPAIGN_NO_SAVE") if state == "empty" else (_text("CAMPAIGN_SAVE_ATTENTION") if state == "recovery" else _text("CAMPAIGN_PROGRESS", {"done": progress.get("completed", 0), "total": progress.get("total", 0)}))
+	var level := _support_for_selection()
+	if support_picker != null:
+		for index in range(support_picker.item_count):
+			if support_picker.get_item_metadata(index) == level:
+				support_picker.select(index)
+	if support_summary != null:
+		support_summary.text = _text("SUPPORT_" + level.to_upper() + "_DESC")
 	set_session_available(bool(entry.get("disk_available", entry.get("can_continue", false))))
 
+
+func _support_for_selection() -> String:
+	return str(_chosen_support.get(selected_pack_id, presentation_settings().get("support_" + selected_pack_id, "standard")))
+
+
+func presentation_settings(base_values: Dictionary = {}) -> Dictionary:
+	var values: Dictionary = settings_store.get_values() if base_values.is_empty() else base_values.duplicate(true)
+	for id in _session_support:
+		values["support_" + str(id)] = _session_support[id]
+	return values
+
+
+func select_support(level: String) -> bool:
+	if not level in ["guided", "standard", "independent"]:
+		return false
+	_chosen_support[selected_pack_id] = level
+	_update_campaign_details()
+	return true
 
 func _build_player() -> void:
 	player = CharacterBody3D.new()
@@ -204,11 +261,7 @@ func _build_player() -> void:
 
 
 func _build_interface() -> void:
-	var readable_font := FontVariation.new()
-	readable_font.base_font = Localization.get_font()
-	readable_font.variation_embolden = 0.35
-	_theme.default_font = readable_font
-	_theme.default_font_size = 20
+	_theme = DesktopTheme.create(float(settings_store.get_values()["font_scale"]))
 	desktop_layer = CanvasLayer.new()
 	desktop_layer.layer = 4
 	add_child(desktop_layer)
@@ -220,25 +273,21 @@ func _build_interface() -> void:
 	menu.theme = _theme
 	overlay.add_child(menu)
 	var veil := ColorRect.new()
-	veil.color = Color(0.025, 0.05, 0.07, 0.88)
+	veil.color = Color(0.025, 0.047, 0.09, 0.96)
 	veil.set_anchors_and_offsets_preset(Control.PRESET_LEFT_WIDE)
-	veil.offset_right = 550
+	veil.offset_right = 600
 	menu.add_child(veil)
 	var margins := MarginContainer.new()
 	margins.set_anchors_and_offsets_preset(Control.PRESET_LEFT_WIDE)
-	margins.offset_left = 54
-	margins.offset_right = 495
-	margins.offset_top = 42
-	margins.offset_bottom = -35
+	margins.offset_left = 38
+	margins.offset_right = 562
+	margins.offset_top = 24
+	margins.offset_bottom = -20
 	menu.add_child(margins)
-	var scroll := ScrollContainer.new()
-	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	scroll.follow_focus = true
-	margins.add_child(scroll)
 	menu_box = VBoxContainer.new()
 	menu_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	menu_box.add_theme_constant_override("separation", 13)
-	scroll.add_child(menu_box)
+	menu_box.add_theme_constant_override("separation", 8)
+	margins.add_child(menu_box)
 	_rebuild_menu()
 	hint = Label.new()
 	hint.theme = _theme
@@ -256,99 +305,131 @@ func _build_interface() -> void:
 	confirm.dialog_autowrap = true
 	confirm.borderless = true
 	confirm.exclusive = true
-	var dialog_style := StyleBoxFlat.new()
-	dialog_style.bg_color = Color("111d27")
-	dialog_style.border_color = Color("72b7bc")
-	dialog_style.set_border_width_all(1)
-	dialog_style.set_corner_radius_all(7)
-	dialog_style.content_margin_left = 22
-	dialog_style.content_margin_right = 22
-	dialog_style.content_margin_top = 22
-	dialog_style.content_margin_bottom = 18
-	confirm.add_theme_stylebox_override("panel", dialog_style)
-	var button_style := StyleBoxFlat.new()
-	button_style.bg_color = Color("203d48")
-	button_style.set_corner_radius_all(4)
-	button_style.content_margin_left = 12
-	button_style.content_margin_right = 12
-	button_style.content_margin_top = 8
-	button_style.content_margin_bottom = 8
-	for button in [confirm.get_ok_button(), confirm.get_cancel_button()]:
-		button.add_theme_stylebox_override("normal", button_style)
+	confirm.add_theme_stylebox_override("panel", DesktopTheme.panel(DesktopTheme.SURFACE, DesktopTheme.ACCENT, 8, 22))
 	confirm.confirmed.connect(_on_menu_confirmed)
 	confirm.canceled.connect(_cancel_menu_confirmation)
 	overlay.add_child(confirm)
-
 
 func _rebuild_menu() -> void:
 	for child in menu_box.get_children():
 		menu_box.remove_child(child)
 		child.queue_free()
-	var eyebrow := Label.new()
-	eyebrow.text = "MIDNIGHT / ACCESS"
-	eyebrow.add_theme_font_size_override("font_size", 15)
-	eyebrow.add_theme_color_override("font_color", Color("7fbfc1"))
-	menu_box.add_child(eyebrow)
+	campaign_buttons.clear()
 	var title := Label.new()
 	title.text = _text("ROOM_TITLE")
-	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	title.add_theme_font_size_override("font_size", 48)
+	title.add_theme_font_size_override("font_size", roundi(34.0 * settings_store.get_values()["font_scale"]))
 	menu_box.add_child(title)
 	var subtitle := Label.new()
-	subtitle.text = _text("ROOM_SUBTITLE")
+	subtitle.text = _text("LOBBY_CHOOSE_STORY")
 	subtitle.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	subtitle.add_theme_color_override("font_color", Color("a4b7bf"))
+	subtitle.add_theme_color_override("font_color", DesktopTheme.MUTED)
 	menu_box.add_child(subtitle)
-	menu_box.add_child(HSeparator.new())
-	var choose_label := Label.new()
-	choose_label.text = _text("CAMPAIGN_SELECT")
-	menu_box.add_child(choose_label)
-	campaign_picker = OptionButton.new()
-	campaign_picker.accessibility_name = _text("CAMPAIGN_SELECT")
-	campaign_picker.set_meta("campaign_selector", true)
+	var scroll := ScrollContainer.new()
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	scroll.follow_focus = true
+	menu_box.add_child(scroll)
+	var body := VBoxContainer.new()
+	body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	body.add_theme_constant_override("separation", 10)
+	scroll.add_child(body)
 	for entry in _campaigns:
 		var id := str(entry.get("id", ""))
-		campaign_picker.add_item(_campaign_title(id))
-		campaign_picker.set_item_metadata(campaign_picker.item_count - 1, id)
-	campaign_picker.item_selected.connect(func(index: int): select_campaign(str(campaign_picker.get_item_metadata(index))))
-	campaign_picker.disabled = _campaigns.is_empty()
-	menu_box.add_child(campaign_picker)
-	campaign_summary = Label.new()
-	campaign_summary.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	campaign_summary.add_theme_font_size_override("font_size", _theme.default_font_size - 2)
-	menu_box.add_child(campaign_summary)
+		var button := Button.new()
+		button.set_meta("scenario_id", id)
+		button.toggle_mode = true
+		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		button.custom_minimum_size.y = 68
+		var optional := int(entry.get("optional_count", 0))
+		var count := _text("LOBBY_CASE_COUNTS", {"main": entry.get("main_count", 0), "optional": optional}) if optional > 0 else _text("LOBBY_CASE_COUNT", {"total": entry.get("main_count", 0)})
+		button.text = _campaign_title(id) + "  ·  " + count + "\n" + _text("LOBBY_ROLE_" + id.to_upper())
+		button.accessibility_name = _campaign_title(id) + ": " + _text("LOBBY_ROLE_" + id.to_upper())
+		button.pressed.connect(select_campaign.bind(id))
+		body.add_child(button)
+		campaign_buttons[id] = button
 	campaign_progress = Label.new()
+	campaign_progress.add_theme_color_override("font_color", DesktopTheme.ACCENT_SOFT)
 	campaign_progress.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	campaign_progress.add_theme_color_override("font_color", Color("a4b7bf"))
 	menu_box.add_child(campaign_progress)
-	continue_button = _button("CONTINUE", func(): open_desktop("continue"))
-	_button("NEW_GAME", _confirm_new)
-	load_button = _button("LOAD_GAME", _confirm_load)
+	var support_row := HBoxContainer.new()
+	menu_box.add_child(support_row)
+	var support_title := Label.new()
+	support_title.text = _text("SUPPORT_TITLE")
+	support_row.add_child(support_title)
+	support_picker = OptionButton.new()
+	support_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	support_picker.set_meta("support_selector", true)
+	support_picker.accessibility_name = _text("SUPPORT_TITLE")
+	for level in ["guided", "standard", "independent"]:
+		support_picker.add_item(_text("SUPPORT_" + level.to_upper()))
+		support_picker.set_item_metadata(support_picker.item_count - 1, level)
+	support_picker.item_selected.connect(func(index: int): select_support(str(support_picker.get_item_metadata(index))))
+	support_row.add_child(support_picker)
+	support_summary = Label.new()
+	support_summary.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	menu_box.add_child(support_summary)
+	var scope := Label.new()
+	scope.text = _text("SUPPORT_SCOPE_SHORT")
+	scope.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	scope.add_theme_font_size_override("font_size", roundi(15.0 * settings_store.get_values()["font_scale"]))
+	scope.add_theme_color_override("font_color", DesktopTheme.MUTED)
+	menu_box.add_child(scope)
 	legacy_continue_button = _button("LEGACY_CONTINUE", func(): open_desktop("legacy"))
 	legacy_continue_button.set_meta("pack_id", "legacy_intruder")
 	legacy_continue_button.tooltip_text = _text("LEGACY_CONTINUE_DESC")
+	menu_box.remove_child(legacy_continue_button)
+	body.add_child(legacy_continue_button)
 	legacy_continue_button.visible = _legacy_campaign_available or not _legacy_campaign_problem.is_empty()
 	legacy_continue_button.disabled = not _legacy_campaign_available
 	legacy_notice = Label.new()
 	legacy_notice.text = _legacy_campaign_problem
 	legacy_notice.visible = not _legacy_campaign_problem.is_empty()
 	legacy_notice.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	legacy_notice.add_theme_color_override("font_color", Color("d5aa75"))
-	menu_box.add_child(legacy_notice)
+	legacy_notice.add_theme_color_override("font_color", DesktopTheme.WARNING)
+	body.add_child(legacy_notice)
 	import_button = _button("IMPORT_LEGACY", _confirm_import)
-	_button("ENTER_ROOM", return_to_room)
-	_button("SETTINGS", show_settings)
-	_button("CREDITS", _show_credits)
-	_button("QUIT", func(): quit_requested.emit())
+	menu_box.remove_child(import_button)
+	body.add_child(import_button)
+	import_button.visible = has_legacy_session
 	note = Label.new()
 	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	note.add_theme_font_size_override("font_size", 15)
-	note.add_theme_color_override("font_color", Color("94a8b2"))
-	menu_box.add_child(note)
+	note.add_theme_color_override("font_color", DesktopTheme.WARNING)
+	body.add_child(note)
+	var primary := HBoxContainer.new()
+	menu_box.add_child(primary)
+	continue_button = _button("CONTINUE", func(): open_desktop("continue", selected_pack_id, _support_for_selection()))
+	continue_button.set_meta("lobby_action", "continue")
+	menu_box.remove_child(continue_button)
+	continue_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	primary.add_child(continue_button)
+	var new_game := _button("NEW_GAME", _confirm_new)
+	new_game.set_meta("lobby_action", "new")
+	new_game.add_theme_stylebox_override("normal", DesktopTheme.panel(Color("244d80"), DesktopTheme.ACCENT, 6, 12))
+	menu_box.remove_child(new_game)
+	new_game.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	primary.add_child(new_game)
+	var actions := HBoxContainer.new()
+	menu_box.add_child(actions)
+	load_button = _button("LOAD_GAME", _confirm_load)
+	load_button.set_meta("lobby_action", "load")
+	menu_box.remove_child(load_button)
+	load_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	actions.add_child(load_button)
+	for key in ["SETTINGS", "ENTER_ROOM", "QUIT"]:
+		var callback: Callable = show_settings if key == "SETTINGS" else (return_to_room if key == "ENTER_ROOM" else func(): quit_requested.emit())
+		var button := _button(key, callback)
+		menu_box.remove_child(button)
+		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		button.set_meta("lobby_action", key.to_lower())
+		button.tooltip_text = _text(key)
+		button.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		if key == "ENTER_ROOM":
+			button.text = _text("LOBBY_ROOM_SHORT")
+		actions.add_child(button)
 	set_session_available(has_saved_session)
 	set_legacy_session_available(has_legacy_session)
 	_update_campaign_details()
-
 
 func _button(key: String, callback: Callable) -> Button:
 	var button := Button.new()
@@ -375,8 +456,9 @@ func _confirm_new() -> void:
 	_menu_focus_target = get_viewport().gui_get_focus_owner()
 	_pending_action = "new"
 	_pending_pack_id = selected_pack_id
+	_pending_support = _support_for_selection()
 	confirm.title = _text("NEW_GAME")
-	confirm.dialog_text = _text("CAMPAIGN_NEW_CONFIRM", {"campaign": _campaign_title(selected_pack_id)})
+	confirm.dialog_text = _text("CAMPAIGN_NEW_CONFIRM", {"campaign": _campaign_title(selected_pack_id)}) + "\n\n" + _text("SUPPORT_TITLE") + ": " + _text("SUPPORT_" + _pending_support.to_upper())
 	confirm.ok_button_text = _text("START_NEW")
 	confirm.cancel_button_text = _text("CANCEL")
 	confirm.popup_centered(Vector2i(540, 220))
@@ -384,6 +466,7 @@ func _confirm_new() -> void:
 
 func _confirm_import() -> void:
 	_menu_focus_target = get_viewport().gui_get_focus_owner()
+	_pending_support = ""
 	_pending_action = "import"
 	_pending_pack_id = "legacy_intruder"
 	confirm.title = _text("IMPORT_LEGACY")
@@ -396,11 +479,12 @@ func _confirm_import() -> void:
 func _confirm_load() -> void:
 	var cached = _desktops.get(selected_pack_id)
 	if not is_instance_valid(cached) or not cached.session_active:
-		open_desktop("load")
+		open_desktop("load", selected_pack_id, _support_for_selection())
 		return
 	_menu_focus_target = get_viewport().gui_get_focus_owner()
 	_pending_action = "load"
 	_pending_pack_id = selected_pack_id
+	_pending_support = _support_for_selection()
 	confirm.title = _text("LOAD_GAME")
 	confirm.dialog_text = _text("UI_CONFIRM_LOAD")
 	confirm.ok_button_text = _text("LOAD_GAME")
@@ -411,13 +495,15 @@ func _confirm_load() -> void:
 func _on_menu_confirmed() -> void:
 	var action := _pending_action
 	var pack := _pending_pack_id
+	var level := _pending_support
 	_pending_action = ""
 	_pending_pack_id = ""
+	_pending_support = ""
 	if not action.is_empty() and not pack.is_empty():
-		open_desktop(action, pack)
-
+		open_desktop(action, pack, level)
 
 func _cancel_menu_confirmation() -> void:
+	_pending_support = ""
 	_pending_action = ""
 	_pending_pack_id = ""
 	_restore_menu_focus()
@@ -434,7 +520,7 @@ func _restore_menu_focus_now() -> void:
 		_focus_menu()
 
 
-func open_desktop(action := "continue", target_pack := "") -> void:
+func open_desktop(action := "continue", target_pack := "", support_level := "") -> void:
 	if target_pack.is_empty():
 		target_pack = "legacy_intruder" if action in ["legacy", "import"] else selected_pack_id
 	var slot := str(campaign_slots.get(target_pack, ""))
@@ -461,6 +547,12 @@ func open_desktop(action := "continue", target_pack := "") -> void:
 		_desktops[target_pack] = desktop
 		desktop_layer.add_child(desktop)
 		desktop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var support_notice := ""
+	var presentation := presentation_settings()
+	if target_pack != "legacy_intruder" and support_level in ["guided", "standard", "independent"]:
+		presentation["support_" + target_pack] = support_level
+	if desktop.has_method("apply_settings"):
+		desktop.apply_settings(presentation)
 	if desktop.has_method("start_session"):
 		var result: Variant = desktop.call("start_session", "continue" if action == "legacy" else action)
 		if result is Dictionary and not result.get("ok", true):
@@ -471,6 +563,18 @@ func open_desktop(action := "continue", target_pack := "") -> void:
 		show_main_menu()
 		note.text = _text("DESKTOP_NOT_READY")
 		return
+	if target_pack != "legacy_intruder" and support_level in ["guided", "standard", "independent"]:
+		_session_support[target_pack] = support_level
+		var key := "support_" + target_pack
+		if settings_store.get_values().get(key, "standard") != support_level:
+			var saved := {"ok": false}
+			if _preferences_readable:
+				var patch := {}
+				for id in _session_support:
+					patch["support_" + str(id)] = _session_support[id]
+				saved = settings_store.update_settings(patch)
+			if not saved.get("ok", false):
+				support_notice = _text("SUPPORT_NOT_SAVED")
 	_active_pack_id = target_pack
 	desktop.visible = true
 	desktop.process_mode = Node.PROCESS_MODE_INHERIT
@@ -495,6 +599,8 @@ func open_desktop(action := "continue", target_pack := "") -> void:
 	hint.text = _text("RETURN_TO_ROOM")
 	hint.hide()
 	desktop_requested.emit(action)
+	if not support_notice.is_empty():
+		desktop.show_notice(support_notice)
 
 
 func return_to_room() -> void:
@@ -539,14 +645,11 @@ func _hide_desktop() -> void:
 func _focus_menu() -> void:
 	if menu == null or not menu.visible:
 		return
-	if campaign_picker != null and not campaign_picker.disabled:
-		campaign_picker.grab_focus()
-		return
-	for child in menu_box.get_children():
-		if child is Button and not child.disabled:
-			child.grab_focus()
-			break
-
+	var selected: Button = campaign_buttons.get(selected_pack_id)
+	if is_instance_valid(selected):
+		selected.grab_focus()
+	elif is_instance_valid(continue_button) and not continue_button.disabled:
+		continue_button.grab_focus()
 
 func show_settings() -> void:
 	if settings_panel != null:
@@ -557,14 +660,14 @@ func show_settings() -> void:
 	overlay.add_child(settings_scrim)
 	settings_panel = SettingsPanel.new()
 	var viewport := get_viewport().get_visible_rect().size
-	var size := Vector2(minf(680, viewport.x - 56), minf(780, viewport.y - 60))
+	var size := Vector2(minf(840, viewport.x - 56), minf(760, viewport.y - 60))
 	overlay.add_child(settings_panel)
 	settings_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	settings_panel.offset_left = -size.x * 0.5
 	settings_panel.offset_right = size.x * 0.5
 	settings_panel.offset_top = -size.y * 0.5
 	settings_panel.offset_bottom = size.y * 0.5
-	settings_panel.setup(settings_store)
+	settings_panel.setup(settings_store, presentation_settings())
 	settings_panel.closed.connect(func():
 		settings_panel.queue_free()
 		settings_panel = null
@@ -579,9 +682,22 @@ func _show_credits() -> void:
 	note.text = _text("CREDITS_BODY")
 
 
+func _on_preferences_committed(values: Dictionary) -> void:
+	_preferences_readable = true
+	_apply_settings(values)
+
+
 func _apply_settings(values: Dictionary) -> void:
 	Localization.set_locale(values["locale"])
-	_theme.default_font_size = roundi(20.0 * values["font_scale"])
+	_theme = DesktopTheme.create(float(values["font_scale"]))
+	_chosen_support.clear()
+	_session_support.clear()
+	if menu != null:
+		menu.theme = _theme
+	if hint != null:
+		hint.theme = _theme
+	if confirm != null:
+		confirm.theme = _theme
 	if camera != null:
 		camera.fov = 60.0 if values["comfort_mode"] else 72.0
 	if studio != null:

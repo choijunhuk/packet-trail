@@ -313,8 +313,9 @@ func _locale_audio_checks() -> void:
 		preview["locale"] = locale
 		preview["font_scale"] = 1.6
 		preview["fullscreen"] = false
-		# This existing presentation method emits live values but never calls Store.update_settings.
-		room.call("_apply_settings", preview)
+		# Isolated preference IO is setup; actual Apply/Cancel input has separate preview coverage.
+		if not _set_test_settings(preview):
+			return
 		root.size = Vector2i(1280, 720)
 		await _frames(3)
 		_check(root.size == Vector2i(1280, 720), "large-text locale check uses an actual 1280×720 window: " + locale)
@@ -328,10 +329,11 @@ func _locale_audio_checks() -> void:
 		_check(not desktop.top_mission.text.contains("UI_TOP_"), "localized desktop header contains display text: " + locale)
 		_windows_fit(locale)
 		await _key(KEY_F6)
-		_check(root.gui_get_focus_owner() == desktop.task_buttons["terminal"], "large text retains keyboard taskbar reachability: " + locale)
+		_check(root.gui_get_focus_owner() == desktop.launcher_button, "large text retains keyboard launcher reachability: " + locale)
 		await _capture("full-locale-%s-1280-large.png" % locale.to_lower())
 	root.size = Vector2i(1600, 900)
-	room.call("_apply_settings", settings)
+	if not _set_test_settings(settings):
+		return
 	await _frames(3)
 	var audio: Node = full.get("audio")
 	var preview := settings.duplicate(true)
@@ -340,7 +342,8 @@ func _locale_audio_checks() -> void:
 	preview["tool_volume"] = .25
 	preview["notification_volume"] = .5
 	preview["background_audio"] = false
-	room.call("_apply_settings", preview)
+	if not _set_test_settings(preview):
+		return
 	for bus in ["Master", "Music", "SFX", "UI", "Ambience"]:
 		_check(AudioServer.get_bus_volume_linear(AudioServer.get_bus_index(bus)) == 0.0, "live settings provide true mute: " + bus)
 	_check(audio.get("_event_volumes") == {"key": 0.0, "tool": .25, "notification": .5}, "keyboard/tools/notifications have independent live levels")
@@ -370,10 +373,23 @@ func _locale_audio_checks() -> void:
 	_check(desktop.active_id == active and desktop.game.export_snapshot() == snapshot, "pause blocks app shortcuts and world mutation")
 	await _focus_and_click(desktop.pause_resume_btn)
 	_check(not desktop.paused and not audio.get("_paused"), "actual resume button resumes the integrated score")
-	room.call("_apply_settings", settings)
+	if not _set_test_settings(settings):
+		return
 	await _frames(2)
 	_check(room.get("settings_store").get_values() == settings, "all settings previews leave the stored preference object unchanged")
 	_check(desktop.game.export_snapshot() == snapshot, "locale/audio/focus/pause tests preserve the canonical world")
+
+
+func _set_test_settings(values: Dictionary) -> bool:
+	var store: RefCounted = room.get("settings_store")
+	var path := str(store.get("_path"))
+	var isolated: bool = path.begins_with("user://tests/") and path == str(room.get("settings_path"))
+	_check(isolated, "preference setup cannot touch the default settings path")
+	if not isolated:
+		return false
+	var result: Dictionary = store.call("update_settings", values)
+	_check(result.get("ok", false), "isolated preferences apply through the real settings signal")
+	return result.get("ok", false)
 
 
 func _windows_fit(label: String) -> void:
@@ -471,7 +487,7 @@ func _keyboard_focus_checks() -> void:
 		_check(input.text == "focus-preserved-draft", "app shortcut never types into terminal draft")
 	_check(desktop.game.export_snapshot() == before, "presentation shortcuts preserve real campaign state")
 	await _key(KEY_F6)
-	_check(root.gui_get_focus_owner() == desktop.task_buttons["terminal"], "F6 moves keyboard focus to taskbar")
+	_check(root.gui_get_focus_owner() == desktop.launcher_button, "F6 moves keyboard focus to launcher")
 	await _key(KEY_F6, false, true)
 	_check(root.gui_get_focus_owner() == desktop.font_down_btn, "Shift F6 reaches text-size control")
 	await _open_terminal(0)
@@ -480,7 +496,7 @@ func _keyboard_focus_checks() -> void:
 	_check(desktop.ui_size == size_before - 1, "actual mouse press/release activates font button")
 	_check(root.gui_get_focus_owner() == input and input.text == "focus-preserved-draft",
 		"toolbar click restores terminal focus after activation without losing draft")
-	var larger := _button_text(desktop.top_panel, "A+")
+	var larger: Button = desktop.font_up_btn
 	_check(larger != null, "font-size restoration action exists")
 	if larger != null:
 		await _click(larger)
@@ -536,7 +552,7 @@ func _terminal_session_checks() -> void:
 	await _open_terminal(0)
 	input.text = "retained-terminal-draft"
 	var world_before: Dictionary = desktop.game.export_snapshot()
-	var close := _button_text(desktop.wins["term0"]["bar"], "×")
+	var close: Button = desktop.wins["term0"]["actions"]["close"]
 	_check(close != null, "terminal window has an actual close button")
 	if close != null:
 		await _click(close)
@@ -840,10 +856,12 @@ func _open_app(id: String) -> void:
 	if index >= 0:
 		await _key(KEY_1 + index, true)
 	else:
-		var button: Button = desktop.task_buttons.get(id)
-		_check(button != null, "real taskbar action exists: " + id)
+		var button: Button = desktop.launcher_buttons.get(id)
+		_check(button != null, "real launcher action exists: " + id)
 		if button == null:
 			return
+		if not desktop.launcher_panel.visible:
+			await _click(desktop.launcher_button)
 		button.grab_focus()
 		await _frames(2)
 		await _click(button)
@@ -937,6 +955,19 @@ func _click(control: Control) -> void:
 	var viewport := control.get_viewport()
 	var point := control.get_global_rect().get_center()
 	_check(viewport.get_visible_rect().has_point(point), "mouse target lies in its viewport")
+	await _pointer_click(viewport, point)
+
+
+func _click_local(control: Control, local_point: Vector2) -> void:
+	_check(is_instance_valid(control) and control.is_visible_in_tree(), "point input target is a real visible Control")
+	if not is_instance_valid(control) or not control.is_visible_in_tree():
+		return
+	var point := control.get_global_transform_with_canvas() * local_point
+	_check(control.get_viewport().get_visible_rect().has_point(point), "point input lies in target viewport")
+	await _pointer_click(control.get_viewport(), point)
+
+
+func _pointer_click(viewport: Viewport, point: Vector2) -> void:
 	var motion := InputEventMouseMotion.new()
 	motion.position = point
 	motion.global_position = point
