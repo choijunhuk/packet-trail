@@ -1,6 +1,6 @@
 # 심야접속 · MidnightAccess 실행 안내
 
-설치형 오프라인 해킹 시뮬레이터, `1.1.0-rc1`. 게임 안의 서버·웹사이트·명령어는 가상 세계에서 동작한다. 별도의 Linux·VM·Docker·실제 해킹 도구 설치가 필요하지 않다.
+설치형 오프라인 해킹 시뮬레이터, `1.2.0-rc1`. 게임 안의 서버·웹사이트·명령어는 가상 세계에서 동작한다. 별도의 Linux·VM·Docker·실제 해킹 도구 설치가 필요하지 않다.
 
 ## 압축을 풀고 실행
 
@@ -23,7 +23,13 @@ chmod +x MidnightAccess.x86_64
 
 ## 첫 실행과 조작
 
-메뉴에서 **침투자·방어자·추적자** 중 하나를 선택한 뒤 **새 게임**으로 시작한다. 세 편은 각각 자기 온보딩·이야기·결말·저장을 가지며, 다른 편을 먼저 끝내야 시작할 수 있는 구조가 아니다. 메일·사건 보드·도움말에서 목표와 도구 설명을 확인한다. 특정 힌트나 소개된 도구를 사용해야만 완료되는 구조는 아니다. 자료와 필요한 세계 상태를 만족하면 다른 유효 경로도 인정한다.
+시작 화면의 **침투자·방어자·추적자** 선택 행에서 이야기와 저장 진행을 확인한다. **플레이 지원**을 선택하고 **새 게임** 또는 **계속하기**를 누른다. 새 게임 확인은 선택한 편의 슬롯과 지원을 캡처하며, 취소하면 기존 진행·선호를 바꾸지 않는다. 세 편은 각각 자기 온보딩·이야기·결말·저장을 가지며 다른 편을 먼저 끝낼 필요가 없다.
+
+지원은 **가이드·표준·자율**의 안내/힌트량이다. 가이드는 새 의뢰와 첫 방향을 보여 주고, 표준은 필요할 때 단계 힌트를 요청하며, 자율은 자동 안내를 줄인다. 모든 수준에서 수동 도움을 사용할 수 있다. 목표·경보·허용 해법을 바꾸는 압박 난이도는 현재 구현하지 않았다. 각 편의 지원은 설정에서 따로 바꿀 수 있다.
+
+게임 안에서는 **Midnight OS 바탕화면의 아이콘**이나 왼쪽 아래 **런처**로 앱을 연다. 런처는 앱 이름·기능을 검색할 수 있다. 작업표시줄에는 실행 중 앱만 표시되고, 전경 앱 버튼을 다시 누르면 최소화하며 다시 누르면 복원한다. 제목줄로 이동·최대화/복원·닫기, 창 모서리로 크기를 조절한다. 표준/자율은 메일·터미널·사건 보드를 한꺼번에 강제로 열지 않는다. 창을 모두 닫은 상태도 작업실 왕복 후 유지된다.
+
+메일·사건 보드·도움말에서 목표와 도구 설명을 확인한다. 특정 힌트나 소개된 도구를 사용해야만 완료되는 구조는 아니다. 자료와 필요한 세계 상태를 만족하면 다른 유효 경로도 인정한다.
 
 | 편 | 첫 판단과 주요 행동 |
 |---|---|
@@ -36,15 +42,21 @@ chmod +x MidnightAccess.x86_64
 | 위치 | 조작 |
 |---|---|
 | 작업실 | WASD 이동, 마우스 오른쪽 버튼을 누른 채 시선 이동, 컴퓨터 가까이에서 E |
-| 가상 OS | F10으로 작업실 복귀, F1 도움말 |
-| 앱 | Ctrl/Cmd + 1–9, Ctrl/Cmd + Tab으로 창 순환, Shift를 함께 누르면 역순환 |
+| 가상 OS | 아이콘/런처에서 앱 열기, F10 작업실 복귀, F1 도움말 |
+| 앱 | Ctrl/Cmd + 1–9, Ctrl + Tab 창 순환, Shift를 함께 누르면 역순환 |
 | 터미널 | Ctrl/Cmd + Shift + 1–4, 위/아래 기록, Tab 자동완성 |
-| 접근성 | F6 작업 표시줄, Shift + F6 상단 글자 크기 버튼으로 포커스 이동 |
+| 새 터미널 | 제목줄의 + 버튼으로 최대4개의 실제 독립 세션 창 열기 |
+| Nightfox | 주소·뒤/앞·새로고침·홈, Ctrl/Cmd + T 새 탭, W 탭 닫기, L 주소 선택(브라우저 활성 시) |
+| 접근성 | F6 런처, Shift + F6 글자 크기 버튼으로 포커스 이동 |
 | 일시정지 | Pause 키 또는 일시정지 버튼. Esc는 입력칸에서 입력 지우기·인증 취소를 먼저 처리 |
 
 터미널 입력칸에서 Ctrl/Cmd + L은 출력 화면을 비운다. 암호 입력 중에는 비밀 기록·자동완성이 동작하지 않는다. 창을 닫는 행동과 원격 연결을 종료하는 행동은 다르다. 단축키를 OS가 먼저 처리하면 화면 버튼으로 같은 기능을 사용할 수 있다.
 
-설정에서 6개 언어, 글자 크기, 전체 화면, 모션 감소, 작업실 편의 모드, 배경 재생과 음량을 조절한다. 키보드·도구·알림 소리도 별도로 조절할 수 있다. 한국어·영어·일본어·간체 중국어·스페인어·독일어 번역이 포함돼 있다.
+설정은 **플레이 지원·화면·음향·조작** 네 카테고리다. 6개 언어, 글자 크기, 전체 화면, 모션 감소, 작업실 편의 모드, 배경 재생과 음량을 조절한다. 키보드·도구·알림 소리도 별도로 조절할 수 있다. 적용하고 저장을 누르기 전에는 선호 파일을 바꾸지 않으며 취소하면 유지된다. 카테고리 헤더에도 Tab으로 이동해 방향키로 전환할 수 있다.
+
+Nightfox는 실제 Firefox/Chrome을 실행하는 프로그램이 아니라 **게임 내부 브라우저**다. 탭8개까지 주소·이력·폼·최근 응답을 따로 보관하며, 탭 전환으로 비밀번호 입력은 지운다. 현재 요청 터미널과 과거 응답의 주체를 따로 표시한다. 과거 응답 경고는 새 주체의 권한을 준다는 뜻이 아니며 현재 결과는 새 요청으로 확인한다.
+
+입력 중 자동 알림은 작업표시줄에 축약해 명령칸을 가리지 않는다. 알림 버튼으로 내용을 열고 다시 입력칸을 누르면 접힌다. 알림을 읽으려고 연 상태와 자동 알림을 구분한다.
 
 ## 저장과 업데이트
 
@@ -72,6 +84,8 @@ chmod +x MidnightAccess.x86_64
 
 설정은 `settings.json`이다. 백업하려면 게임을 종료한 뒤 사용자 데이터 폴더 전체를 복사한다. 업데이트할 때는 새 배포 폴더를 사용하고 사용자 데이터는 유지한다. 동시에 여러 게임 인스턴스에서 같은 저장 슬롯에 쓰지 않는다. 이전 완료는 그때의 기록이며, 현재 사건을 다시 실험해 조건이 달라졌을 때는 현재 충족 상태와 구분해 표시한다.
 
+기존 설정에 지원 값이 없으면 표준으로 읽는다. 설정 파일을 읽지 못했을 때 로비의 지원 선택이 원본·정상 백업을 기본값으로 덮어쓰지 않는다. 저장 실패 알림이 있어도 이번 세션의 선택은 유지되며 설정 화면에도 현재 적용값을 보여 준다.1.1로 다시 내려가면 추가된 지원 키를 구1.1 설정 검증기가 거절해 기본 설정으로 표시할 수 있다. 캠페인 v2 저장과 선호 파일의 버전 호환은 다르다.
+
 ## 버전 범위
 
 침투자 메인24·선택4, 독립 방어자8·추적자8의 공개44사건, 3D 작업실, 가상 OS, 강화 OST7큐·엔딩 편집본과 인물 초상16장을 포함한다. 이전판 이어하기는 별도 호환 경로다. 선택 R01은 작은 분기·호출 흐름을 읽고 정상 입력과 반례를 실행하는 퍼즐이며 실제 CPU나 임의 코드를 실행하지 않는다.
@@ -82,10 +96,14 @@ chmod +x MidnightAccess.x86_64
 
 Extract the entire ZIP, then launch the file for your OS shown above. Keep the executable and `.pck` together on Windows/Linux. Godot, Linux, containers and real security tools are not required. All targets and websites are fictional and offline.
 
-Choose **Settings** to select English, choose **Intruder**, **Defender** or **Tracker**, then **New Game**. Each story has its own onboarding, ending and save; another campaign is not required. Read Mail and the Case Board; F1 opens Help. In the room use WASD, hold right mouse to look, and press E near the computer. F10 returns to the room. Use the on-screen Pause button if your keyboard has no Pause key.
+Choose **Settings** to select English. Select **Intruder**, **Defender** or **Tracker**, choose assistance and then **New Game** or **Continue**. Guided/Standard/Independent change guidance, not objective or alert rules. Each story has its own onboarding, ending and save; another campaign is not required.
+
+Open apps from desktop icons or the lower-left launcher. The taskbar contains running apps; clicking the foreground app minimizes it, and clicking again restores it. Move/resize windows and use their title controls. The + button opens another terminal, up to four. Nightfox supports eight separate tabs and is entirely fictional/offline. Browser Ctrl/Cmd+T/W/L opens/closes tabs or selects the address. Recorded response identity is separate from the current request identity.
+
+Read Mail and the Case Board; F1 opens Help, F6 focuses the launcher. In the room use WASD, hold right mouse to look, and press E near the computer. F10 returns to the room. Use the on-screen Pause button if your keyboard has no Pause key. Settings has Play, Display, Audio and Controls categories, reachable by keyboard. Input-time automatic notifications stay compact; click the notification button to inspect and return to input to fold it away.
 
 Defenders must preserve legitimate work while containing threats. Trackers evaluate collected observations, provenance and time ranges; insufficient evidence is different from a refuted hypothesis. Tools expose structured controls and observations rather than requiring authoring JSON.
 
-Use Save before leaving. New Game replaces only the selected campaign after confirmation and backup. Old campaign saves remain read-only sources for a separate legacy continuation copy, using the old content; old progress does not certify the new objectives. Your saves live outside the installation directory, at the OS-specific location above. Quit before backing up that folder or installing an update. Do not run multiple writers against the same save.
+Use Save before leaving. New Game replaces only the selected campaign after confirmation and backup. Old campaign saves remain read-only sources for a separate legacy continuation copy, using the old content; old progress does not certify the new objectives. Your saves live outside the installation directory, at the OS-specific location above. Quit before backing up that folder or installing an update. Do not run multiple writers against the same save. Missing old assistance preferences default to Standard; unreadable settings are preserved during automatic lobby selection. The older1.1 binary may reject new preference keys on downgrade, independently of campaign-save compatibility.
 
 This release candidate includes 24 main and four optional intruder cases, eight defender cases and eight tracker cases, independent endings, six languages and seven stronger original music cues. The 8–12-hour target belongs to the intruder story and is not measured human playtime. Native-language quality, physical IME/audio-device acceptance and Windows GUI play remain separate validation work. macOS is ad-hoc signed without notarization; Windows is unsigned. Package hashes and source/build evidence accompany the release.
