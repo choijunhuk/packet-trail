@@ -6,7 +6,7 @@
 
 Claude Code2.1.311, 요청 `claude-opus-5-5` / effort `high`. 세 응답의 `modelUsage`도 `claude-opus-5-5`를 보고했고 exit0, is_error=false, num_turns1, permission_denials=[]였다. 도구 목록을 비우고 MCP 서버를 비활성화한 읽기 전용 프롬프트 검토다. 저장166.40초, 모델186.85초, 사용성119.43초에 완료했다. 앞선600초/300초 시간 초과 호출을 이번 성공과 혼동하지 않는다. 진단 옵션을 제외한 실행이 성공했지만 과거 시간 초과의 단일 원인을 입증한 것은 아니다.
 
-원문 프롬프트·응답 JSON은 로컬 `.omx/artifacts/claude-rereview-20261106/`, 전체 묶음은 `.omx/artifacts/claude-rereview-complete-20261106.md`에 있다. 아래 원문은 응답 결과를 그대로 보존한다.
+원문 프롬프트·응답 JSON은 로컬 `.omx/artifacts/claude-rereview-20261106/`, 전체 묶음은 `.omx/artifacts/claude-rereview-complete-20261106.md`에 있다. 아래 검토 본문은 읽기 위해 들여쓰기와 문체용 꼬리말을 정리했다. 정확한 원본 응답은 로컬 JSON에 보존한다.
 
 ## 수용 판단
 
