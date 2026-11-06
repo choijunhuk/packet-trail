@@ -110,6 +110,11 @@ func _unreadable_preferences(id: String, original: PackedByteArray) -> void:
 	_write_owned(path, original)
 	_write_owned(path + ".bak", good_backup)
 	var room := await _room_fixture(path, "m1_" + id)
+	if id == "damaged":
+		room.set_legacy_session_available(true)
+		_check(room.import_button.visible, "legacy import becomes visible when availability arrives after initial menu creation")
+		room.set_legacy_session_available(false)
+		_check(not room.import_button.visible, "legacy import hides again when its source becomes unavailable")
 	_check(room.settings_store.get_values().support_intruder == "standard", "failed preference read leaves a safe in-memory support default")
 	if await _start(room, "intruder", "guided"):
 		_check(room.desktop.support_mode == "guided" and room.presentation_settings().support_intruder == "guided", "M1 unreadable preferences still allow the selected session-only guidance: " + id)

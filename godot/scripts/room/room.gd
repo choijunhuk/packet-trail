@@ -148,6 +148,7 @@ func set_legacy_session_available(available: bool) -> void:
 	has_legacy_session = available
 	if import_button != null:
 		import_button.disabled = not available
+		import_button.visible = available
 
 
 func set_campaigns(entries: Array) -> void:

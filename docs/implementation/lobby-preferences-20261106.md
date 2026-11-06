@@ -32,3 +32,5 @@ Root는 Room의 첫 settings load 성공 여부를 보관하고 실패 시 자�
 동일 회귀는101/0, 실제 종료0·engine error0으로 통과했다. 이어 C23의 keyboard 질문을 실제 Tab 입력으로 검증하니 카테고리 header를 건너뛰는102/1 RED가 재현됐다. TabContainer의 실제 internal TabBar를 명시적 focus chain에 넣고 방향키 전환을 확인한 최종 실행은 **103/0·1.608초·종료0·engine error0·기본28경로 보존**이다.
 
 `.omx/artifacts/lobby-preferences-20261106/`에 `red.log`, `red-clean.log`, `green.log`, `tab-red.log`, `final-green.log/.json`을 보존했다. 원문 수정·임의 canonical record·완료 flag 주입 없이 실제 functional controls와 저장/바이트를 비교했다. 실제 native 마우스·시각 수락은 별도다.
+
+최종 추출 앱의 실제 CUA 첫 시작에서는 구M01 저장의 availability가 메뉴 생성 뒤 도착하면 import 버튼이 다음 메뉴 rebuild 전까지 숨겨지는 작은 UI 회귀도 확인했다. 실제availability setter만으로 visible이 갱신되는지 검사한105/1 RED를 만들고, 기존 disabled 갱신 옆에 visible=available 한 줄을 추가해 **105/0·engine error0**으로 통과했다. 기존 world·settings 저장 규칙은 바꾸지 않았다.
