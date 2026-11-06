@@ -5895,7 +5895,7 @@ msgid "UI_ALERT_EXPLAIN_2"
 msgstr "경보가 높습니다. 이미 유효한 세션과 다른 경로는 유지됩니다. 메일과 회수 자료에서 다른 길을 찾아보세요."
 
 msgid "UI_ALERT_EXPLAIN_MAX"
-msgstr "경보 상한입니다. 이 출발점의 새 비인증 시도와 반복 인증은 차단될 수 있지만, 유효한 세션과 다른 경로는 그대로입니다."
+msgstr "경보 표시가 상한에 도달했습니다. 이 수치만으로 연결이 차단되지는 않습니다. 서비스별 인증 제한과 정책은 해당 응답에서 확인하세요."
 
 msgid "UI_ALERT_METER"
 msgstr "경보 {bar} {level}/{max}"

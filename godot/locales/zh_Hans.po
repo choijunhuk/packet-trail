@@ -5895,7 +5895,7 @@ msgid "UI_ALERT_EXPLAIN_2"
 msgstr "警报较高。有效会话与其他通路仍保留，请从邮件与资料中寻找其他路。"
 
 msgid "UI_ALERT_EXPLAIN_MAX"
-msgstr "警报已达上限。此起点的新未认证尝试与重复认证可能被阻止，有效会话及其他通路仍保留。"
+msgstr "警报指示已达上限。此数值本身不会阻断连接。请查看各服务的响应，确认认证限制和策略。"
 
 msgid "UI_ALERT_METER"
 msgstr "警报 {bar} {level}/{max}"

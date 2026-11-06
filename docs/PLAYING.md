@@ -1,6 +1,6 @@
 # 심야접속 · MidnightAccess 실행 안내
 
-설치형 오프라인 해킹 시뮬레이터, `1.2.0-rc1`. 게임 안의 서버·웹사이트·명령어는 가상 세계에서 동작한다. 별도의 Linux·VM·Docker·실제 해킹 도구 설치가 필요하지 않다.
+설치형 오프라인 해킹 시뮬레이터, `1.2.1-rc1`. 게임 안의 서버·웹사이트·명령어는 가상 세계에서 동작한다. 별도의 Linux·VM·Docker·실제 해킹 도구 설치가 필요하지 않다.
 
 ## 압축을 풀고 실행
 
@@ -44,13 +44,13 @@ chmod +x MidnightAccess.x86_64
 | 작업실 | WASD 이동, 마우스 오른쪽 버튼을 누른 채 시선 이동, 컴퓨터 가까이에서 E |
 | 가상 OS | 아이콘/런처에서 앱 열기, F10 작업실 복귀, F1 도움말 |
 | 앱 | Ctrl/Cmd + 1–9, Ctrl + Tab 창 순환, Shift를 함께 누르면 역순환 |
-| 터미널 | Ctrl/Cmd + Shift + 1–4, 위/아래 기록, Tab 자동완성 |
+| 터미널 | Ctrl/Cmd + Shift + 1–4, 위/아래 기록(입력 중이면 같은 접두어만), Tab 자동완성 |
 | 새 터미널 | 제목줄의 + 버튼으로 최대4개의 실제 독립 세션 창 열기 |
-| Nightfox | 주소·뒤/앞·새로고침·홈, Ctrl/Cmd + T 새 탭, W 탭 닫기, L 주소 선택(브라우저 활성 시) |
+| Nightfox | 주소·뒤/앞·새로고침·홈, Ctrl/Cmd + T 새 탭, W 탭 닫기, L 주소 선택, Alt + ←/→ 뒤/앞, Ctrl/Cmd + R 또는 F5 새로고침(브라우저 활성 시) |
 | 접근성 | F6 런처, Shift + F6 글자 크기 버튼으로 포커스 이동 |
 | 일시정지 | Pause 키 또는 일시정지 버튼. Esc는 입력칸에서 입력 지우기·인증 취소를 먼저 처리 |
 
-터미널 입력칸에서 Ctrl/Cmd + L은 출력 화면을 비운다. 암호 입력 중에는 비밀 기록·자동완성이 동작하지 않는다. 창을 닫는 행동과 원격 연결을 종료하는 행동은 다르다. 단축키를 OS가 먼저 처리하면 화면 버튼으로 같은 기능을 사용할 수 있다.
+터미널 입력칸에서 Ctrl/Cmd + L은 출력 화면을 비운다. 위/아래 기록은 터미널마다 독립적이며, 가장 최근 기록에서 아래를 누르면 원래 작성하던 입력으로 돌아온다. 기록을 불러온 뒤 수정하면 그 입력으로 새 접두어 검색을 시작한다. 암호 입력 중에는 비밀 기록·자동완성이 동작하지 않는다. Nightfox 뒤/앞·새로고침 단축키는 암호 입력칸, 글자 조합, 확인창·일시정지 중에는 동작하지 않는다. 창을 닫는 행동과 원격 연결을 종료하는 행동은 다르다. 단축키를 OS가 먼저 처리하면 화면 버튼으로 같은 기능을 사용할 수 있다.
 
 설정은 **플레이 지원·화면·음향·조작** 네 카테고리다. 6개 언어, 글자 크기, 전체 화면, 모션 감소, 작업실 편의 모드, 배경 재생과 음량을 조절한다. 키보드·도구·알림 소리도 별도로 조절할 수 있다. 적용하고 저장을 누르기 전에는 선호 파일을 바꾸지 않으며 취소하면 유지된다. 카테고리 헤더에도 Tab으로 이동해 방향키로 전환할 수 있다.
 
@@ -98,7 +98,7 @@ Extract the entire ZIP, then launch the file for your OS shown above. Keep the e
 
 Choose **Settings** to select English. Select **Intruder**, **Defender** or **Tracker**, choose assistance and then **New Game** or **Continue**. Guided/Standard/Independent change guidance, not objective or alert rules. Each story has its own onboarding, ending and save; another campaign is not required.
 
-Open apps from desktop icons or the lower-left launcher. The taskbar contains running apps; clicking the foreground app minimizes it, and clicking again restores it. Move/resize windows and use their title controls. The + button opens another terminal, up to four. Nightfox supports eight separate tabs and is entirely fictional/offline. Browser Ctrl/Cmd+T/W/L opens/closes tabs or selects the address. Recorded response identity is separate from the current request identity.
+Open apps from desktop icons or the lower-left launcher. The taskbar contains running apps; clicking the foreground app minimizes it, and clicking again restores it. Move/resize windows and use their title controls. The + button opens another terminal, up to four. Terminal Up/Down searches history by the current draft prefix; Down past the newest match restores that draft. An empty draft recalls all history. Nightfox supports eight separate tabs and is entirely fictional/offline. Browser Ctrl/Cmd+T/W/L opens/closes tabs or selects the address; Alt+Left/Right goes back/forward, and Ctrl/Cmd+R or F5 reloads the loaded page. Navigation/reload shortcuts wait while a password field, text composition, a modal or pause is active. Recorded response identity is separate from the current request identity.
 
 Read Mail and the Case Board; F1 opens Help, F6 focuses the launcher. In the room use WASD, hold right mouse to look, and press E near the computer. F10 returns to the room. Use the on-screen Pause button if your keyboard has no Pause key. Settings has Play, Display, Audio and Controls categories, reachable by keyboard. Input-time automatic notifications stay compact; click the notification button to inspect and return to input to fold it away.
 
@@ -107,3 +107,7 @@ Defenders must preserve legitimate work while containing threats. Trackers evalu
 Use Save before leaving. New Game replaces only the selected campaign after confirmation and backup. Old campaign saves remain read-only sources for a separate legacy continuation copy, using the old content; old progress does not certify the new objectives. Your saves live outside the installation directory, at the OS-specific location above. Quit before backing up that folder or installing an update. Do not run multiple writers against the same save. Missing old assistance preferences default to Standard; unreadable settings are preserved during automatic lobby selection. The older1.1 binary may reject new preference keys on downgrade, independently of campaign-save compatibility.
 
 This release candidate includes 24 main and four optional intruder cases, eight defender cases and eight tracker cases, independent endings, six languages and seven stronger original music cues. The 8–12-hour target belongs to the intruder story and is not measured human playtime. Native-language quality, physical IME/audio-device acceptance and Windows GUI play remain separate validation work. macOS is ad-hoc signed without notarization; Windows is unsigned. Package hashes and source/build evidence accompany the release.
+
+## 경보와 도움 수준
+
+가이드·표준·자율은 자동 안내와 힌트의 양을 조절한다. 자율에서도 수동 도움을 요청할 수 있다. 공통 경보 수치의 상한만으로 연결이 차단되지는 않으며, 개별 서비스의 인증 제한이나 정책은 해당 응답을 확인한다. 실제 시간 제한이나 실패 조건이 다른 난이도 모드로 해석하지 않는다.

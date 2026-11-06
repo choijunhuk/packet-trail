@@ -225,6 +225,10 @@ var br_addr: LineEdit
 var br_back: Button
 var br_fwd: Button
 var br_title: Label
+var br_site_host: RichTextLabel
+var br_site_page: PanelContainer
+var br_site_margin: MarginContainer
+var br_response_scroll: ScrollContainer
 var br_meta: Label
 var br_body: RichTextLabel
 var br_links: VBoxContainer
@@ -268,6 +272,7 @@ var rl_history: Array = []
 var tool_list: ItemList
 var tool_empty: Label
 var tool_detail: VBoxContainer
+var tool_detail_scroll: ScrollContainer
 var tool_title: Label
 var tool_kind: Label
 var tool_desc: Label
@@ -854,7 +859,8 @@ func _build_shell() -> void:
 	top_alert = _label("", C_DIM, -3)
 	top_host = _label("", C_DIM, -3)
 	top_host.clip_text = true
-	top_host.custom_minimum_size.x = 130
+	top_host.custom_minimum_size.x = 250
+	top_host.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	for item in [top_progress, top_alert, top_host]:
 		row.add_child(item)
 
@@ -1947,6 +1953,15 @@ func _handle_shortcut(key: InputEventKey, fo: Control) -> bool:
 	if (cmd or key.ctrl_pressed) and code == KEY_TAB:
 		_cycle_window(-1 if key.shift_pressed else 1)
 		return true
+	if active_id == "browser" and not (fo is LineEdit and fo.secret):
+		if key.alt_pressed and not cmd and not key.ctrl_pressed and not key.meta_pressed and not key.shift_pressed:
+			if code == KEY_LEFT or code == KEY_RIGHT:
+				_br_go(-1 if code == KEY_LEFT else 1)
+				return true
+		if not key.alt_pressed and not key.shift_pressed:
+			if ((cmd or key.ctrl_pressed) and code == KEY_R) or (not cmd and not key.ctrl_pressed and not key.meta_pressed and code == KEY_F5):
+				_br_reload()
+				return true
 	if cmd and not key.alt_pressed and active_id == "browser":
 		if code == KEY_T:
 			_browser_new_tab()
@@ -2158,20 +2173,27 @@ func _hist(t: int, dir: int) -> void:
 	if history.is_empty() or bool(d["pw"]):
 		return
 	var idx := int(d["hist_idx"])
+	# Editing a recalled command begins a new search using the edited draft.
+	if idx >= 0 and input.text != str(history[idx]):
+		idx = -1
+		d["hist_idx"] = -1
 	if idx == -1:
 		if dir > 0:
 			return
 		d["draft"] = input.text
-		idx = history.size() - 1
-	else:
-		idx += dir
-	if idx >= history.size():
-		idx = -1
-		input.text = str(d["draft"])
-	else:
-		idx = maxi(idx, 0)
-		input.text = str(history[idx])
-	d["hist_idx"] = idx
+		idx = history.size()
+	var candidate := idx + dir
+	var prefix := str(d["draft"])
+	while candidate >= 0 and candidate < history.size():
+		if str(history[candidate]).begins_with(prefix):
+			d["hist_idx"] = candidate
+			input.text = str(history[candidate])
+			input.caret_column = input.text.length()
+			return
+		candidate += dir
+	if dir > 0:
+		d["hist_idx"] = -1
+		input.text = prefix
 	input.caret_column = input.text.length()
 
 
@@ -2649,8 +2671,6 @@ func _build_browser() -> Control:
 	bar.add_child(_btn("UI_BR_GO", "UI_BR_GO_TIP", _br_go_addr))
 	bar.add_child(_btn("UI_BR_TO_LAB", "UI_BR_TO_LAB_TIP", _br_to_lab))
 	col.add_child(bar)
-	br_title = _label("", C_TEXT, 4, true)
-	col.add_child(br_title)
 	br_meta = _label("", C_DIM, -3, true)
 	col.add_child(br_meta)
 	br_stale = _klabel("UI_DESKTOP_BROWSER_PAST", C_AMBER, -3, true)
@@ -2659,20 +2679,51 @@ func _build_browser() -> Control:
 	br_stale_row.custom_minimum_size.y = minf(112, ui_size * 3 + 14)
 	col.add_child(br_stale_row)
 	_set_browser_stale(false)
-	var split := VSplitContainer.new()
-	split.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	# The simulated site is a document surface, separate from browser controls.
+	br_site_page = PanelContainer.new()
+	br_site_page.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+	br_site_page.add_theme_stylebox_override("panel", DesktopTheme.panel(Color("edf1f5"), Color("c9d3df"), 3, 0))
+	br_site_margin = MarginContainer.new()
+	br_site_margin.add_theme_constant_override("margin_top", 18)
+	br_site_margin.add_theme_constant_override("margin_bottom", 16)
+	br_site_page.add_child(br_site_margin)
+	br_site_page.resized.connect(_br_fit_document)
+	var article := VBoxContainer.new()
+	article.add_theme_constant_override("separation", 12)
+	br_site_margin.add_child(article)
+	br_site_host = _plain_text()
+	br_site_host.fit_content = true
+	br_site_host.scroll_active = false
+	br_site_host.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+	br_site_host.add_theme_stylebox_override("normal", DesktopTheme.panel(Color.TRANSPARENT, Color.TRANSPARENT, 0, 0))
+	br_site_host.add_theme_color_override("default_color", Color("34516f"))
+	_size(br_site_host, -2)
+	article.add_child(br_site_host)
+	var rule := HSeparator.new()
+	rule.add_theme_color_override("separator", Color("c4cfdb"))
+	article.add_child(rule)
+	br_title = _label("", Color("172c43"), 6, true)
+	article.add_child(br_title)
 	br_body = _plain_text()
+	br_body.fit_content = true
+	br_body.scroll_active = false
+	br_body.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+	br_body.add_theme_stylebox_override("normal", DesktopTheme.panel(Color.TRANSPARENT, Color.TRANSPARENT, 0, 0))
+	br_body.add_theme_color_override("default_color", Color("243b53"))
+	br_body.add_theme_color_override("selection_color", Color("b3d4f4"))
 	br_body.custom_minimum_size = Vector2(0, 120)
-	split.add_child(br_body)
+	article.add_child(br_body)
 	var links_wrap := VBoxContainer.new()
-	links_wrap.add_child(_section("UI_BR_LINKS"))
+	var link_heading := _klabel("UI_BR_LINKS", Color("526b83"), -3)
+	links_wrap.add_child(link_heading)
 	br_links = VBoxContainer.new()
-	br_links.add_theme_constant_override("separation", 2)
+	br_links.add_theme_constant_override("separation", 4)
 	var links_scroll := _scroll_wrap(br_links)
+	links_scroll.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	links_scroll.custom_minimum_size = Vector2(0, 76)
 	links_wrap.add_child(links_scroll)
-	split.add_child(links_wrap)
-	col.add_child(split)
+	article.add_child(links_wrap)
+	col.add_child(br_site_page)
 
 	br_form_toggle = _btn_raw("", "UI_BR_FORM_TIP", _br_toggle_form)
 	br_form_toggle.alignment = HORIZONTAL_ALIGNMENT_LEFT
@@ -2726,12 +2777,12 @@ func _build_browser() -> Control:
 	foot.add_child(br_archive)
 	col.add_child(foot)
 	var response_content := VBoxContainer.new()
-	for child in col.get_children().slice(2):
+	for child in col.get_children().slice(4):
 		col.remove_child(child)
 		response_content.add_child(child)
-	var response_scroll := _scroll_wrap(response_content)
-	response_scroll.custom_minimum_size.y = 120
-	col.add_child(response_scroll)
+	br_response_scroll = _scroll_wrap(response_content)
+	br_response_scroll.custom_minimum_size.y = 120
+	col.add_child(br_response_scroll)
 	_br_form_label()
 	_br_update_nav()
 	_browser_new_tab(false)
@@ -2790,6 +2841,7 @@ func _br_navigate(url: String, push: bool) -> void:
 func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool, from_cache := false, response_terminal := -1) -> void:
 	_clear_children(br_links)
 	_set_browser_stale(false)
+	_br_site_identity(url)
 	var ok := _b(r, "ok")
 	var status := _i(r, "status", 200 if ok else 0)
 	var code := _s(r, "code", "UNKNOWN")
@@ -2810,16 +2862,20 @@ func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool, from_cache
 			var target := _s(d, "url")
 			if target.is_empty():
 				continue
-			var lb := _btn_raw(_t("UI_BR_LINK", {"label": _s(d, "label", target), "url": target}), "", _br_navigate.bind(target, true))
+			var lb := _btn_raw(_s(d, "label", target), "", _br_navigate.bind(target, true))
 			lb.tooltip_text = target
 			lb.alignment = HORIZONTAL_ALIGNMENT_LEFT
 			lb.flat = true
 			lb.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-			lb.add_theme_color_override("font_color", C_TEAL)
+			lb.add_theme_color_override("font_color", Color("1c588c"))
+			lb.add_theme_color_override("font_hover_color", Color("103c65"))
+			lb.add_theme_color_override("font_pressed_color", Color("103c65"))
+			lb.add_theme_stylebox_override("hover", DesktopTheme.panel(Color("dce7f1"), Color.TRANSPARENT, 3, 6))
+			lb.add_theme_stylebox_override("pressed", DesktopTheme.panel(Color("cedeed"), Color.TRANSPARENT, 3, 6))
 			_size(lb, -2)
 			br_links.add_child(lb)
 		if br_links.get_child_count() == 0:
-			br_links.add_child(_label(_t("UI_BR_NO_LINKS"), C_FAINT, -3))
+			br_links.add_child(_label(_t("UI_BR_NO_LINKS"), Color("526b83"), -3))
 		br_archive.visible = _b(r, "can_archive")
 		br_status.text = _t("UI_BR_STATUS_OK", {"status": status})
 		br_status.add_theme_color_override("font_color", C_DIM if status < 400 else C_AMBER)
@@ -2831,7 +2887,7 @@ func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool, from_cache
 		br_title.text = _br_error_title(status)
 		var body := _s(r, "body", _s(r, "text"))
 		_set_plain(br_body, body if not body.is_empty() else _t("UI_BR_ERR_EMPTY"))
-		br_links.add_child(_label(_t("UI_BR_NO_LINKS"), C_FAINT, -3))
+		br_links.add_child(_label(_t("UI_BR_NO_LINKS"), Color("526b83"), -3))
 		br_status.text = _t("UI_BR_STATUS_ERR", {"code": code, "status": status, "url": url})
 		br_status.add_theme_color_override("font_color", C_AMBER)
 	br_status.tooltip_text = br_status.text
@@ -2847,6 +2903,21 @@ func _br_render(r: Dictionary, url: String, push: bool, is_nav: bool, from_cache
 	_browser_sync_tabs()
 	_browser_update_context()
 	_br_update_nav()
+
+
+func _br_fit_document() -> void:
+	var margin := maxi(18, roundi((br_site_page.size.x - 760.0 * font_scale) * 0.5))
+	br_site_margin.add_theme_constant_override("margin_left", margin)
+	br_site_margin.add_theme_constant_override("margin_right", margin)
+
+
+func _br_site_identity(url: String) -> void:
+	var host := ""
+	if url.begins_with("https://") or url.begins_with("http://"):
+		host = url.get_slice("://", 1).get_slice("/", 0).get_slice("?", 0).get_slice("#", 0)
+	br_site_host.text = host
+	br_site_host.tooltip_text = url
+	br_site_host.visible = not host.is_empty()
 
 
 func _br_meta_text(r: Dictionary) -> String:
@@ -3055,6 +3126,7 @@ func _browser_restore_active() -> void:
 			br_status.add_theme_color_override("font_color", note.color)
 	else:
 		_clear_children(br_links)
+		_br_site_identity("")
 		br_title.text = _t("UI_DESKTOP_BROWSER_EMPTY")
 		_set_plain(br_body, _t("UI_DESKTOP_BROWSER_EMPTY_BODY"))
 		br_status.text = ""
@@ -3393,7 +3465,8 @@ func _build_tools() -> Control:
 	tool_detail.add_child(tool_model)
 	tool_detail.add_child(tool_limit)
 	tool_detail.visible = false
-	right.add_child(_scroll_wrap(tool_detail))
+	tool_detail_scroll = _scroll_wrap(tool_detail)
+	right.add_child(tool_detail_scroll)
 	split.add_child(right)
 	return split
 
@@ -3431,7 +3504,7 @@ func _refresh_tools(v: Dictionary) -> void:
 			var d := _d(t)
 			var i := tool_list.add_item(_t("UI_TOOL_LIST_ITEM", {"name": _s(d, "name", _s(d, "id")), "kind": _kind_name(_s(d, "kind"))}))
 			tool_list.set_item_metadata(i, _s(d, "id"))
-			tool_list.set_item_tooltip(i, _s(d, "id"))
+			tool_list.set_item_tooltip(i, _s(d, "name", _s(d, "id")) + " · " + _kind_name(_s(d, "kind")))
 	var has := not tools.is_empty()
 	tool_empty.visible = not has
 	tool_detail.visible = has
@@ -3460,6 +3533,7 @@ func _on_tool_selected(i: int) -> void:
 		return
 	_tool_save_draft()
 	tool_selected = id
+	tool_detail_scroll.scroll_vertical = 0
 	var tool := _tool_current()
 	if not tool.is_empty():
 		_tool_show(tool, true)
@@ -5092,6 +5166,7 @@ func _refresh_top(v: Dictionary) -> void:
 		top_progress.text = ""
 	var al := _i(v, "alert_level")
 	top_alert.text = _alert_text(v)
+	top_alert.tooltip_text = top_alert.text
 	top_alert.add_theme_color_override("font_color", C_AMBER if al > 0 else C_DIM)
 	var tv: Dictionary = term_views[active_term] if not term_views[active_term].is_empty() else v
 	top_host.text = _t("UI_TOP_SESSION", {"n": active_term + 1, "user": _s(tv, "user"), "host": _s(tv, "host")})

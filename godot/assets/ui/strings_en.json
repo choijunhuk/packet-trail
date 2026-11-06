@@ -439,7 +439,7 @@
   "UI_ALERT_EXPLAIN_0": "No observed risk. Local typos, reading and switching windows never raise alerts.",
   "UI_ALERT_EXPLAIN_1": "The server logged a refused attempt. Repeating the same approach increases risk.",
   "UI_ALERT_EXPLAIN_2": "Alert is high. Sessions that are already valid and other routes remain. Look for another way in your mail and recovered records.",
-  "UI_ALERT_EXPLAIN_MAX": "Alert limit reached. New unauthenticated attempts and repeated sign-ins from this origin may be blocked, but valid sessions and other routes remain.",
+  "UI_ALERT_EXPLAIN_MAX": "Alert indicator at its maximum. This counter alone does not block connections. Check each service response for authentication limits and policies.",
   "UI_TOP_MISSION": "{id} · {title}",
   "UI_TOP_OBJECTIVES": "Goals {done}/{total}",
   "UI_TOP_CASE_DONE": "Case resolved",

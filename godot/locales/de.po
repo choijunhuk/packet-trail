@@ -5895,7 +5895,7 @@ msgid "UI_ALERT_EXPLAIN_2"
 msgstr "Hoher Alarm. Gültige Sitzungen und andere Wege bleiben erhalten. Suche Alternativen in Nachrichten und Belegen."
 
 msgid "UI_ALERT_EXPLAIN_MAX"
-msgstr "Alarmgrenze erreicht. Neue unbestätigte und wiederholte Anmeldeversuche dieses Ausgangspunkts können gesperrt sein. Gültige Sitzungen und andere Wege bleiben erhalten."
+msgstr "Die Alarmanzeige hat den Höchstwert erreicht. Dieser Zähler allein blockiert keine Verbindungen. Authentifizierungsgrenzen und Richtlinien stehen in der Antwort des jeweiligen Dienstes."
 
 msgid "UI_ALERT_METER"
 msgstr "Alarm {bar} {level}/{max}"

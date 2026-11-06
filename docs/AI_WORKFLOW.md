@@ -240,3 +240,19 @@ C23은 로컬 CLI2.1.311의 safe-mode/restricted·tools빈목록·strict empty M
 Claude의 M1/M3(손상 선호 원본/backup 덮어쓰기, 임시 지원 유실)는 실제101/10 RED에서 수리했고, M2(pointer 최대화 뒤 입력)는 실제12/4 RED→12/0으로 검증했다. 질문도 사실로 단정하지 않고 실제 재현했다. Tab 카테고리102/1→103/0, collect HTTP401/NO_RECORD GET 관측366/4→414/0, 마지막 legacy 가져오기 visibility105/1→105/0이다. 최종 로비105/0과 전체 원래 판정/저장·공개88해법은 hosted3OS에서 모두 통과했다(지원 경계는 Windows 링크 기능 차이로330, Mac/Linux340).
 
 최종 exact 소스345eff6에서 native5,435/0·44사건/세 결말·85.447초, 별도 preview824/0, 실제3PCK 각478/0과 ZIP 내부 해시·서명을 확인했다. [CI42153263811](https://github.com/choijunhuk/packet-trail/actions/runs/42153263811)의 세OS가 성공했고 Linux Xvfb/Mesa는467/0·M01 한 사건/세 편 폼 preview다. 복구된 CUA로 Mac 추출 앱의 실제 OS 입력도 별도 확인했다. 물리IME·원어민·WindowsGUI·청취/재미/시간은 미측정이며 자세한 범위는 [최종 기록](implementation/2026-11-06-desktop-experience.md)을 따른다.
+
+### 1.2 이후 조작 품질 개선
+
+사용자의 추가 확장·완성도 개선 요청으로 현재 데스크톱과 기획을 확인했다. 첫 묶음은 터미널 접두어 기록 탐색과 가상 브라우저 키보드 탐색이며, 이후 콘텐츠 우선순위는 [품질 개선 순서](QUALITY_ROADMAP.md)에 기록한다.
+
+- 리더: 현재 세션 명시 모델 `gpt-6-astra`. 추론 수준은 노출되지 않아 단정하지 않는다. 범위 결정·기록·통합 검증 담당.
+- 독립 구현: 요청 `gpt-6.1-sol / high`, native subagent `interaction_quality`. 터미널/브라우저 입력·관련 회귀·조작 안내 담당. 실행 서비스의 별도 modelUsage 계측은 제공되지 않았다.
+- 이 묶음에서 새 Claude 호출은 하지 않았다. 앞선 C23 검토와 이번 검증을 구분한다. 기존 배포본을 새 코드가 포함된 파일로 표시하지 않는다.
+
+### 후속 시각·실제 사용감·난이도 점검
+
+사용자의 계속 진행 요청으로 별도 `feat/immersion-quality`에서 앞선 입력 개선을 보존하고 시각·난이도 검토를 확대했다. 구현 담당은 요청 `gpt-6.1-sol/high`, 독립 디자인 검토는 설치 designer의 `gpt-6-sol/medium`, 실제 렌더 QA는 test-engineer의 `gpt-6-sol/medium`, 난이도 분석은 architect의 `gpt-6-astra/high`다. 리더는 `gpt-6-astra`이며 노출되지 않은 추론 수준은 단정하지 않는다.
+
+C24는 로컬 Claude CLI2.1.311에 고정15,710자 source/design excerpt를 제공했다. 요청 `claude-opus-5-5/high`, 실제 modelUsage도5.5만 사용,72.026초·exit0·is_error=false·permission_denials=[]·stderr빈문자열이다. tools없음·strict empty MCP·safe/restricted·noChrome·no-session-persistence로 실행했다. 결과는 정적 설계 ACCEPT이며 새 브라우저 구현 코드/실제 화면 인증이 아니다. 원문 prompt/SHA/argv/raw final은 `.omx/artifacts/quality-pass/advisor/`와 `.omx/artifacts/claude-immersion-difficulty-20261106.md`에 있다.
+
+전역 난이도 슬라이더 유보와 저장 ruleset 경계는 채택했다. 경보 상한이 로그인을 차단한다는 UI 문구는 실제 코드와 대조해 수리 대상으로 확인했다. 자율 지원이 모든 힌트를 금지해야 한다는 해석은 기각했고, 장식 색 배정을 보안 문제로 확대하지 않았다. 모든88해법을 표시 지원 수준마다 반복하라는 요구 대신 기존 지원별 world 동일성·변경 소스 전체88해법·실제 UI 수락으로 검증 범위를 정했다.

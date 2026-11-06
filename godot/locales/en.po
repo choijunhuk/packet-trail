@@ -5895,7 +5895,7 @@ msgid "UI_ALERT_EXPLAIN_2"
 msgstr "Alert is high. Sessions that are already valid and other routes remain. Look for another way in your mail and recovered records."
 
 msgid "UI_ALERT_EXPLAIN_MAX"
-msgstr "Alert limit reached. New unauthenticated attempts and repeated sign-ins from this origin may be blocked, but valid sessions and other routes remain."
+msgstr "Alert indicator at its maximum. This counter alone does not block connections. Check each service response for authentication limits and policies."
 
 msgid "UI_ALERT_METER"
 msgstr "Alert {bar} {level}/{max}"

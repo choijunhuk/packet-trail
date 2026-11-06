@@ -28,13 +28,15 @@ func run(scene_tree: SceneTree) -> Dictionary:
 	DirAccess.make_dir_recursive_absolute(test_root)
 	await _profile_and_window_lifetime()
 	await _browser_and_replacement()
+	await _site_presentation()
+	await _interaction_quality()
 	await _settings_cancel()
 	Localization.set_locale(locale)
 	_check(profiles.size() == 9, "all three support modes were exercised for each public pack")
 	_check(_fingerprints() == before, "default campaign/settings/sidecars and progress folders remain unchanged")
 	_remove_owned(test_root)
 	return {"suite": "desktop_shell", "checks": checks, "failures": failures.duplicate(), "profiles": profiles,
-		"protected_paths": before.size(), "limit": "Functional scene/core methods, preference IO and settings Cancel Enter. Not native rendering, OS input, physical IME, hearing, or visual design acceptance."}
+		"protected_paths": before.size(), "limit": "Functional scene/core methods, preference IO and synthesized viewport key dispatch. Not native rendering, OS input, physical IME, hearing, or visual design acceptance."}
 
 
 func _check(ok: bool, label: String) -> void:
@@ -174,6 +176,172 @@ func _browser_and_replacement() -> void:
 	_check(callbacks == 0, "late prior-world confirmation cannot invoke its callback")
 	_check(desktop.browser_tabs.tab_count == 1 and desktop._browser_states[0].response.is_empty(), "new world discards browser responses and tabs")
 	_check(not desktop.game.get_view(3).password_pending and desktop.terms[3].input.text.is_empty() and not desktop.terms[3].input.secret, "new world clears pending secrets before plain input")
+	desktop.queue_free()
+	await tree.process_frame
+	await tree.process_frame
+
+
+func _site_presentation() -> void:
+	var desktop := await _new_desktop("intruder", "standard", "site")
+	if desktop == null:
+		return
+	desktop._launch_app("browser")
+	var home := str(desktop.get_game_view().browser_home)
+	desktop._br_navigate(home, true)
+	var first_host: String = desktop.br_site_host.text
+	_check(first_host == home.get_slice("://", 1).get_slice("/", 0), "site identity comes from rendered virtual URL")
+	_check(desktop.br_site_host.selection_enabled and not desktop.br_site_host.bbcode_enabled and desktop.br_body.selection_enabled and not desktop.br_body.bbcode_enabled, "site host and body remain selectable plain text without markup interpretation")
+	var response: Dictionary = desktop._browser_states[0].response.duplicate(true)
+	_check(desktop.br_body.get_parsed_text() == str(response.get("body", response.get("text", ""))), "site presentation preserves actual response body bytes")
+	desktop.br_addr.text = "https://unsubmitted.packet.test/draft"
+	_check(desktop.br_site_host.text == first_host, "editing address does not relabel the displayed response site")
+	var world: Dictionary = desktop.game.export_snapshot()
+	desktop._browser_new_tab()
+	_check(desktop.br_site_host.text.is_empty() and not desktop.br_site_host.visible, "empty tab clears previous site identity")
+	desktop._br_render({"ok": false, "status": 404, "body": "[b]literal failure[/b]"}, "https://missing.packet.test/not-found", false, true)
+	_check(desktop.br_site_host.text == "missing.packet.test" and desktop.br_body.get_parsed_text() == "[b]literal failure[/b]", "error response uses attempted site identity and literal body")
+	desktop.browser_tabs.current_tab = 0
+	_check(desktop.br_site_host.text == first_host and desktop.br_site_host.tooltip_text == home, "cached tab restores displayed response host instead of unsent address")
+	_check(desktop.game.export_snapshot() == world, "presentation and cached tab restoration never grant rights or make a request")
+	desktop._br_fit_document()
+	_check(desktop.br_site_margin.get_theme_constant("margin_left") >= 18, "site document keeps readable inner padding")
+	_check(desktop.br_body.fit_content and not desktop.br_body.scroll_active and desktop.br_site_page.size_flags_vertical == Control.SIZE_SHRINK_BEGIN, "document content height belongs to the outer response scroller")
+	_check(desktop.br_response_scroll.follow_focus and desktop.br_response_scroll.is_ancestor_of(desktop.br_form_box) and desktop.br_response_scroll.is_ancestor_of(desktop.br_status), "page forms and footer share one focus-following response scroll")
+	_check(not desktop.br_response_scroll.is_ancestor_of(desktop.br_stale_row) and not desktop.br_response_scroll.is_ancestor_of(desktop.browser_tabs), "historical response warning and browser tabs remain outside scrolling content")
+	_check(desktop.top_host.tooltip_text == desktop.top_host.text and desktop.top_host.custom_minimum_size.x >= 250, "full session identity is available while essential header space is reserved")
+	_check(desktop.top_alert.tooltip_text == desktop.top_alert.text, "alert tooltip describes the actual current advisory state")
+	var tools: Array = desktop.last_view.get("tools", [])
+	if not tools.is_empty():
+		_check(desktop.tool_list.get_item_tooltip(0).contains(str(tools[0].get("name", tools[0].id))), "tool list tooltip exposes human-readable name")
+	if tools.size() > 1:
+		desktop._open_app("tools", true)
+		await tree.process_frame
+		desktop.tool_detail_scroll.scroll_vertical = 100
+		desktop._on_tool_selected(1)
+		_check(desktop.tool_detail_scroll.scroll_vertical == 0, "selecting another tool resets detail scroll to its introduction")
+	desktop._br_reset()
+	_check(desktop.br_site_host.text.is_empty(), "world/browser reset clears site identity")
+	desktop.queue_free()
+	await tree.process_frame
+	await tree.process_frame
+
+
+func _key(code: Key, alt := false, ctrl := false, meta := false, shift := false) -> InputEventKey:
+	var event := InputEventKey.new()
+	event.keycode = code
+	event.physical_keycode = code
+	event.pressed = true
+	event.alt_pressed = alt
+	event.ctrl_pressed = ctrl
+	event.meta_pressed = meta
+	event.shift_pressed = shift
+	return event
+
+
+func _dispatch_key(event: InputEventKey) -> void:
+	tree.root.push_input(event, true)
+	var release := event.duplicate() as InputEventKey
+	release.pressed = false
+	tree.root.push_input(release, true)
+
+
+func _interaction_quality() -> void:
+	var desktop := await _new_desktop("intruder", "standard", "interaction")
+	if desktop == null:
+		return
+	desktop._open_terminal(0)
+	var input: LineEdit = desktop.terms[0].input
+	desktop.terms[0].history = ["cat /desk/a", "ls", "cat /desk/b", "pwd"]
+	input.text = "cat "
+	desktop._on_term_key(_key(KEY_UP), 0)
+	_check(input.text == "cat /desk/b", "Up finds newest history matching the draft prefix")
+	desktop._on_term_key(_key(KEY_UP), 0)
+	_check(input.text == "cat /desk/a", "Up skips unrelated history entries")
+	desktop._on_term_key(_key(KEY_UP), 0)
+	_check(input.text == "cat /desk/a", "Up at oldest matching entry preserves that entry")
+	desktop._open_terminal(1)
+	var other: LineEdit = desktop.terms[1].input
+	desktop.terms[1].history = ["other-command"]
+	desktop._on_term_key(_key(KEY_UP), 1)
+	_check(other.text == "other-command" and input.text == "cat /desk/a", "terminal history cursors and prefixes remain independent")
+	desktop._on_term_key(_key(KEY_DOWN), 0)
+	_check(input.text == "cat /desk/b", "Down traverses only the original prefix matches")
+	desktop._on_term_key(_key(KEY_DOWN), 0)
+	_check(input.text == "cat " and desktop.terms[0].hist_idx == -1, "Down beyond newest match restores the exact draft")
+	desktop._on_term_key(_key(KEY_DOWN), 0)
+	_check(input.text == "cat ", "Down outside history leaves the draft intact")
+	input.text = "no-such-prefix"
+	desktop._on_term_key(_key(KEY_UP), 0)
+	_check(input.text == "no-such-prefix" and desktop.terms[0].hist_idx == -1, "unmatched prefix preserves the input and remains outside history")
+	input.clear()
+	desktop._on_term_key(_key(KEY_UP), 0)
+	_check(input.text == "pwd", "empty draft retains unfiltered newest history")
+	desktop._on_term_key(_key(KEY_UP), 0)
+	_check(input.text == "cat /desk/b", "empty draft retains unfiltered backward navigation")
+	input.text = "ls"
+	desktop._on_term_key(_key(KEY_UP), 0)
+	_check(input.text == "ls" and desktop.terms[0].draft == "ls", "editing a recalled command starts a fresh prefix search")
+	desktop._on_term_key(_key(KEY_DOWN), 0)
+	_check(input.text == "ls" and desktop.terms[0].hist_idx == -1, "edited recall draft returns after its newest match")
+	desktop.terms[0].pw = true
+	input.secret = true
+	input.text = "never-store-secret"
+	var history_before: Dictionary = {"history": desktop.terms[0].history.duplicate(), "draft": desktop.terms[0].draft}
+	desktop._on_term_key(_key(KEY_UP), 0)
+	desktop._on_term_key(_key(KEY_DOWN), 0)
+	desktop._on_term_key(_key(KEY_TAB), 0)
+	_check(input.text == "never-store-secret" and desktop.terms[0].history == history_before.history and desktop.terms[0].draft == history_before.draft, "secret entry cannot enter history navigation or completion")
+	desktop.terms[0].pw = false
+	input.secret = false
+	input.clear()
+
+	desktop._launch_app("browser")
+	var home := str(desktop.get_game_view().browser_home)
+	desktop._br_navigate(home, true)
+	desktop._br_navigate(home + "/notice", true)
+	desktop.br_addr.grab_focus()
+	await tree.process_frame
+	_dispatch_key(_key(KEY_LEFT, true))
+	_check(desktop.br_cursor == 0 and desktop.br_url == home, "input dispatch Alt+Left visits the previous browser page")
+	_dispatch_key(_key(KEY_RIGHT, true))
+	_check(desktop.br_cursor == 1 and desktop.br_url == home + "/notice", "input dispatch Alt+Right visits the next browser page")
+	_dispatch_key(_key(KEY_RIGHT, true))
+	_check(desktop.br_cursor == 1, "forward at browser history boundary is harmless")
+	for event in [_key(KEY_LEFT, true, true), _key(KEY_LEFT, true, false, true), _key(KEY_LEFT, true, false, false, true)]:
+		_dispatch_key(event)
+		_check(desktop.br_cursor == 1, "Alt navigation ignores additional command/control/shift modifiers")
+	var nav_before: Array = desktop.br_history.duplicate()
+	for event in [_key(KEY_R, false, true), _key(KEY_R, false, not OS.has_feature("macos"), OS.has_feature("macos")), _key(KEY_F5)]:
+		desktop._browser_states[0].response = {}
+		desktop.br_addr.text = home + "/unsubmitted-draft"
+		_dispatch_key(event)
+		_check(not desktop._browser_states[0].response.is_empty() and desktop.br_url == home + "/notice" and desktop.br_history == nav_before, "input refresh re-requests loaded page without adding history or submitting address draft")
+	desktop._open_terminal(0)
+	desktop._browser_states[0].response = {}
+	for event in [_key(KEY_LEFT, true), _key(KEY_RIGHT, true), _key(KEY_R, false, true), _key(KEY_F5)]:
+		_dispatch_key(event)
+	_check(desktop.br_cursor == 1 and desktop._browser_states[0].response.is_empty(), "browser shortcuts do nothing while a terminal is active")
+	desktop._launch_app("browser")
+	desktop.br_form_box.show()
+	desktop.br_pass.grab_focus()
+	await tree.process_frame
+	_check(tree.root.gui_get_focus_owner() == desktop.br_pass, "password guard dispatch test owns the focused secret field")
+	desktop.br_pass.text = "private-browser-draft"
+	for event in [_key(KEY_LEFT, true), _key(KEY_RIGHT, true), _key(KEY_R, false, true), _key(KEY_F5)]:
+		_dispatch_key(event)
+	_check(desktop.br_cursor == 1 and desktop._browser_states[0].response.is_empty() and desktop.br_pass.text == "private-browser-draft", "focused password blocks browser navigation and refresh dispatch")
+	desktop.br_addr.grab_focus()
+	desktop._ask("Shortcut guard", func(): callbacks += 1)
+	await tree.process_frame
+	for event in [_key(KEY_LEFT, true), _key(KEY_RIGHT, true), _key(KEY_R, false, true), _key(KEY_F5)]:
+		_dispatch_key(event)
+	_check(desktop.confirm.visible and desktop.br_cursor == 1 and desktop._browser_states[0].response.is_empty(), "confirmation modal blocks browser navigation and refresh dispatch")
+	desktop.confirm.hide()
+	desktop.confirm_action = Callable()
+	desktop._set_paused(true)
+	_dispatch_key(_key(KEY_F5))
+	_check(desktop._browser_states[0].response.is_empty(), "pause blocks browser refresh dispatch")
+	desktop._set_paused(false)
 	desktop.queue_free()
 	await tree.process_frame
 	await tree.process_frame

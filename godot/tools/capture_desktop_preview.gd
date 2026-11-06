@@ -36,6 +36,7 @@ func _run() -> void:
 	await _capture("empty-desktop.png")
 	await _launcher_and_windows()
 	await _browser_tabs()
+	await _browser_large_font()
 	await _close_all_and_resume()
 	await _common_input_checks()
 	await _request_lab_checks()
@@ -287,6 +288,61 @@ func _browser_tabs() -> void:
 	observations.append({"stage": "browser", "tabs": desktop.browser_tabs.tab_count, "switch_world_unchanged": desktop.game.export_snapshot() == before,
 		"response_terminal": response_terminal, "current_terminal": desktop.active_term,
 		"password_persisted": JSON.stringify(desktop._browser_states).contains("unsaved-browser-password")})
+
+
+func _browser_large_font() -> void:
+	var original: Dictionary = room.settings_store.get_values()
+	var world: Dictionary = desktop.game.export_snapshot()
+	root.size = Vector2i(1280, 720)
+	for locale in ["ko", "de"]:
+		var large := original.duplicate(true)
+		large.font_scale = 1.6
+		large.fullscreen = false
+		large.locale = locale
+		if not _set_test_settings(large):
+			break
+		await _frames(4)
+		await _open_app("browser")
+		if locale == "ko":
+			await _click(desktop.wins.browser.actions.maximize)
+		if not desktop.br_form_box.visible:
+			await _require_reachable(desktop.br_form_toggle, "browser-large/" + locale + "/toggle-before-expand")
+			await _click(desktop.br_form_toggle)
+		_check(root.size == Vector2i(1280, 720) and is_equal_approx(desktop.font_scale, 1.6), "browser large-font proof uses the actual 1280 viewport")
+		_check(desktop.active_id == "browser" and desktop.br_form_box.visible, "expanded browser form stays in the foreground: " + locale)
+		_check(_visible_rect(desktop.br_site_page).size.x > 100.0 and _visible_rect(desktop.br_site_page).size.y > 100.0,
+			"browser document retains a visible reading region with form expanded: " + locale)
+		await _capture("nightfox-1280-large-%s-form-top.png" % locale)
+		await _require_reachable(desktop.br_addr, "browser-large/" + locale + "/address")
+		await _require_reachable(desktop.br_form_toggle, "browser-large/" + locale + "/form-toggle")
+		var interactive: Array = desktop.br_form_box.find_children("*", "Control", true, false)
+		var reachable := 0
+		for control in interactive:
+			if control.is_visible_in_tree() and (control is LineEdit or control is BaseButton or control is OptionButton):
+				await _require_reachable(control, "browser-large/" + locale + "/form-" + str(reachable))
+				reachable += 1
+		_check(reachable >= 7, "expanded browser exposes all form and login input controls: " + locale)
+		for attempt in range(12):
+			if _visible_rect(desktop.br_status).size.y > 0.0:
+				break
+			var wheel := InputEventMouseButton.new()
+			wheel.button_index = MOUSE_BUTTON_WHEEL_DOWN
+			wheel.factor = 1.0
+			wheel.position = desktop.br_response_scroll.get_global_rect().get_center()
+			wheel.global_position = wheel.position
+			wheel.pressed = true
+			root.push_input(wheel, true)
+			await _frames(2)
+			wheel.pressed = false
+			root.push_input(wheel, true)
+		_check(_visible_rect(desktop.br_status).size.x > 100.0 and _visible_rect(desktop.br_status).size.y > 0.0,
+			"browser status remains visible under expanded form: " + locale)
+		await _capture("nightfox-1280-large-%s-form-reached.png" % locale)
+		_check(desktop.game.export_snapshot() == world, "large browser locale/layout proof preserves canonical world: " + locale)
+	root.size = Vector2i(1600, 900)
+	_set_test_settings(original)
+	await _frames(3)
+	await _click(desktop.wins.browser.actions.maximize)
 
 
 func _close_all_and_resume() -> void:

@@ -288,9 +288,13 @@ func _common_input_checks() -> void:
 	await _open_terminal(0)
 	var input: LineEdit = desktop.terms[0]["input"]
 	await _key(KEY_UP)
+	_check(input.text == "pack-draft-0" and desktop.terms[0]["hist_idx"] == -1, "native Up preserves a draft without a matching command")
+	input.clear()
+	await _key(KEY_UP)
 	_check(input.text == "pwd", "native Up recalls this terminal's real command history")
 	await _key(KEY_DOWN)
-	_check(input.text == "pack-draft-0", "native Down restores the unsent terminal draft")
+	_check(input.text.is_empty(), "native Down restores the empty unfiltered draft")
+	input.text = "pack-draft-0"
 	var old_size: int = desktop.ui_size
 	await _click(desktop.font_down_btn)
 	_check(desktop.ui_size == old_size - 1, "actual held mouse click activates font decrease")

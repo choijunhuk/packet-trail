@@ -5895,7 +5895,7 @@ msgid "UI_ALERT_EXPLAIN_2"
 msgstr "Alerta alta. Se mantienen sesiones válidas y otras rutas. Busca alternativas en correo y pruebas."
 
 msgid "UI_ALERT_EXPLAIN_MAX"
-msgstr "Alerta máxima. Pueden bloquearse nuevos intentos sin autenticar y accesos repetidos desde este origen. Sesiones válidas y otras rutas permanecen."
+msgstr "El indicador de alerta ha alcanzado el máximo. Este contador por sí solo no bloquea conexiones. Consulta la respuesta de cada servicio para conocer sus límites de autenticación y políticas."
 
 msgid "UI_ALERT_METER"
 msgstr "Alerta {bar} {level}/{max}"

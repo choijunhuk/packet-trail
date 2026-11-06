@@ -3520,12 +3520,12 @@
     "Hoher Alarm. Gültige Sitzungen und andere Wege bleiben erhalten. Suche Alternativen in Nachrichten und Belegen."
   ],
   "UI_ALERT_EXPLAIN_MAX": [
-    "경보 상한입니다. 이 출발점의 새 비인증 시도와 반복 인증은 차단될 수 있지만, 유효한 세션과 다른 경로는 그대로입니다.",
-    "Alert limit reached. New unauthenticated attempts and repeated sign-ins from this origin may be blocked, but valid sessions and other routes remain.",
-    "警戒度の上限です。この出発点の新たな未認証要求や認証の繰り返しは遮断される場合があります。有効セッションと別経路は残ります。",
-    "警报已达上限。此起点的新未认证尝试与重复认证可能被阻止，有效会话及其他通路仍保留。",
-    "Alerta máxima. Pueden bloquearse nuevos intentos sin autenticar y accesos repetidos desde este origen. Sesiones válidas y otras rutas permanecen.",
-    "Alarmgrenze erreicht. Neue unbestätigte und wiederholte Anmeldeversuche dieses Ausgangspunkts können gesperrt sein. Gültige Sitzungen und andere Wege bleiben erhalten."
+    "경보 표시가 상한에 도달했습니다. 이 수치만으로 연결이 차단되지는 않습니다. 서비스별 인증 제한과 정책은 해당 응답에서 확인하세요.",
+    "Alert indicator at its maximum. This counter alone does not block connections. Check each service response for authentication limits and policies.",
+    "警戒表示が上限に達しました。この数値だけで接続が遮断されることはありません。認証制限や方針は各サービスの応答で確認してください。",
+    "警报指示已达上限。此数值本身不会阻断连接。请查看各服务的响应，确认认证限制和策略。",
+    "El indicador de alerta ha alcanzado el máximo. Este contador por sí solo no bloquea conexiones. Consulta la respuesta de cada servicio para conocer sus límites de autenticación y políticas.",
+    "Die Alarmanzeige hat den Höchstwert erreicht. Dieser Zähler allein blockiert keine Verbindungen. Authentifizierungsgrenzen und Richtlinien stehen in der Antwort des jeweiligen Dienstes."
   ],
   "UI_TOP_MISSION": [
     "{id} · {title}",
