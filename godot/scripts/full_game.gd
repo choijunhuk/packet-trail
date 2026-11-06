@@ -28,7 +28,8 @@ func _ready() -> void:
 	room.desktop_scene = DesktopScene
 	if not save_slot_path.is_empty():
 		room.settings_path = save_slot_path.get_basename() + "_preferences.json"
-	for pack in Catalog.list_packs(true):
+		room.habitat_path = save_slot_path.get_basename() + "_habitat.json"
+	for pack in Catalog.list_all_packs(true):
 		var id := str(pack["id"])
 		var slot := _slot_for(id)
 		if slot.is_empty():

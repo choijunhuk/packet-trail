@@ -1,0 +1,642 @@
+{
+  "IV1_I01_ABSTRACTION": [
+    "등록된 유한 역할·자원·자격을 평가하는 공급자 중립 퍼즐입니다. 특정 클라우드의 전체 정책 문법이나 실제 자격을 사용하지 않습니다.",
+    "This provider-neutral puzzle evaluates finite registered roles, resources and credentials. It does not implement a cloud provider’s full policy language or real credentials.",
+    "供給者に依存しない有限のロール・資源・資格を評価するパズルです。クラウド事業者の全ポリシー言語や本物の資格情報は実装していません。",
+    "此供应商中立谜题评估有限的已注册角色、资源和凭据，不实现云厂商完整策略语言或真实凭据。",
+    "Este rompecabezas neutral evalúa roles, recursos y credenciales registrados y finitos; no implementa todo el lenguaje de un proveedor ni credenciales reales.",
+    "Dieses anbieterneutrale Rätsel bewertet begrenzte registrierte Rollen, Ressourcen und Zugangsdaten. Es bildet weder die vollständige Sprache eines Cloud-Anbieters noch echte Zugangsdaten ab."
+  ],
+  "IV1_I01_BRIEF": [
+    "이 의뢰는 본편과 별도로 고를 수 있습니다. 야간 배포 계정이 다른 조직의 자료까지 읽을 수 있다는 제보가 왔습니다. 같은 서비스의 정상 배포·안내 갱신·감사는 계속돼야 합니다.\n\n주체와 역할, 자원이 속한 테넌트를 비교하세요. 같은 계정이라도 역할에 명시적 거부가 있으면 허용보다 우선하고, 폐기되거나 만료된 자격은 사용할 수 없습니다. 원래 에이전트의 역할을 좁히거나, 이미 등록된 제한 중계 계정으로 정상 배포를 옮길 수 있습니다. 끝난 외주 자격은 두 방식 모두에서 폐기해야 합니다.\n\n요청 표의 기대 결과는 의뢰 범위를 나타냅니다. 요청을 실제 시험해 현재 정책의 근거를 확인하세요. 잘못 폐기했거나 시간을 넘겼다면 초기 구성 복원 후 다시 조사할 수 있습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n",
+    "Choose this commission independently of the main story. A tip says the night deployment identity can read another organization’s data. Legitimate deployment, notice updates and audit work must remain available.\n\nCompare principals, roles and resource tenants. Explicit deny takes precedence over allow, and revoked or expired credentials cannot be used. Narrow the original agent’s role, or move legitimate deployment through the registered limited relay identity. Retire the old contractor credential on either route.\n\nExpected decisions in the request table define the authorized scope. Probe requests to establish the current policy basis. If you revoke a needed credential or advance too far, restore the initial configuration and investigate again.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n",
+    "本編と独立して選べる依頼です。夜間の配布主体が別組織のデータまで読めるという情報があります。正常な配布、告知更新、監査業務は維持してください。\n\n主体・ロール・資源のテナントを比較します。明示的拒否は許可より優先され、失効・期限切れの資格は使えません。元のエージェントのロールを狭めるか、登録済みの制限中継に正常な配布を移します。どちらでも退職済み委託先の資格は廃止してください。\n\n要求表の期待判定が承認範囲を示します。要求を試して現在の設定に基づく根拠を得てください。必要な資格を失効させたり時間を進めすぎたりした場合は、初期設定に戻して再調査できます。\n承認済み業務アカウントは以下です。接続後、道具に現在の観察と許可された操作が表示されます。\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n",
+    "此委托可独立于主线选择。有线报称夜间部署身份能读取其他组织数据。正常部署、公告更新和审计业务必须保持。\n\n比较主体、角色与资源租户。显式拒绝优先于允许，已撤销或过期凭据不可使用。收窄原代理角色，或通过已注册受限中继执行正常部署。两条路径都须停用离职承包商旧凭据。\n\n请求表的期望判定定义授权范围。测试请求以取得基于当前配置的证据。若撤销了必要凭据或推进时间过多，可恢复初始配置后重新调查。\n授权工作账户如下。连接后，案件工具显示当前观察和允许操作。\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n",
+    "Elige este encargo independientemente de la historia principal. Una pista indica que la identidad de despliegue nocturno lee datos de otra organización. Deben mantenerse despliegues, avisos y auditorías legítimos.\n\nCompara identidades, roles e inquilinos de recursos. El rechazo explícito prevalece y las credenciales revocadas o caducadas no sirven. Limita el rol original o mueve el despliegue legítimo al relevo limitado registrado. Retira la antigua credencial del contratista en ambas rutas.\n\nLa tabla define el ámbito autorizado mediante resultados esperados. Prueba solicitudes para obtener pruebas de la configuración actual. Si revocas una credencial necesaria o avanzas demasiado, restaura el estado inicial.\nLa cuenta de trabajo autorizada está abajo. Tras conectar, la herramienta muestra observaciones y acciones permitidas.\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n",
+    "Dieser Auftrag ist unabhängig von der Hauptgeschichte wählbar. Ein Hinweis besagt, die nächtliche Bereitstellungsidentität könne Daten einer anderen Organisation lesen. Legitime Bereitstellung, Meldungen und Prüfung müssen verfügbar bleiben.\n\nIdentitäten, Rollen und Ressourcenmandanten vergleichen. Explizite Ablehnung hat Vorrang; widerrufene oder abgelaufene Zugangsdaten sind unbrauchbar. Begrenze die ursprüngliche Rolle oder verlagere legitime Bereitstellung auf das registrierte begrenzte Relay. In beiden Wegen die alten Dienstleister-Zugangsdaten stilllegen.\n\nErwartete Entscheidungen in der Anfragentabelle definieren den genehmigten Bereich. Anfragen prüfen, um aktuelle Konfigurationsnachweise zu gewinnen. Nach falschem Widerruf oder zu vielen Zeitfortschritten den Anfangszustand wiederherstellen.\nDas genehmigte Arbeitskonto folgt unten. Nach Verbindung zeigt das Werkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n"
+  ],
+  "IV1_I01_DESK_NAME": [
+    "배포 계정의 다른 권한 담당실",
+    "The Deployment Account’s Other Authority Desk",
+    "配布アカウントの権限調査室",
+    "部署账户权限调查台",
+    "Mesa de autoridad de despliegue",
+    "Prüfplatz für Bereitstellungsrechte"
+  ],
+  "IV1_I01_GOAL": [
+    "정상 배포·안내·감사를 유지하면서 다른 테넌트 접근과 권한 변경, 종료·만료·폐기 자격을 거부한다.",
+    "Preserve deployment, notice and audit work while refusing cross-tenant access, authority changes and retired, expired or revoked credentials.",
+    "配布・告知・監査業務を保ち、他テナントの参照・権限変更・退職者や失効した資格の利用を拒否する。",
+    "保持部署、公告和审计业务，拒绝跨租户访问、权限变更及离职、过期或已撤销凭据。",
+    "Conserva despliegue, avisos y auditoría; rechaza acceso entre inquilinos, cambios de autoridad y credenciales retiradas, caducadas o revocadas.",
+    "Bereitstellung, Meldungen und Prüfung erhalten; mandantenfremden Zugriff, Rechteänderungen und ausgesonderte, abgelaufene oder widerrufene Zugangsdaten ablehnen."
+  ],
+  "IV1_I01_HINT_1": [
+    "주체와 자격이 누구를 가리키는지 먼저 비교하세요. 역할 이름이 아니라 실제 규칙과 테넌트 조건이 접근을 결정합니다.",
+    "Compare the principal referenced by each credential. Actual rules and tenant conditions decide access, not role names.",
+    "各資格情報が指す主体を比較します。名前ではなく、実際の規則とテナント条件でアクセスが決まります。",
+    "比较每项凭据指向的主体。访问由实际规则和租户条件决定，而非角色名称。",
+    "Compara la identidad de cada credencial. Mandan las reglas y condiciones del inquilino, no los nombres.",
+    "Vergleiche die Identität jeder Zugangsdatenreferenz. Regeln und Mandantenbedingungen entscheiden, nicht Rollennamen."
+  ],
+  "IV1_I01_HINT_2": [
+    "원래 에이전트는 제한 역할로 좁힐 수 있습니다. 명시적 거부가 허용보다 우선하는 요청과 테넌트가 다른 자원을 비교하세요.",
+    "The original agent can use a limited role. Compare explicit deny against allow and check resources in another tenant.",
+    "元のエージェントには制限ロールを使えます。明示的拒否と許可、別テナントの資源を比較します。",
+    "原代理可使用受限角色。比较显式拒绝与允许，并检查其他租户资源。",
+    "El agente original puede usar un rol limitado. Compara rechazo explícito y permiso y comprueba otro inquilino.",
+    "Der ursprüngliche Agent kann eine begrenzte Rolle nutzen. Explizite Ablehnung und Erlaubnis sowie fremde Ressourcen vergleichen."
+  ],
+  "IV1_I01_HINT_3": [
+    "원래 에이전트를 권한 없음으로 옮기고 제한 중계를 정상 배포 경로로 시험해도 됩니다. 종료된 외주 자격은 폐기하고 정상 안내·감사 요청은 유지하세요.",
+    "You may remove the original agent’s grants and test the limited relay for deployment. Revoke the retired contractor credential while retaining legitimate notice and audit requests.",
+    "元エージェントの許可を外し、配布を制限中継で試す方法もあります。退職者の資格を失効させ、正常な告知と監査は維持してください。",
+    "也可移除原代理授权，通过受限中继测试部署。撤销离职承包商凭据，同时保持正常公告和审计请求。",
+    "Puedes quitar permisos al agente original y probar el relevo limitado. Revoca la credencial retirada sin interrumpir avisos ni auditoría.",
+    "Entferne gegebenenfalls Agentenrechte und teste das begrenzte Relay. Ausgesonderte Zugangsdaten widerrufen, Meldungen und Prüfung erhalten."
+  ],
+  "IV1_I01_LIMIT": [
+    "선택 의뢰입니다. 본편 진행과 엔딩에 필요하지 않습니다. 실제 외부 서비스나 모든 보안 정책을 재현하지 않으며 잘못된 조작은 초기 상태로 복구할 수 있습니다.",
+    "This optional commission is not required for the main story or its endings. It does not reproduce external services or every security rule. Mistaken changes can be restored to the initial configuration.",
+    "本編や結末には必須ではない依頼です。外部サービスや全規則を再現しません。誤った変更は初期設定へ戻せます。",
+    "此委托不是主线或结局必需内容，不复现外部服务或全部规则。误改可恢复初始配置。",
+    "Encargo opcional para la historia y sus finales. No reproduce servicios externos ni todas las reglas. Puedes restaurar la configuración inicial.",
+    "Dieser Auftrag ist für Geschichte und Enden optional. Externe Dienste und sämtliche Regeln werden nicht nachgebildet. Fehländerungen lassen sich zurücksetzen."
+  ],
+  "IV1_I01_PRINCIPAL_AGENT": [
+    "배포 에이전트",
+    "Deployment Agent",
+    "配布エージェント",
+    "部署代理",
+    "Agente de despliegue",
+    "Bereitstellungsagent"
+  ],
+  "IV1_I01_PRINCIPAL_AUDITOR": [
+    "감사 담당자",
+    "Audit Reviewer",
+    "監査担当",
+    "审计人员",
+    "Revisor de auditoría",
+    "Prüfverantwortlicher"
+  ],
+  "IV1_I01_PRINCIPAL_CONTRACTOR": [
+    "종료된 외주 계정",
+    "Retired Contractor",
+    "退職済み委託先",
+    "已离职承包商",
+    "Contratista retirado",
+    "Ausgeschiedener Dienstleister"
+  ],
+  "IV1_I01_PRINCIPAL_OPERATOR": [
+    "안내 운영자",
+    "Notice Operator",
+    "告知担当",
+    "公告操作员",
+    "Operador de avisos",
+    "Meldungsoperator"
+  ],
+  "IV1_I01_PRINCIPAL_RELAY": [
+    "제한 배포 중계",
+    "Limited Deployment Relay",
+    "制限付き配布中継",
+    "受限部署中继",
+    "Relevo limitado de despliegue",
+    "Begrenztes Bereitstellungsrelay"
+  ],
+  "IV1_I01_PRINCIPLE": [
+    "허용은 실제 주체·행동·자원·테넌트 조건이 일치해야 성립합니다. 명시적 거부와 사용할 수 없는 자격은 허용보다 먼저 판단합니다.",
+    "Allow requires a matching principal, action, resource and tenant condition. Explicit deny and unusable credentials take precedence.",
+    "許可には主体・操作・資源・テナント条件の一致が必要です。明示的拒否や使えない資格情報が優先されます。",
+    "允许需匹配主体、操作、资源和租户条件。显式拒绝及不可用凭据优先。",
+    "El permiso exige identidad, acción, recurso y condición compatibles. Prevalecen el rechazo explícito y las credenciales inutilizables.",
+    "Erlaubnis erfordert passende Identität, Aktion, Ressource und Mandantenbedingung. Explizite Ablehnung und unbrauchbare Zugangsdaten haben Vorrang."
+  ],
+  "IV1_I01_REPLY": [
+    "승인된 업무는 남고 다른 테넌트 열람과 권한 변경, 종료된 외주 자격 사용은 거부됐습니다. 검증된 현재 구성과 요청 결과가 의뢰 기록에 남았습니다. 다른 선택 의뢰는 별도로 시작할 수 있습니다.",
+    "Authorized work remains, while cross-tenant reads, authority changes and retired contractor access are refused. The commission records the verified current configuration and request outcomes. Other optional commissions remain independently available.",
+    "承認業務を維持し、他テナントの参照・権限変更・退職者のアクセスを拒否しました。検証した現在の設定と要求結果を記録します。ほかの任意依頼も独立して選べます。",
+    "授权业务得以保留，跨租户读取、权限变更和离职承包商访问已被拒绝。委托记录已验证的当前配置及请求结果。其他可选委托仍可独立选择。",
+    "Se mantienen las tareas autorizadas y se rechazan lecturas ajenas, cambios de autoridad y accesos retirados. Se registran configuración y resultados verificados; los demás encargos siguen siendo independientes.",
+    "Genehmigte Arbeit bleibt erhalten, fremder Zugriff, Rechteänderungen und ausgeschiedene Dienstleister werden abgewiesen. Aktuelle Konfiguration und Ergebnisse sind dokumentiert. Andere Aufträge bleiben unabhängig verfügbar."
+  ],
+  "IV1_I01_REQUEST_AUDIT_READ": [
+    "승인 감사 읽기",
+    "Authorized Audit Read",
+    "承認された監査参照",
+    "授权审计读取",
+    "Lectura de auditoría autorizada",
+    "Genehmigter Prüfzugriff"
+  ],
+  "IV1_I01_REQUEST_CROSS_TENANT": [
+    "배포 주체의 다른 테넌트 열람",
+    "Deployment Identity Reads Another Tenant",
+    "配布主体による他テナント参照",
+    "部署身份读取其他租户",
+    "Lectura de otro inquilino por despliegue",
+    "Bereitstellungsidentität liest fremden Mandanten"
+  ],
+  "IV1_I01_REQUEST_DEPLOYMENT": [
+    "정상 배포 자료 읽기",
+    "Legitimate Deployment Read",
+    "正常な配布参照",
+    "正常部署读取",
+    "Lectura legítima de despliegue",
+    "Legitimer Bereitstellungszugriff"
+  ],
+  "IV1_I01_REQUEST_EXPIRED_ACCESS": [
+    "만료 자격 재사용",
+    "Expired Credential Reuse",
+    "期限切れ資格の再利用",
+    "复用过期凭据",
+    "Reutilización de credencial caducada",
+    "Wiederverwendung abgelaufener Zugangsdaten"
+  ],
+  "IV1_I01_REQUEST_GRANT_CHANGE": [
+    "배포 주체의 권한 변경",
+    "Deployment Identity Changes Authority",
+    "配布主体による権限変更",
+    "部署身份更改权限",
+    "Cambio de autoridad por despliegue",
+    "Bereitstellungsidentität ändert Rechte"
+  ],
+  "IV1_I01_REQUEST_NOTICE_UPDATE": [
+    "정상 안내 갱신",
+    "Legitimate Notice Update",
+    "正常な告知更新",
+    "正常公告更新",
+    "Actualización legítima de avisos",
+    "Legitime Meldungsaktualisierung"
+  ],
+  "IV1_I01_REQUEST_RETIRED_ACCESS": [
+    "종료된 외주 자격 재사용",
+    "Retired Contractor Credential Reuse",
+    "退職者資格の再利用",
+    "复用离职承包商凭据",
+    "Reutilización de credencial retirada",
+    "Wiederverwendung ausgesonderter Zugangsdaten"
+  ],
+  "IV1_I01_REQUEST_REVOKED_ACCESS": [
+    "이미 폐기된 자격 재사용",
+    "Revoked Credential Reuse",
+    "失効済み資格の再利用",
+    "复用已撤销凭据",
+    "Reutilización de credencial revocada",
+    "Wiederverwendung widerrufener Zugangsdaten"
+  ],
+  "IV1_I01_RESOURCE_ARTIFACT": [
+    "승인 배포 산출물",
+    "Approved Deployment Artifact",
+    "承認された配布成果物",
+    "批准的部署制品",
+    "Artefacto de despliegue aprobado",
+    "Genehmigtes Bereitstellungsartefakt"
+  ],
+  "IV1_I01_RESOURCE_AUDIT": [
+    "감사 기록",
+    "Audit Record",
+    "監査記録",
+    "审计记录",
+    "Registro de auditoría",
+    "Prüfprotokoll"
+  ],
+  "IV1_I01_RESOURCE_AUTHORITY": [
+    "역할 관리",
+    "Role Administration",
+    "ロール管理",
+    "角色管理",
+    "Administración de roles",
+    "Rollenverwaltung"
+  ],
+  "IV1_I01_RESOURCE_FOREIGN": [
+    "다른 조직의 자료",
+    "Another Tenant’s Data",
+    "別テナントのデータ",
+    "其他租户数据",
+    "Datos de otro inquilino",
+    "Daten eines fremden Mandanten"
+  ],
+  "IV1_I01_RESOURCE_NOTICE": [
+    "시민 안내",
+    "Citizen Notice",
+    "市民向け告知",
+    "市民公告",
+    "Aviso ciudadano",
+    "Bürgerinformation"
+  ],
+  "IV1_I01_ROLE_AUDIT": [
+    "감사 읽기 역할",
+    "Audit Read Role",
+    "監査参照ロール",
+    "审计读取角色",
+    "Rol de lectura de auditoría",
+    "Prüfleserolle"
+  ],
+  "IV1_I01_ROLE_BROAD": [
+    "과도한 공용 역할",
+    "Overbroad Shared Role",
+    "過大な共有ロール",
+    "权限过宽的共享角色",
+    "Rol compartido excesivo",
+    "Zu weit gefasste gemeinsame Rolle"
+  ],
+  "IV1_I01_ROLE_LIMITED": [
+    "테넌트 제한 배포 역할",
+    "Tenant-Limited Deployment Role",
+    "テナント限定配布ロール",
+    "租户受限部署角色",
+    "Rol de despliegue limitado al inquilino",
+    "Mandantenbegrenzte Bereitstellungsrolle"
+  ],
+  "IV1_I01_ROLE_NONE": [
+    "권한 없음",
+    "No Grants",
+    "許可なし",
+    "无授权",
+    "Sin permisos",
+    "Keine Berechtigungen"
+  ],
+  "IV1_I01_ROLE_NOTICE": [
+    "안내 갱신 역할",
+    "Notice Update Role",
+    "告知更新ロール",
+    "公告更新角色",
+    "Rol de actualización de avisos",
+    "Meldungsaktualisierungsrolle"
+  ],
+  "IV1_I01_ROLE_RELAY": [
+    "조건부 중계 역할",
+    "Conditional Relay Role",
+    "条件付き中継ロール",
+    "条件中继角色",
+    "Rol de relevo condicional",
+    "Bedingte Relay-Rolle"
+  ],
+  "IV1_I01_SENDER": [
+    "독립 검증 연락처",
+    "Independent Review Contact",
+    "独立レビュー窓口",
+    "独立审查联系人",
+    "Contacto de revisión independiente",
+    "Unabhängige Prüfstelle"
+  ],
+  "IV1_I01_TITLE": [
+    "배포 계정의 다른 권한",
+    "The Deployment Account’s Other Authority",
+    "配布アカウントの別の権限",
+    "部署账户的另一项权限",
+    "La otra autoridad de la cuenta de despliegue",
+    "Die anderen Rechte des Bereitstellungskontos"
+  ],
+  "IV1_I01_TOOL": [
+    "현재 권한과 요청 검증",
+    "Effective Authority and Request Review",
+    "有効権限と要求のレビュー",
+    "有效权限与请求审查",
+    "Revisión de autoridad efectiva y solicitudes",
+    "Prüfung wirksamer Rechte und Anfragen"
+  ],
+  "IV1_I01_TOOL_EXPLAIN": [
+    "주체·역할·테넌트·자격을 읽고 정상 요청과 거부 요청을 현재 구성에서 비교하세요.",
+    "Compare principals, roles, tenants and credentials, then test legitimate and refused requests under the current configuration.",
+    "主体・ロール・テナント・資格を比較し、現在の設定で正常要求と拒否すべき要求を試します。",
+    "比较主体、角色、租户和凭据，再在当前配置下测试正常及应拒请求。",
+    "Compara identidades, roles, inquilinos y credenciales; prueba solicitudes legítimas y prohibidas con la configuración actual.",
+    "Identitäten, Rollen, Mandanten und Zugangsdaten vergleichen; legitime und abzulehnende Anfragen aktuell testen."
+  ],
+  "IV1_I01_TOOL_USAGE": [
+    "역할을 연결하고 자격을 폐기한 뒤 요청을 시험합니다. 잘못된 변경은 초기 구성 복원으로 되돌릴 수 있습니다.",
+    "Bind roles, revoke credentials and probe requests. Restore the initial configuration to recover from mistaken changes.",
+    "ロールを割り当て、資格を失効させ、要求を試します。誤った変更は初期設定に戻して復旧できます。",
+    "绑定角色、撤销凭据并测试请求。误改时可恢复初始配置。",
+    "Asigna roles, revoca credenciales y prueba solicitudes. Restaura el estado inicial para corregir errores.",
+    "Rollen zuweisen, Zugangsdaten widerrufen und Anfragen testen. Fehländerungen durch Wiederherstellung beheben."
+  ],
+  "IV1_I02_ABSTRACTION": [
+    "등록된 JSON 서비스 manifest와 결정적인 가상 빌드를 사용합니다. 실제 컴파일러나 암호 서명을 실행하지 않으며 검증은 게임의 신뢰 원장을 따릅니다.",
+    "This uses registered JSON service manifests and deterministic virtual builds. It runs no compiler or cryptographic signature algorithm; verification follows the game’s trust registry.",
+    "登録されたJSONサービス設定と決定的な仮想ビルドを使います。コンパイラーや暗号署名は実行せず、ゲームの信頼台帳で検証します。",
+    "使用已注册JSON服务清单和确定性虚拟构建，不运行编译器或密码签名算法；验证依据游戏内信任登记表。",
+    "Usa manifiestos JSON registrados y compilaciones virtuales deterministas. No ejecuta compilador ni firma criptográfica; verifica según el registro del juego.",
+    "Registrierte JSON-Dienstbeschreibungen und deterministische virtuelle Builds werden verwendet. Kein Compiler oder kryptografischer Signaturalgorithmus läuft; geprüft wird anhand des Spielregisters."
+  ],
+  "IV1_I02_ARTIFACT_DELIVERED": [
+    "제보로 받은 같은 이름의 배포본",
+    "Reported Package with the Same Name",
+    "同名の報告済みパッケージ",
+    "同名被报告软件包",
+    "Paquete denunciado con el mismo nombre",
+    "Gemeldetes Paket mit gleichem Namen"
+  ],
+  "IV1_I02_ARTIFACT_OFFLINE": [
+    "서비스를 끈 배포본",
+    "Release with Service Disabled",
+    "サービス停止版",
+    "服务禁用版本",
+    "Versión con servicio desactivado",
+    "Release mit deaktiviertem Dienst"
+  ],
+  "IV1_I02_ARTIFACT_REBUILT": [
+    "승인 입력의 가상 재빌드",
+    "Virtual Rebuild from Approved Inputs",
+    "承認入力からの仮想再ビルド",
+    "从批准输入进行的虚拟重建",
+    "Reconstrucción virtual de entradas aprobadas",
+    "Virtueller Neubau aus genehmigten Eingaben"
+  ],
+  "IV1_I02_ARTIFACT_REVOKED": [
+    "폐기 빌더의 배포본",
+    "Release from a Revoked Builder",
+    "失効ビルダーによる配布物",
+    "来自已撤销构建者的版本",
+    "Versión de constructor revocado",
+    "Release eines widerrufenen Builders"
+  ],
+  "IV1_I02_ARTIFACT_STABLE": [
+    "원장의 정상 이전 배포본",
+    "Registry’s Known-Good Prior Release",
+    "台帳の既知正常な旧版",
+    "登记表中已知正常的旧版",
+    "Versión anterior fiable del registro",
+    "Bekannt gutes früheres Release im Register"
+  ],
+  "IV1_I02_ARTIFACT_UNSAFE_ATTESTED": [
+    "출처는 맞지만 경계가 넓은 배포본",
+    "Authentic Provenance, Overbroad Behavior",
+    "真正な来歴、過大な動作",
+    "来源真实但行为越权",
+    "Procedencia auténtica, comportamiento excesivo",
+    "Echte Herkunft, zu weit gefasstes Verhalten"
+  ],
+  "IV1_I02_BRIEF": [
+    "이 선택 의뢰는 다른 의뢰를 끝내지 않아도 시작할 수 있습니다. 같은 버전 이름으로 전달된 야간 안내 배포본이 서로 다른 내용을 갖고 있습니다. 서명이 있다는 표시만 믿지 말고 실제 내용의 digest, 출처 증명의 대상, 빌더와 소스 이력을 비교해 주세요.\n\n독립 원장에는 정상 이전 배포본과 승인된 재빌드 입력이 등록돼 있습니다. 검증한 이전 버전으로 복구하거나 승인된 입력을 가상 재빌드해 배포할 수 있습니다. 어떤 길이든 시민 화면·ward 통지는 남고 다른 테넌트 열람·내부 통지는 거부돼야 합니다.\n\n배포 후 유지보수자에게 기술 인계를 하거나 기자에게 공개 가능한 근거만 전달하세요. 수신자가 요구하는 필드를 선택하면 가려진 보고서를 모형이 만듭니다. 민감 필드를 직접 붙여 넣을 필요는 없습니다. 회신이나 사실 확인 질문에 관찰한 근거로 답하면 선택에 맞는 처리 기록 또는 기사가 열립니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n",
+    "This optional commission can start without completing another one. Night-notice packages share a version name but contain different data. Do not trust a signature label alone: compare the actual payload digest, the provenance subject, the builder and source history.\n\nThe independent registry contains a known-good prior release and approved virtual rebuild inputs. Roll back to the verified prior release, or build and deploy the approved inputs. Either way, citizen service and ward notifications must remain, while cross-tenant reads and internal notifications are refused.\n\nThen hand technical evidence to the maintainer or disclose only public evidence to the journalist. Select the recipient’s required fields and the model constructs a redacted report. You need not paste sensitive content. Answer the reply or fact-check with observed evidence to unlock the corresponding handling record or article.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n",
+    "ほかの依頼を完了せずに始められます。夜間告知パッケージは同じ版名でも内容が違います。署名という表示だけで信頼せず、実際のダイジェスト・来歴の対象・ビルダー・ソース履歴を比較してください。\n\n独立台帳には既知正常な旧版と承認済み仮想再ビルド入力があります。検証済みの旧版に戻すか、承認入力をビルドして配布します。どちらでも市民サービスとward通知を維持し、他テナントの参照や内部通知を拒否します。\n\n次に技術根拠を保守担当に渡すか、公開可能な根拠だけを記者に伝えます。必要項目を選ぶとモデルが機密を除いた報告を作ります。機密内容を貼り付ける必要はありません。観察した根拠で返信や事実確認に答えると、対応記録または記事が開きます。\n承認済み業務アカウントは以下です。接続後、道具で観察と操作を確認できます。\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n",
+    "此可选委托无需先完成其他委托。同版本名的夜间公告软件包却包含不同数据。不要只相信签名标签；比较实际负载摘要、来源声明主体、构建者及源码历史。\n\n独立登记表包含已知正常旧版及批准的虚拟重建输入。回滚至已验证旧版，或构建并部署批准输入。两条路径都须维持市民服务和ward通知，并拒绝跨租户读取及内部通知。\n\n随后向维护者交接技术证据，或仅向记者披露公开证据。选择接收方要求的字段，模型会生成脱敏报告，无需粘贴敏感内容。以实际观察证据回答回复或事实核查，解锁相应处理记录或报道。\n授权工作账户如下。连接后工具显示当前观察与允许操作。\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n",
+    "Este encargo puede iniciarse sin completar otro. Los paquetes de avisos nocturnos comparten versión pero contienen datos diferentes. No confíes solo en una etiqueta de firma: compara resumen real, objeto de la declaración, constructor e historial de origen.\n\nEl registro independiente contiene una versión anterior fiable y entradas aprobadas. Restaura la versión verificada o compila virtualmente y despliega las entradas aprobadas. Mantén servicio ciudadano y avisos ward; rechaza lecturas entre inquilinos y avisos internos.\n\nDespués entrega pruebas técnicas al responsable o solo pruebas públicas al periodista. Selecciona los campos exigidos para que el modelo genere un informe depurado; no pegues datos sensibles. Responde con pruebas observadas para abrir el registro de gestión o el artículo.\nLa cuenta autorizada está abajo. Tras conectar, la herramienta muestra observaciones y acciones permitidas.\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n",
+    "Dieser optionale Auftrag erfordert keinen anderen Abschluss. Nachtmeldungs-Pakete tragen dieselbe Version, enthalten aber andere Daten. Vertraue nicht nur einer Signaturanzeige: tatsächliche Prüfsumme, Bezugsobjekt, Builder und Quellhistorie vergleichen.\n\nDas unabhängige Register enthält einen guten Vorgänger und genehmigte Eingaben für einen virtuellen Neubau. Geprüften Vorgänger wiederherstellen oder genehmigte Eingaben bauen und bereitstellen. Bürgerdienst und ward-Meldungen erhalten; fremde Datenzugriffe und interne Meldungen ablehnen.\n\nDanach technische Nachweise an den Betreuer oder ausschließlich öffentliche Nachweise an den Journalisten senden. Wähle verlangte Felder; das Modell erstellt einen bereinigten Bericht, ohne sensible Inhalte einzufügen. Rückfragen mit beobachteten Nachweisen beantworten, um Bearbeitungsvermerk oder Artikel zu öffnen.\nDas genehmigte Arbeitskonto folgt unten. Nach Verbindung zeigt das Werkzeug Beobachtungen und Aktionen.\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n"
+  ],
+  "IV1_I02_CASE_CITIZEN": [
+    "시민 화면 정상 제공",
+    "Legitimate Citizen Service",
+    "正常な市民サービス",
+    "正常市民服务",
+    "Servicio ciudadano legítimo",
+    "Legitimer Bürgerdienst"
+  ],
+  "IV1_I02_CASE_CROSS_TENANT": [
+    "다른 테넌트 자료 거부",
+    "Refuse Another Tenant’s Data",
+    "他テナントのデータを拒否",
+    "拒绝其他租户数据",
+    "Rechazar datos de otro inquilino",
+    "Fremde Mandantendaten ablehnen"
+  ],
+  "IV1_I02_CASE_INTERNAL": [
+    "내부 목적지 통지 거부",
+    "Refuse Internal Notification Target",
+    "内部通知先を拒否",
+    "拒绝内部通知目标",
+    "Rechazar destino interno",
+    "Internes Benachrichtigungsziel ablehnen"
+  ],
+  "IV1_I02_CASE_NOTICE": [
+    "ward 정상 통지",
+    "Legitimate ward Notification",
+    "正常なward通知",
+    "正常ward通知",
+    "Aviso legítimo a ward",
+    "Legitime ward-Benachrichtigung"
+  ],
+  "IV1_I02_DESK_NAME": [
+    "같은 버전의 다른 배포본 담당실",
+    "Different Releases with the Same Version Desk",
+    "同じ版の異なる配布物の調査室",
+    "同版本不同制品调查台",
+    "Mesa de versiones distintas con igual número",
+    "Prüfplatz für unterschiedliche Releases derselben Version"
+  ],
+  "IV1_I02_EVIDENCE_DELIVERED": [
+    "전달받은 배포 자료",
+    "Delivered Package Evidence",
+    "届いたパッケージの根拠",
+    "收到的软件包证据",
+    "Pruebas del paquete recibido",
+    "Nachweise zum gelieferten Paket"
+  ],
+  "IV1_I02_EVIDENCE_REBUILT": [
+    "승인 재빌드 자료",
+    "Approved Rebuild Evidence",
+    "承認再ビルドの根拠",
+    "批准重建的证据",
+    "Pruebas de reconstrucción aprobada",
+    "Nachweise zum genehmigten Neubau"
+  ],
+  "IV1_I02_EVIDENCE_STABLE": [
+    "독립 원장의 비교 자료",
+    "Independent Registry Comparison",
+    "独立台帳との比較",
+    "独立登记表对照",
+    "Comparación del registro independiente",
+    "Vergleich mit unabhängigem Register"
+  ],
+  "IV1_I02_GOAL": [
+    "검증된 배포로 정상 업무와 경계를 유지하고, 관찰한 근거만 수신자에게 전달해 후속 검증을 마친다.",
+    "Maintain legitimate work and boundaries with a verified release, then disclose only observed evidence and complete the recipient’s follow-up.",
+    "検証した配布物で正常業務と境界を守り、確認した根拠だけを公開し、受信者の追加確認を完了する。",
+    "以验证后的版本维护正常业务与边界，仅披露实际观察到的证据，并完成接收方后续处理。",
+    "Conserva el trabajo y los límites con una versión verificada; divulga solo pruebas observadas y completa el seguimiento.",
+    "Mit geprüftem Release Betrieb und Grenzen erhalten, nur beobachtete Nachweise offenlegen und Rückfragen abschließen."
+  ],
+  "IV1_I02_HINT_1": [
+    "이름과 버전이 같아도 실제 payload digest가 다를 수 있습니다. 원장의 이전 배포본과 전달받은 파일부터 관찰하세요.",
+    "Matching names and versions do not imply matching payload digests. Inspect the prior registry release and delivered file first.",
+    "同じ名前と版でも内容のダイジェストは異なる場合があります。先に台帳の旧版と届いたファイルを調べてください。",
+    "同名同版本不代表负载摘要相同。先检查登记表旧版和收到的文件。",
+    "Nombres y versiones iguales no garantizan el mismo resumen. Inspecciona primero la versión anterior y el archivo recibido.",
+    "Gleiche Namen und Versionen bedeuten nicht gleiche Prüfsummen. Zuerst Register-Vorgänger und gelieferte Datei untersuchen."
+  ],
+  "IV1_I02_HINT_2": [
+    "출처가 맞는 파일도 과도한 서비스 동작을 담을 수 있습니다. 정상 화면·통지와 범위 밖 요청을 실제로 함께 시험하세요.",
+    "Authentic provenance can still describe overbroad behavior. Test legitimate service and notifications together with outside-scope requests.",
+    "真正な来歴でも過大な動作を示す場合があります。正常サービスと通知を、範囲外要求と一緒に試してください。",
+    "真实来源也可能描述越权行为。同时测试正常服务、通知及越界请求。",
+    "Una procedencia auténtica puede describir comportamientos excesivos. Prueba servicio y avisos junto con solicitudes fuera de ámbito.",
+    "Echte Herkunft kann übermäßiges Verhalten beschreiben. Dienst und Meldungen zusammen mit unzulässigen Anfragen testen."
+  ],
+  "IV1_I02_HINT_3": [
+    "이전 정상 배포본을 검증해 복구하거나 승인 입력을 재빌드하세요. 현재 서비스 검증 뒤 stable_evidence·delivered_evidence의 공개 digest를 보고하고 수신자의 후속 질문에 답하세요.",
+    "Verify and restore the known-good prior release, or rebuild approved inputs. After current service checks, report public digests from stable_evidence and delivered_evidence and answer the recipient’s follow-up.",
+    "既知正常の旧版を検証して復元するか、承認入力を再ビルドします。サービス検証後にstable_evidenceとdelivered_evidenceの公開ダイジェストを報告し、追加確認に答えてください。",
+    "验证并恢复已知正常旧版，或重建批准输入。检查当前服务后，报告stable_evidence和delivered_evidence的公开摘要并回答后续问题。",
+    "Verifica y restaura la versión anterior fiable o recompila las entradas aprobadas. Tras las pruebas, informa los resúmenes públicos de stable_evidence y delivered_evidence y responde.",
+    "Guten Vorgänger prüfen und wiederherstellen oder genehmigte Eingaben neu bauen. Nach Dienstprüfungen öffentliche Prüfsummen aus stable_evidence und delivered_evidence berichten und Rückfragen beantworten."
+  ],
+  "IV1_I02_LIMIT": [
+    "선택 의뢰입니다. 본편 진행과 엔딩에 필요하지 않습니다. 실제 외부 서비스나 모든 보안 정책을 재현하지 않으며 잘못된 조작은 초기 상태로 복구할 수 있습니다.",
+    "This optional commission is not required for the main story or its endings. It does not reproduce external services or every security rule. Mistaken changes can be restored to the initial configuration.",
+    "本編や結末には必須ではない依頼です。外部サービスや全規則を再現しません。誤った変更は初期設定へ戻せます。",
+    "此委托不是主线或结局必需内容，不复现外部服务或全部规则。误改可恢复初始配置。",
+    "Encargo opcional para la historia y sus finales. No reproduce servicios externos ni todas las reglas. Puedes restaurar la configuración inicial.",
+    "Dieser Auftrag ist für Geschichte und Enden optional. Externe Dienste und sämtliche Regeln werden nicht nachgebildet. Fehländerungen lassen sich zurücksetzen."
+  ],
+  "IV1_I02_NEWS_REPLY": [
+    "기자 회신: 같은 이름의 배포본이 같은 내용이라는 주장을 확인하고 있습니다. 원장 자료와 전달된 파일의 서로 다른 digest를 실제 관찰로 뒷받침해 주세요.",
+    "Journalist reply: we are checking the claim that packages with the same name contain the same bytes. Support the differing registry and delivered-file digests with actual observations.",
+    "記者からの返信: 同じ名前のパッケージは同じ内容という主張を確認中です。台帳と配達物の異なるダイジェストを実際の観察で示してください。",
+    "记者回复：正在核查“同名软件包内容相同”的说法。请用实际观察支持登记表与收到文件的摘要差异。",
+    "Respuesta del periodista: comprobamos que paquetes del mismo nombre contengan los mismos bytes. Fundamenta los distintos resúmenes con observaciones reales.",
+    "Antwort des Journalisten: Wir prüfen die Behauptung identischer Bytes bei gleichem Paketnamen. Unterschiedliche Register- und Dateiprüfsummen mit Beobachtungen belegen."
+  ],
+  "IV1_I02_NEWS_RESULT": [
+    "검증 보도: 같은 버전 이름의 배포본이 서로 다른 내용을 가진 사실과 정상 업무를 유지한 복구를 확인했습니다. 내부 인계 참조는 공개하지 않았습니다.",
+    "Verified report: packages sharing a version name contained different bytes, and recovery retained normal work. Internal handoff references were not published.",
+    "検証済み記事: 同じ版のパッケージに異なる内容があり、復旧後も正常業務が維持されました。内部引継ぎ参照は公開していません。",
+    "核实报道：相同版本名的软件包包含不同字节，恢复保留了正常业务。内部交接引用未公开。",
+    "Informe verificado: paquetes de igual versión contenían bytes distintos y la recuperación conservó el servicio. No se publicaron referencias internas.",
+    "Geprüfter Bericht: Pakete derselben Version enthielten unterschiedliche Bytes; die Wiederherstellung erhielt den Betrieb. Interne Übergabereferenzen wurden nicht veröffentlicht."
+  ],
+  "IV1_I02_PAGE_TITLE": [
+    "검증 회신과 보도",
+    "Review Replies and Publication",
+    "検証の返信と公開",
+    "审查回复与发布",
+    "Respuestas de revisión y publicación",
+    "Prüfantworten und Veröffentlichung"
+  ],
+  "IV1_I02_PAGE_WAIT": [
+    "유효한 보고와 후속 검증 뒤 결과가 표시됩니다.",
+    "Results appear after a valid report and follow-up.",
+    "有効な報告と追加対応の後に結果を表示します。",
+    "有效报告与后续处理后显示结果。",
+    "Los resultados aparecen tras un informe y seguimiento válidos.",
+    "Ergebnisse erscheinen nach gültigem Bericht und Rückfrage."
+  ],
+  "IV1_I02_PRINCIPLE": [
+    "출처 증명은 특정 산출물의 내용·소스·빌더와 결합돼야 합니다. 안전한 동작과 공개 가능한 근거는 별도로 검증해야 합니다.",
+    "Provenance must bind to a particular artifact’s content, source and builder. Safe behavior and authorized disclosure require separate verification.",
+    "来歴は特定の成果物の内容・ソース・ビルダーと結び付く必要があります。安全な動作と承認された公開は別に検証します。",
+    "来源必须绑定特定制品的内容、源码和构建者。安全行为与授权披露须分别验证。",
+    "La procedencia debe corresponder a contenido, fuente y constructor concretos. El comportamiento seguro y la divulgación autorizada requieren pruebas aparte.",
+    "Herkunft muss Inhalt, Quelle und Builder eines konkreten Artefakts binden. Sicheres Verhalten und berechtigte Offenlegung sind getrennt zu prüfen."
+  ],
+  "IV1_I02_PRIVATE_DELIVERED": [
+    "인가된 기술 연락처에만 제공하는 내부 인계 참조입니다.",
+    "Internal handoff reference for the authorized technical contact only.",
+    "承認された技術窓口だけに渡す内部引継ぎ参照。",
+    "仅供授权技术联系人的内部交接引用。",
+    "Referencia interna solo para el contacto técnico autorizado.",
+    "Interne Übergabereferenz nur für die befugte technische Stelle."
+  ],
+  "IV1_I02_PRIVATE_REBUILT": [
+    "인가된 기술 연락처에만 제공하는 내부 인계 참조입니다.",
+    "Internal handoff reference for the authorized technical contact only.",
+    "承認された技術窓口だけに渡す内部引継ぎ参照。",
+    "仅供授权技术联系人的内部交接引用。",
+    "Referencia interna solo para el contacto técnico autorizado.",
+    "Interne Übergabereferenz nur für die befugte technische Stelle."
+  ],
+  "IV1_I02_PRIVATE_STABLE": [
+    "인가된 기술 연락처에만 제공하는 내부 인계 참조입니다.",
+    "Internal handoff reference for the authorized technical contact only.",
+    "承認された技術窓口だけに渡す内部引継ぎ参照。",
+    "仅供授权技术联系人的内部交接引用。",
+    "Referencia interna solo para el contacto técnico autorizado.",
+    "Interne Übergabereferenz nur für die befugte technische Stelle."
+  ],
+  "IV1_I02_RECIPIENT_NEWS": [
+    "기자 · 가려진 근거 공개",
+    "Journalist · Redacted Evidence",
+    "記者 · 匿名化した根拠",
+    "记者 · 脱敏证据",
+    "Periodista · pruebas depuradas",
+    "Journalist · bereinigte Nachweise"
+  ],
+  "IV1_I02_RECIPIENT_STAFF": [
+    "유지보수자 · 기술 인계",
+    "Maintainer · Technical Handoff",
+    "保守担当 · 技術引継ぎ",
+    "维护者 · 技术交接",
+    "Responsable · traspaso técnico",
+    "Betreuer · technische Übergabe"
+  ],
+  "IV1_I02_REPLY": [
+    "검증한 현재 배포가 정상 업무와 경계를 만족하고, 실제 선택한 수신자의 후속 확인까지 기록됐습니다. 공개 결과와 기술 인계는 보낸 자료 범위를 따릅니다. 본편은 이 의뢰를 하지 않아도 계속할 수 있습니다.",
+    "The verified current deployment meets normal-work and boundary checks, and the chosen recipient’s follow-up is recorded. Publication and technical handoff reflect the actual disclosed evidence. The main story remains available without this commission.",
+    "検証した現在の配布とサービス境界が条件を満たし、選んだ受信者の追加対応を記録しました。公開や技術引継ぎは実際に開示した根拠を反映します。この依頼なしでも本編を続けられます。",
+    "已验证的当前部署满足正常业务及边界检查，所选接收方后续处理已记录。发布与技术交接反映实际披露证据。无需此委托也可继续主线。",
+    "El despliegue verificado cumple las pruebas y se registró el seguimiento elegido. Publicación y traspaso reflejan las pruebas divulgadas. La historia sigue disponible sin este encargo.",
+    "Die geprüfte Bereitstellung erfüllt Betriebs- und Grenzprüfungen; die Nachbearbeitung ist vermerkt. Veröffentlichung und Übergabe entsprechen den offengelegten Nachweisen. Die Hauptgeschichte bleibt ohne Auftrag verfügbar."
+  ],
+  "IV1_I02_SENDER": [
+    "독립 검증 연락처",
+    "Independent Review Contact",
+    "独立レビュー窓口",
+    "独立审查联系人",
+    "Contacto de revisión independiente",
+    "Unabhängige Prüfstelle"
+  ],
+  "IV1_I02_STAFF_REPLY": [
+    "유지보수자 회신: 현재 배포의 복구 상태와 확인한 근거를 인계 기록에 연결했습니다. 현재 서비스 결과를 기준으로 후속 확인을 제출하세요.",
+    "Maintainer reply: the handoff links recovery status and observed evidence. Submit follow-up against the current service results.",
+    "保守担当の返信: 引継ぎは復旧状態と観察根拠を結び付けています。現在のサービス結果に基づく追加確認を提出してください。",
+    "维护者回复：交接关联了恢复状态与观察证据。请针对当前服务结果提交后续处理。",
+    "Respuesta del responsable: el traspaso relaciona recuperación y pruebas. Envía seguimiento de los resultados actuales.",
+    "Antwort des Betreuers: Übergabe verbindet Wiederherstellung und Nachweise. Rückmeldung anhand aktueller Dienstergebnisse einreichen."
+  ],
+  "IV1_I02_STAFF_RESULT": [
+    "기술 인계 완료: 승인된 현재 배포와 서비스 경계가 재검증됐습니다. 공개 기사 대신 제한된 처리 기록으로 남겼습니다.",
+    "Technical handoff complete: the approved current deployment and service boundaries were revalidated. A restricted handling record was created instead of a public article.",
+    "技術引継ぎ完了: 承認された現在の配布とサービス境界を再検証しました。公開記事の代わりに限定取り扱い記録を作成しました。",
+    "技术交接完成：已重新验证批准的当前部署和服务边界。创建了受限处理记录，而非公开报道。",
+    "Traspaso completado: se verificaron despliegue aprobado y límites. Se creó un registro restringido, no un artículo público.",
+    "Technische Übergabe abgeschlossen: aktuelle genehmigte Bereitstellung und Grenzen erneut geprüft. Statt eines öffentlichen Artikels wurde ein eingeschränkter Bearbeitungsvermerk erstellt."
+  ],
+  "IV1_I02_TITLE": [
+    "같은 버전의 다른 배포본",
+    "Different Releases with the Same Version",
+    "同じ版の異なる配布物",
+    "同版本的不同制品",
+    "Versiones distintas con el mismo número",
+    "Unterschiedliche Releases derselben Version"
+  ],
+  "IV1_I02_TOOL": [
+    "배포 출처와 공개 작업대",
+    "Release Provenance and Disclosure Workbench",
+    "配布来歴と公開の作業台",
+    "发布来源与披露工作台",
+    "Banco de procedencia y divulgación",
+    "Arbeitsplatz für Release-Herkunft und Offenlegung"
+  ],
+  "IV1_I02_TOOL_EXPLAIN": [
+    "실제 산출물을 관찰하고 출처와 동작을 검증한 뒤, 수신자에 맞춘 근거와 후속 확인을 제출합니다.",
+    "Inspect actual artifacts, verify provenance and behavior, then submit recipient-appropriate evidence and follow-up.",
+    "実物を調べ、来歴と動作を検証し、受信者に適した根拠と追加回答を提出します。",
+    "检查实际制品，验证来源和行为，再提交适合接收方的证据与后续回答。",
+    "Inspecciona artefactos, verifica procedencia y comportamiento y aporta pruebas apropiadas al destinatario.",
+    "Artefakte untersuchen, Herkunft und Verhalten prüfen und passende Nachweise sowie Antworten einreichen."
+  ],
+  "IV1_I02_TOOL_USAGE": [
+    "관찰→출처 검증→배포→서비스 시험→보고→후속 확인 순서로 진행합니다. 초기 상태 복원으로 다시 실험할 수 있습니다.",
+    "Inspect, verify, deploy, test service, report, then answer follow-up. Restore the initial state to experiment again.",
+    "調査、検証、配布、サービステスト、報告、追加回答の順です。初期状態に戻して再実験できます。",
+    "依次检查、验证、部署、测试服务、报告并回答后续问题。可恢复初始状态重新实验。",
+    "Inspecciona, verifica, despliega, prueba, informa y responde. Restaura para volver a experimentar.",
+    "Untersuchen, prüfen, bereitstellen, testen, berichten und antworten. Zum erneuten Versuch Anfangszustand herstellen."
+  ],
+  "IV1_PACK_SUMMARY": [
+    "관심 있는 분야만 골라 조사하는 클라우드 권한·배포 출처 의뢰입니다. 본편 진행과 엔딩에 필요하지 않습니다.",
+    "Choose cloud-authority or release-provenance investigations independently. Neither is required for the main story or its endings.",
+    "クラウド権限または配布来歴の依頼を自由に選べます。どちらも本編や結末には必須ではありません。",
+    "可独立选择云权限或发布来源调查。两者都不是主线或结局的必需条件。",
+    "Elige libremente investigaciones de permisos o procedencia. Ninguna es necesaria para la historia ni sus finales.",
+    "Cloud-Rechte oder Release-Herkunft unabhängig untersuchen. Für Hauptgeschichte und Enden ist keines erforderlich."
+  ],
+  "IV1_PACK_TITLE": [
+    "선택 의뢰",
+    "Optional Commissions",
+    "任意の依頼",
+    "可选委托",
+    "Encargos opcionales",
+    "Optionale Aufträge"
+  ]
+}

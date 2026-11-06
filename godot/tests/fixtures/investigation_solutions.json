@@ -1,0 +1,535 @@
+{
+  "packs": {
+    "investigation": {
+      "missions": {
+        "I01": {
+          "paths": [
+            {
+              "id": "least_privilege",
+              "name": "Constrain the original identity",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@i01.investigation.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "bind",
+                    "principal_id": "agent",
+                    "role_id": "deploy_limited"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "revoke",
+                    "credential_ref": "contractor_old"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "deployment"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "notice_update"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "audit_read"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "cross_tenant"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "grant_change"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "retired_access"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "expired_access"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "revoked_access"
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {},
+                "model_outcomes": {
+                  "iv1_i01_iam": {
+                    "kind": "iam_review",
+                    "bindings": {
+                      "agent": "deploy_limited",
+                      "relay": "none"
+                    },
+                    "revoked": [
+                      "contractor_old"
+                    ],
+                    "request_routes": {
+                      "deployment": "direct"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "limited_relay",
+              "name": "Use the limited relay identity",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@i01.investigation.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "bind",
+                    "principal_id": "agent",
+                    "role_id": "none"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "bind",
+                    "principal_id": "relay",
+                    "role_id": "relay_limited"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "revoke",
+                    "credential_ref": "contractor_old"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "deployment",
+                    "route_id": "relay"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "notice_update"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "audit_read"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "cross_tenant"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "grant_change"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "retired_access"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "expired_access"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i01_iam",
+                  "params": {
+                    "action": "probe",
+                    "request_id": "revoked_access"
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {},
+                "model_outcomes": {
+                  "iv1_i01_iam": {
+                    "kind": "iam_review",
+                    "bindings": {
+                      "agent": "none",
+                      "relay": "relay_limited"
+                    },
+                    "revoked": [
+                      "contractor_old"
+                    ],
+                    "request_routes": {
+                      "deployment": "relay"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "negative_hints": [
+            "unobserved_or_stale_evidence_does_not_complete",
+            "normal_business_and_security_both_required",
+            "restore_initial_allows_recovery"
+          ]
+        },
+        "I02": {
+          "paths": [
+            {
+              "id": "verified_rollback",
+              "name": "Verified prior release and technical handoff",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@i02.investigation.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "inspect_artifact",
+                    "artifact_id": "stable"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "inspect_artifact",
+                    "artifact_id": "delivered"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "verify",
+                    "artifact_id": "stable",
+                    "statement_id": "stable_statement",
+                    "registry_id": "ledger"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "deploy",
+                    "artifact_id": "stable"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "citizen"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "notice"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "cross_tenant"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "internal"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "report",
+                    "recipient_id": "maintainer",
+                    "evidence_ids": [
+                      "stable_evidence",
+                      "delivered_evidence"
+                    ],
+                    "fields": [
+                      "stable_digest",
+                      "delivered_digest"
+                    ]
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "followup",
+                    "followup_id": "maintainer_check",
+                    "evidence_ids": [
+                      "stable_evidence",
+                      "delivered_evidence"
+                    ]
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {},
+                "model_outcomes": {
+                  "iv1_i02_release": {
+                    "kind": "release_review",
+                    "deployed_artifact_id": "stable",
+                    "recipient_id": "maintainer",
+                    "followup_id": "maintainer_check",
+                    "public_article": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "reviewed_rebuild",
+              "name": "Approved rebuild and redacted publication",
+              "actions": [
+                {
+                  "kind": "command",
+                  "line": "ssh investigator@i02.investigation.packet.test"
+                },
+                {
+                  "kind": "password",
+                  "value": "source-custody"
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "inspect_artifact",
+                    "artifact_id": "stable"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "inspect_artifact",
+                    "artifact_id": "delivered"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "build",
+                    "build_id": "rebuilt"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "inspect_artifact",
+                    "artifact_id": "rebuilt"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "verify",
+                    "artifact_id": "rebuilt",
+                    "statement_id": "rebuilt_statement",
+                    "registry_id": "ledger"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "deploy",
+                    "artifact_id": "rebuilt"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "citizen"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "notice"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "cross_tenant"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "probe",
+                    "case_id": "internal"
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "report",
+                    "recipient_id": "journalist",
+                    "evidence_ids": [
+                      "stable_evidence",
+                      "delivered_evidence"
+                    ],
+                    "fields": [
+                      "stable_digest",
+                      "delivered_digest"
+                    ]
+                  }
+                },
+                {
+                  "kind": "tool",
+                  "tool_id": "iv1_i02_release",
+                  "params": {
+                    "action": "followup",
+                    "followup_id": "journalist_check",
+                    "evidence_ids": [
+                      "stable_evidence",
+                      "delivered_evidence"
+                    ]
+                  }
+                }
+              ],
+              "expected": {
+                "completed": true,
+                "sources_preserved": true,
+                "facts": [],
+                "archive_record_ids": [],
+                "policies": {},
+                "model_outcomes": {
+                  "iv1_i02_release": {
+                    "kind": "release_review",
+                    "deployed_artifact_id": "rebuilt",
+                    "recipient_id": "journalist",
+                    "followup_id": "journalist_check",
+                    "public_article": true
+                  }
+                }
+              }
+            }
+          ],
+          "negative_hints": [
+            "unobserved_or_stale_evidence_does_not_complete",
+            "normal_business_and_security_both_required",
+            "restore_initial_allows_recovery"
+          ]
+        }
+      },
+      "endings": []
+    }
+  }
+}

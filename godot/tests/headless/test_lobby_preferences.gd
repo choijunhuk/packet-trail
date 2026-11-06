@@ -67,7 +67,7 @@ func _room_fixture(settings_path: String, name: String) -> Node3D:
 	var room: Node3D = RoomScene.instantiate()
 	room.settings_path = settings_path
 	room.desktop_scene = DesktopScene
-	for pack in Catalog.list_packs(true):
+	for pack in Catalog.list_all_packs(true):
 		var path: String = Catalog.test_slot(test_root + "/" + name + "/campaign.json", pack.id)
 		_check(path.begins_with(test_root + "/"), "all real campaign slots are injected before Room enters the tree")
 		room.campaign_slots[pack.id] = path

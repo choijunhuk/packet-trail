@@ -37,6 +37,8 @@ func _run() -> void:
 		if added is Dictionary and added.get("packs") is Dictionary and added.packs.keys() == ["challenge"]:
 			pack_fixtures["challenge"] = added.packs.challenge
 		_test_catalog()
+		_test_optional_collection_contract()
+		_test_optional_actor_receipts()
 		for id in PACKS:
 			if not _select_pack(id):
 				continue
@@ -106,6 +108,10 @@ func _test_catalog() -> void:
 		_check(not item.has("path") and not item.has("definition") and not item.has("solutions"), "catalog metadata excludes authoring definitions")
 	ids.sort()
 	_check(ids == ["challenge", "defender", "intruder", "tracker"], "three original choices and one independent challenge choice exist", ids)
+	var optional: Array = catalog.list_commissions()
+	_check(optional.size() == 1 and optional[0].id == "investigation" and optional[0].main_count == 0 and optional[0].optional_count == 2, "optional security types stay outside the four main choices")
+	_check(catalog.list_all_packs(true).size() == 6 and catalog.list_packs(true).size() == 5, "internal protection enumeration includes optional and legacy packs separately")
+	_check(catalog.default_slot("investigation") == "user://saves/investigation_01.json", "optional commissions use their independent fixed slot")
 	for path in ORIGINAL_CONTENT_SHA:
 		_check(FileAccess.get_sha256(path) == ORIGINAL_CONTENT_SHA[path], "original three-pack definitions and88-route fixture retain exact bytes", path)
 	for id in ["intruder", "defender", "tracker", "challenge", "legacy_intruder"]:
@@ -130,6 +136,98 @@ func _test_catalog() -> void:
 		_check(view.get("campaign", {}).get("id") == id, "read model names only selected campaign")
 		_check(view.get("campaign_progress", {}).get("completed") == 0 and view.get("campaign_progress", {}).get("total") == PACKS[id], "fresh progress is pack-local: " + id)
 		_check(game.get_save_status().get("legacy_sources_checked") == false, "test status does not inspect real legacy sources")
+
+
+func _test_optional_collection_contract() -> void:
+	var loaded: Dictionary = Loader.load_campaign("investigation")
+	_check(loaded.get("ok", false), "optional collection validates independently from the four main campaigns", loaded.get("errors", []))
+	if not loaded.get("ok", false): return
+	var collection: Dictionary = loaded.definition
+	_check(collection.get("mode") == "commissions" and collection.endings.is_empty() and collection.mission_order == ["I01", "I02"], "optional collection has no campaign ending or chained main sequence")
+	for id in ["I01", "I02"]:
+		_check(collection.missions[id].optional and collection.missions[id].prerequisites.is_empty(), "optional case is directly selectable without the other case: " + id)
+		var game = Campaign.new(test_root + "/optional_" + id + ".json", "investigation")
+		_check(game.get_view().get("ready", false), "optional backing state initializes")
+		_check(game.choose_mission(id).get("ok", false), "either optional case can be selected in a fresh backing session: " + id)
+		var before: Dictionary = game.export_snapshot()
+		var view: Dictionary = game.get_view()
+		_check(before.size() == 9 and before.save_version == 2 and before.campaign_id == "midnight_investigation", "optional cases retain exact v2 with a separate content identity")
+		_check(view.get("mode") == "commissions" and view.get("endings", []).is_empty() and not view.get("can_advance", true) and not view.get("completed", true), "zero required main cases never advertise a vacuous ending or advance")
+		_check(not game.advance().get("ok", true) and not game.choose_ending("anything").get("ok", true), "uncompleted optional case cannot advance and collection never accepts a story ending")
+		_check(game.export_snapshot().recursive_equal(before, 0), "rejected ending/advance preserve the optional checkpoint")
+		var forged: Dictionary = before.duplicate(true)
+		forged.ending = "iv1_fake"
+		forged.decisions = {"ending": "iv1_fake"}
+		_check(not game.restore_snapshot(forged).get("ok", true), "optional snapshot cannot inject an ending")
+		forged = before.duplicate(true)
+		forged.decisions = {"reveal:C01": true}
+		_check(not game.restore_snapshot(forged).get("ok", true), "optional snapshot cannot inject unrelated contact decisions")
+		_check(game.restore_snapshot(JSON.parse_string(JSON.stringify(before))).get("ok", false), "untouched optional v2 restores through the actual validator")
+		_check(game.start_new_save().get("ok", false), "optional checkpoint writes only its isolated test slot")
+		var restored = Campaign.new(test_root + "/optional_" + id + ".json", "investigation")
+		_check(restored.load_game().get("ok", false) and restored.export_snapshot().recursive_equal(before, 0), "optional direct selection survives disk reload")
+	for mode in ["unknown", 1, false]:
+		var invalid: Dictionary = collection.duplicate(true)
+		invalid.mode = mode
+		_check(not Loader.validate(invalid, "investigation").get("ok", true), "unknown collection mode is rejected")
+	var invalid: Dictionary = collection.duplicate(true)
+	invalid.missions.I02.prerequisites = ["I01"]
+	_check(not Loader.validate(invalid, "investigation").get("ok", true), "optional collection cannot quietly acquire a prerequisite chain")
+	invalid = collection.duplicate(true)
+	invalid.missions.I01.optional = false
+	_check(not Loader.validate(invalid, "investigation").get("ok", true), "optional collection cannot quietly become another main campaign")
+	invalid = collection.duplicate(true)
+	invalid.endings = [{"id": "wrong", "title": "x", "text": "x", "requires_facts": []}]
+	_check(not Loader.validate(invalid, "investigation").get("ok", true), "optional collection definition cannot add global endings")
+	var release_mission: Dictionary = collection.missions.I02
+	for url in release_mission.pages:
+		if not release_mission.pages[url].has("model_view"): continue
+		for field in ["section", "challenge_id"]:
+			invalid = collection.duplicate(true)
+			invalid.missions.I02.pages[url].model_view[field] = "unregistered"
+			_check(not Loader.validate(invalid, "investigation").get("ok", true), "model view rejects an unregistered public section or model")
+		invalid = collection.duplicate(true)
+		invalid.missions.I02.pages[url].model_view["private"] = true
+		_check(not Loader.validate(invalid, "investigation").get("ok", true), "model view schema is closed against private projection flags")
+		invalid = collection.duplicate(true)
+		invalid.missions.I02.pages[url].requires_session = {}
+		_check(not Loader.validate(invalid, "investigation").get("ok", true), "model view cannot remove its operator authorization")
+		invalid = collection.duplicate(true)
+		invalid.missions.I02.pages[url]["record_id"] = release_mission.goal.record_id
+		_check(not Loader.validate(invalid, "investigation").get("ok", true), "read-only model view cannot masquerade as collectible canonical evidence")
+
+
+func _test_optional_actor_receipts() -> void:
+	var loaded: Dictionary = Loader.load_campaign("investigation")
+	_check(loaded.get("ok", false), "actor replay fixtures load the optional definitions")
+	if not loaded.get("ok", false): return
+	for mid in ["I01", "I02"]:
+		var mission: Dictionary = loaded.definition.missions[mid]
+		var cid: String = "iv1_i01_iam" if mid == "I01" else "iv1_i02_release"
+		var subject: Dictionary = mission.challenges[cid].requires_session
+		var host: Dictionary = mission.hosts[subject.host_id]
+		for channel in ["ssh", "web"]:
+			var game = Campaign.new(test_root + "/actor_" + mid + "_" + channel + ".json", "investigation")
+			_check(game.choose_mission(mid).get("ok", false), "receipt authorization fixture independently selects " + mid)
+			if channel == "ssh":
+				_check(game.execute("ssh " + subject.account_id + "@" + host.domain).get("ok", false), "operator SSH transport opens")
+				_check(game.submit_password(host.accounts[subject.account_id].password).get("ok", false), "operator SSH authenticates")
+			else:
+				_check(game.request("POST", "https://" + host.domain + "/login", {"username": subject.account_id, "password": host.accounts[subject.account_id].password}).get("ok", false), "operator HTTP authentication works from a local terminal")
+			var observed: Dictionary = game.use_tool(cid, {"action": "inspect"})
+			_check(observed.get("ok", false) and observed.get("assessment_eligible", false), "actual authorized " + channel + " operator may inspect " + mid)
+			var snapshot: Dictionary = game.export_snapshot()
+			var action: Dictionary = snapshot.current_world.model_actions[cid][0]
+			_check(action.account == subject.account_id, "recorded principal is the authenticated operator")
+			if channel == "web":
+				_check(action.context.actor == {"host_id": "local", "account_id": "player"}, "web operator receipt legitimately retains local terminal transport context")
+			var restored = Campaign.new(test_root + "/actor_restore.json", "investigation")
+			_check(restored.restore_snapshot(JSON.parse_string(JSON.stringify(snapshot))).get("ok", false), "untouched " + channel + " operator receipt replays")
+			for principal in ["fabricated-principal", "player", ""]:
+				var forged: Dictionary = snapshot.duplicate(true)
+				forged.current_world.model_actions[cid][0].account = principal
+				_check(not restored.restore_snapshot(forged).get("ok", true), "changing only the new-model recorded operator is rejected")
+				_check(restored.export_snapshot().recursive_equal(snapshot, 0), "rejected actor forgery preserves the valid restored state")
 
 
 func _contains(actual: Variant, expected: Variant) -> bool:

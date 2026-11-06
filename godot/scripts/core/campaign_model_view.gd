@@ -1,5 +1,5 @@
 extends RefCounted
-## Finite presentation projections for the three supported stateful models.
+## Finite presentation projections for registered stateful models.
 
 const Models = preload("res://scripts/core/tool_runtime.gd")
 
@@ -57,6 +57,52 @@ static func project(definition: Dictionary, state: Dictionary, context: Dictiona
 			for id in definition.get("initial_claims", {}):
 				var prior: Dictionary = definition.initial_claims[id]
 				data.initial_claims[id] = {"label": _tr(prior.get("label", id)), "claim": prior.get("claim", {}).duplicate(true), "source_id": prior.get("source_id", "")}
+		"iam_case":
+			var initialized: Dictionary = Models.IAMCase.initial_state(definition, state)
+			data = Models.IAMCase.public_data(definition, initialized, context)
+			actions[0].fields = [_field("section", "enum", _sections({"bindings": "UI_IAM_BINDINGS", "principals": "UI_IAM_PRINCIPALS", "resources": "UI_IAM_RESOURCES", "roles": "UI_IAM_ROLES", "credentials": "UI_IAM_CREDENTIALS", "requests": "UI_IAM_REQUESTS", "probe_receipts": "UI_MODEL_RECEIPTS"}))]
+			var principals: Array = []
+			var roles: Array = []
+			for id in definition.principals: principals.append({"id": id, "label": _tr(definition.principals[id].get("label", id))})
+			for id in definition.roles: roles.append({"id": id, "label": _tr(definition.roles[id].get("label", id))})
+			var requests: Array = []
+			var routes: Array = ["direct"]
+			for id in definition.requests:
+				requests.append({"id": id, "label": _tr(definition.requests[id].label)})
+				for route in definition.requests[id].get("routes", {}):
+					if not routes.has(route): routes.append(route)
+			actions.append({"id": "bind", "fields": [_field("principal_id", "enum", principals), _field("role_id", "enum", roles)]})
+			actions.append({"id": "revoke", "fields": [_field("credential_ref", "enum", definition.credentials.keys())]})
+			actions.append({"id": "probe", "fields": [_field("request_id", "enum", requests), _field("route_id", "enum", routes)]})
+			actions.append({"id": "advance", "fields": [{"id": "ticks", "type": "int", "min": 1, "max": 32}]})
+			actions.append({"id": "restore_initial", "fields": []})
+		"release_case":
+			var initialized: Dictionary = Models.ReleaseCase.initial_state(definition, state)
+			data = Models.ReleaseCase.public_data(definition, initialized, context)
+			actions[0].fields = [_field("section", "enum", _sections({"artifacts": "UI_RELEASE_ARTIFACTS", "provenance": "UI_RELEASE_STATEMENTS", "registries": "UI_RELEASE_REGISTRIES", "builds": "UI_RELEASE_BUILDS", "services": "UI_RELEASE_SERVICES", "evidence": "UI_RELEASE_EVIDENCE", "recipients": "UI_RELEASE_RECIPIENTS", "deployment": "UI_RELEASE_DEPLOYMENT", "report": "UI_RELEASE_REPORT", "replies": "UI_RELEASE_REPLIES", "article": "UI_RELEASE_ARTICLE"}))]
+			var artifacts: Array = []
+			for id in definition.artifacts: artifacts.append({"id": id, "label": _tr(definition.artifacts[id].label)})
+			for id in definition.builds:
+				if initialized.get("built", []).has(id): artifacts.append({"id": id, "label": _tr(definition.builds[id].label)})
+			actions.append({"id": "inspect_artifact", "fields": [_field("artifact_id", "enum", artifacts)]})
+			actions.append({"id": "inspect_provenance", "fields": [_field("statement_id", "enum", definition.statements.keys())]})
+			actions.append({"id": "verify", "fields": [_field("artifact_id", "enum", artifacts), _field("statement_id", "enum", definition.statements.keys()), _field("registry_id", "enum", definition.registries.keys())]})
+			actions.append({"id": "build", "fields": [_field("build_id", "enum", definition.builds.keys())]})
+			actions.append({"id": "deploy", "fields": [_field("artifact_id", "enum", artifacts)]})
+			var cases: Array = []
+			for id in definition.service_cases: cases.append({"id": id, "label": _tr(definition.service_cases[id].label)})
+			actions.append({"id": "probe", "fields": [_field("case_id", "enum", cases)]})
+			var evidence: Array = []
+			var fields: Array = []
+			for id in definition.report_evidence:
+				evidence.append({"id": id, "label": _tr(definition.report_evidence[id].label)})
+				for field in definition.report_evidence[id].fields:
+					fields.append({"id": field, "label": _tr(definition.report_evidence[id].fields[field].get("label", field))})
+			var recipients: Array = []
+			for id in definition.recipients: recipients.append({"id": id, "label": _tr(definition.recipients[id].label)})
+			actions.append({"id": "report", "fields": [_field("recipient_id", "enum", recipients), _field("evidence_ids", "array", evidence), _field("fields", "array", fields)]})
+			actions.append({"id": "followup", "fields": [_field("followup_id", "enum", definition.followups.keys()), _field("evidence_ids", "array", evidence)]})
+			actions.append({"id": "restore_initial", "fields": []})
 		"branch_vm":
 			data = Models.BranchVM.public_data(definition, state)
 			actions[0].fields = [_field("section", "enum", [{"id": "listing", "label": _tr("UI_VM_LISTING")}, {"id": "call_graph", "label": _tr("UI_VM_CALL_GRAPH")}, {"id": "trace", "label": _tr("UI_VM_TRACE")}])]
@@ -72,6 +118,12 @@ static func project(definition: Dictionary, state: Dictionary, context: Dictiona
 			actions.append({"id": "run", "fields": [_field("case_id", "enum", data.cases)]})
 			actions.append({"id": "reset", "fields": [_field("case_id", "enum", data.cases)]})
 	return {"data": data, "actions": actions}
+
+
+static func _sections(labels: Dictionary) -> Array:
+	var result: Array = []
+	for id in labels: result.append({"id": id, "label": _tr(labels[id])})
+	return result
 
 
 static func _field(id: String, type: String, options: Array = []) -> Dictionary:

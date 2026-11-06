@@ -6,19 +6,35 @@ const ENTRIES := {
 	"defender": {"id": "defender", "title_key": "PACK_DEFENDER_TITLE", "summary_key": "PACK_DEFENDER_SUMMARY", "role": "defender", "start_mission": "D01", "main_count": 8, "optional_count": 0, "resource": "res://data/campaign/packs/defender_v1.json", "slot": "user://saves/defender_01.json", "campaign_id": "midnight_defender", "content_version": 1},
 	"tracker": {"id": "tracker", "title_key": "PACK_TRACKER_TITLE", "summary_key": "PACK_TRACKER_SUMMARY", "role": "tracker", "start_mission": "T01", "main_count": 8, "optional_count": 0, "resource": "res://data/campaign/packs/tracker_v1.json", "slot": "user://saves/tracker_01.json", "campaign_id": "midnight_tracker", "content_version": 1},
 	"challenge": {"id": "challenge", "title_key": "CH1_PACK_TITLE", "summary_key": "CH1_PACK_SUMMARY", "role": "challenge", "start_mission": "X01", "main_count": 3, "optional_count": 0, "resource": "res://data/campaign/packs/challenge_v1.json", "slot": "user://saves/challenge_01.json", "campaign_id": "midnight_challenge", "content_version": 1},
+	"investigation": {"id": "investigation", "title_key": "IV1_PACK_TITLE", "summary_key": "IV1_PACK_SUMMARY", "role": "investigation", "mode": "commissions", "start_mission": "I01", "main_count": 0, "optional_count": 2, "resource": "res://data/campaign/packs/investigation_v1.json", "slot": "user://saves/investigation_01.json", "campaign_id": "midnight_investigation", "content_version": 1},
 }
 const PUBLIC_IDS := ["intruder", "defender", "tracker", "challenge"]
+const COMMISSION_IDS := ["investigation"]
 const LEGACY_SOURCE := "user://saves/campaign_01.json"
 
 
 static func list_packs(include_legacy: bool = false) -> Array:
-	var result: Array = []
 	var ids: Array = PUBLIC_IDS.duplicate()
 	if include_legacy:
 		ids.append("legacy_intruder")
+	return _list(ids)
+
+
+static func list_commissions() -> Array:
+	return _list(COMMISSION_IDS)
+
+
+static func list_all_packs(include_legacy: bool = false) -> Array:
+	return list_packs(include_legacy) + list_commissions()
+
+
+static func _list(ids: Array) -> Array:
+	var result: Array = []
 	for id in ids:
 		var entry: Dictionary = ENTRIES[id]
 		result.append({"id": id, "title": str(TranslationServer.translate(entry.title_key)), "summary": str(TranslationServer.translate(entry.summary_key)), "role": entry.role, "start_mission": entry.start_mission, "main_count": entry.main_count, "optional_count": entry.optional_count})
+	for item in result:
+		if COMMISSION_IDS.has(item.id): item["mode"] = "commissions"
 	return result
 
 

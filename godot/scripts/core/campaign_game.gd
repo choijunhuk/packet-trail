@@ -155,6 +155,8 @@ func advance() -> Dictionary:
 	_sync()
 	if not _completed.has(_current):
 		return _result(false, "GOAL_NOT_MET", "Current case goals and constraints are not complete.")
+	if _definition.get("mode", "campaign") == "commissions":
+		return _result(true, "COMMISSION_COMPLETE", "This optional commission is complete. Choose another only when you want to.")
 	for id in _definition.mission_order:
 		if not _definition.missions[id].optional and not _completed.has(id) and _available(id):
 			return choose_mission(id)
@@ -164,6 +166,8 @@ func advance() -> Dictionary:
 func choose_ending(choice: String) -> Dictionary:
 	if not _ready:
 		return _result(false, "INVALID_CONTENT", _error)
+	if _definition.get("mode", "campaign") == "commissions":
+		return _result(false, "NO_CAMPAIGN_ENDING", "Optional commissions have individual results, not a campaign ending.")
 	_sync()
 	for id in _definition.mission_order:
 		if not _definition.missions[id].optional and not _completed.has(id):
@@ -241,6 +245,10 @@ func get_view(terminal_id: int = 0) -> Dictionary:
 	view["characters"] = _characters()
 	var pack: Dictionary = Catalog.get_pack(_pack_id)
 	view["campaign"] = {"id": _pack_id, "title": _tr(pack.title_key), "role": pack.role}
+	if _definition.get("mode", "campaign") == "commissions":
+		view.campaign["mode"] = "commissions"
+		view["mode"] = "commissions"
+		view["can_advance"] = false
 	view["campaign_progress"] = {"completed": _completed.size(), "total": _definition.missions.size(), "ending_chosen": not _ending.is_empty()}
 	return view.duplicate(true)
 
@@ -312,6 +320,8 @@ func _validate_snapshot(raw: Variant) -> Dictionary:
 		return {"ok": false, "text": "Campaign version/ID/reference mismatch. Legacy M01 requires explicit import."}
 	if raw.completed.size() > _definition.missions.size() or raw.mission_states.size() > _definition.missions.size():
 		return {"ok": false, "text": "Campaign state count exceeds registered cases."}
+	if _definition.get("mode", "campaign") == "commissions" and (not raw.ending.is_empty() or not raw.decisions.is_empty()):
+		return {"ok": false, "text": "Optional commissions cannot contain campaign ending decisions."}
 	var normalized: Dictionary = raw.duplicate(true)
 	normalized.save_version = 2
 	normalized.content_version = int(_definition.content_version)
@@ -472,7 +482,7 @@ func _read_legacy_save() -> Dictionary:
 func get_save_status(include_legacy_sources: bool = false, legacy_source_override: String = "") -> Dictionary:
 	var guard: Dictionary = _store._guard(_save_path, Callable(self, "_validate_snapshot"))
 	if not _ready or not guard.ok:
-		return {"exists": false, "valid": false, "backup_available": false, "legacy_available": false, "legacy_source_available": false, "legacy_sources_checked": false, "pack_id": _pack_id, "reason_code": "INVALID_SLOT"}
+		return {"exists": false, "valid": false, "backup_exists": false, "backup_available": false, "legacy_available": false, "legacy_source_available": false, "legacy_sources_checked": false, "pack_id": _pack_id, "reason_code": "INVALID_SLOT"}
 	var loaded: Dictionary = _store.load_save(Callable(self, "_validate_snapshot"), _save_path)
 	var backup: Dictionary = _store._read_snapshot(_save_path + ".bak", Callable(self, "_validate_snapshot"))
 	var source: Dictionary = {"ok": false}
@@ -481,7 +491,8 @@ func get_save_status(include_legacy_sources: bool = false, legacy_source_overrid
 		source = _read_legacy_source(legacy_source_override)
 		if legacy_source_override.is_empty() and not _save_path.begins_with("user://tests/"):
 			v1 = _read_legacy_save()
-	return {"exists": _store.path_status(_save_path, Callable(self, "_validate_snapshot")).get("exists", false), "valid": loaded.ok, "backup_available": backup.ok, "legacy_available": v1.ok, "legacy_source_available": source.ok, "legacy_source_exists": source.get("source_exists", false), "legacy_source_reason": source.get("source_reason", source.get("code", "NOT_CHECKED")), "legacy_sources_checked": include_legacy_sources, "pack_id": _pack_id, "reason_code": loaded.get("code", "UNKNOWN")}
+	var paths: Dictionary = _store.path_status(_save_path, Callable(self, "_validate_snapshot"))
+	return {"exists": paths.get("exists", false), "valid": loaded.ok, "backup_exists": paths.get("backup_exists", false), "backup_available": backup.ok, "legacy_available": v1.ok, "legacy_source_available": source.ok, "legacy_source_exists": source.get("source_exists", false), "legacy_source_reason": source.get("source_reason", source.get("code", "NOT_CHECKED")), "legacy_sources_checked": include_legacy_sources, "pack_id": _pack_id, "reason_code": loaded.get("code", "UNKNOWN")}
 
 
 func load_continuation() -> Dictionary:

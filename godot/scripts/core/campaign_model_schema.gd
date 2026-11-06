@@ -1,6 +1,8 @@
 extends RefCounted
 ## Closed schemas for authored response, observation, and branching models.
 const Models = preload("res://scripts/core/tool_runtime.gd")
+const IAMSchema = preload("res://scripts/core/iam_case_schema.gd")
+const ReleaseSchema = preload("res://scripts/core/release_case_schema.gd")
 
 
 static func errors(model: Dictionary, mission: Dictionary) -> Array[String]:
@@ -8,6 +10,8 @@ static func errors(model: Dictionary, mission: Dictionary) -> Array[String]:
 		"response_lab": return _response(model, mission)
 		"observation_case": return _observation(model, mission)
 		"branch_vm": return _vm(model)
+		"iam_case": return IAMSchema.validate(model, mission)
+		"release_case": return ReleaseSchema.validate(model, mission)
 	return []
 
 

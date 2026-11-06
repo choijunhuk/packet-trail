@@ -209,6 +209,15 @@ func _goal(goal: Dictionary) -> bool:
 		"response_matrix":
 			var id: String = goal.get("challenge_id", "")
 			return _definition.challenges.has(id) and Models.ResponseLab.goal_met(_definition.challenges[id], _world.model_states.get(id, {}), _model_context(), goal.get("case_ids", []))
+		"iam_review", "release_review":
+			var id: String = goal.get("challenge_id", "")
+			if not _definition.challenges.has(id): return false
+			var model: Dictionary = _definition.challenges[id]
+			if goal.kind == "iam_review" and model.kind == "iam_case":
+				return Models.IAMCase.goal_met(model, _world.model_states.get(id, {}), _model_context())
+			if goal.kind == "release_review" and model.kind == "release_case":
+				return Models.ReleaseCase.goal_met(model, _world.model_states.get(id, {}), _model_context())
+			return false
 		"observation_handoff":
 			var id: String = goal.get("challenge_id", "")
 			return _definition.challenges.has(id) and Models.ObservationCase.goal_met(_definition.challenges[id], _world.model_states.get(id, {}))
@@ -729,6 +738,8 @@ func request_page(method: String, url: String, body: Dictionary = {}, headers: D
 	var page: Dictionary = _definition.pages[base]
 	if page.has("host_id") and page.host_id != host_id:
 		return _web_error("ROUTE_HOST_MISMATCH", "Page host does not match its route.", 503, url)
+	if page.has("model_view") and (method.to_upper() != "GET" or not body.is_empty() or url.contains("?")):
+		return _web_error("INVALID_METHOD", "This model view is a read-only GET page.", 405, url)
 	var allowed: Dictionary = _requirements(page)
 	if not allowed.ok:
 		return _web_error(allowed.code, allowed.text, 403, url)
@@ -741,13 +752,19 @@ func request_page(method: String, url: String, body: Dictionary = {}, headers: D
 	var active_web: Dictionary = _web_identity(host_id)
 	var actor: String = active_web.get("account_id", "anonymous")
 	var actor_context := "web"
-	if not browser_context and _session().host_id == host_id and host_id != "local":
+	# A case report is a local read-only projection under the acting operator, not a web login.
+	if page.has("model_view") and _session().host_id == page.requires_session.host_id and _session().account_id == page.requires_session.account_id:
+		actor = _session().account_id
+		actor_context = "terminal"
+	elif not browser_context and _session().host_id == host_id and host_id != "local":
 		actor = _session().account_id
 		actor_context = "terminal"
 	elif not browser_context and page.has("requires_session") and _session().host_id == page.requires_session.get("host_id", "") and _session().account_id == page.requires_session.get("account_id", ""):
 		actor = _session().account_id
 		actor_context = "terminal"
 	if page.has("requires_session") and actor != page.requires_session.get("account_id", ""):
+		if page.has("model_view"):
+			return _web_error("AUTH_REQUIRED", "The acting operator is not authorized for this case report.", 401, url)
 		_denied("AUTH_REQUIRED", "Authenticated actor required.")
 		var denied: Dictionary = _web_error("AUTH_REQUIRED", "The acting request requires an authenticated account.", 401, url)
 		denied.changed = true
@@ -758,6 +775,16 @@ func request_page(method: String, url: String, body: Dictionary = {}, headers: D
 	response["source_origin"] = headers.get("Origin", source_origin)
 	response["route"] = [transport_origin, host_id]
 	response["cookie_preview"] = active_web.get("token", "") if actor_context == "web" else ""
+	if page.has("model_view"):
+		var spec: Dictionary = page.model_view
+		var projected: Dictionary = Models.ReleaseCase.project_page(_definition.challenges[spec.challenge_id], _world.model_states.get(spec.challenge_id, {}), spec.section)
+		if projected.is_empty(): return _web_error("NOT_FOUND", "No authorized report is available at this view.", 404, url)
+		response.title = projected.get("title", response.title)
+		response.body = projected.get("body", "")
+		response.text = response.body
+		response.links = projected.get("links", [])
+		response.can_archive = false
+		response["changed"] = false
 	if page.has("challenge_id"):
 		var challenge: Dictionary = _definition.challenges[page.challenge_id]
 		if method.to_upper() == "GET" and body.is_empty() and not url.contains("?"):
@@ -1176,6 +1203,8 @@ func validate_world(raw: Variant) -> Dictionary:
 		for action in world.model_actions[id]:
 			if not action is Dictionary or not action.has_all(["input", "account", "policies"]) or not action.account is String or not action.policies is Dictionary or action.policies.size() != original_policies.size():
 				return _invalid("Malformed model observation.")
+			if challenge.kind in ["iam_case", "release_case"] and action.account != challenge.get("requires_session", {}).get("account_id", ""):
+				return _invalid("Optional model receipt does not match its authorized operator.")
 			for policy in action.policies:
 				if not _policy_allowed(policy, action.policies[policy]):
 					return _invalid("Invalid observed policy.")

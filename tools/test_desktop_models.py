@@ -22,6 +22,12 @@ class DesktopModelTests(unittest.TestCase):
             ("res://tools/run_desktop_shell.gd", "desktop_shell"),
             ("res://tools/run_lobby_preferences.gd", "lobby_preferences"),
             ("res://tools/run_workbench.gd", "workbench"),
+            ("res://tools/run_iam_case.gd", "iam_case"),
+            ("res://tools/run_release_case.gd", "release_case"),
+            ("res://tools/run_commission_ui.gd", "commission_ui"),
+            ("res://tools/run_habitat.gd", "habitat"),
+            ("res://tools/run_habitat_ui.gd", "habitat_ui"),
+            ("res://tools/run_neighborhood.gd", "neighborhood"),
         ):
             with self.subTest(suite=suite):
                 try:

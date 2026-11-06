@@ -182,7 +182,7 @@ class LocaleChecks(unittest.TestCase):
             locales.mkdir(parents=True)
             manifest = {'campaigns': {}, 'ui': {'ko': {}, 'en': {}}}
             for pack, stem, prefix in [('legacy_intruder', '', 'M01_'), ('intruder', 'intruder_v2.', 'IN2_'),
-                                       ('challenge', 'challenge_v1.', 'CH1_')]:
+                                       ('challenge', 'challenge_v1.', 'CH1_'), ('investigation', 'investigation_v1.', 'IV1_')]:
                 manifest['campaigns'][pack] = {}
                 for language in ('ko', 'en'):
                     relative = f'godot/data/campaign/locales/{stem}{language}.json'
@@ -192,7 +192,7 @@ class LocaleChecks(unittest.TestCase):
                     manifest['campaigns'][pack][language] = {'path': relative, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
             review_path = locales / 'source-revisions.json'
             review_path.write_text(json.dumps(manifest), encoding='utf-8')
-            self.assertEqual(set(read_campaign_sources(root)), {'legacy_intruder', 'intruder', 'challenge'})
+            self.assertEqual(set(read_campaign_sources(root)), {'legacy_intruder', 'intruder', 'challenge', 'investigation'})
             changed = root / 'godot/data/campaign/locales/intruder_v2.ko.json'
             changed.write_text('{"IN2_TITLE":"changed after review"}', encoding='utf-8')
             with self.assertRaisesRegex(ValueError, 'needs translation review'):
@@ -269,6 +269,19 @@ class LocaleChecks(unittest.TestCase):
                 'name': 'CH1_VM_NAME', 'program': {'functions': {'main': [
                     {'label': 'ENTRY', 'op': 'HALT'}]}}}}}}}), encoding='utf-8')
             self.assertEqual(required_content_keys(root), {'CH1_PACK_TITLE', 'CH1_X01_GOAL', 'CH1_VM_NAME'})
+
+    def test_optional_commission_keys_are_covered_independently(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / 'godot/data/campaign/packs/investigation_v1.json'
+            path.parent.mkdir(parents=True)
+            path.write_text(json.dumps({'mode': 'commissions', 'title': 'IV1_PACK_TITLE',
+                'missions': {'I02': {'optional': True, 'prerequisites': [],
+                    'goal_text': 'IV1_I02_GOAL', 'challenges': {'release': {
+                        'kind': 'release_case', 'name': 'IV1_I02_TOOL',
+                        'recipients': {'news': {'reply_key': 'IV1_I02_NEWS_REPLY'}}}}}}}), encoding='utf-8')
+            self.assertEqual(required_content_keys(root),
+                {'IV1_PACK_TITLE', 'IV1_I02_GOAL', 'IV1_I02_TOOL', 'IV1_I02_NEWS_REPLY'})
 
 
 if __name__ == '__main__':

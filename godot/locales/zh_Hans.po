@@ -62,6 +62,9 @@ msgstr "入侵者"
 msgid "CAMPAIGN_INTRUDER_DESC"
 msgstr "打开封闭通路，取得隐藏记录。"
 
+msgid "CAMPAIGN_INVESTIGATION"
+msgstr "可选委托"
+
 msgid "CAMPAIGN_NEW_CONFIRM"
 msgstr "备份 {campaign} 的现有进度后重新开始。其他战役与旧版存档会保留。"
 
@@ -88,6 +91,9 @@ msgstr "此操作需要已认证的虚拟会话。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_CAMPAIGN_COMPLETE"
 msgstr "已解决战役的最后一个事件。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_COMMISSION_COMPLETE"
+msgstr "可选委托已完成。其他委托可在想做时选择。"
 
 msgid "CAMPAIGN_RESULT_CONNECTED"
 msgstr "已连接虚拟主机。请确认当前账号与权限。\n{detail}"
@@ -127,6 +133,27 @@ msgstr "当前事件提示。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HOST_NOT_FOUND"
 msgstr "未在虚构世界中找到该主机。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID"
+msgstr "请检查权限审查输入。"
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_BINDING"
+msgstr "请选择已注册主体及允许角色。"
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_STATE"
+msgstr "无法验证当前权限状态。"
+
+msgid "CAMPAIGN_RESULT_IAM_OBSERVED"
+msgstr "已检查当前权限和请求结果。"
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_CREDENTIAL"
+msgstr "请选择已注册凭据引用。"
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_REQUEST"
+msgstr "请选择已注册请求。"
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_ROUTE"
+msgstr "请选择此请求的已注册线路。"
 
 msgid "CAMPAIGN_RESULT_IMPORTED_M01"
 msgstr "已导入旧版 M01 进度。\n{detail}"
@@ -206,6 +233,9 @@ msgstr "未找到指定的虚拟文件或资源。\n{detail}"
 msgid "CAMPAIGN_RESULT_NO_AUTH_PENDING"
 msgstr "没有待完成的虚拟认证。\n{detail}"
 
+msgid "CAMPAIGN_RESULT_NO_CAMPAIGN_ENDING"
+msgstr "可选委托各有结果，不包含主线结局。"
+
 msgid "CAMPAIGN_RESULT_NO_CONNECTION"
 msgstr "当前为本地会话，请先连接虚拟服务器。\n{detail}"
 
@@ -232,6 +262,33 @@ msgstr "已从有效备份恢复进度。\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
 msgstr "当前存档有效，无需恢复。\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RELEASE_FOLLOWUP_INVALID"
+msgstr "请检查当前接收方后续问题所需证据。"
+
+msgid "CAMPAIGN_RESULT_RELEASE_INVALID"
+msgstr "请检查发布审查输入。"
+
+msgid "CAMPAIGN_RESULT_RELEASE_NOT_READY"
+msgstr "请先完成当前部署和服务检查。"
+
+msgid "CAMPAIGN_RESULT_RELEASE_OBSERVED"
+msgstr "已检查当前发布与披露证据。"
+
+msgid "CAMPAIGN_RESULT_RELEASE_REPORT_INVALID"
+msgstr "请选择已观察证据与允许披露字段。"
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNDEPLOYED"
+msgstr "请先部署已验证制品。"
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNKNOWN"
+msgstr "请选择已注册制品、声明或接收方。"
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNOBSERVED"
+msgstr "请先检查该制品证据。"
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNVERIFIED"
+msgstr "请验证与当前内容匹配的来源。"
 
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "当前事件已重置。\n{detail}"
@@ -1312,6 +1369,276 @@ msgstr "文字大小"
 
 msgid "FULLSCREEN"
 msgstr "全屏"
+
+msgid "HABITAT_ACTION_LIMIT"
+msgstr "活动记录已达上限。"
+
+msgid "HABITAT_ALREADY_ORDERED"
+msgstr "此物品已下单。请查看室外快递柜。"
+
+msgid "HABITAT_ALREADY_OWNED"
+msgstr "已拥有此物品。"
+
+msgid "HABITAT_CABINET_CONFIGURED"
+msgstr "配置已保存。请重新验证当前结果。"
+
+msgid "HABITAT_CABINET_INSPECTED"
+msgstr "已检查通信柜。请比较线路与锁定状态。"
+
+msgid "HABITAT_DELIVERY_COLLECTED"
+msgstr "已领取。可在桌面商店装备。"
+
+msgid "HABITAT_EQUIPPED"
+msgstr "设备外观已更改并保存。"
+
+msgid "HABITAT_INSPECTION_REQUIRED"
+msgstr "请先检查已接受工作的通信柜。"
+
+msgid "HABITAT_INSUFFICIENT_CREDITS"
+msgstr "工作室点数不足。"
+
+msgid "HABITAT_INVALID_ACTION"
+msgstr "请选择可用活动。"
+
+msgid "HABITAT_INVALID_CONFIG"
+msgstr "请选择允许线路和锁定状态。"
+
+msgid "HABITAT_INVALID_EQUIPMENT"
+msgstr "请将已领取物品装备到匹配位置。"
+
+msgid "HABITAT_INVALID_LIGHTING"
+msgstr "请选择可用灯光。"
+
+msgid "HABITAT_INVALID_SAVE"
+msgstr "无法安全读取房间存档。已保留原文件，请检查备份恢复。"
+
+msgid "HABITAT_JOB_ACCEPTED"
+msgstr "已接受工作。请检查室外公共通信柜。"
+
+msgid "HABITAT_JOB_CHECK_FAILED"
+msgstr "当前配置不满足条件。请比较正常遥测和未授权访问并调整。"
+
+msgid "HABITAT_JOB_REQUIRED"
+msgstr "请先在公告栏接受检查工作。"
+
+msgid "HABITAT_JOB_VERIFIED"
+msgstr "正常业务可用，未授权访问已阻止。请查看领奖记录与当前结果。"
+
+msgid "HABITAT_LIGHTING_SET"
+msgstr "灯光已更改并保存。"
+
+msgid "HABITAT_LOADED"
+msgstr "已加载工作室状态。"
+
+msgid "HABITAT_LOAD_FAILED"
+msgstr "无法安全读取房间存档。已保留原文件，请检查备份恢复。"
+
+msgid "HABITAT_NEW"
+msgstr "新工作室已就绪。"
+
+msgid "HABITAT_NOT_LOADED"
+msgstr "无法安全读取房间存档。已保留原文件，请检查备份恢复。"
+
+msgid "HABITAT_NO_DELIVERIES"
+msgstr "没有可领取订单。"
+
+msgid "HABITAT_ORDER_LIMIT"
+msgstr "已达订单上限。"
+
+msgid "HABITAT_ORDER_READY"
+msgstr "订单已到货。请到室外快递柜领取。"
+
+msgid "HABITAT_PATH_REJECTED"
+msgstr "无法安全读取房间存档。已保留原文件，请检查备份恢复。"
+
+msgid "HABITAT_RECOVERED"
+msgstr "已恢复备份。损坏原文件已单独保留。"
+
+msgid "HABITAT_RECOVERY_REQUIRED"
+msgstr "无法安全读取房间存档。已保留原文件，请检查备份恢复。"
+
+msgid "HABITAT_UNKNOWN_JOB"
+msgstr "请选择公告栏注册工作。"
+
+msgid "HABITAT_UNKNOWN_PRODUCT"
+msgstr "请选择商店注册物品。"
+
+msgid "HABITAT_UPDATED"
+msgstr "工作室状态已保存。"
+
+msgid "HAB_ACCEPT_JOB"
+msgstr "接受通信柜检查工作"
+
+msgid "HAB_ACTION_FAILED"
+msgstr "无法保存操作。当前状态保留。"
+
+msgid "HAB_ACTION_OK"
+msgstr "操作已保存。"
+
+msgid "HAB_AWAITING_PICKUP"
+msgstr "等待快递柜领取"
+
+msgid "HAB_CABINET_DESCRIPTION"
+msgstr "检查通信柜的线路和锁定状态。关闭全部连接也会停止正常业务。更改后同时验证正常遥测与未授权访问。"
+
+msgid "HAB_CLOSE"
+msgstr "关闭"
+
+msgid "HAB_COLLECT"
+msgstr "领取已到货订单"
+
+msgid "HAB_CONFIGURE"
+msgstr "应用配置"
+
+msgid "HAB_DELIVERY_COUNT"
+msgstr "可领取订单：{count}"
+
+msgid "HAB_EQUIP"
+msgstr "装备"
+
+msgid "HAB_EQUIPPED"
+msgstr "已装备"
+
+msgid "HAB_INSPECT"
+msgstr "检查当前通信柜"
+
+msgid "HAB_INTERACT_CABINET"
+msgstr "E · 公共通信柜"
+
+msgid "HAB_INTERACT_COMPUTER"
+msgstr "E · 使用电脑"
+
+msgid "HAB_INTERACT_ENTER"
+msgstr "E · 进入工作室"
+
+msgid "HAB_INTERACT_EXIT"
+msgstr "E · 出门"
+
+msgid "HAB_INTERACT_NOTICEBOARD"
+msgstr "E · 社区委托公告栏"
+
+msgid "HAB_INTERACT_PICKUP"
+msgstr "E · 快递柜"
+
+msgid "HAB_INTERACT_REST"
+msgstr "E · 休息一下"
+
+msgid "HAB_JOB_CHECK"
+msgstr "当前检查 · 正常遥测：{normal} · 允许未授权访问：{unauthorized} · 满足条件：{passed}"
+
+msgid "HAB_JOB_DESCRIPTION"
+msgstr "可选工作 · 公共通信柜\n保持正常远程遥测，阻止未授权访问。在现场比较配置与实际检查结果。一次性奖励为200工作室点数。"
+
+msgid "HAB_JOB_STATE"
+msgstr "已接受：{accepted} · 已领奖：{rewarded}"
+
+msgid "HAB_LIGHT_DAWN"
+msgstr "黎明灯光"
+
+msgid "HAB_LIGHT_NIGHT"
+msgstr "夜间灯光"
+
+msgid "HAB_LOCKED"
+msgstr "锁定管理访问"
+
+msgid "HAB_NO"
+msgstr "否"
+
+msgid "HAB_OPTIONAL_NOTE"
+msgstr "这些活动可自由选择。装饰不影响黑客能力或主线进度。"
+
+msgid "HAB_ORDER"
+msgstr "下单"
+
+msgid "HAB_OUTDOOR_CONTROLS"
+msgstr "WASD移动 · 按住鼠标右键环顾 · 靠近后按E互动 · Esc菜单"
+
+msgid "HAB_PRICE"
+msgstr "{price}点数"
+
+msgid "HAB_PRODUCT_KEYBOARD_CORAL"
+msgstr "珊瑚色键盘"
+
+msgid "HAB_PRODUCT_KEYBOARD_IVORY"
+msgstr "象牙白键盘"
+
+msgid "HAB_PRODUCT_KEYBOARD_STARTER"
+msgstr "初始石墨键盘"
+
+msgid "HAB_PRODUCT_LAMP_COOL"
+msgstr "冷色台灯"
+
+msgid "HAB_PRODUCT_LAMP_STARTER"
+msgstr "暖色台灯"
+
+msgid "HAB_PRODUCT_MONITOR_DUAL"
+msgstr "双显示器"
+
+msgid "HAB_PRODUCT_MONITOR_STARTER"
+msgstr "初始显示器"
+
+msgid "HAB_PRODUCT_MONITOR_WIDE"
+msgstr "宽屏显示器"
+
+msgid "HAB_READ_ONLY"
+msgstr "无法读取房间存档，已锁定更改。原文件将保留。"
+
+msgid "HAB_RECOVER"
+msgstr "恢复备份"
+
+msgid "HAB_RECOVER_CONFIRM"
+msgstr "验证并恢复备份。损坏的原文件将单独保留。"
+
+msgid "HAB_REST_NOTE"
+msgstr "休息没有惩罚或属性效果。可选择灯光与室外氛围。"
+
+msgid "HAB_REWARD_RECEIPT"
+msgstr "奖励已支付。支付时线路：{route}。当前状态见上方检查。"
+
+msgid "HAB_ROUTE"
+msgstr "连接线路"
+
+msgid "HAB_ROUTE_APPROVED_RELAY"
+msgstr "批准的中继"
+
+msgid "HAB_ROUTE_OFF"
+msgstr "关闭全部连接"
+
+msgid "HAB_ROUTE_PUBLIC"
+msgstr "公共连接"
+
+msgid "HAB_ROUTE_SERVICE"
+msgstr "管理服务"
+
+msgid "HAB_SHOP_ADDRESS"
+msgstr "deskshop.packet.test · 游戏内本地桌面商店"
+
+msgid "HAB_SHOP_DELIVERY"
+msgstr "订单立即到货。装备前请到室外快递柜领取。不涉及真实支付或网络连接。"
+
+msgid "HAB_TITLE_BENCH"
+msgstr "休息一下"
+
+msgid "HAB_TITLE_DELIVERY_LOCKER"
+msgstr "快递柜"
+
+msgid "HAB_TITLE_NETWORK_CABINET"
+msgstr "公共通信柜"
+
+msgid "HAB_TITLE_NOTICEBOARD"
+msgstr "社区委托公告栏"
+
+msgid "HAB_TITLE_SHOP"
+msgstr "桌面商店"
+
+msgid "HAB_VERIFY"
+msgstr "验证遥测与未授权访问"
+
+msgid "HAB_WALLET"
+msgstr "工作室点数 {balance}"
+
+msgid "HAB_YES"
+msgstr "是"
 
 msgid "HELP"
 msgstr "帮助"
@@ -3055,6 +3382,246 @@ msgstr "LogLens"
 
 msgid "IN2_TOOL_UPLOAD_NAME"
 msgstr "媒体接收"
+
+msgid "IV1_I01_ABSTRACTION"
+msgstr "此供应商中立谜题评估有限的已注册角色、资源和凭据，不实现云厂商完整策略语言或真实凭据。"
+
+msgid "IV1_I01_BRIEF"
+msgstr "此委托可独立于主线选择。有线报称夜间部署身份能读取其他组织数据。正常部署、公告更新和审计业务必须保持。\n\n比较主体、角色与资源租户。显式拒绝优先于允许，已撤销或过期凭据不可使用。收窄原代理角色，或通过已注册受限中继执行正常部署。两条路径都须停用离职承包商旧凭据。\n\n请求表的期望判定定义授权范围。测试请求以取得基于当前配置的证据。若撤销了必要凭据或推进时间过多，可恢复初始配置后重新调查。\n授权工作账户如下。连接后，案件工具显示当前观察和允许操作。\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I01_DESK_NAME"
+msgstr "部署账户权限调查台"
+
+msgid "IV1_I01_GOAL"
+msgstr "保持部署、公告和审计业务，拒绝跨租户访问、权限变更及离职、过期或已撤销凭据。"
+
+msgid "IV1_I01_HINT_1"
+msgstr "比较每项凭据指向的主体。访问由实际规则和租户条件决定，而非角色名称。"
+
+msgid "IV1_I01_HINT_2"
+msgstr "原代理可使用受限角色。比较显式拒绝与允许，并检查其他租户资源。"
+
+msgid "IV1_I01_HINT_3"
+msgstr "也可移除原代理授权，通过受限中继测试部署。撤销离职承包商凭据，同时保持正常公告和审计请求。"
+
+msgid "IV1_I01_LIMIT"
+msgstr "此委托不是主线或结局必需内容，不复现外部服务或全部规则。误改可恢复初始配置。"
+
+msgid "IV1_I01_PRINCIPAL_AGENT"
+msgstr "部署代理"
+
+msgid "IV1_I01_PRINCIPAL_AUDITOR"
+msgstr "审计人员"
+
+msgid "IV1_I01_PRINCIPAL_CONTRACTOR"
+msgstr "已离职承包商"
+
+msgid "IV1_I01_PRINCIPAL_OPERATOR"
+msgstr "公告操作员"
+
+msgid "IV1_I01_PRINCIPAL_RELAY"
+msgstr "受限部署中继"
+
+msgid "IV1_I01_PRINCIPLE"
+msgstr "允许需匹配主体、操作、资源和租户条件。显式拒绝及不可用凭据优先。"
+
+msgid "IV1_I01_REPLY"
+msgstr "授权业务得以保留，跨租户读取、权限变更和离职承包商访问已被拒绝。委托记录已验证的当前配置及请求结果。其他可选委托仍可独立选择。"
+
+msgid "IV1_I01_REQUEST_AUDIT_READ"
+msgstr "授权审计读取"
+
+msgid "IV1_I01_REQUEST_CROSS_TENANT"
+msgstr "部署身份读取其他租户"
+
+msgid "IV1_I01_REQUEST_DEPLOYMENT"
+msgstr "正常部署读取"
+
+msgid "IV1_I01_REQUEST_EXPIRED_ACCESS"
+msgstr "复用过期凭据"
+
+msgid "IV1_I01_REQUEST_GRANT_CHANGE"
+msgstr "部署身份更改权限"
+
+msgid "IV1_I01_REQUEST_NOTICE_UPDATE"
+msgstr "正常公告更新"
+
+msgid "IV1_I01_REQUEST_RETIRED_ACCESS"
+msgstr "复用离职承包商凭据"
+
+msgid "IV1_I01_REQUEST_REVOKED_ACCESS"
+msgstr "复用已撤销凭据"
+
+msgid "IV1_I01_RESOURCE_ARTIFACT"
+msgstr "批准的部署制品"
+
+msgid "IV1_I01_RESOURCE_AUDIT"
+msgstr "审计记录"
+
+msgid "IV1_I01_RESOURCE_AUTHORITY"
+msgstr "角色管理"
+
+msgid "IV1_I01_RESOURCE_FOREIGN"
+msgstr "其他租户数据"
+
+msgid "IV1_I01_RESOURCE_NOTICE"
+msgstr "市民公告"
+
+msgid "IV1_I01_ROLE_AUDIT"
+msgstr "审计读取角色"
+
+msgid "IV1_I01_ROLE_BROAD"
+msgstr "权限过宽的共享角色"
+
+msgid "IV1_I01_ROLE_LIMITED"
+msgstr "租户受限部署角色"
+
+msgid "IV1_I01_ROLE_NONE"
+msgstr "无授权"
+
+msgid "IV1_I01_ROLE_NOTICE"
+msgstr "公告更新角色"
+
+msgid "IV1_I01_ROLE_RELAY"
+msgstr "条件中继角色"
+
+msgid "IV1_I01_SENDER"
+msgstr "独立审查联系人"
+
+msgid "IV1_I01_TITLE"
+msgstr "部署账户的另一项权限"
+
+msgid "IV1_I01_TOOL"
+msgstr "有效权限与请求审查"
+
+msgid "IV1_I01_TOOL_EXPLAIN"
+msgstr "比较主体、角色、租户和凭据，再在当前配置下测试正常及应拒请求。"
+
+msgid "IV1_I01_TOOL_USAGE"
+msgstr "绑定角色、撤销凭据并测试请求。误改时可恢复初始配置。"
+
+msgid "IV1_I02_ABSTRACTION"
+msgstr "使用已注册JSON服务清单和确定性虚拟构建，不运行编译器或密码签名算法；验证依据游戏内信任登记表。"
+
+msgid "IV1_I02_ARTIFACT_DELIVERED"
+msgstr "同名被报告软件包"
+
+msgid "IV1_I02_ARTIFACT_OFFLINE"
+msgstr "服务禁用版本"
+
+msgid "IV1_I02_ARTIFACT_REBUILT"
+msgstr "从批准输入进行的虚拟重建"
+
+msgid "IV1_I02_ARTIFACT_REVOKED"
+msgstr "来自已撤销构建者的版本"
+
+msgid "IV1_I02_ARTIFACT_STABLE"
+msgstr "登记表中已知正常的旧版"
+
+msgid "IV1_I02_ARTIFACT_UNSAFE_ATTESTED"
+msgstr "来源真实但行为越权"
+
+msgid "IV1_I02_BRIEF"
+msgstr "此可选委托无需先完成其他委托。同版本名的夜间公告软件包却包含不同数据。不要只相信签名标签；比较实际负载摘要、来源声明主体、构建者及源码历史。\n\n独立登记表包含已知正常旧版及批准的虚拟重建输入。回滚至已验证旧版，或构建并部署批准输入。两条路径都须维持市民服务和ward通知，并拒绝跨租户读取及内部通知。\n\n随后向维护者交接技术证据，或仅向记者披露公开证据。选择接收方要求的字段，模型会生成脱敏报告，无需粘贴敏感内容。以实际观察证据回答回复或事实核查，解锁相应处理记录或报道。\n授权工作账户如下。连接后工具显示当前观察与允许操作。\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I02_CASE_CITIZEN"
+msgstr "正常市民服务"
+
+msgid "IV1_I02_CASE_CROSS_TENANT"
+msgstr "拒绝其他租户数据"
+
+msgid "IV1_I02_CASE_INTERNAL"
+msgstr "拒绝内部通知目标"
+
+msgid "IV1_I02_CASE_NOTICE"
+msgstr "正常ward通知"
+
+msgid "IV1_I02_DESK_NAME"
+msgstr "同版本不同制品调查台"
+
+msgid "IV1_I02_EVIDENCE_DELIVERED"
+msgstr "收到的软件包证据"
+
+msgid "IV1_I02_EVIDENCE_REBUILT"
+msgstr "批准重建的证据"
+
+msgid "IV1_I02_EVIDENCE_STABLE"
+msgstr "独立登记表对照"
+
+msgid "IV1_I02_GOAL"
+msgstr "以验证后的版本维护正常业务与边界，仅披露实际观察到的证据，并完成接收方后续处理。"
+
+msgid "IV1_I02_HINT_1"
+msgstr "同名同版本不代表负载摘要相同。先检查登记表旧版和收到的文件。"
+
+msgid "IV1_I02_HINT_2"
+msgstr "真实来源也可能描述越权行为。同时测试正常服务、通知及越界请求。"
+
+msgid "IV1_I02_HINT_3"
+msgstr "验证并恢复已知正常旧版，或重建批准输入。检查当前服务后，报告stable_evidence和delivered_evidence的公开摘要并回答后续问题。"
+
+msgid "IV1_I02_LIMIT"
+msgstr "此委托不是主线或结局必需内容，不复现外部服务或全部规则。误改可恢复初始配置。"
+
+msgid "IV1_I02_NEWS_REPLY"
+msgstr "记者回复：正在核查“同名软件包内容相同”的说法。请用实际观察支持登记表与收到文件的摘要差异。"
+
+msgid "IV1_I02_NEWS_RESULT"
+msgstr "核实报道：相同版本名的软件包包含不同字节，恢复保留了正常业务。内部交接引用未公开。"
+
+msgid "IV1_I02_PAGE_TITLE"
+msgstr "审查回复与发布"
+
+msgid "IV1_I02_PAGE_WAIT"
+msgstr "有效报告与后续处理后显示结果。"
+
+msgid "IV1_I02_PRINCIPLE"
+msgstr "来源必须绑定特定制品的内容、源码和构建者。安全行为与授权披露须分别验证。"
+
+msgid "IV1_I02_PRIVATE_DELIVERED"
+msgstr "仅供授权技术联系人的内部交接引用。"
+
+msgid "IV1_I02_PRIVATE_REBUILT"
+msgstr "仅供授权技术联系人的内部交接引用。"
+
+msgid "IV1_I02_PRIVATE_STABLE"
+msgstr "仅供授权技术联系人的内部交接引用。"
+
+msgid "IV1_I02_RECIPIENT_NEWS"
+msgstr "记者 · 脱敏证据"
+
+msgid "IV1_I02_RECIPIENT_STAFF"
+msgstr "维护者 · 技术交接"
+
+msgid "IV1_I02_REPLY"
+msgstr "已验证的当前部署满足正常业务及边界检查，所选接收方后续处理已记录。发布与技术交接反映实际披露证据。无需此委托也可继续主线。"
+
+msgid "IV1_I02_SENDER"
+msgstr "独立审查联系人"
+
+msgid "IV1_I02_STAFF_REPLY"
+msgstr "维护者回复：交接关联了恢复状态与观察证据。请针对当前服务结果提交后续处理。"
+
+msgid "IV1_I02_STAFF_RESULT"
+msgstr "技术交接完成：已重新验证批准的当前部署和服务边界。创建了受限处理记录，而非公开报道。"
+
+msgid "IV1_I02_TITLE"
+msgstr "同版本的不同制品"
+
+msgid "IV1_I02_TOOL"
+msgstr "发布来源与披露工作台"
+
+msgid "IV1_I02_TOOL_EXPLAIN"
+msgstr "检查实际制品，验证来源和行为，再提交适合接收方的证据与后续回答。"
+
+msgid "IV1_I02_TOOL_USAGE"
+msgstr "依次检查、验证、部署、测试服务、报告并回答后续问题。可恢复初始状态重新实验。"
+
+msgid "IV1_PACK_SUMMARY"
+msgstr "可独立选择云权限或发布来源调查。两者都不是主线或结局的必需条件。"
+
+msgid "IV1_PACK_TITLE"
+msgstr "可选委托"
 
 msgid "KEYBOARD_VOLUME"
 msgstr "键盘声音"
@@ -6500,6 +7067,30 @@ msgstr "要发送的值"
 msgid "UI_CANCEL"
 msgstr "取消"
 
+msgid "UI_COMMISSIONS_CLOSE"
+msgstr "关闭委托列表"
+
+msgid "UI_COMMISSIONS_DONE"
+msgstr "已完成委托 · 再次查看"
+
+msgid "UI_COMMISSIONS_I01_DESC"
+msgstr "云权限 · 比较角色、资源与租户边界的独立委托"
+
+msgid "UI_COMMISSIONS_I02_DESC"
+msgstr "发布信任 · 验证来源并选择披露范围及后续处理的独立委托"
+
+msgid "UI_COMMISSIONS_RETURN"
+msgstr "返回主线"
+
+msgid "UI_COMMISSIONS_SCOPE"
+msgstr "请选择感兴趣的领域。这些委托不是主线或结局的必需条件。"
+
+msgid "UI_COMMISSIONS_START"
+msgstr "开始 / 继续"
+
+msgid "UI_COMMISSIONS_TITLE"
+msgstr "可选委托"
+
 msgid "UI_CONFIRM_FRESH"
 msgstr "现有存档与备份将另名保留，并将当前画面的进度写入新存档。\n不会重置当前进度。"
 
@@ -6731,6 +7322,24 @@ msgstr "在活动终端显示游戏命令帮助"
 msgid "UI_HELP_TAG"
 msgstr "帮助"
 
+msgid "UI_IAM_BINDINGS"
+msgstr "当前角色绑定"
+
+msgid "UI_IAM_CREDENTIALS"
+msgstr "凭据状态"
+
+msgid "UI_IAM_PRINCIPALS"
+msgstr "已注册主体"
+
+msgid "UI_IAM_REQUESTS"
+msgstr "待验证请求"
+
+msgid "UI_IAM_RESOURCES"
+msgstr "资源与边界"
+
+msgid "UI_IAM_ROLES"
+msgstr "角色与规则"
+
 msgid "UI_IMPORT_FAILED"
 msgstr "无法导入旧版 M01 存档 ({code})，原件未改变。\n{detail}"
 
@@ -6830,11 +7439,23 @@ msgstr "推进排队业务"
 msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
 msgstr "推进到下个观察窗口"
 
+msgid "UI_MODEL_ACTION_BIND"
+msgstr "更改角色绑定"
+
+msgid "UI_MODEL_ACTION_BUILD"
+msgstr "运行批准的虚拟构建"
+
 msgid "UI_MODEL_ACTION_CHECKPOINT"
 msgstr "保存策略检查点"
 
 msgid "UI_MODEL_ACTION_COLLECT"
 msgstr "采集此位置的观察"
+
+msgid "UI_MODEL_ACTION_DEPLOY"
+msgstr "部署已验证制品"
+
+msgid "UI_MODEL_ACTION_FOLLOWUP"
+msgstr "回答后续问题"
 
 msgid "UI_MODEL_ACTION_HANDOFF"
 msgstr "交付已支持连接及局限"
@@ -6845,14 +7466,26 @@ msgstr "提出假设"
 msgid "UI_MODEL_ACTION_INSPECT"
 msgstr "查看当前状态"
 
+msgid "UI_MODEL_ACTION_INSPECT_ARTIFACT"
+msgstr "检查制品"
+
+msgid "UI_MODEL_ACTION_INSPECT_PROVENANCE"
+msgstr "检查来源"
+
 msgid "UI_MODEL_ACTION_PROBE"
 msgstr "验证请求与正常业务"
 
 msgid "UI_MODEL_ACTION_QUARANTINE"
 msgstr "更改存储对象隔离状态"
 
+msgid "UI_MODEL_ACTION_REPORT"
+msgstr "提交已验证报告"
+
 msgid "UI_MODEL_ACTION_RESET"
 msgstr "重置当前执行"
+
+msgid "UI_MODEL_ACTION_RESTORE_INITIAL"
+msgstr "恢复初始配置"
 
 msgid "UI_MODEL_ACTION_REVISE"
 msgstr "保留依据并修正假设"
@@ -6877,6 +7510,9 @@ msgstr "逐步查看执行"
 
 msgid "UI_MODEL_ACTION_TEST"
 msgstr "依据采集证据检验"
+
+msgid "UI_MODEL_ACTION_VERIFY"
+msgstr "验证来源"
 
 msgid "UI_MODEL_ALLOW"
 msgstr "允许"
@@ -6925,6 +7561,9 @@ msgstr "尚无可显示的观察。"
 
 msgid "UI_MODEL_PERMITTED_PLAINTEXT"
 msgstr "获准明文"
+
+msgid "UI_MODEL_RECEIPTS"
+msgstr "当前验证结果"
 
 msgid "UI_MODEL_REFUTED"
 msgstr "已反驳"
@@ -7123,6 +7762,42 @@ msgstr "备份恢复失败 ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "另名保留损坏存档，并从有效备份恢复"
+
+msgid "UI_RELEASE_ARTICLE"
+msgstr "公开结果"
+
+msgid "UI_RELEASE_ARTIFACTS"
+msgstr "制品与摘要"
+
+msgid "UI_RELEASE_BUILDS"
+msgstr "已批准的虚拟构建"
+
+msgid "UI_RELEASE_DEPLOYMENT"
+msgstr "当前部署状态"
+
+msgid "UI_RELEASE_EVIDENCE"
+msgstr "已检查的报告证据"
+
+msgid "UI_RELEASE_RECIPIENTS"
+msgstr "报告接收方"
+
+msgid "UI_RELEASE_REGISTRIES"
+msgstr "可信来源登记表"
+
+msgid "UI_RELEASE_REPLIES"
+msgstr "回复与后续处理"
+
+msgid "UI_RELEASE_REPORT"
+msgstr "已提交报告"
+
+msgid "UI_RELEASE_SERVICES"
+msgstr "当前服务检查"
+
+msgid "UI_RELEASE_STATEMENTS"
+msgstr "已注册来源声明"
+
+msgid "UI_RELEASE_VERIFICATIONS"
+msgstr "来源验证结果"
 
 msgid "UI_RESPONSE_ARTIFACTS"
 msgstr "已观察的上传存储对象"
@@ -7382,6 +8057,9 @@ msgstr "仅处理虚拟文件系统。无权限时通过工具读取也会被拒
 msgid "UI_TOOLKIND_FILE_MODEL"
 msgstr "以所选终端账号权限读取文件，经过与 cat 相同的权限检查。"
 
+msgid "UI_TOOLKIND_IAM_CASE"
+msgstr "权限审查"
+
 msgid "UI_TOOLKIND_IDOR"
 msgstr "对象访问"
 
@@ -7462,6 +8140,9 @@ msgstr "不复现真实 SQL 引擎或全部语法。仅处理虚拟行，不连�
 
 msgid "UI_TOOLKIND_QUERY_MODEL"
 msgstr "模拟小型条件表达式语法，观察输入仅作为值，还是改变查询结构（如 OR）。启用绑定策略后仅将其作为值。"
+
+msgid "UI_TOOLKIND_RELEASE_CASE"
+msgstr "发布与披露审查"
 
 msgid "UI_TOOLKIND_RENDER"
 msgstr "显示上下文"
@@ -7595,6 +8276,9 @@ msgstr "采集方式"
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "操作"
 
+msgid "UI_TOOL_FIELD_ALLOWED_FIELDS"
+msgstr "允许披露字段"
+
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "存储对象"
 
@@ -7606,6 +8290,12 @@ msgstr "可采集"
 
 msgid "UI_TOOL_FIELD_BASIS"
 msgstr "响应时的证据标识"
+
+msgid "UI_TOOL_FIELD_BUILDER_ID"
+msgstr "构建者"
+
+msgid "UI_TOOL_FIELD_BUILD_ID"
+msgstr "已批准构建"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "业务项目"
@@ -7646,11 +8336,17 @@ msgstr "执行步数"
 msgid "UI_TOOL_FIELD_COVERAGE"
 msgstr "观察覆盖范围"
 
+msgid "UI_TOOL_FIELD_CREDENTIAL_REF"
+msgstr "凭据引用"
+
 msgid "UI_TOOL_FIELD_CURRENT"
 msgstr "当前值"
 
 msgid "UI_TOOL_FIELD_CURSOR"
 msgstr "当前观察窗口"
+
+msgid "UI_TOOL_FIELD_DIGEST"
+msgstr "摘要"
 
 msgid "UI_TOOL_FIELD_DST"
 msgstr "目标寄存器"
@@ -7673,14 +8369,26 @@ msgstr "观察历史类型"
 msgid "UI_TOOL_FIELD_EVENT_ID"
 msgstr "事件 ID"
 
+msgid "UI_TOOL_FIELD_EVIDENCE_IDS"
+msgstr "已检查证据"
+
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
 msgstr "当前执行许可"
 
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
 msgstr "接收上传时允许执行"
 
+msgid "UI_TOOL_FIELD_EXPIRES_TICK"
+msgstr "过期刻度"
+
+msgid "UI_TOOL_FIELD_FIELDS"
+msgstr "披露字段"
+
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "文件名"
+
+msgid "UI_TOOL_FIELD_FOLLOWUP_ID"
+msgstr "后续问题"
 
 msgid "UI_TOOL_FIELD_FORMAT_OK"
 msgstr "格式检查"
@@ -7711,6 +8419,9 @@ msgstr "输入"
 
 msgid "UI_TOOL_FIELD_INPUTS"
 msgstr "输入样例"
+
+msgid "UI_TOOL_FIELD_INSPECTED"
+msgstr "已检查"
 
 msgid "UI_TOOL_FIELD_INTENDED"
 msgstr "所需结果"
@@ -7778,6 +8489,9 @@ msgstr "指令位置"
 msgid "UI_TOOL_FIELD_POLICY"
 msgstr "应用策略"
 
+msgid "UI_TOOL_FIELD_PRINCIPAL_ID"
+msgstr "主体"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "来源与采集依据"
 
@@ -7790,6 +8504,9 @@ msgstr "隔离状态"
 msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
 msgstr "修正依据"
 
+msgid "UI_TOOL_FIELD_RECIPIENT_ID"
+msgstr "接收方"
+
 msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
 msgstr "被反驳的假设"
 
@@ -7798,6 +8515,9 @@ msgstr "源寄存器"
 
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "虚拟寄存器"
+
+msgid "UI_TOOL_FIELD_REGISTRY_ID"
+msgstr "来源登记表"
 
 msgid "UI_TOOL_FIELD_RELATION"
 msgstr "关联关系"
@@ -7811,11 +8531,20 @@ msgstr "请求标识符"
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "请求标记"
 
+msgid "UI_TOOL_FIELD_REQUIRED_EVIDENCE"
+msgstr "所需证据"
+
 msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
 msgstr "保留范围"
 
+msgid "UI_TOOL_FIELD_REVOKED"
+msgstr "已撤销"
+
 msgid "UI_TOOL_FIELD_RIGHT"
 msgstr "第二个比较对象"
+
+msgid "UI_TOOL_FIELD_ROLE_ID"
+msgstr "角色"
 
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "请求通路"
@@ -7834,6 +8563,9 @@ msgstr "观测范围"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "查看部分"
+
+msgid "UI_TOOL_FIELD_SENSITIVITY"
+msgstr "敏感级别"
 
 msgid "UI_TOOL_FIELD_SENSOR_ID"
 msgstr "观察点"
@@ -7859,6 +8591,12 @@ msgstr "文件格式校验通过"
 msgid "UI_TOOL_FIELD_SOURCE_ID"
 msgstr "来源 ID"
 
+msgid "UI_TOOL_FIELD_SOURCE_REVISION"
+msgstr "源码版本"
+
+msgid "UI_TOOL_FIELD_STATEMENT_ID"
+msgstr "来源声明"
+
 msgid "UI_TOOL_FIELD_STATUS"
 msgstr "状态"
 
@@ -7868,11 +8606,20 @@ msgstr "已用步数"
 msgid "UI_TOOL_FIELD_STORED_AS"
 msgstr "存储引用"
 
+msgid "UI_TOOL_FIELD_SUBJECT_DIGEST"
+msgstr "主体摘要"
+
 msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
 msgstr "得到支持的假设"
 
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "目标主机"
+
+msgid "UI_TOOL_FIELD_TENANT"
+msgstr "租户"
+
+msgid "UI_TOOL_FIELD_TENANT_SCOPE"
+msgstr "租户范围"
 
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "真分支"
@@ -7918,6 +8665,9 @@ msgstr "采集位置"
 
 msgid "UI_TOOL_FIELD_VERDICT"
 msgstr "证据判定"
+
+msgid "UI_TOOL_FIELD_VERIFIED"
+msgstr "已验证"
 
 msgid "UI_TOOL_FIELD_VISIBILITY"
 msgstr "可见信息"

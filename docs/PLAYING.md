@@ -1,6 +1,6 @@
 # 심야접속 · MidnightAccess 실행 안내
 
-설치형 오프라인 해킹 시뮬레이터, `1.3.1-rc1`. 게임 안의 서버·웹사이트·명령어는 가상 세계에서 동작한다. 별도의 Linux·VM·Docker·실제 해킹 도구 설치가 필요하지 않다.
+설치형 오프라인 해킹 시뮬레이터. 이 문서는 `1.3.1-rc1` 안내에 1.4 개발 후보의 선택 의뢰·생활 공간을 덧붙였다. 1.4 배포는 아직 완료하지 않았다. 게임 안의 서버·웹사이트·명령어는 가상 세계에서 동작한다. 별도의 Linux·VM·Docker·실제 해킹 도구 설치가 필요하지 않다.
 
 ## 압축을 풀고 실행
 
@@ -65,6 +65,16 @@ Nightfox는 실제 Firefox/Chrome을 실행하는 프로그램이 아니라 **�
 
 종합 도전에서는 먼저 조사한 뒤 설정을 바꿔도 복구할 수 있다. 배포 파일의 실제 내용까지 확인하고, 권한만 되돌렸다고 정상 작업이 복구됐다고 가정하지 않는다. 추적 도구가 제공하는 보정된 시간 구간과 출처를 비교한다. 각 사건에는 서로 다른 유효 해법이 있으며 특정 힌트·명령을 따라 할 의무는 없다.
 
+## 선택 의뢰와 작은 생활 공간 · 1.4 개발 후보
+
+**선택 의뢰**는 OS와 사건 보드에서 연다. IAM 권한을 점검하는 I01과 공급망·배포를 검증하는 I02는 원하는 순서로 각각 시작하거나 재개할 수 있다. 둘 다 다른 의뢰나 본편 완료를 요구하지 않는다. I01은 정상 업무를 유지하며 과도 권한을 차단하고, I02는 실제 가상 배포 결과를 확인한 뒤 유지보수자 또는 기자에게 보고한다. 수신자에 따라 회신·후속 확인·기사가 달라진다. 의뢰를 끝내면 본편으로 돌아갈 수 있으며 다음 의뢰가 강제로 시작되거나 별도 엔딩이 열리지는 않는다.
+
+작업실과 문 너머 작은 3D 안뜰을 왕복할 수 있다. 컴퓨터의 상점에서 꾸미기 물품을 주문하고, 안뜰 배송 보관함에서 수령한 뒤 키보드·모니터·조명 고정 슬롯에 장착한다. 카탈로그는 기본 물품 3종과 구매 물품 5종, 총 8종이다. 시작 생활 크레딧은 1,500이며 구매 물품 전체 가격은 1,320이다. 외형 꾸미기이므로 본편 성능이나 해법을 바꾸지 않는다. 실제 결제나 인터넷 연결을 사용하지 않는다.
+
+안뜰 벤치에서는 새벽·밤 분위기를 고른다. 게시판의 선택 점검 의뢰는 공용 통신함의 정상 원격 계측을 유지하면서 무단 접근을 막는 작은 일감이다. 수락하고 현장을 조사한 뒤 설정을 바꾸고 두 결과를 검증한다. 서비스 경로 또는 승인 중계 경로에 잠금을 켜면 조건을 만족한다. 전체 연결을 끄면 정상 계측도 실패한다. 보상 200 생활 크레딧은 한 번만 지급되며, 이 일감을 하지 않아도 모든 구매 물품을 살 수 있다.
+
+이 공간은 작은 생활 거점이다. 거대한 도시 탐험이나 가구 자유 배치, 허기 관리·반복 노동·강제 서브 퀘스트는 포함하지 않는다. 기존 네 메인 선택의 47사건·94해법과 별도로 제공한다. 화면·저장·패키지의 최종 검증은 진행 중이며, 최신 근거는 [구현 기록](implementation/2026-11-06-optional-living.md)에 구분한다.
+
 ## 저장과 업데이트
 
 캠페인은 자동 저장과 화면의 저장 버튼을 사용한다. 저장 실패 메시지가 보이면 성공으로 간주하지 말고 안내를 확인한다. **새 게임**은 선택한 편의 슬롯만 확인 후 교체·백업한다. 같은 실행 안에서 다른 편으로 바꾸어도 각 편의 진행과 터미널은 섞이지 않는다.
@@ -87,6 +97,8 @@ Nightfox는 실제 Firefox/Chrome을 실행하는 프로그램이 아니라 **�
 | 방어자 | `defender_01.json` |
 | 추적자 | `tracker_01.json` |
 | 종합 도전 | `challenge_01.json` |
+| 선택 의뢰 I01/I02 | `investigation_01.json` — 두 의뢰의 독립 진행을 보관 |
+| 생활 공간·꾸미기·통신함 | `habitat_01.json` — 캠페인과 별도 |
 | 이전판 이어하기 사본 | `legacy_continue_01.json` |
 | 이전판 읽기 원본 | `campaign_01.json`, `slot_01.json` |
 
@@ -114,7 +126,9 @@ Defenders must preserve legitimate work while containing threats. Trackers evalu
 
 Use Save before leaving. New Game replaces only the selected campaign after confirmation and backup. Old campaign saves remain read-only sources for a separate legacy continuation copy, using the old content; old progress does not certify the new objectives. Your saves live outside the installation directory, at the OS-specific location above. Quit before backing up that folder or installing an update. Do not run multiple writers against the same save. Missing old assistance preferences default to Standard; unreadable settings are preserved during automatic lobby selection. Older binaries, including1.2.1, may reject the new challenge preference key on downgrade, independently of campaign-save compatibility.
 
-This release candidate includes 24 main and four optional intruder cases, eight defender cases, eight tracker cases and three combined challenge cases, independent endings, six languages and seven stronger original music cues. The 8–12-hour target belongs to the intruder story and is not measured human playtime. Native-language quality, physical IME/audio-device acceptance and Windows GUI play remain separate validation work. macOS is ad-hoc signed without notarization; Windows is unsigned. Package hashes and source/build evidence accompany the release.
+The 1.4 development candidate additionally offers two independently optional commissions (IAM and supply chain/reporting), plus a compact room/courtyard hub with cosmetic purchases, locker pickup, fixed equipment slots and an optional cabinet job. Commission and habitat progress use separate saves. These additions do not require real payments or internet access. Final 1.4 validation and release are pending.
+
+The existing release candidate includes 24 main and four optional intruder cases, eight defender cases, eight tracker cases and three combined challenge cases, independent endings, six languages and seven stronger original music cues. The 8–12-hour target belongs to the intruder story and is not measured human playtime. Native-language quality, physical IME/audio-device acceptance and Windows GUI play remain separate validation work. macOS is ad-hoc signed without notarization; Windows is unsigned. Package hashes and source/build evidence accompany the release.
 
 ## 경보와 도움 수준
 

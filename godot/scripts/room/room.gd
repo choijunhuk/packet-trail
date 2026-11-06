@@ -7,6 +7,9 @@ signal application_focus_changed(active: bool)
 signal campaign_selected(pack_id: String)
 signal quit_requested
 
+const HabitatStore = preload("res://scripts/core/habitat_store.gd")
+const HabitatPanel = preload("res://scripts/presentation/habitat_panel.gd")
+const CommissionGame = preload("res://scripts/core/campaign_game.gd")
 const Store = preload("res://scripts/presentation/settings_store.gd")
 const DesktopTheme = preload("res://scripts/presentation/desktop_theme.gd")
 const SettingsPanel = preload("res://scripts/presentation/settings_panel.gd")
@@ -82,6 +85,13 @@ var legacy_notice: Label
 var _campaigns: Array = []
 var _desktops: Dictionary = {}
 var _active_pack_id := ""
+var _commission_return_pack := ""
+var habitat_path := HabitatStore.PATH
+var habitat_store: RefCounted
+var habitat_load_result: Dictionary = {}
+var habitat_panel: PanelContainer
+var habitat_scrim: ColorRect
+var current_zone := "room"
 var _legacy_campaign_available := false
 var _legacy_campaign_problem := ""
 var _menu_focus_target: Control
@@ -132,6 +142,11 @@ func _ready() -> void:
 	add_child(studio)
 	_build_player()
 	_build_interface()
+	if habitat_path == HabitatStore.PATH and settings_path.begins_with("user://tests/"):
+		habitat_path = settings_path.get_basename() + "_habitat.json"
+	habitat_store = HabitatStore.new(habitat_path)
+	habitat_load_result = habitat_store.load_state()
+	studio.apply_habitat(habitat_store.get_view())
 	_apply_settings(settings_store.get_values())
 	get_window().focus_entered.connect(func(): application_focus_changed.emit(true))
 	get_window().focus_exited.connect(_on_focus_lost)
@@ -523,6 +538,82 @@ func _restore_menu_focus_now() -> void:
 		_focus_menu()
 
 
+func commission_entries() -> Array:
+	var slot := str(campaign_slots.get("investigation", ""))
+	if slot.is_empty():
+		return []
+	var candidate = CommissionGame.new(slot, "investigation")
+	var status: Dictionary = candidate.get_save_status()
+	if status.get("exists", false) or status.get("backup_available", false) or status.get("backup_exists", false):
+		var loaded: Dictionary = candidate.load_game()
+		if not loaded.get("ok", false):
+			return [{"recovery": loaded}]
+	var cached = _desktops.get("investigation")
+	if is_instance_valid(cached) and cached.session_active:
+		return cached.get_game_view().get("missions", []).duplicate(true)
+	return candidate.get_view().get("missions", []).duplicate(true)
+
+
+## Only called after the chooser's explicit confirmation; the main desktop stays installed.
+func repair_commission_save(action: String) -> Dictionary:
+	var slot := str(campaign_slots.get("investigation", ""))
+	if slot.is_empty() or not action in ["recover", "fresh"]:
+		return {"ok": false, "code": "UNKNOWN_COMMISSION", "text": ""}
+	var candidate = CommissionGame.new(slot, "investigation")
+	var result: Dictionary = candidate.recover_save() if action == "recover" else candidate.start_new_save()
+	if result.get("ok", false):
+		var cached = _desktops.get("investigation")
+		if is_instance_valid(cached):
+			cached._install_game(candidate, "UI_BANNER_RECOVERED" if action == "recover" else "UI_BANNER_NEW")
+	return result
+
+
+func open_commission(mission_id: String) -> Dictionary:
+	var slot := str(campaign_slots.get("investigation", ""))
+	if slot.is_empty() or not mission_id in ["I01", "I02"]:
+		return {"ok": false, "code": "UNKNOWN_COMMISSION", "text": ""}
+	var candidate = CommissionGame.new(slot, "investigation")
+	var cached = _desktops.get("investigation")
+	if is_instance_valid(cached) and cached.session_active:
+		var restored: Dictionary = candidate.restore_snapshot(cached.game.export_snapshot())
+		if not restored.get("ok", false):
+			return restored
+	else:
+		var status: Dictionary = candidate.get_save_status()
+		if status.get("exists", false) or status.get("backup_available", false):
+			var loaded: Dictionary = candidate.load_game()
+			if not loaded.get("ok", false):
+				return loaded
+	var chosen: Dictionary = candidate.choose_mission(mission_id)
+	if not chosen.get("ok", false):
+		return chosen
+	var saved: Dictionary = candidate.save_game()
+	if not saved.get("ok", false):
+		return saved
+	if _active_pack_id != "investigation":
+		_commission_return_pack = _active_pack_id
+	if is_instance_valid(cached):
+		cached._install_game(candidate, "UI_BANNER_LOADED")
+	open_desktop("continue", "investigation")
+	return {"ok": _active_pack_id == "investigation" and _in_desktop, "code": "COMMISSION_OPENED", "text": ""}
+
+
+func _on_commission_requested(mission_id: String) -> void:
+	var previous = desktop
+	var result := open_commission(mission_id)
+	if not result.get("ok", false) and is_instance_valid(previous):
+		previous.show_notice(str(result.get("text", "")))
+
+
+func return_from_commission() -> void:
+	if _commission_return_pack.is_empty() or _commission_return_pack == "investigation":
+		show_main_menu()
+		return
+	var target := _commission_return_pack
+	_commission_return_pack = ""
+	open_desktop("continue", target)
+
+
 func open_desktop(action := "continue", target_pack := "", support_level := "") -> void:
 	if target_pack.is_empty():
 		target_pack = "legacy_intruder" if action in ["legacy", "import"] else selected_pack_id
@@ -548,6 +639,8 @@ func open_desktop(action := "continue", target_pack := "", support_level := "") 
 		instance.set("pack_id", target_pack)
 		desktop = instance
 		_desktops[target_pack] = desktop
+		desktop.commission_requested.connect(_on_commission_requested)
+		desktop.commission_return_requested.connect(return_from_commission)
 		desktop_layer.add_child(desktop)
 		desktop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var support_notice := ""
@@ -607,6 +700,7 @@ func open_desktop(action := "continue", target_pack := "", support_level := "") 
 
 
 func return_to_room() -> void:
+	_close_habitat_panel()
 	studio.show()
 	_hide_desktop()
 	_in_desktop = false
@@ -619,6 +713,7 @@ func return_to_room() -> void:
 
 
 func show_main_menu() -> void:
+	_close_habitat_panel()
 	studio.show()
 	_hide_desktop()
 	_in_desktop = false
@@ -723,6 +818,11 @@ func _on_focus_lost() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if habitat_panel != null:
+		if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE and not habitat_panel.recovery.visible:
+			_close_habitat_panel()
+			get_viewport().set_input_as_handled()
+		return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_F10 and _in_desktop:
 		return_to_room()
 		get_viewport().set_input_as_handled()
@@ -739,7 +839,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	if not event is InputEventKey or not event.pressed or event.echo or _in_desktop:
+	if not event is InputEventKey or not event.pressed or event.echo or _in_desktop or habitat_panel != null:
 		return
 	if event.keycode == KEY_ESCAPE:
 		if settings_panel != null:
@@ -749,26 +849,109 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		else:
 			show_main_menu()
 		get_viewport().set_input_as_handled()
-	elif event.physical_keycode == KEY_E and not menu.visible and _can_use_computer():
-		open_desktop("continue", _active_pack_id)
-		get_viewport().set_input_as_handled()
+	elif event.physical_keycode == KEY_E and not menu.visible and settings_panel == null:
+		var target: Dictionary = _interaction_target()
+		if not target.is_empty():
+			_interact_world(str(target.id))
+			get_viewport().set_input_as_handled()
 
 
 func _can_use_computer() -> bool:
-	var direction: Vector3 = studio.computer_position - camera.global_position
+	if current_zone != "room":
+		return false
+	var direction: Vector3 = studio.to_global(studio.computer_position) - camera.global_position
 	return direction.length() < 3.7 and (-camera.global_basis.z).dot(direction.normalized()) > 0.55
 
 
 func _physics_process(delta: float) -> void:
-	if player == null or menu == null or menu.visible or _in_desktop or settings_panel != null:
+	if player == null or menu == null or menu.visible or _in_desktop or settings_panel != null or habitat_panel != null:
 		return
 	var input := Vector2(float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)), float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W)))
-	var direction := player.basis * Vector3(input.x, 0, input.y).normalized()
+	var direction := player.global_basis * Vector3(input.x, 0, input.y).normalized()
 	var speed := 1.7 if settings_store.get_values()["comfort_mode"] else 2.4
-	player.velocity.x = direction.x * speed
-	player.velocity.z = direction.z * speed
-	player.velocity.y -= 9.8 * delta
-	player.move_and_slide()
-	player.position.x = clampf(player.position.x, -3.4, 3.15)
-	player.position.z = clampf(player.position.z, -2.9, 2.8)
-	hint.text = _text("COMPUTER_USE") if _can_use_computer() else _text("ROOM_CONTROLS")
+	var before: Vector3 = camera.global_position
+	var target: Vector3 = studio.move_in_zone(before, direction * speed * delta, current_zone)
+	player.global_position += target - before
+	player.velocity = direction * speed
+	var interaction: Dictionary = _interaction_target()
+	hint.text = _text(str(interaction.get("label_key", "HAB_OUTDOOR_CONTROLS" if current_zone == "courtyard" else "ROOM_CONTROLS")))
+
+
+func _interaction_target() -> Dictionary:
+	var target: Dictionary = studio.interaction_at(camera.global_position, -camera.global_basis.z, current_zone)
+	if target.is_empty() and _can_use_computer():
+		return {"id": "computer", "label_key": "COMPUTER_USE"}
+	return target
+
+
+func _interact_world(id: String) -> void:
+	match id:
+		"computer":
+			if current_zone == "room": open_desktop("continue", _active_pack_id)
+		"room_exit": _change_zone("courtyard")
+		"courtyard_enter": _change_zone("room")
+		"delivery_locker", "noticeboard", "network_cabinet", "bench": show_habitat(id)
+
+
+func _change_zone(zone: String) -> void:
+	if not zone in ["room", "courtyard"] or habitat_panel != null:
+		return
+	var spawn: Transform3D = studio.get_zone_spawn(zone)
+	current_zone = zone
+	_pitch = -0.05
+	player.global_transform = Transform3D(spawn.basis, spawn.origin - spawn.basis * camera.position)
+	camera.rotation.x = _pitch
+	player.velocity = Vector3.ZERO
+	_looking = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func habitat_view() -> Dictionary:
+	return habitat_store.get_view()
+
+
+func show_habitat(context: String = "shop") -> void:
+	if habitat_panel != null or settings_panel != null or menu.visible:
+		return
+	if not context in ["shop", "delivery_locker", "noticeboard", "network_cabinet", "bench"]:
+		return
+	_looking = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	habitat_scrim = ColorRect.new()
+	habitat_scrim.color = Color(0, 0, 0, 0.58)
+	habitat_scrim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	overlay.add_child(habitat_scrim)
+	habitat_panel = HabitatPanel.new()
+	overlay.add_child(habitat_panel)
+	habitat_panel.setup(habitat_view(), context, float(settings_store.get_values().font_scale))
+	habitat_panel.closed.connect(_close_habitat_panel)
+	habitat_panel.action_requested.connect(_on_habitat_action)
+	habitat_panel.recovery_requested.connect(_recover_habitat)
+
+
+func _close_habitat_panel() -> void:
+	if habitat_panel != null:
+		habitat_panel.queue_free()
+		habitat_panel = null
+	if habitat_scrim != null:
+		habitat_scrim.queue_free()
+		habitat_scrim = null
+
+
+func _on_habitat_action(action: String, params: Dictionary) -> void:
+	var result: Dictionary = habitat_store.apply(action, params)
+	if result.get("ok", false):
+		studio.apply_habitat(habitat_store.get_view())
+	if habitat_panel != null:
+		habitat_panel.render(habitat_view())
+		habitat_panel.show_result(result)
+
+
+func _recover_habitat() -> void:
+	var result: Dictionary = habitat_store.recover_backup()
+	if result.get("ok", false):
+		habitat_load_result = result
+		studio.apply_habitat(habitat_store.get_view())
+	if habitat_panel != null:
+		habitat_panel.render(habitat_view())
+		habitat_panel.show_result(result)

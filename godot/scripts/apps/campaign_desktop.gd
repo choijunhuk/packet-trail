@@ -14,6 +14,8 @@ signal pause_changed(paused: bool)
 signal action_performed(result: Dictionary)
 signal settings_requested
 signal presentation_context_changed(app_id: String)
+signal commission_requested(mission_id: String)
+signal commission_return_requested
 
 const CampaignGame = preload("res://scripts/core/campaign_game.gd")
 const Catalog = preload("res://scripts/core/campaign_catalog.gd")
@@ -48,8 +50,8 @@ const FACE_GATES := {"C01": "M12", "C02": "", "C03": "M16", "C04": "M20"}
 # 이 화면이 전용 설명(UI_TOOLKIND_*)을 가진 모델 종류. 그 밖의 종류는 일반 설명과 JSON/단일 입력으로 표시한다.
 const TOOL_KINDS := ["query", "render", "path", "exec", "fetch", "permission", "audit", "reverse", "memory",
 		"packet", "trace", "compare", "token", "policy", "idor", "auth", "session", "csrf", "upload",
-		"scan", "route", "file", "log", "response_lab", "observation_case", "branch_vm"]
-const STRUCTURED_KINDS := ["response_lab", "observation_case", "branch_vm"]
+		"scan", "route", "file", "log", "response_lab", "observation_case", "branch_vm", "iam_case", "release_case"]
+const STRUCTURED_KINDS := ["response_lab", "observation_case", "branch_vm", "iam_case", "release_case"]
 const MODEL_VALUE_KEYS := {
 	"supported": "UI_MODEL_SUPPORTED", "refuted": "UI_MODEL_REFUTED", "underdetermined": "UI_MODEL_UNDETERMINED",
 	"normal": "UI_MODEL_NORMAL", "threat": "UI_MODEL_THREAT", "allow": "UI_MODEL_ALLOW", "deny": "UI_MODEL_DENY",
@@ -352,6 +354,11 @@ var st_alert: Label
 var st_alert_explain: Label
 var st_sessions: Label
 var st_policies: Label
+var board_main_content: Control
+var commission_panel: VBoxContainer
+var commission_list: VBoxContainer
+var commission_entry_button: Button
+var commission_return_button: Button
 var st_facts: Label
 var net_map: NetMap
 
@@ -553,6 +560,8 @@ func _relocalize() -> void:
 		confirm.ok_button_text = _t("UI_OK")
 		confirm.cancel_button_text = _t("UI_CANCEL")
 	_br_form_label()
+	if commission_panel != null and commission_panel.visible:
+		_show_commissions()
 	if rl_recent != null:
 		_rl_rebuild_recent()
 	_update_taskbar()
@@ -1044,6 +1053,9 @@ func _build_launcher() -> void:
 	actions.add_child(hint_button)
 	actions.add_child(_shell_button("settings", "UI_OPEN_SETTINGS", _open_settings))
 	box.add_child(actions)
+	var shop_button := _btn("HAB_TITLE_SHOP", "", _open_deskshop)
+	shop_button.set_meta("launcher_action", "deskshop")
+	box.add_child(shop_button)
 	launcher_panel.add_child(box)
 	_filter_launcher("")
 
@@ -1460,7 +1472,14 @@ func _room_node() -> Node:
 
 func _room_settings_open() -> bool:
 	var room := _room_node()
-	return room != null and room.get("settings_panel") != null
+	return room != null and (room.get("settings_panel") != null or room.get("habitat_panel") != null)
+
+
+func _open_deskshop() -> void:
+	_set_launcher(false)
+	var room := _room_node()
+	if room != null and room.has_method("show_habitat"):
+		room.show_habitat("shop")
 
 
 func _open_settings() -> void:
@@ -3686,6 +3705,8 @@ func _tool_build_obs(tool: Dictionary) -> void:
 			"response_lab": {"controls": "UI_RESPONSE_CONTROLS", "matrix": "UI_RESPONSE_MATRIX", "checkpoints": "UI_RESPONSE_CHECKPOINTS", "probe_receipts": "UI_RESPONSE_HISTORY", "business_objects": "UI_RESPONSE_BUSINESS_OBJECTS", "artifacts": "UI_RESPONSE_ARTIFACTS", "artifact_events": "UI_RESPONSE_ARTIFACT_EVENTS"},
 			"observation_case": {"sensors": "UI_OBSERVATION_SENSORS", "observations": "UI_OBSERVATION_EVIDENCE", "entities": "UI_OBSERVATION_ENTITIES", "initial_claims": "UI_OBSERVATION_INITIAL_CLAIMS", "hypotheses": "UI_OBSERVATION_HYPOTHESES", "history": "UI_OBSERVATION_HISTORY", "hypothesis_history": "UI_OBSERVATION_HISTORY"},
 			"branch_vm": {"cases": "UI_VM_CASES", "listing": "UI_VM_LISTING", "call_graph": "UI_VM_CALL_GRAPH", "trace": "UI_VM_TRACE", "outputs": "UI_VM_OUTPUTS"},
+			"iam_case": {"principals": "UI_IAM_PRINCIPALS", "resources": "UI_IAM_RESOURCES", "roles": "UI_IAM_ROLES", "bindings": "UI_IAM_BINDINGS", "credentials": "UI_IAM_CREDENTIALS", "requests": "UI_IAM_REQUESTS", "probe_receipts": "UI_MODEL_RECEIPTS"},
+			"release_case": {"artifacts": "UI_RELEASE_ARTIFACTS", "provenance": "UI_RELEASE_STATEMENTS", "registries": "UI_RELEASE_REGISTRIES", "builds": "UI_RELEASE_BUILDS", "services": "UI_RELEASE_SERVICES", "deployment": "UI_RELEASE_DEPLOYMENT", "evidence": "UI_RELEASE_EVIDENCE", "recipients": "UI_RELEASE_RECIPIENTS", "report": "UI_RELEASE_REPORT", "replies": "UI_RELEASE_REPLIES", "article": "UI_RELEASE_ARTICLE"},
 		}[kind]
 		for field in sections:
 			if data.has(field):
@@ -3699,7 +3720,7 @@ func _tool_build_obs(tool: Dictionary) -> void:
 								public_claim[key] = row[key]
 						public_claims.append(public_claim)
 					rows = public_claims
-				_model_table(sections[field], rows, field not in ["controls", "matrix", "sensors", "observations", "cases", "listing"])
+				_model_table(sections[field], rows, field not in ["controls", "matrix", "sensors", "observations", "cases", "listing", "requests", "artifacts", "deployment", "bindings", "evidence", "recipients"])
 				any = true
 	if data.has("rows"):
 		_obs_rows(_a(data, "rows"))
@@ -4680,7 +4701,33 @@ func _ar_update_compare() -> void:
 # ── 사건 보드 (24 메인 + 4 선택) ──────────────────────────────
 
 func _build_board() -> Control:
+	var outer := VBoxContainer.new()
+	var commission_actions := HFlowContainer.new()
+	commission_entry_button = _btn("UI_COMMISSIONS_TITLE", "", _show_commissions)
+	commission_entry_button.set_meta("commission_action", "open")
+	commission_actions.add_child(commission_entry_button)
+	commission_return_button = _btn("UI_COMMISSIONS_RETURN", "", func(): commission_return_requested.emit())
+	commission_return_button.set_meta("commission_action", "return")
+	commission_actions.add_child(commission_return_button)
+	outer.add_child(commission_actions)
+	commission_panel = VBoxContainer.new()
+	commission_panel.visible = false
+	commission_panel.add_child(_klabel("UI_COMMISSIONS_SCOPE", C_DIM, -2, true))
+	commission_list = VBoxContainer.new()
+	commission_panel.add_child(commission_list)
+	commission_panel.add_child(_btn("UI_COMMISSIONS_CLOSE", "", func(): commission_panel.hide()))
+	var commission_scroll := _scroll_wrap(commission_panel)
+	commission_scroll.custom_minimum_size.y = 200
+	commission_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	commission_panel.visibility_changed.connect(func():
+		commission_scroll.visible = commission_panel.visible
+		if board_main_content != null:
+			board_main_content.visible = not commission_panel.visible)
+	commission_scroll.visible = false
+	outer.add_child(commission_scroll)
 	var split := HSplitContainer.new()
+	board_main_content = split
+	split.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	bd_tree = Tree.new()
 	bd_tree.custom_minimum_size = Vector2(290, 0)
 	bd_tree.hide_root = true
@@ -4735,7 +4782,59 @@ func _build_board() -> Control:
 	bd_chapters = _label("", C_DIM, -3, true)
 	detail.add_child(bd_chapters)
 	split.add_child(_scroll_wrap(detail))
-	return split
+	outer.add_child(split)
+	return outer
+
+
+func _show_commissions() -> void:
+	_clear_children(commission_list)
+	var room := _room_node()
+	var entries: Array = room.commission_entries() if room != null and room.has_method("commission_entries") else []
+	for value in entries:
+		var entry := _d(value)
+		if entry.has("recovery"):
+			var recovery := _d(entry.recovery)
+			commission_list.add_child(_klabel("UI_RECOVERY_TITLE", C_AMBER, 1, true))
+			commission_list.add_child(_label(_t("UI_RECOVERY_DETAIL", {"code": _s(recovery, "code"), "detail": _s(recovery, "text")}), C_DIM, -2, true))
+			for action in ["recover", "fresh"]:
+				if action == "recover" and not _b(recovery, "backup_available"):
+					continue
+				var repair := _btn("UI_RECOVER" if action == "recover" else "UI_FRESH_SAVE", "", _ask_commission_repair.bind(action))
+				repair.set_meta("commission_repair", action)
+				commission_list.add_child(repair)
+			continue
+		var id := _s(entry, "id")
+		var box := VBoxContainer.new()
+		box.add_child(_label(_s(entry, "title"), C_TEXT, 1, true))
+		box.add_child(_klabel("UI_COMMISSIONS_" + id + "_DESC", C_DIM, -2, true))
+		if _b(entry, "completed"):
+			box.add_child(_klabel("UI_COMMISSIONS_DONE", C_TEAL_DIM, -2, true))
+		var button := _btn("UI_COMMISSIONS_START", "", _request_commission.bind(id))
+		button.set_meta("commission_id", id)
+		box.add_child(button)
+		commission_list.add_child(box)
+	commission_panel.show()
+
+
+func _ask_commission_repair(action: String) -> void:
+	var text := _t("UI_CONFIRM_RECOVER") if action == "recover" else _t("UI_FRESH_SAVE") + "\n\n" + _t("CAMPAIGN_NEW_CONFIRM", {"campaign": _t("UI_COMMISSIONS_TITLE")})
+	_ask(_t("UI_COMMISSIONS_TITLE") + "\n\n" + text, _repair_commission_save.bind(action))
+
+
+func _repair_commission_save(action: String) -> void:
+	var room := _room_node()
+	if room == null or not room.has_method("repair_commission_save"):
+		return
+	var result := _d(room.repair_commission_save(action))
+	if _b(result, "ok"):
+		_toast(_t("UI_NOTE_RECOVERED" if action == "recover" else "UI_NOTE_FRESH_SAVED"), C_TEAL)
+	else:
+		_toast(_t("UI_RECOVER_FAILED" if action == "recover" else "UI_FRESH_FAILED", {"code": _s(result, "code"), "detail": _s(result, "text")}), C_AMBER)
+	_show_commissions()
+
+
+func _request_commission(id: String) -> void:
+	commission_requested.emit(id)
 
 
 func _mission_dict(id: String) -> Dictionary:
@@ -4747,6 +4846,8 @@ func _mission_dict(id: String) -> Dictionary:
 
 
 func _main_complete(v: Dictionary) -> bool:
+	if _s(v, "mode") == "commissions":
+		return false
 	var any := false
 	for m in _a(v, "missions"):
 		var d := _d(m)
@@ -4770,6 +4871,7 @@ func _bd_item_text(d: Dictionary, current: String) -> String:
 
 
 func _refresh_board(v: Dictionary) -> void:
+	commission_return_button.visible = _s(v, "mode") == "commissions"
 	var missions := _a(v, "missions")
 	var current := _s(v, "mission_id")
 	if bd_selected.is_empty() or _mission_dict(bd_selected).is_empty():
@@ -4983,7 +5085,9 @@ func _bd_next() -> void:
 		return
 	var r := _act("board", func(): return game.advance())
 	var code := _s(r, "code")
-	if code == "CAMPAIGN_COMPLETE":
+	if code == "COMMISSION_COMPLETE":
+		_show_commissions()
+	elif code == "CAMPAIGN_COMPLETE":
 		_toast(_t("UI_NOTE_MAIN_COMPLETE"), C_TEAL)
 		_open_app("ending", true)
 	elif not _b(r, "ok"):
@@ -5284,6 +5388,8 @@ func _refresh_top(v: Dictionary) -> void:
 
 
 func _open_current_board() -> void:
+	if commission_panel != null:
+		commission_panel.hide()
 	bd_selected = _s(last_view, "mission_id")
 	_open_app("board", true)
 	_bd_show(_mission_dict(bd_selected))

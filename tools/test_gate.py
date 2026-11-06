@@ -71,6 +71,32 @@ class GateFailureTests(unittest.TestCase):
             "godot/tests/headless/test_lobby_preferences.gd", "godot/tools/run_lobby_preferences.gd",
             "godot/tests/headless/test_workbench.gd", "godot/tools/run_workbench.gd",
             "godot/tests/headless/test_challenge_regressions.gd", "tools/test_challenge.py",
+            'godot/data/campaign/packs/investigation_v1.json',
+            'godot/tests/fixtures/investigation_solutions.json',
+            'tools/build_investigation_content.py',
+            'godot/scripts/core/iam_case.gd',
+            'godot/scripts/core/iam_case_schema.gd',
+            'godot/scripts/core/release_case.gd',
+            'godot/scripts/core/release_case_schema.gd',
+            'godot/tests/headless/test_iam_case.gd',
+            'godot/tools/run_iam_case.gd',
+            'godot/tests/headless/test_release_case.gd',
+            'godot/tools/run_release_case.gd',
+            'godot/tests/headless/test_commission_ui.gd',
+            'godot/tools/run_commission_ui.gd',
+            'godot/scripts/core/habitat_store.gd',
+            'godot/scripts/presentation/habitat_panel.gd',
+            'godot/tests/headless/test_habitat.gd',
+            'godot/tests/headless/test_habitat_ui.gd',
+            'godot/tools/run_habitat.gd',
+            'godot/tools/run_habitat_ui.gd',
+            'godot/scripts/room/neighborhood_world.gd',
+            'godot/tests/headless/test_neighborhood.gd',
+            'godot/tools/run_neighborhood.gd',
+            'godot/tests/headless/test_optional_regressions.gd',
+            'tools/test_optional_commissions.py',
+
+
         )
         for relative in required:
             target = self.root / relative

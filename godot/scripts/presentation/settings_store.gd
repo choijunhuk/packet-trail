@@ -5,7 +5,7 @@ signal changed(values: Dictionary)
 
 const PATH := "user://settings.json"
 const LOCALES := ["ko", "en", "ja", "zh_Hans", "es", "de"]
-const SUPPORT_KEYS := ["support_intruder", "support_defender", "support_tracker", "support_challenge"]
+const SUPPORT_KEYS := ["support_intruder", "support_defender", "support_tracker", "support_challenge", "support_investigation"]
 const SUPPORT_LEVELS := ["guided", "standard", "independent"]
 const MAX_BYTES := 65536
 const DEFAULTS := {
@@ -15,7 +15,7 @@ const DEFAULTS := {
 	"reduced_motion": false, "comfort_mode": true, "font_scale": 1.0,
 	"fullscreen": false, "mouse_sensitivity": 0.12,
 	"background_audio": false, "locale": "ko",
-	"support_intruder": "standard", "support_defender": "standard", "support_tracker": "standard", "support_challenge": "standard",
+	"support_intruder": "standard", "support_defender": "standard", "support_tracker": "standard", "support_challenge": "standard", "support_investigation": "standard",
 }
 var _values: Dictionary = DEFAULTS.duplicate(true)
 var _path: String

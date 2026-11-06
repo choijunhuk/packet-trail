@@ -49,16 +49,26 @@
         "path": "godot/data/campaign/locales/challenge_v1.en.json",
         "sha256": "915c1c059dcde60b7937bf491722c5931cb4d9035a89a058208116a30e896fc2"
       }
+    },
+    "investigation": {
+      "ko": {
+        "path": "godot/data/campaign/locales/investigation_v1.ko.json",
+        "sha256": "1bd4e1cd8ccff564551183d70463110755bc8005090b346a2259a310c8075f30"
+      },
+      "en": {
+        "path": "godot/data/campaign/locales/investigation_v1.en.json",
+        "sha256": "7af162d9e98e2d273a3d8423d87f046c8086f6e084f86a5fa8a8c2204a342651"
+      }
     }
   },
   "ui": {
     "ko": {
       "path": "godot/assets/ui/strings_ko.json",
-      "sha256": "1bbc96edf254297b99280ea57f8648e635383f57063da5ffaed1991e6792e150"
+      "sha256": "345edc89841c6a3f7e6105e399dff8c0c731831783a01956a6da839057874151"
     },
     "en": {
       "path": "godot/assets/ui/strings_en.json",
-      "sha256": "21e69a60b67e55921715b72b4919d4df7c538083e0d12c1af5c8423eef6fe255"
+      "sha256": "09461226857e37c06f72181263437ecba223da5c6744267d77acc823daf8a4db"
     }
   }
 }

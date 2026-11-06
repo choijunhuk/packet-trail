@@ -1,0 +1,922 @@
+{
+  "schema_version": 1,
+  "content_version": 1,
+  "campaign_id": "midnight_investigation",
+  "mode": "commissions",
+  "title": "IV1_PACK_TITLE",
+  "summary": "IV1_PACK_SUMMARY",
+  "start_mission": "I01",
+  "mission_order": [
+    "I01",
+    "I02"
+  ],
+  "missions": {
+    "I01": {
+      "schema_version": 1,
+      "mission_id": "I01",
+      "title": "IV1_I01_TITLE",
+      "chapter": 1,
+      "optional": true,
+      "prerequisites": [],
+      "alert_max": 2,
+      "initial_web_url": "https://i01.investigation.packet.test",
+      "goal": {
+        "record_id": "iv1_i01_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "iam_review",
+          "challenge_id": "iv1_i01_iam",
+          "label_display": "IV1_I01_GOAL",
+          "target_display": "https://i01.investigation.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "iv1_i01_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:iv1_i01_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "iv1_i01_desk": {
+          "name": "IV1_I01_DESK_NAME",
+          "domain": "i01.investigation.packet.test",
+          "address": "10.53.58.105",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://i01.investigation.packet.test": {
+          "title": "IV1_I01_TITLE",
+          "body": "IV1_I01_BRIEF",
+          "links": []
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "IV1_I01_SENDER",
+          "subject": "IV1_I01_TITLE",
+          "body": "IV1_I01_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "IV1_I01_SENDER",
+          "subject": "IV1_I01_TITLE",
+          "body": "IV1_I01_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "iv1_i01_iam": {
+          "kind": "iam_case",
+          "host_id": "iv1_i01_desk",
+          "requires_session": {
+            "host_id": "iv1_i01_desk",
+            "account_id": "investigator"
+          },
+          "name": "IV1_I01_TOOL",
+          "explain": "IV1_I01_TOOL_EXPLAIN",
+          "usage": "IV1_I01_TOOL_USAGE",
+          "principals": {
+            "agent": {
+              "tenant": "city",
+              "label": "IV1_I01_PRINCIPAL_AGENT"
+            },
+            "operator": {
+              "tenant": "city",
+              "label": "IV1_I01_PRINCIPAL_OPERATOR"
+            },
+            "auditor": {
+              "tenant": "city",
+              "label": "IV1_I01_PRINCIPAL_AUDITOR"
+            },
+            "contractor": {
+              "tenant": "city",
+              "label": "IV1_I01_PRINCIPAL_CONTRACTOR"
+            },
+            "relay": {
+              "tenant": "city",
+              "label": "IV1_I01_PRINCIPAL_RELAY"
+            }
+          },
+          "resources": {
+            "artifact": {
+              "tenant": "city",
+              "label": "IV1_I01_RESOURCE_ARTIFACT"
+            },
+            "notice": {
+              "tenant": "city",
+              "label": "IV1_I01_RESOURCE_NOTICE"
+            },
+            "audit": {
+              "tenant": "city",
+              "label": "IV1_I01_RESOURCE_AUDIT"
+            },
+            "foreign": {
+              "tenant": "clinic",
+              "label": "IV1_I01_RESOURCE_FOREIGN"
+            },
+            "authority": {
+              "tenant": "city",
+              "label": "IV1_I01_RESOURCE_AUTHORITY"
+            }
+          },
+          "roles": {
+            "broad": {
+              "label": "IV1_I01_ROLE_BROAD",
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "read",
+                    "update",
+                    "admin"
+                  ],
+                  "resources": [
+                    "artifact",
+                    "notice",
+                    "audit",
+                    "foreign",
+                    "authority"
+                  ],
+                  "tenant_scope": "any"
+                }
+              ]
+            },
+            "deploy_limited": {
+              "label": "IV1_I01_ROLE_LIMITED",
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "read"
+                  ],
+                  "resources": [
+                    "artifact",
+                    "foreign"
+                  ],
+                  "tenant_scope": "same"
+                },
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "admin"
+                  ],
+                  "resources": [
+                    "authority"
+                  ],
+                  "tenant_scope": "same"
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "admin"
+                  ],
+                  "resources": [
+                    "authority"
+                  ],
+                  "tenant_scope": "same"
+                }
+              ]
+            },
+            "relay_limited": {
+              "label": "IV1_I01_ROLE_RELAY",
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "read"
+                  ],
+                  "resources": [
+                    "artifact",
+                    "foreign"
+                  ],
+                  "tenant_scope": "same"
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "admin"
+                  ],
+                  "resources": [
+                    "authority"
+                  ],
+                  "tenant_scope": "same"
+                }
+              ]
+            },
+            "notice_writer": {
+              "label": "IV1_I01_ROLE_NOTICE",
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "update"
+                  ],
+                  "resources": [
+                    "notice"
+                  ],
+                  "tenant_scope": "same"
+                }
+              ]
+            },
+            "audit_reader": {
+              "label": "IV1_I01_ROLE_AUDIT",
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "read"
+                  ],
+                  "resources": [
+                    "audit"
+                  ],
+                  "tenant_scope": "same"
+                }
+              ]
+            },
+            "none": {
+              "label": "IV1_I01_ROLE_NONE",
+              "rules": []
+            }
+          },
+          "initial_bindings": {
+            "agent": "broad",
+            "operator": "notice_writer",
+            "auditor": "audit_reader",
+            "contractor": "broad",
+            "relay": "none"
+          },
+          "binding_choices": {
+            "agent": [
+              "broad",
+              "deploy_limited",
+              "none"
+            ],
+            "operator": [
+              "notice_writer",
+              "none"
+            ],
+            "auditor": [
+              "audit_reader",
+              "none"
+            ],
+            "contractor": [
+              "broad",
+              "none"
+            ],
+            "relay": [
+              "none",
+              "relay_limited"
+            ]
+          },
+          "credentials": {
+            "agent_key": {
+              "principal_id": "agent",
+              "expires_tick": 64,
+              "revoked": false
+            },
+            "notice_key": {
+              "principal_id": "operator",
+              "expires_tick": 64,
+              "revoked": false
+            },
+            "audit_key": {
+              "principal_id": "auditor",
+              "expires_tick": 64,
+              "revoked": false
+            },
+            "contractor_old": {
+              "principal_id": "contractor",
+              "expires_tick": 64,
+              "revoked": false
+            },
+            "relay_key": {
+              "principal_id": "relay",
+              "expires_tick": 64,
+              "revoked": false
+            },
+            "expired_agent": {
+              "principal_id": "agent",
+              "expires_tick": 0,
+              "revoked": false
+            },
+            "revoked_agent": {
+              "principal_id": "agent",
+              "expires_tick": 64,
+              "revoked": true
+            }
+          },
+          "requests": {
+            "deployment": {
+              "label": "IV1_I01_REQUEST_DEPLOYMENT",
+              "credential_ref": "agent_key",
+              "action": "read",
+              "resource_id": "artifact",
+              "expect": "allow",
+              "routes": {
+                "relay": {
+                  "credential_ref": "relay_key"
+                }
+              }
+            },
+            "notice_update": {
+              "label": "IV1_I01_REQUEST_NOTICE_UPDATE",
+              "credential_ref": "notice_key",
+              "action": "update",
+              "resource_id": "notice",
+              "expect": "allow"
+            },
+            "audit_read": {
+              "label": "IV1_I01_REQUEST_AUDIT_READ",
+              "credential_ref": "audit_key",
+              "action": "read",
+              "resource_id": "audit",
+              "expect": "allow"
+            },
+            "cross_tenant": {
+              "label": "IV1_I01_REQUEST_CROSS_TENANT",
+              "credential_ref": "agent_key",
+              "action": "read",
+              "resource_id": "foreign",
+              "expect": "deny"
+            },
+            "grant_change": {
+              "label": "IV1_I01_REQUEST_GRANT_CHANGE",
+              "credential_ref": "agent_key",
+              "action": "admin",
+              "resource_id": "authority",
+              "expect": "deny"
+            },
+            "retired_access": {
+              "label": "IV1_I01_REQUEST_RETIRED_ACCESS",
+              "credential_ref": "contractor_old",
+              "action": "read",
+              "resource_id": "artifact",
+              "expect": "deny"
+            },
+            "expired_access": {
+              "label": "IV1_I01_REQUEST_EXPIRED_ACCESS",
+              "credential_ref": "expired_agent",
+              "action": "read",
+              "resource_id": "artifact",
+              "expect": "deny"
+            },
+            "revoked_access": {
+              "label": "IV1_I01_REQUEST_REVOKED_ACCESS",
+              "credential_ref": "revoked_agent",
+              "action": "read",
+              "resource_id": "artifact",
+              "expect": "deny"
+            }
+          },
+          "required_requests": [
+            "deployment",
+            "notice_update",
+            "audit_read",
+            "cross_tenant",
+            "grant_change",
+            "retired_access",
+            "expired_access",
+            "revoked_access"
+          ]
+        }
+      },
+      "milestones": [],
+      "goal_text": "IV1_I01_GOAL",
+      "hints": [
+        "IV1_I01_HINT_1",
+        "IV1_I01_HINT_2",
+        "IV1_I01_HINT_3"
+      ],
+      "principle": "IV1_I01_PRINCIPLE",
+      "abstraction": "IV1_I01_ABSTRACTION",
+      "limit": "IV1_I01_LIMIT",
+      "tutorial": "IV1_I01_HINT_1",
+      "explain": "IV1_I01_PRINCIPLE"
+    },
+    "I02": {
+      "schema_version": 1,
+      "mission_id": "I02",
+      "title": "IV1_I02_TITLE",
+      "chapter": 1,
+      "optional": true,
+      "prerequisites": [],
+      "alert_max": 2,
+      "initial_web_url": "https://i02.investigation.packet.test",
+      "goal": {
+        "record_id": "iv1_i02_handoff",
+        "destination": "/home/player/archive"
+      },
+      "goals": [
+        {
+          "kind": "release_review",
+          "challenge_id": "iv1_i02_release",
+          "label_display": "IV1_I02_GOAL",
+          "target_display": "https://i02.investigation.packet.test"
+        },
+        {
+          "kind": "sources_preserved"
+        }
+      ],
+      "records": {
+        "iv1_i02_handoff": {
+          "content": "Night duty handoff\nScope: authorized service and observations only.\n",
+          "allowed_sources": [
+            "handoff:iv1_i02_desk"
+          ]
+        }
+      },
+      "hosts": {
+        "iv1_i02_desk": {
+          "name": "IV1_I02_DESK_NAME",
+          "domain": "i02.investigation.packet.test",
+          "address": "10.53.124.185",
+          "via": [
+            "local"
+          ],
+          "services": {
+            "22": {
+              "protocol": "ssh",
+              "state": "open"
+            },
+            "443": {
+              "protocol": "https",
+              "state": "open"
+            }
+          },
+          "accounts": {
+            "investigator": {
+              "password": "source-custody",
+              "groups": [
+                "staff"
+              ],
+              "home": "/desk"
+            },
+            "citizen_a": {
+              "password": "a-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "citizen_b": {
+              "password": "b-sample",
+              "groups": [
+                "citizens"
+              ],
+              "home": "/desk"
+            },
+            "outsider": {
+              "password": "unused-sample",
+              "groups": [
+                "visitors"
+              ],
+              "home": "/desk"
+            },
+            "notifier": {
+              "password": "ward-sample",
+              "groups": [
+                "jobs"
+              ],
+              "home": "/desk"
+            }
+          },
+          "files": {
+            "/": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/public": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "755",
+              "content": "",
+              "record_id": ""
+            },
+            "/desk": {
+              "kind": "dir",
+              "owner": "investigator",
+              "group": "staff",
+              "mode": "750",
+              "content": "",
+              "record_id": ""
+            }
+          }
+        }
+      },
+      "pages": {
+        "https://i02.investigation.packet.test": {
+          "title": "IV1_I02_TITLE",
+          "body": "IV1_I02_BRIEF",
+          "links": [
+            {
+              "label": "IV1_I02_PAGE_TITLE",
+              "url": "https://i02.investigation.packet.test/review"
+            }
+          ]
+        },
+        "https://i02.investigation.packet.test/review": {
+          "host_id": "iv1_i02_desk",
+          "requires_session": {
+            "host_id": "iv1_i02_desk",
+            "account_id": "investigator"
+          },
+          "title": "IV1_I02_PAGE_TITLE",
+          "body": "IV1_I02_PAGE_WAIT",
+          "links": [],
+          "model_view": {
+            "challenge_id": "iv1_i02_release",
+            "section": "article"
+          }
+        }
+      },
+      "mail": {
+        "intro": {
+          "id": "intro",
+          "sender": "IV1_I02_SENDER",
+          "subject": "IV1_I02_TITLE",
+          "body": "IV1_I02_BRIEF"
+        },
+        "complete": {
+          "id": "complete",
+          "sender": "IV1_I02_SENDER",
+          "subject": "IV1_I02_TITLE",
+          "body": "IV1_I02_REPLY"
+        }
+      },
+      "policies": {},
+      "challenges": {
+        "iv1_i02_release": {
+          "kind": "release_case",
+          "host_id": "iv1_i02_desk",
+          "requires_session": {
+            "host_id": "iv1_i02_desk",
+            "account_id": "investigator"
+          },
+          "name": "IV1_I02_TOOL",
+          "explain": "IV1_I02_TOOL_EXPLAIN",
+          "usage": "IV1_I02_TOOL_USAGE",
+          "artifacts": {
+            "stable": {
+              "label": "IV1_I02_ARTIFACT_STABLE",
+              "filename": "night-notice-1.4.pkg",
+              "payload": "{\"enabled\":true,\"operations\":{\"notify\":[\"ward\"],\"serve\":[\"own\"]}}",
+              "source_revision": "reviewed-r41",
+              "builder_id": "reviewed-builder"
+            },
+            "delivered": {
+              "label": "IV1_I02_ARTIFACT_DELIVERED",
+              "filename": "night-notice-1.4.pkg",
+              "payload": "{\"enabled\":true,\"operations\":{\"notify\":[\"ward\",\"internal\"],\"serve\":[\"own\",\"other_tenant\"]}}",
+              "source_revision": "unreviewed-r42",
+              "builder_id": "vendor-builder"
+            },
+            "unsafe_attested": {
+              "label": "IV1_I02_ARTIFACT_UNSAFE_ATTESTED",
+              "filename": "night-notice-1.4.pkg",
+              "payload": "{\"enabled\":true,\"operations\":{\"notify\":[\"ward\",\"internal\"],\"serve\":[\"own\",\"other_tenant\"]}}",
+              "source_revision": "reviewed-r42",
+              "builder_id": "reviewed-builder"
+            },
+            "revoked": {
+              "label": "IV1_I02_ARTIFACT_REVOKED",
+              "filename": "night-notice-1.4.pkg",
+              "payload": "{\"enabled\":true,\"operations\":{\"notify\":[\"ward\"],\"serve\":[\"own\"]}}",
+              "source_revision": "reviewed-r40",
+              "builder_id": "retired-builder"
+            },
+            "offline": {
+              "label": "IV1_I02_ARTIFACT_OFFLINE",
+              "filename": "night-notice-1.4.pkg",
+              "payload": "{\"enabled\":false,\"operations\":{\"notify\":[\"ward\"],\"serve\":[\"own\"]}}",
+              "source_revision": "reviewed-r41-off",
+              "builder_id": "reviewed-builder"
+            }
+          },
+          "statements": {
+            "stable_statement": {
+              "subject_digest": "892fc87797ba8a7d26c73ff5cb13f3ad250432a2a7432c1cf0c8e032780ab7cd",
+              "source_revision": "reviewed-r41",
+              "builder_id": "reviewed-builder",
+              "registry_id": "ledger"
+            },
+            "delivered_statement": {
+              "subject_digest": "892fc87797ba8a7d26c73ff5cb13f3ad250432a2a7432c1cf0c8e032780ab7cd",
+              "source_revision": "reviewed-r41",
+              "builder_id": "reviewed-builder",
+              "registry_id": "ledger"
+            },
+            "unsafe_attested_statement": {
+              "subject_digest": "5aee4f7fe158f2b62b0e6d4200dd1b3fe49ffbc64b58c22bd87d9b63443c8784",
+              "source_revision": "reviewed-r42",
+              "builder_id": "reviewed-builder",
+              "registry_id": "ledger"
+            },
+            "revoked_statement": {
+              "subject_digest": "892fc87797ba8a7d26c73ff5cb13f3ad250432a2a7432c1cf0c8e032780ab7cd",
+              "source_revision": "reviewed-r40",
+              "builder_id": "retired-builder",
+              "registry_id": "ledger"
+            },
+            "offline_statement": {
+              "subject_digest": "9241712598f147c9f3a861f9213c531c11da822161393cac1d823cacf02291b6",
+              "source_revision": "reviewed-r41-off",
+              "builder_id": "reviewed-builder",
+              "registry_id": "ledger"
+            },
+            "rebuilt_statement": {
+              "subject_digest": "a5034311fb16eadaedd07164e1f329e1e9f88be3bdb3ffdc506e530c54c4353b",
+              "source_revision": "reviewed-r43",
+              "builder_id": "reviewed-builder",
+              "registry_id": "ledger"
+            }
+          },
+          "registries": {
+            "ledger": {
+              "trusted_builders": [
+                "reviewed-builder",
+                "retired-builder"
+              ],
+              "revoked_builders": [
+                "retired-builder"
+              ],
+              "trusted_statements": [
+                "stable_statement",
+                "delivered_statement",
+                "unsafe_attested_statement",
+                "revoked_statement",
+                "offline_statement",
+                "rebuilt_statement"
+              ]
+            }
+          },
+          "builds": {
+            "rebuilt": {
+              "label": "IV1_I02_ARTIFACT_REBUILT",
+              "filename": "night-notice-1.4.pkg",
+              "payload": "{\"enabled\":true,\"operations\":{\"notify\":[\"ward\"],\"serve\":[\"own\"]},\"release_note\":\"reviewed rebuild\"}",
+              "source_revision": "reviewed-r43",
+              "builder_id": "reviewed-builder",
+              "statement_id": "rebuilt_statement",
+              "registry_id": "ledger"
+            }
+          },
+          "service_cases": {
+            "citizen": {
+              "label": "IV1_I02_CASE_CITIZEN",
+              "operation": "serve",
+              "target": "own",
+              "expected_status": 200,
+              "expected_business": true
+            },
+            "notice": {
+              "label": "IV1_I02_CASE_NOTICE",
+              "operation": "notify",
+              "target": "ward",
+              "expected_status": 200,
+              "expected_business": true
+            },
+            "cross_tenant": {
+              "label": "IV1_I02_CASE_CROSS_TENANT",
+              "operation": "serve",
+              "target": "other_tenant",
+              "expected_status": 403,
+              "expected_business": false
+            },
+            "internal": {
+              "label": "IV1_I02_CASE_INTERNAL",
+              "operation": "notify",
+              "target": "internal",
+              "expected_status": 403,
+              "expected_business": false
+            }
+          },
+          "required_service_cases": [
+            "citizen",
+            "notice",
+            "cross_tenant",
+            "internal"
+          ],
+          "report_evidence": {
+            "stable_evidence": {
+              "label": "IV1_I02_EVIDENCE_STABLE",
+              "artifact_id": "stable",
+              "fields": {
+                "stable_digest": {
+                  "source": "digest",
+                  "sensitivity": "public"
+                },
+                "stable_source": {
+                  "source": "source_revision",
+                  "sensitivity": "public"
+                },
+                "stable_internal": {
+                  "text": "IV1_I02_PRIVATE_STABLE",
+                  "sensitivity": "restricted"
+                }
+              }
+            },
+            "delivered_evidence": {
+              "label": "IV1_I02_EVIDENCE_DELIVERED",
+              "artifact_id": "delivered",
+              "fields": {
+                "delivered_digest": {
+                  "source": "digest",
+                  "sensitivity": "public"
+                },
+                "delivered_source": {
+                  "source": "source_revision",
+                  "sensitivity": "public"
+                },
+                "delivered_internal": {
+                  "text": "IV1_I02_PRIVATE_DELIVERED",
+                  "sensitivity": "restricted"
+                }
+              }
+            },
+            "rebuilt_evidence": {
+              "label": "IV1_I02_EVIDENCE_REBUILT",
+              "artifact_id": "rebuilt",
+              "fields": {
+                "rebuilt_digest": {
+                  "source": "digest",
+                  "sensitivity": "public"
+                },
+                "rebuilt_source": {
+                  "source": "source_revision",
+                  "sensitivity": "public"
+                },
+                "rebuilt_internal": {
+                  "text": "IV1_I02_PRIVATE_REBUILT",
+                  "sensitivity": "restricted"
+                }
+              }
+            }
+          },
+          "recipients": {
+            "maintainer": {
+              "label": "IV1_I02_RECIPIENT_STAFF",
+              "allowed_fields": [
+                "stable_digest",
+                "delivered_digest",
+                "stable_source",
+                "delivered_source",
+                "stable_internal",
+                "delivered_internal"
+              ],
+              "required_evidence": [
+                "stable_evidence",
+                "delivered_evidence"
+              ],
+              "required_fields": [
+                "stable_digest",
+                "delivered_digest"
+              ],
+              "reply_key": "IV1_I02_STAFF_REPLY",
+              "followup_id": "maintainer_check",
+              "public": false
+            },
+            "journalist": {
+              "label": "IV1_I02_RECIPIENT_NEWS",
+              "allowed_fields": [
+                "stable_digest",
+                "delivered_digest",
+                "stable_source",
+                "delivered_source"
+              ],
+              "required_evidence": [
+                "stable_evidence",
+                "delivered_evidence"
+              ],
+              "required_fields": [
+                "stable_digest",
+                "delivered_digest"
+              ],
+              "reply_key": "IV1_I02_NEWS_REPLY",
+              "followup_id": "journalist_check",
+              "public": true
+            }
+          },
+          "followups": {
+            "maintainer_check": {
+              "predicate": "current_release",
+              "required_artifacts": [
+                "delivered"
+              ],
+              "result_key": "IV1_I02_STAFF_RESULT"
+            },
+            "journalist_check": {
+              "predicate": "digest_mismatch",
+              "required_artifacts": [
+                "stable",
+                "delivered"
+              ],
+              "result_key": "IV1_I02_NEWS_RESULT"
+            }
+          }
+        }
+      },
+      "milestones": [],
+      "goal_text": "IV1_I02_GOAL",
+      "hints": [
+        "IV1_I02_HINT_1",
+        "IV1_I02_HINT_2",
+        "IV1_I02_HINT_3"
+      ],
+      "principle": "IV1_I02_PRINCIPLE",
+      "abstraction": "IV1_I02_ABSTRACTION",
+      "limit": "IV1_I02_LIMIT",
+      "tutorial": "IV1_I02_HINT_1",
+      "explain": "IV1_I02_PRINCIPLE"
+    }
+  },
+  "endings": []
+}

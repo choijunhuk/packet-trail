@@ -166,8 +166,9 @@ jobs:
               if (reports[0].get("actual_public_counts") != {"intruder": 28, "defender": 8, "tracker": 8, "challenge": 3}
                       or reports[0].get("original_case_count") != 44
                       or reports[0].get("challenge_case_count") != 3
-                      or reports[0].get("legacy_case_count") != 28):
-                  raise SystemExit("Packed scope must preserve original44 and legacy28 while adding challenge3")
+                      or reports[0].get("legacy_case_count") != 28
+                      or reports[0].get("commission_case_count") != 2):
+                  raise SystemExit("Packed scope must preserve main47 and legacy28 with two separately optional commissions")
               with pack.open("rb") as stream:
                   digest = hashlib.file_digest(stream, "sha256").hexdigest()
               evidence = {"preset": preset, "sha256": digest, "bytes": pack.stat().st_size,

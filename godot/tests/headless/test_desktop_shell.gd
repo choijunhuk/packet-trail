@@ -383,7 +383,7 @@ func _settings_cancel() -> void:
 func _fingerprints() -> Dictionary:
 	var result := {}
 	var paths: Array[String] = [Settings.PATH, Catalog.LEGACY_SOURCE, "user://saves/slot_01.json"]
-	for pack in Catalog.list_packs(true):
+	for pack in Catalog.list_all_packs(true):
 		paths.append(Catalog.default_slot(pack.id))
 	for path in paths:
 		for suffix in ["", ".bak", ".tmp", ".bak.tmp"]:

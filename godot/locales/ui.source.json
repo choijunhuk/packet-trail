@@ -5926,5 +5926,1365 @@
     "查看观测，输入操作或假设，再比较执行结果。",
     "Revisa las observaciones, introduce una acción o hipótesis y compara el resultado.",
     "Prüfe die Beobachtungen, gib eine Aktion oder Hypothese ein und vergleiche das Ergebnis."
+  ],
+  "UI_COMMISSIONS_TITLE": [
+    "선택 의뢰",
+    "Optional commissions",
+    "任意の依頼",
+    "可选委托",
+    "Encargos opcionales",
+    "Optionale Aufträge"
+  ],
+  "UI_COMMISSIONS_SCOPE": [
+    "관심 있는 분야만 골라보세요. 본편 진행과 엔딩에 필요하지 않습니다.",
+    "Choose a field that interests you. These commissions are not required for the main story or endings.",
+    "興味のある分野を選んでください。本編や結末には必須ではありません。",
+    "请选择感兴趣的领域。这些委托不是主线或结局的必需条件。",
+    "Elige el ámbito que te interese. Estos encargos no son necesarios para la historia principal ni sus finales.",
+    "Wähle ein interessantes Gebiet. Diese Aufträge sind für Hauptgeschichte und Enden nicht erforderlich."
+  ],
+  "UI_COMMISSIONS_I01_DESC": [
+    "클라우드 권한 · 역할과 자원, 테넌트 경계를 비교하는 독립 의뢰",
+    "Cloud permissions · an independent commission about roles, resources and tenant boundaries",
+    "クラウド権限 · ロール・資源・テナント境界を比較する独立依頼",
+    "云权限 · 比较角色、资源与租户边界的独立委托",
+    "Permisos en la nube · encargo independiente sobre roles, recursos y límites de inquilino",
+    "Cloud-Berechtigungen · unabhängiger Auftrag zu Rollen, Ressourcen und Mandantengrenzen"
+  ],
+  "UI_COMMISSIONS_I02_DESC": [
+    "배포 신뢰 · 출처를 검증하고 공개 범위와 후속 대응을 결정하는 독립 의뢰",
+    "Release trust · verify provenance and choose disclosure scope and follow-up",
+    "配布物の信頼 · 来歴を検証し公開範囲と対応を選ぶ独立依頼",
+    "发布信任 · 验证来源并选择披露范围及后续处理的独立委托",
+    "Confianza de versiones · verifica procedencia y elige divulgación y seguimiento",
+    "Vertrauen in Releases · Herkunft prüfen und Offenlegung sowie Nachbearbeitung wählen"
+  ],
+  "UI_COMMISSIONS_START": [
+    "시작 / 이어하기",
+    "Start / resume",
+    "開始 / 再開",
+    "开始 / 继续",
+    "Iniciar / continuar",
+    "Starten / fortsetzen"
+  ],
+  "UI_COMMISSIONS_RETURN": [
+    "본편으로 돌아가기",
+    "Return to main story",
+    "本編に戻る",
+    "返回主线",
+    "Volver a la historia principal",
+    "Zur Hauptgeschichte"
+  ],
+  "UI_COMMISSIONS_CLOSE": [
+    "의뢰 목록 닫기",
+    "Close commission list",
+    "依頼一覧を閉じる",
+    "关闭委托列表",
+    "Cerrar encargos",
+    "Aufträge schließen"
+  ],
+  "UI_COMMISSIONS_DONE": [
+    "완료한 의뢰 · 다시 살펴보기",
+    "Completed commission · revisit",
+    "完了済みの依頼 · 再確認",
+    "已完成委托 · 再次查看",
+    "Encargo completado · revisar",
+    "Abgeschlossener Auftrag · erneut ansehen"
+  ],
+  "CAMPAIGN_INVESTIGATION": [
+    "선택 의뢰",
+    "Optional commissions",
+    "任意の依頼",
+    "可选委托",
+    "Encargos opcionales",
+    "Optionale Aufträge"
+  ],
+  "UI_TOOLKIND_IAM_CASE": [
+    "권한 검토",
+    "Permission review",
+    "権限レビュー",
+    "权限审查",
+    "Revisión de permisos",
+    "Berechtigungsprüfung"
+  ],
+  "UI_TOOLKIND_RELEASE_CASE": [
+    "배포·공개 검토",
+    "Release and disclosure review",
+    "配布・公開レビュー",
+    "发布与披露审查",
+    "Revisión de versión y divulgación",
+    "Release- und Offenlegungsprüfung"
+  ],
+  "UI_IAM_PRINCIPALS": [
+    "등록된 주체",
+    "Registered principals",
+    "登録された主体",
+    "已注册主体",
+    "Identidades registradas",
+    "Registrierte Identitäten"
+  ],
+  "UI_IAM_RESOURCES": [
+    "자원과 경계",
+    "Resources and boundaries",
+    "資源と境界",
+    "资源与边界",
+    "Recursos y límites",
+    "Ressourcen und Grenzen"
+  ],
+  "UI_IAM_ROLES": [
+    "역할과 규칙",
+    "Roles and rules",
+    "ロールと規則",
+    "角色与规则",
+    "Roles y reglas",
+    "Rollen und Regeln"
+  ],
+  "UI_IAM_BINDINGS": [
+    "현재 역할 연결",
+    "Current role bindings",
+    "現在のロール割り当て",
+    "当前角色绑定",
+    "Asignaciones de rol actuales",
+    "Aktuelle Rollenzuweisungen"
+  ],
+  "UI_IAM_CREDENTIALS": [
+    "자격 상태",
+    "Credential status",
+    "資格情報の状態",
+    "凭据状态",
+    "Estado de credenciales",
+    "Zustand der Zugangsdaten"
+  ],
+  "UI_IAM_REQUESTS": [
+    "검증할 요청",
+    "Requests to verify",
+    "検証する要求",
+    "待验证请求",
+    "Solicitudes por verificar",
+    "Zu prüfende Anfragen"
+  ],
+  "UI_MODEL_RECEIPTS": [
+    "현재 검증 결과",
+    "Current verification results",
+    "現在の検証結果",
+    "当前验证结果",
+    "Resultados actuales",
+    "Aktuelle Prüfergebnisse"
+  ],
+  "UI_RELEASE_ARTIFACTS": [
+    "산출물과 해시",
+    "Artifacts and digests",
+    "成果物とダイジェスト",
+    "制品与摘要",
+    "Artefactos y resúmenes",
+    "Artefakte und Prüfsummen"
+  ],
+  "UI_RELEASE_STATEMENTS": [
+    "등록된 출처 증명",
+    "Registered provenance statements",
+    "登録された来歴証明",
+    "已注册来源声明",
+    "Declaraciones de procedencia registradas",
+    "Registrierte Herkunftsnachweise"
+  ],
+  "UI_RELEASE_VERIFICATIONS": [
+    "출처 검증 결과",
+    "Provenance verification results",
+    "来歴の検証結果",
+    "来源验证结果",
+    "Resultados de procedencia",
+    "Ergebnisse der Herkunftsprüfung"
+  ],
+  "UI_RELEASE_DEPLOYMENT": [
+    "현재 배포 상태",
+    "Current deployment state",
+    "現在の配布状態",
+    "当前部署状态",
+    "Despliegue actual",
+    "Aktueller Bereitstellungszustand"
+  ],
+  "UI_RELEASE_EVIDENCE": [
+    "확인한 보고 근거",
+    "Inspected report evidence",
+    "確認済みの報告根拠",
+    "已检查的报告证据",
+    "Pruebas inspeccionadas",
+    "Untersuchte Berichtsnachweise"
+  ],
+  "UI_RELEASE_RECIPIENTS": [
+    "보고 수신자",
+    "Report recipients",
+    "報告の受信者",
+    "报告接收方",
+    "Destinatarios",
+    "Berichtsempfänger"
+  ],
+  "UI_RELEASE_REPORT": [
+    "전달한 보고",
+    "Submitted report",
+    "提出した報告",
+    "已提交报告",
+    "Informe enviado",
+    "Eingereichter Bericht"
+  ],
+  "UI_RELEASE_REPLIES": [
+    "회신과 후속 확인",
+    "Replies and follow-up",
+    "返信と追加対応",
+    "回复与后续处理",
+    "Respuestas y seguimiento",
+    "Antworten und Nachbearbeitung"
+  ],
+  "UI_RELEASE_ARTICLE": [
+    "공개 결과",
+    "Public outcome",
+    "公開された結果",
+    "公开结果",
+    "Resultado público",
+    "Öffentliches Ergebnis"
+  ],
+  "UI_RELEASE_REGISTRIES": [
+    "신뢰하는 출처 등록부",
+    "Trusted provenance registries",
+    "信頼する来歴台帳",
+    "可信来源登记表",
+    "Registros de procedencia fiables",
+    "Vertrauenswürdige Herkunftsregister"
+  ],
+  "UI_RELEASE_BUILDS": [
+    "승인된 가상 빌드",
+    "Approved virtual builds",
+    "承認された仮想ビルド",
+    "已批准的虚拟构建",
+    "Compilaciones virtuales aprobadas",
+    "Genehmigte virtuelle Builds"
+  ],
+  "UI_RELEASE_SERVICES": [
+    "현재 서비스 검증",
+    "Current service checks",
+    "現在のサービス検証",
+    "当前服务检查",
+    "Comprobaciones del servicio",
+    "Aktuelle Dienstprüfungen"
+  ],
+  "UI_MODEL_ACTION_BIND": [
+    "역할 연결 변경",
+    "Change role binding",
+    "ロール割り当てを変更",
+    "更改角色绑定",
+    "Cambiar asignación",
+    "Rollenzuweisung ändern"
+  ],
+  "UI_MODEL_ACTION_RESTORE_INITIAL": [
+    "처음 구성으로 복구",
+    "Restore initial configuration",
+    "初期設定に戻す",
+    "恢复初始配置",
+    "Restaurar configuración inicial",
+    "Anfangskonfiguration wiederherstellen"
+  ],
+  "UI_MODEL_ACTION_INSPECT_ARTIFACT": [
+    "산출물 조사",
+    "Inspect artifact",
+    "成果物を調べる",
+    "检查制品",
+    "Inspeccionar artefacto",
+    "Artefakt untersuchen"
+  ],
+  "UI_MODEL_ACTION_INSPECT_PROVENANCE": [
+    "출처 증명 조사",
+    "Inspect provenance",
+    "来歴を調べる",
+    "检查来源",
+    "Inspeccionar procedencia",
+    "Herkunft untersuchen"
+  ],
+  "UI_MODEL_ACTION_VERIFY": [
+    "출처 검증",
+    "Verify provenance",
+    "来歴を検証",
+    "验证来源",
+    "Verificar procedencia",
+    "Herkunft prüfen"
+  ],
+  "UI_MODEL_ACTION_BUILD": [
+    "승인된 가상 빌드 실행",
+    "Run approved virtual build",
+    "承認済み仮想ビルドを実行",
+    "运行批准的虚拟构建",
+    "Ejecutar compilación virtual aprobada",
+    "Genehmigten virtuellen Build ausführen"
+  ],
+  "UI_MODEL_ACTION_DEPLOY": [
+    "검증한 산출물 배포",
+    "Deploy verified artifact",
+    "検証済み成果物を配布",
+    "部署已验证制品",
+    "Desplegar artefacto verificado",
+    "Geprüftes Artefakt bereitstellen"
+  ],
+  "UI_MODEL_ACTION_REPORT": [
+    "검증 보고 전달",
+    "Submit verified report",
+    "検証済み報告を提出",
+    "提交已验证报告",
+    "Enviar informe verificado",
+    "Geprüften Bericht einreichen"
+  ],
+  "UI_MODEL_ACTION_FOLLOWUP": [
+    "후속 확인에 답하기",
+    "Answer follow-up",
+    "追加確認に答える",
+    "回答后续问题",
+    "Responder al seguimiento",
+    "Rückfrage beantworten"
+  ],
+  "UI_TOOL_FIELD_PRINCIPAL_ID": [
+    "주체",
+    "Principal",
+    "主体",
+    "主体",
+    "Identidad",
+    "Identität"
+  ],
+  "UI_TOOL_FIELD_ROLE_ID": [
+    "역할",
+    "Role",
+    "ロール",
+    "角色",
+    "Rol",
+    "Rolle"
+  ],
+  "UI_TOOL_FIELD_CREDENTIAL_REF": [
+    "자격 참조",
+    "Credential reference",
+    "資格情報の参照",
+    "凭据引用",
+    "Referencia de credencial",
+    "Zugangsdatenreferenz"
+  ],
+  "UI_TOOL_FIELD_STATEMENT_ID": [
+    "출처 증명",
+    "Provenance statement",
+    "来歴証明",
+    "来源声明",
+    "Declaración de procedencia",
+    "Herkunftsnachweis"
+  ],
+  "UI_TOOL_FIELD_REGISTRY_ID": [
+    "출처 등록부",
+    "Provenance registry",
+    "来歴台帳",
+    "来源登记表",
+    "Registro de procedencia",
+    "Herkunftsregister"
+  ],
+  "UI_TOOL_FIELD_BUILD_ID": [
+    "승인 빌드",
+    "Approved build",
+    "承認済みビルド",
+    "已批准构建",
+    "Compilación aprobada",
+    "Genehmigter Build"
+  ],
+  "UI_TOOL_FIELD_RECIPIENT_ID": [
+    "수신자",
+    "Recipient",
+    "受信者",
+    "接收方",
+    "Destinatario",
+    "Empfänger"
+  ],
+  "UI_TOOL_FIELD_EVIDENCE_IDS": [
+    "확인한 근거",
+    "Inspected evidence",
+    "確認済み根拠",
+    "已检查证据",
+    "Pruebas inspeccionadas",
+    "Untersuchte Nachweise"
+  ],
+  "UI_TOOL_FIELD_FIELDS": [
+    "공개할 필드",
+    "Fields to disclose",
+    "公開する項目",
+    "披露字段",
+    "Campos que divulgar",
+    "Offenzulegende Felder"
+  ],
+  "UI_TOOL_FIELD_FOLLOWUP_ID": [
+    "후속 확인",
+    "Follow-up",
+    "追加確認",
+    "后续问题",
+    "Seguimiento",
+    "Rückfrage"
+  ],
+  "UI_TOOL_FIELD_TENANT": [
+    "테넌트",
+    "Tenant",
+    "テナント",
+    "租户",
+    "Inquilino",
+    "Mandant"
+  ],
+  "UI_TOOL_FIELD_TENANT_SCOPE": [
+    "테넌트 범위",
+    "Tenant scope",
+    "テナント範囲",
+    "租户范围",
+    "Ámbito del inquilino",
+    "Mandantenbereich"
+  ],
+  "UI_TOOL_FIELD_EXPIRES_TICK": [
+    "만료 시점",
+    "Expiry tick",
+    "失効ティック",
+    "过期刻度",
+    "Instante de caducidad",
+    "Ablauf-Tick"
+  ],
+  "UI_TOOL_FIELD_REVOKED": [
+    "폐기 여부",
+    "Revoked",
+    "失効済み",
+    "已撤销",
+    "Revocada",
+    "Widerrufen"
+  ],
+  "UI_TOOL_FIELD_BUILDER_ID": [
+    "빌더",
+    "Builder",
+    "ビルダー",
+    "构建者",
+    "Constructor",
+    "Builder"
+  ],
+  "UI_TOOL_FIELD_SOURCE_REVISION": [
+    "소스 버전",
+    "Source revision",
+    "ソースの版",
+    "源码版本",
+    "Revisión de origen",
+    "Quellstand"
+  ],
+  "UI_TOOL_FIELD_DIGEST": [
+    "해시",
+    "Digest",
+    "ダイジェスト",
+    "摘要",
+    "Resumen",
+    "Prüfsumme"
+  ],
+  "UI_TOOL_FIELD_SUBJECT_DIGEST": [
+    "대상 해시",
+    "Subject digest",
+    "対象ダイジェスト",
+    "主体摘要",
+    "Resumen del objeto",
+    "Prüfsumme des Bezugsobjekts"
+  ],
+  "UI_TOOL_FIELD_INSPECTED": [
+    "조사 여부",
+    "Inspected",
+    "確認済み",
+    "已检查",
+    "Inspeccionado",
+    "Untersucht"
+  ],
+  "UI_TOOL_FIELD_VERIFIED": [
+    "검증 여부",
+    "Verified",
+    "検証済み",
+    "已验证",
+    "Verificado",
+    "Geprüft"
+  ],
+  "UI_TOOL_FIELD_ALLOWED_FIELDS": [
+    "공개 가능한 필드",
+    "Allowed disclosure fields",
+    "公開可能な項目",
+    "允许披露字段",
+    "Campos divulgables",
+    "Zulässige Offenlegungsfelder"
+  ],
+  "UI_TOOL_FIELD_REQUIRED_EVIDENCE": [
+    "필요한 근거",
+    "Required evidence",
+    "必要な根拠",
+    "所需证据",
+    "Pruebas necesarias",
+    "Erforderliche Nachweise"
+  ],
+  "UI_TOOL_FIELD_SENSITIVITY": [
+    "민감도",
+    "Sensitivity",
+    "機密区分",
+    "敏感级别",
+    "Sensibilidad",
+    "Vertraulichkeitsstufe"
+  ],
+  "HAB_TITLE_SHOP": [
+    "데스크샵",
+    "Deskshop",
+    "デスクショップ",
+    "桌面商店",
+    "Tienda del escritorio",
+    "Schreibtischladen"
+  ],
+  "HAB_TITLE_DELIVERY_LOCKER": [
+    "택배 보관함",
+    "Delivery locker",
+    "宅配ロッカー",
+    "快递柜",
+    "Taquilla de entregas",
+    "Paketstation"
+  ],
+  "HAB_TITLE_NOTICEBOARD": [
+    "동네 의뢰 게시판",
+    "Neighborhood noticeboard",
+    "近所の依頼掲示板",
+    "社区委托公告栏",
+    "Tablón del barrio",
+    "Auftragstafel im Hof"
+  ],
+  "HAB_TITLE_NETWORK_CABINET": [
+    "공용 통신함 점검",
+    "Shared network cabinet",
+    "共用通信盤",
+    "公共通信柜",
+    "Armario de red compartido",
+    "Gemeinsamer Netzwerkschrank"
+  ],
+  "HAB_TITLE_BENCH": [
+    "잠깐 쉬어가기",
+    "Take a break",
+    "ひと休み",
+    "休息一下",
+    "Tomar un descanso",
+    "Eine Pause machen"
+  ],
+  "HAB_CLOSE": [
+    "닫기",
+    "Close",
+    "閉じる",
+    "关闭",
+    "Cerrar",
+    "Schließen"
+  ],
+  "HAB_WALLET": [
+    "작업실 크레딧 {balance}",
+    "Room credits {balance}",
+    "作業室クレジット {balance}",
+    "工作室点数 {balance}",
+    "Créditos del estudio {balance}",
+    "Studio-Guthaben {balance}"
+  ],
+  "HAB_OPTIONAL_NOTE": [
+    "선택 활동입니다. 꾸미기는 해킹 능력과 본편 진행에 영향을 주지 않습니다.",
+    "These activities are optional. Decorations do not affect hacking abilities or main-story progress.",
+    "任意の活動です。装飾はハッキング能力や本編の進行に影響しません。",
+    "这些活动可自由选择。装饰不影响黑客能力或主线进度。",
+    "Son actividades opcionales. La decoración no altera habilidades ni progreso principal.",
+    "Diese Aktivitäten sind optional. Dekoration beeinflusst weder Fähigkeiten noch Hauptgeschichte."
+  ],
+  "HAB_READ_ONLY": [
+    "저장 상태를 읽지 못해 변경을 잠갔습니다. 기존 파일을 보존합니다.",
+    "Changes are locked because the room save could not be loaded. The existing file is preserved.",
+    "部屋の保存状態を読めないため変更を停止しました。元のファイルを保持します。",
+    "无法读取房间存档，已锁定更改。原文件将保留。",
+    "Los cambios están bloqueados porque no se pudo cargar la sala. Se conserva el archivo.",
+    "Änderungen sind gesperrt, da der Raumstand nicht geladen wurde. Die Datei bleibt erhalten."
+  ],
+  "HAB_RECOVER": [
+    "백업 복구",
+    "Recover backup",
+    "バックアップを復元",
+    "恢复备份",
+    "Recuperar copia",
+    "Sicherung wiederherstellen"
+  ],
+  "HAB_RECOVER_CONFIRM": [
+    "백업을 검증해 복구합니다. 손상된 원본은 별도 파일로 보존합니다.",
+    "Validate and recover the backup. The damaged original is preserved separately.",
+    "バックアップを検証して復元します。破損した原本は別に保持します。",
+    "验证并恢复备份。损坏的原文件将单独保留。",
+    "Valida y recupera la copia. El original dañado se conserva aparte.",
+    "Sicherung prüfen und wiederherstellen. Das beschädigte Original bleibt separat erhalten."
+  ],
+  "HAB_DELIVERY_COUNT": [
+    "수령 가능한 주문 {count}개",
+    "Orders ready for pickup: {count}",
+    "受取可能な注文: {count}",
+    "可领取订单：{count}",
+    "Pedidos listos: {count}",
+    "Abholbereite Bestellungen: {count}"
+  ],
+  "HAB_COLLECT": [
+    "도착한 주문 수령",
+    "Collect ready orders",
+    "届いた注文を受け取る",
+    "领取已到货订单",
+    "Recoger pedidos listos",
+    "Bereite Bestellungen abholen"
+  ],
+  "HAB_JOB_DESCRIPTION": [
+    "선택 의뢰 · 공용 통신함\n정상 원격 점검은 유지하면서 비인가 접근을 막아 주세요. 현장에서 현재 설정과 실제 확인 결과를 비교합니다. 보상은 작업실 크레딧 200이며 한 번만 지급됩니다.",
+    "Optional job · shared network cabinet\nKeep normal remote telemetry available while blocking unauthorized access. Compare the current configuration and actual checks on site. The one-time reward is 200 room credits.",
+    "任意の仕事 · 共用通信盤\n正常な遠隔計測を維持し、不正アクセスを防ぎます。現場で設定と実際の検証を比較してください。報酬は部屋クレジット200、一度限りです。",
+    "可选工作 · 公共通信柜\n保持正常远程遥测，阻止未授权访问。在现场比较配置与实际检查结果。一次性奖励为200工作室点数。",
+    "Trabajo opcional · armario compartido\nMantén la telemetría normal y bloquea accesos no autorizados. Compara configuración y pruebas en el lugar. Recompensa única: 200 créditos.",
+    "Optionaler Auftrag · Netzwerkschrank\nNormale Fernmessung erhalten und unbefugten Zugriff sperren. Konfiguration und Prüfergebnisse vor Ort vergleichen. Einmalige Belohnung: 200 Studio-Credits."
+  ],
+  "HAB_ACCEPT_JOB": [
+    "통신함 점검 의뢰 수락",
+    "Accept cabinet inspection job",
+    "通信盤の点検を受ける",
+    "接受通信柜检查工作",
+    "Aceptar inspección",
+    "Schrankprüfung annehmen"
+  ],
+  "HAB_CABINET_DESCRIPTION": [
+    "점검을 먼저 실행해 현재 경로와 잠금 상태를 확인하세요. 모든 연결을 끄면 정상 업무도 중단됩니다. 설정 후 정상 점검과 비인가 접근 결과를 다시 확인하세요.",
+    "Inspect the cabinet to examine its route and lock state. Disabling every connection also stops normal work. After changing the configuration, verify both normal telemetry and unauthorized access.",
+    "通信盤を調べ、接続経路と施錠を確認します。全接続を切ると正常業務も止まります。設定変更後は遠隔計測と不正アクセスの両方を検証してください。",
+    "检查通信柜的线路和锁定状态。关闭全部连接也会停止正常业务。更改后同时验证正常遥测与未授权访问。",
+    "Inspecciona ruta y cierre. Desactivar todo también detiene el trabajo normal. Tras cambiar ajustes, verifica telemetría y acceso no autorizado.",
+    "Verbindungsweg und Verriegelung prüfen. Alle Verbindungen abzuschalten stoppt auch den normalen Betrieb. Nach Änderungen Fernmessung und unbefugten Zugriff testen."
+  ],
+  "HAB_INSPECT": [
+    "현재 통신함 조사",
+    "Inspect current cabinet",
+    "現在の通信盤を調べる",
+    "检查当前通信柜",
+    "Inspeccionar armario",
+    "Schrank untersuchen"
+  ],
+  "HAB_ROUTE": [
+    "통신 경로",
+    "Connection route",
+    "接続経路",
+    "连接线路",
+    "Ruta de conexión",
+    "Verbindungsweg"
+  ],
+  "HAB_ROUTE_PUBLIC": [
+    "공개 연결",
+    "Public connection",
+    "公開接続",
+    "公共连接",
+    "Conexión pública",
+    "Öffentliche Verbindung"
+  ],
+  "HAB_ROUTE_SERVICE": [
+    "관리 서비스",
+    "Management service",
+    "管理サービス",
+    "管理服务",
+    "Servicio de gestión",
+    "Verwaltungsdienst"
+  ],
+  "HAB_ROUTE_APPROVED_RELAY": [
+    "승인된 중계",
+    "Approved relay",
+    "承認済み中継",
+    "批准的中继",
+    "Relevo aprobado",
+    "Genehmigtes Relay"
+  ],
+  "HAB_ROUTE_OFF": [
+    "모든 연결 끄기",
+    "All connections off",
+    "全接続を切る",
+    "关闭全部连接",
+    "Todas las conexiones desactivadas",
+    "Alle Verbindungen aus"
+  ],
+  "HAB_LOCKED": [
+    "관리 접근 잠금",
+    "Lock management access",
+    "管理アクセスを施錠",
+    "锁定管理访问",
+    "Bloquear gestión",
+    "Verwaltungszugang verriegeln"
+  ],
+  "HAB_CONFIGURE": [
+    "설정 적용",
+    "Apply configuration",
+    "設定を適用",
+    "应用配置",
+    "Aplicar configuración",
+    "Konfiguration anwenden"
+  ],
+  "HAB_VERIFY": [
+    "정상 업무·비인가 접근 확인",
+    "Verify telemetry and unauthorized access",
+    "遠隔計測と不正アクセスを検証",
+    "验证遥测与未授权访问",
+    "Verificar telemetría y acceso no autorizado",
+    "Fernmessung und unbefugten Zugriff prüfen"
+  ],
+  "HAB_REST_NOTE": [
+    "휴식에는 벌점이나 능력치 변화가 없습니다. 조명과 창밖 분위기를 선택합니다.",
+    "Rest has no penalty or stat effects. Choose the lighting and outdoor atmosphere.",
+    "休憩による罰則や能力変化はありません。照明と外の雰囲気を選べます。",
+    "休息没有惩罚或属性效果。可选择灯光与室外氛围。",
+    "Descansar no impone penalizaciones ni cambia atributos. Elige luz y ambiente exterior.",
+    "Pausen haben keine Nachteile oder Werteffekte. Wähle Beleuchtung und Außenstimmung."
+  ],
+  "HAB_LIGHT_NIGHT": [
+    "야간 조명",
+    "Night lighting",
+    "夜の照明",
+    "夜间灯光",
+    "Iluminación nocturna",
+    "Nachtbeleuchtung"
+  ],
+  "HAB_LIGHT_DAWN": [
+    "새벽 조명",
+    "Dawn lighting",
+    "夜明けの照明",
+    "黎明灯光",
+    "Iluminación del amanecer",
+    "Morgenbeleuchtung"
+  ],
+  "HAB_SHOP_ADDRESS": [
+    "deskshop.packet.test · 게임 안의 로컬 장비 상점",
+    "deskshop.packet.test · local in-game desk store",
+    "deskshop.packet.test · ゲーム内のローカルショップ",
+    "deskshop.packet.test · 游戏内本地桌面商店",
+    "deskshop.packet.test · tienda local del juego",
+    "deskshop.packet.test · lokaler Schreibtischladen im Spiel"
+  ],
+  "HAB_SHOP_DELIVERY": [
+    "주문은 즉시 도착합니다. 바깥 택배 보관함에서 수령한 뒤 장착하세요. 실제 결제나 인터넷 접속은 없습니다.",
+    "Orders arrive immediately. Collect them from the outdoor delivery locker before equipping. No real payment or internet connection is used.",
+    "注文はすぐ届きます。装着前に外のロッカーで受け取ってください。実際の支払いやネット接続はありません。",
+    "订单立即到货。装备前请到室外快递柜领取。不涉及真实支付或网络连接。",
+    "Los pedidos llegan al instante. Recógelos fuera antes de equiparlos. No se usa dinero real ni internet.",
+    "Bestellungen kommen sofort. Vor dem Ausrüsten draußen abholen. Keine echte Zahlung oder Internetverbindung."
+  ],
+  "HAB_PRICE": [
+    "{price} 크레딧",
+    "{price} credits",
+    "{price}クレジット",
+    "{price}点数",
+    "{price} créditos",
+    "{price} Credits"
+  ],
+  "HAB_ORDER": [
+    "주문",
+    "Order",
+    "注文",
+    "下单",
+    "Pedir",
+    "Bestellen"
+  ],
+  "HAB_EQUIP": [
+    "장착",
+    "Equip",
+    "装着",
+    "装备",
+    "Equipar",
+    "Ausrüsten"
+  ],
+  "HAB_EQUIPPED": [
+    "장착 중",
+    "Equipped",
+    "装着中",
+    "已装备",
+    "Equipado",
+    "Ausgerüstet"
+  ],
+  "HAB_AWAITING_PICKUP": [
+    "보관함 수령 대기",
+    "Awaiting locker pickup",
+    "ロッカー受取待ち",
+    "等待快递柜领取",
+    "Pendiente de recogida",
+    "Wartet auf Abholung"
+  ],
+  "HAB_JOB_STATE": [
+    "수락: {accepted} · 보상 수령: {rewarded}",
+    "Accepted: {accepted} · Reward received: {rewarded}",
+    "受注済み: {accepted} · 報酬受領: {rewarded}",
+    "已接受：{accepted} · 已领奖：{rewarded}",
+    "Aceptado: {accepted} · Recompensa: {rewarded}",
+    "Angenommen: {accepted} · Belohnung: {rewarded}"
+  ],
+  "HAB_JOB_CHECK": [
+    "현재 확인 · 정상 점검: {normal} · 비인가 접근 허용: {unauthorized} · 조건 충족: {passed}",
+    "Current check · Normal telemetry: {normal} · Unauthorized access allowed: {unauthorized} · Requirements met: {passed}",
+    "現在の検証 · 正常計測: {normal} · 不正アクセス許可: {unauthorized} · 条件達成: {passed}",
+    "当前检查 · 正常遥测：{normal} · 允许未授权访问：{unauthorized} · 满足条件：{passed}",
+    "Prueba actual · Telemetría normal: {normal} · Acceso no autorizado permitido: {unauthorized} · Cumple: {passed}",
+    "Aktuelle Prüfung · Normale Messung: {normal} · Unbefugter Zugriff erlaubt: {unauthorized} · Erfüllt: {passed}"
+  ],
+  "HAB_REWARD_RECEIPT": [
+    "보상은 이미 지급됐습니다. 지급 당시 경로: {route}. 현재 상태는 위 확인 결과를 따릅니다.",
+    "Reward already paid. Route at payment: {route}. The current state is shown by the check above.",
+    "報酬は支払済みです。支払時の経路: {route}。現在の状態は上の検証を確認してください。",
+    "奖励已支付。支付时线路：{route}。当前状态见上方检查。",
+    "Recompensa ya pagada. Ruta al pagar: {route}. El estado actual figura arriba.",
+    "Belohnung bereits ausgezahlt. Weg bei Auszahlung: {route}. Aktuellen Zustand oben prüfen."
+  ],
+  "HAB_YES": [
+    "예",
+    "Yes",
+    "はい",
+    "是",
+    "Sí",
+    "Ja"
+  ],
+  "HAB_NO": [
+    "아니요",
+    "No",
+    "いいえ",
+    "否",
+    "No",
+    "Nein"
+  ],
+  "HAB_ACTION_OK": [
+    "작업을 저장했습니다.",
+    "Action saved.",
+    "操作を保存しました。",
+    "操作已保存。",
+    "Acción guardada.",
+    "Aktion gespeichert."
+  ],
+  "HAB_ACTION_FAILED": [
+    "작업을 저장하지 못했습니다. 현재 상태를 유지합니다.",
+    "Action could not be saved. The current state is preserved.",
+    "保存できませんでした。現在の状態を保持します。",
+    "无法保存操作。当前状态保留。",
+    "No se guardó la acción. Se conserva el estado.",
+    "Aktion konnte nicht gespeichert werden. Der Zustand bleibt erhalten."
+  ],
+  "HAB_INTERACT_COMPUTER": [
+    "E · 컴퓨터 사용",
+    "E · Use computer",
+    "E · コンピューターを使う",
+    "E · 使用电脑",
+    "E · Usar ordenador",
+    "E · Computer benutzen"
+  ],
+  "HAB_INTERACT_EXIT": [
+    "E · 밖으로 나가기",
+    "E · Go outside",
+    "E · 外へ出る",
+    "E · 出门",
+    "E · Salir",
+    "E · Nach draußen"
+  ],
+  "HAB_INTERACT_ENTER": [
+    "E · 작업실 들어가기",
+    "E · Enter studio",
+    "E · 作業室へ入る",
+    "E · 进入工作室",
+    "E · Entrar al estudio",
+    "E · Studio betreten"
+  ],
+  "HAB_INTERACT_PICKUP": [
+    "E · 택배 보관함",
+    "E · Delivery locker",
+    "E · 宅配ロッカー",
+    "E · 快递柜",
+    "E · Taquilla de entregas",
+    "E · Paketstation"
+  ],
+  "HAB_INTERACT_NOTICEBOARD": [
+    "E · 동네 의뢰 게시판",
+    "E · Neighborhood noticeboard",
+    "E · 近所の依頼掲示板",
+    "E · 社区委托公告栏",
+    "E · Tablón del barrio",
+    "E · Auftragstafel"
+  ],
+  "HAB_INTERACT_CABINET": [
+    "E · 공용 통신함",
+    "E · Shared network cabinet",
+    "E · 共用通信盤",
+    "E · 公共通信柜",
+    "E · Armario compartido",
+    "E · Netzwerkschrank"
+  ],
+  "HAB_INTERACT_REST": [
+    "E · 잠깐 쉬어가기",
+    "E · Take a break",
+    "E · ひと休み",
+    "E · 休息一下",
+    "E · Descansar",
+    "E · Pause machen"
+  ],
+  "HAB_PRODUCT_KEYBOARD_STARTER": [
+    "기본 흑연 키보드",
+    "Starter graphite keyboard",
+    "標準グラファイトキーボード",
+    "初始石墨键盘",
+    "Teclado grafito inicial",
+    "Graphit-Starttastatur"
+  ],
+  "HAB_PRODUCT_KEYBOARD_IVORY": [
+    "아이보리 키보드",
+    "Ivory keyboard",
+    "アイボリーキーボード",
+    "象牙白键盘",
+    "Teclado marfil",
+    "Elfenbein-Tastatur"
+  ],
+  "HAB_PRODUCT_KEYBOARD_CORAL": [
+    "코랄 키보드",
+    "Coral keyboard",
+    "コーラルキーボード",
+    "珊瑚色键盘",
+    "Teclado coral",
+    "Korallenrote Tastatur"
+  ],
+  "HAB_PRODUCT_MONITOR_STARTER": [
+    "기본 모니터",
+    "Starter monitor",
+    "標準モニター",
+    "初始显示器",
+    "Monitor inicial",
+    "Startmonitor"
+  ],
+  "HAB_PRODUCT_MONITOR_WIDE": [
+    "와이드 모니터",
+    "Wide monitor",
+    "ワイドモニター",
+    "宽屏显示器",
+    "Monitor panorámico",
+    "Breitbildmonitor"
+  ],
+  "HAB_PRODUCT_MONITOR_DUAL": [
+    "듀얼 모니터",
+    "Dual monitors",
+    "デュアルモニター",
+    "双显示器",
+    "Dos monitores",
+    "Doppelmonitor"
+  ],
+  "HAB_PRODUCT_LAMP_STARTER": [
+    "따뜻한 책상 조명",
+    "Warm desk lamp",
+    "暖色デスクライト",
+    "暖色台灯",
+    "Lámpara cálida",
+    "Warme Schreibtischlampe"
+  ],
+  "HAB_PRODUCT_LAMP_COOL": [
+    "차가운 책상 조명",
+    "Cool desk lamp",
+    "寒色デスクライト",
+    "冷色台灯",
+    "Lámpara fría",
+    "Kühle Schreibtischlampe"
+  ],
+  "HABITAT_ORDER_READY": [
+    "주문이 도착했습니다. 바깥 보관함에서 수령하세요.",
+    "Your order has arrived. Collect it from the outdoor locker.",
+    "注文が届きました。外のロッカーで受け取ってください。",
+    "订单已到货。请到室外快递柜领取。",
+    "El pedido llegó. Recógelo fuera.",
+    "Bestellung eingetroffen. Draußen abholen."
+  ],
+  "HABITAT_DELIVERY_COLLECTED": [
+    "주문을 수령했습니다. 데스크샵에서 장착할 수 있습니다.",
+    "Orders collected. You can equip the items in Deskshop.",
+    "受け取りました。デスクショップで装着できます。",
+    "已领取。可在桌面商店装备。",
+    "Pedidos recogidos. Ya puedes equiparlos.",
+    "Abgeholt. Gegenstände können ausgerüstet werden."
+  ],
+  "HABITAT_EQUIPPED": [
+    "장비 모양을 변경하고 저장했습니다.",
+    "Equipment appearance changed and saved.",
+    "機器の外観を変更して保存しました。",
+    "设备外观已更改并保存。",
+    "Aspecto cambiado y guardado.",
+    "Geräteaussehen geändert und gespeichert."
+  ],
+  "HABITAT_LIGHTING_SET": [
+    "조명 분위기를 변경하고 저장했습니다.",
+    "Lighting scene changed and saved.",
+    "照明を変更して保存しました。",
+    "灯光已更改并保存。",
+    "Iluminación guardada.",
+    "Beleuchtung geändert und gespeichert."
+  ],
+  "HABITAT_JOB_ACCEPTED": [
+    "의뢰를 수락했습니다. 바깥 공용 통신함을 조사하세요.",
+    "Job accepted. Inspect the shared network cabinet outside.",
+    "受注しました。外の共用通信盤を点検してください。",
+    "已接受工作。请检查室外公共通信柜。",
+    "Trabajo aceptado. Inspecciona el armario exterior.",
+    "Auftrag angenommen. Netzwerkschrank draußen prüfen."
+  ],
+  "HABITAT_CABINET_INSPECTED": [
+    "현재 통신함 상태를 조사했습니다. 경로와 잠금을 비교해 보세요.",
+    "Current cabinet inspected. Compare the route and lock state.",
+    "通信盤を調べました。経路と施錠を比較してください。",
+    "已检查通信柜。请比较线路与锁定状态。",
+    "Armario inspeccionado. Compara ruta y cierre.",
+    "Schrank untersucht. Weg und Verriegelung vergleichen."
+  ],
+  "HABITAT_CABINET_CONFIGURED": [
+    "설정을 저장했습니다. 현재 결과를 다시 검증하세요.",
+    "Configuration saved. Verify the current results again.",
+    "設定を保存しました。現在の結果を再検証してください。",
+    "配置已保存。请重新验证当前结果。",
+    "Configuración guardada. Vuelve a verificar.",
+    "Konfiguration gespeichert. Ergebnisse erneut prüfen."
+  ],
+  "HABITAT_JOB_VERIFIED": [
+    "정상 업무를 유지하면서 비인가 접근을 차단했습니다. 보상 내역과 현재 확인 결과를 확인하세요.",
+    "Normal work is available and unauthorized access is blocked. Check the reward receipt and current results.",
+    "正常業務を維持し、不正アクセスを防いでいます。報酬記録と現在の検証を確認してください。",
+    "正常业务可用，未授权访问已阻止。请查看领奖记录与当前结果。",
+    "Trabajo normal disponible y acceso no autorizado bloqueado. Revisa recibo y resultados.",
+    "Normalbetrieb verfügbar und unbefugter Zugriff gesperrt. Beleg und aktuelle Ergebnisse prüfen."
+  ],
+  "HABITAT_JOB_CHECK_FAILED": [
+    "현재 설정이 조건을 만족하지 않습니다. 정상 점검과 비인가 접근 결과를 비교하고 다시 설정하세요.",
+    "The current configuration does not meet the requirements. Compare normal telemetry and unauthorized access, then adjust it.",
+    "条件を満たしていません。正常計測と不正アクセスを比較し、調整してください。",
+    "当前配置不满足条件。请比较正常遥测和未授权访问并调整。",
+    "No cumple los requisitos. Compara telemetría y acceso no autorizado y ajusta.",
+    "Anforderungen nicht erfüllt. Fernmessung und unbefugten Zugriff vergleichen und anpassen."
+  ],
+  "HABITAT_INSUFFICIENT_CREDITS": [
+    "작업실 크레딧이 부족합니다.",
+    "Not enough room credits.",
+    "クレジットが不足しています。",
+    "工作室点数不足。",
+    "Créditos insuficientes.",
+    "Nicht genug Guthaben."
+  ],
+  "HABITAT_ALREADY_OWNED": [
+    "이미 보유한 제품입니다.",
+    "You already own this item.",
+    "すでに所有しています。",
+    "已拥有此物品。",
+    "Ya posees este objeto.",
+    "Bereits im Besitz."
+  ],
+  "HABITAT_ALREADY_ORDERED": [
+    "이미 주문한 제품입니다. 바깥 보관함을 확인하세요.",
+    "This item is already ordered. Check the outdoor locker.",
+    "注文済みです。外のロッカーを確認してください。",
+    "此物品已下单。请查看室外快递柜。",
+    "Ya está pedido. Revisa la taquilla.",
+    "Bereits bestellt. Paketstation prüfen."
+  ],
+  "HABITAT_NO_DELIVERIES": [
+    "수령할 주문이 없습니다.",
+    "No orders are ready for pickup.",
+    "受取可能な注文はありません。",
+    "没有可领取订单。",
+    "No hay pedidos listos.",
+    "Keine Bestellung abholbereit."
+  ],
+  "HABITAT_INSPECTION_REQUIRED": [
+    "수락한 의뢰의 통신함을 먼저 조사하세요.",
+    "Inspect the cabinet for the accepted job first.",
+    "受注した通信盤を先に点検してください。",
+    "请先检查已接受工作的通信柜。",
+    "Inspecciona primero el armario del encargo.",
+    "Zuerst den angenommenen Schrank untersuchen."
+  ],
+  "HABITAT_JOB_REQUIRED": [
+    "게시판에서 통신함 점검 의뢰를 먼저 수락하세요.",
+    "Accept the cabinet inspection job at the noticeboard first.",
+    "掲示板で先に点検の仕事を受けてください。",
+    "请先在公告栏接受检查工作。",
+    "Acepta primero el trabajo en el tablón.",
+    "Zuerst den Prüfauftrag an der Tafel annehmen."
+  ],
+  "HABITAT_RECOVERED": [
+    "백업을 복구했습니다. 손상된 원본은 따로 보존했습니다.",
+    "Backup recovered. The damaged original was preserved separately.",
+    "バックアップを復元しました。破損原本は別に保持しました。",
+    "已恢复备份。损坏原文件已单独保留。",
+    "Copia recuperada. Original dañado conservado aparte.",
+    "Sicherung wiederhergestellt. Beschädigtes Original separat erhalten."
+  ],
+  "CAMPAIGN_RESULT_IAM_INVALID": [
+    "권한 검토 입력을 확인하세요.",
+    "Check the permission-review input.",
+    "権限レビューの入力を確認してください。",
+    "请检查权限审查输入。",
+    "Comprueba la entrada de permisos.",
+    "Eingabe der Berechtigungsprüfung prüfen."
+  ],
+  "CAMPAIGN_RESULT_IAM_INVALID_BINDING": [
+    "등록된 주체와 허용된 역할을 선택하세요.",
+    "Choose a registered principal and permitted role.",
+    "登録主体と許可ロールを選んでください。",
+    "请选择已注册主体及允许角色。",
+    "Elige identidad y rol permitidos.",
+    "Registrierte Identität und zulässige Rolle wählen."
+  ],
+  "CAMPAIGN_RESULT_IAM_INVALID_STATE": [
+    "현재 권한 상태를 검증하지 못했습니다.",
+    "The current permission state could not be validated.",
+    "現在の権限状態を検証できませんでした。",
+    "无法验证当前权限状态。",
+    "No se validó el estado de permisos.",
+    "Aktueller Berechtigungszustand ungültig."
+  ],
+  "CAMPAIGN_RESULT_IAM_OBSERVED": [
+    "현재 권한과 요청 결과를 확인했습니다.",
+    "Current permissions and request results inspected.",
+    "現在の権限と要求結果を確認しました。",
+    "已检查当前权限和请求结果。",
+    "Permisos y resultados actuales inspeccionados.",
+    "Aktuelle Rechte und Anfrageresultate geprüft."
+  ],
+  "CAMPAIGN_RESULT_IAM_UNKNOWN_CREDENTIAL": [
+    "등록된 자격 참조를 선택하세요.",
+    "Choose a registered credential reference.",
+    "登録済み資格参照を選んでください。",
+    "请选择已注册凭据引用。",
+    "Elige una credencial registrada.",
+    "Registrierte Zugangsdatenreferenz wählen."
+  ],
+  "CAMPAIGN_RESULT_IAM_UNKNOWN_REQUEST": [
+    "등록된 요청을 선택하세요.",
+    "Choose a registered request.",
+    "登録済み要求を選んでください。",
+    "请选择已注册请求。",
+    "Elige una solicitud registrada.",
+    "Registrierte Anfrage wählen."
+  ],
+  "CAMPAIGN_RESULT_IAM_UNKNOWN_ROUTE": [
+    "이 요청에 등록된 경로를 선택하세요.",
+    "Choose a route registered for this request.",
+    "この要求の登録経路を選んでください。",
+    "请选择此请求的已注册线路。",
+    "Elige una ruta registrada para esta solicitud.",
+    "Für diese Anfrage registrierten Weg wählen."
+  ],
+  "CAMPAIGN_RESULT_RELEASE_INVALID": [
+    "배포 검토 입력을 확인하세요.",
+    "Check the release-review input.",
+    "配布レビューの入力を確認してください。",
+    "请检查发布审查输入。",
+    "Comprueba la entrada de revisión.",
+    "Release-Prüfeingabe prüfen."
+  ],
+  "CAMPAIGN_RESULT_RELEASE_UNKNOWN": [
+    "등록된 산출물·증명·수신자를 선택하세요.",
+    "Choose a registered artifact, statement or recipient.",
+    "登録成果物・証明・受信者を選んでください。",
+    "请选择已注册制品、声明或接收方。",
+    "Elige artefacto, declaración o destinatario registrado.",
+    "Registriertes Artefakt, Nachweis oder Empfänger wählen."
+  ],
+  "CAMPAIGN_RESULT_RELEASE_OBSERVED": [
+    "배포와 공개의 현재 근거를 확인했습니다.",
+    "Current release and disclosure evidence inspected.",
+    "配布と公開の現在の根拠を確認しました。",
+    "已检查当前发布与披露证据。",
+    "Pruebas actuales de versión y divulgación inspeccionadas.",
+    "Aktuelle Release- und Offenlegungsnachweise untersucht."
+  ],
+  "CAMPAIGN_RESULT_RELEASE_NOT_READY": [
+    "현재 배포와 서비스 검증을 먼저 완료하세요.",
+    "First complete current deployment and service checks.",
+    "現在の配布とサービス検証を先に完了してください。",
+    "请先完成当前部署和服务检查。",
+    "Completa primero despliegue y pruebas actuales.",
+    "Zuerst aktuelle Bereitstellung und Dienstprüfungen abschließen."
+  ],
+  "CAMPAIGN_RESULT_RELEASE_UNDEPLOYED": [
+    "검증한 산출물을 먼저 배포하세요.",
+    "Deploy a verified artifact first.",
+    "検証済み成果物を先に配布してください。",
+    "请先部署已验证制品。",
+    "Despliega primero un artefacto verificado.",
+    "Zuerst ein geprüftes Artefakt bereitstellen."
+  ],
+  "CAMPAIGN_RESULT_RELEASE_UNOBSERVED": [
+    "해당 산출물의 근거를 먼저 조사하세요.",
+    "Inspect that artifact’s evidence first.",
+    "その成果物の根拠を先に調べてください。",
+    "请先检查该制品证据。",
+    "Inspecciona primero sus pruebas.",
+    "Zuerst Nachweise dieses Artefakts untersuchen."
+  ],
+  "CAMPAIGN_RESULT_RELEASE_UNVERIFIED": [
+    "현재 내용과 일치하는 출처 증명을 검증하세요.",
+    "Verify provenance matching the current content.",
+    "現在の内容と一致する来歴を検証してください。",
+    "请验证与当前内容匹配的来源。",
+    "Verifica procedencia correspondiente al contenido actual.",
+    "Zum aktuellen Inhalt passende Herkunft prüfen."
+  ],
+  "CAMPAIGN_RESULT_RELEASE_REPORT_INVALID": [
+    "관측한 근거와 허용된 공개 항목을 선택하세요.",
+    "Select observed evidence and permitted disclosure fields.",
+    "観察済み根拠と公開可能項目を選んでください。",
+    "请选择已观察证据与允许披露字段。",
+    "Selecciona pruebas observadas y campos permitidos.",
+    "Beobachtete Nachweise und zulässige Felder wählen."
+  ],
+  "CAMPAIGN_RESULT_RELEASE_FOLLOWUP_INVALID": [
+    "현재 수신자의 추가 확인에 필요한 근거를 확인하세요.",
+    "Check the evidence required by this recipient’s follow-up.",
+    "受信者の追加確認に必要な根拠を確認してください。",
+    "请检查当前接收方后续问题所需证据。",
+    "Comprueba las pruebas exigidas por el seguimiento.",
+    "Für die Rückfrage dieses Empfängers nötige Nachweise prüfen."
+  ],
+  "HABITAT_ACTION_LIMIT": [
+    "활동 기록 한도에 도달했습니다.",
+    "The activity history limit was reached.",
+    "活動記録の上限です。",
+    "活动记录已达上限。",
+    "Se alcanzó el límite de acciones.",
+    "Aktivitätsverlauf voll."
+  ],
+  "HABITAT_INVALID_ACTION": [
+    "사용 가능한 활동을 선택하세요.",
+    "Choose an available activity.",
+    "使用可能な活動を選んでください。",
+    "请选择可用活动。",
+    "Elige una actividad disponible.",
+    "Verfügbare Aktivität wählen."
+  ],
+  "HABITAT_INVALID_CONFIG": [
+    "허용된 연결 경로와 잠금 상태를 선택하세요.",
+    "Choose an allowed route and lock state.",
+    "許可経路と施錠状態を選んでください。",
+    "请选择允许线路和锁定状态。",
+    "Elige ruta y cierre permitidos.",
+    "Zulässigen Weg und Verriegelung wählen."
+  ],
+  "HABITAT_INVALID_EQUIPMENT": [
+    "수령한 물품을 맞는 위치에 장착하세요.",
+    "Equip a collected item in its matching slot.",
+    "受取済み機器を対応位置に装着してください。",
+    "请将已领取物品装备到匹配位置。",
+    "Equipa un objeto recogido en su lugar.",
+    "Abgeholten Gegenstand passend ausrüsten."
+  ],
+  "HABITAT_INVALID_LIGHTING": [
+    "사용 가능한 조명을 선택하세요.",
+    "Choose available lighting.",
+    "使用可能な照明を選んでください。",
+    "请选择可用灯光。",
+    "Elige iluminación disponible.",
+    "Verfügbare Beleuchtung wählen."
+  ],
+  "HABITAT_UNKNOWN_JOB": [
+    "게시판의 등록된 의뢰를 선택하세요.",
+    "Choose a registered noticeboard job.",
+    "掲示板の登録依頼を選んでください。",
+    "请选择公告栏注册工作。",
+    "Elige un trabajo del tablón.",
+    "Registrierten Tafelauftrag wählen."
+  ],
+  "HABITAT_UNKNOWN_PRODUCT": [
+    "상점에 등록된 물품을 선택하세요.",
+    "Choose an item registered in the shop.",
+    "ショップの登録商品を選んでください。",
+    "请选择商店注册物品。",
+    "Elige un artículo de la tienda.",
+    "Registrierten Ladenartikel wählen."
+  ],
+  "HABITAT_ORDER_LIMIT": [
+    "주문 한도에 도달했습니다.",
+    "The order limit was reached.",
+    "注文上限に達しました。",
+    "已达订单上限。",
+    "Se alcanzó el límite de pedidos.",
+    "Bestellgrenze erreicht."
+  ],
+  "HABITAT_UPDATED": [
+    "작업실 상태를 저장했습니다.",
+    "Room state saved.",
+    "作業室状態を保存しました。",
+    "工作室状态已保存。",
+    "Estado de sala guardado.",
+    "Raumzustand gespeichert."
+  ],
+  "HABITAT_LOADED": [
+    "작업실 상태를 불러왔습니다.",
+    "Room state loaded.",
+    "作業室状態を読み込みました。",
+    "已加载工作室状态。",
+    "Estado de sala cargado.",
+    "Raumzustand geladen."
+  ],
+  "HABITAT_NEW": [
+    "새 작업실을 준비했습니다.",
+    "A new room is ready.",
+    "新しい作業室を準備しました。",
+    "新工作室已就绪。",
+    "Sala nueva preparada.",
+    "Neues Studio bereit."
+  ],
+  "HABITAT_INVALID_SAVE": [
+    "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요.",
+    "The room save could not be read safely. The existing file is preserved; check backup recovery.",
+    "部屋の保存を安全に読めません。元のファイルを保ち、バックアップ復元を確認してください。",
+    "无法安全读取房间存档。已保留原文件，请检查备份恢复。",
+    "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación.",
+    "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+  ],
+  "HABITAT_LOAD_FAILED": [
+    "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요.",
+    "The room save could not be read safely. The existing file is preserved; check backup recovery.",
+    "部屋の保存を安全に読めません。元のファイルを保ち、バックアップ復元を確認してください。",
+    "无法安全读取房间存档。已保留原文件，请检查备份恢复。",
+    "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación.",
+    "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+  ],
+  "HABITAT_NOT_LOADED": [
+    "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요.",
+    "The room save could not be read safely. The existing file is preserved; check backup recovery.",
+    "部屋の保存を安全に読めません。元のファイルを保ち、バックアップ復元を確認してください。",
+    "无法安全读取房间存档。已保留原文件，请检查备份恢复。",
+    "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación.",
+    "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+  ],
+  "HABITAT_PATH_REJECTED": [
+    "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요.",
+    "The room save could not be read safely. The existing file is preserved; check backup recovery.",
+    "部屋の保存を安全に読めません。元のファイルを保ち、バックアップ復元を確認してください。",
+    "无法安全读取房间存档。已保留原文件，请检查备份恢复。",
+    "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación.",
+    "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+  ],
+  "HABITAT_RECOVERY_REQUIRED": [
+    "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요.",
+    "The room save could not be read safely. The existing file is preserved; check backup recovery.",
+    "部屋の保存を安全に読めません。元のファイルを保ち、バックアップ復元を確認してください。",
+    "无法安全读取房间存档。已保留原文件，请检查备份恢复。",
+    "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación.",
+    "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+  ],
+  "CAMPAIGN_RESULT_COMMISSION_COMPLETE": [
+    "선택 의뢰를 완료했습니다. 다른 의뢰는 원할 때 선택하세요.",
+    "Optional commission complete. Choose another only when you want to.",
+    "任意の依頼が完了しました。ほかの依頼は好きな時に選べます。",
+    "可选委托已完成。其他委托可在想做时选择。",
+    "Encargo opcional completado. Elige otro cuando quieras.",
+    "Optionaler Auftrag abgeschlossen. Wähle einen weiteren, wenn du möchtest."
+  ],
+  "CAMPAIGN_RESULT_NO_CAMPAIGN_ENDING": [
+    "선택 의뢰에는 개별 결과가 있으며 본편 엔딩은 없습니다.",
+    "Optional commissions have individual results and no campaign ending.",
+    "任意の依頼には個別の結果があり、本編の結末はありません。",
+    "可选委托各有结果，不包含主线结局。",
+    "Los encargos tienen resultados individuales, no un final de campaña.",
+    "Optionale Aufträge haben einzelne Ergebnisse, kein Kampagnenende."
+  ],
+  "HAB_OUTDOOR_CONTROLS": [
+    "WASD 이동 · 마우스 오른쪽 시선 · 가까이서 E 상호작용 · Esc 메뉴",
+    "WASD move · Hold right mouse to look · E nearby to interact · Esc menu",
+    "WASDで移動 · 右マウスで視点 · 近くでEを押して操作 · Escでメニュー",
+    "WASD移动 · 按住鼠标右键环顾 · 靠近后按E互动 · Esc菜单",
+    "WASD: moverse · Botón derecho: mirar · E cerca: interactuar · Esc: menú",
+    "WASD: bewegen · Rechte Maustaste: umsehen · E in der Nähe: interagieren · Esc: Menü"
   ]
 }

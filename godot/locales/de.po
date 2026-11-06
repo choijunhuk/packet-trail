@@ -62,6 +62,9 @@ msgstr "Eindringling"
 msgid "CAMPAIGN_INTRUDER_DESC"
 msgstr "Öffne neue Wege und sichere verborgene Aufzeichnungen."
 
+msgid "CAMPAIGN_INVESTIGATION"
+msgstr "Optionale Aufträge"
+
 msgid "CAMPAIGN_NEW_CONFIRM"
 msgstr "Der Fortschritt von {campaign} wird gesichert und neu begonnen. Andere Kampagnen und alte Spielstände bleiben erhalten."
 
@@ -88,6 +91,9 @@ msgstr "Diese Aktion benötigt eine angemeldete virtuelle Sitzung.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_CAMPAIGN_COMPLETE"
 msgstr "Der letzte Fall der Kampagne ist gelöst.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_COMMISSION_COMPLETE"
+msgstr "Optionaler Auftrag abgeschlossen. Wähle einen weiteren, wenn du möchtest."
 
 msgid "CAMPAIGN_RESULT_CONNECTED"
 msgstr "Mit dem virtuellen Host verbunden. Prüfe Konto und Rechte.\n{detail}"
@@ -127,6 +133,27 @@ msgstr "Hinweise zum aktuellen Fall.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HOST_NOT_FOUND"
 msgstr "Der Host wurde in der fiktiven Welt nicht gefunden.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID"
+msgstr "Eingabe der Berechtigungsprüfung prüfen."
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_BINDING"
+msgstr "Registrierte Identität und zulässige Rolle wählen."
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_STATE"
+msgstr "Aktueller Berechtigungszustand ungültig."
+
+msgid "CAMPAIGN_RESULT_IAM_OBSERVED"
+msgstr "Aktuelle Rechte und Anfrageresultate geprüft."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_CREDENTIAL"
+msgstr "Registrierte Zugangsdatenreferenz wählen."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_REQUEST"
+msgstr "Registrierte Anfrage wählen."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_ROUTE"
+msgstr "Für diese Anfrage registrierten Weg wählen."
 
 msgid "CAMPAIGN_RESULT_IMPORTED_M01"
 msgstr "Alter M01-Fortschritt importiert.\n{detail}"
@@ -206,6 +233,9 @@ msgstr "Die angegebene virtuelle Datei oder Ressource wurde nicht gefunden.\n{de
 msgid "CAMPAIGN_RESULT_NO_AUTH_PENDING"
 msgstr "Es läuft keine virtuelle Authentifizierung.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_NO_CAMPAIGN_ENDING"
+msgstr "Optionale Aufträge haben einzelne Ergebnisse, kein Kampagnenende."
+
 msgid "CAMPAIGN_RESULT_NO_CONNECTION"
 msgstr "Dies ist eine lokale Sitzung. Verbinde dich zuerst mit einem virtuellen Server.\n{detail}"
 
@@ -232,6 +262,33 @@ msgstr "Fortschritt aus gültiger Sicherung wiederhergestellt.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
 msgstr "Der aktuelle Speicherstand ist gültig und benötigt keine Wiederherstellung.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RELEASE_FOLLOWUP_INVALID"
+msgstr "Für die Rückfrage dieses Empfängers nötige Nachweise prüfen."
+
+msgid "CAMPAIGN_RESULT_RELEASE_INVALID"
+msgstr "Release-Prüfeingabe prüfen."
+
+msgid "CAMPAIGN_RESULT_RELEASE_NOT_READY"
+msgstr "Zuerst aktuelle Bereitstellung und Dienstprüfungen abschließen."
+
+msgid "CAMPAIGN_RESULT_RELEASE_OBSERVED"
+msgstr "Aktuelle Release- und Offenlegungsnachweise untersucht."
+
+msgid "CAMPAIGN_RESULT_RELEASE_REPORT_INVALID"
+msgstr "Beobachtete Nachweise und zulässige Felder wählen."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNDEPLOYED"
+msgstr "Zuerst ein geprüftes Artefakt bereitstellen."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNKNOWN"
+msgstr "Registriertes Artefakt, Nachweis oder Empfänger wählen."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNOBSERVED"
+msgstr "Zuerst Nachweise dieses Artefakts untersuchen."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNVERIFIED"
+msgstr "Zum aktuellen Inhalt passende Herkunft prüfen."
 
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "Der aktuelle Fall wurde zurückgesetzt.\n{detail}"
@@ -1312,6 +1369,276 @@ msgstr "Textgröße"
 
 msgid "FULLSCREEN"
 msgstr "Vollbild"
+
+msgid "HABITAT_ACTION_LIMIT"
+msgstr "Aktivitätsverlauf voll."
+
+msgid "HABITAT_ALREADY_ORDERED"
+msgstr "Bereits bestellt. Paketstation prüfen."
+
+msgid "HABITAT_ALREADY_OWNED"
+msgstr "Bereits im Besitz."
+
+msgid "HABITAT_CABINET_CONFIGURED"
+msgstr "Konfiguration gespeichert. Ergebnisse erneut prüfen."
+
+msgid "HABITAT_CABINET_INSPECTED"
+msgstr "Schrank untersucht. Weg und Verriegelung vergleichen."
+
+msgid "HABITAT_DELIVERY_COLLECTED"
+msgstr "Abgeholt. Gegenstände können ausgerüstet werden."
+
+msgid "HABITAT_EQUIPPED"
+msgstr "Geräteaussehen geändert und gespeichert."
+
+msgid "HABITAT_INSPECTION_REQUIRED"
+msgstr "Zuerst den angenommenen Schrank untersuchen."
+
+msgid "HABITAT_INSUFFICIENT_CREDITS"
+msgstr "Nicht genug Guthaben."
+
+msgid "HABITAT_INVALID_ACTION"
+msgstr "Verfügbare Aktivität wählen."
+
+msgid "HABITAT_INVALID_CONFIG"
+msgstr "Zulässigen Weg und Verriegelung wählen."
+
+msgid "HABITAT_INVALID_EQUIPMENT"
+msgstr "Abgeholten Gegenstand passend ausrüsten."
+
+msgid "HABITAT_INVALID_LIGHTING"
+msgstr "Verfügbare Beleuchtung wählen."
+
+msgid "HABITAT_INVALID_SAVE"
+msgstr "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+
+msgid "HABITAT_JOB_ACCEPTED"
+msgstr "Auftrag angenommen. Netzwerkschrank draußen prüfen."
+
+msgid "HABITAT_JOB_CHECK_FAILED"
+msgstr "Anforderungen nicht erfüllt. Fernmessung und unbefugten Zugriff vergleichen und anpassen."
+
+msgid "HABITAT_JOB_REQUIRED"
+msgstr "Zuerst den Prüfauftrag an der Tafel annehmen."
+
+msgid "HABITAT_JOB_VERIFIED"
+msgstr "Normalbetrieb verfügbar und unbefugter Zugriff gesperrt. Beleg und aktuelle Ergebnisse prüfen."
+
+msgid "HABITAT_LIGHTING_SET"
+msgstr "Beleuchtung geändert und gespeichert."
+
+msgid "HABITAT_LOADED"
+msgstr "Raumzustand geladen."
+
+msgid "HABITAT_LOAD_FAILED"
+msgstr "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+
+msgid "HABITAT_NEW"
+msgstr "Neues Studio bereit."
+
+msgid "HABITAT_NOT_LOADED"
+msgstr "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+
+msgid "HABITAT_NO_DELIVERIES"
+msgstr "Keine Bestellung abholbereit."
+
+msgid "HABITAT_ORDER_LIMIT"
+msgstr "Bestellgrenze erreicht."
+
+msgid "HABITAT_ORDER_READY"
+msgstr "Bestellung eingetroffen. Draußen abholen."
+
+msgid "HABITAT_PATH_REJECTED"
+msgstr "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+
+msgid "HABITAT_RECOVERED"
+msgstr "Sicherung wiederhergestellt. Beschädigtes Original separat erhalten."
+
+msgid "HABITAT_RECOVERY_REQUIRED"
+msgstr "Raumstand konnte nicht sicher gelesen werden. Datei bleibt erhalten; Sicherungswiederherstellung prüfen."
+
+msgid "HABITAT_UNKNOWN_JOB"
+msgstr "Registrierten Tafelauftrag wählen."
+
+msgid "HABITAT_UNKNOWN_PRODUCT"
+msgstr "Registrierten Ladenartikel wählen."
+
+msgid "HABITAT_UPDATED"
+msgstr "Raumzustand gespeichert."
+
+msgid "HAB_ACCEPT_JOB"
+msgstr "Schrankprüfung annehmen"
+
+msgid "HAB_ACTION_FAILED"
+msgstr "Aktion konnte nicht gespeichert werden. Der Zustand bleibt erhalten."
+
+msgid "HAB_ACTION_OK"
+msgstr "Aktion gespeichert."
+
+msgid "HAB_AWAITING_PICKUP"
+msgstr "Wartet auf Abholung"
+
+msgid "HAB_CABINET_DESCRIPTION"
+msgstr "Verbindungsweg und Verriegelung prüfen. Alle Verbindungen abzuschalten stoppt auch den normalen Betrieb. Nach Änderungen Fernmessung und unbefugten Zugriff testen."
+
+msgid "HAB_CLOSE"
+msgstr "Schließen"
+
+msgid "HAB_COLLECT"
+msgstr "Bereite Bestellungen abholen"
+
+msgid "HAB_CONFIGURE"
+msgstr "Konfiguration anwenden"
+
+msgid "HAB_DELIVERY_COUNT"
+msgstr "Abholbereite Bestellungen: {count}"
+
+msgid "HAB_EQUIP"
+msgstr "Ausrüsten"
+
+msgid "HAB_EQUIPPED"
+msgstr "Ausgerüstet"
+
+msgid "HAB_INSPECT"
+msgstr "Schrank untersuchen"
+
+msgid "HAB_INTERACT_CABINET"
+msgstr "E · Netzwerkschrank"
+
+msgid "HAB_INTERACT_COMPUTER"
+msgstr "E · Computer benutzen"
+
+msgid "HAB_INTERACT_ENTER"
+msgstr "E · Studio betreten"
+
+msgid "HAB_INTERACT_EXIT"
+msgstr "E · Nach draußen"
+
+msgid "HAB_INTERACT_NOTICEBOARD"
+msgstr "E · Auftragstafel"
+
+msgid "HAB_INTERACT_PICKUP"
+msgstr "E · Paketstation"
+
+msgid "HAB_INTERACT_REST"
+msgstr "E · Pause machen"
+
+msgid "HAB_JOB_CHECK"
+msgstr "Aktuelle Prüfung · Normale Messung: {normal} · Unbefugter Zugriff erlaubt: {unauthorized} · Erfüllt: {passed}"
+
+msgid "HAB_JOB_DESCRIPTION"
+msgstr "Optionaler Auftrag · Netzwerkschrank\nNormale Fernmessung erhalten und unbefugten Zugriff sperren. Konfiguration und Prüfergebnisse vor Ort vergleichen. Einmalige Belohnung: 200 Studio-Credits."
+
+msgid "HAB_JOB_STATE"
+msgstr "Angenommen: {accepted} · Belohnung: {rewarded}"
+
+msgid "HAB_LIGHT_DAWN"
+msgstr "Morgenbeleuchtung"
+
+msgid "HAB_LIGHT_NIGHT"
+msgstr "Nachtbeleuchtung"
+
+msgid "HAB_LOCKED"
+msgstr "Verwaltungszugang verriegeln"
+
+msgid "HAB_NO"
+msgstr "Nein"
+
+msgid "HAB_OPTIONAL_NOTE"
+msgstr "Diese Aktivitäten sind optional. Dekoration beeinflusst weder Fähigkeiten noch Hauptgeschichte."
+
+msgid "HAB_ORDER"
+msgstr "Bestellen"
+
+msgid "HAB_OUTDOOR_CONTROLS"
+msgstr "WASD: bewegen · Rechte Maustaste: umsehen · E in der Nähe: interagieren · Esc: Menü"
+
+msgid "HAB_PRICE"
+msgstr "{price} Credits"
+
+msgid "HAB_PRODUCT_KEYBOARD_CORAL"
+msgstr "Korallenrote Tastatur"
+
+msgid "HAB_PRODUCT_KEYBOARD_IVORY"
+msgstr "Elfenbein-Tastatur"
+
+msgid "HAB_PRODUCT_KEYBOARD_STARTER"
+msgstr "Graphit-Starttastatur"
+
+msgid "HAB_PRODUCT_LAMP_COOL"
+msgstr "Kühle Schreibtischlampe"
+
+msgid "HAB_PRODUCT_LAMP_STARTER"
+msgstr "Warme Schreibtischlampe"
+
+msgid "HAB_PRODUCT_MONITOR_DUAL"
+msgstr "Doppelmonitor"
+
+msgid "HAB_PRODUCT_MONITOR_STARTER"
+msgstr "Startmonitor"
+
+msgid "HAB_PRODUCT_MONITOR_WIDE"
+msgstr "Breitbildmonitor"
+
+msgid "HAB_READ_ONLY"
+msgstr "Änderungen sind gesperrt, da der Raumstand nicht geladen wurde. Die Datei bleibt erhalten."
+
+msgid "HAB_RECOVER"
+msgstr "Sicherung wiederherstellen"
+
+msgid "HAB_RECOVER_CONFIRM"
+msgstr "Sicherung prüfen und wiederherstellen. Das beschädigte Original bleibt separat erhalten."
+
+msgid "HAB_REST_NOTE"
+msgstr "Pausen haben keine Nachteile oder Werteffekte. Wähle Beleuchtung und Außenstimmung."
+
+msgid "HAB_REWARD_RECEIPT"
+msgstr "Belohnung bereits ausgezahlt. Weg bei Auszahlung: {route}. Aktuellen Zustand oben prüfen."
+
+msgid "HAB_ROUTE"
+msgstr "Verbindungsweg"
+
+msgid "HAB_ROUTE_APPROVED_RELAY"
+msgstr "Genehmigtes Relay"
+
+msgid "HAB_ROUTE_OFF"
+msgstr "Alle Verbindungen aus"
+
+msgid "HAB_ROUTE_PUBLIC"
+msgstr "Öffentliche Verbindung"
+
+msgid "HAB_ROUTE_SERVICE"
+msgstr "Verwaltungsdienst"
+
+msgid "HAB_SHOP_ADDRESS"
+msgstr "deskshop.packet.test · lokaler Schreibtischladen im Spiel"
+
+msgid "HAB_SHOP_DELIVERY"
+msgstr "Bestellungen kommen sofort. Vor dem Ausrüsten draußen abholen. Keine echte Zahlung oder Internetverbindung."
+
+msgid "HAB_TITLE_BENCH"
+msgstr "Eine Pause machen"
+
+msgid "HAB_TITLE_DELIVERY_LOCKER"
+msgstr "Paketstation"
+
+msgid "HAB_TITLE_NETWORK_CABINET"
+msgstr "Gemeinsamer Netzwerkschrank"
+
+msgid "HAB_TITLE_NOTICEBOARD"
+msgstr "Auftragstafel im Hof"
+
+msgid "HAB_TITLE_SHOP"
+msgstr "Schreibtischladen"
+
+msgid "HAB_VERIFY"
+msgstr "Fernmessung und unbefugten Zugriff prüfen"
+
+msgid "HAB_WALLET"
+msgstr "Studio-Guthaben {balance}"
+
+msgid "HAB_YES"
+msgstr "Ja"
 
 msgid "HELP"
 msgstr "Hilfe"
@@ -3055,6 +3382,246 @@ msgstr "LogLens"
 
 msgid "IN2_TOOL_UPLOAD_NAME"
 msgstr "Medienannahme"
+
+msgid "IV1_I01_ABSTRACTION"
+msgstr "Dieses anbieterneutrale Rätsel bewertet begrenzte registrierte Rollen, Ressourcen und Zugangsdaten. Es bildet weder die vollständige Sprache eines Cloud-Anbieters noch echte Zugangsdaten ab."
+
+msgid "IV1_I01_BRIEF"
+msgstr "Dieser Auftrag ist unabhängig von der Hauptgeschichte wählbar. Ein Hinweis besagt, die nächtliche Bereitstellungsidentität könne Daten einer anderen Organisation lesen. Legitime Bereitstellung, Meldungen und Prüfung müssen verfügbar bleiben.\n\nIdentitäten, Rollen und Ressourcenmandanten vergleichen. Explizite Ablehnung hat Vorrang; widerrufene oder abgelaufene Zugangsdaten sind unbrauchbar. Begrenze die ursprüngliche Rolle oder verlagere legitime Bereitstellung auf das registrierte begrenzte Relay. In beiden Wegen die alten Dienstleister-Zugangsdaten stilllegen.\n\nErwartete Entscheidungen in der Anfragentabelle definieren den genehmigten Bereich. Anfragen prüfen, um aktuelle Konfigurationsnachweise zu gewinnen. Nach falschem Widerruf oder zu vielen Zeitfortschritten den Anfangszustand wiederherstellen.\nDas genehmigte Arbeitskonto folgt unten. Nach Verbindung zeigt das Werkzeug aktuelle Beobachtungen und erlaubte Aktionen.\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I01_DESK_NAME"
+msgstr "Prüfplatz für Bereitstellungsrechte"
+
+msgid "IV1_I01_GOAL"
+msgstr "Bereitstellung, Meldungen und Prüfung erhalten; mandantenfremden Zugriff, Rechteänderungen und ausgesonderte, abgelaufene oder widerrufene Zugangsdaten ablehnen."
+
+msgid "IV1_I01_HINT_1"
+msgstr "Vergleiche die Identität jeder Zugangsdatenreferenz. Regeln und Mandantenbedingungen entscheiden, nicht Rollennamen."
+
+msgid "IV1_I01_HINT_2"
+msgstr "Der ursprüngliche Agent kann eine begrenzte Rolle nutzen. Explizite Ablehnung und Erlaubnis sowie fremde Ressourcen vergleichen."
+
+msgid "IV1_I01_HINT_3"
+msgstr "Entferne gegebenenfalls Agentenrechte und teste das begrenzte Relay. Ausgesonderte Zugangsdaten widerrufen, Meldungen und Prüfung erhalten."
+
+msgid "IV1_I01_LIMIT"
+msgstr "Dieser Auftrag ist für Geschichte und Enden optional. Externe Dienste und sämtliche Regeln werden nicht nachgebildet. Fehländerungen lassen sich zurücksetzen."
+
+msgid "IV1_I01_PRINCIPAL_AGENT"
+msgstr "Bereitstellungsagent"
+
+msgid "IV1_I01_PRINCIPAL_AUDITOR"
+msgstr "Prüfverantwortlicher"
+
+msgid "IV1_I01_PRINCIPAL_CONTRACTOR"
+msgstr "Ausgeschiedener Dienstleister"
+
+msgid "IV1_I01_PRINCIPAL_OPERATOR"
+msgstr "Meldungsoperator"
+
+msgid "IV1_I01_PRINCIPAL_RELAY"
+msgstr "Begrenztes Bereitstellungsrelay"
+
+msgid "IV1_I01_PRINCIPLE"
+msgstr "Erlaubnis erfordert passende Identität, Aktion, Ressource und Mandantenbedingung. Explizite Ablehnung und unbrauchbare Zugangsdaten haben Vorrang."
+
+msgid "IV1_I01_REPLY"
+msgstr "Genehmigte Arbeit bleibt erhalten, fremder Zugriff, Rechteänderungen und ausgeschiedene Dienstleister werden abgewiesen. Aktuelle Konfiguration und Ergebnisse sind dokumentiert. Andere Aufträge bleiben unabhängig verfügbar."
+
+msgid "IV1_I01_REQUEST_AUDIT_READ"
+msgstr "Genehmigter Prüfzugriff"
+
+msgid "IV1_I01_REQUEST_CROSS_TENANT"
+msgstr "Bereitstellungsidentität liest fremden Mandanten"
+
+msgid "IV1_I01_REQUEST_DEPLOYMENT"
+msgstr "Legitimer Bereitstellungszugriff"
+
+msgid "IV1_I01_REQUEST_EXPIRED_ACCESS"
+msgstr "Wiederverwendung abgelaufener Zugangsdaten"
+
+msgid "IV1_I01_REQUEST_GRANT_CHANGE"
+msgstr "Bereitstellungsidentität ändert Rechte"
+
+msgid "IV1_I01_REQUEST_NOTICE_UPDATE"
+msgstr "Legitime Meldungsaktualisierung"
+
+msgid "IV1_I01_REQUEST_RETIRED_ACCESS"
+msgstr "Wiederverwendung ausgesonderter Zugangsdaten"
+
+msgid "IV1_I01_REQUEST_REVOKED_ACCESS"
+msgstr "Wiederverwendung widerrufener Zugangsdaten"
+
+msgid "IV1_I01_RESOURCE_ARTIFACT"
+msgstr "Genehmigtes Bereitstellungsartefakt"
+
+msgid "IV1_I01_RESOURCE_AUDIT"
+msgstr "Prüfprotokoll"
+
+msgid "IV1_I01_RESOURCE_AUTHORITY"
+msgstr "Rollenverwaltung"
+
+msgid "IV1_I01_RESOURCE_FOREIGN"
+msgstr "Daten eines fremden Mandanten"
+
+msgid "IV1_I01_RESOURCE_NOTICE"
+msgstr "Bürgerinformation"
+
+msgid "IV1_I01_ROLE_AUDIT"
+msgstr "Prüfleserolle"
+
+msgid "IV1_I01_ROLE_BROAD"
+msgstr "Zu weit gefasste gemeinsame Rolle"
+
+msgid "IV1_I01_ROLE_LIMITED"
+msgstr "Mandantenbegrenzte Bereitstellungsrolle"
+
+msgid "IV1_I01_ROLE_NONE"
+msgstr "Keine Berechtigungen"
+
+msgid "IV1_I01_ROLE_NOTICE"
+msgstr "Meldungsaktualisierungsrolle"
+
+msgid "IV1_I01_ROLE_RELAY"
+msgstr "Bedingte Relay-Rolle"
+
+msgid "IV1_I01_SENDER"
+msgstr "Unabhängige Prüfstelle"
+
+msgid "IV1_I01_TITLE"
+msgstr "Die anderen Rechte des Bereitstellungskontos"
+
+msgid "IV1_I01_TOOL"
+msgstr "Prüfung wirksamer Rechte und Anfragen"
+
+msgid "IV1_I01_TOOL_EXPLAIN"
+msgstr "Identitäten, Rollen, Mandanten und Zugangsdaten vergleichen; legitime und abzulehnende Anfragen aktuell testen."
+
+msgid "IV1_I01_TOOL_USAGE"
+msgstr "Rollen zuweisen, Zugangsdaten widerrufen und Anfragen testen. Fehländerungen durch Wiederherstellung beheben."
+
+msgid "IV1_I02_ABSTRACTION"
+msgstr "Registrierte JSON-Dienstbeschreibungen und deterministische virtuelle Builds werden verwendet. Kein Compiler oder kryptografischer Signaturalgorithmus läuft; geprüft wird anhand des Spielregisters."
+
+msgid "IV1_I02_ARTIFACT_DELIVERED"
+msgstr "Gemeldetes Paket mit gleichem Namen"
+
+msgid "IV1_I02_ARTIFACT_OFFLINE"
+msgstr "Release mit deaktiviertem Dienst"
+
+msgid "IV1_I02_ARTIFACT_REBUILT"
+msgstr "Virtueller Neubau aus genehmigten Eingaben"
+
+msgid "IV1_I02_ARTIFACT_REVOKED"
+msgstr "Release eines widerrufenen Builders"
+
+msgid "IV1_I02_ARTIFACT_STABLE"
+msgstr "Bekannt gutes früheres Release im Register"
+
+msgid "IV1_I02_ARTIFACT_UNSAFE_ATTESTED"
+msgstr "Echte Herkunft, zu weit gefasstes Verhalten"
+
+msgid "IV1_I02_BRIEF"
+msgstr "Dieser optionale Auftrag erfordert keinen anderen Abschluss. Nachtmeldungs-Pakete tragen dieselbe Version, enthalten aber andere Daten. Vertraue nicht nur einer Signaturanzeige: tatsächliche Prüfsumme, Bezugsobjekt, Builder und Quellhistorie vergleichen.\n\nDas unabhängige Register enthält einen guten Vorgänger und genehmigte Eingaben für einen virtuellen Neubau. Geprüften Vorgänger wiederherstellen oder genehmigte Eingaben bauen und bereitstellen. Bürgerdienst und ward-Meldungen erhalten; fremde Datenzugriffe und interne Meldungen ablehnen.\n\nDanach technische Nachweise an den Betreuer oder ausschließlich öffentliche Nachweise an den Journalisten senden. Wähle verlangte Felder; das Modell erstellt einen bereinigten Bericht, ohne sensible Inhalte einzufügen. Rückfragen mit beobachteten Nachweisen beantworten, um Bearbeitungsvermerk oder Artikel zu öffnen.\nDas genehmigte Arbeitskonto folgt unten. Nach Verbindung zeigt das Werkzeug Beobachtungen und Aktionen.\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I02_CASE_CITIZEN"
+msgstr "Legitimer Bürgerdienst"
+
+msgid "IV1_I02_CASE_CROSS_TENANT"
+msgstr "Fremde Mandantendaten ablehnen"
+
+msgid "IV1_I02_CASE_INTERNAL"
+msgstr "Internes Benachrichtigungsziel ablehnen"
+
+msgid "IV1_I02_CASE_NOTICE"
+msgstr "Legitime ward-Benachrichtigung"
+
+msgid "IV1_I02_DESK_NAME"
+msgstr "Prüfplatz für unterschiedliche Releases derselben Version"
+
+msgid "IV1_I02_EVIDENCE_DELIVERED"
+msgstr "Nachweise zum gelieferten Paket"
+
+msgid "IV1_I02_EVIDENCE_REBUILT"
+msgstr "Nachweise zum genehmigten Neubau"
+
+msgid "IV1_I02_EVIDENCE_STABLE"
+msgstr "Vergleich mit unabhängigem Register"
+
+msgid "IV1_I02_GOAL"
+msgstr "Mit geprüftem Release Betrieb und Grenzen erhalten, nur beobachtete Nachweise offenlegen und Rückfragen abschließen."
+
+msgid "IV1_I02_HINT_1"
+msgstr "Gleiche Namen und Versionen bedeuten nicht gleiche Prüfsummen. Zuerst Register-Vorgänger und gelieferte Datei untersuchen."
+
+msgid "IV1_I02_HINT_2"
+msgstr "Echte Herkunft kann übermäßiges Verhalten beschreiben. Dienst und Meldungen zusammen mit unzulässigen Anfragen testen."
+
+msgid "IV1_I02_HINT_3"
+msgstr "Guten Vorgänger prüfen und wiederherstellen oder genehmigte Eingaben neu bauen. Nach Dienstprüfungen öffentliche Prüfsummen aus stable_evidence und delivered_evidence berichten und Rückfragen beantworten."
+
+msgid "IV1_I02_LIMIT"
+msgstr "Dieser Auftrag ist für Geschichte und Enden optional. Externe Dienste und sämtliche Regeln werden nicht nachgebildet. Fehländerungen lassen sich zurücksetzen."
+
+msgid "IV1_I02_NEWS_REPLY"
+msgstr "Antwort des Journalisten: Wir prüfen die Behauptung identischer Bytes bei gleichem Paketnamen. Unterschiedliche Register- und Dateiprüfsummen mit Beobachtungen belegen."
+
+msgid "IV1_I02_NEWS_RESULT"
+msgstr "Geprüfter Bericht: Pakete derselben Version enthielten unterschiedliche Bytes; die Wiederherstellung erhielt den Betrieb. Interne Übergabereferenzen wurden nicht veröffentlicht."
+
+msgid "IV1_I02_PAGE_TITLE"
+msgstr "Prüfantworten und Veröffentlichung"
+
+msgid "IV1_I02_PAGE_WAIT"
+msgstr "Ergebnisse erscheinen nach gültigem Bericht und Rückfrage."
+
+msgid "IV1_I02_PRINCIPLE"
+msgstr "Herkunft muss Inhalt, Quelle und Builder eines konkreten Artefakts binden. Sicheres Verhalten und berechtigte Offenlegung sind getrennt zu prüfen."
+
+msgid "IV1_I02_PRIVATE_DELIVERED"
+msgstr "Interne Übergabereferenz nur für die befugte technische Stelle."
+
+msgid "IV1_I02_PRIVATE_REBUILT"
+msgstr "Interne Übergabereferenz nur für die befugte technische Stelle."
+
+msgid "IV1_I02_PRIVATE_STABLE"
+msgstr "Interne Übergabereferenz nur für die befugte technische Stelle."
+
+msgid "IV1_I02_RECIPIENT_NEWS"
+msgstr "Journalist · bereinigte Nachweise"
+
+msgid "IV1_I02_RECIPIENT_STAFF"
+msgstr "Betreuer · technische Übergabe"
+
+msgid "IV1_I02_REPLY"
+msgstr "Die geprüfte Bereitstellung erfüllt Betriebs- und Grenzprüfungen; die Nachbearbeitung ist vermerkt. Veröffentlichung und Übergabe entsprechen den offengelegten Nachweisen. Die Hauptgeschichte bleibt ohne Auftrag verfügbar."
+
+msgid "IV1_I02_SENDER"
+msgstr "Unabhängige Prüfstelle"
+
+msgid "IV1_I02_STAFF_REPLY"
+msgstr "Antwort des Betreuers: Übergabe verbindet Wiederherstellung und Nachweise. Rückmeldung anhand aktueller Dienstergebnisse einreichen."
+
+msgid "IV1_I02_STAFF_RESULT"
+msgstr "Technische Übergabe abgeschlossen: aktuelle genehmigte Bereitstellung und Grenzen erneut geprüft. Statt eines öffentlichen Artikels wurde ein eingeschränkter Bearbeitungsvermerk erstellt."
+
+msgid "IV1_I02_TITLE"
+msgstr "Unterschiedliche Releases derselben Version"
+
+msgid "IV1_I02_TOOL"
+msgstr "Arbeitsplatz für Release-Herkunft und Offenlegung"
+
+msgid "IV1_I02_TOOL_EXPLAIN"
+msgstr "Artefakte untersuchen, Herkunft und Verhalten prüfen und passende Nachweise sowie Antworten einreichen."
+
+msgid "IV1_I02_TOOL_USAGE"
+msgstr "Untersuchen, prüfen, bereitstellen, testen, berichten und antworten. Zum erneuten Versuch Anfangszustand herstellen."
+
+msgid "IV1_PACK_SUMMARY"
+msgstr "Cloud-Rechte oder Release-Herkunft unabhängig untersuchen. Für Hauptgeschichte und Enden ist keines erforderlich."
+
+msgid "IV1_PACK_TITLE"
+msgstr "Optionale Aufträge"
 
 msgid "KEYBOARD_VOLUME"
 msgstr "Tastaturgeräusche"
@@ -6500,6 +7067,30 @@ msgstr "Zu sendender Wert"
 msgid "UI_CANCEL"
 msgstr "Abbrechen"
 
+msgid "UI_COMMISSIONS_CLOSE"
+msgstr "Aufträge schließen"
+
+msgid "UI_COMMISSIONS_DONE"
+msgstr "Abgeschlossener Auftrag · erneut ansehen"
+
+msgid "UI_COMMISSIONS_I01_DESC"
+msgstr "Cloud-Berechtigungen · unabhängiger Auftrag zu Rollen, Ressourcen und Mandantengrenzen"
+
+msgid "UI_COMMISSIONS_I02_DESC"
+msgstr "Vertrauen in Releases · Herkunft prüfen und Offenlegung sowie Nachbearbeitung wählen"
+
+msgid "UI_COMMISSIONS_RETURN"
+msgstr "Zur Hauptgeschichte"
+
+msgid "UI_COMMISSIONS_SCOPE"
+msgstr "Wähle ein interessantes Gebiet. Diese Aufträge sind für Hauptgeschichte und Enden nicht erforderlich."
+
+msgid "UI_COMMISSIONS_START"
+msgstr "Starten / fortsetzen"
+
+msgid "UI_COMMISSIONS_TITLE"
+msgstr "Optionale Aufträge"
+
 msgid "UI_CONFIRM_FRESH"
 msgstr "Vorhandener Stand und Sicherung bleiben separat erhalten. Der Fortschritt dieses Bildschirms wird neu gespeichert.\nDer aktuelle Fortschritt wird nicht zurückgesetzt."
 
@@ -6731,6 +7322,24 @@ msgstr "Befehlshilfe im aktiven Terminal anzeigen"
 msgid "UI_HELP_TAG"
 msgstr "Hilfe"
 
+msgid "UI_IAM_BINDINGS"
+msgstr "Aktuelle Rollenzuweisungen"
+
+msgid "UI_IAM_CREDENTIALS"
+msgstr "Zustand der Zugangsdaten"
+
+msgid "UI_IAM_PRINCIPALS"
+msgstr "Registrierte Identitäten"
+
+msgid "UI_IAM_REQUESTS"
+msgstr "Zu prüfende Anfragen"
+
+msgid "UI_IAM_RESOURCES"
+msgstr "Ressourcen und Grenzen"
+
+msgid "UI_IAM_ROLES"
+msgstr "Rollen und Regeln"
+
 msgid "UI_IMPORT_FAILED"
 msgstr "Altes M01 konnte nicht importiert werden ({code}). Das Original blieb unverändert.\n{detail}"
 
@@ -6830,11 +7439,23 @@ msgstr "Wartende Aufträge weiterverarbeiten"
 msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
 msgstr "Zum nächsten Beobachtungsfenster"
 
+msgid "UI_MODEL_ACTION_BIND"
+msgstr "Rollenzuweisung ändern"
+
+msgid "UI_MODEL_ACTION_BUILD"
+msgstr "Genehmigten virtuellen Build ausführen"
+
 msgid "UI_MODEL_ACTION_CHECKPOINT"
 msgstr "Richtlinienprüfpunkt speichern"
 
 msgid "UI_MODEL_ACTION_COLLECT"
 msgstr "An diesem Punkt erheben"
+
+msgid "UI_MODEL_ACTION_DEPLOY"
+msgstr "Geprüftes Artefakt bereitstellen"
+
+msgid "UI_MODEL_ACTION_FOLLOWUP"
+msgstr "Rückfrage beantworten"
 
 msgid "UI_MODEL_ACTION_HANDOFF"
 msgstr "Gestützte Verbindungen und Grenzen übergeben"
@@ -6845,14 +7466,26 @@ msgstr "Hypothese aufstellen"
 msgid "UI_MODEL_ACTION_INSPECT"
 msgstr "Aktuellen Zustand prüfen"
 
+msgid "UI_MODEL_ACTION_INSPECT_ARTIFACT"
+msgstr "Artefakt untersuchen"
+
+msgid "UI_MODEL_ACTION_INSPECT_PROVENANCE"
+msgstr "Herkunft untersuchen"
+
 msgid "UI_MODEL_ACTION_PROBE"
 msgstr "Anfragen und reguläre Arbeit prüfen"
 
 msgid "UI_MODEL_ACTION_QUARANTINE"
 msgstr "Quarantäne des gespeicherten Objekts ändern"
 
+msgid "UI_MODEL_ACTION_REPORT"
+msgstr "Geprüften Bericht einreichen"
+
 msgid "UI_MODEL_ACTION_RESET"
 msgstr "Aktuelle Ausführung zurücksetzen"
+
+msgid "UI_MODEL_ACTION_RESTORE_INITIAL"
+msgstr "Anfangskonfiguration wiederherstellen"
 
 msgid "UI_MODEL_ACTION_REVISE"
 msgstr "Mit Belegspur berichtigen"
@@ -6877,6 +7510,9 @@ msgstr "Ausführung schrittweise ansehen"
 
 msgid "UI_MODEL_ACTION_TEST"
 msgstr "An erhobenen Belegen prüfen"
+
+msgid "UI_MODEL_ACTION_VERIFY"
+msgstr "Herkunft prüfen"
 
 msgid "UI_MODEL_ALLOW"
 msgstr "Zulassen"
@@ -6925,6 +7561,9 @@ msgstr "Noch keine Beobachtungen anzuzeigen."
 
 msgid "UI_MODEL_PERMITTED_PLAINTEXT"
 msgstr "Genehmigter Klartext"
+
+msgid "UI_MODEL_RECEIPTS"
+msgstr "Aktuelle Prüfergebnisse"
 
 msgid "UI_MODEL_REFUTED"
 msgstr "Widerlegt"
@@ -7123,6 +7762,42 @@ msgstr "Sicherungswiederherstellung fehlgeschlagen ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "Beschädigten Stand separat erhalten und gültige Sicherung wiederherstellen"
+
+msgid "UI_RELEASE_ARTICLE"
+msgstr "Öffentliches Ergebnis"
+
+msgid "UI_RELEASE_ARTIFACTS"
+msgstr "Artefakte und Prüfsummen"
+
+msgid "UI_RELEASE_BUILDS"
+msgstr "Genehmigte virtuelle Builds"
+
+msgid "UI_RELEASE_DEPLOYMENT"
+msgstr "Aktueller Bereitstellungszustand"
+
+msgid "UI_RELEASE_EVIDENCE"
+msgstr "Untersuchte Berichtsnachweise"
+
+msgid "UI_RELEASE_RECIPIENTS"
+msgstr "Berichtsempfänger"
+
+msgid "UI_RELEASE_REGISTRIES"
+msgstr "Vertrauenswürdige Herkunftsregister"
+
+msgid "UI_RELEASE_REPLIES"
+msgstr "Antworten und Nachbearbeitung"
+
+msgid "UI_RELEASE_REPORT"
+msgstr "Eingereichter Bericht"
+
+msgid "UI_RELEASE_SERVICES"
+msgstr "Aktuelle Dienstprüfungen"
+
+msgid "UI_RELEASE_STATEMENTS"
+msgstr "Registrierte Herkunftsnachweise"
+
+msgid "UI_RELEASE_VERIFICATIONS"
+msgstr "Ergebnisse der Herkunftsprüfung"
 
 msgid "UI_RESPONSE_ARTIFACTS"
 msgstr "Beobachtete gespeicherte Uploads"
@@ -7382,6 +8057,9 @@ msgstr "Verarbeitet nur das virtuelle Dateisystem. Ohne Rechte wird auch die Wer
 msgid "UI_TOOLKIND_FILE_MODEL"
 msgstr "Liest mit den Kontorechten des gewählten Terminals und derselben Rechteprüfung wie cat."
 
+msgid "UI_TOOLKIND_IAM_CASE"
+msgstr "Berechtigungsprüfung"
+
 msgid "UI_TOOLKIND_IDOR"
 msgstr "Objektzugriff"
 
@@ -7462,6 +8140,9 @@ msgstr "Bildet weder eine echte SQL-Engine noch die gesamte Syntax ab. Verarbeit
 
 msgid "UI_TOOLKIND_QUERY_MODEL"
 msgstr "Bildet eine kleine Bedingungssyntax nach. Beobachte, ob Eingaben Werte bleiben oder Strukturen wie OR verändern. Aktive Bindung behandelt sie nur als Werte."
+
+msgid "UI_TOOLKIND_RELEASE_CASE"
+msgstr "Release- und Offenlegungsprüfung"
 
 msgid "UI_TOOLKIND_RENDER"
 msgstr "Darstellungskontext"
@@ -7595,6 +8276,9 @@ msgstr "Erhebungsmethode"
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "Aktion"
 
+msgid "UI_TOOL_FIELD_ALLOWED_FIELDS"
+msgstr "Zulässige Offenlegungsfelder"
+
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "Gespeichertes Objekt"
 
@@ -7606,6 +8290,12 @@ msgstr "Verfügbar"
 
 msgid "UI_TOOL_FIELD_BASIS"
 msgstr "Belegkennung zum Antwortzeitpunkt"
+
+msgid "UI_TOOL_FIELD_BUILDER_ID"
+msgstr "Builder"
+
+msgid "UI_TOOL_FIELD_BUILD_ID"
+msgstr "Genehmigter Build"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "Geschäftsvorgang"
@@ -7646,11 +8336,17 @@ msgstr "Schrittzahl"
 msgid "UI_TOOL_FIELD_COVERAGE"
 msgstr "Abdeckung"
 
+msgid "UI_TOOL_FIELD_CREDENTIAL_REF"
+msgstr "Zugangsdatenreferenz"
+
 msgid "UI_TOOL_FIELD_CURRENT"
 msgstr "Aktueller Wert"
 
 msgid "UI_TOOL_FIELD_CURSOR"
 msgstr "Aktuelles Beobachtungsfenster"
+
+msgid "UI_TOOL_FIELD_DIGEST"
+msgstr "Prüfsumme"
 
 msgid "UI_TOOL_FIELD_DST"
 msgstr "Zielregister"
@@ -7673,14 +8369,26 @@ msgstr "Art des beobachteten Ereignisses"
 msgid "UI_TOOL_FIELD_EVENT_ID"
 msgstr "Ereignis-ID"
 
+msgid "UI_TOOL_FIELD_EVIDENCE_IDS"
+msgstr "Untersuchte Nachweise"
+
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
 msgstr "Ausführung derzeit erlaubt"
 
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
 msgstr "Ausführung bei Annahme des Uploads erlaubt"
 
+msgid "UI_TOOL_FIELD_EXPIRES_TICK"
+msgstr "Ablauf-Tick"
+
+msgid "UI_TOOL_FIELD_FIELDS"
+msgstr "Offenzulegende Felder"
+
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "Dateiname"
+
+msgid "UI_TOOL_FIELD_FOLLOWUP_ID"
+msgstr "Rückfrage"
 
 msgid "UI_TOOL_FIELD_FORMAT_OK"
 msgstr "Formatprüfung"
@@ -7711,6 +8419,9 @@ msgstr "Eingabe"
 
 msgid "UI_TOOL_FIELD_INPUTS"
 msgstr "Eingabefälle"
+
+msgid "UI_TOOL_FIELD_INSPECTED"
+msgstr "Untersucht"
 
 msgid "UI_TOOL_FIELD_INTENDED"
 msgstr "Gefordertes Ergebnis"
@@ -7778,6 +8489,9 @@ msgstr "Befehlsposition"
 msgid "UI_TOOL_FIELD_POLICY"
 msgstr "Angewandte Richtlinie"
 
+msgid "UI_TOOL_FIELD_PRINCIPAL_ID"
+msgstr "Identität"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "Herkunft und Erhebungsbeleg"
 
@@ -7790,6 +8504,9 @@ msgstr "In Quarantäne"
 msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
 msgstr "Berichtigungsbelege"
 
+msgid "UI_TOOL_FIELD_RECIPIENT_ID"
+msgstr "Empfänger"
+
 msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
 msgstr "Widerlegte Hypothesen"
 
@@ -7798,6 +8515,9 @@ msgstr "Quellregister"
 
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "Virtuelle Register"
+
+msgid "UI_TOOL_FIELD_REGISTRY_ID"
+msgstr "Herkunftsregister"
 
 msgid "UI_TOOL_FIELD_RELATION"
 msgstr "Beziehung"
@@ -7811,11 +8531,20 @@ msgstr "Anfragekennung"
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "Anfragemarkierung"
 
+msgid "UI_TOOL_FIELD_REQUIRED_EVIDENCE"
+msgstr "Erforderliche Nachweise"
+
 msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
 msgstr "Aufbewahrungsumfang"
 
+msgid "UI_TOOL_FIELD_REVOKED"
+msgstr "Widerrufen"
+
 msgid "UI_TOOL_FIELD_RIGHT"
 msgstr "Zweite Entität"
+
+msgid "UI_TOOL_FIELD_ROLE_ID"
+msgstr "Rolle"
 
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "Anfrageweg"
@@ -7834,6 +8563,9 @@ msgstr "Beobachtungsumfang"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "Abschnitt"
+
+msgid "UI_TOOL_FIELD_SENSITIVITY"
+msgstr "Vertraulichkeitsstufe"
 
 msgid "UI_TOOL_FIELD_SENSOR_ID"
 msgstr "Beobachtungspunkt"
@@ -7859,6 +8591,12 @@ msgstr "Dateiformatprüfung bestanden"
 msgid "UI_TOOL_FIELD_SOURCE_ID"
 msgstr "Quellen-ID"
 
+msgid "UI_TOOL_FIELD_SOURCE_REVISION"
+msgstr "Quellstand"
+
+msgid "UI_TOOL_FIELD_STATEMENT_ID"
+msgstr "Herkunftsnachweis"
+
 msgid "UI_TOOL_FIELD_STATUS"
 msgstr "Status"
 
@@ -7868,11 +8606,20 @@ msgstr "Verwendete Schritte"
 msgid "UI_TOOL_FIELD_STORED_AS"
 msgstr "Speicherreferenz"
 
+msgid "UI_TOOL_FIELD_SUBJECT_DIGEST"
+msgstr "Prüfsumme des Bezugsobjekts"
+
 msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
 msgstr "Gestützte Hypothesen"
 
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "Zielhost"
+
+msgid "UI_TOOL_FIELD_TENANT"
+msgstr "Mandant"
+
+msgid "UI_TOOL_FIELD_TENANT_SCOPE"
+msgstr "Mandantenbereich"
 
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "Wahr-Zweig"
@@ -7918,6 +8665,9 @@ msgstr "Erhebungsposition"
 
 msgid "UI_TOOL_FIELD_VERDICT"
 msgstr "Belegurteil"
+
+msgid "UI_TOOL_FIELD_VERIFIED"
+msgstr "Geprüft"
 
 msgid "UI_TOOL_FIELD_VISIBILITY"
 msgstr "Sichtbare Informationen"

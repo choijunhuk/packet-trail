@@ -6,6 +6,7 @@ const DEFINITIONS := {
 	"defender": {"path": "res://data/campaign/packs/defender_v1.json", "prefix": "D", "main": 8, "optional": []},
 	"tracker": {"path": "res://data/campaign/packs/tracker_v1.json", "prefix": "T", "main": 8, "optional": []},
 	"challenge": {"path": "res://data/campaign/packs/challenge_v1.json", "prefix": "X", "main": 3, "optional": []},
+	"investigation": {"path": "res://data/campaign/packs/investigation_v1.json", "prefix": "I", "main": 0, "optional": ["I01", "I02"]},
 	"legacy_intruder": {"path": "res://data/campaign/legacy_v1.json", "prefix": "M", "main": 24, "optional": ["S01", "S02", "R01", "P01"]},
 }
 const MUSIC := ["a01_signal_home", "a02_first_connection", "a03_hidden_route", "a04_packet_flow",
@@ -52,11 +53,14 @@ func _initialize() -> void:
 		public_ids.append(str(entry.get("id", "")))
 	public_ids.sort()
 	_check(public_ids == ["challenge", "defender", "intruder", "tracker"], "catalog exposes the original three campaigns and independent challenge pack", public_ids)
+	var commissions: Array = catalog.list_commissions()
+	_check(commissions.size() == 1 and commissions[0].id == "investigation" and commissions[0].main_count == 0 and commissions[0].optional_count == 2, "optional commissions have a separate catalog entry, not a fifth main campaign")
 	var campaign_ids: Array[String] = []
 	var public_cases := 0
 	var original_cases := 0
 	var challenge_cases := 0
 	var legacy_cases := 0
+	var commission_cases := 0
 	for id in DEFINITIONS:
 		var spec: Dictionary = DEFINITIONS[id]
 		_check(FileAccess.file_exists(spec.path), "runtime definition is packed: " + id)
@@ -78,21 +82,28 @@ func _initialize() -> void:
 		var identity := str(raw.get("campaign_id", "")) + "@" + str(raw.get("content_version", ""))
 		_check(not campaign_ids.has(identity), "campaign identity/version is separate from every other save domain: " + id)
 		campaign_ids.append(identity)
-		_check(raw.get("endings") is Array and not raw.endings.is_empty(), "campaign has its own actual endings: " + id)
+		if id == "investigation":
+			_check(raw.get("mode") == "commissions" and raw.get("endings") == [], "optional commission collection has no vacuous campaign ending")
+			for mission in raw.missions.values(): _check(mission.get("optional") == true and mission.get("prerequisites") == [], "each commission is independently optional")
+		else:
+			_check(raw.get("endings") is Array and not raw.endings.is_empty(), "campaign has its own actual endings: " + id)
 		packs[id] = {"cases": raw.missions.size(), "campaign_id": raw.get("campaign_id"), "endings": raw.get("endings", [])}
 		if id == "legacy_intruder":
 			legacy_cases += raw.missions.size()
+		elif id == "investigation":
+			commission_cases += raw.missions.size()
 		else:
 			public_cases += raw.missions.size()
 			if id == "challenge": challenge_cases += raw.missions.size()
 			else: original_cases += raw.missions.size()
 	_check(original_cases == 44 and challenge_cases == 3 and public_cases == 47 and legacy_cases == 28, "preserved original44, challenge3, public47 and legacy28 are counted separately", {"original": original_cases, "challenge": challenge_cases, "public": public_cases, "legacy": legacy_cases})
+	_check(commission_cases == 2, "two optional commissions are packed independently of the existing47 cases")
 	var localization: Variant = load("res://scripts/presentation/localization.gd")
 	_check(localization != null, "packed localization implementation loads")
 	if localization != null:
 		for locale in LOCALES:
 			_check(localization.configure(locale), "packed locale configures: " + locale)
-			for key in ["NEW_GAME", "UI_APP_TOOLS", "CREDITS_BODY", "CH1_PACK_TITLE", "CH1_PACK_SUMMARY"]:
+			for key in ["NEW_GAME", "UI_APP_TOOLS", "CREDITS_BODY", "CH1_PACK_TITLE", "CH1_PACK_SUMMARY", "IV1_PACK_TITLE", "IV1_PACK_SUMMARY", "HAB_PRODUCT_KEYBOARD_IVORY", "HAB_OUTDOOR_CONTROLS"]:
 				_check(localization.tr_key(key) != key, "actual packed translation: " + locale + "/" + key)
 			for id in packs:
 				for ending in packs[id].endings:
@@ -103,6 +114,8 @@ func _initialize() -> void:
 		_check(load("res://assets/fonts/NotoSans%s.ttf" % suffix) is Font, "actual packed font: " + suffix)
 	var desktop_theme: Variant = load("res://scripts/presentation/desktop_theme.gd")
 	_check(desktop_theme != null and desktop_theme.create(1.0) is Theme, "actual packed native desktop theme")
+	for path in ["core/habitat_store.gd", "presentation/habitat_panel.gd", "room/neighborhood_world.gd", "core/iam_case.gd", "core/release_case.gd"]:
+		_check(load("res://scripts/" + path) is Script, "optional living runtime script is packed: " + path)
 	for name in ["wallpaper", "launcher", "terminal", "browser", "mail", "files", "tools", "board", "notification", "minimize", "maximize", "close"]:
 		var icon := load("res://assets/ui/desktop/%s.svg" % name) as Texture2D
 		_check(icon != null and icon.get_width() > 0 and icon.get_height() > 0, "actual packed original desktop artwork: " + name)
@@ -161,14 +174,17 @@ func _finish() -> void:
 	var counts := {}
 	var public_counts := {}
 	var legacy_count := 0
+	var commission_count := 0
 	for id in packs:
 		counts[id] = {"cases": packs[id].cases, "endings": packs[id].endings.size()}
 		if id == "legacy_intruder":
 			legacy_count = int(packs[id].cases)
+		elif id == "investigation":
+			commission_count = int(packs[id].cases)
 		else:
 			public_counts[id] = int(packs[id].cases)
 	print(JSON.stringify({"suite": "packed_perspectives", "checks": checks, "failures": failures,
-		"packs": counts, "actual_public_counts": public_counts, "original_case_count": int(public_counts.get("intruder", 0)) + int(public_counts.get("defender", 0)) + int(public_counts.get("tracker", 0)), "challenge_case_count": int(public_counts.get("challenge", 0)), "legacy_case_count": legacy_count,
+		"packs": counts, "actual_public_counts": public_counts, "original_case_count": int(public_counts.get("intruder", 0)) + int(public_counts.get("defender", 0)) + int(public_counts.get("tracker", 0)), "challenge_case_count": int(public_counts.get("challenge", 0)), "legacy_case_count": legacy_count, "commission_case_count": commission_count,
 		"inventory_files": visible_files.size(),
 		"limit": "Actual PCK resource loading from an empty project; does not establish native OS input/audio or human acceptance."}))
 	quit(0 if failures.is_empty() else 1)

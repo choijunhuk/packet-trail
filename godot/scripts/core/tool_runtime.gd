@@ -4,8 +4,10 @@ const FS = preload("res://scripts/core/virtual_fs.gd")
 const ResponseLab = preload("res://scripts/core/response_lab.gd")
 const ObservationCase = preload("res://scripts/core/observation_case.gd")
 const BranchVM = preload("res://scripts/core/branch_vm.gd")
-const STATEFUL_KINDS := ["response_lab", "observation_case", "branch_vm"]
-const KINDS := ["query", "render", "path", "exec", "fetch", "permission", "audit", "reverse", "memory", "packet", "trace", "compare", "token", "policy", "idor", "session", "csrf", "upload", "response_lab", "observation_case", "branch_vm"]
+const IAMCase = preload("res://scripts/core/iam_case.gd")
+const ReleaseCase = preload("res://scripts/core/release_case.gd")
+const STATEFUL_KINDS := ["response_lab", "observation_case", "branch_vm", "iam_case", "release_case"]
+const KINDS := ["query", "render", "path", "exec", "fetch", "permission", "audit", "reverse", "memory", "packet", "trace", "compare", "token", "policy", "idor", "session", "csrf", "upload", "response_lab", "observation_case", "branch_vm", "iam_case", "release_case"]
 
 
 static func normalize_value(value: Variant) -> Variant:
@@ -29,6 +31,8 @@ static func apply_challenge(definition: Dictionary, input: Variant, policies: Di
 		"response_lab": return ResponseLab.apply_action(definition, input, previous, context)
 		"observation_case": return ObservationCase.apply_action(definition, input, previous, context)
 		"branch_vm": return BranchVM.apply_action(definition, input, previous, context)
+		"iam_case": return IAMCase.apply_action(definition, input, previous, context)
+		"release_case": return ReleaseCase.apply_action(definition, input, previous, context)
 	var state: Dictionary = previous.duplicate(true)
 	var kind: String = definition.get("kind", "")
 	var policy: Variant = policies.get(definition.get("policy_id", ""), false)

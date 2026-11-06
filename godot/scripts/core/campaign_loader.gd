@@ -4,7 +4,7 @@ const BaseLoader = preload("res://scripts/core/content_loader.gd")
 const Models = preload("res://scripts/core/tool_runtime.gd")
 const Catalog = preload("res://scripts/core/campaign_catalog.gd")
 const ModelSchema = preload("res://scripts/core/campaign_model_schema.gd")
-const GOALS := ["record_acquired", "sources_preserved", "fact", "policy", "session", "service", "response_matrix", "observation_handoff", "vm_cases", "current_boundaries"]
+const GOALS := ["record_acquired", "sources_preserved", "fact", "policy", "session", "service", "response_matrix", "observation_handoff", "vm_cases", "current_boundaries", "iam_review", "release_review"]
 const PATH := "res://data/campaign/campaign.json"
 
 
@@ -36,10 +36,15 @@ static func validate(raw: Variant, expected_pack_id: String = "") -> Dictionary:
 		return {"ok": false, "errors": ["Invalid content version."], "definition": {}}
 	data.schema_version = 1
 	data.content_version = int(data.content_version)
+	var mode: Variant = data.get("mode", "campaign")
+	if not mode is String or mode not in ["campaign", "commissions"]:
+		return {"ok": false, "errors": ["Unknown campaign mode."], "definition": {}}
 	if not expected_pack_id.is_empty():
 		var entry: Dictionary = Catalog.get_pack(expected_pack_id)
-		if entry.is_empty() or data.campaign_id != entry.campaign_id or data.content_version != entry.content_version:
+		if entry.is_empty() or data.campaign_id != entry.campaign_id or data.content_version != entry.content_version or mode != entry.get("mode", "campaign"):
 			return {"ok": false, "errors": ["Campaign pack identity/version mismatch."], "definition": {}}
+	if mode == "commissions" and (data.missions.is_empty() or not data.endings.is_empty()):
+		return {"ok": false, "errors": ["Optional commission collections require cases and no campaign endings."], "definition": {}}
 	var seen: Array = []
 	for id in data.mission_order:
 		if not id is String or seen.has(id) or not data.missions.has(id):
@@ -64,6 +69,8 @@ static func validate(raw: Variant, expected_pack_id: String = "") -> Dictionary:
 			continue
 		if mission.goals.is_empty():
 			errors.append(str(id) + ": goals cannot be empty")
+		if mode == "commissions" and (not mission.optional or not mission.prerequisites.is_empty()):
+			errors.append(str(id) + ": optional commissions must be independently selectable.")
 		mission.chapter = int(mission.chapter)
 		for predecessor in mission.prerequisites:
 			if not data.missions.has(predecessor) or data.mission_order.find(predecessor) >= data.mission_order.find(id):
@@ -107,7 +114,7 @@ static func validate(raw: Variant, expected_pack_id: String = "") -> Dictionary:
 			if not goal is Dictionary or not GOALS.has(goal.get("kind")):
 				errors.append(str(id) + ": unknown goal")
 				continue
-			var required_fields: Array = {"record_acquired": ["kind", "record_id"], "sources_preserved": ["kind"], "fact": ["kind", "id"], "policy": ["kind", "id", "value"], "session": ["kind", "host_id", "account_id"], "service": ["kind", "host_id", "port", "state"], "response_matrix": ["kind", "challenge_id", "case_ids"], "observation_handoff": ["kind", "challenge_id"], "vm_cases": ["kind", "challenge_id", "requirements"], "current_boundaries": ["kind", "cases"]}[goal.kind]
+			var required_fields: Array = {"record_acquired": ["kind", "record_id"], "sources_preserved": ["kind"], "fact": ["kind", "id"], "policy": ["kind", "id", "value"], "session": ["kind", "host_id", "account_id"], "service": ["kind", "host_id", "port", "state"], "response_matrix": ["kind", "challenge_id", "case_ids"], "observation_handoff": ["kind", "challenge_id"], "vm_cases": ["kind", "challenge_id", "requirements"], "iam_review": ["kind", "challenge_id"], "release_review": ["kind", "challenge_id"], "current_boundaries": ["kind", "cases"]}[goal.kind]
 			if not goal.has_all(required_fields):
 				errors.append(str(id) + ": missing goal fields")
 				continue
@@ -155,9 +162,17 @@ static func validate(raw: Variant, expected_pack_id: String = "") -> Dictionary:
 		for page in mission.pages.values():
 			if page.has("challenge_id") and not mission.challenges.has(page.challenge_id):
 				errors.append(str(id) + ": page challenge missing")
+			if page.has("model_view"):
+				var view: Variant = page.model_view
+				if not view is Dictionary or view.size() != 2 or not view.has_all(["challenge_id", "section"]) or not view.challenge_id is String or not view.section is String or view.section not in ["article", "reply"]:
+					errors.append(str(id) + ": invalid read-only model view.")
+				else:
+					var model: Variant = mission.challenges.get(view.challenge_id, {})
+					if not model is Dictionary or model.get("kind", "") != "release_case" or page.has("challenge_id") or page.has("record_id") or page.get("host_id", "") != model.get("host_id", "") or page.get("requires_session", {}) != model.get("requires_session", {}):
+						errors.append(str(id) + ": model view must use its release model host and authorization.")
 			if not _requirements_valid(page, mission):
 				errors.append(str(id) + ": invalid page access requirements")
-	if data.endings.is_empty():
+	if mode == "campaign" and data.endings.is_empty():
 		errors.append("Ending definitions cannot be empty.")
 	for message in _contact_errors(data):
 		errors.append(message)
@@ -266,7 +281,7 @@ static func _challenge_errors(challenge: Dictionary, mission: Dictionary) -> Arr
 
 static func _model_goal_errors(goal: Dictionary, mission: Dictionary) -> Array[String]:
 	var errors: Array[String] = []
-	var required_kind: String = {"response_matrix": "response_lab", "observation_handoff": "observation_case", "vm_cases": "branch_vm"}.get(goal.kind, "")
+	var required_kind: String = {"response_matrix": "response_lab", "observation_handoff": "observation_case", "vm_cases": "branch_vm", "iam_review": "iam_case", "release_review": "release_case"}.get(goal.kind, "")
 	if not required_kind.is_empty():
 		var model: Variant = mission.challenges.get(goal.get("challenge_id", ""))
 		if not model is Dictionary or model.get("kind", "") != required_kind: return ["Goal references another model kind."]

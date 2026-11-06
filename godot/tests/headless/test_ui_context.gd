@@ -38,9 +38,9 @@ func run(tree: SceneTree) -> Dictionary:
 	_room = RoomScene.instantiate()
 	_room.desktop_scene = DesktopScene
 	var entries: Array = []
-	for pack in Catalog.list_packs(true):
+	for pack in Catalog.list_all_packs(true):
 		_room.campaign_slots[pack.id] = Catalog.test_slot(_test_root + "/session.json", pack.id)
-		if pack.id != "legacy_intruder":
+		if Catalog.PUBLIC_IDS.has(pack.id):
 			var entry: Dictionary = pack.duplicate(true)
 			entry["disk_available"] = pack.id == "intruder"
 			entries.append(entry)
@@ -193,7 +193,7 @@ func _test_audio_context() -> void:
 func _fingerprints() -> Dictionary:
 	var result := {}
 	var paths: Array[String] = ["user://settings.json", Catalog.LEGACY_SOURCE, "user://saves/slot_01.json"]
-	for pack in Catalog.list_packs(true):
+	for pack in Catalog.list_all_packs(true):
 		paths.append(Catalog.default_slot(pack.id))
 	for path in paths:
 		for suffix in ["", ".bak", ".tmp", ".bak.tmp"]:

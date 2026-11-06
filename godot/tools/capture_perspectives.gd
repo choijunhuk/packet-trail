@@ -4,7 +4,8 @@ extends "res://tools/capture_full_game.gd"
 const Catalog = preload("res://scripts/core/campaign_catalog.gd")
 const ORIGINAL_PACK_IDS := ["intruder", "defender", "tracker"]
 const PACK_IDS := ["intruder", "defender", "tracker", "challenge"]
-const STRUCTURED := ["response_lab", "observation_case", "branch_vm"]
+const STRUCTURED := ["response_lab", "observation_case", "branch_vm", "iam_case", "release_case"]
+const MAIN_STRUCTURED := ["response_lab", "observation_case", "branch_vm"]
 const CASE_COUNTS := {"intruder": 28, "defender": 8, "tracker": 8, "challenge": 3}
 
 var test_base := ""
@@ -52,7 +53,7 @@ func _boot_product() -> bool:
 	if not _load_fixtures():
 		return false
 	test_base = "user://tests/desktop_ui_%d_%d.json" % [Time.get_ticks_usec(), get_instance_id()]
-	for pack in Catalog.list_packs(true):
+	for pack in Catalog.list_all_packs(true):
 		var id := str(pack.id)
 		var path := Catalog.test_slot(test_base, id)
 		_check(not path.is_empty() and path.begins_with("user://tests/"), "catalog creates an isolated test slot: " + id)
@@ -142,7 +143,7 @@ func _run() -> void:
 		_check(original_cases.size() == 44 and original_endings.size() == 3, "preserved original44 cases and three endings actually replay")
 		_check(challenge_cases.size() == 3 and challenge_endings.size() == 1, "new challenge3 cases and one ending actually replay")
 		_check(campaign_cases.size() == 47 and pack_endings.size() == 4, "aggregate47 cases and four endings reconcile")
-		for kind in STRUCTURED:
+		for kind in MAIN_STRUCTURED:
 			_check(typed_runs.any(func(row: Dictionary): return row.kind == kind), "real basic form executed for model kind: " + kind)
 	else:
 		_check(campaign_cases.size() == 1 and campaign_cases[0].pack_id == "intruder" and campaign_cases[0].mission_id == "M01",
@@ -758,7 +759,7 @@ func _capture(filename: String) -> void:
 func _fingerprints() -> Dictionary:
 	var result := super._fingerprints()
 	var paths: Array[String] = ["user://settings.json", Catalog.LEGACY_SOURCE, "user://saves/slot_01.json"]
-	for pack in Catalog.list_packs(true):
+	for pack in Catalog.list_all_packs(true):
 		var path := Catalog.default_slot(str(pack.id))
 		if not paths.has(path):
 			paths.append(path)

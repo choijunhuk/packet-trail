@@ -82,7 +82,7 @@ func _build() -> void:
 	scope.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	scope.add_theme_color_override("font_color", DesktopTheme.MUTED)
 	play.add_child(scope)
-	for id in ["intruder", "defender", "tracker", "challenge"]:
+	for id in ["intruder", "defender", "tracker", "challenge", "investigation"]:
 		var label := Label.new()
 		label.text = _text("SETTINGS_SUPPORT_FOR", {"campaign": _text("CAMPAIGN_" + id.to_upper())})
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART

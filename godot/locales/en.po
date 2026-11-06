@@ -62,6 +62,9 @@ msgstr "Intruder"
 msgid "CAMPAIGN_INTRUDER_DESC"
 msgstr "Open new routes and recover hidden records."
 
+msgid "CAMPAIGN_INVESTIGATION"
+msgstr "Optional commissions"
+
 msgid "CAMPAIGN_NEW_CONFIRM"
 msgstr "Back up and restart {campaign}. Other campaigns and previous-edition saves are preserved."
 
@@ -88,6 +91,9 @@ msgstr "This action requires an authenticated virtual session.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_CAMPAIGN_COMPLETE"
 msgstr "The campaign's final case is resolved.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_COMMISSION_COMPLETE"
+msgstr "Optional commission complete. Choose another only when you want to."
 
 msgid "CAMPAIGN_RESULT_CONNECTED"
 msgstr "Connected to the virtual host. Check the current account and authority.\n{detail}"
@@ -127,6 +133,27 @@ msgstr "Guidance for the current case.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HOST_NOT_FOUND"
 msgstr "The host was not found in the fictional world.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID"
+msgstr "Check the permission-review input."
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_BINDING"
+msgstr "Choose a registered principal and permitted role."
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_STATE"
+msgstr "The current permission state could not be validated."
+
+msgid "CAMPAIGN_RESULT_IAM_OBSERVED"
+msgstr "Current permissions and request results inspected."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_CREDENTIAL"
+msgstr "Choose a registered credential reference."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_REQUEST"
+msgstr "Choose a registered request."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_ROUTE"
+msgstr "Choose a route registered for this request."
 
 msgid "CAMPAIGN_RESULT_IMPORTED_M01"
 msgstr "Legacy M01 progress imported.\n{detail}"
@@ -206,6 +233,9 @@ msgstr "The specified virtual file or resource was not found.\n{detail}"
 msgid "CAMPAIGN_RESULT_NO_AUTH_PENDING"
 msgstr "No virtual authentication is pending.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_NO_CAMPAIGN_ENDING"
+msgstr "Optional commissions have individual results and no campaign ending."
+
 msgid "CAMPAIGN_RESULT_NO_CONNECTION"
 msgstr "This is a local session. Connect to a virtual server first.\n{detail}"
 
@@ -232,6 +262,33 @@ msgstr "Progress recovered from a valid backup.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
 msgstr "The current save is valid and does not need recovery.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RELEASE_FOLLOWUP_INVALID"
+msgstr "Check the evidence required by this recipient’s follow-up."
+
+msgid "CAMPAIGN_RESULT_RELEASE_INVALID"
+msgstr "Check the release-review input."
+
+msgid "CAMPAIGN_RESULT_RELEASE_NOT_READY"
+msgstr "First complete current deployment and service checks."
+
+msgid "CAMPAIGN_RESULT_RELEASE_OBSERVED"
+msgstr "Current release and disclosure evidence inspected."
+
+msgid "CAMPAIGN_RESULT_RELEASE_REPORT_INVALID"
+msgstr "Select observed evidence and permitted disclosure fields."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNDEPLOYED"
+msgstr "Deploy a verified artifact first."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNKNOWN"
+msgstr "Choose a registered artifact, statement or recipient."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNOBSERVED"
+msgstr "Inspect that artifact’s evidence first."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNVERIFIED"
+msgstr "Verify provenance matching the current content."
 
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "The current case has been reset.\n{detail}"
@@ -1312,6 +1369,276 @@ msgstr "Text scale"
 
 msgid "FULLSCREEN"
 msgstr "Fullscreen"
+
+msgid "HABITAT_ACTION_LIMIT"
+msgstr "The activity history limit was reached."
+
+msgid "HABITAT_ALREADY_ORDERED"
+msgstr "This item is already ordered. Check the outdoor locker."
+
+msgid "HABITAT_ALREADY_OWNED"
+msgstr "You already own this item."
+
+msgid "HABITAT_CABINET_CONFIGURED"
+msgstr "Configuration saved. Verify the current results again."
+
+msgid "HABITAT_CABINET_INSPECTED"
+msgstr "Current cabinet inspected. Compare the route and lock state."
+
+msgid "HABITAT_DELIVERY_COLLECTED"
+msgstr "Orders collected. You can equip the items in Deskshop."
+
+msgid "HABITAT_EQUIPPED"
+msgstr "Equipment appearance changed and saved."
+
+msgid "HABITAT_INSPECTION_REQUIRED"
+msgstr "Inspect the cabinet for the accepted job first."
+
+msgid "HABITAT_INSUFFICIENT_CREDITS"
+msgstr "Not enough room credits."
+
+msgid "HABITAT_INVALID_ACTION"
+msgstr "Choose an available activity."
+
+msgid "HABITAT_INVALID_CONFIG"
+msgstr "Choose an allowed route and lock state."
+
+msgid "HABITAT_INVALID_EQUIPMENT"
+msgstr "Equip a collected item in its matching slot."
+
+msgid "HABITAT_INVALID_LIGHTING"
+msgstr "Choose available lighting."
+
+msgid "HABITAT_INVALID_SAVE"
+msgstr "The room save could not be read safely. The existing file is preserved; check backup recovery."
+
+msgid "HABITAT_JOB_ACCEPTED"
+msgstr "Job accepted. Inspect the shared network cabinet outside."
+
+msgid "HABITAT_JOB_CHECK_FAILED"
+msgstr "The current configuration does not meet the requirements. Compare normal telemetry and unauthorized access, then adjust it."
+
+msgid "HABITAT_JOB_REQUIRED"
+msgstr "Accept the cabinet inspection job at the noticeboard first."
+
+msgid "HABITAT_JOB_VERIFIED"
+msgstr "Normal work is available and unauthorized access is blocked. Check the reward receipt and current results."
+
+msgid "HABITAT_LIGHTING_SET"
+msgstr "Lighting scene changed and saved."
+
+msgid "HABITAT_LOADED"
+msgstr "Room state loaded."
+
+msgid "HABITAT_LOAD_FAILED"
+msgstr "The room save could not be read safely. The existing file is preserved; check backup recovery."
+
+msgid "HABITAT_NEW"
+msgstr "A new room is ready."
+
+msgid "HABITAT_NOT_LOADED"
+msgstr "The room save could not be read safely. The existing file is preserved; check backup recovery."
+
+msgid "HABITAT_NO_DELIVERIES"
+msgstr "No orders are ready for pickup."
+
+msgid "HABITAT_ORDER_LIMIT"
+msgstr "The order limit was reached."
+
+msgid "HABITAT_ORDER_READY"
+msgstr "Your order has arrived. Collect it from the outdoor locker."
+
+msgid "HABITAT_PATH_REJECTED"
+msgstr "The room save could not be read safely. The existing file is preserved; check backup recovery."
+
+msgid "HABITAT_RECOVERED"
+msgstr "Backup recovered. The damaged original was preserved separately."
+
+msgid "HABITAT_RECOVERY_REQUIRED"
+msgstr "The room save could not be read safely. The existing file is preserved; check backup recovery."
+
+msgid "HABITAT_UNKNOWN_JOB"
+msgstr "Choose a registered noticeboard job."
+
+msgid "HABITAT_UNKNOWN_PRODUCT"
+msgstr "Choose an item registered in the shop."
+
+msgid "HABITAT_UPDATED"
+msgstr "Room state saved."
+
+msgid "HAB_ACCEPT_JOB"
+msgstr "Accept cabinet inspection job"
+
+msgid "HAB_ACTION_FAILED"
+msgstr "Action could not be saved. The current state is preserved."
+
+msgid "HAB_ACTION_OK"
+msgstr "Action saved."
+
+msgid "HAB_AWAITING_PICKUP"
+msgstr "Awaiting locker pickup"
+
+msgid "HAB_CABINET_DESCRIPTION"
+msgstr "Inspect the cabinet to examine its route and lock state. Disabling every connection also stops normal work. After changing the configuration, verify both normal telemetry and unauthorized access."
+
+msgid "HAB_CLOSE"
+msgstr "Close"
+
+msgid "HAB_COLLECT"
+msgstr "Collect ready orders"
+
+msgid "HAB_CONFIGURE"
+msgstr "Apply configuration"
+
+msgid "HAB_DELIVERY_COUNT"
+msgstr "Orders ready for pickup: {count}"
+
+msgid "HAB_EQUIP"
+msgstr "Equip"
+
+msgid "HAB_EQUIPPED"
+msgstr "Equipped"
+
+msgid "HAB_INSPECT"
+msgstr "Inspect current cabinet"
+
+msgid "HAB_INTERACT_CABINET"
+msgstr "E · Shared network cabinet"
+
+msgid "HAB_INTERACT_COMPUTER"
+msgstr "E · Use computer"
+
+msgid "HAB_INTERACT_ENTER"
+msgstr "E · Enter studio"
+
+msgid "HAB_INTERACT_EXIT"
+msgstr "E · Go outside"
+
+msgid "HAB_INTERACT_NOTICEBOARD"
+msgstr "E · Neighborhood noticeboard"
+
+msgid "HAB_INTERACT_PICKUP"
+msgstr "E · Delivery locker"
+
+msgid "HAB_INTERACT_REST"
+msgstr "E · Take a break"
+
+msgid "HAB_JOB_CHECK"
+msgstr "Current check · Normal telemetry: {normal} · Unauthorized access allowed: {unauthorized} · Requirements met: {passed}"
+
+msgid "HAB_JOB_DESCRIPTION"
+msgstr "Optional job · shared network cabinet\nKeep normal remote telemetry available while blocking unauthorized access. Compare the current configuration and actual checks on site. The one-time reward is 200 room credits."
+
+msgid "HAB_JOB_STATE"
+msgstr "Accepted: {accepted} · Reward received: {rewarded}"
+
+msgid "HAB_LIGHT_DAWN"
+msgstr "Dawn lighting"
+
+msgid "HAB_LIGHT_NIGHT"
+msgstr "Night lighting"
+
+msgid "HAB_LOCKED"
+msgstr "Lock management access"
+
+msgid "HAB_NO"
+msgstr "No"
+
+msgid "HAB_OPTIONAL_NOTE"
+msgstr "These activities are optional. Decorations do not affect hacking abilities or main-story progress."
+
+msgid "HAB_ORDER"
+msgstr "Order"
+
+msgid "HAB_OUTDOOR_CONTROLS"
+msgstr "WASD move · Hold right mouse to look · E nearby to interact · Esc menu"
+
+msgid "HAB_PRICE"
+msgstr "{price} credits"
+
+msgid "HAB_PRODUCT_KEYBOARD_CORAL"
+msgstr "Coral keyboard"
+
+msgid "HAB_PRODUCT_KEYBOARD_IVORY"
+msgstr "Ivory keyboard"
+
+msgid "HAB_PRODUCT_KEYBOARD_STARTER"
+msgstr "Starter graphite keyboard"
+
+msgid "HAB_PRODUCT_LAMP_COOL"
+msgstr "Cool desk lamp"
+
+msgid "HAB_PRODUCT_LAMP_STARTER"
+msgstr "Warm desk lamp"
+
+msgid "HAB_PRODUCT_MONITOR_DUAL"
+msgstr "Dual monitors"
+
+msgid "HAB_PRODUCT_MONITOR_STARTER"
+msgstr "Starter monitor"
+
+msgid "HAB_PRODUCT_MONITOR_WIDE"
+msgstr "Wide monitor"
+
+msgid "HAB_READ_ONLY"
+msgstr "Changes are locked because the room save could not be loaded. The existing file is preserved."
+
+msgid "HAB_RECOVER"
+msgstr "Recover backup"
+
+msgid "HAB_RECOVER_CONFIRM"
+msgstr "Validate and recover the backup. The damaged original is preserved separately."
+
+msgid "HAB_REST_NOTE"
+msgstr "Rest has no penalty or stat effects. Choose the lighting and outdoor atmosphere."
+
+msgid "HAB_REWARD_RECEIPT"
+msgstr "Reward already paid. Route at payment: {route}. The current state is shown by the check above."
+
+msgid "HAB_ROUTE"
+msgstr "Connection route"
+
+msgid "HAB_ROUTE_APPROVED_RELAY"
+msgstr "Approved relay"
+
+msgid "HAB_ROUTE_OFF"
+msgstr "All connections off"
+
+msgid "HAB_ROUTE_PUBLIC"
+msgstr "Public connection"
+
+msgid "HAB_ROUTE_SERVICE"
+msgstr "Management service"
+
+msgid "HAB_SHOP_ADDRESS"
+msgstr "deskshop.packet.test · local in-game desk store"
+
+msgid "HAB_SHOP_DELIVERY"
+msgstr "Orders arrive immediately. Collect them from the outdoor delivery locker before equipping. No real payment or internet connection is used."
+
+msgid "HAB_TITLE_BENCH"
+msgstr "Take a break"
+
+msgid "HAB_TITLE_DELIVERY_LOCKER"
+msgstr "Delivery locker"
+
+msgid "HAB_TITLE_NETWORK_CABINET"
+msgstr "Shared network cabinet"
+
+msgid "HAB_TITLE_NOTICEBOARD"
+msgstr "Neighborhood noticeboard"
+
+msgid "HAB_TITLE_SHOP"
+msgstr "Deskshop"
+
+msgid "HAB_VERIFY"
+msgstr "Verify telemetry and unauthorized access"
+
+msgid "HAB_WALLET"
+msgstr "Room credits {balance}"
+
+msgid "HAB_YES"
+msgstr "Yes"
 
 msgid "HELP"
 msgstr "Help"
@@ -3055,6 +3382,246 @@ msgstr "LogLens"
 
 msgid "IN2_TOOL_UPLOAD_NAME"
 msgstr "Media Intake"
+
+msgid "IV1_I01_ABSTRACTION"
+msgstr "This provider-neutral puzzle evaluates finite registered roles, resources and credentials. It does not implement a cloud provider’s full policy language or real credentials."
+
+msgid "IV1_I01_BRIEF"
+msgstr "Choose this commission independently of the main story. A tip says the night deployment identity can read another organization’s data. Legitimate deployment, notice updates and audit work must remain available.\n\nCompare principals, roles and resource tenants. Explicit deny takes precedence over allow, and revoked or expired credentials cannot be used. Narrow the original agent’s role, or move legitimate deployment through the registered limited relay identity. Retire the old contractor credential on either route.\n\nExpected decisions in the request table define the authorized scope. Probe requests to establish the current policy basis. If you revoke a needed credential or advance too far, restore the initial configuration and investigate again.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I01_DESK_NAME"
+msgstr "The Deployment Account’s Other Authority Desk"
+
+msgid "IV1_I01_GOAL"
+msgstr "Preserve deployment, notice and audit work while refusing cross-tenant access, authority changes and retired, expired or revoked credentials."
+
+msgid "IV1_I01_HINT_1"
+msgstr "Compare the principal referenced by each credential. Actual rules and tenant conditions decide access, not role names."
+
+msgid "IV1_I01_HINT_2"
+msgstr "The original agent can use a limited role. Compare explicit deny against allow and check resources in another tenant."
+
+msgid "IV1_I01_HINT_3"
+msgstr "You may remove the original agent’s grants and test the limited relay for deployment. Revoke the retired contractor credential while retaining legitimate notice and audit requests."
+
+msgid "IV1_I01_LIMIT"
+msgstr "This optional commission is not required for the main story or its endings. It does not reproduce external services or every security rule. Mistaken changes can be restored to the initial configuration."
+
+msgid "IV1_I01_PRINCIPAL_AGENT"
+msgstr "Deployment Agent"
+
+msgid "IV1_I01_PRINCIPAL_AUDITOR"
+msgstr "Audit Reviewer"
+
+msgid "IV1_I01_PRINCIPAL_CONTRACTOR"
+msgstr "Retired Contractor"
+
+msgid "IV1_I01_PRINCIPAL_OPERATOR"
+msgstr "Notice Operator"
+
+msgid "IV1_I01_PRINCIPAL_RELAY"
+msgstr "Limited Deployment Relay"
+
+msgid "IV1_I01_PRINCIPLE"
+msgstr "Allow requires a matching principal, action, resource and tenant condition. Explicit deny and unusable credentials take precedence."
+
+msgid "IV1_I01_REPLY"
+msgstr "Authorized work remains, while cross-tenant reads, authority changes and retired contractor access are refused. The commission records the verified current configuration and request outcomes. Other optional commissions remain independently available."
+
+msgid "IV1_I01_REQUEST_AUDIT_READ"
+msgstr "Authorized Audit Read"
+
+msgid "IV1_I01_REQUEST_CROSS_TENANT"
+msgstr "Deployment Identity Reads Another Tenant"
+
+msgid "IV1_I01_REQUEST_DEPLOYMENT"
+msgstr "Legitimate Deployment Read"
+
+msgid "IV1_I01_REQUEST_EXPIRED_ACCESS"
+msgstr "Expired Credential Reuse"
+
+msgid "IV1_I01_REQUEST_GRANT_CHANGE"
+msgstr "Deployment Identity Changes Authority"
+
+msgid "IV1_I01_REQUEST_NOTICE_UPDATE"
+msgstr "Legitimate Notice Update"
+
+msgid "IV1_I01_REQUEST_RETIRED_ACCESS"
+msgstr "Retired Contractor Credential Reuse"
+
+msgid "IV1_I01_REQUEST_REVOKED_ACCESS"
+msgstr "Revoked Credential Reuse"
+
+msgid "IV1_I01_RESOURCE_ARTIFACT"
+msgstr "Approved Deployment Artifact"
+
+msgid "IV1_I01_RESOURCE_AUDIT"
+msgstr "Audit Record"
+
+msgid "IV1_I01_RESOURCE_AUTHORITY"
+msgstr "Role Administration"
+
+msgid "IV1_I01_RESOURCE_FOREIGN"
+msgstr "Another Tenant’s Data"
+
+msgid "IV1_I01_RESOURCE_NOTICE"
+msgstr "Citizen Notice"
+
+msgid "IV1_I01_ROLE_AUDIT"
+msgstr "Audit Read Role"
+
+msgid "IV1_I01_ROLE_BROAD"
+msgstr "Overbroad Shared Role"
+
+msgid "IV1_I01_ROLE_LIMITED"
+msgstr "Tenant-Limited Deployment Role"
+
+msgid "IV1_I01_ROLE_NONE"
+msgstr "No Grants"
+
+msgid "IV1_I01_ROLE_NOTICE"
+msgstr "Notice Update Role"
+
+msgid "IV1_I01_ROLE_RELAY"
+msgstr "Conditional Relay Role"
+
+msgid "IV1_I01_SENDER"
+msgstr "Independent Review Contact"
+
+msgid "IV1_I01_TITLE"
+msgstr "The Deployment Account’s Other Authority"
+
+msgid "IV1_I01_TOOL"
+msgstr "Effective Authority and Request Review"
+
+msgid "IV1_I01_TOOL_EXPLAIN"
+msgstr "Compare principals, roles, tenants and credentials, then test legitimate and refused requests under the current configuration."
+
+msgid "IV1_I01_TOOL_USAGE"
+msgstr "Bind roles, revoke credentials and probe requests. Restore the initial configuration to recover from mistaken changes."
+
+msgid "IV1_I02_ABSTRACTION"
+msgstr "This uses registered JSON service manifests and deterministic virtual builds. It runs no compiler or cryptographic signature algorithm; verification follows the game’s trust registry."
+
+msgid "IV1_I02_ARTIFACT_DELIVERED"
+msgstr "Reported Package with the Same Name"
+
+msgid "IV1_I02_ARTIFACT_OFFLINE"
+msgstr "Release with Service Disabled"
+
+msgid "IV1_I02_ARTIFACT_REBUILT"
+msgstr "Virtual Rebuild from Approved Inputs"
+
+msgid "IV1_I02_ARTIFACT_REVOKED"
+msgstr "Release from a Revoked Builder"
+
+msgid "IV1_I02_ARTIFACT_STABLE"
+msgstr "Registry’s Known-Good Prior Release"
+
+msgid "IV1_I02_ARTIFACT_UNSAFE_ATTESTED"
+msgstr "Authentic Provenance, Overbroad Behavior"
+
+msgid "IV1_I02_BRIEF"
+msgstr "This optional commission can start without completing another one. Night-notice packages share a version name but contain different data. Do not trust a signature label alone: compare the actual payload digest, the provenance subject, the builder and source history.\n\nThe independent registry contains a known-good prior release and approved virtual rebuild inputs. Roll back to the verified prior release, or build and deploy the approved inputs. Either way, citizen service and ward notifications must remain, while cross-tenant reads and internal notifications are refused.\n\nThen hand technical evidence to the maintainer or disclose only public evidence to the journalist. Select the recipient’s required fields and the model constructs a redacted report. You need not paste sensitive content. Answer the reply or fact-check with observed evidence to unlock the corresponding handling record or article.\nThe authorized work account is below. After connecting, the case tool shows current observations and permitted actions.\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I02_CASE_CITIZEN"
+msgstr "Legitimate Citizen Service"
+
+msgid "IV1_I02_CASE_CROSS_TENANT"
+msgstr "Refuse Another Tenant’s Data"
+
+msgid "IV1_I02_CASE_INTERNAL"
+msgstr "Refuse Internal Notification Target"
+
+msgid "IV1_I02_CASE_NOTICE"
+msgstr "Legitimate ward Notification"
+
+msgid "IV1_I02_DESK_NAME"
+msgstr "Different Releases with the Same Version Desk"
+
+msgid "IV1_I02_EVIDENCE_DELIVERED"
+msgstr "Delivered Package Evidence"
+
+msgid "IV1_I02_EVIDENCE_REBUILT"
+msgstr "Approved Rebuild Evidence"
+
+msgid "IV1_I02_EVIDENCE_STABLE"
+msgstr "Independent Registry Comparison"
+
+msgid "IV1_I02_GOAL"
+msgstr "Maintain legitimate work and boundaries with a verified release, then disclose only observed evidence and complete the recipient’s follow-up."
+
+msgid "IV1_I02_HINT_1"
+msgstr "Matching names and versions do not imply matching payload digests. Inspect the prior registry release and delivered file first."
+
+msgid "IV1_I02_HINT_2"
+msgstr "Authentic provenance can still describe overbroad behavior. Test legitimate service and notifications together with outside-scope requests."
+
+msgid "IV1_I02_HINT_3"
+msgstr "Verify and restore the known-good prior release, or rebuild approved inputs. After current service checks, report public digests from stable_evidence and delivered_evidence and answer the recipient’s follow-up."
+
+msgid "IV1_I02_LIMIT"
+msgstr "This optional commission is not required for the main story or its endings. It does not reproduce external services or every security rule. Mistaken changes can be restored to the initial configuration."
+
+msgid "IV1_I02_NEWS_REPLY"
+msgstr "Journalist reply: we are checking the claim that packages with the same name contain the same bytes. Support the differing registry and delivered-file digests with actual observations."
+
+msgid "IV1_I02_NEWS_RESULT"
+msgstr "Verified report: packages sharing a version name contained different bytes, and recovery retained normal work. Internal handoff references were not published."
+
+msgid "IV1_I02_PAGE_TITLE"
+msgstr "Review Replies and Publication"
+
+msgid "IV1_I02_PAGE_WAIT"
+msgstr "Results appear after a valid report and follow-up."
+
+msgid "IV1_I02_PRINCIPLE"
+msgstr "Provenance must bind to a particular artifact’s content, source and builder. Safe behavior and authorized disclosure require separate verification."
+
+msgid "IV1_I02_PRIVATE_DELIVERED"
+msgstr "Internal handoff reference for the authorized technical contact only."
+
+msgid "IV1_I02_PRIVATE_REBUILT"
+msgstr "Internal handoff reference for the authorized technical contact only."
+
+msgid "IV1_I02_PRIVATE_STABLE"
+msgstr "Internal handoff reference for the authorized technical contact only."
+
+msgid "IV1_I02_RECIPIENT_NEWS"
+msgstr "Journalist · Redacted Evidence"
+
+msgid "IV1_I02_RECIPIENT_STAFF"
+msgstr "Maintainer · Technical Handoff"
+
+msgid "IV1_I02_REPLY"
+msgstr "The verified current deployment meets normal-work and boundary checks, and the chosen recipient’s follow-up is recorded. Publication and technical handoff reflect the actual disclosed evidence. The main story remains available without this commission."
+
+msgid "IV1_I02_SENDER"
+msgstr "Independent Review Contact"
+
+msgid "IV1_I02_STAFF_REPLY"
+msgstr "Maintainer reply: the handoff links recovery status and observed evidence. Submit follow-up against the current service results."
+
+msgid "IV1_I02_STAFF_RESULT"
+msgstr "Technical handoff complete: the approved current deployment and service boundaries were revalidated. A restricted handling record was created instead of a public article."
+
+msgid "IV1_I02_TITLE"
+msgstr "Different Releases with the Same Version"
+
+msgid "IV1_I02_TOOL"
+msgstr "Release Provenance and Disclosure Workbench"
+
+msgid "IV1_I02_TOOL_EXPLAIN"
+msgstr "Inspect actual artifacts, verify provenance and behavior, then submit recipient-appropriate evidence and follow-up."
+
+msgid "IV1_I02_TOOL_USAGE"
+msgstr "Inspect, verify, deploy, test service, report, then answer follow-up. Restore the initial state to experiment again."
+
+msgid "IV1_PACK_SUMMARY"
+msgstr "Choose cloud-authority or release-provenance investigations independently. Neither is required for the main story or its endings."
+
+msgid "IV1_PACK_TITLE"
+msgstr "Optional Commissions"
 
 msgid "KEYBOARD_VOLUME"
 msgstr "Keyboard sounds"
@@ -6500,6 +7067,30 @@ msgstr "Value to send"
 msgid "UI_CANCEL"
 msgstr "Cancel"
 
+msgid "UI_COMMISSIONS_CLOSE"
+msgstr "Close commission list"
+
+msgid "UI_COMMISSIONS_DONE"
+msgstr "Completed commission · revisit"
+
+msgid "UI_COMMISSIONS_I01_DESC"
+msgstr "Cloud permissions · an independent commission about roles, resources and tenant boundaries"
+
+msgid "UI_COMMISSIONS_I02_DESC"
+msgstr "Release trust · verify provenance and choose disclosure scope and follow-up"
+
+msgid "UI_COMMISSIONS_RETURN"
+msgstr "Return to main story"
+
+msgid "UI_COMMISSIONS_SCOPE"
+msgstr "Choose a field that interests you. These commissions are not required for the main story or endings."
+
+msgid "UI_COMMISSIONS_START"
+msgstr "Start / resume"
+
+msgid "UI_COMMISSIONS_TITLE"
+msgstr "Optional commissions"
+
 msgid "UI_CONFIRM_FRESH"
 msgstr "The existing save and backup are kept under separate names, and the progress on screen is written as a new save.\nCurrent progress is not reset."
 
@@ -6731,6 +7322,24 @@ msgstr "Print the game's command help in the active terminal"
 msgid "UI_HELP_TAG"
 msgstr "Help"
 
+msgid "UI_IAM_BINDINGS"
+msgstr "Current role bindings"
+
+msgid "UI_IAM_CREDENTIALS"
+msgstr "Credential status"
+
+msgid "UI_IAM_PRINCIPALS"
+msgstr "Registered principals"
+
+msgid "UI_IAM_REQUESTS"
+msgstr "Requests to verify"
+
+msgid "UI_IAM_RESOURCES"
+msgstr "Resources and boundaries"
+
+msgid "UI_IAM_ROLES"
+msgstr "Roles and rules"
+
 msgid "UI_IMPORT_FAILED"
 msgstr "The legacy M01 save could not be imported ({code}). The original is unchanged.\n{detail}"
 
@@ -6830,11 +7439,23 @@ msgstr "Advance queued business"
 msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
 msgstr "Advance to the next observation window"
 
+msgid "UI_MODEL_ACTION_BIND"
+msgstr "Change role binding"
+
+msgid "UI_MODEL_ACTION_BUILD"
+msgstr "Run approved virtual build"
+
 msgid "UI_MODEL_ACTION_CHECKPOINT"
 msgstr "Save a policy checkpoint"
 
 msgid "UI_MODEL_ACTION_COLLECT"
 msgstr "Collect from this vantage point"
+
+msgid "UI_MODEL_ACTION_DEPLOY"
+msgstr "Deploy verified artifact"
+
+msgid "UI_MODEL_ACTION_FOLLOWUP"
+msgstr "Answer follow-up"
 
 msgid "UI_MODEL_ACTION_HANDOFF"
 msgstr "Hand off supported links and limits"
@@ -6845,14 +7466,26 @@ msgstr "Create a hypothesis"
 msgid "UI_MODEL_ACTION_INSPECT"
 msgstr "Inspect current state"
 
+msgid "UI_MODEL_ACTION_INSPECT_ARTIFACT"
+msgstr "Inspect artifact"
+
+msgid "UI_MODEL_ACTION_INSPECT_PROVENANCE"
+msgstr "Inspect provenance"
+
 msgid "UI_MODEL_ACTION_PROBE"
 msgstr "Probe requests and legitimate work"
 
 msgid "UI_MODEL_ACTION_QUARANTINE"
 msgstr "Change stored-object quarantine"
 
+msgid "UI_MODEL_ACTION_REPORT"
+msgstr "Submit verified report"
+
 msgid "UI_MODEL_ACTION_RESET"
 msgstr "Reset the current execution"
+
+msgid "UI_MODEL_ACTION_RESTORE_INITIAL"
+msgstr "Restore initial configuration"
 
 msgid "UI_MODEL_ACTION_REVISE"
 msgstr "Revise with an evidence trail"
@@ -6877,6 +7510,9 @@ msgstr "Step through execution"
 
 msgid "UI_MODEL_ACTION_TEST"
 msgstr "Test against collected evidence"
+
+msgid "UI_MODEL_ACTION_VERIFY"
+msgstr "Verify provenance"
 
 msgid "UI_MODEL_ALLOW"
 msgstr "Allow"
@@ -6925,6 +7561,9 @@ msgstr "No observations to display yet."
 
 msgid "UI_MODEL_PERMITTED_PLAINTEXT"
 msgstr "Permitted plaintext"
+
+msgid "UI_MODEL_RECEIPTS"
+msgstr "Current verification results"
 
 msgid "UI_MODEL_REFUTED"
 msgstr "Refuted"
@@ -7123,6 +7762,42 @@ msgstr "Backup restore failed ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "Keep the damaged save under a separate name and restore the valid backup"
+
+msgid "UI_RELEASE_ARTICLE"
+msgstr "Public outcome"
+
+msgid "UI_RELEASE_ARTIFACTS"
+msgstr "Artifacts and digests"
+
+msgid "UI_RELEASE_BUILDS"
+msgstr "Approved virtual builds"
+
+msgid "UI_RELEASE_DEPLOYMENT"
+msgstr "Current deployment state"
+
+msgid "UI_RELEASE_EVIDENCE"
+msgstr "Inspected report evidence"
+
+msgid "UI_RELEASE_RECIPIENTS"
+msgstr "Report recipients"
+
+msgid "UI_RELEASE_REGISTRIES"
+msgstr "Trusted provenance registries"
+
+msgid "UI_RELEASE_REPLIES"
+msgstr "Replies and follow-up"
+
+msgid "UI_RELEASE_REPORT"
+msgstr "Submitted report"
+
+msgid "UI_RELEASE_SERVICES"
+msgstr "Current service checks"
+
+msgid "UI_RELEASE_STATEMENTS"
+msgstr "Registered provenance statements"
+
+msgid "UI_RELEASE_VERIFICATIONS"
+msgstr "Provenance verification results"
 
 msgid "UI_RESPONSE_ARTIFACTS"
 msgstr "Observed stored uploads"
@@ -7382,6 +8057,9 @@ msgstr "Only the virtual file system is involved. Without permission, reading th
 msgid "UI_TOOLKIND_FILE_MODEL"
 msgstr "Reads a file with the selected terminal session's account rights. It passes the same permission checks as cat."
 
+msgid "UI_TOOLKIND_IAM_CASE"
+msgstr "Permission review"
+
 msgid "UI_TOOLKIND_IDOR"
 msgstr "Object access"
 
@@ -7462,6 +8140,9 @@ msgstr "Does not reproduce a real SQL engine or its full grammar. Only in-game v
 
 msgid "UI_TOOLKIND_QUERY_MODEL"
 msgstr "Simulates a small condition grammar. Observe whether your input is used only as a value or changes the query's structure (for example an OR condition). With parameter binding on, input is treated only as a value."
+
+msgid "UI_TOOLKIND_RELEASE_CASE"
+msgstr "Release and disclosure review"
 
 msgid "UI_TOOLKIND_RENDER"
 msgstr "Render context"
@@ -7595,6 +8276,9 @@ msgstr "Acquisition"
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "Action"
 
+msgid "UI_TOOL_FIELD_ALLOWED_FIELDS"
+msgstr "Allowed disclosure fields"
+
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "Stored object"
 
@@ -7606,6 +8290,12 @@ msgstr "Available"
 
 msgid "UI_TOOL_FIELD_BASIS"
 msgstr "Response evidence fingerprint"
+
+msgid "UI_TOOL_FIELD_BUILDER_ID"
+msgstr "Builder"
+
+msgid "UI_TOOL_FIELD_BUILD_ID"
+msgstr "Approved build"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "Business item"
@@ -7646,11 +8336,17 @@ msgstr "Step count"
 msgid "UI_TOOL_FIELD_COVERAGE"
 msgstr "Coverage"
 
+msgid "UI_TOOL_FIELD_CREDENTIAL_REF"
+msgstr "Credential reference"
+
 msgid "UI_TOOL_FIELD_CURRENT"
 msgstr "Current value"
 
 msgid "UI_TOOL_FIELD_CURSOR"
 msgstr "Current observation window"
+
+msgid "UI_TOOL_FIELD_DIGEST"
+msgstr "Digest"
 
 msgid "UI_TOOL_FIELD_DST"
 msgstr "Destination register"
@@ -7673,14 +8369,26 @@ msgstr "Observed event type"
 msgid "UI_TOOL_FIELD_EVENT_ID"
 msgstr "Event ID"
 
+msgid "UI_TOOL_FIELD_EVIDENCE_IDS"
+msgstr "Inspected evidence"
+
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
 msgstr "Execution currently permitted"
 
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
 msgstr "Execution permitted when upload accepted"
 
+msgid "UI_TOOL_FIELD_EXPIRES_TICK"
+msgstr "Expiry tick"
+
+msgid "UI_TOOL_FIELD_FIELDS"
+msgstr "Fields to disclose"
+
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "File name"
+
+msgid "UI_TOOL_FIELD_FOLLOWUP_ID"
+msgstr "Follow-up"
 
 msgid "UI_TOOL_FIELD_FORMAT_OK"
 msgstr "Format check"
@@ -7711,6 +8419,9 @@ msgstr "Input"
 
 msgid "UI_TOOL_FIELD_INPUTS"
 msgstr "Input cases"
+
+msgid "UI_TOOL_FIELD_INSPECTED"
+msgstr "Inspected"
 
 msgid "UI_TOOL_FIELD_INTENDED"
 msgstr "Required outcome"
@@ -7778,6 +8489,9 @@ msgstr "Program counter"
 msgid "UI_TOOL_FIELD_POLICY"
 msgstr "Applied policy"
 
+msgid "UI_TOOL_FIELD_PRINCIPAL_ID"
+msgstr "Principal"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "Provenance"
 
@@ -7790,6 +8504,9 @@ msgstr "Quarantined"
 msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
 msgstr "Revision evidence"
 
+msgid "UI_TOOL_FIELD_RECIPIENT_ID"
+msgstr "Recipient"
+
 msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
 msgstr "Refuted hypotheses"
 
@@ -7798,6 +8515,9 @@ msgstr "Source register"
 
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "Virtual registers"
+
+msgid "UI_TOOL_FIELD_REGISTRY_ID"
+msgstr "Provenance registry"
 
 msgid "UI_TOOL_FIELD_RELATION"
 msgstr "Relationship"
@@ -7811,11 +8531,20 @@ msgstr "Request identifier"
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "Request tag"
 
+msgid "UI_TOOL_FIELD_REQUIRED_EVIDENCE"
+msgstr "Required evidence"
+
 msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
 msgstr "Retention scope"
 
+msgid "UI_TOOL_FIELD_REVOKED"
+msgstr "Revoked"
+
 msgid "UI_TOOL_FIELD_RIGHT"
 msgstr "Second entity"
+
+msgid "UI_TOOL_FIELD_ROLE_ID"
+msgstr "Role"
 
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "Request route"
@@ -7834,6 +8563,9 @@ msgstr "Observation scope"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "Section"
+
+msgid "UI_TOOL_FIELD_SENSITIVITY"
+msgstr "Sensitivity"
 
 msgid "UI_TOOL_FIELD_SENSOR_ID"
 msgstr "Vantage point"
@@ -7859,6 +8591,12 @@ msgstr "File format validation passed"
 msgid "UI_TOOL_FIELD_SOURCE_ID"
 msgstr "Source ID"
 
+msgid "UI_TOOL_FIELD_SOURCE_REVISION"
+msgstr "Source revision"
+
+msgid "UI_TOOL_FIELD_STATEMENT_ID"
+msgstr "Provenance statement"
+
 msgid "UI_TOOL_FIELD_STATUS"
 msgstr "Status"
 
@@ -7868,11 +8606,20 @@ msgstr "Steps used"
 msgid "UI_TOOL_FIELD_STORED_AS"
 msgstr "Stored reference"
 
+msgid "UI_TOOL_FIELD_SUBJECT_DIGEST"
+msgstr "Subject digest"
+
 msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
 msgstr "Supported hypotheses"
 
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "Target host"
+
+msgid "UI_TOOL_FIELD_TENANT"
+msgstr "Tenant"
+
+msgid "UI_TOOL_FIELD_TENANT_SCOPE"
+msgstr "Tenant scope"
 
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "True branch"
@@ -7918,6 +8665,9 @@ msgstr "Collection vantage"
 
 msgid "UI_TOOL_FIELD_VERDICT"
 msgstr "Evidence verdict"
+
+msgid "UI_TOOL_FIELD_VERIFIED"
+msgstr "Verified"
 
 msgid "UI_TOOL_FIELD_VISIBILITY"
 msgstr "Visible information"

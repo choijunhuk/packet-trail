@@ -62,6 +62,9 @@ msgstr "Intruso"
 msgid "CAMPAIGN_INTRUDER_DESC"
 msgstr "Abre nuevas rutas y recupera registros ocultos."
 
+msgid "CAMPAIGN_INVESTIGATION"
+msgstr "Encargos opcionales"
+
 msgid "CAMPAIGN_NEW_CONFIRM"
 msgstr "Se hará una copia de {campaign} y se reiniciará. Se conservan las otras campañas y los guardados anteriores."
 
@@ -88,6 +91,9 @@ msgstr "Esta acción requiere una sesión virtual autenticada.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_CAMPAIGN_COMPLETE"
 msgstr "Has resuelto el último caso de la campaña.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_COMMISSION_COMPLETE"
+msgstr "Encargo opcional completado. Elige otro cuando quieras."
 
 msgid "CAMPAIGN_RESULT_CONNECTED"
 msgstr "Conectado al host virtual. Comprueba la cuenta y su autoridad.\n{detail}"
@@ -127,6 +133,27 @@ msgstr "Pistas para el caso actual.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HOST_NOT_FOUND"
 msgstr "No se encontró el host en el mundo ficticio.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID"
+msgstr "Comprueba la entrada de permisos."
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_BINDING"
+msgstr "Elige identidad y rol permitidos."
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_STATE"
+msgstr "No se validó el estado de permisos."
+
+msgid "CAMPAIGN_RESULT_IAM_OBSERVED"
+msgstr "Permisos y resultados actuales inspeccionados."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_CREDENTIAL"
+msgstr "Elige una credencial registrada."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_REQUEST"
+msgstr "Elige una solicitud registrada."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_ROUTE"
+msgstr "Elige una ruta registrada para esta solicitud."
 
 msgid "CAMPAIGN_RESULT_IMPORTED_M01"
 msgstr "Progreso de M01 anterior importado.\n{detail}"
@@ -206,6 +233,9 @@ msgstr "No se encontró el archivo o recurso virtual indicado.\n{detail}"
 msgid "CAMPAIGN_RESULT_NO_AUTH_PENDING"
 msgstr "No hay autenticación virtual pendiente.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_NO_CAMPAIGN_ENDING"
+msgstr "Los encargos tienen resultados individuales, no un final de campaña."
+
 msgid "CAMPAIGN_RESULT_NO_CONNECTION"
 msgstr "Esta sesión es local. Conecta primero con un servidor virtual.\n{detail}"
 
@@ -232,6 +262,33 @@ msgstr "Progreso recuperado de una copia válida.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
 msgstr "El guardado actual es válido y no necesita recuperación.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RELEASE_FOLLOWUP_INVALID"
+msgstr "Comprueba las pruebas exigidas por el seguimiento."
+
+msgid "CAMPAIGN_RESULT_RELEASE_INVALID"
+msgstr "Comprueba la entrada de revisión."
+
+msgid "CAMPAIGN_RESULT_RELEASE_NOT_READY"
+msgstr "Completa primero despliegue y pruebas actuales."
+
+msgid "CAMPAIGN_RESULT_RELEASE_OBSERVED"
+msgstr "Pruebas actuales de versión y divulgación inspeccionadas."
+
+msgid "CAMPAIGN_RESULT_RELEASE_REPORT_INVALID"
+msgstr "Selecciona pruebas observadas y campos permitidos."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNDEPLOYED"
+msgstr "Despliega primero un artefacto verificado."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNKNOWN"
+msgstr "Elige artefacto, declaración o destinatario registrado."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNOBSERVED"
+msgstr "Inspecciona primero sus pruebas."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNVERIFIED"
+msgstr "Verifica procedencia correspondiente al contenido actual."
 
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "El caso actual vuelve a su estado inicial.\n{detail}"
@@ -1312,6 +1369,276 @@ msgstr "Tamaño del texto"
 
 msgid "FULLSCREEN"
 msgstr "Pantalla completa"
+
+msgid "HABITAT_ACTION_LIMIT"
+msgstr "Se alcanzó el límite de acciones."
+
+msgid "HABITAT_ALREADY_ORDERED"
+msgstr "Ya está pedido. Revisa la taquilla."
+
+msgid "HABITAT_ALREADY_OWNED"
+msgstr "Ya posees este objeto."
+
+msgid "HABITAT_CABINET_CONFIGURED"
+msgstr "Configuración guardada. Vuelve a verificar."
+
+msgid "HABITAT_CABINET_INSPECTED"
+msgstr "Armario inspeccionado. Compara ruta y cierre."
+
+msgid "HABITAT_DELIVERY_COLLECTED"
+msgstr "Pedidos recogidos. Ya puedes equiparlos."
+
+msgid "HABITAT_EQUIPPED"
+msgstr "Aspecto cambiado y guardado."
+
+msgid "HABITAT_INSPECTION_REQUIRED"
+msgstr "Inspecciona primero el armario del encargo."
+
+msgid "HABITAT_INSUFFICIENT_CREDITS"
+msgstr "Créditos insuficientes."
+
+msgid "HABITAT_INVALID_ACTION"
+msgstr "Elige una actividad disponible."
+
+msgid "HABITAT_INVALID_CONFIG"
+msgstr "Elige ruta y cierre permitidos."
+
+msgid "HABITAT_INVALID_EQUIPMENT"
+msgstr "Equipa un objeto recogido en su lugar."
+
+msgid "HABITAT_INVALID_LIGHTING"
+msgstr "Elige iluminación disponible."
+
+msgid "HABITAT_INVALID_SAVE"
+msgstr "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación."
+
+msgid "HABITAT_JOB_ACCEPTED"
+msgstr "Trabajo aceptado. Inspecciona el armario exterior."
+
+msgid "HABITAT_JOB_CHECK_FAILED"
+msgstr "No cumple los requisitos. Compara telemetría y acceso no autorizado y ajusta."
+
+msgid "HABITAT_JOB_REQUIRED"
+msgstr "Acepta primero el trabajo en el tablón."
+
+msgid "HABITAT_JOB_VERIFIED"
+msgstr "Trabajo normal disponible y acceso no autorizado bloqueado. Revisa recibo y resultados."
+
+msgid "HABITAT_LIGHTING_SET"
+msgstr "Iluminación guardada."
+
+msgid "HABITAT_LOADED"
+msgstr "Estado de sala cargado."
+
+msgid "HABITAT_LOAD_FAILED"
+msgstr "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación."
+
+msgid "HABITAT_NEW"
+msgstr "Sala nueva preparada."
+
+msgid "HABITAT_NOT_LOADED"
+msgstr "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación."
+
+msgid "HABITAT_NO_DELIVERIES"
+msgstr "No hay pedidos listos."
+
+msgid "HABITAT_ORDER_LIMIT"
+msgstr "Se alcanzó el límite de pedidos."
+
+msgid "HABITAT_ORDER_READY"
+msgstr "El pedido llegó. Recógelo fuera."
+
+msgid "HABITAT_PATH_REJECTED"
+msgstr "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación."
+
+msgid "HABITAT_RECOVERED"
+msgstr "Copia recuperada. Original dañado conservado aparte."
+
+msgid "HABITAT_RECOVERY_REQUIRED"
+msgstr "No se pudo leer la sala con seguridad. Se conserva el archivo; revisa la recuperación."
+
+msgid "HABITAT_UNKNOWN_JOB"
+msgstr "Elige un trabajo del tablón."
+
+msgid "HABITAT_UNKNOWN_PRODUCT"
+msgstr "Elige un artículo de la tienda."
+
+msgid "HABITAT_UPDATED"
+msgstr "Estado de sala guardado."
+
+msgid "HAB_ACCEPT_JOB"
+msgstr "Aceptar inspección"
+
+msgid "HAB_ACTION_FAILED"
+msgstr "No se guardó la acción. Se conserva el estado."
+
+msgid "HAB_ACTION_OK"
+msgstr "Acción guardada."
+
+msgid "HAB_AWAITING_PICKUP"
+msgstr "Pendiente de recogida"
+
+msgid "HAB_CABINET_DESCRIPTION"
+msgstr "Inspecciona ruta y cierre. Desactivar todo también detiene el trabajo normal. Tras cambiar ajustes, verifica telemetría y acceso no autorizado."
+
+msgid "HAB_CLOSE"
+msgstr "Cerrar"
+
+msgid "HAB_COLLECT"
+msgstr "Recoger pedidos listos"
+
+msgid "HAB_CONFIGURE"
+msgstr "Aplicar configuración"
+
+msgid "HAB_DELIVERY_COUNT"
+msgstr "Pedidos listos: {count}"
+
+msgid "HAB_EQUIP"
+msgstr "Equipar"
+
+msgid "HAB_EQUIPPED"
+msgstr "Equipado"
+
+msgid "HAB_INSPECT"
+msgstr "Inspeccionar armario"
+
+msgid "HAB_INTERACT_CABINET"
+msgstr "E · Armario compartido"
+
+msgid "HAB_INTERACT_COMPUTER"
+msgstr "E · Usar ordenador"
+
+msgid "HAB_INTERACT_ENTER"
+msgstr "E · Entrar al estudio"
+
+msgid "HAB_INTERACT_EXIT"
+msgstr "E · Salir"
+
+msgid "HAB_INTERACT_NOTICEBOARD"
+msgstr "E · Tablón del barrio"
+
+msgid "HAB_INTERACT_PICKUP"
+msgstr "E · Taquilla de entregas"
+
+msgid "HAB_INTERACT_REST"
+msgstr "E · Descansar"
+
+msgid "HAB_JOB_CHECK"
+msgstr "Prueba actual · Telemetría normal: {normal} · Acceso no autorizado permitido: {unauthorized} · Cumple: {passed}"
+
+msgid "HAB_JOB_DESCRIPTION"
+msgstr "Trabajo opcional · armario compartido\nMantén la telemetría normal y bloquea accesos no autorizados. Compara configuración y pruebas en el lugar. Recompensa única: 200 créditos."
+
+msgid "HAB_JOB_STATE"
+msgstr "Aceptado: {accepted} · Recompensa: {rewarded}"
+
+msgid "HAB_LIGHT_DAWN"
+msgstr "Iluminación del amanecer"
+
+msgid "HAB_LIGHT_NIGHT"
+msgstr "Iluminación nocturna"
+
+msgid "HAB_LOCKED"
+msgstr "Bloquear gestión"
+
+msgid "HAB_NO"
+msgstr "No"
+
+msgid "HAB_OPTIONAL_NOTE"
+msgstr "Son actividades opcionales. La decoración no altera habilidades ni progreso principal."
+
+msgid "HAB_ORDER"
+msgstr "Pedir"
+
+msgid "HAB_OUTDOOR_CONTROLS"
+msgstr "WASD: moverse · Botón derecho: mirar · E cerca: interactuar · Esc: menú"
+
+msgid "HAB_PRICE"
+msgstr "{price} créditos"
+
+msgid "HAB_PRODUCT_KEYBOARD_CORAL"
+msgstr "Teclado coral"
+
+msgid "HAB_PRODUCT_KEYBOARD_IVORY"
+msgstr "Teclado marfil"
+
+msgid "HAB_PRODUCT_KEYBOARD_STARTER"
+msgstr "Teclado grafito inicial"
+
+msgid "HAB_PRODUCT_LAMP_COOL"
+msgstr "Lámpara fría"
+
+msgid "HAB_PRODUCT_LAMP_STARTER"
+msgstr "Lámpara cálida"
+
+msgid "HAB_PRODUCT_MONITOR_DUAL"
+msgstr "Dos monitores"
+
+msgid "HAB_PRODUCT_MONITOR_STARTER"
+msgstr "Monitor inicial"
+
+msgid "HAB_PRODUCT_MONITOR_WIDE"
+msgstr "Monitor panorámico"
+
+msgid "HAB_READ_ONLY"
+msgstr "Los cambios están bloqueados porque no se pudo cargar la sala. Se conserva el archivo."
+
+msgid "HAB_RECOVER"
+msgstr "Recuperar copia"
+
+msgid "HAB_RECOVER_CONFIRM"
+msgstr "Valida y recupera la copia. El original dañado se conserva aparte."
+
+msgid "HAB_REST_NOTE"
+msgstr "Descansar no impone penalizaciones ni cambia atributos. Elige luz y ambiente exterior."
+
+msgid "HAB_REWARD_RECEIPT"
+msgstr "Recompensa ya pagada. Ruta al pagar: {route}. El estado actual figura arriba."
+
+msgid "HAB_ROUTE"
+msgstr "Ruta de conexión"
+
+msgid "HAB_ROUTE_APPROVED_RELAY"
+msgstr "Relevo aprobado"
+
+msgid "HAB_ROUTE_OFF"
+msgstr "Todas las conexiones desactivadas"
+
+msgid "HAB_ROUTE_PUBLIC"
+msgstr "Conexión pública"
+
+msgid "HAB_ROUTE_SERVICE"
+msgstr "Servicio de gestión"
+
+msgid "HAB_SHOP_ADDRESS"
+msgstr "deskshop.packet.test · tienda local del juego"
+
+msgid "HAB_SHOP_DELIVERY"
+msgstr "Los pedidos llegan al instante. Recógelos fuera antes de equiparlos. No se usa dinero real ni internet."
+
+msgid "HAB_TITLE_BENCH"
+msgstr "Tomar un descanso"
+
+msgid "HAB_TITLE_DELIVERY_LOCKER"
+msgstr "Taquilla de entregas"
+
+msgid "HAB_TITLE_NETWORK_CABINET"
+msgstr "Armario de red compartido"
+
+msgid "HAB_TITLE_NOTICEBOARD"
+msgstr "Tablón del barrio"
+
+msgid "HAB_TITLE_SHOP"
+msgstr "Tienda del escritorio"
+
+msgid "HAB_VERIFY"
+msgstr "Verificar telemetría y acceso no autorizado"
+
+msgid "HAB_WALLET"
+msgstr "Créditos del estudio {balance}"
+
+msgid "HAB_YES"
+msgstr "Sí"
 
 msgid "HELP"
 msgstr "Ayuda"
@@ -3055,6 +3382,246 @@ msgstr "LogLens"
 
 msgid "IN2_TOOL_UPLOAD_NAME"
 msgstr "Recepción de medios"
+
+msgid "IV1_I01_ABSTRACTION"
+msgstr "Este rompecabezas neutral evalúa roles, recursos y credenciales registrados y finitos; no implementa todo el lenguaje de un proveedor ni credenciales reales."
+
+msgid "IV1_I01_BRIEF"
+msgstr "Elige este encargo independientemente de la historia principal. Una pista indica que la identidad de despliegue nocturno lee datos de otra organización. Deben mantenerse despliegues, avisos y auditorías legítimos.\n\nCompara identidades, roles e inquilinos de recursos. El rechazo explícito prevalece y las credenciales revocadas o caducadas no sirven. Limita el rol original o mueve el despliegue legítimo al relevo limitado registrado. Retira la antigua credencial del contratista en ambas rutas.\n\nLa tabla define el ámbito autorizado mediante resultados esperados. Prueba solicitudes para obtener pruebas de la configuración actual. Si revocas una credencial necesaria o avanzas demasiado, restaura el estado inicial.\nLa cuenta de trabajo autorizada está abajo. Tras conectar, la herramienta muestra observaciones y acciones permitidas.\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I01_DESK_NAME"
+msgstr "Mesa de autoridad de despliegue"
+
+msgid "IV1_I01_GOAL"
+msgstr "Conserva despliegue, avisos y auditoría; rechaza acceso entre inquilinos, cambios de autoridad y credenciales retiradas, caducadas o revocadas."
+
+msgid "IV1_I01_HINT_1"
+msgstr "Compara la identidad de cada credencial. Mandan las reglas y condiciones del inquilino, no los nombres."
+
+msgid "IV1_I01_HINT_2"
+msgstr "El agente original puede usar un rol limitado. Compara rechazo explícito y permiso y comprueba otro inquilino."
+
+msgid "IV1_I01_HINT_3"
+msgstr "Puedes quitar permisos al agente original y probar el relevo limitado. Revoca la credencial retirada sin interrumpir avisos ni auditoría."
+
+msgid "IV1_I01_LIMIT"
+msgstr "Encargo opcional para la historia y sus finales. No reproduce servicios externos ni todas las reglas. Puedes restaurar la configuración inicial."
+
+msgid "IV1_I01_PRINCIPAL_AGENT"
+msgstr "Agente de despliegue"
+
+msgid "IV1_I01_PRINCIPAL_AUDITOR"
+msgstr "Revisor de auditoría"
+
+msgid "IV1_I01_PRINCIPAL_CONTRACTOR"
+msgstr "Contratista retirado"
+
+msgid "IV1_I01_PRINCIPAL_OPERATOR"
+msgstr "Operador de avisos"
+
+msgid "IV1_I01_PRINCIPAL_RELAY"
+msgstr "Relevo limitado de despliegue"
+
+msgid "IV1_I01_PRINCIPLE"
+msgstr "El permiso exige identidad, acción, recurso y condición compatibles. Prevalecen el rechazo explícito y las credenciales inutilizables."
+
+msgid "IV1_I01_REPLY"
+msgstr "Se mantienen las tareas autorizadas y se rechazan lecturas ajenas, cambios de autoridad y accesos retirados. Se registran configuración y resultados verificados; los demás encargos siguen siendo independientes."
+
+msgid "IV1_I01_REQUEST_AUDIT_READ"
+msgstr "Lectura de auditoría autorizada"
+
+msgid "IV1_I01_REQUEST_CROSS_TENANT"
+msgstr "Lectura de otro inquilino por despliegue"
+
+msgid "IV1_I01_REQUEST_DEPLOYMENT"
+msgstr "Lectura legítima de despliegue"
+
+msgid "IV1_I01_REQUEST_EXPIRED_ACCESS"
+msgstr "Reutilización de credencial caducada"
+
+msgid "IV1_I01_REQUEST_GRANT_CHANGE"
+msgstr "Cambio de autoridad por despliegue"
+
+msgid "IV1_I01_REQUEST_NOTICE_UPDATE"
+msgstr "Actualización legítima de avisos"
+
+msgid "IV1_I01_REQUEST_RETIRED_ACCESS"
+msgstr "Reutilización de credencial retirada"
+
+msgid "IV1_I01_REQUEST_REVOKED_ACCESS"
+msgstr "Reutilización de credencial revocada"
+
+msgid "IV1_I01_RESOURCE_ARTIFACT"
+msgstr "Artefacto de despliegue aprobado"
+
+msgid "IV1_I01_RESOURCE_AUDIT"
+msgstr "Registro de auditoría"
+
+msgid "IV1_I01_RESOURCE_AUTHORITY"
+msgstr "Administración de roles"
+
+msgid "IV1_I01_RESOURCE_FOREIGN"
+msgstr "Datos de otro inquilino"
+
+msgid "IV1_I01_RESOURCE_NOTICE"
+msgstr "Aviso ciudadano"
+
+msgid "IV1_I01_ROLE_AUDIT"
+msgstr "Rol de lectura de auditoría"
+
+msgid "IV1_I01_ROLE_BROAD"
+msgstr "Rol compartido excesivo"
+
+msgid "IV1_I01_ROLE_LIMITED"
+msgstr "Rol de despliegue limitado al inquilino"
+
+msgid "IV1_I01_ROLE_NONE"
+msgstr "Sin permisos"
+
+msgid "IV1_I01_ROLE_NOTICE"
+msgstr "Rol de actualización de avisos"
+
+msgid "IV1_I01_ROLE_RELAY"
+msgstr "Rol de relevo condicional"
+
+msgid "IV1_I01_SENDER"
+msgstr "Contacto de revisión independiente"
+
+msgid "IV1_I01_TITLE"
+msgstr "La otra autoridad de la cuenta de despliegue"
+
+msgid "IV1_I01_TOOL"
+msgstr "Revisión de autoridad efectiva y solicitudes"
+
+msgid "IV1_I01_TOOL_EXPLAIN"
+msgstr "Compara identidades, roles, inquilinos y credenciales; prueba solicitudes legítimas y prohibidas con la configuración actual."
+
+msgid "IV1_I01_TOOL_USAGE"
+msgstr "Asigna roles, revoca credenciales y prueba solicitudes. Restaura el estado inicial para corregir errores."
+
+msgid "IV1_I02_ABSTRACTION"
+msgstr "Usa manifiestos JSON registrados y compilaciones virtuales deterministas. No ejecuta compilador ni firma criptográfica; verifica según el registro del juego."
+
+msgid "IV1_I02_ARTIFACT_DELIVERED"
+msgstr "Paquete denunciado con el mismo nombre"
+
+msgid "IV1_I02_ARTIFACT_OFFLINE"
+msgstr "Versión con servicio desactivado"
+
+msgid "IV1_I02_ARTIFACT_REBUILT"
+msgstr "Reconstrucción virtual de entradas aprobadas"
+
+msgid "IV1_I02_ARTIFACT_REVOKED"
+msgstr "Versión de constructor revocado"
+
+msgid "IV1_I02_ARTIFACT_STABLE"
+msgstr "Versión anterior fiable del registro"
+
+msgid "IV1_I02_ARTIFACT_UNSAFE_ATTESTED"
+msgstr "Procedencia auténtica, comportamiento excesivo"
+
+msgid "IV1_I02_BRIEF"
+msgstr "Este encargo puede iniciarse sin completar otro. Los paquetes de avisos nocturnos comparten versión pero contienen datos diferentes. No confíes solo en una etiqueta de firma: compara resumen real, objeto de la declaración, constructor e historial de origen.\n\nEl registro independiente contiene una versión anterior fiable y entradas aprobadas. Restaura la versión verificada o compila virtualmente y despliega las entradas aprobadas. Mantén servicio ciudadano y avisos ward; rechaza lecturas entre inquilinos y avisos internos.\n\nDespués entrega pruebas técnicas al responsable o solo pruebas públicas al periodista. Selecciona los campos exigidos para que el modelo genere un informe depurado; no pegues datos sensibles. Responde con pruebas observadas para abrir el registro de gestión o el artículo.\nLa cuenta autorizada está abajo. Tras conectar, la herramienta muestra observaciones y acciones permitidas.\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I02_CASE_CITIZEN"
+msgstr "Servicio ciudadano legítimo"
+
+msgid "IV1_I02_CASE_CROSS_TENANT"
+msgstr "Rechazar datos de otro inquilino"
+
+msgid "IV1_I02_CASE_INTERNAL"
+msgstr "Rechazar destino interno"
+
+msgid "IV1_I02_CASE_NOTICE"
+msgstr "Aviso legítimo a ward"
+
+msgid "IV1_I02_DESK_NAME"
+msgstr "Mesa de versiones distintas con igual número"
+
+msgid "IV1_I02_EVIDENCE_DELIVERED"
+msgstr "Pruebas del paquete recibido"
+
+msgid "IV1_I02_EVIDENCE_REBUILT"
+msgstr "Pruebas de reconstrucción aprobada"
+
+msgid "IV1_I02_EVIDENCE_STABLE"
+msgstr "Comparación del registro independiente"
+
+msgid "IV1_I02_GOAL"
+msgstr "Conserva el trabajo y los límites con una versión verificada; divulga solo pruebas observadas y completa el seguimiento."
+
+msgid "IV1_I02_HINT_1"
+msgstr "Nombres y versiones iguales no garantizan el mismo resumen. Inspecciona primero la versión anterior y el archivo recibido."
+
+msgid "IV1_I02_HINT_2"
+msgstr "Una procedencia auténtica puede describir comportamientos excesivos. Prueba servicio y avisos junto con solicitudes fuera de ámbito."
+
+msgid "IV1_I02_HINT_3"
+msgstr "Verifica y restaura la versión anterior fiable o recompila las entradas aprobadas. Tras las pruebas, informa los resúmenes públicos de stable_evidence y delivered_evidence y responde."
+
+msgid "IV1_I02_LIMIT"
+msgstr "Encargo opcional para la historia y sus finales. No reproduce servicios externos ni todas las reglas. Puedes restaurar la configuración inicial."
+
+msgid "IV1_I02_NEWS_REPLY"
+msgstr "Respuesta del periodista: comprobamos que paquetes del mismo nombre contengan los mismos bytes. Fundamenta los distintos resúmenes con observaciones reales."
+
+msgid "IV1_I02_NEWS_RESULT"
+msgstr "Informe verificado: paquetes de igual versión contenían bytes distintos y la recuperación conservó el servicio. No se publicaron referencias internas."
+
+msgid "IV1_I02_PAGE_TITLE"
+msgstr "Respuestas de revisión y publicación"
+
+msgid "IV1_I02_PAGE_WAIT"
+msgstr "Los resultados aparecen tras un informe y seguimiento válidos."
+
+msgid "IV1_I02_PRINCIPLE"
+msgstr "La procedencia debe corresponder a contenido, fuente y constructor concretos. El comportamiento seguro y la divulgación autorizada requieren pruebas aparte."
+
+msgid "IV1_I02_PRIVATE_DELIVERED"
+msgstr "Referencia interna solo para el contacto técnico autorizado."
+
+msgid "IV1_I02_PRIVATE_REBUILT"
+msgstr "Referencia interna solo para el contacto técnico autorizado."
+
+msgid "IV1_I02_PRIVATE_STABLE"
+msgstr "Referencia interna solo para el contacto técnico autorizado."
+
+msgid "IV1_I02_RECIPIENT_NEWS"
+msgstr "Periodista · pruebas depuradas"
+
+msgid "IV1_I02_RECIPIENT_STAFF"
+msgstr "Responsable · traspaso técnico"
+
+msgid "IV1_I02_REPLY"
+msgstr "El despliegue verificado cumple las pruebas y se registró el seguimiento elegido. Publicación y traspaso reflejan las pruebas divulgadas. La historia sigue disponible sin este encargo."
+
+msgid "IV1_I02_SENDER"
+msgstr "Contacto de revisión independiente"
+
+msgid "IV1_I02_STAFF_REPLY"
+msgstr "Respuesta del responsable: el traspaso relaciona recuperación y pruebas. Envía seguimiento de los resultados actuales."
+
+msgid "IV1_I02_STAFF_RESULT"
+msgstr "Traspaso completado: se verificaron despliegue aprobado y límites. Se creó un registro restringido, no un artículo público."
+
+msgid "IV1_I02_TITLE"
+msgstr "Versiones distintas con el mismo número"
+
+msgid "IV1_I02_TOOL"
+msgstr "Banco de procedencia y divulgación"
+
+msgid "IV1_I02_TOOL_EXPLAIN"
+msgstr "Inspecciona artefactos, verifica procedencia y comportamiento y aporta pruebas apropiadas al destinatario."
+
+msgid "IV1_I02_TOOL_USAGE"
+msgstr "Inspecciona, verifica, despliega, prueba, informa y responde. Restaura para volver a experimentar."
+
+msgid "IV1_PACK_SUMMARY"
+msgstr "Elige libremente investigaciones de permisos o procedencia. Ninguna es necesaria para la historia ni sus finales."
+
+msgid "IV1_PACK_TITLE"
+msgstr "Encargos opcionales"
 
 msgid "KEYBOARD_VOLUME"
 msgstr "Sonidos del teclado"
@@ -6500,6 +7067,30 @@ msgstr "Valor que enviar"
 msgid "UI_CANCEL"
 msgstr "Cancelar"
 
+msgid "UI_COMMISSIONS_CLOSE"
+msgstr "Cerrar encargos"
+
+msgid "UI_COMMISSIONS_DONE"
+msgstr "Encargo completado · revisar"
+
+msgid "UI_COMMISSIONS_I01_DESC"
+msgstr "Permisos en la nube · encargo independiente sobre roles, recursos y límites de inquilino"
+
+msgid "UI_COMMISSIONS_I02_DESC"
+msgstr "Confianza de versiones · verifica procedencia y elige divulgación y seguimiento"
+
+msgid "UI_COMMISSIONS_RETURN"
+msgstr "Volver a la historia principal"
+
+msgid "UI_COMMISSIONS_SCOPE"
+msgstr "Elige el ámbito que te interese. Estos encargos no son necesarios para la historia principal ni sus finales."
+
+msgid "UI_COMMISSIONS_START"
+msgstr "Iniciar / continuar"
+
+msgid "UI_COMMISSIONS_TITLE"
+msgstr "Encargos opcionales"
+
 msgid "UI_CONFIRM_FRESH"
 msgstr "Se conservan el guardado y la copia con otros nombres y se guarda el progreso de esta pantalla.\nEl progreso actual no se reinicia."
 
@@ -6731,6 +7322,24 @@ msgstr "Mostrar la ayuda de comandos en el terminal activo"
 msgid "UI_HELP_TAG"
 msgstr "Ayuda"
 
+msgid "UI_IAM_BINDINGS"
+msgstr "Asignaciones de rol actuales"
+
+msgid "UI_IAM_CREDENTIALS"
+msgstr "Estado de credenciales"
+
+msgid "UI_IAM_PRINCIPALS"
+msgstr "Identidades registradas"
+
+msgid "UI_IAM_REQUESTS"
+msgstr "Solicitudes por verificar"
+
+msgid "UI_IAM_RESOURCES"
+msgstr "Recursos y límites"
+
+msgid "UI_IAM_ROLES"
+msgstr "Roles y reglas"
+
 msgid "UI_IMPORT_FAILED"
 msgstr "No se pudo importar M01 anterior ({code}). El original no cambió.\n{detail}"
 
@@ -6830,11 +7439,23 @@ msgstr "Avanzar tareas en cola"
 msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
 msgstr "Avanzar la ventana de observación"
 
+msgid "UI_MODEL_ACTION_BIND"
+msgstr "Cambiar asignación"
+
+msgid "UI_MODEL_ACTION_BUILD"
+msgstr "Ejecutar compilación virtual aprobada"
+
 msgid "UI_MODEL_ACTION_CHECKPOINT"
 msgstr "Guardar un punto de políticas"
 
 msgid "UI_MODEL_ACTION_COLLECT"
 msgstr "Recoger desde este punto"
+
+msgid "UI_MODEL_ACTION_DEPLOY"
+msgstr "Desplegar artefacto verificado"
+
+msgid "UI_MODEL_ACTION_FOLLOWUP"
+msgstr "Responder al seguimiento"
 
 msgid "UI_MODEL_ACTION_HANDOFF"
 msgstr "Entregar conexiones y límites respaldados"
@@ -6845,14 +7466,26 @@ msgstr "Crear una hipótesis"
 msgid "UI_MODEL_ACTION_INSPECT"
 msgstr "Examinar el estado actual"
 
+msgid "UI_MODEL_ACTION_INSPECT_ARTIFACT"
+msgstr "Inspeccionar artefacto"
+
+msgid "UI_MODEL_ACTION_INSPECT_PROVENANCE"
+msgstr "Inspeccionar procedencia"
+
 msgid "UI_MODEL_ACTION_PROBE"
 msgstr "Probar peticiones y trabajo legítimo"
 
 msgid "UI_MODEL_ACTION_QUARANTINE"
 msgstr "Cambiar la cuarentena del objeto guardado"
 
+msgid "UI_MODEL_ACTION_REPORT"
+msgstr "Enviar informe verificado"
+
 msgid "UI_MODEL_ACTION_RESET"
 msgstr "Reiniciar la ejecución actual"
+
+msgid "UI_MODEL_ACTION_RESTORE_INITIAL"
+msgstr "Restaurar configuración inicial"
 
 msgid "UI_MODEL_ACTION_REVISE"
 msgstr "Revisar conservando pruebas"
@@ -6877,6 +7510,9 @@ msgstr "Avanzar paso a paso"
 
 msgid "UI_MODEL_ACTION_TEST"
 msgstr "Contrastar con pruebas recogidas"
+
+msgid "UI_MODEL_ACTION_VERIFY"
+msgstr "Verificar procedencia"
 
 msgid "UI_MODEL_ALLOW"
 msgstr "Permitir"
@@ -6925,6 +7561,9 @@ msgstr "Todavía no hay observaciones que mostrar."
 
 msgid "UI_MODEL_PERMITTED_PLAINTEXT"
 msgstr "Texto en claro autorizado"
+
+msgid "UI_MODEL_RECEIPTS"
+msgstr "Resultados actuales"
 
 msgid "UI_MODEL_REFUTED"
 msgstr "Refutada"
@@ -7123,6 +7762,42 @@ msgstr "Error al recuperar copia ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "Conservar el archivo dañado aparte y recuperar una copia válida"
+
+msgid "UI_RELEASE_ARTICLE"
+msgstr "Resultado público"
+
+msgid "UI_RELEASE_ARTIFACTS"
+msgstr "Artefactos y resúmenes"
+
+msgid "UI_RELEASE_BUILDS"
+msgstr "Compilaciones virtuales aprobadas"
+
+msgid "UI_RELEASE_DEPLOYMENT"
+msgstr "Despliegue actual"
+
+msgid "UI_RELEASE_EVIDENCE"
+msgstr "Pruebas inspeccionadas"
+
+msgid "UI_RELEASE_RECIPIENTS"
+msgstr "Destinatarios"
+
+msgid "UI_RELEASE_REGISTRIES"
+msgstr "Registros de procedencia fiables"
+
+msgid "UI_RELEASE_REPLIES"
+msgstr "Respuestas y seguimiento"
+
+msgid "UI_RELEASE_REPORT"
+msgstr "Informe enviado"
+
+msgid "UI_RELEASE_SERVICES"
+msgstr "Comprobaciones del servicio"
+
+msgid "UI_RELEASE_STATEMENTS"
+msgstr "Declaraciones de procedencia registradas"
+
+msgid "UI_RELEASE_VERIFICATIONS"
+msgstr "Resultados de procedencia"
 
 msgid "UI_RESPONSE_ARTIFACTS"
 msgstr "Subidas almacenadas observadas"
@@ -7382,6 +8057,9 @@ msgstr "Solo usa el sistema virtual. Sin permiso también se rechaza la lectura 
 msgid "UI_TOOLKIND_FILE_MODEL"
 msgstr "Lee con los permisos de la cuenta del terminal y las mismas comprobaciones que cat."
 
+msgid "UI_TOOLKIND_IAM_CASE"
+msgstr "Revisión de permisos"
+
 msgid "UI_TOOLKIND_IDOR"
 msgstr "Acceso a objetos"
 
@@ -7462,6 +8140,9 @@ msgstr "No reproduce un motor SQL ni su sintaxis completa. Solo trata filas virt
 
 msgid "UI_TOOLKIND_QUERY_MODEL"
 msgstr "Imita una sintaxis reducida. Observa si la entrada queda como valor o altera condiciones como OR. Con vinculación activada se trata solo como valor."
+
+msgid "UI_TOOLKIND_RELEASE_CASE"
+msgstr "Revisión de versión y divulgación"
 
 msgid "UI_TOOLKIND_RENDER"
 msgstr "Contexto de presentación"
@@ -7595,6 +8276,9 @@ msgstr "Método de adquisición"
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "Acción"
 
+msgid "UI_TOOL_FIELD_ALLOWED_FIELDS"
+msgstr "Campos divulgables"
+
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "Objeto guardado"
 
@@ -7606,6 +8290,12 @@ msgstr "Disponible"
 
 msgid "UI_TOOL_FIELD_BASIS"
 msgstr "Identificador de la evidencia al responder"
+
+msgid "UI_TOOL_FIELD_BUILDER_ID"
+msgstr "Constructor"
+
+msgid "UI_TOOL_FIELD_BUILD_ID"
+msgstr "Compilación aprobada"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "Elemento de trabajo"
@@ -7646,11 +8336,17 @@ msgstr "Número de pasos"
 msgid "UI_TOOL_FIELD_COVERAGE"
 msgstr "Cobertura"
 
+msgid "UI_TOOL_FIELD_CREDENTIAL_REF"
+msgstr "Referencia de credencial"
+
 msgid "UI_TOOL_FIELD_CURRENT"
 msgstr "Valor actual"
 
 msgid "UI_TOOL_FIELD_CURSOR"
 msgstr "Ventana actual de observación"
+
+msgid "UI_TOOL_FIELD_DIGEST"
+msgstr "Resumen"
 
 msgid "UI_TOOL_FIELD_DST"
 msgstr "Registro de destino"
@@ -7673,14 +8369,26 @@ msgstr "Tipo de evento observado"
 msgid "UI_TOOL_FIELD_EVENT_ID"
 msgstr "ID de evento"
 
+msgid "UI_TOOL_FIELD_EVIDENCE_IDS"
+msgstr "Pruebas inspeccionadas"
+
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
 msgstr "Ejecución permitida actualmente"
 
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
 msgstr "Ejecución permitida al aceptar la subida"
 
+msgid "UI_TOOL_FIELD_EXPIRES_TICK"
+msgstr "Instante de caducidad"
+
+msgid "UI_TOOL_FIELD_FIELDS"
+msgstr "Campos que divulgar"
+
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "Nombre de archivo"
+
+msgid "UI_TOOL_FIELD_FOLLOWUP_ID"
+msgstr "Seguimiento"
 
 msgid "UI_TOOL_FIELD_FORMAT_OK"
 msgstr "Comprobación de formato"
@@ -7711,6 +8419,9 @@ msgstr "Entrada"
 
 msgid "UI_TOOL_FIELD_INPUTS"
 msgstr "Casos de entrada"
+
+msgid "UI_TOOL_FIELD_INSPECTED"
+msgstr "Inspeccionado"
 
 msgid "UI_TOOL_FIELD_INTENDED"
 msgstr "Resultado necesario"
@@ -7778,6 +8489,9 @@ msgstr "Posición de instrucción"
 msgid "UI_TOOL_FIELD_POLICY"
 msgstr "Política aplicada"
 
+msgid "UI_TOOL_FIELD_PRINCIPAL_ID"
+msgstr "Identidad"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "Procedencia"
 
@@ -7790,6 +8504,9 @@ msgstr "En cuarentena"
 msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
 msgstr "Pruebas de revisión"
 
+msgid "UI_TOOL_FIELD_RECIPIENT_ID"
+msgstr "Destinatario"
+
 msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
 msgstr "Hipótesis refutadas"
 
@@ -7798,6 +8515,9 @@ msgstr "Registro de origen"
 
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "Registros virtuales"
+
+msgid "UI_TOOL_FIELD_REGISTRY_ID"
+msgstr "Registro de procedencia"
 
 msgid "UI_TOOL_FIELD_RELATION"
 msgstr "Relación"
@@ -7811,11 +8531,20 @@ msgstr "Identificador de solicitud"
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "Marca de petición"
 
+msgid "UI_TOOL_FIELD_REQUIRED_EVIDENCE"
+msgstr "Pruebas necesarias"
+
 msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
 msgstr "Ámbito de conservación"
 
+msgid "UI_TOOL_FIELD_REVOKED"
+msgstr "Revocada"
+
 msgid "UI_TOOL_FIELD_RIGHT"
 msgstr "Segunda entidad"
+
+msgid "UI_TOOL_FIELD_ROLE_ID"
+msgstr "Rol"
 
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "Ruta de petición"
@@ -7834,6 +8563,9 @@ msgstr "Ámbito de observación"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "Sección"
+
+msgid "UI_TOOL_FIELD_SENSITIVITY"
+msgstr "Sensibilidad"
 
 msgid "UI_TOOL_FIELD_SENSOR_ID"
 msgstr "Punto de observación"
@@ -7859,6 +8591,12 @@ msgstr "Validación del formato superada"
 msgid "UI_TOOL_FIELD_SOURCE_ID"
 msgstr "ID de origen"
 
+msgid "UI_TOOL_FIELD_SOURCE_REVISION"
+msgstr "Revisión de origen"
+
+msgid "UI_TOOL_FIELD_STATEMENT_ID"
+msgstr "Declaración de procedencia"
+
 msgid "UI_TOOL_FIELD_STATUS"
 msgstr "Estado"
 
@@ -7868,11 +8606,20 @@ msgstr "Pasos usados"
 msgid "UI_TOOL_FIELD_STORED_AS"
 msgstr "Referencia almacenada"
 
+msgid "UI_TOOL_FIELD_SUBJECT_DIGEST"
+msgstr "Resumen del objeto"
+
 msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
 msgstr "Hipótesis respaldadas"
 
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "Host de destino"
+
+msgid "UI_TOOL_FIELD_TENANT"
+msgstr "Inquilino"
+
+msgid "UI_TOOL_FIELD_TENANT_SCOPE"
+msgstr "Ámbito del inquilino"
 
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "Rama verdadera"
@@ -7918,6 +8665,9 @@ msgstr "Posición de recogida"
 
 msgid "UI_TOOL_FIELD_VERDICT"
 msgstr "Valoración de pruebas"
+
+msgid "UI_TOOL_FIELD_VERIFIED"
+msgstr "Verificado"
 
 msgid "UI_TOOL_FIELD_VISIBILITY"
 msgstr "Información visible"

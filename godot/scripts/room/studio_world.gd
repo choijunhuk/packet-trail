@@ -4,6 +4,16 @@ extends Node3D
 var rain_material: ShaderMaterial
 var computer_position := Vector3(0.2, 1.35, -1.95)
 var materials: Dictionary = {}
+const Neighborhood = preload("res://scripts/room/neighborhood_world.gd")
+var neighborhood: Node3D
+var _build_parent: Node3D
+var _equipment: Node3D
+var _equipment_signature := ""
+var _desk_light: OmniLight3D
+var _environment: Environment
+var _moon: DirectionalLight3D
+const ROOM_BOUNDS := Rect2(-3.65, -3.12, 7.3, 6.24)
+const ROOM_OBSTACLES := [Rect2(-1.95, -2.75, 3.9, 1.65), Rect2(-0.24, -1.08, 0.88, 0.72), Rect2(3.0, -2.1, 0.85, 1.85), Rect2(-3.75, -2.95, 1.0, 1.0)]
 
 
 func _ready() -> void:
@@ -26,6 +36,12 @@ func _ready() -> void:
 	_build_plant(Vector3(-3.25, 0, -2.4), 1.0)
 	_build_plant(Vector3(2.25, 0.93, -2.1), 0.35)
 	_lighting()
+	_build_exit()
+	neighborhood = Neighborhood.new()
+	neighborhood.name = "Neighborhood"
+	neighborhood.position = Vector3(0, 0, 18)
+	add_child(neighborhood)
+	apply_habitat({})
 
 
 func set_reduced_motion(value: bool) -> void:
@@ -52,7 +68,7 @@ func _box(label: String, size: Vector3, at: Vector3, material: Material, collide
 	node.mesh = mesh
 	node.material_override = material
 	node.position = at
-	add_child(node)
+	(_build_parent if _build_parent != null else self).add_child(node)
 	if collide:
 		var body := StaticBody3D.new()
 		var shape := CollisionShape3D.new()
@@ -75,7 +91,7 @@ func _cylinder(label: String, radius: float, height: float, at: Vector3, materia
 	node.mesh = mesh
 	node.material_override = material
 	node.position = at
-	add_child(node)
+	(_build_parent if _build_parent != null else self).add_child(node)
 	return node
 
 
@@ -134,22 +150,8 @@ func _build_desk() -> void:
 	for x in [-1.6, 1.6]:
 		for z in [-2.45, -1.45]:
 			_box("DeskLeg", Vector3(0.055, 0.88, 0.055), Vector3(x, 0.44, z), materials["metal"])
-	_box("MonitorBody", Vector3(1.28, 0.76, 0.065), Vector3(0.15, 1.49, -2.25), materials["trim"])
-	_box("MonitorScreen", Vector3(1.17, 0.65, 0.008), Vector3(0.15, 1.49, -2.21), _mat(Color("173848"), 0.5, 0, Color("38788a"), 0.55))
-	_box("MonitorStem", Vector3(0.055, 0.26, 0.055), Vector3(0.15, 1.08, -2.25), materials["metal"])
-	_box("MonitorFoot", Vector3(0.52, 0.025, 0.25), Vector3(0.15, 0.995, -2.18), materials["metal"])
-	for row in range(5):
-		_box("ScreenLine", Vector3(0.25 + row * 0.07, 0.009, 0.003), Vector3(-0.23 + row * 0.03, 1.64 - row * 0.055, -2.202), materials["cyan"])
-	_box("Keyboard", Vector3(0.85, 0.035, 0.3), Vector3(0.05, 1.0, -1.68), materials["rubber"])
-	for row in range(4):
-		for col in range(14):
-			_box("Key", Vector3(0.042, 0.008, 0.043), Vector3(-0.32 + col * 0.052, 1.022, -1.79 + row * 0.062), materials["metal"])
 	_box("DeskMat", Vector3(1.4, 0.008, 0.6), Vector3(0.25, 0.988, -1.7), materials["linen"])
 	_box("Mouse", Vector3(0.095, 0.04, 0.15), Vector3(0.75, 1.02, -1.65), materials["rubber"])
-	_cylinder("LampBase", 0.18, 0.035, Vector3(-1.25, 1.0, -2.1), materials["metal"])
-	_rod("LampArm", Vector3(-1.25, 1.0, -2.1), Vector3(-1.2, 1.75, -2.12), 0.025, materials["metal"])
-	_cylinder("LampShade", 0.23, 0.22, Vector3(-1.2, 1.8, -2.12), materials["metal"], 0.12)
-	_cylinder("LampDiffuser", 0.205, 0.012, Vector3(-1.2, 1.69, -2.12), materials["amber"])
 	_cylinder("Mug", 0.075, 0.15, Vector3(-0.78, 1.065, -1.6), materials["paper"])
 	_rod("CableA", Vector3(0.15, 0.9, -2.25), Vector3(0.4, 0.3, -2.6), 0.014, materials["rubber"])
 	_rod("CableB", Vector3(0.4, 0.3, -2.6), Vector3(1.6, 0.1, -2.55), 0.014, materials["rubber"])
@@ -209,15 +211,18 @@ func _lighting() -> void:
 	environment.fog_enabled = true
 	environment.fog_light_color = Color("182b3c")
 	environment.fog_density = 0.025
+	_environment = environment
 	world.environment = environment
 	add_child(world)
 	var moon := DirectionalLight3D.new()
+	_moon = moon
 	moon.rotation_degrees = Vector3(-35, -30, 0)
 	moon.light_color = Color("7eabc7")
 	moon.light_energy = 0.2
 	moon.shadow_enabled = true
 	add_child(moon)
 	var desk_light := OmniLight3D.new()
+	_desk_light = desk_light
 	desk_light.position = Vector3(-1.2, 1.62, -2.1)
 	desk_light.light_color = Color("ffca8d")
 	desk_light.light_energy = 3.0
@@ -236,3 +241,135 @@ func _lighting() -> void:
 	monitor.light_energy = 0.42
 	monitor.omni_range = 2.8
 	add_child(monitor)
+
+
+func _build_exit() -> void:
+	_box("EntryDoor", Vector3(0.045, 2.65, 1.15), Vector3(3.89, 1.325, 1.88), _mat(Color("42534f"), 0.8))
+	_box("DoorHandle", Vector3(0.08, 0.08, 0.24), Vector3(3.83, 1.15, 1.5), materials["amber"])
+	_box("DoorThreshold", Vector3(0.6, 0.025, 1.25), Vector3(3.55, 0.02, 1.88), materials["trim"])
+
+
+func get_zone_spawn(zone: String) -> Transform3D:
+	if zone == "courtyard":
+		return global_transform * Transform3D(Basis.IDENTITY, Vector3(0, 1.63, 21.8))
+	return global_transform * Transform3D(Basis.IDENTITY, Vector3(0, 1.63, 0.25))
+
+
+func zone_bounds(zone: String) -> Rect2:
+	return Rect2(-5.65, 13.35, 11.3, 9.3) if zone == "courtyard" else ROOM_BOUNDS
+
+
+func move_in_zone(at: Vector3, delta: Vector3, zone: String) -> Vector3:
+	at = to_local(at)
+	delta = global_basis.inverse() * delta
+	var bounds := zone_bounds(zone)
+	var point := Vector2(clampf(at.x, bounds.position.x, bounds.end.x), clampf(at.z, bounds.position.y, bounds.end.y))
+	var movement := Vector2(delta.x, delta.z).limit_length(20.0)
+	var steps := maxi(1, ceili(movement.length() / 0.08))
+	var step := movement / float(steps)
+	var obstacles: Array = []
+	if zone == "courtyard":
+		for rect in Neighborhood.OBSTACLES:
+			obstacles.append(Rect2(rect.position + Vector2(0, 18), rect.size))
+	else:
+		obstacles.assign(ROOM_OBSTACLES)
+	for index in range(steps):
+		var candidate := Vector2(clampf(point.x + step.x, bounds.position.x, bounds.end.x), point.y)
+		if not _blocked(candidate, obstacles): point = candidate
+		candidate = Vector2(point.x, clampf(point.y + step.y, bounds.position.y, bounds.end.y))
+		if not _blocked(candidate, obstacles): point = candidate
+	return to_global(Vector3(point.x, at.y, point.y))
+
+
+func _blocked(point: Vector2, obstacles: Array) -> bool:
+	for rect in obstacles:
+		if rect.grow(0.18).has_point(point): return true
+	return false
+
+
+func interaction_at(camera_position: Vector3, forward: Vector3, zone: String) -> Dictionary:
+	camera_position = to_local(camera_position)
+	forward = global_basis.inverse() * forward
+	var targets: Array = []
+	if zone == "courtyard":
+		for target in Neighborhood.INTERACTIONS:
+			var entry: Dictionary = target.duplicate(true)
+			entry["position"] += Vector3(0, 0, 18)
+			targets.append(entry)
+	else:
+		targets = [{"id": "computer", "label_key": "HAB_INTERACT_COMPUTER", "position": computer_position},
+			{"id": "room_exit", "label_key": "HAB_INTERACT_EXIT", "position": Vector3(3.6, 1.45, 1.88)}]
+	var chosen: Dictionary = {}
+	var distance := 2.45
+	for entry in targets:
+		var offset: Vector3 = entry.position - camera_position
+		if offset.length() < distance and offset.length() > 0.001 and forward.normalized().dot(offset.normalized()) > 0.62:
+			chosen = entry.duplicate(true)
+			distance = offset.length()
+	if not chosen.is_empty(): chosen["position"] = to_global(chosen.position)
+	return chosen
+
+
+func apply_habitat(view: Dictionary) -> void:
+	if materials.is_empty(): return
+	var equipped: Dictionary = view.get("equipped", {})
+	var signature := JSON.stringify(equipped)
+	if signature != _equipment_signature or _equipment == null:
+		_equipment_signature = signature
+		if _equipment != null: _equipment.free()
+		_equipment = Node3D.new()
+		_equipment.name = "DeskEquipment"
+		add_child(_equipment)
+		_build_parent = _equipment
+		_build_equipment(equipped)
+		_build_parent = null
+	var cool := str(equipped.get("lamp", "lamp_starter")) == "lamp_cool"
+	if _desk_light != null:
+		_desk_light.light_color = Color("a5d4ff") if cool else Color("ffc487")
+		_desk_light.light_energy = 3.1 if cool else 2.7
+	var dawn: bool = view.get("lighting", "night") == "dawn"
+	if _environment != null:
+		_environment.background_color = Color("485c68") if dawn else Color("070e17")
+		_environment.ambient_light_energy = 0.52 if dawn else 0.25
+		_environment.fog_light_color = Color("78888e") if dawn else Color("182b3c")
+	if _moon != null:
+		_moon.light_energy = 0.65 if dawn else 0.2
+		_moon.light_color = Color("f4d5af") if dawn else Color("7eabc7")
+	if neighborhood != null: neighborhood.apply_habitat(view)
+
+
+func _build_equipment(equipped: Dictionary) -> void:
+	var keyboard := str(equipped.get("keyboard", "keyboard_starter"))
+	var body := Color("222629")
+	var caps := Color("444b50")
+	if keyboard == "keyboard_ivory":
+		body = Color("e4d9bd")
+		caps = Color("faf5e8")
+	elif keyboard == "keyboard_coral":
+		body = Color("b85450")
+		caps = Color("f0d7c6")
+	_box("KeyboardBody", Vector3(0.85, 0.035, 0.3), Vector3(0.05, 1.0, -1.68), _mat(body, 0.6))
+	var key_material := _mat(caps, 0.65)
+	for row in range(4):
+		for col in range(14):
+			_box("Keycap", Vector3(0.042, 0.008, 0.043), Vector3(-0.32 + col * 0.052, 1.022, -1.79 + row * 0.062), key_material)
+	var monitor := str(equipped.get("monitor", "monitor_starter"))
+	if monitor == "monitor_dual":
+		_build_monitor(Vector3(-0.52, 1.49, -2.25), 0.92, Color("95d8b9"))
+		_build_monitor(Vector3(0.58, 1.49, -2.25), 0.92, Color("95d8b9"))
+	else:
+		_build_monitor(Vector3(0.15, 1.49, -2.25), 1.75 if monitor == "monitor_wide" else 1.28, Color("b6a2d9") if monitor == "monitor_wide" else Color("67a6b7"))
+	var tint := Color("a5d4ff") if equipped.get("lamp") == "lamp_cool" else Color("ffc487")
+	_cylinder("LampBase", 0.18, 0.035, Vector3(-1.25, 1.0, -2.1), materials["metal"])
+	_rod("LampArm", Vector3(-1.25, 1.0, -2.1), Vector3(-1.2, 1.75, -2.12), 0.025, materials["metal"])
+	_cylinder("LampShade", 0.23, 0.22, Vector3(-1.2, 1.8, -2.12), _mat(tint.darkened(0.55), 0.45))
+	_cylinder("LampDiffuser", 0.205, 0.012, Vector3(-1.2, 1.69, -2.12), _mat(tint, 0.4, 0, tint, 1.7))
+
+
+func _build_monitor(at: Vector3, width: float, glow: Color) -> void:
+	_box("MonitorBody", Vector3(width, 0.76, 0.065), at, materials["trim"])
+	_box("MonitorScreen", Vector3(width - 0.11, 0.65, 0.008), at + Vector3(0, 0, 0.04), _mat(glow.darkened(0.65), 0.5, 0, glow, 0.45))
+	_box("MonitorStem", Vector3(0.055, 0.26, 0.055), at + Vector3(0, -0.41, 0), materials["metal"])
+	_box("MonitorFoot", Vector3(0.42, 0.025, 0.25), at + Vector3(0, -0.495, 0.07), materials["metal"])
+	for row in range(5):
+		_box("ScreenLine", Vector3(width * (0.22 + row * 0.04), 0.009, 0.003), at + Vector3(-width * 0.27 + row * 0.03, 0.15 - row * 0.055, 0.048), _mat(glow, 0.5, 0, glow, 1.0))

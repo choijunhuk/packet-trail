@@ -62,6 +62,9 @@ msgstr "침투자"
 msgid "CAMPAIGN_INTRUDER_DESC"
 msgstr "닫힌 경로를 열고 숨겨진 기록을 회수하세요."
 
+msgid "CAMPAIGN_INVESTIGATION"
+msgstr "선택 의뢰"
+
 msgid "CAMPAIGN_NEW_CONFIRM"
 msgstr "{campaign}의 기존 진행을 백업하고 새로 시작합니다. 다른 캠페인과 이전판 저장은 유지됩니다."
 
@@ -88,6 +91,9 @@ msgstr "이 작업에는 인증된 가상 세션이 필요합니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_CAMPAIGN_COMPLETE"
 msgstr "캠페인의 마지막 사건을 해결했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_COMMISSION_COMPLETE"
+msgstr "선택 의뢰를 완료했습니다. 다른 의뢰는 원할 때 선택하세요."
 
 msgid "CAMPAIGN_RESULT_CONNECTED"
 msgstr "가상 호스트에 연결했습니다. 현재 계정과 권한을 확인하세요.\n{detail}"
@@ -127,6 +133,27 @@ msgstr "현재 사건의 단서 안내입니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_HOST_NOT_FOUND"
 msgstr "가상 세계에 등록된 호스트를 찾지 못했습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID"
+msgstr "권한 검토 입력을 확인하세요."
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_BINDING"
+msgstr "등록된 주체와 허용된 역할을 선택하세요."
+
+msgid "CAMPAIGN_RESULT_IAM_INVALID_STATE"
+msgstr "현재 권한 상태를 검증하지 못했습니다."
+
+msgid "CAMPAIGN_RESULT_IAM_OBSERVED"
+msgstr "현재 권한과 요청 결과를 확인했습니다."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_CREDENTIAL"
+msgstr "등록된 자격 참조를 선택하세요."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_REQUEST"
+msgstr "등록된 요청을 선택하세요."
+
+msgid "CAMPAIGN_RESULT_IAM_UNKNOWN_ROUTE"
+msgstr "이 요청에 등록된 경로를 선택하세요."
 
 msgid "CAMPAIGN_RESULT_IMPORTED_M01"
 msgstr "구버전 M01 진행을 가져왔습니다.\n{detail}"
@@ -206,6 +233,9 @@ msgstr "지정한 가상 파일이나 자원을 찾지 못했습니다.\n{detail
 msgid "CAMPAIGN_RESULT_NO_AUTH_PENDING"
 msgstr "진행 중인 가상 인증이 없습니다.\n{detail}"
 
+msgid "CAMPAIGN_RESULT_NO_CAMPAIGN_ENDING"
+msgstr "선택 의뢰에는 개별 결과가 있으며 본편 엔딩은 없습니다."
+
 msgid "CAMPAIGN_RESULT_NO_CONNECTION"
 msgstr "현재 로컬 세션입니다. 먼저 가상 서버에 연결하세요.\n{detail}"
 
@@ -232,6 +262,33 @@ msgstr "정상 백업에서 진행을 복구했습니다.\n{detail}"
 
 msgid "CAMPAIGN_RESULT_RECOVERY_NOT_NEEDED"
 msgstr "현재 저장은 정상이며 복구가 필요하지 않습니다.\n{detail}"
+
+msgid "CAMPAIGN_RESULT_RELEASE_FOLLOWUP_INVALID"
+msgstr "현재 수신자의 추가 확인에 필요한 근거를 확인하세요."
+
+msgid "CAMPAIGN_RESULT_RELEASE_INVALID"
+msgstr "배포 검토 입력을 확인하세요."
+
+msgid "CAMPAIGN_RESULT_RELEASE_NOT_READY"
+msgstr "현재 배포와 서비스 검증을 먼저 완료하세요."
+
+msgid "CAMPAIGN_RESULT_RELEASE_OBSERVED"
+msgstr "배포와 공개의 현재 근거를 확인했습니다."
+
+msgid "CAMPAIGN_RESULT_RELEASE_REPORT_INVALID"
+msgstr "관측한 근거와 허용된 공개 항목을 선택하세요."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNDEPLOYED"
+msgstr "검증한 산출물을 먼저 배포하세요."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNKNOWN"
+msgstr "등록된 산출물·증명·수신자를 선택하세요."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNOBSERVED"
+msgstr "해당 산출물의 근거를 먼저 조사하세요."
+
+msgid "CAMPAIGN_RESULT_RELEASE_UNVERIFIED"
+msgstr "현재 내용과 일치하는 출처 증명을 검증하세요."
 
 msgid "CAMPAIGN_RESULT_RESET"
 msgstr "현재 사건을 처음 상태로 되돌렸습니다.\n{detail}"
@@ -1312,6 +1369,276 @@ msgstr "글자 크기"
 
 msgid "FULLSCREEN"
 msgstr "전체 화면"
+
+msgid "HABITAT_ACTION_LIMIT"
+msgstr "활동 기록 한도에 도달했습니다."
+
+msgid "HABITAT_ALREADY_ORDERED"
+msgstr "이미 주문한 제품입니다. 바깥 보관함을 확인하세요."
+
+msgid "HABITAT_ALREADY_OWNED"
+msgstr "이미 보유한 제품입니다."
+
+msgid "HABITAT_CABINET_CONFIGURED"
+msgstr "설정을 저장했습니다. 현재 결과를 다시 검증하세요."
+
+msgid "HABITAT_CABINET_INSPECTED"
+msgstr "현재 통신함 상태를 조사했습니다. 경로와 잠금을 비교해 보세요."
+
+msgid "HABITAT_DELIVERY_COLLECTED"
+msgstr "주문을 수령했습니다. 데스크샵에서 장착할 수 있습니다."
+
+msgid "HABITAT_EQUIPPED"
+msgstr "장비 모양을 변경하고 저장했습니다."
+
+msgid "HABITAT_INSPECTION_REQUIRED"
+msgstr "수락한 의뢰의 통신함을 먼저 조사하세요."
+
+msgid "HABITAT_INSUFFICIENT_CREDITS"
+msgstr "작업실 크레딧이 부족합니다."
+
+msgid "HABITAT_INVALID_ACTION"
+msgstr "사용 가능한 활동을 선택하세요."
+
+msgid "HABITAT_INVALID_CONFIG"
+msgstr "허용된 연결 경로와 잠금 상태를 선택하세요."
+
+msgid "HABITAT_INVALID_EQUIPMENT"
+msgstr "수령한 물품을 맞는 위치에 장착하세요."
+
+msgid "HABITAT_INVALID_LIGHTING"
+msgstr "사용 가능한 조명을 선택하세요."
+
+msgid "HABITAT_INVALID_SAVE"
+msgstr "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요."
+
+msgid "HABITAT_JOB_ACCEPTED"
+msgstr "의뢰를 수락했습니다. 바깥 공용 통신함을 조사하세요."
+
+msgid "HABITAT_JOB_CHECK_FAILED"
+msgstr "현재 설정이 조건을 만족하지 않습니다. 정상 점검과 비인가 접근 결과를 비교하고 다시 설정하세요."
+
+msgid "HABITAT_JOB_REQUIRED"
+msgstr "게시판에서 통신함 점검 의뢰를 먼저 수락하세요."
+
+msgid "HABITAT_JOB_VERIFIED"
+msgstr "정상 업무를 유지하면서 비인가 접근을 차단했습니다. 보상 내역과 현재 확인 결과를 확인하세요."
+
+msgid "HABITAT_LIGHTING_SET"
+msgstr "조명 분위기를 변경하고 저장했습니다."
+
+msgid "HABITAT_LOADED"
+msgstr "작업실 상태를 불러왔습니다."
+
+msgid "HABITAT_LOAD_FAILED"
+msgstr "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요."
+
+msgid "HABITAT_NEW"
+msgstr "새 작업실을 준비했습니다."
+
+msgid "HABITAT_NOT_LOADED"
+msgstr "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요."
+
+msgid "HABITAT_NO_DELIVERIES"
+msgstr "수령할 주문이 없습니다."
+
+msgid "HABITAT_ORDER_LIMIT"
+msgstr "주문 한도에 도달했습니다."
+
+msgid "HABITAT_ORDER_READY"
+msgstr "주문이 도착했습니다. 바깥 보관함에서 수령하세요."
+
+msgid "HABITAT_PATH_REJECTED"
+msgstr "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요."
+
+msgid "HABITAT_RECOVERED"
+msgstr "백업을 복구했습니다. 손상된 원본은 따로 보존했습니다."
+
+msgid "HABITAT_RECOVERY_REQUIRED"
+msgstr "작업실 저장을 안전하게 읽지 못했습니다. 기존 파일을 보존하고 백업 복구를 확인하세요."
+
+msgid "HABITAT_UNKNOWN_JOB"
+msgstr "게시판의 등록된 의뢰를 선택하세요."
+
+msgid "HABITAT_UNKNOWN_PRODUCT"
+msgstr "상점에 등록된 물품을 선택하세요."
+
+msgid "HABITAT_UPDATED"
+msgstr "작업실 상태를 저장했습니다."
+
+msgid "HAB_ACCEPT_JOB"
+msgstr "통신함 점검 의뢰 수락"
+
+msgid "HAB_ACTION_FAILED"
+msgstr "작업을 저장하지 못했습니다. 현재 상태를 유지합니다."
+
+msgid "HAB_ACTION_OK"
+msgstr "작업을 저장했습니다."
+
+msgid "HAB_AWAITING_PICKUP"
+msgstr "보관함 수령 대기"
+
+msgid "HAB_CABINET_DESCRIPTION"
+msgstr "점검을 먼저 실행해 현재 경로와 잠금 상태를 확인하세요. 모든 연결을 끄면 정상 업무도 중단됩니다. 설정 후 정상 점검과 비인가 접근 결과를 다시 확인하세요."
+
+msgid "HAB_CLOSE"
+msgstr "닫기"
+
+msgid "HAB_COLLECT"
+msgstr "도착한 주문 수령"
+
+msgid "HAB_CONFIGURE"
+msgstr "설정 적용"
+
+msgid "HAB_DELIVERY_COUNT"
+msgstr "수령 가능한 주문 {count}개"
+
+msgid "HAB_EQUIP"
+msgstr "장착"
+
+msgid "HAB_EQUIPPED"
+msgstr "장착 중"
+
+msgid "HAB_INSPECT"
+msgstr "현재 통신함 조사"
+
+msgid "HAB_INTERACT_CABINET"
+msgstr "E · 공용 통신함"
+
+msgid "HAB_INTERACT_COMPUTER"
+msgstr "E · 컴퓨터 사용"
+
+msgid "HAB_INTERACT_ENTER"
+msgstr "E · 작업실 들어가기"
+
+msgid "HAB_INTERACT_EXIT"
+msgstr "E · 밖으로 나가기"
+
+msgid "HAB_INTERACT_NOTICEBOARD"
+msgstr "E · 동네 의뢰 게시판"
+
+msgid "HAB_INTERACT_PICKUP"
+msgstr "E · 택배 보관함"
+
+msgid "HAB_INTERACT_REST"
+msgstr "E · 잠깐 쉬어가기"
+
+msgid "HAB_JOB_CHECK"
+msgstr "현재 확인 · 정상 점검: {normal} · 비인가 접근 허용: {unauthorized} · 조건 충족: {passed}"
+
+msgid "HAB_JOB_DESCRIPTION"
+msgstr "선택 의뢰 · 공용 통신함\n정상 원격 점검은 유지하면서 비인가 접근을 막아 주세요. 현장에서 현재 설정과 실제 확인 결과를 비교합니다. 보상은 작업실 크레딧 200이며 한 번만 지급됩니다."
+
+msgid "HAB_JOB_STATE"
+msgstr "수락: {accepted} · 보상 수령: {rewarded}"
+
+msgid "HAB_LIGHT_DAWN"
+msgstr "새벽 조명"
+
+msgid "HAB_LIGHT_NIGHT"
+msgstr "야간 조명"
+
+msgid "HAB_LOCKED"
+msgstr "관리 접근 잠금"
+
+msgid "HAB_NO"
+msgstr "아니요"
+
+msgid "HAB_OPTIONAL_NOTE"
+msgstr "선택 활동입니다. 꾸미기는 해킹 능력과 본편 진행에 영향을 주지 않습니다."
+
+msgid "HAB_ORDER"
+msgstr "주문"
+
+msgid "HAB_OUTDOOR_CONTROLS"
+msgstr "WASD 이동 · 마우스 오른쪽 시선 · 가까이서 E 상호작용 · Esc 메뉴"
+
+msgid "HAB_PRICE"
+msgstr "{price} 크레딧"
+
+msgid "HAB_PRODUCT_KEYBOARD_CORAL"
+msgstr "코랄 키보드"
+
+msgid "HAB_PRODUCT_KEYBOARD_IVORY"
+msgstr "아이보리 키보드"
+
+msgid "HAB_PRODUCT_KEYBOARD_STARTER"
+msgstr "기본 흑연 키보드"
+
+msgid "HAB_PRODUCT_LAMP_COOL"
+msgstr "차가운 책상 조명"
+
+msgid "HAB_PRODUCT_LAMP_STARTER"
+msgstr "따뜻한 책상 조명"
+
+msgid "HAB_PRODUCT_MONITOR_DUAL"
+msgstr "듀얼 모니터"
+
+msgid "HAB_PRODUCT_MONITOR_STARTER"
+msgstr "기본 모니터"
+
+msgid "HAB_PRODUCT_MONITOR_WIDE"
+msgstr "와이드 모니터"
+
+msgid "HAB_READ_ONLY"
+msgstr "저장 상태를 읽지 못해 변경을 잠갔습니다. 기존 파일을 보존합니다."
+
+msgid "HAB_RECOVER"
+msgstr "백업 복구"
+
+msgid "HAB_RECOVER_CONFIRM"
+msgstr "백업을 검증해 복구합니다. 손상된 원본은 별도 파일로 보존합니다."
+
+msgid "HAB_REST_NOTE"
+msgstr "휴식에는 벌점이나 능력치 변화가 없습니다. 조명과 창밖 분위기를 선택합니다."
+
+msgid "HAB_REWARD_RECEIPT"
+msgstr "보상은 이미 지급됐습니다. 지급 당시 경로: {route}. 현재 상태는 위 확인 결과를 따릅니다."
+
+msgid "HAB_ROUTE"
+msgstr "통신 경로"
+
+msgid "HAB_ROUTE_APPROVED_RELAY"
+msgstr "승인된 중계"
+
+msgid "HAB_ROUTE_OFF"
+msgstr "모든 연결 끄기"
+
+msgid "HAB_ROUTE_PUBLIC"
+msgstr "공개 연결"
+
+msgid "HAB_ROUTE_SERVICE"
+msgstr "관리 서비스"
+
+msgid "HAB_SHOP_ADDRESS"
+msgstr "deskshop.packet.test · 게임 안의 로컬 장비 상점"
+
+msgid "HAB_SHOP_DELIVERY"
+msgstr "주문은 즉시 도착합니다. 바깥 택배 보관함에서 수령한 뒤 장착하세요. 실제 결제나 인터넷 접속은 없습니다."
+
+msgid "HAB_TITLE_BENCH"
+msgstr "잠깐 쉬어가기"
+
+msgid "HAB_TITLE_DELIVERY_LOCKER"
+msgstr "택배 보관함"
+
+msgid "HAB_TITLE_NETWORK_CABINET"
+msgstr "공용 통신함 점검"
+
+msgid "HAB_TITLE_NOTICEBOARD"
+msgstr "동네 의뢰 게시판"
+
+msgid "HAB_TITLE_SHOP"
+msgstr "데스크샵"
+
+msgid "HAB_VERIFY"
+msgstr "정상 업무·비인가 접근 확인"
+
+msgid "HAB_WALLET"
+msgstr "작업실 크레딧 {balance}"
+
+msgid "HAB_YES"
+msgstr "예"
 
 msgid "HELP"
 msgstr "도움말"
@@ -3055,6 +3382,246 @@ msgstr "LogLens"
 
 msgid "IN2_TOOL_UPLOAD_NAME"
 msgstr "Media Intake"
+
+msgid "IV1_I01_ABSTRACTION"
+msgstr "등록된 유한 역할·자원·자격을 평가하는 공급자 중립 퍼즐입니다. 특정 클라우드의 전체 정책 문법이나 실제 자격을 사용하지 않습니다."
+
+msgid "IV1_I01_BRIEF"
+msgstr "이 의뢰는 본편과 별도로 고를 수 있습니다. 야간 배포 계정이 다른 조직의 자료까지 읽을 수 있다는 제보가 왔습니다. 같은 서비스의 정상 배포·안내 갱신·감사는 계속돼야 합니다.\n\n주체와 역할, 자원이 속한 테넌트를 비교하세요. 같은 계정이라도 역할에 명시적 거부가 있으면 허용보다 우선하고, 폐기되거나 만료된 자격은 사용할 수 없습니다. 원래 에이전트의 역할을 좁히거나, 이미 등록된 제한 중계 계정으로 정상 배포를 옮길 수 있습니다. 끝난 외주 자격은 두 방식 모두에서 폐기해야 합니다.\n\n요청 표의 기대 결과는 의뢰 범위를 나타냅니다. 요청을 실제 시험해 현재 정책의 근거를 확인하세요. 잘못 폐기했거나 시간을 넘겼다면 초기 구성 복원 후 다시 조사할 수 있습니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@i01.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I01_DESK_NAME"
+msgstr "배포 계정의 다른 권한 담당실"
+
+msgid "IV1_I01_GOAL"
+msgstr "정상 배포·안내·감사를 유지하면서 다른 테넌트 접근과 권한 변경, 종료·만료·폐기 자격을 거부한다."
+
+msgid "IV1_I01_HINT_1"
+msgstr "주체와 자격이 누구를 가리키는지 먼저 비교하세요. 역할 이름이 아니라 실제 규칙과 테넌트 조건이 접근을 결정합니다."
+
+msgid "IV1_I01_HINT_2"
+msgstr "원래 에이전트는 제한 역할로 좁힐 수 있습니다. 명시적 거부가 허용보다 우선하는 요청과 테넌트가 다른 자원을 비교하세요."
+
+msgid "IV1_I01_HINT_3"
+msgstr "원래 에이전트를 권한 없음으로 옮기고 제한 중계를 정상 배포 경로로 시험해도 됩니다. 종료된 외주 자격은 폐기하고 정상 안내·감사 요청은 유지하세요."
+
+msgid "IV1_I01_LIMIT"
+msgstr "선택 의뢰입니다. 본편 진행과 엔딩에 필요하지 않습니다. 실제 외부 서비스나 모든 보안 정책을 재현하지 않으며 잘못된 조작은 초기 상태로 복구할 수 있습니다."
+
+msgid "IV1_I01_PRINCIPAL_AGENT"
+msgstr "배포 에이전트"
+
+msgid "IV1_I01_PRINCIPAL_AUDITOR"
+msgstr "감사 담당자"
+
+msgid "IV1_I01_PRINCIPAL_CONTRACTOR"
+msgstr "종료된 외주 계정"
+
+msgid "IV1_I01_PRINCIPAL_OPERATOR"
+msgstr "안내 운영자"
+
+msgid "IV1_I01_PRINCIPAL_RELAY"
+msgstr "제한 배포 중계"
+
+msgid "IV1_I01_PRINCIPLE"
+msgstr "허용은 실제 주체·행동·자원·테넌트 조건이 일치해야 성립합니다. 명시적 거부와 사용할 수 없는 자격은 허용보다 먼저 판단합니다."
+
+msgid "IV1_I01_REPLY"
+msgstr "승인된 업무는 남고 다른 테넌트 열람과 권한 변경, 종료된 외주 자격 사용은 거부됐습니다. 검증된 현재 구성과 요청 결과가 의뢰 기록에 남았습니다. 다른 선택 의뢰는 별도로 시작할 수 있습니다."
+
+msgid "IV1_I01_REQUEST_AUDIT_READ"
+msgstr "승인 감사 읽기"
+
+msgid "IV1_I01_REQUEST_CROSS_TENANT"
+msgstr "배포 주체의 다른 테넌트 열람"
+
+msgid "IV1_I01_REQUEST_DEPLOYMENT"
+msgstr "정상 배포 자료 읽기"
+
+msgid "IV1_I01_REQUEST_EXPIRED_ACCESS"
+msgstr "만료 자격 재사용"
+
+msgid "IV1_I01_REQUEST_GRANT_CHANGE"
+msgstr "배포 주체의 권한 변경"
+
+msgid "IV1_I01_REQUEST_NOTICE_UPDATE"
+msgstr "정상 안내 갱신"
+
+msgid "IV1_I01_REQUEST_RETIRED_ACCESS"
+msgstr "종료된 외주 자격 재사용"
+
+msgid "IV1_I01_REQUEST_REVOKED_ACCESS"
+msgstr "이미 폐기된 자격 재사용"
+
+msgid "IV1_I01_RESOURCE_ARTIFACT"
+msgstr "승인 배포 산출물"
+
+msgid "IV1_I01_RESOURCE_AUDIT"
+msgstr "감사 기록"
+
+msgid "IV1_I01_RESOURCE_AUTHORITY"
+msgstr "역할 관리"
+
+msgid "IV1_I01_RESOURCE_FOREIGN"
+msgstr "다른 조직의 자료"
+
+msgid "IV1_I01_RESOURCE_NOTICE"
+msgstr "시민 안내"
+
+msgid "IV1_I01_ROLE_AUDIT"
+msgstr "감사 읽기 역할"
+
+msgid "IV1_I01_ROLE_BROAD"
+msgstr "과도한 공용 역할"
+
+msgid "IV1_I01_ROLE_LIMITED"
+msgstr "테넌트 제한 배포 역할"
+
+msgid "IV1_I01_ROLE_NONE"
+msgstr "권한 없음"
+
+msgid "IV1_I01_ROLE_NOTICE"
+msgstr "안내 갱신 역할"
+
+msgid "IV1_I01_ROLE_RELAY"
+msgstr "조건부 중계 역할"
+
+msgid "IV1_I01_SENDER"
+msgstr "독립 검증 연락처"
+
+msgid "IV1_I01_TITLE"
+msgstr "배포 계정의 다른 권한"
+
+msgid "IV1_I01_TOOL"
+msgstr "현재 권한과 요청 검증"
+
+msgid "IV1_I01_TOOL_EXPLAIN"
+msgstr "주체·역할·테넌트·자격을 읽고 정상 요청과 거부 요청을 현재 구성에서 비교하세요."
+
+msgid "IV1_I01_TOOL_USAGE"
+msgstr "역할을 연결하고 자격을 폐기한 뒤 요청을 시험합니다. 잘못된 변경은 초기 구성 복원으로 되돌릴 수 있습니다."
+
+msgid "IV1_I02_ABSTRACTION"
+msgstr "등록된 JSON 서비스 manifest와 결정적인 가상 빌드를 사용합니다. 실제 컴파일러나 암호 서명을 실행하지 않으며 검증은 게임의 신뢰 원장을 따릅니다."
+
+msgid "IV1_I02_ARTIFACT_DELIVERED"
+msgstr "제보로 받은 같은 이름의 배포본"
+
+msgid "IV1_I02_ARTIFACT_OFFLINE"
+msgstr "서비스를 끈 배포본"
+
+msgid "IV1_I02_ARTIFACT_REBUILT"
+msgstr "승인 입력의 가상 재빌드"
+
+msgid "IV1_I02_ARTIFACT_REVOKED"
+msgstr "폐기 빌더의 배포본"
+
+msgid "IV1_I02_ARTIFACT_STABLE"
+msgstr "원장의 정상 이전 배포본"
+
+msgid "IV1_I02_ARTIFACT_UNSAFE_ATTESTED"
+msgstr "출처는 맞지만 경계가 넓은 배포본"
+
+msgid "IV1_I02_BRIEF"
+msgstr "이 선택 의뢰는 다른 의뢰를 끝내지 않아도 시작할 수 있습니다. 같은 버전 이름으로 전달된 야간 안내 배포본이 서로 다른 내용을 갖고 있습니다. 서명이 있다는 표시만 믿지 말고 실제 내용의 digest, 출처 증명의 대상, 빌더와 소스 이력을 비교해 주세요.\n\n독립 원장에는 정상 이전 배포본과 승인된 재빌드 입력이 등록돼 있습니다. 검증한 이전 버전으로 복구하거나 승인된 입력을 가상 재빌드해 배포할 수 있습니다. 어떤 길이든 시민 화면·ward 통지는 남고 다른 테넌트 열람·내부 통지는 거부돼야 합니다.\n\n배포 후 유지보수자에게 기술 인계를 하거나 기자에게 공개 가능한 근거만 전달하세요. 수신자가 요구하는 필드를 선택하면 가려진 보고서를 모형이 만듭니다. 민감 필드를 직접 붙여 넣을 필요는 없습니다. 회신이나 사실 확인 질문에 관찰한 근거로 답하면 선택에 맞는 처리 기록 또는 기사가 열립니다.\n인가된 업무 계정은 아래와 같습니다. 접속 뒤 사건 도구에서 현재 관찰과 허용 조작을 확인할 수 있습니다.\n\ninvestigator@i02.investigation.packet.test\nsource-custody\n"
+
+msgid "IV1_I02_CASE_CITIZEN"
+msgstr "시민 화면 정상 제공"
+
+msgid "IV1_I02_CASE_CROSS_TENANT"
+msgstr "다른 테넌트 자료 거부"
+
+msgid "IV1_I02_CASE_INTERNAL"
+msgstr "내부 목적지 통지 거부"
+
+msgid "IV1_I02_CASE_NOTICE"
+msgstr "ward 정상 통지"
+
+msgid "IV1_I02_DESK_NAME"
+msgstr "같은 버전의 다른 배포본 담당실"
+
+msgid "IV1_I02_EVIDENCE_DELIVERED"
+msgstr "전달받은 배포 자료"
+
+msgid "IV1_I02_EVIDENCE_REBUILT"
+msgstr "승인 재빌드 자료"
+
+msgid "IV1_I02_EVIDENCE_STABLE"
+msgstr "독립 원장의 비교 자료"
+
+msgid "IV1_I02_GOAL"
+msgstr "검증된 배포로 정상 업무와 경계를 유지하고, 관찰한 근거만 수신자에게 전달해 후속 검증을 마친다."
+
+msgid "IV1_I02_HINT_1"
+msgstr "이름과 버전이 같아도 실제 payload digest가 다를 수 있습니다. 원장의 이전 배포본과 전달받은 파일부터 관찰하세요."
+
+msgid "IV1_I02_HINT_2"
+msgstr "출처가 맞는 파일도 과도한 서비스 동작을 담을 수 있습니다. 정상 화면·통지와 범위 밖 요청을 실제로 함께 시험하세요."
+
+msgid "IV1_I02_HINT_3"
+msgstr "이전 정상 배포본을 검증해 복구하거나 승인 입력을 재빌드하세요. 현재 서비스 검증 뒤 stable_evidence·delivered_evidence의 공개 digest를 보고하고 수신자의 후속 질문에 답하세요."
+
+msgid "IV1_I02_LIMIT"
+msgstr "선택 의뢰입니다. 본편 진행과 엔딩에 필요하지 않습니다. 실제 외부 서비스나 모든 보안 정책을 재현하지 않으며 잘못된 조작은 초기 상태로 복구할 수 있습니다."
+
+msgid "IV1_I02_NEWS_REPLY"
+msgstr "기자 회신: 같은 이름의 배포본이 같은 내용이라는 주장을 확인하고 있습니다. 원장 자료와 전달된 파일의 서로 다른 digest를 실제 관찰로 뒷받침해 주세요."
+
+msgid "IV1_I02_NEWS_RESULT"
+msgstr "검증 보도: 같은 버전 이름의 배포본이 서로 다른 내용을 가진 사실과 정상 업무를 유지한 복구를 확인했습니다. 내부 인계 참조는 공개하지 않았습니다."
+
+msgid "IV1_I02_PAGE_TITLE"
+msgstr "검증 회신과 보도"
+
+msgid "IV1_I02_PAGE_WAIT"
+msgstr "유효한 보고와 후속 검증 뒤 결과가 표시됩니다."
+
+msgid "IV1_I02_PRINCIPLE"
+msgstr "출처 증명은 특정 산출물의 내용·소스·빌더와 결합돼야 합니다. 안전한 동작과 공개 가능한 근거는 별도로 검증해야 합니다."
+
+msgid "IV1_I02_PRIVATE_DELIVERED"
+msgstr "인가된 기술 연락처에만 제공하는 내부 인계 참조입니다."
+
+msgid "IV1_I02_PRIVATE_REBUILT"
+msgstr "인가된 기술 연락처에만 제공하는 내부 인계 참조입니다."
+
+msgid "IV1_I02_PRIVATE_STABLE"
+msgstr "인가된 기술 연락처에만 제공하는 내부 인계 참조입니다."
+
+msgid "IV1_I02_RECIPIENT_NEWS"
+msgstr "기자 · 가려진 근거 공개"
+
+msgid "IV1_I02_RECIPIENT_STAFF"
+msgstr "유지보수자 · 기술 인계"
+
+msgid "IV1_I02_REPLY"
+msgstr "검증한 현재 배포가 정상 업무와 경계를 만족하고, 실제 선택한 수신자의 후속 확인까지 기록됐습니다. 공개 결과와 기술 인계는 보낸 자료 범위를 따릅니다. 본편은 이 의뢰를 하지 않아도 계속할 수 있습니다."
+
+msgid "IV1_I02_SENDER"
+msgstr "독립 검증 연락처"
+
+msgid "IV1_I02_STAFF_REPLY"
+msgstr "유지보수자 회신: 현재 배포의 복구 상태와 확인한 근거를 인계 기록에 연결했습니다. 현재 서비스 결과를 기준으로 후속 확인을 제출하세요."
+
+msgid "IV1_I02_STAFF_RESULT"
+msgstr "기술 인계 완료: 승인된 현재 배포와 서비스 경계가 재검증됐습니다. 공개 기사 대신 제한된 처리 기록으로 남겼습니다."
+
+msgid "IV1_I02_TITLE"
+msgstr "같은 버전의 다른 배포본"
+
+msgid "IV1_I02_TOOL"
+msgstr "배포 출처와 공개 작업대"
+
+msgid "IV1_I02_TOOL_EXPLAIN"
+msgstr "실제 산출물을 관찰하고 출처와 동작을 검증한 뒤, 수신자에 맞춘 근거와 후속 확인을 제출합니다."
+
+msgid "IV1_I02_TOOL_USAGE"
+msgstr "관찰→출처 검증→배포→서비스 시험→보고→후속 확인 순서로 진행합니다. 초기 상태 복원으로 다시 실험할 수 있습니다."
+
+msgid "IV1_PACK_SUMMARY"
+msgstr "관심 있는 분야만 골라 조사하는 클라우드 권한·배포 출처 의뢰입니다. 본편 진행과 엔딩에 필요하지 않습니다."
+
+msgid "IV1_PACK_TITLE"
+msgstr "선택 의뢰"
 
 msgid "KEYBOARD_VOLUME"
 msgstr "키보드 소리"
@@ -6500,6 +7067,30 @@ msgstr "보낼 값"
 msgid "UI_CANCEL"
 msgstr "취소"
 
+msgid "UI_COMMISSIONS_CLOSE"
+msgstr "의뢰 목록 닫기"
+
+msgid "UI_COMMISSIONS_DONE"
+msgstr "완료한 의뢰 · 다시 살펴보기"
+
+msgid "UI_COMMISSIONS_I01_DESC"
+msgstr "클라우드 권한 · 역할과 자원, 테넌트 경계를 비교하는 독립 의뢰"
+
+msgid "UI_COMMISSIONS_I02_DESC"
+msgstr "배포 신뢰 · 출처를 검증하고 공개 범위와 후속 대응을 결정하는 독립 의뢰"
+
+msgid "UI_COMMISSIONS_RETURN"
+msgstr "본편으로 돌아가기"
+
+msgid "UI_COMMISSIONS_SCOPE"
+msgstr "관심 있는 분야만 골라보세요. 본편 진행과 엔딩에 필요하지 않습니다."
+
+msgid "UI_COMMISSIONS_START"
+msgstr "시작 / 이어하기"
+
+msgid "UI_COMMISSIONS_TITLE"
+msgstr "선택 의뢰"
+
 msgid "UI_CONFIRM_FRESH"
 msgstr "기존 저장과 백업은 별도 이름으로 보존하고, 지금 화면의 진행을 새 저장으로 기록합니다.\n현재 진행은 초기화하지 않습니다."
 
@@ -6731,6 +7322,24 @@ msgstr "게임의 명령 도움말을 활성 터미널에 출력합니다"
 msgid "UI_HELP_TAG"
 msgstr "도움말"
 
+msgid "UI_IAM_BINDINGS"
+msgstr "현재 역할 연결"
+
+msgid "UI_IAM_CREDENTIALS"
+msgstr "자격 상태"
+
+msgid "UI_IAM_PRINCIPALS"
+msgstr "등록된 주체"
+
+msgid "UI_IAM_REQUESTS"
+msgstr "검증할 요청"
+
+msgid "UI_IAM_RESOURCES"
+msgstr "자원과 경계"
+
+msgid "UI_IAM_ROLES"
+msgstr "역할과 규칙"
+
 msgid "UI_IMPORT_FAILED"
 msgstr "구버전 M01 저장을 가져오지 못했습니다 ({code}). 원본은 바뀌지 않았습니다.\n{detail}"
 
@@ -6830,11 +7439,23 @@ msgstr "다음 업무 처리 단계"
 msgid "UI_MODEL_ACTION_ADVANCE_WATCH"
 msgstr "다음 관측 구간"
 
+msgid "UI_MODEL_ACTION_BIND"
+msgstr "역할 연결 변경"
+
+msgid "UI_MODEL_ACTION_BUILD"
+msgstr "승인된 가상 빌드 실행"
+
 msgid "UI_MODEL_ACTION_CHECKPOINT"
 msgstr "정책 묶음 보존"
 
 msgid "UI_MODEL_ACTION_COLLECT"
 msgstr "이 위치의 관측 수집"
+
+msgid "UI_MODEL_ACTION_DEPLOY"
+msgstr "검증한 산출물 배포"
+
+msgid "UI_MODEL_ACTION_FOLLOWUP"
+msgstr "후속 확인에 답하기"
 
 msgid "UI_MODEL_ACTION_HANDOFF"
 msgstr "확인한 연결과 한계 인계"
@@ -6845,14 +7466,26 @@ msgstr "가설 세우기"
 msgid "UI_MODEL_ACTION_INSPECT"
 msgstr "현재 상태 보기"
 
+msgid "UI_MODEL_ACTION_INSPECT_ARTIFACT"
+msgstr "산출물 조사"
+
+msgid "UI_MODEL_ACTION_INSPECT_PROVENANCE"
+msgstr "출처 증명 조사"
+
 msgid "UI_MODEL_ACTION_PROBE"
 msgstr "요청과 정상 업무 검증"
 
 msgid "UI_MODEL_ACTION_QUARANTINE"
 msgstr "저장 객체 격리 상태 변경"
 
+msgid "UI_MODEL_ACTION_REPORT"
+msgstr "검증 보고 전달"
+
 msgid "UI_MODEL_ACTION_RESET"
 msgstr "현재 실행 초기화"
+
+msgid "UI_MODEL_ACTION_RESTORE_INITIAL"
+msgstr "처음 구성으로 복구"
 
 msgid "UI_MODEL_ACTION_REVISE"
 msgstr "근거를 남기고 가설 정정"
@@ -6877,6 +7510,9 @@ msgstr "분기 한 단계씩 보기"
 
 msgid "UI_MODEL_ACTION_TEST"
 msgstr "수집 근거로 가설 검증"
+
+msgid "UI_MODEL_ACTION_VERIFY"
+msgstr "출처 검증"
 
 msgid "UI_MODEL_ALLOW"
 msgstr "허용"
@@ -6925,6 +7561,9 @@ msgstr "아직 표시할 관측이 없습니다."
 
 msgid "UI_MODEL_PERMITTED_PLAINTEXT"
 msgstr "허용된 평문"
+
+msgid "UI_MODEL_RECEIPTS"
+msgstr "현재 검증 결과"
 
 msgid "UI_MODEL_REFUTED"
 msgstr "반증됨"
@@ -7123,6 +7762,42 @@ msgstr "백업 복구 실패 ({code})\n{detail}"
 
 msgid "UI_RECOVER_TIP"
 msgstr "손상된 저장은 별도 이름으로 보존하고 정상 백업으로 복구"
+
+msgid "UI_RELEASE_ARTICLE"
+msgstr "공개 결과"
+
+msgid "UI_RELEASE_ARTIFACTS"
+msgstr "산출물과 해시"
+
+msgid "UI_RELEASE_BUILDS"
+msgstr "승인된 가상 빌드"
+
+msgid "UI_RELEASE_DEPLOYMENT"
+msgstr "현재 배포 상태"
+
+msgid "UI_RELEASE_EVIDENCE"
+msgstr "확인한 보고 근거"
+
+msgid "UI_RELEASE_RECIPIENTS"
+msgstr "보고 수신자"
+
+msgid "UI_RELEASE_REGISTRIES"
+msgstr "신뢰하는 출처 등록부"
+
+msgid "UI_RELEASE_REPLIES"
+msgstr "회신과 후속 확인"
+
+msgid "UI_RELEASE_REPORT"
+msgstr "전달한 보고"
+
+msgid "UI_RELEASE_SERVICES"
+msgstr "현재 서비스 검증"
+
+msgid "UI_RELEASE_STATEMENTS"
+msgstr "등록된 출처 증명"
+
+msgid "UI_RELEASE_VERIFICATIONS"
+msgstr "출처 검증 결과"
 
 msgid "UI_RESPONSE_ARTIFACTS"
 msgstr "관측된 업로드 저장 객체"
@@ -7382,6 +8057,9 @@ msgstr "가상 파일 시스템만 다룹니다. 권한이 없으면 도구로 �
 msgid "UI_TOOLKIND_FILE_MODEL"
 msgstr "선택한 터미널 세션의 계정 권한으로 파일을 읽습니다. cat 명령과 같은 권한 검사를 거칩니다."
 
+msgid "UI_TOOLKIND_IAM_CASE"
+msgstr "권한 검토"
+
 msgid "UI_TOOLKIND_IDOR"
 msgstr "객체 접근"
 
@@ -7462,6 +8140,9 @@ msgstr "실제 SQL 엔진과 문법 전체를 재현하지 않습니다. 게임 
 
 msgid "UI_TOOLKIND_QUERY_MODEL"
 msgstr "작은 조건식 문법을 흉내 냅니다. 입력이 값으로만 쓰이는지, 질의의 구조(OR 같은 조건)를 바꾸는지 관찰합니다. 바인딩 정책이 켜지면 입력은 값으로만 처리됩니다."
+
+msgid "UI_TOOLKIND_RELEASE_CASE"
+msgstr "배포·공개 검토"
 
 msgid "UI_TOOLKIND_RENDER"
 msgstr "표시 맥락"
@@ -7595,6 +8276,9 @@ msgstr "수집 방법"
 msgid "UI_TOOL_FIELD_ACTION"
 msgstr "동작"
 
+msgid "UI_TOOL_FIELD_ALLOWED_FIELDS"
+msgstr "공개 가능한 필드"
+
 msgid "UI_TOOL_FIELD_ARTIFACT_ID"
 msgstr "저장 객체"
 
@@ -7606,6 +8290,12 @@ msgstr "수집 가능"
 
 msgid "UI_TOOL_FIELD_BASIS"
 msgstr "응답 시점의 근거 식별값"
+
+msgid "UI_TOOL_FIELD_BUILDER_ID"
+msgstr "빌더"
+
+msgid "UI_TOOL_FIELD_BUILD_ID"
+msgstr "승인 빌드"
 
 msgid "UI_TOOL_FIELD_BUSINESS_KEY"
 msgstr "업무 항목"
@@ -7646,11 +8336,17 @@ msgstr "실행 단계 수"
 msgid "UI_TOOL_FIELD_COVERAGE"
 msgstr "관측 범위"
 
+msgid "UI_TOOL_FIELD_CREDENTIAL_REF"
+msgstr "자격 참조"
+
 msgid "UI_TOOL_FIELD_CURRENT"
 msgstr "현재 값"
 
 msgid "UI_TOOL_FIELD_CURSOR"
 msgstr "현재 관측 구간"
+
+msgid "UI_TOOL_FIELD_DIGEST"
+msgstr "해시"
 
 msgid "UI_TOOL_FIELD_DST"
 msgstr "결과 레지스터"
@@ -7673,14 +8369,26 @@ msgstr "관측 이력 종류"
 msgid "UI_TOOL_FIELD_EVENT_ID"
 msgstr "이벤트 ID"
 
+msgid "UI_TOOL_FIELD_EVIDENCE_IDS"
+msgstr "확인한 근거"
+
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED"
 msgstr "현재 실행 허용"
 
 msgid "UI_TOOL_FIELD_EXECUTION_ALLOWED_AT_UPLOAD"
 msgstr "업로드 수락 당시 실행 가능"
 
+msgid "UI_TOOL_FIELD_EXPIRES_TICK"
+msgstr "만료 시점"
+
+msgid "UI_TOOL_FIELD_FIELDS"
+msgstr "공개할 필드"
+
 msgid "UI_TOOL_FIELD_FILENAME"
 msgstr "파일 이름"
+
+msgid "UI_TOOL_FIELD_FOLLOWUP_ID"
+msgstr "후속 확인"
 
 msgid "UI_TOOL_FIELD_FORMAT_OK"
 msgstr "형식 확인"
@@ -7711,6 +8419,9 @@ msgstr "입력"
 
 msgid "UI_TOOL_FIELD_INPUTS"
 msgstr "입력 사례"
+
+msgid "UI_TOOL_FIELD_INSPECTED"
+msgstr "조사 여부"
 
 msgid "UI_TOOL_FIELD_INTENDED"
 msgstr "필요한 결과"
@@ -7778,6 +8489,9 @@ msgstr "명령 위치"
 msgid "UI_TOOL_FIELD_POLICY"
 msgstr "적용 정책"
 
+msgid "UI_TOOL_FIELD_PRINCIPAL_ID"
+msgstr "주체"
+
 msgid "UI_TOOL_FIELD_PROVENANCE"
 msgstr "출처·수집 근거"
 
@@ -7790,6 +8504,9 @@ msgstr "격리 상태"
 msgid "UI_TOOL_FIELD_REASON_OBSERVATION_IDS"
 msgstr "정정의 근거"
 
+msgid "UI_TOOL_FIELD_RECIPIENT_ID"
+msgstr "수신자"
+
 msgid "UI_TOOL_FIELD_REFUTED_HYPOTHESIS_IDS"
 msgstr "반증한 가설"
 
@@ -7798,6 +8515,9 @@ msgstr "읽는 레지스터"
 
 msgid "UI_TOOL_FIELD_REGISTERS"
 msgstr "가상 레지스터"
+
+msgid "UI_TOOL_FIELD_REGISTRY_ID"
+msgstr "출처 등록부"
 
 msgid "UI_TOOL_FIELD_RELATION"
 msgstr "연결 관계"
@@ -7811,11 +8531,20 @@ msgstr "요청 식별자"
 msgid "UI_TOOL_FIELD_REQUEST_TAG"
 msgstr "요청 표식"
 
+msgid "UI_TOOL_FIELD_REQUIRED_EVIDENCE"
+msgstr "필요한 근거"
+
 msgid "UI_TOOL_FIELD_RETENTION_SCOPE"
 msgstr "보존 범위"
 
+msgid "UI_TOOL_FIELD_REVOKED"
+msgstr "폐기 여부"
+
 msgid "UI_TOOL_FIELD_RIGHT"
 msgstr "비교할 둘째 대상"
+
+msgid "UI_TOOL_FIELD_ROLE_ID"
+msgstr "역할"
 
 msgid "UI_TOOL_FIELD_ROUTE_ID"
 msgstr "요청 경로"
@@ -7834,6 +8563,9 @@ msgstr "관측 범위"
 
 msgid "UI_TOOL_FIELD_SECTION"
 msgstr "볼 내용"
+
+msgid "UI_TOOL_FIELD_SENSITIVITY"
+msgstr "민감도"
 
 msgid "UI_TOOL_FIELD_SENSOR_ID"
 msgstr "관찰 지점"
@@ -7859,6 +8591,12 @@ msgstr "파일 형식 검증 통과"
 msgid "UI_TOOL_FIELD_SOURCE_ID"
 msgstr "출처 ID"
 
+msgid "UI_TOOL_FIELD_SOURCE_REVISION"
+msgstr "소스 버전"
+
+msgid "UI_TOOL_FIELD_STATEMENT_ID"
+msgstr "출처 증명"
+
 msgid "UI_TOOL_FIELD_STATUS"
 msgstr "상태"
 
@@ -7868,11 +8606,20 @@ msgstr "사용한 단계"
 msgid "UI_TOOL_FIELD_STORED_AS"
 msgstr "저장 참조"
 
+msgid "UI_TOOL_FIELD_SUBJECT_DIGEST"
+msgstr "대상 해시"
+
 msgid "UI_TOOL_FIELD_SUPPORTED_HYPOTHESIS_IDS"
 msgstr "뒷받침된 가설"
 
 msgid "UI_TOOL_FIELD_TARGET"
 msgstr "대상 호스트"
+
+msgid "UI_TOOL_FIELD_TENANT"
+msgstr "테넌트"
+
+msgid "UI_TOOL_FIELD_TENANT_SCOPE"
+msgstr "테넌트 범위"
 
 msgid "UI_TOOL_FIELD_THEN"
 msgstr "참일 때 분기"
@@ -7918,6 +8665,9 @@ msgstr "수집 위치"
 
 msgid "UI_TOOL_FIELD_VERDICT"
 msgstr "근거 판정"
+
+msgid "UI_TOOL_FIELD_VERIFIED"
+msgstr "검증 여부"
 
 msgid "UI_TOOL_FIELD_VISIBILITY"
 msgstr "보이는 정보"
